@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Research Atlas"
+  short_description: "Bilingual research maps and reproducible Agent experiments"
+  default_prompt: "Use $agent-research-atlas to explore Agent research, update my local research map, and design a falsifiable experiment."

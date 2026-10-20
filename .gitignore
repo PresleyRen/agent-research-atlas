@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+.env
+.env.*
+.coverage
+.pytest_cache/
+research-atlas/
+research-atlas.config.json
+local-projects/

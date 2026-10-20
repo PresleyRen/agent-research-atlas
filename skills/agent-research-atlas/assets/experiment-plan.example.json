@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "experiment_id": "synthetic-routing-demo",
+  "title": "SYNTHETIC routing fixture: verify experiment record plumbing",
+  "hypothesis": "The hand-authored synthetic routing rule will report accuracy above the constant status-label fixture baseline; this is only an infrastructure demonstration.",
+  "rival_explanation": "The rules and data generator were authored together, so any apparent gain follows from fixture construction and is not evidence of generalizable agent capability.",
+  "primary_metric": {
+    "name": "accuracy",
+    "direction": "maximize",
+    "unit": "fraction of synthetic cases"
+  },
+  "experimental_unit": "One synthetic routing case; repeats from different seeds are generated fixtures, not independent real users.",
+  "data_split": {
+    "development": "Hand-authored generator and rules in examples/tiny_agent_experiment.py.",
+    "evaluation": "60 synthetic labels generated separately within each declared seed; no real held-out benchmark is claimed.",
+    "leakage_controls": "No valid scientific holdout: the generator and rule share author knowledge. This deliberate limitation must remain visible."
+  },
+  "controls": [
+    "Use the same generated labels for the rule and constant-label fixture baseline.",
+    "Keep synthetic=true on the plan, execution record, and imported results."
+  ],
+  "baselines": [
+    "A constant status-label prediction, used only as a plumbing fixture."
+  ],
+  "seeds": [7, 11, 19],
+  "budget": {
+    "max_runs": 3,
+    "max_run_seconds": 5,
+    "max_total_seconds": 15
+  },
+  "decision_thresholds": {
+    "success": "Infrastructure demonstration only: exit code 0, finite accuracy between 0 and 1, and preserved logs; scientific support is not assessed.",
+    "failure": "Fixture execution fails, is timed out, produces non-finite imported metrics, or record checks fail; preserve the evidence.",
+    "inconclusive": "Every outcome remains inconclusive about real agent effectiveness, novelty, and publication readiness."
+  },
+  "command": {
+    "argv": ["python3", "examples/tiny_agent_experiment.py", "--seed", "{seed}"],
+    "cwd": ".",
+    "input_files": ["examples/tiny_agent_experiment.py"]
+  },
+  "synthetic": true,
+  "notes": "Run this example from a copy of the repository containing examples/tiny_agent_experiment.py. Resolve python3 for your machine before freezing. No network calls or model inference are used."
+}

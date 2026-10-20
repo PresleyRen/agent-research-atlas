@@ -1,0 +1,493 @@
+{
+  "version": 1,
+  "description_zh": "用于启动检索的 Agent 研究领域词表，不是完整分类、创新清单或已验证研究结论。",
+  "description_en": "Seed vocabulary for an extensible Agent research map; not an exhaustive taxonomy, a novelty list, or validated findings.",
+  "extension_policy": {
+    "allow_new_domains": true,
+    "id_pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+    "rule_zh": "按研究问题新增、合并或拆分领域。记录分类理由和新词来源；允许跨领域归属。具身、多模态、人机协作、强化学习、自适应学习及形式化方法等可独立扩展，不应强行归入 RAG。",
+    "rule_en": "Add, merge, or split domains to fit the research question. Record the rationale and vocabulary sources; allow cross-domain membership. Embodied agents, multimodality, human-agent collaboration, reinforcement learning, adaptation, and formal methods can become independent domains rather than being forced under RAG."
+  },
+  "domains": [
+    {
+      "id": "intent",
+      "name_zh": "意图理解与目标表示",
+      "name_en": "Intent understanding and goal representation",
+      "terms_zh": [
+        "意图识别",
+        "意图理解",
+        "目标识别",
+        "用户目标",
+        "对话状态跟踪",
+        "分布外意图",
+        "目标表示"
+      ],
+      "terms_en": [
+        "intent detection",
+        "intent understanding",
+        "goal recognition",
+        "user goals",
+        "dialogue state tracking",
+        "out-of-distribution intent",
+        "goal representation"
+      ],
+      "questions": [
+        {
+          "zh": "意图标签、目标状态和执行约束之间如何保持一致？",
+          "en": "How are intent labels, target states, and execution constraints kept consistent?"
+        },
+        {
+          "zh": "遇到未见意图或目标变更时，系统如何识别不确定性并修正状态？",
+          "en": "How does the system detect uncertainty and revise state for unseen intents or changed goals?"
+        }
+      ]
+    },
+    {
+      "id": "clarification",
+      "name_zh": "多意图、歧义与澄清",
+      "name_en": "Multiple intents, ambiguity, and clarification",
+      "terms_zh": [
+        "多意图识别",
+        "复合意图",
+        "歧义消解",
+        "澄清问题",
+        "用户纠正",
+        "偏好获取",
+        "部分可观测"
+      ],
+      "terms_en": [
+        "multi-intent detection",
+        "compound intent",
+        "ambiguity resolution",
+        "clarification question",
+        "user correction",
+        "preference elicitation",
+        "partial observability"
+      ],
+      "questions": [
+        {
+          "zh": "何时应追问，何时可在不确定条件下行动？",
+          "en": "When should an agent ask a clarification question rather than act under uncertainty?"
+        },
+        {
+          "zh": "用户一句话含多个有条件依赖的任务时，如何发现冲突和遗漏？",
+          "en": "How are conflicts and omissions detected when one utterance contains multiple conditionally dependent tasks?"
+        }
+      ]
+    },
+    {
+      "id": "routing",
+      "name_zh": "路由、模型选择与策略选择",
+      "name_en": "Routing, model selection, and strategy selection",
+      "terms_zh": [
+        "智能体路由",
+        "模型路由",
+        "任务路由",
+        "策略选择",
+        "动态工作流",
+        "成本敏感选择",
+        "选择性预测"
+      ],
+      "terms_en": [
+        "agent routing",
+        "model routing",
+        "task routing",
+        "strategy selection",
+        "dynamic workflow",
+        "cost-sensitive selection",
+        "selective prediction"
+      ],
+      "questions": [
+        {
+          "zh": "什么可观察信号能预测某种工具、模型或策略适合当前任务？",
+          "en": "Which observable signals predict whether a tool, model, or strategy fits the current task?"
+        },
+        {
+          "zh": "路由收益在相同预算和强单模型基线下是否仍然存在？",
+          "en": "Do routing gains persist under matched budgets and a strong single-model baseline?"
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "name_zh": "规划、反馈与控制",
+      "name_en": "Planning, feedback, and control",
+      "terms_zh": [
+        "任务分解",
+        "智能规划",
+        "重规划",
+        "约束满足",
+        "闭环控制",
+        "世界模型",
+        "反思",
+        "层次规划"
+      ],
+      "terms_en": [
+        "task decomposition",
+        "automated planning",
+        "replanning",
+        "constraint satisfaction",
+        "closed-loop control",
+        "world model",
+        "reflection",
+        "hierarchical planning"
+      ],
+      "questions": [
+        {
+          "zh": "规划失败来自目标表示、状态估计、约束处理还是执行反馈？",
+          "en": "Does planning fail because of goal representation, state estimation, constraint handling, or execution feedback?"
+        },
+        {
+          "zh": "反思或搜索在控制调用次数后改善了什么，而哪些条件下会恶化？",
+          "en": "What does reflection or search improve after controlling call count, and under which conditions does it worsen performance?"
+        }
+      ]
+    },
+    {
+      "id": "ingestion-retrieval",
+      "name_zh": "文档摄入、索引与检索",
+      "name_en": "Document ingestion, indexing, and retrieval",
+      "terms_zh": [
+        "文档解析",
+        "文档切分",
+        "增量索引",
+        "混合检索",
+        "查询改写",
+        "检索增强生成",
+        "时间检索",
+        "检索召回"
+      ],
+      "terms_en": [
+        "document parsing",
+        "document chunking",
+        "incremental indexing",
+        "hybrid retrieval",
+        "query rewriting",
+        "retrieval-augmented generation",
+        "temporal retrieval",
+        "retrieval recall"
+      ],
+      "questions": [
+        {
+          "zh": "相关证据未进入候选集合，是解析、切分、索引还是查询造成的？",
+          "en": "When relevant evidence never enters the candidate set, is parsing, chunking, indexing, or querying responsible?"
+        },
+        {
+          "zh": "文档新增、版本更新及访问权限变化时，检索评测如何反映真实状态？",
+          "en": "How should retrieval evaluation reflect document additions, version changes, and changing access rights?"
+        }
+      ]
+    },
+    {
+      "id": "reranking-context",
+      "name_zh": "重排、上下文选择与压缩",
+      "name_en": "Reranking, context selection, and compression",
+      "terms_zh": [
+        "重排序",
+        "上下文构建",
+        "证据选择",
+        "长上下文",
+        "上下文压缩",
+        "位置偏差",
+        "冗余证据"
+      ],
+      "terms_en": [
+        "reranking",
+        "context construction",
+        "evidence selection",
+        "long context",
+        "context compression",
+        "position bias",
+        "redundant evidence"
+      ],
+      "questions": [
+        {
+          "zh": "检索已召回证据后，哪些选择或压缩操作使关键条件丢失？",
+          "en": "After retrieval finds the evidence, which selection or compression operations lose essential conditions?"
+        },
+        {
+          "zh": "更多上下文带来的收益如何与推理成本、冲突信息及位置偏差区分？",
+          "en": "How can gains from more context be separated from inference cost, conflicting information, and position bias?"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-graphs",
+      "name_zh": "知识图谱、本体与结构化知识",
+      "name_en": "Knowledge graphs, ontologies, and structured knowledge",
+      "terms_zh": [
+        "知识图谱构建",
+        "本体约束",
+        "实体消歧",
+        "关系抽取",
+        "证据溯源",
+        "图推理",
+        "神经符号",
+        "知识更新"
+      ],
+      "terms_en": [
+        "knowledge graph construction",
+        "ontology constraints",
+        "entity disambiguation",
+        "relation extraction",
+        "provenance",
+        "graph reasoning",
+        "neuro-symbolic",
+        "knowledge updating"
+      ],
+      "questions": [
+        {
+          "zh": "本体或图结构产生的收益能否与普通模式校验及规则基线区分？",
+          "en": "Can gains from an ontology or graph be distinguished from ordinary schema validation and rule-based baselines?"
+        },
+        {
+          "zh": "新增或冲突证据如何传播到实体、关系、推理结果与来源链？",
+          "en": "How does new or conflicting evidence propagate to entities, relations, inferred results, and provenance?"
+        }
+      ]
+    },
+    {
+      "id": "memory",
+      "name_zh": "记忆、状态与持续适应",
+      "name_en": "Memory, state, and continual adaptation",
+      "terms_zh": [
+        "长期记忆",
+        "情景记忆",
+        "语义记忆",
+        "记忆检索",
+        "记忆更新",
+        "遗忘",
+        "状态恢复",
+        "持续学习"
+      ],
+      "terms_en": [
+        "long-term memory",
+        "episodic memory",
+        "semantic memory",
+        "memory retrieval",
+        "memory updating",
+        "forgetting",
+        "state recovery",
+        "continual learning"
+      ],
+      "questions": [
+        {
+          "zh": "记忆写入、读取、更新与遗忘各自造成什么错误？",
+          "en": "Which errors arise separately from memory writing, reading, updating, and forgetting?"
+        },
+        {
+          "zh": "记忆收益是否能跨用户、时间和任务迁移，而不是依赖评测泄漏？",
+          "en": "Do memory gains transfer across users, time, and tasks without depending on evaluation leakage?"
+        }
+      ]
+    },
+    {
+      "id": "tool-use",
+      "name_zh": "工具学习、执行与恢复",
+      "name_en": "Tool learning, execution, and recovery",
+      "terms_zh": [
+        "工具使用",
+        "工具学习",
+        "函数调用",
+        "参数生成",
+        "执行验证",
+        "错误恢复",
+        "幂等性",
+        "事务补偿"
+      ],
+      "terms_en": [
+        "tool use",
+        "tool learning",
+        "function calling",
+        "argument generation",
+        "execution verification",
+        "error recovery",
+        "idempotency",
+        "compensating transactions"
+      ],
+      "questions": [
+        {
+          "zh": "工具名称正确但参数、执行顺序或返回值理解错误时，如何定位责任？",
+          "en": "How can failures be attributed when the tool is correct but arguments, execution order, or result interpretation are wrong?"
+        },
+        {
+          "zh": "工具超时、部分成功或模式变更时，怎样恢复并避免重复副作用？",
+          "en": "How can an agent recover from timeouts, partial success, or schema changes without duplicate side effects?"
+        }
+      ]
+    },
+    {
+      "id": "answer-grounding",
+      "name_zh": "回答生成、事实支持与不确定性",
+      "name_en": "Answer generation, grounding, and uncertainty",
+      "terms_zh": [
+        "事实一致性",
+        "证据支持",
+        "引用准确性",
+        "幻觉检测",
+        "不确定性校准",
+        "拒答",
+        "可验证生成"
+      ],
+      "terms_en": [
+        "factual consistency",
+        "evidence grounding",
+        "citation accuracy",
+        "hallucination detection",
+        "uncertainty calibration",
+        "abstention",
+        "verifiable generation"
+      ],
+      "questions": [
+        {
+          "zh": "每条回答断言是否受到相应证据的精确支持？",
+          "en": "Is every answer claim supported precisely by its linked evidence?"
+        },
+        {
+          "zh": "证据缺失、冲突或过期时，系统如何校准结论强度与行动选择？",
+          "en": "How does the system calibrate conclusions and actions when evidence is missing, conflicting, or stale?"
+        }
+      ]
+    },
+    {
+      "id": "multi-agent",
+      "name_zh": "多智能体协作与人机协作",
+      "name_en": "Multi-agent and human-agent collaboration",
+      "terms_zh": [
+        "多智能体协作",
+        "任务分配",
+        "通信协议",
+        "协商",
+        "角色分工",
+        "协同规划",
+        "人机协作",
+        "群体错误"
+      ],
+      "terms_en": [
+        "multi-agent collaboration",
+        "task allocation",
+        "communication protocol",
+        "negotiation",
+        "role specialization",
+        "cooperative planning",
+        "human-agent collaboration",
+        "correlated errors"
+      ],
+      "questions": [
+        {
+          "zh": "协作增益能否超过相同总预算的单智能体或独立采样基线？",
+          "en": "Do collaboration gains exceed a single agent or independent sampling under the same total budget?"
+        },
+        {
+          "zh": "通信、共享记忆与角色安排何时造成错误传播或相互强化？",
+          "en": "When do communication, shared memory, and role assignments propagate or reinforce errors?"
+        }
+      ]
+    },
+    {
+      "id": "evaluation",
+      "name_zh": "评测、实验设计与科学有效性",
+      "name_en": "Evaluation, experimental design, and scientific validity",
+      "terms_zh": [
+        "智能体评测",
+        "过程评测",
+        "任务成功率",
+        "基准污染",
+        "评测器偏差",
+        "消融实验",
+        "外部效度",
+        "统计不确定性"
+      ],
+      "terms_en": [
+        "agent evaluation",
+        "trajectory evaluation",
+        "task success rate",
+        "benchmark contamination",
+        "judge bias",
+        "ablation study",
+        "external validity",
+        "statistical uncertainty"
+      ],
+      "questions": [
+        {
+          "zh": "指标改善是否对应实际任务成功，是否存在代理指标被优化的问题？",
+          "en": "Does metric improvement correspond to real task success, or is a proxy being optimized instead?"
+        },
+        {
+          "zh": "实验能排除预算、数据泄漏、评测器偏差和随机波动等替代解释吗？",
+          "en": "Can the experiment rule out budget differences, leakage, judge bias, and random variation as alternative explanations?"
+        }
+      ]
+    },
+    {
+      "id": "production",
+      "name_zh": "生产系统、效率与可靠性",
+      "name_en": "Production systems, efficiency, and reliability",
+      "terms_zh": [
+        "智能体可观测性",
+        "端到端延迟",
+        "成本评测",
+        "并发执行",
+        "检查点",
+        "工作流恢复",
+        "分布漂移",
+        "服务可靠性"
+      ],
+      "terms_en": [
+        "agent observability",
+        "end-to-end latency",
+        "cost evaluation",
+        "concurrent execution",
+        "checkpointing",
+        "workflow recovery",
+        "distribution shift",
+        "service reliability"
+      ],
+      "questions": [
+        {
+          "zh": "离线收益在真实延迟、并发、预算和服务故障下能保留多少？",
+          "en": "How much of an offline gain survives realistic latency, concurrency, budgets, and service failures?"
+        },
+        {
+          "zh": "什么可重现的系统失效揭示了可推广的研究机制？",
+          "en": "Which reproducible system failures reveal a research mechanism that generalizes?"
+        }
+      ]
+    },
+    {
+      "id": "safety-security",
+      "name_zh": "安全、权限、隐私与可控性",
+      "name_en": "Safety, authorization, privacy, and controllability",
+      "terms_zh": [
+        "提示注入",
+        "工具权限",
+        "最小权限",
+        "隐私保护",
+        "攻击面",
+        "指令边界",
+        "策略约束",
+        "安全评测"
+      ],
+      "terms_en": [
+        "prompt injection",
+        "tool authorization",
+        "least privilege",
+        "privacy preservation",
+        "attack surface",
+        "instruction boundaries",
+        "policy constraints",
+        "security evaluation"
+      ],
+      "questions": [
+        {
+          "zh": "不可信文档、工具输出或其他智能体信息如何影响执行权限？",
+          "en": "How do untrusted documents, tool outputs, or other agents' messages affect execution authority?"
+        },
+        {
+          "zh": "防护有效性如何同时测量攻击成功率、正常任务效用与新增成本？",
+          "en": "How can a defense be evaluated jointly for attack success, legitimate-task utility, and added cost?"
+        }
+      ]
+    }
+  ]
+}
