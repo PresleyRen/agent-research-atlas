@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+    "--root",
+    "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+    "upsert",
+    "--file",
+    "/workspace/scratch/f7a517081da8/forward-conflicts-providers/docs/correction-batch-claim-scope-2026-10-20.json",
+    "--expected-revision",
+    "2"
+  ],
+  "exit_code": 0,
+  "stdout": {
+    "action": "updated",
+    "edges": 15,
+    "meaning": "Structural integrity only; scientific interpretation requires evidence review.",
+    "nodes": 30,
+    "revision": 3,
+    "valid": true
+  },
+  "stderr": "",
+  "reason": "Correct a local claim-wording polarity mismatch found while inspecting the generated map; preserve original revision and batch."
+}

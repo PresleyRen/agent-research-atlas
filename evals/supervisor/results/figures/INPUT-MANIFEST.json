@@ -1,0 +1,25 @@
+{
+  "fixture": true,
+  "files": [
+    {
+      "path": "PROJECT.md",
+      "bytes": 783,
+      "sha256": "97bf554c824a41ff849432ed3daa1220daeade0b103042e88b047b538c5b0b54"
+    },
+    {
+      "path": "notes/figure-context.md",
+      "bytes": 585,
+      "sha256": "fc9ae99935a21922bb39fbdef6d684bfa6681feb2d3c19787c41706f0ef1153c"
+    },
+    {
+      "path": "reference.png",
+      "bytes": 17358,
+      "sha256": "03eba4db7c14e85b31d9b5ae0bd963e07abf35d81552e165bf1cc53ec75b7055"
+    },
+    {
+      "path": "results/latency-accuracy.csv",
+      "bytes": 102,
+      "sha256": "ed5f2384042cb46ec7c3989ddc2a5faa0ea1e2bd38fc3a0a210d3e0f4b446cef"
+    }
+  ]
+}

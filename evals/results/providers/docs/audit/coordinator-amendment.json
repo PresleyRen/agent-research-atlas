@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "change": "Correct the human capability-gaps table reference for premise changes and persistent memory from CF19 to CF09. CF19 is legacy-version compatibility. No research or code change.",
+  "original_artifact": "docs/history/capability-gaps-pre-coordinator.md",
+  "original_sha256": "d1788eb72df121abe17cca4525b9883cc7a08b4be226f026e190220759ec1cca",
+  "corrected_artifact": "docs/CAPABILITY-GAPS.md",
+  "corrected_sha256": "12ddc9d77e196f8fdfbe711830cbf579e1908b7f57bf32cd74ab48fff35cf93b",
+  "task_phase": "Coordinator inspection after the independent task completed."
+}

@@ -1,0 +1,63 @@
+[
+  {
+    "command": [
+      "inkscape",
+      "/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig01_architecture.svg",
+      "--export-type=png",
+      "--export-filename=/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig01_architecture.png",
+      "--export-dpi=180"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "\n** (inkscape:5): WARNING **: 21:46:01.595: Failed to wrap object of type 'GtkRecentManager'. Hint: this error is commonly caused by failing to call a library init() function.\n"
+  },
+  {
+    "command": [
+      "inkscape",
+      "/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig01_architecture.svg",
+      "--export-type=pdf",
+      "--export-filename=/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig01_architecture.pdf"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "\n** (inkscape:13): WARNING **: 21:46:01.795: Failed to wrap object of type 'GtkRecentManager'. Hint: this error is commonly caused by failing to call a library init() function.\n"
+  },
+  {
+    "command": [
+      "inkscape",
+      "/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig02_latency_accuracy.svg",
+      "--export-type=png",
+      "--export-filename=/workspace/scratch/f7a517081da8/supervisor-forward/figures/checks/fig02_svg_render.png",
+      "--export-dpi=200"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "\n** (inkscape:21): WARNING **: 21:46:01.969: Failed to wrap object of type 'GtkRecentManager'. Hint: this error is commonly caused by failing to call a library init() function.\n"
+  },
+  {
+    "operation": "PyMuPDF actual PDF rasterization",
+    "source": "outputs/fig01_architecture.pdf",
+    "pages": 1,
+    "page_size_pt": [
+      0.0,
+      0.0,
+      510.2362060546875,
+      275.5275573730469
+    ],
+    "text": "User request\nVersion state\nRouter\nClarify\nRetriever\nAnswer\nclariﬁcation feedback\nsource detail\n",
+    "status": "success"
+  },
+  {
+    "operation": "PyMuPDF actual PDF rasterization",
+    "source": "outputs/fig02_latency_accuracy.pdf",
+    "pages": 1,
+    "page_size_pt": [
+      0.0,
+      0.0,
+      255.11810302734375,
+      215.43307495117188
+    ],
+    "text": "0\n50\n100\n150\n200\n250\n300\n350\nLatency (ms; lower is better)\n65\n70\n75\n80\n85\nAccuracy (%; higher is better)\nSingle-pass\n120 ms, 68.75%\nVersion-aware\n180 ms, 78.125%\nAlways-clarify\n310 ms, 81.25%\nLatency–accuracy trade-off\nSynthetic fixtures; no repeated runs or uncertainty supplied.\nY-axis shown from 65%; each marker is one supplied value.\n",
+    "status": "success"
+  }
+]

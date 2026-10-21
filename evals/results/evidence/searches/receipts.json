@@ -1,0 +1,30 @@
+{
+  "synthetic": true,
+  "receipts": [
+    {
+      "language": "en",
+      "provider": "S2",
+      "query": "uncertainty clarification agent routing",
+      "searched_at": "2026-10-20",
+      "status": "rate_limited",
+      "http_status": 429,
+      "results": null
+    },
+    {
+      "language": "zh",
+      "provider": "host-search",
+      "query": "意图 路由 澄清 不确定性",
+      "searched_at": "2026-10-20",
+      "status": "empty",
+      "results": []
+    },
+    {
+      "language": "en",
+      "provider": "model-recall",
+      "title": "Budget-Revisable Dialogue Routing",
+      "verified": false,
+      "doi": null,
+      "url": null
+    }
+  ]
+}

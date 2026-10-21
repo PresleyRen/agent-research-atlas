@@ -1,0 +1,49 @@
+test_boolean_atlas_schema_version_is_rejected (test_integration_review.IntegrationReviewTests.test_boolean_atlas_schema_version_is_rejected) ... FAIL
+test_deleted_immutable_evaluator_preserves_success_exit_but_fails_run (test_integration_review.IntegrationReviewTests.test_deleted_immutable_evaluator_preserves_success_exit_but_fails_run) ... ok
+test_historical_records_stay_valid_after_current_source_is_changed (test_integration_review.IntegrationReviewTests.test_historical_records_stay_valid_after_current_source_is_changed) ... ok
+test_legacy_freeze_loads_without_claiming_new_input_pinning (test_integration_review.IntegrationReviewTests.test_legacy_freeze_loads_without_claiming_new_input_pinning) ... ok
+test_malformed_review_trigger_rejected_before_any_commit (test_integration_review.IntegrationReviewTests.test_malformed_review_trigger_rejected_before_any_commit) ... FAIL
+test_mutable_candidate_may_change_during_run_and_both_hashes_remain (test_integration_review.IntegrationReviewTests.test_mutable_candidate_may_change_during_run_and_both_hashes_remain) ... ok
+test_pending_review_visible_in_domain_view (test_integration_review.IntegrationReviewTests.test_pending_review_visible_in_domain_view) ... FAIL
+test_planned_tests_edge_propagates_changed_hypothesis_to_plan (test_integration_review.IntegrationReviewTests.test_planned_tests_edge_propagates_changed_hypothesis_to_plan) ... FAIL
+test_removed_support_relation_flags_previous_consumer_and_followup (test_integration_review.IntegrationReviewTests.test_removed_support_relation_flags_previous_consumer_and_followup) ... ok
+test_reverse_uses_dependency_and_review_reopening (test_integration_review.IntegrationReviewTests.test_reverse_uses_dependency_and_review_reopening) ... ok
+
+======================================================================
+FAIL: test_boolean_atlas_schema_version_is_rejected (test_integration_review.IntegrationReviewTests.test_boolean_atlas_schema_version_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/f7a517081da8/agent-research-atlas-public/tests/test_integration_review.py", line 109, in test_boolean_atlas_schema_version_is_rejected
+    with self.assertRaises(ATLAS.AtlasError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: AtlasError not raised
+
+======================================================================
+FAIL: test_malformed_review_trigger_rejected_before_any_commit (test_integration_review.IntegrationReviewTests.test_malformed_review_trigger_rejected_before_any_commit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/f7a517081da8/agent-research-atlas-public/tests/test_integration_review.py", line 118, in test_malformed_review_trigger_rejected_before_any_commit
+    with self.assertRaises(ATLAS.AtlasError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: AtlasError not raised
+
+======================================================================
+FAIL: test_pending_review_visible_in_domain_view (test_integration_review.IntegrationReviewTests.test_pending_review_visible_in_domain_view)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/f7a517081da8/agent-research-atlas-public/tests/test_integration_review.py", line 125, in test_pending_review_visible_in_domain_view
+    self.assertTrue("Pending evidence reviews" in view or "Needs review" in view or "待复核" in view,
+AssertionError: False is not true : A domain-only reader sees historical supported status without its pending-review warning
+
+======================================================================
+FAIL: test_planned_tests_edge_propagates_changed_hypothesis_to_plan (test_integration_review.IntegrationReviewTests.test_planned_tests_edge_propagates_changed_hypothesis_to_plan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/f7a517081da8/agent-research-atlas-public/tests/test_integration_review.py", line 86, in test_planned_tests_edge_propagates_changed_hypothesis_to_plan
+    self.assertIn("planned-test", self.pending())
+AssertionError: 'planned-test' not found in set()
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.625s
+
+FAILED (failures=4)

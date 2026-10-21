@@ -1,0 +1,24 @@
+{
+  "derived": {
+    "absolute_difference_percentage_points": 9.375,
+    "baseline_percent": 68.75,
+    "dataset_entry_count": 1,
+    "net_correct_count_difference": 6,
+    "version_aware_percent": 78.125
+  },
+  "formulas": {
+    "absolute_difference_percentage_points": "(50 - 44) / 64 * 100",
+    "baseline_percent": "44 / 64 * 100",
+    "dataset_entry_count": "len(datasets)",
+    "net_correct_count_difference": "50 - 44",
+    "version_aware_percent": "50 / 64 * 100"
+  },
+  "interpretation_limits": [
+    "All numbers refer to a supplied fictional fixture.",
+    "The net correct-count difference does not identify per-case improvements or regressions.",
+    "No confidence interval, hypothesis test, family-level estimate, or research experiment was performed."
+  ],
+  "record_type": "arithmetic_only_not_a_research_run",
+  "source": "results/pilot.json",
+  "source_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32"
+}

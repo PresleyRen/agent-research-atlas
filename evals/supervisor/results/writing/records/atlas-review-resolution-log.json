@@ -1,0 +1,32 @@
+[
+  {
+    "command": "python -B /workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py --root /workspace/scratch/f7a517081da8/supervisor-forward/writing resolve-review --node clarification --reviewer 'writing-agent-serial-review' --note 'Reviewed notes/method.md clarification condition, draft-zh.md shared state, and all local inputs. Keep coverage partial: this was a scoped synthetic writing review, not a literature search or a causal validation.' --expected-revision 1",
+    "exit_code": 0,
+    "output": {
+      "action": "review_recorded",
+      "meaning": "Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified.",
+      "node_id": "clarification",
+      "revision": 2
+    }
+  },
+  {
+    "command": "python -B /workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py --root /workspace/scratch/f7a517081da8/supervisor-forward/writing resolve-review --node evaluation --reviewer 'writing-agent-serial-review' --note 'Reviewed results/pilot.json, PROJECT.md and the numerical/source audits. Coverage remains partial: aggregate fictional counts only; independence, scoring, uncertainty and latency remain unverified. No empirical hypothesis promotion.' --expected-revision 2",
+    "exit_code": 0,
+    "output": {
+      "action": "review_recorded",
+      "meaning": "Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified.",
+      "node_id": "evaluation",
+      "revision": 3
+    }
+  },
+  {
+    "command": "python -B /workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py --root /workspace/scratch/f7a517081da8/supervisor-forward/writing resolve-review --node routing --reviewer 'writing-agent-serial-review' --note 'Reviewed initial inputs/actions, deterministic version filtering, shared-state description and missing rule specification. Coverage remains partial and nearest external work remains unresolved; no model execution or generalization claim.' --expected-revision 3",
+    "exit_code": 0,
+    "output": {
+      "action": "review_recorded",
+      "meaning": "Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified.",
+      "node_id": "routing",
+      "revision": 4
+    }
+  }
+]

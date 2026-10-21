@@ -224,3 +224,35 @@ ResearchStudio-Idea 的评测范围是候选想法的自动评审；其结论不
 记录发表证据时分开预印本、投稿、审稿、正式接受与出版；会议 workshop 接受不等于主会接受。SCI/SCIE 收录、期刊分区与会议等级是不同信息，需在实际选刊时核验。
 
 当用户要求“证明想法”时，将目标落实为可区分的验证、反证或适用理论的证明；不要预设结果必须支持原假设。可承诺认真执行和透明记录，不能承诺特定方向成立或一定发表。
+
+## 10. Numerical source audit (v1.1)
+
+For JSON metrics and JSON-formatted logs, create a project-local ledger:
+
+```json
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "table1-accuracy",
+      "artifact_path": "results/metrics.json",
+      "pointer": "/metrics/accuracy",
+      "reported_value": 0.75,
+      "abs_tol": 0,
+      "rel_tol": 0
+    }
+  ]
+}
+```
+
+Run `python <SKILL>/scripts/audit.py --root <PROJECT> values --ledger <ledger.json>`. `pointer` is a JSON Pointer: `/items/0/score` selects an array value, `~1` encodes `/` in a key and `~0` encodes `~`. Optional `expected_sha256` binds the statement to a known artifact version. Zero default tolerances require exact numeric equality; justify any tolerance using the reporting/rounding convention, never to hide an unwanted discrepancy.
+
+Exit 0 means all located values match; exit 3 means at least one value/source check failed; exit 2 means the request itself is invalid. Inspect each status: `match`, `mismatch`, `missing_file`, `missing_locator`, `unparseable`, `non_numeric`, `version_mismatch`. Raw files are read only. The hash and parsed number come from the same byte snapshot.
+
+This command audits numerical transcription. It does not certify metrics, statistical estimates, data rights, independent samples, source authenticity, plots, PDF tables, or scientific conclusions. PDF/table/image extraction and citation-to-sentence context remain host review tasks. Keep these four audits distinct: implementation fidelity, execution provenance, numerical transcription, and claim/citation meaning.
+
+## 11. Changes invalidate reviews, not history (v1.1)
+
+Before reusing a prior claim, inspect `atlas.py status` and `audit.py --root <PROJECT> project`. `maintenance.pending_reviews` records which interpretation or downstream plan depends on changed premises. Follow explicit evidence IDs and dependency paths, reopen the affected source, and decide whether to keep, narrow, amend, park or refute the exact claim. Preserve the old run and old interpretation in history.
+
+`resolve-review` records a reviewer's declaration and explanation at an expected revision; it does not change hypothesis/claim status or certify the review. Make any substantive correction through `upsert` first, then resolve the current queue. New relevant evidence can flag it again. A reviewed parent does not automatically clear a dependent experiment or manuscript claim. Check [local-atlas.md](local-atlas.md) for the exact dependency conventions and limitations.

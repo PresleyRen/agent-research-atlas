@@ -1,3 +1,6 @@
+Scope: This MIT license covers the Atlas core. It excludes the Supervisor-derived
+workbenches and templates listed in THIRD_PARTY_NOTICES.md, which carry CC BY-NC-SA 4.0.
+
 MIT License
 
 Copyright (c) 2026 PresleyRen

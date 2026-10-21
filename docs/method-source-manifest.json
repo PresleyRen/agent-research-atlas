@@ -1,0 +1,2715 @@
+[
+  {
+    "id": "SRC-RESEARCHSTUDIO-IDEA-SPARK",
+    "name": "ResearchStudio idea-spark",
+    "url": "https://github.com/microsoft/ResearchStudio/blob/063f10088af49909e1a4a7ea8d29efe19633f34e/ResearchStudio-Idea/skills/idea_spark/SKILL.md",
+    "read_depth": "Full SKILL.md at the pinned revision; linked reference files, scripts, tests, and external papers were not fully audited or executed in this follow-up.",
+    "revision": "063f10088af49909e1a4a7ea8d29efe19633f34e",
+    "reviewed_at": "2026-10-20",
+    "repository": "microsoft/ResearchStudio",
+    "path": "ResearchStudio-Idea/skills/idea_spark/SKILL.md",
+    "snapshot_commit_date": "2026-09-21T17:18:54Z",
+    "source_evidence": {
+      "git_blob_sha": "63689fc66f53a471bd84f30d59faa7f54f7cc650",
+      "sha256": "faac4554739140da5acae879ac570cc31386a4282f671ba6d99a392d66f9f951",
+      "lines": 168,
+      "bytes": 11619
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Version-bound model work",
+      "Contribution selection and revision",
+      "Phase 4: source fidelity before explanatory prose",
+      "Completion, failure and cost bounds"
+    ],
+    "summary": "瓶颈到单一具体提案；朴素基线与组件依赖；版本绑定审查；区分 idea/experiment 深度并保留失败。",
+    "features": [
+      {
+        "label": "问题、机制、反证和资源统一成可实现提案",
+        "capabilities": [
+          "C07",
+          "C10",
+          "C11",
+          "C13"
+        ],
+        "status": "protocol",
+        "gap": "Atlas采用研究链，未调用IdeaSpark导航器。",
+        "remedy": "依methodology 5–9完成候选、方法卡与最小判别设计。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION",
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-IDEA-SPARK-F01"
+      },
+      {
+        "label": "保留原始用户意图，区分普通参数选择与未定义核心操作",
+        "capabilities": [
+          "C01",
+          "C12"
+        ],
+        "status": "protocol",
+        "gap": "需要宿主逐次检查锚点和技术定义，字段存在不保证忠实。",
+        "remedy": "修订时核对problem anchor及输入输出、核心操作。",
+        "complements": [
+          "SRC-ARIS-RESEARCH-REFINE"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-IDEA-SPARK-F02"
+      },
+      {
+        "label": "朴素基线、组件生产消费链与可计算缺陷核对",
+        "capabilities": [
+          "C12",
+          "C13",
+          "C16"
+        ],
+        "status": "protocol",
+        "gap": "没有通用公式执行、移除测试或成本计算器。",
+        "remedy": "仅对已检查的本地实现做授权的具体计算与负对照。",
+        "complements": [
+          "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS",
+          "SRC-ARIS-EXPERIMENT-AUDIT"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-IDEA-SPARK-F03"
+      },
+      {
+        "label": "核心改动使相关审查失效，生成和评审分离",
+        "capabilities": [
+          "C14",
+          "C19",
+          "C20"
+        ],
+        "status": "protocol",
+        "gap": "图谱修订检查不能替代每次模型请求、提示与输入指纹收据。",
+        "remedy": "审计台记录被审版本和真实reviewer；变化后复查相关结论。",
+        "complements": [
+          "SRC-ARIS-PAPER-CLAIM-AUDIT"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-IDEA-SPARK-F04"
+      },
+      {
+        "label": "idea/experiment审查深度与解释改写的来源忠实性",
+        "capabilities": [
+          "C12",
+          "C21",
+          "C24"
+        ],
+        "status": "protocol",
+        "gap": "不提供IdeaSpark中英卡片、LaTeX/PDF构建及逐阶段修复器。",
+        "remedy": "交付深度据任务确定；改写不得增添机制、保证或已运行含义。",
+        "complements": [
+          "SRC-ARIS-RESEARCH-REFINE"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-IDEA-SPARK-F05"
+      },
+      {
+        "label": "限定修订循环，保留needs-work与未通过产物",
+        "capabilities": [
+          "C14",
+          "C20"
+        ],
+        "status": "protocol",
+        "gap": "不复刻上游next/run-contract质量事务协议。",
+        "remedy": "按信息与预算设置停止条件，保存实际失败和重启理由。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION",
+          "SRC-ARIS-IDEA-DISCOVERY"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-IDEA-SPARK-F06"
+      },
+      {
+        "label": "历史模式词汇作为灵感",
+        "capabilities": [
+          "C07"
+        ],
+        "status": "reference",
+        "gap": "1947-paper语料和完整模式库没有移植或全面审查。",
+        "remedy": "需要模式案例时另读对应记录，不推断模式保证成功。",
+        "complements": [
+          "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-IDEA-SPARK-F07"
+      },
+      {
+        "label": "通用化“审查失败只有执行证据才可阻断”",
+        "capabilities": [
+          "C06",
+          "C19"
+        ],
+        "status": "rejected",
+        "gap": "文献、逻辑反例或不可满足假设也可能否定研究主张。",
+        "remedy": "要求可追溯证据而非只认可代码执行，按论点类型判断。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-IDEA-SPARK-F08"
+      }
+    ]
+  },
+  {
+    "id": "SRC-RESEARCHSTUDIO-PAPER-SEARCH",
+    "name": "ResearchStudio paper-search",
+    "url": "https://github.com/microsoft/ResearchStudio/blob/063f10088af49909e1a4a7ea8d29efe19633f34e/ResearchStudio-Idea/skills/paper_search/SKILL.md",
+    "read_depth": "Full SKILL.md at the pinned revision; linked reference files, scripts, tests, and external papers were not fully audited or executed in this follow-up.",
+    "revision": "063f10088af49909e1a4a7ea8d29efe19633f34e",
+    "reviewed_at": "2026-10-20",
+    "repository": "microsoft/ResearchStudio",
+    "path": "ResearchStudio-Idea/skills/paper_search/SKILL.md",
+    "snapshot_commit_date": "2026-09-21T17:18:54Z",
+    "source_evidence": {
+      "git_blob_sha": "e840090d3a87d08c7ea2a6772673fe4bf4bccb38",
+      "sha256": "9249f89d84d8d6ba86419898376841e19ed531885c91ff1b5290d7c92af07159",
+      "lines": 404,
+      "bytes": 17046
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Inputs",
+      "Output schema",
+      "Step 1.5: Relevance filter",
+      "Dependencies & failure modes",
+      "Model knowledge source"
+    ],
+    "summary": "多查询、多源合并；摘要语义筛选与原始结果保留；按来源报告错误；模型记忆单独标记。",
+    "features": [
+      {
+        "label": "六个学术来源并发查询及有界连接器重试",
+        "capabilities": [
+          "C03",
+          "C22"
+        ],
+        "status": "optional",
+        "gap": "本仓库没有随附六个网络客户端或认证。",
+        "remedy": "使用实际可用宿主来源，逐一记录执行、空集和失败。",
+        "complements": [
+          "SRC-ARIS-RESEARCH-LIT"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-PAPER-SEARCH-F01"
+      },
+      {
+        "label": "显式 DOI/arXiv 身份去重与多来源持久记录",
+        "capabilities": [
+          "C04"
+        ],
+        "status": "implemented",
+        "gap": "atlas对显式DOI/arXiv身份冲突拒绝写入；不自动实现上游标题合并和字段优先级。",
+        "remedy": "确认同篇身份后显式合并，保留版本差异及原来源。",
+        "complements": [
+          "SRC-KDENSE-LITERATURE-REVIEW"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-PAPER-SEARCH-F02"
+      },
+      {
+        "label": "以原始研究问题和实际摘要筛选，含糊时保留",
+        "capabilities": [
+          "C03",
+          "C05"
+        ],
+        "status": "protocol",
+        "gap": "语义相关性仍由宿主判断，尚无自动筛选准确率验证。",
+        "remedy": "留原始集合、排除理由和未读摘要候选。",
+        "complements": [
+          "SRC-ARIS-RESEARCH-LIT"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-PAPER-SEARCH-F03"
+      },
+      {
+        "label": "来源命中、去重、筛选和错误收据",
+        "capabilities": [
+          "C03",
+          "C24"
+        ],
+        "status": "protocol",
+        "gap": "查询计划不代表来源真正执行或覆盖完整。",
+        "remedy": "填写methodology 3的两张覆盖收据并核对ID。",
+        "complements": [
+          "SRC-KDENSE-LITERATURE-REVIEW"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-PAPER-SEARCH-F04"
+      },
+      {
+        "label": "模型回忆补充经典或跨领域线索",
+        "capabilities": [
+          "C04",
+          "C06"
+        ],
+        "status": "protocol",
+        "gap": "回忆没有外部身份核验前不能承载文献结论。",
+        "remedy": "放入待查线索，找到真实记录后再加入证据链。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-SCOOP-CHECK"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-PAPER-SEARCH-F05"
+      },
+      {
+        "label": "统一下沉综述、强制固定模型和固定报告位置",
+        "capabilities": [
+          "C01",
+          "C22",
+          "C24"
+        ],
+        "status": "rejected",
+        "gap": "这些默认与范围综述、宿主选择及项目持久化可能冲突。",
+        "remedy": "按研究阶段决定阅读顺序和输出深度，使用项目路径。",
+        "complements": [
+          "SRC-KDENSE-LITERATURE-REVIEW",
+          "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-PAPER-SEARCH-F06"
+      }
+    ]
+  },
+  {
+    "id": "SRC-RESEARCHSTUDIO-SCOOP-CHECK",
+    "name": "ResearchStudio scoop-check",
+    "url": "https://github.com/microsoft/ResearchStudio/blob/063f10088af49909e1a4a7ea8d29efe19633f34e/ResearchStudio-Idea/skills/scoop_check/SKILL.md",
+    "read_depth": "Full SKILL.md at the pinned revision; linked reference files, scripts, tests, and external papers were not fully audited or executed in this follow-up.",
+    "revision": "063f10088af49909e1a4a7ea8d29efe19633f34e",
+    "reviewed_at": "2026-10-20",
+    "repository": "microsoft/ResearchStudio",
+    "path": "ResearchStudio-Idea/skills/scoop_check/SKILL.md",
+    "snapshot_commit_date": "2026-09-21T17:18:54Z",
+    "source_evidence": {
+      "git_blob_sha": "f45532d96d539eeb3d22d651a11e1eb0bd1ab77f",
+      "sha256": "a6bc30399f1815028b7e5c454218df468a7443bf9a8eca63b84d66f6b8d1d80f",
+      "lines": 199,
+      "bytes": 20829
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Steps 1–5",
+      "Step 6: Compare Against the Proposed Novelty",
+      "Step 7: Articulate the Delta",
+      "Important Notes"
+    ],
+    "summary": "问题、机制、洞见、应用四轴查重；问题／领域／机制查询；深读最危险近邻；写可核实差异。",
+    "features": [
+      {
+        "label": "四轴拆解与三种互补查询",
+        "capabilities": [
+          "C09"
+        ],
+        "status": "protocol",
+        "gap": "四轴匹配需原文和研究判断。",
+        "remedy": "在methodology 7记录逐轴match/partial/differ及证据位置。",
+        "complements": [
+          "SRC-ARIS-NOVELTY-CHECK"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-SCOOP-CHECK-F01"
+      },
+      {
+        "label": "机制相近和摘要含糊的候选优先深读",
+        "capabilities": [
+          "C05",
+          "C09"
+        ],
+        "status": "protocol",
+        "gap": "无法取得正文的候选仍是未解决威胁。",
+        "remedy": "标访问深度，保留待查而不据摘要断言对方未做。",
+        "complements": [
+          "SRC-KDENSE-LITERATURE-REVIEW"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-SCOOP-CHECK-F02"
+      },
+      {
+        "label": "来源定位的delta及最近工作更新",
+        "capabilities": [
+          "C09",
+          "C18"
+        ],
+        "status": "protocol",
+        "gap": "预期收益不等于已测得改进。",
+        "remedy": "分开写已核实差异、假设与未来测量。",
+        "complements": [
+          "SRC-ARIS-RESULT-TO-CLAIM"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-SCOOP-CHECK-F03"
+      },
+      {
+        "label": "空搜索映射为最高新颖等级",
+        "capabilities": [
+          "C06",
+          "C09"
+        ],
+        "status": "rejected",
+        "gap": "空集、失败和未执行均不能认证创新。",
+        "remedy": "报告搜索边界、未解决重叠及下一检索；禁止凭空grounded。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION",
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-SCOOP-CHECK-F04"
+      },
+      {
+        "label": "固定候选数量和轴计数决定全局novelty",
+        "capabilities": [
+          "C08",
+          "C09"
+        ],
+        "status": "rejected",
+        "gap": "数量阈值与简单轴计数不具通用科学充分性。",
+        "remedy": "以最危险近邻、证据成熟度和实际预算决定深读范围。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-RESEARCHSTUDIO-SCOOP-CHECK-F05"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-IDEA-DISCOVERY",
+    "name": "ARIS idea-discovery",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/idea-discovery/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/idea-discovery/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "d28efd2427c7b7d6abd91ea678f14272301888176bdbb6ee4334cc990e0c8bd5",
+      "lines": 538,
+      "bytes": 28405
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Per-stage evidence gate",
+      "Phases 0, 2–5.6",
+      "Output hygiene"
+    ],
+    "summary": "把文献、候选、查新、批判、精炼、实验串联；阶段需要实际产物和评审身份；失败方向参与后续选择。",
+    "features": [
+      {
+        "label": "分阶段研究链和具体完成产物",
+        "capabilities": [
+          "C07",
+          "C09",
+          "C13",
+          "C23"
+        ],
+        "status": "protocol",
+        "gap": "未移植ARIS的全部阶段schema和驱动器。",
+        "remedy": "记录实际产物与未完成项，不以标题或done宣称完成。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-IDEA-SPARK"
+        ],
+        "id": "SRC-ARIS-IDEA-DISCOVERY-F01"
+      },
+      {
+        "label": "评审身份、trace和版本证据",
+        "capabilities": [
+          "C19",
+          "C24"
+        ],
+        "status": "protocol",
+        "gap": "独立评审取决于实际宿主；自审不是独立。",
+        "remedy": "明确reviewer、输入和输出，缺评审时保留缺口。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-IDEA-SPARK"
+        ],
+        "id": "SRC-ARIS-IDEA-DISCOVERY-F02"
+      },
+      {
+        "label": "已有研究契约与负面方向的持久记录",
+        "capabilities": [
+          "C02",
+          "C20"
+        ],
+        "status": "implemented",
+        "gap": "持久图保留状态与决策；没有原ARIS active-contract接口。",
+        "remedy": "续接先读失败、冲突、资源与当前问题锚点。",
+        "complements": [
+          "SRC-ARIS-RESEARCH-WIKI"
+        ],
+        "id": "SRC-ARIS-IDEA-DISCOVERY-F03"
+      },
+      {
+        "label": "默认novelty confirmed、GPU预算或清理原始pilot记录",
+        "capabilities": [
+          "C09",
+          "C11",
+          "C20"
+        ],
+        "status": "rejected",
+        "gap": "默认成功/资源/删除规则会损坏证据与授权边界。",
+        "remedy": "用有界查新、真实资源核实和原始失败保留替代。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-ARIS-IDEA-DISCOVERY-F04"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-EXPERIMENT-PLAN",
+    "name": "ARIS experiment-plan",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/experiment-plan/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/experiment-plan/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "c5b53692ff95b0b55e80702e33afc79d9fe8d4f55a69e2a39714013f97ac595e",
+      "lines": 249,
+      "bytes": 9728
+    },
+    "adoption": "adopted",
+    "source_sections": [
+      "Phases 1–4",
+      "Specify Each Experiment Block",
+      "Key Rules"
+    ],
+    "summary": "主论点与竞争解释导出最小证据；主结果、贡献隔离、简化和失败块对应指标、图表、依赖与预算。",
+    "features": [
+      {
+        "label": "主论点、替代解释与最小有说服力证据",
+        "capabilities": [
+          "C10",
+          "C13"
+        ],
+        "status": "protocol",
+        "gap": "科学充分性需具体领域判断。",
+        "remedy": "写竞争预测，避免只列能让方法赢的比较。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-ARIS-EXPERIMENT-PLAN-F01"
+      },
+      {
+        "label": "每个实验块的split/指标/失败解释/图表/依赖",
+        "capabilities": [
+          "C13",
+          "C18",
+          "C24"
+        ],
+        "status": "protocol",
+        "gap": "runner不自动生成或解释实验块。",
+        "remedy": "按methodology 9填写问题到图表矩阵。",
+        "complements": [
+          "SRC-ARIS-ABLATION-PLANNER"
+        ],
+        "id": "SRC-ARIS-EXPERIMENT-PLAN-F02"
+      },
+      {
+        "label": "最小计划、声明资源与预算的冻结记录",
+        "capabilities": [
+          "C11",
+          "C14",
+          "C15"
+        ],
+        "status": "implemented",
+        "gap": "冻结器检查计划结构与限额，不验证排序科学性。",
+        "remedy": "核实资源和实现，按实际信息需求安排依赖。",
+        "complements": [
+          "SRC-KDENSE-EXPERIMENTAL-DESIGN"
+        ],
+        "id": "SRC-ARIS-EXPERIMENT-PLAN-F03"
+      },
+      {
+        "label": "通用固定seed数量和运行上限",
+        "capabilities": [
+          "C13",
+          "C17"
+        ],
+        "status": "rejected",
+        "gap": "固定数字不能代替精度、功效或稳定性依据。",
+        "remedy": "据独立单位、估计误差与真实预算制定重复计划。",
+        "complements": [
+          "SRC-KDENSE-STATISTICAL-POWER"
+        ],
+        "id": "SRC-ARIS-EXPERIMENT-PLAN-F04"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-RESULT-TO-CLAIM",
+    "name": "ARIS result-to-claim",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/result-to-claim/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/result-to-claim/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "387612e7ee7bacccc47d9948e6bae67d18d33af4e9c920b8fd181dd5105fa2ea",
+      "lines": 324,
+      "bytes": 17806
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Step 1.5",
+      "Steps 2–5",
+      "Rules"
+    ],
+    "summary": "先核对数值证据，再判断支持／不支持／还缺什么；失败与部分支持分别通向复盘或缩窄论点。",
+    "features": [
+      {
+        "label": "数值与源文件/字段机械核对",
+        "capabilities": [
+          "C16"
+        ],
+        "status": "implemented",
+        "gap": "audit.py只比较显式JSON Pointer、容差与可选hash，不能自动找稿件中的数字。",
+        "remedy": "先做逐出现位置ledger，聚合和复杂算术另留实际计算。",
+        "complements": [
+          "SRC-ARIS-PAPER-CLAIM-AUDIT"
+        ],
+        "id": "SRC-ARIS-RESULT-TO-CLAIM-F01"
+      },
+      {
+        "label": "支持、不支持、欠缺证据分开评审",
+        "capabilities": [
+          "C18",
+          "C19"
+        ],
+        "status": "protocol",
+        "gap": "数值匹配和模型结论都不是科学认证。",
+        "remedy": "对照冻结预测、竞争解释和不确定性。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-ARIS-RESULT-TO-CLAIM-F02"
+      },
+      {
+        "label": "实验、论点与后续决策的显式链接和状态记录",
+        "capabilities": [
+          "C18",
+          "C20"
+        ],
+        "status": "implemented",
+        "gap": "链接存在不代表所引实验支持主张。",
+        "remedy": "读artifact后给review与状态理由，保留负面结果。",
+        "complements": [
+          "SRC-ARIS-RESEARCH-WIKI"
+        ],
+        "id": "SRC-ARIS-RESULT-TO-CLAIM-F03"
+      },
+      {
+        "label": "证据缺失、不可解析与故意造假分开",
+        "capabilities": [
+          "C06",
+          "C16"
+        ],
+        "status": "protocol",
+        "gap": "记录错误本身不足以推断意图。",
+        "remedy": "阻止肯定使用，先定位原因和最小修复。",
+        "complements": [
+          "SRC-ARIS-EXPERIMENT-AUDIT"
+        ],
+        "id": "SRC-ARIS-RESULT-TO-CLAIM-F04"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-RESEARCH-LIT",
+    "name": "ARIS research-lit",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/research-lit/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/research-lit/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "3800da1ad62b7d04f9e2b9e2868a3670bff1e47c0542d80b98a8fa9445ec7f79",
+      "lines": 784,
+      "bytes": 45319
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Source Selection",
+      "Step 1: D2 aggregate finalization",
+      "Steps 1.5, 1.6, 2, 6"
+    ],
+    "summary": "分别证明来源调用、候选身份、可读材料和提取覆盖；失败叶节点不能被综合过程丢失。",
+    "features": [
+      {
+        "label": "来源请求/调用/空集/失败/未运行分账",
+        "capabilities": [
+          "C03",
+          "C22"
+        ],
+        "status": "protocol",
+        "gap": "未打包其多服务选择器和D2执行器。",
+        "remedy": "用真实宿主调用填覆盖收据；零执行不能称完成检索。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-PAPER-SEARCH"
+        ],
+        "id": "SRC-ARIS-RESEARCH-LIT-F01"
+      },
+      {
+        "label": "候选身份核验，保留pending/unverified/error",
+        "capabilities": [
+          "C04",
+          "C06"
+        ],
+        "status": "protocol",
+        "gap": "DOI去重不自动证明身份或书目信息正确。",
+        "remedy": "核实官方记录，未核线索不得支撑grounded。",
+        "complements": [
+          "SRC-KDENSE-LITERATURE-REVIEW"
+        ],
+        "id": "SRC-ARIS-RESEARCH-LIT-F02"
+      },
+      {
+        "label": "冻结可读证据与分配/完成paper ID核对",
+        "capabilities": [
+          "C05",
+          "C24"
+        ],
+        "status": "protocol",
+        "gap": "尚无自动叶节点提取调度与覆盖收据校验器。",
+        "remedy": "保存原材料及读取深度，逐ID核对提取和缺失。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-ARIS-RESEARCH-LIT-F03"
+      },
+      {
+        "label": "显式 DOI/arXiv 标识去重并持久化",
+        "capabilities": [
+          "C04",
+          "C20"
+        ],
+        "status": "implemented",
+        "gap": "本地只强制显式标识去重，标题和同研究多报告需人工判别。",
+        "remedy": "保留study/report/version关系和来源，不双计底层证据。",
+        "complements": [
+          "SRC-KDENSE-LITERATURE-REVIEW"
+        ],
+        "id": "SRC-ARIS-RESEARCH-LIT-F04"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-IDEA-CREATOR",
+    "name": "ARIS idea-creator",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/idea-creator/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/idea-creator/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "9178ef49c0b48019d88c14213443ff0733fe58318a601c41dda3163da2840d5d",
+      "lines": 610,
+      "bytes": 35016
+    },
+    "adoption": "adopted",
+    "source_sections": [
+      "Phases 1.5, 3–5, 7"
+    ],
+    "summary": "跨视角生成后合并而不默删；区分客观可行与本轮未入选；pilot预先说明三种结果的信息价值。",
+    "features": [
+      {
+        "label": "迁移、矛盾、假设、尺度与诊断的多视角生成",
+        "capabilities": [
+          "C07",
+          "C10"
+        ],
+        "status": "protocol",
+        "gap": "视角不是可保证创新的算法。",
+        "remedy": "记录机制差异、所用视角和新增预测。",
+        "complements": [
+          "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS",
+          "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH"
+        ],
+        "id": "SRC-ARIS-IDEA-CREATOR-F01"
+      },
+      {
+        "label": "候选合并保留来源，未入选不等于refuted",
+        "capabilities": [
+          "C07",
+          "C20"
+        ],
+        "status": "protocol",
+        "gap": "没有原上游候选并集脚本。",
+        "remedy": "用稳定ID保留选择理由、异议和未来再评条件。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING"
+        ],
+        "id": "SRC-ARIS-IDEA-CREATOR-F02"
+      },
+      {
+        "label": "pilot前说明正、负、无结论的价值",
+        "capabilities": [
+          "C11",
+          "C13"
+        ],
+        "status": "protocol",
+        "gap": "合成通路成功不体现真实科学价值。",
+        "remedy": "优先解决会改变选择的假设，不只看收益正负。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-ARIS-IDEA-CREATOR-F03"
+      },
+      {
+        "label": "模型族评分、固定GPU和pilot默认作为门槛",
+        "capabilities": [
+          "C08",
+          "C11",
+          "C19"
+        ],
+        "status": "rejected",
+        "gap": "评分和固定资源不能替代独立证据与用户预算。",
+        "remedy": "公开理由和分歧；按实际可行性与信息增益选择。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-ARIS-IDEA-CREATOR-F04"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-NOVELTY-CHECK",
+    "name": "ARIS novelty-check",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/novelty-check/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/novelty-check/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "a3fed2c3fb050285d1ede36a2ee24922ccfb663bb0c3fe85df2f9f553f0266b2",
+      "lines": 155,
+      "bytes": 8332
+    },
+    "adoption": "adopted",
+    "source_sections": [
+      "Phases A–D",
+      "The verdict limits",
+      "Important Rules"
+    ],
+    "summary": "按技术主张查方法、设定、组合机制与发现；需要可核验近邻和明确剩余差异，不把拥挤领域自动判死。",
+    "features": [
+      {
+        "label": "逐技术主张、多种表述和四类重叠检索",
+        "capabilities": [
+          "C04",
+          "C09"
+        ],
+        "status": "protocol",
+        "gap": "无法保证检索穷尽。",
+        "remedy": "保存claim-by-query覆盖和仍可能重复的未读来源。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-SCOOP-CHECK"
+        ],
+        "id": "SRC-ARIS-NOVELTY-CHECK-F01"
+      },
+      {
+        "label": "重复结论绑定确切最近工作与未解决delta",
+        "capabilities": [
+          "C06",
+          "C09"
+        ],
+        "status": "protocol",
+        "gap": "仅发现同领域论文不足以认定完全重复。",
+        "remedy": "查正文与机制，分别标完全、部分与不确定重叠。",
+        "complements": [
+          "SRC-KDENSE-LITERATURE-REVIEW"
+        ],
+        "id": "SRC-ARIS-NOVELTY-CHECK-F02"
+      },
+      {
+        "label": "竞争/并发工作用于精炼贡献",
+        "capabilities": [
+          "C08",
+          "C09",
+          "C20"
+        ],
+        "status": "protocol",
+        "gap": "项目仍可能因价值或资源不足而停止。",
+        "remedy": "记录范围内的贡献差异及继续/修改/停止理由。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-ARIS-NOVELTY-CHECK-F03"
+      },
+      {
+        "label": "数值新颖评分或无边界novelty确认",
+        "capabilities": [
+          "C06",
+          "C09"
+        ],
+        "status": "rejected",
+        "gap": "模型评分不等于真实性或全球查全。",
+        "remedy": "以范围、日期、原文定位和未知项表述判断。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-ARIS-NOVELTY-CHECK-F04"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-RESEARCH-REFINE",
+    "name": "ARIS research-refine",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/research-refine/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/research-refine/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "c58649772c1cca2fc3e9d32622be279b42491991ab96301b30acb3722b45af6b",
+      "lines": 785,
+      "bytes": 34664
+    },
+    "adoption": "adopted",
+    "source_sections": [
+      "Phase 0",
+      "Steps 1.2–1.5 and 3.2",
+      "State Persistence"
+    ],
+    "summary": "问题锚点防漂移；输入输出、表示、loss、训练与推理流落实方法；记录审稿建议取舍和简洁性复核。",
+    "features": [
+      {
+        "label": "problem anchor与每轮scope/简洁性检查",
+        "capabilities": [
+          "C01",
+          "C12",
+          "C19"
+        ],
+        "status": "protocol",
+        "gap": "锚点语义漂移尚无自动检测器。",
+        "remedy": "对照瓶颈、非目标、资源和成功条件逐次说明变化。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-ARIS-RESEARCH-REFINE-F01"
+      },
+      {
+        "label": "可实现方法卡：接口/表示/学习信号/训练/推理",
+        "capabilities": [
+          "C10",
+          "C12",
+          "C13"
+        ],
+        "status": "protocol",
+        "gap": "详细字段仍需与代码真实核对。",
+        "remedy": "在methodology 6填写，未训练或不适用则解释。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-IDEA-SPARK",
+          "SRC-ARIS-EXPERIMENT-BRIDGE"
+        ],
+        "id": "SRC-ARIS-RESEARCH-REFINE-F02"
+      },
+      {
+        "label": "最小路线与有必要的现代替代对照",
+        "capabilities": [
+          "C12",
+          "C13"
+        ],
+        "status": "protocol",
+        "gap": "使用新组件不自动带来贡献。",
+        "remedy": "说明每个部件新增能力和最简单反例/基线。",
+        "complements": [
+          "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS"
+        ],
+        "id": "SRC-ARIS-RESEARCH-REFINE-F03"
+      },
+      {
+        "label": "保留修订、回复和有证据的建议拒绝",
+        "capabilities": [
+          "C14",
+          "C19",
+          "C20"
+        ],
+        "status": "protocol",
+        "gap": "不复刻上游分阶段恢复文件和固定评分循环。",
+        "remedy": "限定信息与预算，保留旧稿与审查而不删除历史。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-IDEA-SPARK"
+        ],
+        "id": "SRC-ARIS-RESEARCH-REFINE-F04"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-EXPERIMENT-BRIDGE",
+    "name": "ARIS experiment-bridge",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/experiment-bridge/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/experiment-bridge/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "a32f8eb12e015d6aa2b93c3183343ea435612bfc5b06474cbf8ddebe8273c65c",
+      "lines": 389,
+      "bytes": 19701
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Phases 1, 2.5, 3–5.6",
+      "Key Rules"
+    ],
+    "summary": "计划交给可配置实现和可解析结果；部署前审方法、代码、数据、metric和标签；限定修复与大任务交接。",
+    "features": [
+      {
+        "label": "方法→计划→代码→metric/GT忠实度检查",
+        "capabilities": [
+          "C12",
+          "C16",
+          "C24"
+        ],
+        "status": "protocol",
+        "gap": "runner不验证算法或标签来源是否正确。",
+        "remedy": "先完成methodology 9/11逐位置检查，再实质执行。",
+        "complements": [
+          "SRC-ARIS-EXPERIMENT-AUDIT"
+        ],
+        "id": "SRC-ARIS-EXPERIMENT-BRIDGE-F01"
+      },
+      {
+        "label": "授权sanity后有界执行，保留失败",
+        "capabilities": [
+          "C11",
+          "C15",
+          "C16"
+        ],
+        "status": "implemented",
+        "gap": "仅本地记录runner，不是集群编排或OS沙箱。",
+        "remedy": "检查实际argv、目录和影响，遵守冻结预算。",
+        "complements": [
+          "SRC-ARIS-RUN-EXPERIMENT"
+        ],
+        "id": "SRC-ARIS-EXPERIMENT-BRIDGE-F02"
+      },
+      {
+        "label": "配置化里程碑与依赖大作业队列",
+        "capabilities": [
+          "C15",
+          "C24"
+        ],
+        "status": "deferred",
+        "gap": "没有远端job grid或自动部署队列。",
+        "remedy": "需要时接项目已有调度器并记录真实job标识。",
+        "complements": [
+          "SRC-ARIS-RUN-EXPERIMENT"
+        ],
+        "id": "SRC-ARIS-EXPERIMENT-BRIDGE-F03"
+      },
+      {
+        "label": "缺评审时跳过、自动装包/云启动或改冻结协议",
+        "capabilities": [
+          "C14",
+          "C19",
+          "C22"
+        ],
+        "status": "rejected",
+        "gap": "这些行为不能由源文档替用户授权。",
+        "remedy": "缺口显式保留；新方案用新实验ID，不改旧结果历史。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-IDEA-SPARK"
+        ],
+        "id": "SRC-ARIS-EXPERIMENT-BRIDGE-F04"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-RUN-EXPERIMENT",
+    "name": "ARIS run-experiment",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/run-experiment/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/run-experiment/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "4d481ce95d8bcadb93b095c3dd9bda51d68b6edea6b710316d6c0c74bb5bcfa8",
+      "lines": 313,
+      "bytes": 12848
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Steps 1–7",
+      "Key Rules"
+    ],
+    "summary": "实际环境与GPU检查、部署和遥测、结果回收及复现记录；上游远程/云执行不等于本地默认权限。",
+    "features": [
+      {
+        "label": "本地运行及实际执行环境记录",
+        "capabilities": [
+          "C15",
+          "C16",
+          "C24"
+        ],
+        "status": "implemented",
+        "gap": "argv/log/input hash不能覆盖未声明依赖或环境快照。",
+        "remedy": "明确输入文件、版本、真实解释器和未覆盖依赖。",
+        "complements": [
+          "SRC-KDENSE-EXPERIMENTAL-DESIGN"
+        ],
+        "id": "SRC-ARIS-RUN-EXPERIMENT-F01"
+      },
+      {
+        "label": "Local/SSH/Vast.ai/Modal环境和遥测适配",
+        "capabilities": [
+          "C22",
+          "C24"
+        ],
+        "status": "optional",
+        "gap": "远端和W&B客户端未捆绑或接入。",
+        "remedy": "按项目已授权能力检查真实环境再选工具。",
+        "complements": [
+          "SRC-ARIS-EXPERIMENT-BRIDGE"
+        ],
+        "id": "SRC-ARIS-RUN-EXPERIMENT-F02"
+      },
+      {
+        "label": "大作业同步、自动租赁与资源清理",
+        "capabilities": [
+          "C15",
+          "C22"
+        ],
+        "status": "deferred",
+        "gap": "没有云采购、账单/实例生命周期管理。",
+        "remedy": "先给具体可审查任务与预算；用已有授权外部系统。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-ARIS-RUN-EXPERIMENT-F03"
+      },
+      {
+        "label": "配置即可授权推送、通知、付费和删除资源",
+        "capabilities": [
+          "C15",
+          "C22"
+        ],
+        "status": "rejected",
+        "gap": "配置和上游工作流不构成用户授权。",
+        "remedy": "按既有任务范围推进，新增外部副作用须有授权。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING"
+        ],
+        "id": "SRC-ARIS-RUN-EXPERIMENT-F04"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-EXPERIMENT-AUDIT",
+    "name": "ARIS experiment-audit",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/experiment-audit/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/experiment-audit/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "6a8b6817a30e1bef03ad2bd679155ce39c2b0977bca38874485f7f5c1fd2567c",
+      "lines": 322,
+      "bytes": 13750
+    },
+    "adoption": "adopted",
+    "source_sections": [
+      "Steps 1–3",
+      "Checklist A–F",
+      "Integration",
+      "Key Rules"
+    ],
+    "summary": "原始评测代码和结果独立审查；GT、预测归一化、metric实际调用、数值及范围逐项对照。",
+    "features": [
+      {
+        "label": "独立阅读代码/配置/原始结果，不依作者好评摘要",
+        "capabilities": [
+          "C16",
+          "C19"
+        ],
+        "status": "protocol",
+        "gap": "宿主若没有独立agent只可标自审。",
+        "remedy": "列被审输入与真实reviewer，保留不能读取的部分。",
+        "complements": [
+          "SRC-ARIS-PAPER-CLAIM-AUDIT"
+        ],
+        "id": "SRC-ARIS-EXPERIMENT-AUDIT-F01"
+      },
+      {
+        "label": "GT/代理标签、预测派生归一化与metric调用链",
+        "capabilities": [
+          "C06",
+          "C16"
+        ],
+        "status": "protocol",
+        "gap": "没有静态分析器保证识别所有代码造假或评价缺陷。",
+        "remedy": "给代码位置与数据来源，必要时授权诊断实际调用。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-ARIS-EXPERIMENT-AUDIT-F02"
+      },
+      {
+        "label": "结果字段、数值、范围与evaluation type核对",
+        "capabilities": [
+          "C16",
+          "C18"
+        ],
+        "status": "protocol",
+        "gap": "JSON数值一致仅覆盖其中一项。",
+        "remedy": "把数值报告接回数据与代码，明确真实/代理/合成评价。",
+        "complements": [
+          "SRC-ARIS-RESULT-TO-CLAIM"
+        ],
+        "id": "SRC-ARIS-EXPERIMENT-AUDIT-F03"
+      },
+      {
+        "label": "FAIL后仍自动推动肯定论点",
+        "capabilities": [
+          "C06",
+          "C18",
+          "C20"
+        ],
+        "status": "rejected",
+        "gap": "可继续研究不代表缺陷证据能升级支持。",
+        "remedy": "受影响claim停升或缩窄，修复后按新版本复查。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-ARIS-EXPERIMENT-AUDIT-F04"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-ABLATION-PLANNER",
+    "name": "ARIS ablation-planner",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/ablation-planner/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/ablation-planner/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "ce51bfff265e5f0a6e8fd03333bfa8dee679e728e0d325830988ca5bd31307da",
+      "lines": 123,
+      "bytes": 5137
+    },
+    "adoption": "adopted",
+    "source_sections": [
+      "Steps 2–5",
+      "Rules"
+    ],
+    "summary": "组件删除/替换、参数敏感性和设计替代分开；每项绑定问题、预期、成本及信息优先级。",
+    "features": [
+      {
+        "label": "三类消融和每项的研究问题/预测",
+        "capabilities": [
+          "C13",
+          "C18"
+        ],
+        "status": "protocol",
+        "gap": "列一串去模块实验不足以说明机制。",
+        "remedy": "写机制与竞争预测，记录信息/计算/优化的同步变化。",
+        "complements": [
+          "SRC-KDENSE-EXPERIMENTAL-DESIGN"
+        ],
+        "id": "SRC-ARIS-ABLATION-PLANNER-F01"
+      },
+      {
+        "label": "依信息、成本、依赖排序，省掉不回答问题的实验",
+        "capabilities": [
+          "C11",
+          "C13"
+        ],
+        "status": "protocol",
+        "gap": "优先级仍由实际问题与预算决定。",
+        "remedy": "维护实验块依赖表，先做能改变决策的检查。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-ARIS-ABLATION-PLANNER-F02"
+      },
+      {
+        "label": "无贡献组件、负结果和诊断性消融保留",
+        "capabilities": [
+          "C06",
+          "C20"
+        ],
+        "status": "protocol",
+        "gap": "主结果为负也可能需要诊断，不以胜负决定保留。",
+        "remedy": "记录无效组件及简化方案，避免挑选正面消融。",
+        "complements": [
+          "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS"
+        ],
+        "id": "SRC-ARIS-ABLATION-PLANNER-F03"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-PAPER-CLAIM-AUDIT",
+    "name": "ARIS paper-claim-audit",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/paper-claim-audit/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/paper-claim-audit/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "3cf3ecdf14899aa011c7f5baf5efcba7a67e940a65e7938170426f4af2b032ea",
+      "lines": 361,
+      "bytes": 15356
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Core Principle",
+      "Steps 1–3",
+      "Submission Artifact Emission"
+    ],
+    "summary": "按稿件出现位置审数字、图注和范围；核对舍入、聚合、seed数、配置与相对提升，并绑定审查输入。",
+    "features": [
+      {
+        "label": "每处数字/比较/caption/范围的审计清单",
+        "capabilities": [
+          "C16",
+          "C21"
+        ],
+        "status": "protocol",
+        "gap": "没有通用LaTeX/Markdown数值与图注自动提取器。",
+        "remedy": "人工/宿主逐出现位置建ledger，再机械核对可结构化项。",
+        "complements": [
+          "SRC-ARIS-RESULT-TO-CLAIM"
+        ],
+        "id": "SRC-ARIS-PAPER-CLAIM-AUDIT-F01"
+      },
+      {
+        "label": "按声明字段与容差核对源值和显示值",
+        "capabilities": [
+          "C16",
+          "C17",
+          "C18"
+        ],
+        "status": "implemented",
+        "gap": "audit.py只检查指定JSON值/容差/hash；均值、分母、配置和百分比运算另审。",
+        "remedy": "留实际聚合代码和run集合，禁止best冒充mean。",
+        "complements": [
+          "SRC-KDENSE-STATISTICAL-POWER"
+        ],
+        "id": "SRC-ARIS-PAPER-CLAIM-AUDIT-F02"
+      },
+      {
+        "label": "新上下文看原始证据，审计绑定稿件与输入版本",
+        "capabilities": [
+          "C14",
+          "C19",
+          "C21"
+        ],
+        "status": "protocol",
+        "gap": "图谱pending不自动覆盖所有外部文件变化。",
+        "remedy": "保存审计输入清单；稿件/结果变更后复查相关出现位置。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-IDEA-SPARK"
+        ],
+        "id": "SRC-ARIS-PAPER-CLAIM-AUDIT-F03"
+      },
+      {
+        "label": "区分缺失、歧义、映射错误和实质不符",
+        "capabilities": [
+          "C06",
+          "C18"
+        ],
+        "status": "protocol",
+        "gap": "格式错误不能直接归因为不诚信。",
+        "remedy": "明确严重性、受影响主张与可验证的修复。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-ARIS-PAPER-CLAIM-AUDIT-F04"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-CITATION-AUDIT",
+    "name": "ARIS citation-audit",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/citation-audit/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/citation-audit/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "8b6264f06c8b5d5889651bd059301bb4e8e5efd29565d8dd1740e3d5e21c6159",
+      "lines": 515,
+      "bytes": 32168
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Steps 2–4",
+      "Soft-Only Mode",
+      "Submission Artifact Emission"
+    ],
+    "summary": "每个引用出现位置分别核实存在、元数据和句子支撑；冻结参考文献限制下仍保留发现和修正建议。",
+    "features": [
+      {
+        "label": "引用存在/元数据/上下文三轴",
+        "capabilities": [
+          "C04",
+          "C21"
+        ],
+        "status": "protocol",
+        "gap": "DOI验证和paper节点不能自动证明语义支持。",
+        "remedy": "逐句读取所引来源并记录精确位置及支持程度。",
+        "complements": [
+          "SRC-KDENSE-LITERATURE-REVIEW",
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-ARIS-CITATION-AUDIT-F01"
+      },
+      {
+        "label": "引用键与每次出现的文件/句子证据",
+        "capabilities": [
+          "C05",
+          "C21"
+        ],
+        "status": "protocol",
+        "gap": "未捆绑自动BibTeX/LaTeX occurrence解析。",
+        "remedy": "宿主提取出现位置，保留未核验与正文不可得情况。",
+        "complements": [
+          "SRC-ARIS-PAPER-CLAIM-AUDIT"
+        ],
+        "id": "SRC-ARIS-CITATION-AUDIT-F02"
+      },
+      {
+        "label": "元数据修复、上下文改写、移除/替换分开",
+        "capabilities": [
+          "C18",
+          "C21"
+        ],
+        "status": "protocol",
+        "gap": "改写不能凭空制造源文献支持。",
+        "remedy": "按用户已有编辑授权修正，无法支持则缩窄或删去该主张。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-ARIS-CITATION-AUDIT-F03"
+      },
+      {
+        "label": "冻结书目下的soft-only建议与未引用条目清理",
+        "capabilities": [
+          "C21",
+          "C24"
+        ],
+        "status": "optional",
+        "gap": "是否修改书目由当前任务范围决定。",
+        "remedy": "把来源完整性和可选清理分别报告，保留约束。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-ARIS-CITATION-AUDIT-F04"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ARIS-RESEARCH-WIKI",
+    "name": "ARIS research-wiki",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3/skills/research-wiki/SKILL.md",
+    "read_depth": "Full canonical SKILL.md, read by the collaborating ARIS methodology reviewer; linked protocols/templates/helpers and host-specific variants were not reviewed or executed.",
+    "revision": "43a5daf6f8a2db7b87b48cb51d45c6ddb3c9a6d3",
+    "reviewed_at": "2026-10-20",
+    "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "path": "skills/research-wiki/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T06:20:47Z",
+    "source_evidence": {
+      "sha256": "3bd314f83f2db97fcfafb74495f1ca23bebad37a69d355bc61aaea8cbb519552",
+      "lines": 461,
+      "bytes": 20511
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Core Concepts",
+      "query",
+      "lint",
+      "Hooks 1–4",
+      "Re-ideation Trigger"
+    ],
+    "summary": "持久实体和关系、生成视图、负面优先检索包、矛盾提醒与回补；新证据触发重评。",
+    "features": [
+      {
+        "label": "单一真源、稳定实体、关系、历史与旧资料续接",
+        "capabilities": [
+          "C02",
+          "C20"
+        ],
+        "status": "implemented",
+        "gap": "Atlas使用自身schema，不直接加载ARIS graph协议。",
+        "remedy": "保留原图并显式语义转换，不盲目合并或覆盖。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-IDEA-SPARK"
+        ],
+        "id": "SRC-ARIS-RESEARCH-WIKI-F01"
+      },
+      {
+        "label": "失败/冲突/未测试想法优先的压缩query_pack",
+        "capabilities": [
+          "C20",
+          "C24"
+        ],
+        "status": "deferred",
+        "gap": "当前有读取顺序协议，尚无同等自动压缩查询包。",
+        "remedy": "续接先读当前失败链；需自动压缩时另写有覆盖收据的导出器。",
+        "complements": [
+          "SRC-ARIS-IDEA-CREATOR"
+        ],
+        "id": "SRC-ARIS-RESEARCH-WIKI-F02"
+      },
+      {
+        "label": "结构诊断与显式依赖变更的待复核记录",
+        "capabilities": [
+          "C02",
+          "C20",
+          "C23"
+        ],
+        "status": "implemented",
+        "gap": "诊断只覆盖显式状态和依赖，不能理解任意语义矛盾。",
+        "remedy": "运行适用检查后实际阅读差异，保留仍待复核事项。",
+        "complements": [
+          "SRC-ARIS-RESEARCH-LIT"
+        ],
+        "id": "SRC-ARIS-RESEARCH-WIKI-F03"
+      },
+      {
+        "label": "将证明专用claim状态移植为经验真假轴",
+        "capabilities": [
+          "C10",
+          "C18"
+        ],
+        "status": "rejected",
+        "gap": "形式证明与经验支持是不同对象。",
+        "remedy": "保留Atlas经验状态，理论命题另记假设、证明和反例。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-ARIS-RESEARCH-WIKI-F04"
+      }
+    ]
+  },
+  {
+    "id": "SRC-KDENSE-LITERATURE-REVIEW",
+    "name": "K-Dense literature-review",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/literature-review/SKILL.md",
+    "read_depth": "Full SKILL.md at the pinned revision; linked reference files, scripts, tests, and external papers were not fully audited or executed in this follow-up.",
+    "revision": "593377bb048752abb0152deab9fbb1083a6087df",
+    "reviewed_at": "2026-10-20",
+    "repository": "K-Dense-AI/scientific-agent-skills",
+    "path": "skills/literature-review/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T09:33:56Z",
+    "source_evidence": {
+      "git_blob_sha": "5178dce6419cee412155e7b9dd523d5b2ef703f5",
+      "sha256": "16a9e85bcdcb9bb859e1646bf836e51b22900445ba2e367d8d75be05b5a5cba8",
+      "lines": 229,
+      "bytes": 12869
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Core Workflow",
+      "Records, Reports, and Studies",
+      "Screening and Selection",
+      "Verification scope"
+    ],
+    "summary": "规划、检索、筛选、提取、综合、引证和输出七阶段；区分records/reports/studies；范围与系统综述分开。",
+    "features": [
+      {
+        "label": "有边界且可复跑的检索、筛选和主题综合",
+        "capabilities": [
+          "C01",
+          "C03",
+          "C05"
+        ],
+        "status": "protocol",
+        "gap": "宿主完成程度取决于实际来源与读取；不是自动系统综述。",
+        "remedy": "写清资格规则、查询、筛选原因、证据与遗漏。",
+        "complements": [
+          "SRC-ARIS-RESEARCH-LIT"
+        ],
+        "id": "SRC-KDENSE-LITERATURE-REVIEW-F01"
+      },
+      {
+        "label": "records/reports/studies及重叠样本分离",
+        "capabilities": [
+          "C04",
+          "C06"
+        ],
+        "status": "protocol",
+        "gap": "仅DOI/title去重不能识别所有共享底层研究。",
+        "remedy": "补study/report/data关联并检查是否重复计证据。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-KDENSE-LITERATURE-REVIEW-F02"
+      },
+      {
+        "label": "系统综述的资格复核与PRISMA计数",
+        "capabilities": [
+          "C05",
+          "C06",
+          "C24"
+        ],
+        "status": "optional",
+        "gap": "未提供PRISMA计数器、双人筛选平台或meta-analysis引擎。",
+        "remedy": "仅在任务确为系统综述时使用适用工具及真实计数。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-KDENSE-LITERATURE-REVIEW-F03"
+      },
+      {
+        "label": "DOI身份核对加实际source-to-claim验证",
+        "capabilities": [
+          "C04",
+          "C21"
+        ],
+        "status": "protocol",
+        "gap": "注册的DOI可能对应错文献或不支持论点。",
+        "remedy": "检查身份、更正/撤稿状态和相邻引用句。",
+        "complements": [
+          "SRC-ARIS-CITATION-AUDIT"
+        ],
+        "id": "SRC-KDENSE-LITERATURE-REVIEW-F04"
+      },
+      {
+        "label": "自动PDF/付费示意图生成与强制加入作者自引",
+        "capabilities": [
+          "C21",
+          "C22"
+        ],
+        "status": "rejected",
+        "gap": "格式生成和自引不决定研究质量，也不能扩大外发授权。",
+        "remedy": "按实际任务选展示工具，归因依真实使用与许可，不自动添加推广引用。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-KDENSE-LITERATURE-REVIEW-F05"
+      }
+    ]
+  },
+  {
+    "id": "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING",
+    "name": "K-Dense scientific-brainstorming",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-brainstorming/SKILL.md",
+    "read_depth": "Full SKILL.md at the pinned revision; linked reference files, scripts, tests, and external papers were not fully audited or executed in this follow-up.",
+    "revision": "593377bb048752abb0152deab9fbb1083a6087df",
+    "reviewed_at": "2026-10-20",
+    "repository": "K-Dense-AI/scientific-agent-skills",
+    "path": "skills/scientific-brainstorming/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T09:33:56Z",
+    "source_evidence": {
+      "git_blob_sha": "487a1a0e31c6bf270b3e80818798bab9b4ebc0b9",
+      "sha256": "06f73b71556356a7f488c369b9445d7943543a3f14d159b2168fd3f621d6f8a9",
+      "lines": 304,
+      "bytes": 14658
+    },
+    "adoption": "adopted",
+    "source_sections": [
+      "Operating rules",
+      "Reproducible workflow 1–10",
+      "Bias and failure controls",
+      "Optional local CLIs"
+    ],
+    "summary": "先独立后讨论、结构聚类、透明准则与异议、对抗审查、查证后再发散；评分不自动选赢家。",
+    "features": [
+      {
+        "label": "独立生成→讨论→查证→重开生成",
+        "capabilities": [
+          "C07",
+          "C19"
+        ],
+        "status": "protocol",
+        "gap": "不能在同一上下文假装真实多方独立。",
+        "remedy": "先保留原始候选；实际独立不可得时披露自审。",
+        "complements": [
+          "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS"
+        ],
+        "id": "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING-F01"
+      },
+      {
+        "label": "来源、阶段、机制聚类及合并/拆分留痕",
+        "capabilities": [
+          "C07",
+          "C20"
+        ],
+        "status": "protocol",
+        "gap": "Atlas不自动判断两个候选语义相同。",
+        "remedy": "稳定ID保留不同假设、预测和贡献来源。",
+        "complements": [
+          "SRC-ARIS-IDEA-CREATOR"
+        ],
+        "id": "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING-F02"
+      },
+      {
+        "label": "预先定义准则、权重、范围、异议与敏感性",
+        "capabilities": [
+          "C08",
+          "C11"
+        ],
+        "status": "protocol",
+        "gap": "未移植weighted matrix脚本，评分不能估计科学真值。",
+        "remedy": "用透明理由和不确定性辅助选择，不自动选winner。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING-F03"
+      },
+      {
+        "label": "反证审查与零结果价值，既见数据不伪装前瞻",
+        "capabilities": [
+          "C06",
+          "C10",
+          "C14"
+        ],
+        "status": "protocol",
+        "gap": "本地冻结不能证明从未看过数据。",
+        "remedy": "记录已见范围和新的holdout/复验。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING-F04"
+      },
+      {
+        "label": "参与者偏差控制与领域适用审查",
+        "capabilities": [
+          "C06",
+          "C19",
+          "C22"
+        ],
+        "status": "optional",
+        "gap": "人类分组、匿名渠道或专门领域审查取决于实际项目。",
+        "remedy": "按问题安排缺失视角，不把生物领域流程无条件套到所有Agent研究。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING-F05"
+      },
+      {
+        "label": "自动作者自引作为所有研究输出义务",
+        "capabilities": [
+          "C21"
+        ],
+        "status": "rejected",
+        "gap": "本仓库未把推广性指令变成用户稿件规则。",
+        "remedy": "只在实际贡献和引用目的清楚时归因。",
+        "complements": [
+          "SRC-ARIS-CITATION-AUDIT"
+        ],
+        "id": "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING-F06"
+      }
+    ]
+  },
+  {
+    "id": "SRC-KDENSE-HYPOTHESIS-GENERATION",
+    "name": "K-Dense hypothesis-generation",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/hypothesis-generation/SKILL.md",
+    "read_depth": "Full SKILL.md at the pinned revision; linked reference files, scripts, tests, and external papers were not fully audited or executed in this follow-up.",
+    "revision": "593377bb048752abb0152deab9fbb1083a6087df",
+    "reviewed_at": "2026-10-20",
+    "repository": "K-Dense-AI/scientific-agent-skills",
+    "path": "skills/hypothesis-generation/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T09:33:56Z",
+    "source_evidence": {
+      "git_blob_sha": "cac00e1e0980402f14722af084e9305fdf965a57",
+      "sha256": "5bccec0437d96d61821ec2095e7e32b61e8634cd8c02f11f42da953121e92719",
+      "lines": 290,
+      "bytes": 16622
+    },
+    "adoption": "adopted",
+    "source_sections": [
+      "Keep the objects distinct",
+      "Workflow 2–11",
+      "Local tool index"
+    ],
+    "summary": "冻结观察；分问题、假设、机制、估计目标、预测和证据；先列竞争解释；操作化测量、前瞻与复验分开。",
+    "features": [
+      {
+        "label": "观察/问题/机制/预测/证据及claim type分开",
+        "capabilities": [
+          "C10",
+          "C18"
+        ],
+        "status": "protocol",
+        "gap": "写入对象不能证实来源或因果识别。",
+        "remedy": "按methodology 6明确描述、关联、预测、因果或机制目标。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-KDENSE-HYPOTHESIS-GENERATION-F01"
+      },
+      {
+        "label": "有日期的证据边界与真正不同的rivals",
+        "capabilities": [
+          "C03",
+          "C06",
+          "C10"
+        ],
+        "status": "protocol",
+        "gap": "不能强造固定数量或将剩余假设当必真。",
+        "remedy": "查偏差、混杂、选择、测量和竞争过程，写判别预测。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-SCOOP-CHECK"
+        ],
+        "id": "SRC-KDENSE-HYPOTHESIS-GENERATION-F02"
+      },
+      {
+        "label": "可观测构念、校准/可靠性及有效负对照",
+        "capabilities": [
+          "C10",
+          "C13"
+        ],
+        "status": "protocol",
+        "gap": "本地schema无通用操作化和负对照有效性证明。",
+        "remedy": "记录变量定义、测量限制和对照不经过目标机制的理由。",
+        "complements": [
+          "SRC-ARIS-EXPERIMENT-AUDIT"
+        ],
+        "id": "SRC-KDENSE-HYPOTHESIS-GENERATION-F03"
+      },
+      {
+        "label": "设计匹配estimand、依赖、多重性和未知效应",
+        "capabilities": [
+          "C12",
+          "C13",
+          "C17"
+        ],
+        "status": "protocol",
+        "gap": "无通用因果推断或统计分析引擎。",
+        "remedy": "必要时转实际领域/统计工具并保留识别假设。",
+        "complements": [
+          "SRC-KDENSE-EXPERIMENTAL-DESIGN",
+          "SRC-KDENSE-STATISTICAL-POWER"
+        ],
+        "id": "SRC-KDENSE-HYPOTHESIS-GENERATION-F04"
+      },
+      {
+        "label": "防HARKing、偏离留痕和独立复验",
+        "capabilities": [
+          "C14",
+          "C19",
+          "C20",
+          "C24"
+        ],
+        "status": "protocol",
+        "gap": "本地时间戳不证明数据未见；重跑不是新研究复验。",
+        "remedy": "标已见数据与exploratory，说明独立来源及共享依赖。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-KDENSE-HYPOTHESIS-GENERATION-F05"
+      },
+      {
+        "label": "自动作者自引和统一外部领域门槛",
+        "capabilities": [
+          "C21",
+          "C22"
+        ],
+        "status": "rejected",
+        "gap": "不相关领域门槛和推广引文不能代替当前任务契约。",
+        "remedy": "按实际风险与用户授权采用适用要求，引用依具体作用。",
+        "complements": [
+          "SRC-ARIS-CITATION-AUDIT"
+        ],
+        "id": "SRC-KDENSE-HYPOTHESIS-GENERATION-F06"
+      }
+    ]
+  },
+  {
+    "id": "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING",
+    "name": "K-Dense scientific-critical-thinking",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-critical-thinking/SKILL.md",
+    "read_depth": "Full SKILL.md at the pinned revision; linked reference files, scripts, tests, and external papers were not fully audited or executed in this follow-up.",
+    "revision": "593377bb048752abb0152deab9fbb1083a6087df",
+    "reviewed_at": "2026-10-20",
+    "repository": "K-Dense-AI/scientific-agent-skills",
+    "path": "skills/scientific-critical-thinking/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T09:33:56Z",
+    "source_evidence": {
+      "git_blob_sha": "2a2fc151b5b13e4e11ece7410f21a14d5b25e30d",
+      "sha256": "563af70571b7dcd6a96bf2e303bedfdcba623b4e9f082d58f04aacbc961fdae4",
+      "lines": 235,
+      "bytes": 13146
+    },
+    "adoption": "adopted",
+    "source_sections": [
+      "Appraisal Workflow",
+      "Core Capabilities",
+      "Apply risk-of-bias tools to the right unit",
+      "When Providing Critique"
+    ],
+    "summary": "先抽取再评判；方法、偏差、统计、逻辑和主张分层；完整性、偏倚风险、证据确定性不混为分数。",
+    "features": [
+      {
+        "label": "固定问题/独立单位，提取真实数值与缺失",
+        "capabilities": [
+          "C05",
+          "C06",
+          "C16"
+        ],
+        "status": "protocol",
+        "gap": "未报告不等于确定未执行，模型判断不能补缺失。",
+        "remedy": "给精确源位置并说明不确定后果。",
+        "complements": [
+          "SRC-ARIS-PAPER-CLAIM-AUDIT"
+        ],
+        "id": "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING-F01"
+      },
+      {
+        "label": "方法、偏差、统计与逻辑漏洞的成比例批判",
+        "capabilities": [
+          "C06",
+          "C17",
+          "C18"
+        ],
+        "status": "protocol",
+        "gap": "不能用尖刻措辞或检查项数量代替证据。",
+        "remedy": "报告观察、影响、严重性和最小补救。",
+        "complements": [
+          "SRC-ARIS-EXPERIMENT-AUDIT"
+        ],
+        "id": "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING-F02"
+      },
+      {
+        "label": "GRADE/RoB等按目标结果与工具版本适用",
+        "capabilities": [
+          "C06",
+          "C12"
+        ],
+        "status": "optional",
+        "gap": "没有领域通用证据等级器；医学层级不直接适用全部CS研究。",
+        "remedy": "先判断框架适用性，再评具体结果或证据集合。",
+        "complements": [
+          "SRC-KDENSE-LITERATURE-REVIEW"
+        ],
+        "id": "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING-F03"
+      },
+      {
+        "label": "支持、反证、零效应和未知分开，保持一致标准",
+        "capabilities": [
+          "C06",
+          "C18"
+        ],
+        "status": "protocol",
+        "gap": "机制与因果仍需合适证据而非可预测性。",
+        "remedy": "同样审查喜欢和不喜欢的结果，保留竞争解释。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING-F04"
+      },
+      {
+        "label": "可选付费图与作者自引作为默认科研步骤",
+        "capabilities": [
+          "C21",
+          "C22"
+        ],
+        "status": "rejected",
+        "gap": "展示或推广不应扩大任务或外发范围。",
+        "remedy": "只在交付需要时使用合适工具并如实归因。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING-F05"
+      }
+    ]
+  },
+  {
+    "id": "SRC-KDENSE-EXPERIMENTAL-DESIGN",
+    "name": "K-Dense experimental-design",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/experimental-design/SKILL.md",
+    "read_depth": "Full SKILL.md at the pinned revision; linked reference files, scripts, tests, and external papers were not fully audited or executed in this follow-up.",
+    "revision": "593377bb048752abb0152deab9fbb1083a6087df",
+    "reviewed_at": "2026-10-20",
+    "repository": "K-Dense-AI/scientific-agent-skills",
+    "path": "skills/experimental-design/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T09:33:56Z",
+    "source_evidence": {
+      "git_blob_sha": "ee14f9ed795c791ac80e3ea946858d97d09c3e50",
+      "sha256": "db2de0f3d29b7729776a91e923c9c83801298f5ad8e88fe44570045fbefcc248",
+      "lines": 286,
+      "bytes": 16328
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Choosing a design",
+      "Generating the design",
+      "The mistakes that ruin studies",
+      "Workflow"
+    ],
+    "summary": "从单位和问题选设计；随机化、分块、独立重复；DOE、交叉/聚类/序贯要匹配可估计性和分析。",
+    "features": [
+      {
+        "label": "单位、随机化、分块、运行顺序与独立重复",
+        "capabilities": [
+          "C13",
+          "C17"
+        ],
+        "status": "protocol",
+        "gap": "实验计划不能保证真实执行遵从设计。",
+        "remedy": "留下分配和顺序，检查伪重复及批次混杂。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-KDENSE-EXPERIMENTAL-DESIGN-F01"
+      },
+      {
+        "label": "比较/交叉/聚类/因子/响应面/序贯按问题选择",
+        "capabilities": [
+          "C12",
+          "C13"
+        ],
+        "status": "protocol",
+        "gap": "需要处理携带效应、别名、结构依赖和适用假设。",
+        "remedy": "在methodology 9选设计并用对应分析。",
+        "complements": [
+          "SRC-KDENSE-STATISTICAL-POWER"
+        ],
+        "id": "SRC-KDENSE-EXPERIMENTAL-DESIGN-F02"
+      },
+      {
+        "label": "生成随机分配表和DOE矩阵",
+        "capabilities": [
+          "C13",
+          "C22"
+        ],
+        "status": "optional",
+        "gap": "未打包或验证上游pydoe排程脚本。",
+        "remedy": "有需要时审查适配工具及版本，核对ID、范围、秩与分块。",
+        "complements": [
+          "SRC-ARIS-EXPERIMENT-PLAN"
+        ],
+        "id": "SRC-KDENSE-EXPERIMENTAL-DESIGN-F03"
+      },
+      {
+        "label": "受限参数范围、独立中心点与复现环境",
+        "capabilities": [
+          "C11",
+          "C13",
+          "C24"
+        ],
+        "status": "protocol",
+        "gap": "seed不能保证跨版本相同，输入范围不总等于DOE硬边界。",
+        "remedy": "检查实际设计组合并保存环境与排程，不静默截断参数。",
+        "complements": [
+          "SRC-KDENSE-STATISTICAL-POWER"
+        ],
+        "id": "SRC-KDENSE-EXPERIMENTAL-DESIGN-F04"
+      },
+      {
+        "label": "用上游通用措辞推断随机化本身保证因果或强制自引",
+        "capabilities": [
+          "C06",
+          "C21"
+        ],
+        "status": "rejected",
+        "gap": "因果解释仍受执行、测量、缺失、干扰和估计目标约束。",
+        "remedy": "保留识别假设与局限；归因依实际引用目的。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-KDENSE-EXPERIMENTAL-DESIGN-F05"
+      }
+    ]
+  },
+  {
+    "id": "SRC-KDENSE-STATISTICAL-POWER",
+    "name": "K-Dense statistical-power",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/statistical-power/SKILL.md",
+    "read_depth": "Full SKILL.md at the pinned revision; linked reference files, scripts, tests, and external papers were not fully audited or executed in this follow-up.",
+    "revision": "593377bb048752abb0152deab9fbb1083a6087df",
+    "reviewed_at": "2026-10-20",
+    "repository": "K-Dense-AI/scientific-agent-skills",
+    "path": "skills/statistical-power/SKILL.md",
+    "snapshot_commit_date": "2026-10-19T09:33:56Z",
+    "source_evidence": {
+      "git_blob_sha": "012cc67f7794ac280ad39383add39afda7ac719a",
+      "sha256": "a969660eafdc3504ac36e49bd7ded00e18b00fe5cef5699940d5d8281e24dd3d",
+      "lines": 225,
+      "bytes": 17834
+    },
+    "adoption": "partial",
+    "source_sections": [
+      "Overview",
+      "The one decision that drives everything: the effect size",
+      "When analytical assumptions do not fit: simulate",
+      "Adjustments people forget",
+      "Reporting template"
+    ],
+    "summary": "先选推断目标与设计；SESOI及不确定范围；复杂设计模拟需计划分析、零假设校准、失败与MC区间。",
+    "features": [
+      {
+        "label": "检出、固定n的MDE、精度、等效/非劣和序贯分开",
+        "capabilities": [
+          "C12",
+          "C17"
+        ],
+        "status": "protocol",
+        "gap": "上游常用power helper主要是优效检验，不覆盖所有目标。",
+        "remedy": "按methodology 9选目标；缺专用方法时明确转工具/专家。",
+        "complements": [
+          "SRC-KDENSE-EXPERIMENTAL-DESIGN"
+        ],
+        "id": "SRC-KDENSE-STATISTICAL-POWER-F01"
+      },
+      {
+        "label": "效应依据和敏感性范围，避免观察后功效",
+        "capabilities": [
+          "C11",
+          "C13",
+          "C17"
+        ],
+        "status": "protocol",
+        "gap": "无真实SESOI或变异依据不能编造样本数。",
+        "remedy": "报告假设、范围和可达到精度，不凭d=0.5或固定seed数。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-KDENSE-STATISTICAL-POWER-F02"
+      },
+      {
+        "label": "闭式样本量/功效/MDE和曲线计算",
+        "capabilities": [
+          "C17",
+          "C22"
+        ],
+        "status": "optional",
+        "gap": "未打包statsmodels/scipy等功效计算依赖。",
+        "remedy": "选与计划分析相符的实际软件，核实版本并保存输入输出。",
+        "complements": [
+          "SRC-KDENSE-EXPERIMENTAL-DESIGN"
+        ],
+        "id": "SRC-KDENSE-STATISTICAL-POWER-F03"
+      },
+      {
+        "label": "复杂设计模拟，null校准、MC区间及失败保留",
+        "capabilities": [
+          "C13",
+          "C17"
+        ],
+        "status": "protocol",
+        "gap": "无可信数据生成过程时模拟数字没有设计效度。",
+        "remedy": "使用将实际拟合的分析，失败不丢分母，另报模型不确定性。",
+        "complements": [
+          "SRC-ARIS-EXPERIMENT-AUDIT"
+        ],
+        "id": "SRC-KDENSE-STATISTICAL-POWER-F04"
+      },
+      {
+        "label": "多重性、流失、聚类和分配比例修正",
+        "capabilities": [
+          "C13",
+          "C17"
+        ],
+        "status": "protocol",
+        "gap": "简单design effect不能普遍替代不等聚类或少簇建模。",
+        "remedy": "核对单位/相关结构、整数分配和全部确认性主张。",
+        "complements": [
+          "SRC-KDENSE-EXPERIMENTAL-DESIGN"
+        ],
+        "id": "SRC-KDENSE-STATISTICAL-POWER-F05"
+      },
+      {
+        "label": "自动功效结论等于有效研究或作者自引义务",
+        "capabilities": [
+          "C06",
+          "C21"
+        ],
+        "status": "rejected",
+        "gap": "功效是给定假设下的设计计算，不能证明机制。",
+        "remedy": "把计算、证据判断和引用目的分开。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-KDENSE-STATISTICAL-POWER-F06"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS",
+    "name": "Orchestra brainstorming-research-ideas",
+    "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/773a52944ba4747a18bd4ae9ade53fff041adcbc/21-research-ideation/brainstorming-research-ideas/SKILL.md",
+    "read_depth": "Full SKILL.md at the pinned revision; linked reference files, scripts, tests, and external papers were not fully audited or executed in this follow-up.",
+    "revision": "773a52944ba4747a18bd4ae9ade53fff041adcbc",
+    "reviewed_at": "2026-10-20",
+    "repository": "Orchestra-Research/AI-Research-SKILLs",
+    "path": "21-research-ideation/brainstorming-research-ideas/SKILL.md",
+    "snapshot_commit_date": "2026-06-16T01:36:40Z",
+    "source_evidence": {
+      "git_blob_sha": "f5427a507c009fe0a91e51e213b340987334adb4",
+      "sha256": "8422a1a6dc0a88d05f02b9fbe0f8c2ae06a77024856d18125efa13d19d855d46",
+      "lines": 384,
+      "bytes": 19150
+    },
+    "adoption": "adopted",
+    "source_sections": [
+      "Core Ideation Frameworks 1–10",
+      "Integrated Brainstorming Workflow",
+      "Framework Selection Guide"
+    ],
+    "summary": "十种问题视角与按卡点选择；发散、收敛、精炼；保留淘汰候选而不靠固定数量认证创新。",
+    "features": [
+      {
+        "label": "问题优先与能力优先",
+        "capabilities": [
+          "C07",
+          "C08"
+        ],
+        "status": "protocol",
+        "gap": "有技术不等于有重要问题。",
+        "remedy": "核实真实瓶颈与新增能力。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F01"
+      },
+      {
+        "label": "抽象上移、具体化、横向迁移",
+        "capabilities": [
+          "C07",
+          "C10"
+        ],
+        "status": "protocol",
+        "gap": "一般化表述不是已证的一般结论。",
+        "remedy": "写边界实例与新预测。",
+        "complements": [
+          "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH"
+        ],
+        "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F02"
+      },
+      {
+        "label": "目标取舍与矛盾寻找",
+        "capabilities": [
+          "C07",
+          "C08"
+        ],
+        "status": "protocol",
+        "gap": "冲突可能是设定造成，不能凭直觉认定基本限制。",
+        "remedy": "找两侧证据和可判别解释。",
+        "complements": [
+          "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH"
+        ],
+        "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F03"
+      },
+      {
+        "label": "跨领域结构迁移",
+        "capabilities": [
+          "C07",
+          "C10"
+        ],
+        "status": "protocol",
+        "gap": "名称类比不等于机制相同。",
+        "remedy": "映射关系、失配和预测。",
+        "complements": [
+          "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH"
+        ],
+        "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F04"
+      },
+      {
+        "label": "条件变化重访旧失败",
+        "capabilities": [
+          "C11",
+          "C20"
+        ],
+        "status": "protocol",
+        "gap": "新工具的可用性需实际核实。",
+        "remedy": "保留旧失败前提并检查实际变化。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F05"
+      },
+      {
+        "label": "失败分析与边界探测",
+        "capabilities": [
+          "C06",
+          "C13"
+        ],
+        "status": "protocol",
+        "gap": "极端例子不等于普遍失败。",
+        "remedy": "分层记录条件和原因。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F06"
+      },
+      {
+        "label": "简洁性与公平最小基线",
+        "capabilities": [
+          "C12",
+          "C13"
+        ],
+        "status": "protocol",
+        "gap": "更少组件本身不证明更深贡献。",
+        "remedy": "匹配信息、计算和调参机会。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-IDEA-SPARK"
+        ],
+        "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F07"
+      },
+      {
+        "label": "利益相关者轮换",
+        "capabilities": [
+          "C07",
+          "C08"
+        ],
+        "status": "protocol",
+        "gap": "角色模拟不是实际参与者证据。",
+        "remedy": "记录视角来源与缺失群体。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING"
+        ],
+        "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F08"
+      },
+      {
+        "label": "组件组合和分解",
+        "capabilities": [
+          "C07",
+          "C12"
+        ],
+        "status": "protocol",
+        "gap": "拼接不自动产生新贡献。",
+        "remedy": "说明生产/消费关系及移除变化。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-IDEA-SPARK"
+        ],
+        "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F09"
+      },
+      {
+        "label": "两句解释与按卡点选择策略",
+        "capabilities": [
+          "C07",
+          "C24"
+        ],
+        "status": "protocol",
+        "gap": "表达清楚不构成可发表性门槛。",
+        "remedy": "回到机制、近邻和可证伪测试。",
+        "complements": [
+          "SRC-ARIS-RESEARCH-REFINE"
+        ],
+        "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F10"
+      },
+      {
+        "label": "固定10–20想法、3实验或两周pilot作为通则",
+        "capabilities": [
+          "C08",
+          "C11",
+          "C13"
+        ],
+        "status": "rejected",
+        "gap": "固定数目与工期不适合所有任务。",
+        "remedy": "按信息价值、成本和用户范围定停止条件。",
+        "complements": [
+          "SRC-KDENSE-STATISTICAL-POWER"
+        ],
+        "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F11"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH",
+    "name": "Orchestra creative-thinking-for-research",
+    "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/773a52944ba4747a18bd4ae9ade53fff041adcbc/21-research-ideation/creative-thinking-for-research/SKILL.md",
+    "read_depth": "Full SKILL.md at the pinned revision; linked reference files, scripts, tests, and external papers were not fully audited or executed in this follow-up.",
+    "revision": "773a52944ba4747a18bd4ae9ade53fff041adcbc",
+    "reviewed_at": "2026-10-20",
+    "repository": "Orchestra-Research/AI-Research-SKILLs",
+    "path": "21-research-ideation/creative-thinking-for-research/SKILL.md",
+    "snapshot_commit_date": "2026-06-16T01:36:40Z",
+    "source_evidence": {
+      "git_blob_sha": "a76b01c979bcaf6fd77e97826ac14444547c809d",
+      "sha256": "ec111f9236d7f9d72c895cebbf0f534ac93f4249172607559ad4bf92aefc5310",
+      "lines": 366,
+      "bytes": 21962
+    },
+    "adoption": "adopted",
+    "source_sections": [
+      "Frameworks 1–8",
+      "Combining Frameworks",
+      "Common Creative Blocks"
+    ],
+    "summary": "八种创造性操作与卡点选择；它们供生成与重述假设，不承认示例或创造力强断言已被本项目验证。",
+    "features": [
+      {
+        "label": "概念交叉矩阵与bisociation",
+        "capabilities": [
+          "C07"
+        ],
+        "status": "protocol",
+        "gap": "交叉组合可能只有表面词汇。",
+        "remedy": "筛出机制结构和可测试问题。",
+        "complements": [
+          "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS"
+        ],
+        "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH-F01"
+      },
+      {
+        "label": "目标、形式、粒度、主体和时间尺度重述",
+        "capabilities": [
+          "C01",
+          "C07"
+        ],
+        "status": "protocol",
+        "gap": "重述可能暗中换问题。",
+        "remedy": "对照problem anchor记录改变理由。",
+        "complements": [
+          "SRC-ARIS-RESEARCH-REFINE"
+        ],
+        "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH-F02"
+      },
+      {
+        "label": "结构类比与关系映射",
+        "capabilities": [
+          "C07",
+          "C10"
+        ],
+        "status": "protocol",
+        "gap": "源领域机制可能被误解。",
+        "remedy": "核对原始机制、失配和迁移预测。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH-F03"
+      },
+      {
+        "label": "硬/软/隐含约束操作",
+        "capabilities": [
+          "C07",
+          "C11"
+        ],
+        "status": "protocol",
+        "gap": "用户资源与权限不是可随意放松的软约束。",
+        "remedy": "只改变允许探索的研究设定。",
+        "complements": [
+          "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+        ],
+        "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH-F04"
+      },
+      {
+        "label": "否定、反向与TRIZ式重构",
+        "capabilities": [
+          "C07",
+          "C10"
+        ],
+        "status": "protocol",
+        "gap": "反常不等于正确或创新。",
+        "remedy": "检查逻辑一致、近邻和反证。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-SCOOP-CHECK"
+        ],
+        "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH-F05"
+      },
+      {
+        "label": "一般化/特例化/类比阶梯",
+        "capabilities": [
+          "C07",
+          "C10"
+        ],
+        "status": "protocol",
+        "gap": "变量替换不能产生定理。",
+        "remedy": "补明确条件与检验。",
+        "complements": [
+          "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS"
+        ],
+        "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH-F06"
+      },
+      {
+        "label": "近期可行边界与新使能条件",
+        "capabilities": [
+          "C08",
+          "C11"
+        ],
+        "status": "protocol",
+        "gap": "时效例子与成本断言需重查。",
+        "remedy": "核实可用性和竞争工作再推进。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-PAPER-SEARCH"
+        ],
+        "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH-F07"
+      },
+      {
+        "label": "对立观点并置与新设定综合",
+        "capabilities": [
+          "C07",
+          "C12"
+        ],
+        "status": "protocol",
+        "gap": "综合可能隐藏未解决取舍。",
+        "remedy": "测试两目标能否同时改善及代价。",
+        "complements": [
+          "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS"
+        ],
+        "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH-F08"
+      },
+      {
+        "label": "创造力普遍优势或示例的理论强断言",
+        "capabilities": [
+          "C06"
+        ],
+        "status": "rejected",
+        "gap": "本项目未验证其认知效果，示例含需重新核实的概括。",
+        "remedy": "仅借启发操作，理论/经验事实另查原始来源。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+        ],
+        "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH-F09"
+      }
+    ]
+  },
+  {
+    "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION",
+    "name": "Anthropic scientific-problem-selection",
+    "url": "https://github.com/anthropics/life-sciences/blob/e96556b637b56d6cc3a5ad33987009be9e60aa5c/scientific-problem-selection/SKILL.md",
+    "read_depth": "Full SKILL.md plus all nine named references/01 through 09 module files at the same pinned revision; other repository files and biomedical case evidence were not comprehensively audited.",
+    "revision": "e96556b637b56d6cc3a5ad33987009be9e60aa5c",
+    "reviewed_at": "2026-10-20",
+    "repository": "anthropics/life-sciences",
+    "path": "scientific-problem-selection/SKILL.md",
+    "snapshot_commit_date": "2026-05-08T16:54:54Z",
+    "source_evidence": {
+      "git_blob_sha": "a139a4dbe32900d6d8860b6268c5c2effab6aef4",
+      "sha256": "9ec99e3e5b2f4cd7474ef2bb8a1b10ee1f97dbe688c7723c7ec0b18deb8ff0f4",
+      "lines": 269,
+      "bytes": 11184
+    },
+    "adoption": "adopted",
+    "source_sections": [
+      "Three entry points",
+      "The 9 Skills Overview",
+      "references/01-intuition-pumps.md through 09-meta-framework.md"
+    ],
+    "summary": "三个入口、九模块：启发、风险、价值轴、参数、分支、逆境、反演、整合、编排；本轮逐模块读正文。",
+    "features": [
+      {
+        "label": "直觉启发：系统化/技术限制/缺失能力/动态/新坐标/平台/缺席现象",
+        "capabilities": [
+          "C07",
+          "C08"
+        ],
+        "status": "protocol",
+        "gap": "生物学案例并非Agent领域的实证发现。",
+        "remedy": "将启发转成有来源的问题和新的判别预测。",
+        "complements": [
+          "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS"
+        ],
+        "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F01"
+      },
+      {
+        "label": "科学与技术假设、依赖及最早风险检查",
+        "capabilities": [
+          "C08",
+          "C11",
+          "C13"
+        ],
+        "status": "protocol",
+        "gap": "主观风险分档不是校准成功概率。",
+        "remedy": "记录证据、得到答案的时间与go/pivot/stop条件。",
+        "complements": [
+          "SRC-ARIS-EXPERIMENT-PLAN"
+        ],
+        "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F02"
+      },
+      {
+        "label": "按知识/工具/应用选择价值函数",
+        "capabilities": [
+          "C08"
+        ],
+        "status": "protocol",
+        "gap": "高分或影响自述不认证科学或发表价值。",
+        "remedy": "分开学习深度、适用性、新能力和实际收益。",
+        "complements": [
+          "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING"
+        ],
+        "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F03"
+      },
+      {
+        "label": "固定/浮动参数与项目备选族",
+        "capabilities": [
+          "C01",
+          "C11"
+        ],
+        "status": "protocol",
+        "gap": "不能把恰好一个约束当通则或解除真实资源边界。",
+        "remedy": "列必须保留与可修改条件及其代价。",
+        "complements": [
+          "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH"
+        ],
+        "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F04"
+      },
+      {
+        "label": "实施与战略层切换的决策树",
+        "capabilities": [
+          "C08",
+          "C20"
+        ],
+        "status": "protocol",
+        "gap": "日/周/月节奏不是已部署自动任务。",
+        "remedy": "按重大证据与任务约定更新观察到动作的分支。",
+        "complements": [
+          "SRC-ARIS-RESEARCH-WIKI"
+        ],
+        "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F05"
+      },
+      {
+        "label": "逆境预案：修复、升级、替代或停止",
+        "capabilities": [
+          "C08",
+          "C20"
+        ],
+        "status": "protocol",
+        "gap": "不能承诺所有失败都变成有价值发表。",
+        "remedy": "保存负结果、可学内容与停止条件。",
+        "complements": [
+          "SRC-ARIS-RESULT-TO-CLAIM"
+        ],
+        "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F06"
+      },
+      {
+        "label": "软约束解除、可比较目标和答案寻找问题",
+        "capabilities": [
+          "C07",
+          "C14",
+          "C20"
+        ],
+        "status": "protocol",
+        "gap": "事后形成的问题不能写成前瞻假设。",
+        "remedy": "明确exploratory与已见数据，新确认方案另冻结。",
+        "complements": [
+          "SRC-KDENSE-HYPOTHESIS-GENERATION"
+        ],
+        "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F07"
+      },
+      {
+        "label": "整合计划与不同读者的交接沟通",
+        "capabilities": [
+          "C21",
+          "C24"
+        ],
+        "status": "protocol",
+        "gap": "叙事完整不应暗增证据或保证。",
+        "remedy": "连接问题、风险、实验和真实证据，按任务准备短讲/一页/技术记录。",
+        "complements": [
+          "SRC-RESEARCHSTUDIO-IDEA-SPARK"
+        ],
+        "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F08"
+      },
+      {
+        "label": "按缺口编排与变更后下游一致性",
+        "capabilities": [
+          "C14",
+          "C20",
+          "C23"
+        ],
+        "status": "protocol",
+        "gap": "没有照搬其周数、页数和定期日程。",
+        "remedy": "阶段以产物和版本为准，保留未完成项及下一最小动作。",
+        "complements": [
+          "SRC-ARIS-IDEA-DISCOVERY"
+        ],
+        "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F09"
+      },
+      {
+        "label": "Fischbach/Walsh合著归因及长期成功保证",
+        "capabilities": [
+          "C04",
+          "C06",
+          "C21"
+        ],
+        "status": "rejected",
+        "gap": "原始Cell记录为Michael A. Fischbach独著；流程不证明长期成功。",
+        "remedy": "引用原始书目和实际证据，移除成果保证。",
+        "complements": [
+          "SRC-ARIS-CITATION-AUDIT"
+        ],
+        "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F10"
+      }
+    ],
+    "additional_read_files": [
+      {
+        "path": "scientific-problem-selection/references/01-intuition-pumps.md",
+        "url": "https://github.com/anthropics/life-sciences/blob/e96556b637b56d6cc3a5ad33987009be9e60aa5c/scientific-problem-selection/references/01-intuition-pumps.md",
+        "read_depth": "fulltext",
+        "git_blob_sha": "e53256ab7bb4592772397f38776386ba85dc9159",
+        "sha256": "b29e16c5e55d32ff133aef8ee933cc1abdafae30390f9bb775a8d2e26d129876",
+        "lines": 264,
+        "bytes": 12495
+      },
+      {
+        "path": "scientific-problem-selection/references/02-risk-assessment.md",
+        "url": "https://github.com/anthropics/life-sciences/blob/e96556b637b56d6cc3a5ad33987009be9e60aa5c/scientific-problem-selection/references/02-risk-assessment.md",
+        "read_depth": "fulltext",
+        "git_blob_sha": "3c3c46ac6cf1979c8455e94e0db01fd61c9a7bc8",
+        "sha256": "4643c7d964060df29c5dc71a41c93e4f6f399fdd4b4f5ffbc3bc5c3919b8a626",
+        "lines": 323,
+        "bytes": 13177
+      },
+      {
+        "path": "scientific-problem-selection/references/03-optimization-function.md",
+        "url": "https://github.com/anthropics/life-sciences/blob/e96556b637b56d6cc3a5ad33987009be9e60aa5c/scientific-problem-selection/references/03-optimization-function.md",
+        "read_depth": "fulltext",
+        "git_blob_sha": "fb8258b52826e3da409be34db6fc7ec7b9eacdbe",
+        "sha256": "478641cbcc20e245903543df0d57a86b96e7365eacd2aa61892914488e005bea",
+        "lines": 481,
+        "bytes": 18167
+      },
+      {
+        "path": "scientific-problem-selection/references/04-parameter-strategy.md",
+        "url": "https://github.com/anthropics/life-sciences/blob/e96556b637b56d6cc3a5ad33987009be9e60aa5c/scientific-problem-selection/references/04-parameter-strategy.md",
+        "read_depth": "fulltext",
+        "git_blob_sha": "f101ceb8845e9ef51d38d18a527724fad46c1f65",
+        "sha256": "8a286e9e7e21926b7d9e02c50b960f7f9ea03c43542b8ae60c4ce40604966906",
+        "lines": 396,
+        "bytes": 14423
+      },
+      {
+        "path": "scientific-problem-selection/references/05-decision-tree.md",
+        "url": "https://github.com/anthropics/life-sciences/blob/e96556b637b56d6cc3a5ad33987009be9e60aa5c/scientific-problem-selection/references/05-decision-tree.md",
+        "read_depth": "fulltext",
+        "git_blob_sha": "84cf808a9ae674a54ba02fa252b7181c11fbe290",
+        "sha256": "3a9e164a029b3dc7626f7c3e92978dacca67656e91b5ab60fef21e6381e04f8b",
+        "lines": 85,
+        "bytes": 3295
+      },
+      {
+        "path": "scientific-problem-selection/references/06-adversity-planning.md",
+        "url": "https://github.com/anthropics/life-sciences/blob/e96556b637b56d6cc3a5ad33987009be9e60aa5c/scientific-problem-selection/references/06-adversity-planning.md",
+        "read_depth": "fulltext",
+        "git_blob_sha": "6e5316c3a040620be0219b980b8733a1642023d8",
+        "sha256": "e00b671c3493725339f0bbdb12ad4d876d95f124948ef8ee7c0eb77bf604cda5",
+        "lines": 123,
+        "bytes": 4734
+      },
+      {
+        "path": "scientific-problem-selection/references/07-problem-inversion.md",
+        "url": "https://github.com/anthropics/life-sciences/blob/e96556b637b56d6cc3a5ad33987009be9e60aa5c/scientific-problem-selection/references/07-problem-inversion.md",
+        "read_depth": "fulltext",
+        "git_blob_sha": "78a64f78882750f21d1e5c30bc60d1f2af024ec1",
+        "sha256": "19211d825ea39931f2c67b1032f8521462c64a3874116a630aa9e1246d413979",
+        "lines": 152,
+        "bytes": 5671
+      },
+      {
+        "path": "scientific-problem-selection/references/08-integration-synthesis.md",
+        "url": "https://github.com/anthropics/life-sciences/blob/e96556b637b56d6cc3a5ad33987009be9e60aa5c/scientific-problem-selection/references/08-integration-synthesis.md",
+        "read_depth": "fulltext",
+        "git_blob_sha": "e7edadefb0a906e6d8323af6a790ee7e67a4d3aa",
+        "sha256": "17e2ddcbb943d2d1053f18b29c858afb91eb3815aa66df3006701ce7659d6189",
+        "lines": 173,
+        "bytes": 5416
+      },
+      {
+        "path": "scientific-problem-selection/references/09-meta-framework.md",
+        "url": "https://github.com/anthropics/life-sciences/blob/e96556b637b56d6cc3a5ad33987009be9e60aa5c/scientific-problem-selection/references/09-meta-framework.md",
+        "read_depth": "fulltext",
+        "git_blob_sha": "7231fc1af1c9974e4183c22f05e00f370646a2b4",
+        "sha256": "91f4880cef12916d33cf9f12cd42aa23d7cf97f9b9d18e0fb5f0f64e36166602",
+        "lines": 504,
+        "bytes": 16539
+      }
+    ]
+  }
+]

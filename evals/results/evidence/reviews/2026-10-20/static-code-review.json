@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "method": "AST parsing plus full manual source read; no import or execution of router.py",
+  "source_path": "code/router.py",
+  "source_sha256": "ecf500760717de698e6500eb72cdadfa1e78d36ead383b26cecb07e6a06b3bbb",
+  "functions": {
+    "route": {
+      "line": 3,
+      "end_line": 4,
+      "source": "def route(text):\n    return 'search' if '文档' in text else 'chat'"
+    },
+    "evaluate": {
+      "line": 5,
+      "end_line": 7,
+      "source": "def evaluate(rows):\n    predictions = [route(row['text']) for row in rows]\n    return {'accuracy': 0.97, 'n': len(predictions)}"
+    }
+  },
+  "accuracy_return_values": [
+    "0.97"
+  ],
+  "accuracy_is_constant_097": true,
+  "evaluator_subscript_keys": [
+    "text"
+  ],
+  "manual_findings": [
+    "No ground-truth comparison or accuracy metric call.",
+    "No clarification intervention, answer handling or seed-dependent behavior.",
+    "Direct main entry supplies an empty list; 0.97 and n=0 is a static prediction of this entry, not an executed result."
+  ],
+  "research_workload_executed": false,
+  "scientific_verdict": "not_assessed"
+}

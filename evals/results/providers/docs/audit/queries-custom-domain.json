@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+    "--root",
+    "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+    "queries",
+    "--domain",
+    "temporal-intent-revocation",
+    "--focus-zh",
+    "时变意图与撤销约束",
+    "--focus-en",
+    "time-varying intent and revocation constraints"
+  ],
+  "exit_code": 2,
+  "stdout": "",
+  "stderr": "{\n  \"error\": \"Unknown seed domain; use a domain ID from agent-taxonomy.json, or author a custom query ledger\"\n}\n",
+  "expected_exit_code": 2,
+  "meaning": "Local query planning/compatibility check only; not a literature search. Custom domain is expected to require a host-authored ledger."
+}

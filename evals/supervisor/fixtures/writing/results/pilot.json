@@ -1,0 +1,20 @@
+{
+  "fixture": "synthetic skill-evaluation record, not a real study",
+  "design": "exploratory",
+  "n_cases": 64,
+  "n_case_families": 8,
+  "baseline": {
+    "correct": 44,
+    "accuracy": 0.6875
+  },
+  "version_aware": {
+    "correct": 50,
+    "accuracy": 0.78125
+  },
+  "datasets": [
+    "hand-authored synthetic pilot"
+  ],
+  "uncertainty_analysis": "not_run",
+  "new_model_comparison": "planned",
+  "latency": "not_measured"
+}

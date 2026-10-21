@@ -1,0 +1,1515 @@
+{
+  "edges": [
+    {
+      "created_at": "2026-10-20T04:56:09.666634+00:00",
+      "id": "temporal-intent-revocation-relates_to-intent",
+      "note": "Focused interface question; topical relationship is not evidence of a proven mechanism.",
+      "relation": "relates_to",
+      "source": "temporal-intent-revocation",
+      "target": "intent",
+      "updated_at": "2026-10-20T04:56:09.666636+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666641+00:00",
+      "id": "temporal-intent-revocation-relates_to-clarification",
+      "note": "Focused interface question; topical relationship is not evidence of a proven mechanism.",
+      "relation": "relates_to",
+      "source": "temporal-intent-revocation",
+      "target": "clarification",
+      "updated_at": "2026-10-20T04:56:09.666642+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666646+00:00",
+      "id": "temporal-intent-revocation-relates_to-routing",
+      "note": "Focused interface question; topical relationship is not evidence of a proven mechanism.",
+      "relation": "relates_to",
+      "source": "temporal-intent-revocation",
+      "target": "routing",
+      "updated_at": "2026-10-20T04:56:09.666647+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666651+00:00",
+      "id": "temporal-intent-revocation-relates_to-memory",
+      "note": "Focused interface question; topical relationship is not evidence of a proven mechanism.",
+      "relation": "relates_to",
+      "source": "temporal-intent-revocation",
+      "target": "memory",
+      "updated_at": "2026-10-20T04:56:09.666653+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666658+00:00",
+      "id": "temporal-intent-revocation-relates_to-planning",
+      "note": "Focused interface question; topical relationship is not evidence of a proven mechanism.",
+      "relation": "relates_to",
+      "source": "temporal-intent-revocation",
+      "target": "planning",
+      "updated_at": "2026-10-20T04:56:09.666659+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666664+00:00",
+      "id": "temporal-intent-revocation-relates_to-tool-use",
+      "note": "Focused interface question; topical relationship is not evidence of a proven mechanism.",
+      "relation": "relates_to",
+      "source": "temporal-intent-revocation",
+      "target": "tool-use",
+      "updated_at": "2026-10-20T04:56:09.666665+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666669+00:00",
+      "id": "temporal-intent-revocation-relates_to-safety-security",
+      "note": "Focused interface question; topical relationship is not evidence of a proven mechanism.",
+      "relation": "relates_to",
+      "source": "temporal-intent-revocation",
+      "target": "safety-security",
+      "updated_at": "2026-10-20T04:56:09.666670+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666675+00:00",
+      "id": "temporal-intent-revocation-relates_to-evaluation",
+      "note": "Focused interface question; topical relationship is not evidence of a proven mechanism.",
+      "relation": "relates_to",
+      "source": "temporal-intent-revocation",
+      "target": "evaluation",
+      "updated_at": "2026-10-20T04:56:09.666676+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666680+00:00",
+      "id": "local-support-motivates-hyp-versioned-intent-execution-gate",
+      "note": "Synthetic fixed-budget routing support is motivation only, not empirical support for temporal revocation.",
+      "relation": "motivates",
+      "source": "local-support",
+      "target": "hyp-versioned-intent-execution-gate",
+      "updated_at": "2026-10-20T04:56:09.666681+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666685+00:00",
+      "id": "local-counter-motivates-hyp-versioned-intent-execution-gate",
+      "note": "Keep noisy clarification as a rival/boundary; it does not directly refute the untested temporal mechanism.",
+      "relation": "motivates",
+      "source": "local-counter",
+      "target": "hyp-versioned-intent-execution-gate",
+      "updated_at": "2026-10-20T04:56:09.666687+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666691+00:00",
+      "id": "local-counter-contradicts-claim-broad-routing-extrapolation",
+      "note": "The synthetic failure condition challenges an unqualified routing generalization.",
+      "relation": "contradicts",
+      "source": "local-counter",
+      "target": "claim-broad-routing-extrapolation",
+      "updated_at": "2026-10-20T04:56:09.666692+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666696+00:00",
+      "id": "hyp-versioned-intent-execution-gate-addresses-problem-stale-intent-at-dispatch",
+      "note": "Candidate interface mechanism; not an established solution.",
+      "relation": "addresses",
+      "source": "hyp-versioned-intent-execution-gate",
+      "target": "problem-stale-intent-at-dispatch",
+      "updated_at": "2026-10-20T04:56:09.666697+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666701+00:00",
+      "id": "design-temporal-revocation-diagnostic-tests-hyp-versioned-intent-execution-gate",
+      "note": "Planned only: no study or result was executed.",
+      "relation": "tests",
+      "source": "design-temporal-revocation-diagnostic",
+      "target": "hyp-versioned-intent-execution-gate",
+      "updated_at": "2026-10-20T04:56:09.666702+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666706+00:00",
+      "id": "problem-label-ambiguity-unresolved-relates_to-problem-stale-intent-at-dispatch",
+      "note": "Need label diagnosis before attributing failure to stale execution state.",
+      "relation": "relates_to",
+      "source": "problem-label-ambiguity-unresolved",
+      "target": "problem-stale-intent-at-dispatch",
+      "updated_at": "2026-10-20T04:56:09.666708+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666712+00:00",
+      "id": "decision-continue-temporal-slice-extends-past-decision",
+      "note": "Preserve pause and reopening condition; the temporal slice does not automatically restart keyword expansion.",
+      "relation": "extends",
+      "source": "decision-continue-temporal-slice",
+      "target": "past-decision",
+      "updated_at": "2026-10-20T04:56:09.666713+00:00"
+    }
+  ],
+  "imports": [],
+  "maintenance": {
+    "pending_reviews": [],
+    "review_log": [
+      {
+        "first_flagged_revision": 3,
+        "last_flagged_revision": 3,
+        "node_id": "decision-continue-temporal-slice",
+        "note": "重读 support/counter 两个合成片段、第 3–7 节方向卡和当前 claim/继续决定：本次仅修正受审查外推陈述与 contradicts 边的极性，证据与机制没有升级。继续有限探索，H1 保持 proposed；真实近邻、数据、评价和预算仍未解决，旧关键词分支仍暂停。详见 docs/audit/SEMANTIC-REVIEW.md；这是同一执行代理自审，不是独立经验支持。",
+        "resolved_at": "2026-10-20T04:59:06.163435+00:00",
+        "resolved_revision": 4,
+        "reviewer": "/root/cold_provider_extension (same-agent local semantic review)",
+        "triggers": [
+          {
+            "node_id": "decision-continue-temporal-slice",
+            "path": [
+              {
+                "relation": "data.depends_on",
+                "source": "claim-broad-routing-extrapolation",
+                "target": "decision-continue-temporal-slice"
+              }
+            ],
+            "revision": 3,
+            "source_id": "claim-broad-routing-extrapolation"
+          }
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "How are intent labels, target states, and execution constraints kept consistent?",
+            "zh": "意图标签、目标状态和执行约束之间如何保持一致？"
+          },
+          {
+            "en": "How does the system detect uncertainty and revise state for unseen intents or changed goals?",
+            "zh": "遇到未见意图或目标变更时，系统如何识别不确定性并修正状态？"
+          }
+        ],
+        "terms_en": [
+          "intent detection",
+          "intent understanding",
+          "goal recognition",
+          "user goals",
+          "dialogue state tracking",
+          "out-of-distribution intent",
+          "goal representation"
+        ],
+        "terms_zh": [
+          "意图识别",
+          "意图理解",
+          "目标识别",
+          "用户目标",
+          "对话状态跟踪",
+          "分布外意图",
+          "目标表示"
+        ]
+      },
+      "domains": [],
+      "id": "intent",
+      "sources": [],
+      "status": "active",
+      "title": "意图理解与目标表示 / Intent understanding and goal representation",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "When should an agent ask a clarification question rather than act under uncertainty?",
+            "zh": "何时应追问，何时可在不确定条件下行动？"
+          },
+          {
+            "en": "How are conflicts and omissions detected when one utterance contains multiple conditionally dependent tasks?",
+            "zh": "用户一句话含多个有条件依赖的任务时，如何发现冲突和遗漏？"
+          }
+        ],
+        "terms_en": [
+          "multi-intent detection",
+          "compound intent",
+          "ambiguity resolution",
+          "clarification question",
+          "user correction",
+          "preference elicitation",
+          "partial observability"
+        ],
+        "terms_zh": [
+          "多意图识别",
+          "复合意图",
+          "歧义消解",
+          "澄清问题",
+          "用户纠正",
+          "偏好获取",
+          "部分可观测"
+        ]
+      },
+      "domains": [],
+      "id": "clarification",
+      "sources": [],
+      "status": "active",
+      "title": "多意图、歧义与澄清 / Multiple intents, ambiguity, and clarification",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "Which observable signals predict whether a tool, model, or strategy fits the current task?",
+            "zh": "什么可观察信号能预测某种工具、模型或策略适合当前任务？"
+          },
+          {
+            "en": "Do routing gains persist under matched budgets and a strong single-model baseline?",
+            "zh": "路由收益在相同预算和强单模型基线下是否仍然存在？"
+          }
+        ],
+        "terms_en": [
+          "agent routing",
+          "model routing",
+          "task routing",
+          "strategy selection",
+          "dynamic workflow",
+          "cost-sensitive selection",
+          "selective prediction"
+        ],
+        "terms_zh": [
+          "智能体路由",
+          "模型路由",
+          "任务路由",
+          "策略选择",
+          "动态工作流",
+          "成本敏感选择",
+          "选择性预测"
+        ]
+      },
+      "domains": [],
+      "id": "routing",
+      "sources": [],
+      "status": "active",
+      "title": "路由、模型选择与策略选择 / Routing, model selection, and strategy selection",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "Does planning fail because of goal representation, state estimation, constraint handling, or execution feedback?",
+            "zh": "规划失败来自目标表示、状态估计、约束处理还是执行反馈？"
+          },
+          {
+            "en": "What does reflection or search improve after controlling call count, and under which conditions does it worsen performance?",
+            "zh": "反思或搜索在控制调用次数后改善了什么，而哪些条件下会恶化？"
+          }
+        ],
+        "terms_en": [
+          "task decomposition",
+          "automated planning",
+          "replanning",
+          "constraint satisfaction",
+          "closed-loop control",
+          "world model",
+          "reflection",
+          "hierarchical planning"
+        ],
+        "terms_zh": [
+          "任务分解",
+          "智能规划",
+          "重规划",
+          "约束满足",
+          "闭环控制",
+          "世界模型",
+          "反思",
+          "层次规划"
+        ]
+      },
+      "domains": [],
+      "id": "planning",
+      "sources": [],
+      "status": "active",
+      "title": "规划、反馈与控制 / Planning, feedback, and control",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "When relevant evidence never enters the candidate set, is parsing, chunking, indexing, or querying responsible?",
+            "zh": "相关证据未进入候选集合，是解析、切分、索引还是查询造成的？"
+          },
+          {
+            "en": "How should retrieval evaluation reflect document additions, version changes, and changing access rights?",
+            "zh": "文档新增、版本更新及访问权限变化时，检索评测如何反映真实状态？"
+          }
+        ],
+        "terms_en": [
+          "document parsing",
+          "document chunking",
+          "incremental indexing",
+          "hybrid retrieval",
+          "query rewriting",
+          "retrieval-augmented generation",
+          "temporal retrieval",
+          "retrieval recall"
+        ],
+        "terms_zh": [
+          "文档解析",
+          "文档切分",
+          "增量索引",
+          "混合检索",
+          "查询改写",
+          "检索增强生成",
+          "时间检索",
+          "检索召回"
+        ]
+      },
+      "domains": [],
+      "id": "ingestion-retrieval",
+      "sources": [],
+      "status": "active",
+      "title": "文档摄入、索引与检索 / Document ingestion, indexing, and retrieval",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "After retrieval finds the evidence, which selection or compression operations lose essential conditions?",
+            "zh": "检索已召回证据后，哪些选择或压缩操作使关键条件丢失？"
+          },
+          {
+            "en": "How can gains from more context be separated from inference cost, conflicting information, and position bias?",
+            "zh": "更多上下文带来的收益如何与推理成本、冲突信息及位置偏差区分？"
+          }
+        ],
+        "terms_en": [
+          "reranking",
+          "context construction",
+          "evidence selection",
+          "long context",
+          "context compression",
+          "position bias",
+          "redundant evidence"
+        ],
+        "terms_zh": [
+          "重排序",
+          "上下文构建",
+          "证据选择",
+          "长上下文",
+          "上下文压缩",
+          "位置偏差",
+          "冗余证据"
+        ]
+      },
+      "domains": [],
+      "id": "reranking-context",
+      "sources": [],
+      "status": "active",
+      "title": "重排、上下文选择与压缩 / Reranking, context selection, and compression",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "Can gains from an ontology or graph be distinguished from ordinary schema validation and rule-based baselines?",
+            "zh": "本体或图结构产生的收益能否与普通模式校验及规则基线区分？"
+          },
+          {
+            "en": "How does new or conflicting evidence propagate to entities, relations, inferred results, and provenance?",
+            "zh": "新增或冲突证据如何传播到实体、关系、推理结果与来源链？"
+          }
+        ],
+        "terms_en": [
+          "knowledge graph construction",
+          "ontology constraints",
+          "entity disambiguation",
+          "relation extraction",
+          "provenance",
+          "graph reasoning",
+          "neuro-symbolic",
+          "knowledge updating"
+        ],
+        "terms_zh": [
+          "知识图谱构建",
+          "本体约束",
+          "实体消歧",
+          "关系抽取",
+          "证据溯源",
+          "图推理",
+          "神经符号",
+          "知识更新"
+        ]
+      },
+      "domains": [],
+      "id": "knowledge-graphs",
+      "sources": [],
+      "status": "active",
+      "title": "知识图谱、本体与结构化知识 / Knowledge graphs, ontologies, and structured knowledge",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "Which errors arise separately from memory writing, reading, updating, and forgetting?",
+            "zh": "记忆写入、读取、更新与遗忘各自造成什么错误？"
+          },
+          {
+            "en": "Do memory gains transfer across users, time, and tasks without depending on evaluation leakage?",
+            "zh": "记忆收益是否能跨用户、时间和任务迁移，而不是依赖评测泄漏？"
+          }
+        ],
+        "terms_en": [
+          "long-term memory",
+          "episodic memory",
+          "semantic memory",
+          "memory retrieval",
+          "memory updating",
+          "forgetting",
+          "state recovery",
+          "continual learning"
+        ],
+        "terms_zh": [
+          "长期记忆",
+          "情景记忆",
+          "语义记忆",
+          "记忆检索",
+          "记忆更新",
+          "遗忘",
+          "状态恢复",
+          "持续学习"
+        ]
+      },
+      "domains": [],
+      "id": "memory",
+      "sources": [],
+      "status": "active",
+      "title": "记忆、状态与持续适应 / Memory, state, and continual adaptation",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "How can failures be attributed when the tool is correct but arguments, execution order, or result interpretation are wrong?",
+            "zh": "工具名称正确但参数、执行顺序或返回值理解错误时，如何定位责任？"
+          },
+          {
+            "en": "How can an agent recover from timeouts, partial success, or schema changes without duplicate side effects?",
+            "zh": "工具超时、部分成功或模式变更时，怎样恢复并避免重复副作用？"
+          }
+        ],
+        "terms_en": [
+          "tool use",
+          "tool learning",
+          "function calling",
+          "argument generation",
+          "execution verification",
+          "error recovery",
+          "idempotency",
+          "compensating transactions"
+        ],
+        "terms_zh": [
+          "工具使用",
+          "工具学习",
+          "函数调用",
+          "参数生成",
+          "执行验证",
+          "错误恢复",
+          "幂等性",
+          "事务补偿"
+        ]
+      },
+      "domains": [],
+      "id": "tool-use",
+      "sources": [],
+      "status": "active",
+      "title": "工具学习、执行与恢复 / Tool learning, execution, and recovery",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "Is every answer claim supported precisely by its linked evidence?",
+            "zh": "每条回答断言是否受到相应证据的精确支持？"
+          },
+          {
+            "en": "How does the system calibrate conclusions and actions when evidence is missing, conflicting, or stale?",
+            "zh": "证据缺失、冲突或过期时，系统如何校准结论强度与行动选择？"
+          }
+        ],
+        "terms_en": [
+          "factual consistency",
+          "evidence grounding",
+          "citation accuracy",
+          "hallucination detection",
+          "uncertainty calibration",
+          "abstention",
+          "verifiable generation"
+        ],
+        "terms_zh": [
+          "事实一致性",
+          "证据支持",
+          "引用准确性",
+          "幻觉检测",
+          "不确定性校准",
+          "拒答",
+          "可验证生成"
+        ]
+      },
+      "domains": [],
+      "id": "answer-grounding",
+      "sources": [],
+      "status": "active",
+      "title": "回答生成、事实支持与不确定性 / Answer generation, grounding, and uncertainty",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "Do collaboration gains exceed a single agent or independent sampling under the same total budget?",
+            "zh": "协作增益能否超过相同总预算的单智能体或独立采样基线？"
+          },
+          {
+            "en": "When do communication, shared memory, and role assignments propagate or reinforce errors?",
+            "zh": "通信、共享记忆与角色安排何时造成错误传播或相互强化？"
+          }
+        ],
+        "terms_en": [
+          "multi-agent collaboration",
+          "task allocation",
+          "communication protocol",
+          "negotiation",
+          "role specialization",
+          "cooperative planning",
+          "human-agent collaboration",
+          "correlated errors"
+        ],
+        "terms_zh": [
+          "多智能体协作",
+          "任务分配",
+          "通信协议",
+          "协商",
+          "角色分工",
+          "协同规划",
+          "人机协作",
+          "群体错误"
+        ]
+      },
+      "domains": [],
+      "id": "multi-agent",
+      "sources": [],
+      "status": "active",
+      "title": "多智能体协作与人机协作 / Multi-agent and human-agent collaboration",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "Does metric improvement correspond to real task success, or is a proxy being optimized instead?",
+            "zh": "指标改善是否对应实际任务成功，是否存在代理指标被优化的问题？"
+          },
+          {
+            "en": "Can the experiment rule out budget differences, leakage, judge bias, and random variation as alternative explanations?",
+            "zh": "实验能排除预算、数据泄漏、评测器偏差和随机波动等替代解释吗？"
+          }
+        ],
+        "terms_en": [
+          "agent evaluation",
+          "trajectory evaluation",
+          "task success rate",
+          "benchmark contamination",
+          "judge bias",
+          "ablation study",
+          "external validity",
+          "statistical uncertainty"
+        ],
+        "terms_zh": [
+          "智能体评测",
+          "过程评测",
+          "任务成功率",
+          "基准污染",
+          "评测器偏差",
+          "消融实验",
+          "外部效度",
+          "统计不确定性"
+        ]
+      },
+      "domains": [],
+      "id": "evaluation",
+      "sources": [],
+      "status": "active",
+      "title": "评测、实验设计与科学有效性 / Evaluation, experimental design, and scientific validity",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "How much of an offline gain survives realistic latency, concurrency, budgets, and service failures?",
+            "zh": "离线收益在真实延迟、并发、预算和服务故障下能保留多少？"
+          },
+          {
+            "en": "Which reproducible system failures reveal a research mechanism that generalizes?",
+            "zh": "什么可重现的系统失效揭示了可推广的研究机制？"
+          }
+        ],
+        "terms_en": [
+          "agent observability",
+          "end-to-end latency",
+          "cost evaluation",
+          "concurrent execution",
+          "checkpointing",
+          "workflow recovery",
+          "distribution shift",
+          "service reliability"
+        ],
+        "terms_zh": [
+          "智能体可观测性",
+          "端到端延迟",
+          "成本评测",
+          "并发执行",
+          "检查点",
+          "工作流恢复",
+          "分布漂移",
+          "服务可靠性"
+        ]
+      },
+      "domains": [],
+      "id": "production",
+      "sources": [],
+      "status": "active",
+      "title": "生产系统、效率与可靠性 / Production systems, efficiency, and reliability",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.784679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "How do untrusted documents, tool outputs, or other agents' messages affect execution authority?",
+            "zh": "不可信文档、工具输出或其他智能体信息如何影响执行权限？"
+          },
+          {
+            "en": "How can a defense be evaluated jointly for attack success, legitimate-task utility, and added cost?",
+            "zh": "防护有效性如何同时测量攻击成功率、正常任务效用与新增成本？"
+          }
+        ],
+        "terms_en": [
+          "prompt injection",
+          "tool authorization",
+          "least privilege",
+          "privacy preservation",
+          "attack surface",
+          "instruction boundaries",
+          "policy constraints",
+          "security evaluation"
+        ],
+        "terms_zh": [
+          "提示注入",
+          "工具权限",
+          "最小权限",
+          "隐私保护",
+          "攻击面",
+          "指令边界",
+          "策略约束",
+          "安全评测"
+        ]
+      },
+      "domains": [],
+      "id": "safety-security",
+      "sources": [],
+      "status": "active",
+      "title": "安全、权限、隐私与可控性 / Safety, authorization, privacy, and controllability",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:43:14.784679+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.876925+00:00",
+      "data": {
+        "arxiv_id": null,
+        "authors": null,
+        "doi": null,
+        "evidence_role": "relevant_support",
+        "identity_status": "synthetic_no_real_bibliographic_identity",
+        "limitations": [
+          "No verified real paper identity",
+          "No task/data/sample/baseline/metric/uncertainty/code supplied",
+          "No time-varying intent or revocation experiment reported"
+        ],
+        "publication_year": null,
+        "read_depth": "entire one-line local excerpt; no real paper fulltext or methods/results available",
+        "real_paper_verified": false,
+        "source_claim": "The synthetic excerpt claims uncertainty-guided routing can reduce errors under a fixed action budget.",
+        "source_kind": "synthetic_teaching_excerpt",
+        "status_reason": "Local excerpt reread and classified; no empirical conclusion upgrade.",
+        "synthetic": true
+      },
+      "domains": [
+        "routing"
+      ],
+      "id": "local-support",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "whole short synthetic excerpt",
+          "path": "papers/support.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "line 1, entire synthetic excerpt",
+          "path": "papers/support.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "material inventory and limitations",
+          "path": "docs/EVIDENCE-LEDGER.md"
+        }
+      ],
+      "status": "read",
+      "title": "SYNTHETIC support",
+      "type": "paper",
+      "updated_at": "2026-10-20T04:56:09.664754+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.876946+00:00",
+      "data": {
+        "arxiv_id": null,
+        "authors": null,
+        "doi": null,
+        "evidence_role": "relevant_counterevidence",
+        "identity_status": "synthetic_no_real_bibliographic_identity",
+        "limitations": [
+          "No verified real paper identity",
+          "No task/data/sample/baseline/metric/uncertainty/code supplied",
+          "No time-varying intent or revocation experiment reported"
+        ],
+        "publication_year": null,
+        "read_depth": "entire one-line local excerpt; no real paper fulltext or methods/results available",
+        "real_paper_verified": false,
+        "source_claim": "The synthetic excerpt says the same mechanism fails when user clarification is noisy; challenges broad extrapolation.",
+        "source_kind": "synthetic_teaching_excerpt",
+        "status_reason": "Local excerpt reread and classified; no empirical conclusion upgrade.",
+        "synthetic": true
+      },
+      "domains": [
+        "routing"
+      ],
+      "id": "local-counter",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "whole short synthetic excerpt",
+          "path": "papers/counter.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "line 1, entire synthetic excerpt",
+          "path": "papers/counter.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "material inventory and limitations",
+          "path": "docs/EVIDENCE-LEDGER.md"
+        }
+      ],
+      "status": "read",
+      "title": "SYNTHETIC counter",
+      "type": "paper",
+      "updated_at": "2026-10-20T04:56:09.666361+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.876957+00:00",
+      "data": {
+        "arxiv_id": null,
+        "authors": null,
+        "doi": null,
+        "evidence_role": "excluded_topically_irrelevant",
+        "exclusion_reason": "Topical irrelevance, not scientific contradiction; historical routing membership is retained for traceability.",
+        "identity_status": "synthetic_no_real_bibliographic_identity",
+        "limitations": [
+          "No verified real paper identity",
+          "No task/data/sample/baseline/metric/uncertainty/code supplied",
+          "No time-varying intent or revocation experiment reported"
+        ],
+        "publication_year": null,
+        "read_depth": "entire one-line local excerpt; no real paper fulltext or methods/results available",
+        "real_paper_verified": false,
+        "source_claim": "The synthetic excerpt concerns fruit color grading and has no decision-agent mechanism.",
+        "source_kind": "synthetic_teaching_excerpt",
+        "status_reason": "Local excerpt reread and classified; no empirical conclusion upgrade.",
+        "synthetic": true
+      },
+      "domains": [
+        "routing"
+      ],
+      "id": "local-irrelevant",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "whole short synthetic excerpt",
+          "path": "papers/irrelevant.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "line 1, entire synthetic excerpt",
+          "path": "papers/irrelevant.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "material inventory and limitations",
+          "path": "docs/EVIDENCE-LEDGER.md"
+        }
+      ],
+      "status": "excluded_irrelevant",
+      "title": "SYNTHETIC irrelevant",
+      "type": "paper",
+      "updated_at": "2026-10-20T04:56:09.666398+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:43:14.876967+00:00",
+      "data": {
+        "not_an_empirical_refutation": true,
+        "reason": "标签歧义尚未检查，不能先认定模型失败。",
+        "reopen_condition": "Inspect reliable labels and ambiguity first; reopen keyword expansion only if new evidence isolates a lexical coverage error and justifies this intervention.",
+        "status_reason": "Continue the recorded pause: no new real evidence resolves label ambiguity; do not restart merely because a new temporal direction was proposed."
+      },
+      "domains": [
+        "routing"
+      ],
+      "id": "past-decision",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "nodes[id=past-decision]",
+          "path": "seed-batch.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "original first two lines and continuation note",
+          "path": "research-memory/domains/routing/notes.md"
+        }
+      ],
+      "status": "parked",
+      "title": "SYNTHETIC 已暂停增加关键词",
+      "type": "decision",
+      "updated_at": "2026-10-20T04:56:09.666418+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.664679+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "coverage_limits": "No real literature retrieval. Only three local synthetic teaching excerpts and existing project records read; bilingual searches are planned, not executed.",
+        "domain_extension_reason": "The relevant boundary spans intent, routing, memory and tool execution; maintain a focused cross-domain slice instead of forcing it into a seed query ID.",
+        "query_ledger": "docs/RETRIEVAL-PLAN.md",
+        "questions": [
+          {
+            "en": "When revocation is visible and an action is still preventable, can correct intent still fail to reach the execution boundary?",
+            "zh": "撤销已可见且动作仍可阻止时，正确意图是否仍未传到执行边界？"
+          },
+          {
+            "en": "Can rule-based cancellation, corrected labels, and budget-matched waiting explain all candidate gains?",
+            "zh": "规则取消、标签修正与同预算等待能否解释候选机制的全部收益？"
+          }
+        ],
+        "request_artifact": "docs/requests.json",
+        "status_reason": "New sourced research direction, not a completed literature pass.",
+        "terms_en": [
+          "time-varying intent",
+          "intent revision",
+          "changing goals",
+          "constraint updates",
+          "task cancellation",
+          "authorization revocation",
+          "temporal validity",
+          "execution-time verification"
+        ],
+        "terms_zh": [
+          "时变意图",
+          "意图修正",
+          "用户改口",
+          "约束更新",
+          "任务取消",
+          "授权撤销",
+          "有效时点",
+          "执行时复核"
+        ]
+      },
+      "domains": [],
+      "id": "temporal-intent-revocation",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "sections 1–2: question anchor and definitions",
+          "path": "docs/RESEARCH-DIRECTION.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "whole original note",
+          "path": "docs/history/team-note-original-2026-10-20.md"
+        }
+      ],
+      "status": "active",
+      "title": "时变意图与撤销约束 / Time-varying intent and revocation constraints",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:56:09.664691+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666435+00:00",
+      "data": {
+        "depends_on": [
+          "past-decision"
+        ],
+        "next_check": "Read/adjudicate label definitions and timing semantics before modifying routing keywords.",
+        "observation_scope": "Existing project decision, not a measured experiment",
+        "problem": "Labels may be ambiguous; the project has not established model failure or execution failure.",
+        "status_reason": "Preserve the original diagnostic prerequisite."
+      },
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ],
+      "id": "problem-label-ambiguity-unresolved",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "nodes[id=past-decision]",
+          "path": "seed-batch.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "sections 3–4",
+          "path": "docs/RESEARCH-DIRECTION.md"
+        }
+      ],
+      "status": "open",
+      "title": "标签歧义尚未核查，机制归因未定",
+      "type": "problem",
+      "updated_at": "2026-10-20T04:56:09.666437+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666452+00:00",
+      "data": {
+        "boundary": "Only authoritative updates visible before the environment-specific preventable-action boundary.",
+        "observed_in_real_system": false,
+        "origin": "Hypothesis-generating inference from the project goal and synthetic support/counterexample, not a measured failure.",
+        "problem": "Distinguish intent decoding, update propagation, execution-time checking and already committed actions when goals/authorization change.",
+        "unknowns": [
+          "Real closest prior art",
+          "Actual action commitment semantics",
+          "Correct label source",
+          "Real prevalence and magnitude"
+        ]
+      },
+      "domains": [
+        "temporal-intent-revocation",
+        "intent",
+        "routing",
+        "tool-use",
+        "safety-security"
+      ],
+      "id": "problem-stale-intent-at-dispatch",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "sections 1–4",
+          "path": "docs/RESEARCH-DIRECTION.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "project goal",
+          "path": "docs/history/team-note-original-2026-10-20.md"
+        }
+      ],
+      "status": "candidate",
+      "title": "用户修正或撤销后，旧约束是否仍驱动待执行动作？",
+      "type": "problem",
+      "updated_at": "2026-10-20T04:56:09.666454+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666481+00:00",
+      "data": {
+        "artifact_path": "docs/RESEARCH-DIRECTION.md",
+        "closest_paper_ids": [],
+        "closest_work_status": "unresolved: local-support/local-counter are synthetic, not verified nearest real papers",
+        "depends_on": [
+          "problem-stale-intent-at-dispatch",
+          "problem-label-ambiguity-unresolved",
+          "local-support",
+          "local-counter"
+        ],
+        "evidence_ids": [],
+        "falsification": "Narrow or park the method claim if corrected labels or strong rules explain the effect, improvements depend on stopping legitimate tasks, or equal-information/budget comparisons eliminate the predicted difference. Do not call a low-precision null equivalence.",
+        "feasibility": {
+          "budget": "unavailable",
+          "compute": "unverified",
+          "data": "unavailable",
+          "evaluation": "unverified"
+        },
+        "feasibility_notes": "Only synthetic teaching excerpts exist; no verified real trajectories, evaluation environment or experimental resources. This turn authorizes local analysis/validation only and a zero paid budget, not research execution.",
+        "mechanism": "Recheck effective scope, intent version and cancellation state at the execution boundary; identify whether this adds value beyond correct labels, simple current-state rules and extra waiting.",
+        "minimal_test": "First audit labels and event semantics; then hold correct intent and budget fixed and compare route-time-only checking, strong deterministic cancellation and version/scope rechecking. Add noisy clarification only after the earlier blocks discriminate the mechanism.",
+        "motivation_excerpt_ids": [
+          "local-support",
+          "local-counter"
+        ],
+        "prediction": "Within preventable actions with revocation already visible, a correctly implemented execution check may reduce stale side effects under matched information and budget while preserving legitimate task utility.",
+        "problem": "After an authoritative goal update/revocation, a pending action may still be based on stale constraints.",
+        "rival_explanations": [
+          "Ambiguous labels or incorrect intent decoding",
+          "A strong deterministic cancellation rule already solves the case",
+          "Extra calls, clarification, latency or abstention explain apparent gains",
+          "Revocation arrived after commitment",
+          "A check-then-act race defeats a non-atomic guard",
+          "Noisy clarification increases mis-cancellation"
+        ],
+        "status_reason": "Proposed only: no real nearest-paper/fulltext audit or research experiment, and feasibility remains unresolved.",
+        "unknowns": [
+          "Real prior work and contribution overlap",
+          "Data/license/label validity",
+          "Execution/commit boundary",
+          "Minimum useful effect and sample/uncertainty design"
+        ]
+      },
+      "domains": [
+        "temporal-intent-revocation",
+        "intent",
+        "routing",
+        "memory",
+        "planning",
+        "tool-use",
+        "safety-security",
+        "evaluation"
+      ],
+      "id": "hyp-versioned-intent-execution-gate",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "sections 4–7",
+          "path": "docs/RESEARCH-DIRECTION.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "line 1; synthetic motivation only",
+          "path": "papers/support.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "line 1; synthetic boundary challenge only",
+          "path": "papers/counter.md"
+        }
+      ],
+      "status": "proposed",
+      "title": "候选：执行前复核当前意图版本与撤销约束",
+      "type": "hypothesis",
+      "updated_at": "2026-10-20T04:56:09.666483+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666497+00:00",
+      "data": {
+        "claim_under_review": "Unqualified extrapolation of the synthetic routing advantage to noisy clarification and revocation tasks.",
+        "evidence_ids": [
+          "local-support",
+          "local-counter"
+        ],
+        "limitations": "Synthetic texts only; no quantified result or real paper identity.",
+        "reasoning": "The counter excerpt explicitly introduces a failure condition; neither excerpt reports a temporal-intent/revocation experiment. This is an unsupported extrapolation record, not a real empirical refutation of H1.",
+        "statement": "固定动作预算下的不确定性路由收益普遍适用于带噪澄清、时变意图和撤销任务。",
+        "statement_origin": "Project extrapolation under critique; not a quotation or attributed claim from a real paper.",
+        "status_reason": "Semantic review aligned the claim statement with the incoming contradicts edge: the positive extrapolation is the object under critique; unsupported does not mean an empirical refutation of H1.",
+        "wording_decision": "Do not adopt this statement: noisy-clarification counterevidence challenges its unqualified scope, and no temporal-intent/revocation result is available."
+      },
+      "domains": [
+        "routing",
+        "clarification",
+        "temporal-intent-revocation"
+      ],
+      "id": "claim-broad-routing-extrapolation",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "support, counterevidence and extrapolation boundaries",
+          "path": "docs/EVIDENCE-LEDGER.md"
+        }
+      ],
+      "status": "unsupported",
+      "title": "未获支持的外推：路由收益普遍适用于带噪澄清与撤销",
+      "type": "claim",
+      "updated_at": "2026-10-20T04:58:37.301977+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666511+00:00",
+      "data": {
+        "artifact_kind": "design_document_not_run_record",
+        "artifact_path": "docs/RESEARCH-DIRECTION.md",
+        "depends_on": [
+          "hyp-versioned-intent-execution-gate"
+        ],
+        "executed": false,
+        "hypothesis_ids": [
+          "hyp-versioned-intent-execution-gate"
+        ],
+        "result_artifact": null,
+        "run_id": null,
+        "scope": "Sections 5–7 specify comparisons, units, outcomes and unresolved resources; no code, freeze or experiment was executed.",
+        "status_reason": "Planning is within authorization; research load is not."
+      },
+      "domains": [
+        "temporal-intent-revocation",
+        "evaluation",
+        "tool-use"
+      ],
+      "id": "design-temporal-revocation-diagnostic",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "sections 5–7",
+          "path": "docs/RESEARCH-DIRECTION.md"
+        }
+      ],
+      "status": "design_only_not_executed",
+      "title": "未来判别设计：先标签与时序，再执行复核，后查澄清噪声",
+      "type": "experiment",
+      "updated_at": "2026-10-20T04:56:09.666512+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666537+00:00",
+      "data": {
+        "artifact_path": "docs/EVIDENCE-LEDGER.md",
+        "excluded_ids": [
+          "local-irrelevant"
+        ],
+        "exclusion_reason": "Fruit color grading has no relevant decision-agent mechanism.",
+        "executed": true,
+        "external_requests": 0,
+        "language": "mixed",
+        "limitations": "Not a real literature search; synthetic identities, missing fulltext/methods/results, external coverage absent.",
+        "provider": "local_file_reading",
+        "query": "Read the supplied local support, counterexample, irrelevant excerpt, existing atlas, routing notes, team note and planned requests; classify support/counterevidence/exclusion.",
+        "result_ids": [
+          "local-support",
+          "local-counter"
+        ],
+        "scope": "local_corpus: three synthetic one-line excerpts plus supplied project records; no external literature discovery",
+        "screened_ids": [
+          "local-support",
+          "local-counter",
+          "local-irrelevant"
+        ],
+        "searched_at": "2026-10-20"
+      },
+      "domains": [
+        "routing",
+        "temporal-intent-revocation",
+        "evaluation"
+      ],
+      "id": "explore-local-corpus-2026-10-20",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "whole ledger",
+          "path": "docs/EVIDENCE-LEDGER.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "whole original request plan",
+          "path": "docs/history/requests-original-2026-10-20.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "whole original note",
+          "path": "docs/history/team-note-original-2026-10-20.md"
+        }
+      ],
+      "status": "completed_local_only",
+      "title": "已完成：本地三份合成片段与既有计划的定界阅读",
+      "type": "exploration",
+      "updated_at": "2026-10-20T04:56:09.666540+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666557+00:00",
+      "data": {
+        "decision": "Continue bounded exploration and real-nearest-work planning; do not claim novelty or execute research.",
+        "depends_on": [
+          "hyp-versioned-intent-execution-gate",
+          "past-decision",
+          "claim-broad-routing-extrapolation"
+        ],
+        "next_action": "Use bilingual counterevidence and adjacent-mechanism queries only if actual retrieval later becomes authorized; otherwise continue with newly supplied local material.",
+        "status_reason": "The local support and counterexample motivate a timing/constraint question but do not resolve scientific feasibility."
+      },
+      "domains": [
+        "temporal-intent-revocation",
+        "routing"
+      ],
+      "id": "decision-continue-temporal-slice",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "sections 6–7",
+          "path": "docs/RESEARCH-DIRECTION.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "scope and matrix",
+          "path": "docs/RETRIEVAL-PLAN.md"
+        }
+      ],
+      "status": "recorded",
+      "title": "继续整理时变意图方向，保留 proposed 与旧分支暂停",
+      "type": "decision",
+      "updated_at": "2026-10-20T04:56:09.666558+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666571+00:00",
+      "data": {
+        "depends_on": [
+          "local-support",
+          "local-counter",
+          "local-irrelevant"
+        ],
+        "executed": false,
+        "planned_request_count": 19,
+        "real_request_count": 0,
+        "request_artifact": "docs/requests.json",
+        "scope": "Plan only, no search result.",
+        "status_reason": "Fix generic Boolean use, exclusion of counterevidence, synthetic external IDs and Elicit mode/filters mismatch.",
+        "superseded_artifact": "docs/history/requests-original-2026-10-20.json"
+      },
+      "domains": [
+        "temporal-intent-revocation",
+        "routing"
+      ],
+      "id": "decision-retrieval-plan-revised",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "planned_requests and execution_receipt",
+          "path": "docs/requests.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "sections 3–5",
+          "path": "docs/RETRIEVAL-PLAN.md"
+        }
+      ],
+      "status": "planned",
+      "title": "修订 provider 语法、种子语义与双语覆盖；19 条请求均未发",
+      "type": "decision",
+      "updated_at": "2026-10-20T04:56:09.666572+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666586+00:00",
+      "data": {
+        "current_interpretation": "The prior generator/reviewer/statistician roles were played in one context; independent reviewer agreement is unsupported.",
+        "independent_review_count_verified": 0,
+        "old_claim": "三位独立评审一致认可",
+        "review_type_this_turn": "single executing-agent local analysis/self-review; handoff review, if any, must be recorded separately",
+        "status_reason": "Role names do not create independent evidence; original wording remains archived."
+      },
+      "domains": [
+        "evaluation",
+        "multi-agent"
+      ],
+      "id": "decision-review-provenance-corrected",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "line 4",
+          "path": "docs/history/team-note-original-2026-10-20.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "2026-10-20 correction section",
+          "path": "docs/team-note.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "review provenance correction",
+          "path": "docs/EVIDENCE-LEDGER.md"
+        }
+      ],
+      "status": "recorded",
+      "title": "更正：此前三角色是同一上下文的串行自审",
+      "type": "decision",
+      "updated_at": "2026-10-20T04:56:09.666588+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666602+00:00",
+      "data": {
+        "baseline_artifact": "docs/audit/baseline.json",
+        "baseline_revision": 1,
+        "configured_atlas": "research-memory/atlas.json",
+        "preserved_ids": [
+          "local-support",
+          "local-counter",
+          "local-irrelevant",
+          "past-decision"
+        ],
+        "status_reason": "The project has one configured native atlas; incremental updates preserve original records, failed/paused branches and manual notes."
+      },
+      "domains": [
+        "evaluation"
+      ],
+      "id": "decision-reuse-existing-atlas",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "atlas_dir",
+          "path": "research-atlas.config.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "stdout candidates/truncated",
+          "path": "docs/audit/discover-before.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "atlas_revision and input hashes",
+          "path": "docs/audit/baseline.json"
+        }
+      ],
+      "status": "recorded",
+      "title": "复用 revision 1 原生地图，不重新初始化",
+      "type": "decision",
+      "updated_at": "2026-10-20T04:56:09.666603+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:56:09.666623+00:00",
+      "data": {
+        "artifact_path": "docs/CAPABILITY-GAPS.md",
+        "audit_artifact": "docs/audit/provider-extension-local.json",
+        "capability_ids": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C09",
+          "C11",
+          "C13",
+          "C17",
+          "C19",
+          "C20",
+          "C22",
+          "C23",
+          "C24"
+        ],
+        "status_reason": "Optional adapters and query planning do not establish authenticated retrieval or research coverage; local project fallbacks are used."
+      },
+      "domains": [
+        "temporal-intent-revocation",
+        "evaluation"
+      ],
+      "id": "decision-capability-gap-routing",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "capability mapping and acceptance requirements",
+          "path": "docs/CAPABILITY-GAPS.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "selected local source features/conflicts",
+          "path": "docs/audit/provider-extension-local.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "stdout valid/meaning",
+          "path": "docs/audit/registry-check.json"
+        }
+      ],
+      "status": "recorded",
+      "title": "记录工具与技能缺口及 Cxx 补足位置，本轮不扩展源码",
+      "type": "decision",
+      "updated_at": "2026-10-20T04:56:09.666624+00:00"
+    }
+  ],
+  "project": {
+    "created_at": "2026-10-20T04:43:14.784679+00:00",
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "scope": "Local-only continuation of a synthetic Agent-routing project: time-varying intent and revocation constraints; bilingual retrieval planning, support/counterevidence review, capability-gap mapping and reproducible handoff. No real literature search or research execution on 2026-10-20.",
+    "synthetic": true,
+    "title": "SYNTHETIC provider continuation",
+    "updated_at": "2026-10-20T04:59:06.163447+00:00"
+  },
+  "revision": 4,
+  "schema_version": 1
+}

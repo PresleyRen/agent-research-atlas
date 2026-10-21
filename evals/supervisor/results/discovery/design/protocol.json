@@ -1,0 +1,160 @@
+{
+  "schema_version": "design_protocol_v1",
+  "project": "Intent-aware document agent",
+  "synthetic": true,
+  "status": "design_complete_not_executed",
+  "execution_ready": false,
+  "date": "2026-10-21",
+  "primary_route": "measurement_and_evaluation",
+  "research_question_zh": "在同一决策前可见信息下，澄清、检索和版本过滤的任务收益如何随信息缺口来源变化？",
+  "unit": "family_or_lineage_connected_group; variants and model seeds nested within group",
+  "primary_contrast": {
+    "slice": "answer_sensitive; evidence_sufficient; no_robust_complete_answer; effective_user_reply_available",
+    "estimand": "mean_g(mean_i(L_retrieve-L_clarify))",
+    "direction": "positive favors clarification quality",
+    "scope": "ideal information diagnostic, not production utility"
+  },
+  "metrics": {
+    "primary": "family_macro_strict_task_loss",
+    "secondary": [
+      "constraint_error",
+      "wrong_version",
+      "grounding_error",
+      "completion",
+      "coverage",
+      "unnecessary_clarification",
+      "reply_failure",
+      "retrieval_calls",
+      "clarification_turns",
+      "tokens",
+      "latency_distribution",
+      "actual_financial_cost"
+    ],
+    "unknown_cost_policy": "null_and_report_unmeasured"
+  },
+  "current_authorized_budget": {
+    "model_calls": 0,
+    "external_requests": 0,
+    "paid_spend": 0,
+    "local_read_design_file_checks": true
+  },
+  "future_budget": {
+    "annotation_hours": null,
+    "runs": null,
+    "timeout_seconds": null,
+    "total_seconds": null,
+    "currency": null,
+    "cost_cap": null
+  },
+  "feasibility": {
+    "data": "unverified",
+    "compute": "unverified",
+    "evaluation": "unverified",
+    "budget": "unverified"
+  },
+  "decision_changing_effect": {
+    "delta": null,
+    "reason": "requires actual error/interruption costs or precision target; do not derive from observed debug gap"
+  },
+  "splits": {
+    "original_debug": "exploratory_only",
+    "conditional_small_pilot": "if 8 truly independent groups verified, 4 development and 4 exploratory holdout once; never label confirmatory",
+    "confirmatory": "new independent groups required; no IDs available now"
+  },
+  "methods": [
+    "direct_and_conditional_answer",
+    "deterministic_version_filter",
+    "one_extra_retrieval",
+    "targeted_clarification",
+    "observable_rule_gate"
+  ],
+  "diagnostics": [
+    "irrelevant_reply",
+    "no_reply",
+    "oracle_intent_separate",
+    "oracle_evidence_separate",
+    "document_order",
+    "same_answer_ambiguity"
+  ],
+  "heldout_immutable_roles": [
+    "evaluator",
+    "metric",
+    "ground_truth",
+    "split_and_lineage",
+    "corpus",
+    "prompts",
+    "budget_config"
+  ],
+  "potential_mutable_role": "declared_candidate_implementation_only_after_review",
+  "command": null,
+  "freeze": null,
+  "runs": [],
+  "blockers": [
+    "original_cases_documents_labels_and_ids_missing",
+    "annotation_team_and_budget_unverified",
+    "model_and_evaluator_implementation_missing",
+    "external_prior_art_not_searched",
+    "data_release_rights_unverified"
+  ],
+  "release_manifest": [
+    {
+      "artifact": "design/research_brief",
+      "status": "available",
+      "path": "RESEARCH-DESIGN.md"
+    },
+    {
+      "artifact": "benchmark_dossier",
+      "status": "available",
+      "path": "design/benchmark-dossier.md"
+    },
+    {
+      "artifact": "annotation_rubric",
+      "status": "available",
+      "path": "design/annotation-and-data-contract.md"
+    },
+    {
+      "artifact": "analysis_and_execution",
+      "status": "available",
+      "path": "design/analysis-and-execution.md"
+    },
+    {
+      "artifact": "bilingual_search_plan",
+      "status": "available",
+      "path": "design/bilingual-retrieval-plan.md"
+    },
+    {
+      "artifact": "case_data_and_document_versions",
+      "status": "not_provided",
+      "path": null
+    },
+    {
+      "artifact": "lineage_and_frozen_split",
+      "status": "planned_not_constructed",
+      "path": null
+    },
+    {
+      "artifact": "independent_annotations_and_adjudication",
+      "status": "planned_not_performed",
+      "path": null
+    },
+    {
+      "artifact": "scorer_and_baseline_code",
+      "status": "planned_not_implemented",
+      "path": null
+    },
+    {
+      "artifact": "raw_outputs_costs_failures",
+      "status": "not_run",
+      "path": null
+    },
+    {
+      "artifact": "license_and_public_release",
+      "status": "unverified_not_authorized",
+      "path": null
+    }
+  ],
+  "not_experiment_runner_schema": true,
+  "note": "No placeholder executable plan. Convert only after data, implementation, budget and current authorization exist.",
+  "analysis_protocol_revision": "design-v1.1",
+  "decision_rule_amendment": "See worklog/coordinator-protocol-review.md; directional intervals relative to positive delta; no observed result"
+}

@@ -1,0 +1,57 @@
+{
+  "figure_id": "fig02_latency_accuracy",
+  "source": "results/latency-accuracy.csv",
+  "source_sha256": "ed5f2384042cb46ec7c3989ddc2a5faa0ea1e2bd38fc3a0a210d3e0f4b446cef",
+  "synthetic": true,
+  "rows": [
+    {
+      "method": "Single-pass",
+      "latency_ms": 120.0,
+      "accuracy": 0.6875,
+      "accuracy_pct": 68.75
+    },
+    {
+      "method": "Version-aware",
+      "latency_ms": 180.0,
+      "accuracy": 0.78125,
+      "accuracy_pct": 78.125
+    },
+    {
+      "method": "Always-clarify",
+      "latency_ms": 310.0,
+      "accuracy": 0.8125,
+      "accuracy_pct": 81.25
+    }
+  ],
+  "uncertainty": "not supplied; no error bars drawn",
+  "aggregation": "none; each row plotted once",
+  "denominator": "not supplied",
+  "axes": {
+    "x": "latency_ms",
+    "x_range": [
+      0,
+      350
+    ],
+    "x_better": "lower",
+    "x_scale": "linear",
+    "y": "accuracy * 100",
+    "y_range": [
+      65,
+      86
+    ],
+    "y_better": "higher",
+    "y_scale": "linear"
+  },
+  "page_mm": [
+    90,
+    76
+  ],
+  "text_extent_check": "passed",
+  "matplotlib_version": "3.10.8",
+  "derived_differences": {
+    "version_minus_single_latency_ms": 60.0,
+    "version_minus_single_accuracy_pp": 9.375,
+    "always_minus_version_latency_ms": 130.0,
+    "always_minus_version_accuracy_pp": 3.125
+  }
+}

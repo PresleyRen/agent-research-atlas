@@ -1,0 +1,20 @@
+{
+  "fixture": true,
+  "files": [
+    {
+      "path": "PROJECT.md",
+      "bytes": 707,
+      "sha256": "b46468d24eb44876fdf335d55ea9ffa836c64ef3e5818d0786fc1051c633de04"
+    },
+    {
+      "path": "old-rule.md",
+      "bytes": 128,
+      "sha256": "19c439cb02d080b1d521a453bbf1f1261dbe010fdc737b579c11f50f111b8000"
+    },
+    {
+      "path": "scenarios.json",
+      "bytes": 530,
+      "sha256": "3526944748451c4f150f826c76efe35bcc3cf588e8f1a0d22f11543bcf4bec58"
+    }
+  ]
+}

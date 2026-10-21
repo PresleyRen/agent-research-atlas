@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "source_project": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+  "scope": "Selected actual reports, current maps and original fixtures; repeated history snapshots and some intermediate diagnostic records are omitted.",
+  "files": [
+    {
+      "path": "HANDOFF.md",
+      "sha256": "47ef850bdd1a636ea4a26f626f27b66689326600ae62eebfeaa8e9bb86ccc8b8",
+      "bytes": 6655
+    },
+    {
+      "path": "PROJECT.md",
+      "sha256": "4f8fcee878689c002dcf734f9d7506cdbdd89be310b5c4fea92575d81fcdefec",
+      "bytes": 440
+    },
+    {
+      "path": "coordinator-verification.json",
+      "sha256": "abfcc8529f63582ec44cc8289734497cff1647b9b367304334faa3f5c0630e5d",
+      "bytes": 1159
+    },
+    {
+      "path": "docs/candidates-and-methods.md",
+      "sha256": "14b2d12ba1b2f3cfc318e15de7dd813a6004f371cbb63ea5fa1535c573c0e560",
+      "bytes": 9622
+    },
+    {
+      "path": "docs/observations.md",
+      "sha256": "e85c389a840b8526b930a40ce48e16952929047648849c8011fcd24debd7346f",
+      "bytes": 488
+    },
+    {
+      "path": "docs/problem-anchor.md",
+      "sha256": "9d5cb508c12b901788781906b0f8eaa1f1ad31896cae7d58bbf08badee7a49cf",
+      "bytes": 3036
+    },
+    {
+      "path": "docs/research-map.md",
+      "sha256": "e85dd2ae2bc02b165962ee93900ce130c371d8af5771dfd5dc2d09ccd13f7eb0",
+      "bytes": 2496
+    },
+    {
+      "path": "docs/resources.md",
+      "sha256": "6d8e92cc570b030e7dd84af7881ecdefe3790e797e8b2e0243e3d27dba3acd6d",
+      "bytes": 355
+    },
+    {
+      "path": "notes/shared-workflow.md",
+      "sha256": "435617d2fdaf2846857b35ca30f042795c9c3f4a484e2dfbbbc94ea3236f6c3b",
+      "bytes": 645
+    },
+    {
+      "path": "plans/minimal-discriminating-study.md",
+      "sha256": "f55bfaa4735fbc87840fe9fe0d6e5f537f2db1e04175b1ec58a9d7b8a7c9b671",
+      "bytes": 10730
+    },
+    {
+      "path": "plans/retrieval-followup.md",
+      "sha256": "56d659c1b0fe482b8b554f7601e98034e9dac8e709855439a93eaac60b5e801a",
+      "bytes": 4216
+    },
+    {
+      "path": "research-atlas/MAP.md",
+      "sha256": "5ec0ce8b469e7abbe06f2e688bbf5e2ea517b9e82f295fb1a1750df46a23d574",
+      "bytes": 2776
+    },
+    {
+      "path": "research-atlas/atlas.json",
+      "sha256": "4dfa2aa133b4aa3d49ad3780d8050e97af5c44d506467b934890325127e171c4",
+      "bytes": 72460
+    },
+    {
+      "path": "research-atlas/domains/answer-grounding/MAP.md",
+      "sha256": "85a2eb7ab99314fbe600e9486cd757f6c6698f5bfd6a4a2f5f40e97d99624c78",
+      "bytes": 447
+    },
+    {
+      "path": "research-atlas/domains/answer-grounding/notes.md",
+      "sha256": "14d841439d676b39284242cde13e6f59eae6bc5efe374dc8e575b6bbf9de1937",
+      "bytes": 167
+    },
+    {
+      "path": "research-atlas/domains/clarification/MAP.md",
+      "sha256": "62299f815c53b890c5e46bfdb5b4644a5a28d252fd14a31bf2495688db4a0522",
+      "bytes": 8627
+    },
+    {
+      "path": "research-atlas/domains/clarification/notes.md",
+      "sha256": "72e24b7ba9da71f0f7966c947abfe7ff5a153c9ecc594ade82e8da8fcf060cc5",
+      "bytes": 153
+    },
+    {
+      "path": "research-atlas/domains/evaluation/MAP.md",
+      "sha256": "7e508465b05e02cd2bafe940b38e5e1a43c43961952de698105fd90d5087c926",
+      "bytes": 15954
+    },
+    {
+      "path": "research-atlas/domains/evaluation/notes.md",
+      "sha256": "67f28688bfad1c9fd075735834964cfe237d00ebd4b00ccc1678aecf2ff1d33d",
+      "bytes": 175
+    },
+    {
+      "path": "research-atlas/domains/ingestion-retrieval/MAP.md",
+      "sha256": "0f8761070ee8f867be8f9852b385d56bdefb2a54f3f61847917ee5dc635e212e",
+      "bytes": 9238
+    },
+    {
+      "path": "research-atlas/domains/ingestion-retrieval/notes.md",
+      "sha256": "877ff8884c9bb4b58f79d95bfdc97fcaa6828c93c4c9cba4a4f65067f38ad876",
+      "bytes": 153
+    },
+    {
+      "path": "research-atlas/domains/intent/MAP.md",
+      "sha256": "b35ddcbe6f26c6a83e8aae059597751a7125cdc3fe076e178442de1709139584",
+      "bytes": 6553
+    },
+    {
+      "path": "research-atlas/domains/intent/notes.md",
+      "sha256": "7d3da4be7c73c38762ae705392087f16f82c59afcd889c4e31fa50447e18ce4c",
+      "bytes": 151
+    },
+    {
+      "path": "research-atlas/domains/knowledge-graphs/MAP.md",
+      "sha256": "35529ad5e2716d613564ad2ad9ccf8026883e5d2cf7f02b0734ebd890957b626",
+      "bytes": 459
+    },
+    {
+      "path": "research-atlas/domains/knowledge-graphs/notes.md",
+      "sha256": "5b979bc9fc00375c2bd1c351a98f4a66fc93134b475c8fec741457bbdc67cd56",
+      "bytes": 173
+    },
+    {
+      "path": "research-atlas/domains/memory/MAP.md",
+      "sha256": "fd8de2432ffc36dec7d1744d8a21cc3ddccb5552733f05332517768ad8ea48b3",
+      "bytes": 411
+    },
+    {
+      "path": "research-atlas/domains/memory/notes.md",
+      "sha256": "008aa3c759a539fd9396e3edb88b23743e3cf6a99ba0635d82fe8fffa73a3cd4",
+      "bytes": 149
+    },
+    {
+      "path": "research-atlas/domains/multi-agent/MAP.md",
+      "sha256": "d8d92d080a7a68363f7808b8d813ee504de6d6dbe443cb6063e1ab0e622bda9c",
+      "bytes": 421
+    },
+    {
+      "path": "research-atlas/domains/multi-agent/notes.md",
+      "sha256": "59c37f0dbdb2c15180697f4113eca227f69d21c54491f6bdfe9ee9d9b7ca1dde",
+      "bytes": 154
+    },
+    {
+      "path": "research-atlas/domains/planning/MAP.md",
+      "sha256": "97b747b5b4fa5b8748e8cf1406701946b42ba3cea200428dce323eb8242c148d",
+      "bytes": 383
+    },
+    {
+      "path": "research-atlas/domains/planning/notes.md",
+      "sha256": "facd4196694e61a0f6bd2f0f52fb3c2b0ac38a775715761d1e3fc514b9698dec",
+      "bytes": 135
+    },
+    {
+      "path": "research-atlas/domains/production/MAP.md",
+      "sha256": "dc701dad4805a261131fc9e149dec57d6bf9bd7be4789745902b5888bea86dd5",
+      "bytes": 433
+    },
+    {
+      "path": "research-atlas/domains/production/notes.md",
+      "sha256": "e92f3d5acd9a788b4ecbaffa56ceea7356836c0b0c06ef9c7e92885a6f3d1af4",
+      "bytes": 160
+    },
+    {
+      "path": "research-atlas/domains/reranking-context/MAP.md",
+      "sha256": "b78c950ed38f464ccfbdf544916c4dc31f2bd726f39a83451b536c93ac7759b2",
+      "bytes": 4441
+    },
+    {
+      "path": "research-atlas/domains/reranking-context/notes.md",
+      "sha256": "f0560806a214144c874f8f7cef5e3ad2529945a1c07e65ef97438579bc40dc00",
+      "bytes": 158
+    },
+    {
+      "path": "research-atlas/domains/routing/MAP.md",
+      "sha256": "dcd1719a074eee1100ffbc6bca2787c68189a38e2af38b12e51f3bf34802f34d",
+      "bytes": 16926
+    },
+    {
+      "path": "research-atlas/domains/routing/notes.md",
+      "sha256": "1d9b4e8e48283f3f19fcf2e1083dacab677bf77b5e96625026888e8be1a04435",
+      "bytes": 651
+    },
+    {
+      "path": "research-atlas/domains/safety-security/MAP.md",
+      "sha256": "3aef207262882daef39c3bc3ed5d1605a7ee28da75544a8d84a6fd070002448d",
+      "bytes": 447
+    },
+    {
+      "path": "research-atlas/domains/safety-security/notes.md",
+      "sha256": "9fb6f90066799e30c017b23d8e59bd30cf586f4ad6bdda7b5b0ba78bfd7398c1",
+      "bytes": 167
+    },
+    {
+      "path": "research-atlas/domains/tool-use/MAP.md",
+      "sha256": "778c8133caefd6d7118acae9235882548556e857a132e9bc5aabceddea6be8ef",
+      "bytes": 409
+    },
+    {
+      "path": "research-atlas/domains/tool-use/notes.md",
+      "sha256": "9d7f43eea9cd35c6b44c6801f3d3434a8a88cad75b00ee8f994eb6f384fd7e66",
+      "bytes": 148
+    },
+    {
+      "path": "research-atlas/map.html",
+      "sha256": "f900db73bde0f40e9aa7c163f6a5067191c45bb408600bc20cb2b27bb7023b0c",
+      "bytes": 66375
+    },
+    {
+      "path": "research-atlas.config.json",
+      "sha256": "5c82f16f4ae6f614adbb98a918f5084b1c06b6649611385dad9aeffb6cdfdf05",
+      "bytes": 36
+    },
+    {
+      "path": "reviews/2026-10-20/final-artifact-check.json",
+      "sha256": "1f57087d532e5486cd9510060b46e78ab824b45ef9ade89a1d15823495707c94",
+      "bytes": 11156
+    },
+    {
+      "path": "reviews/2026-10-20/independent-review.md",
+      "sha256": "10d4300d2303c297cbc778ead95f8008cdb6e746fd922fdf39579dc622a89728",
+      "bytes": 2753
+    },
+    {
+      "path": "reviews/2026-10-20/method-capability-locate.json",
+      "sha256": "35596814162aeebd50fb8b249622291c78b8bc92f7cbbf4f0dac111b586422a7",
+      "bytes": 34988
+    },
+    {
+      "path": "reviews/2026-10-20/skill-provenance.json",
+      "sha256": "fb0464c73b10953f4e1704e5130df9bcd6443b20a813fa9c11f83e2b92387b43",
+      "bytes": 6428
+    },
+    {
+      "path": "reviews/2026-10-20/source-ledger.json",
+      "sha256": "74c858d821db8dacda37f7e24ca47edef3cd3a528ada45f122892152ad274b6b",
+      "bytes": 3775
+    },
+    {
+      "path": "reviews/2026-10-20/source-ledger.md",
+      "sha256": "3ff56d6491da306835e70e94bd2d7f66108392515ae4574d18af45647e141c4a",
+      "bytes": 2190
+    },
+    {
+      "path": "reviews/2026-10-20/validation-commands.json",
+      "sha256": "1d79b5132b36ac66066d2bd800c11ca665877b71cccb31ad639b54b4ee0fdef3",
+      "bytes": 63546
+    },
+    {
+      "path": "surveys/overview.md",
+      "sha256": "a0af80b686c23f9114f66540096eaaf396509331c8180f452e4f26bf3c1c0788",
+      "bytes": 515
+    }
+  ]
+}

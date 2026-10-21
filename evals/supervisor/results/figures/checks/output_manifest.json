@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "path": "outputs/fig01_architecture.drawio",
+      "bytes": 7390,
+      "sha256": "175c795870b597a570b4482d3c66d9535334b65cb183011a151d3c43c5734efc"
+    },
+    {
+      "path": "outputs/fig01_architecture.pdf",
+      "bytes": 13238,
+      "sha256": "a74106cf91090969e519819f5aa3178cc46d63b4d9a710de3872bec85d84820d"
+    },
+    {
+      "path": "outputs/fig01_architecture.png",
+      "bytes": 46524,
+      "sha256": "778336c69655cc29a64b9d368b20959aa7b76f6c55371cae7c9828fc07936c3e"
+    },
+    {
+      "path": "outputs/fig01_architecture.svg",
+      "bytes": 4052,
+      "sha256": "e296acb4e528f2a1cc0ca8f6ecb80a7b7deca9e57bc2a1b46c9eed3bc7c3aa19"
+    },
+    {
+      "path": "outputs/fig02_data_ledger.json",
+      "bytes": 1300,
+      "sha256": "2eaad2116aa8cbdacf98bbf1e303019f45469592ddbc60463cd4ae8994d31a61"
+    },
+    {
+      "path": "outputs/fig02_latency_accuracy.pdf",
+      "bytes": 21269,
+      "sha256": "f8158108b18a69742ea254e33340f20fe4691eecd0aea4a988c80c41a5a7b35f"
+    },
+    {
+      "path": "outputs/fig02_latency_accuracy.png",
+      "bytes": 109795,
+      "sha256": "7198ef289cb05cf43077be562b4af643ef094001c03a94ba980837f70917cc0a"
+    },
+    {
+      "path": "outputs/fig02_latency_accuracy.svg",
+      "bytes": 14064,
+      "sha256": "7074063a6ca129bcaaefe5f206ab1a70e39f71e14703fa85c17c63217b5a11ea"
+    },
+    {
+      "path": "sources/architecture_scene.json",
+      "bytes": 4382,
+      "sha256": "8fe39a5e2da96199cb722c15b0885ca3ad02b3648e90e70160d7d2f2707b7dbc"
+    },
+    {
+      "path": "sources/atlas_figures_batch.json",
+      "bytes": 12127,
+      "sha256": "06ec050bf394784fbb9dd755b7b2154471302600b4e5ad6143236009df9e5f02"
+    },
+    {
+      "path": "sources/numerical_claim_ledger.json",
+      "bytes": 3294,
+      "sha256": "489fef88ed9fe895159bde5e0eb8d33bb973fdf91f7df41f350941719f8bc4e6"
+    },
+    {
+      "path": "scripts/plot_latency_accuracy.py",
+      "bytes": 6066,
+      "sha256": "586f1255d187cc62dea8656faebdd9504a0d7f34a47cd13b6ae42a35d9e14eec"
+    },
+    {
+      "path": "scripts/rebuild_architecture.py",
+      "bytes": 12662,
+      "sha256": "27422757fcc1157e05c5baf9f0a686e40e2dd011dbd4bbd7d721922edd9758ec"
+    },
+    {
+      "path": "scripts/render_previews.py",
+      "bytes": 2327,
+      "sha256": "cec1e2812fa3c50e05b30d8789dfc2d22db8c3ed2cd5e8bbfda2385a4cc6c11e"
+    },
+    {
+      "path": "scripts/verify_artifacts.py",
+      "bytes": 5327,
+      "sha256": "2b57c04eb9d480b0b9b3087adaeacf7fbc4edce514836f38c317c7aa6eb854be"
+    },
+    {
+      "path": "assets/source_detail.png",
+      "bytes": 318,
+      "sha256": "c394a86c0ea5580b110692ee1d2caa56eb03cf8982fc77027411b7c530a89d63"
+    }
+  ]
+}

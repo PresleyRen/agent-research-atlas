@@ -1,0 +1,139 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/scratch/f7a517081da8/forward-conflicts-providers/scripts/validate_continuation.py"
+  ],
+  "exit_code": 1,
+  "stdout": {
+    "date": "2026-10-20",
+    "scope": "Project-local integrity validation only",
+    "revision": 4,
+    "checks": [
+      {
+        "check": "original_inputs_unchanged",
+        "passed": true,
+        "detail": [
+          "research-atlas.config.json",
+          "seed-batch.json",
+          "papers/support.md",
+          "papers/counter.md",
+          "papers/irrelevant.md"
+        ]
+      },
+      {
+        "check": "original_request_and_note_bytes_preserved",
+        "passed": true,
+        "detail": {
+          "docs/requests.json": "docs/history/requests-original-2026-10-20.json",
+          "docs/team-note.md": "docs/history/team-note-original-2026-10-20.md"
+        }
+      },
+      {
+        "check": "original_routing_note_preserved",
+        "passed": true,
+        "detail": "Original manual note is retained before the appended continuation."
+      },
+      {
+        "check": "original_atlas_revision_preserved",
+        "passed": true,
+        "detail": [
+          "research-memory/history/revision-000001-ac5e1fea79d2.json"
+        ]
+      },
+      {
+        "check": "skill_source_snapshot_unchanged",
+        "passed": false,
+        "detail": {
+          "compared_files": 16,
+          "changed_paths": [
+            "assets/capability-registry.json"
+          ]
+        }
+      },
+      {
+        "check": "atlas_scope_and_counts",
+        "passed": true,
+        "detail": {
+          "revision": 4,
+          "nodes": 30,
+          "edges": 15
+        }
+      },
+      {
+        "check": "coverage_not_overstated",
+        "passed": true,
+        "detail": "All 15 domains remain unsearched for real literature."
+      },
+      {
+        "check": "hypothesis_not_upgraded",
+        "passed": true,
+        "detail": "No verified real closest papers or empirical evidence were invented."
+      },
+      {
+        "check": "old_branch_stays_parked",
+        "passed": true,
+        "detail": "Label ambiguity must be checked before keyword expansion is reopened."
+      },
+      {
+        "check": "counterevidence_retained",
+        "passed": true,
+        "detail": "Related disagreement remains in the evidence graph."
+      },
+      {
+        "check": "no_experiment_result_created",
+        "passed": true,
+        "detail": "The experiment-type node holds a design document only."
+      },
+      {
+        "check": "local_reading_not_global_retrieval",
+        "passed": true,
+        "detail": "Only the local supplied corpus was actually reviewed."
+      },
+      {
+        "check": "remote_requests_remain_unexecuted",
+        "passed": true,
+        "detail": "16 relevance drafts + 1 recommendation-role draft + 2 semantic drafts; no submitted payload or result."
+      },
+      {
+        "check": "bilingual_query_cells",
+        "passed": true,
+        "detail": "Eight query cells each retain both languages."
+      },
+      {
+        "check": "plain_text_and_counterevidence_queries",
+        "passed": true,
+        "detail": "No generic Boolean expression or NOT failure exclusion in relevance drafts."
+      },
+      {
+        "check": "recommendation_seed_roles_and_ids",
+        "passed": true,
+        "detail": "Internal synthetic IDs never became real provider IDs; negative examples represent irrelevance only."
+      },
+      {
+        "check": "elicit_mode_filters",
+        "passed": true,
+        "detail": "No keyword/filters mixing, no assumed live endpoint parity."
+      },
+      {
+        "check": "generated_views_match_atlas",
+        "passed": true,
+        "detail": "Markdown revision and embedded HTML JSON match the canonical atlas."
+      },
+      {
+        "check": "html_has_no_automatic_remote_load",
+        "passed": true,
+        "detail": "Static inspection only; browser interaction was not tested."
+      },
+      {
+        "check": "review_queue_resolved_with_history",
+        "passed": true,
+        "detail": "The triggered claim-wording dependency review was explicitly recorded, without empirical status upgrades."
+      }
+    ],
+    "passed": false,
+    "limitations": "This validates files and declared state. It does not prove scientific correctness, actual service readiness, novelty, browser behavior, or absence of unrecorded actions outside these files."
+  },
+  "stderr": "",
+  "execution_scope": "Local-only file/state/CLI validation; no remote request or research load."
+}

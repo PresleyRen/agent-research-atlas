@@ -110,3 +110,29 @@ Nested objects merge; lists append unique entries; unmentioned fields stay. Node
 State and views are separate writes. If rendering fails, canonical state may already be committed. Inspect `status`, resolve the view error without bypassing permissions, then `render`; do not repeat the upsert blindly. Prior view contents, including human edits, are backed up before replacement. Use notes.md for persistent prose.
 
 The HTML uses no CDN/network requests and filters all records by text/domain/type/status. It draws at most 140 matching graph nodes; the complete matching index remains visible, and the graph cap is clearly announced. Narrow filters to view remaining nodes. Refresh after regeneration; it is a snapshot, not an editor or live watcher.
+
+## v1.1 dependency impact and pending reviews
+
+The schema remains version 1; older atlases load without fabricating a prior review history. `maintenance` is an optional tool-managed top-level object with `pending_reviews` and append-only `review_log`. Do not write this object through `upsert` or hand-edit it to clear warnings.
+
+```bash
+python <SKILL>/scripts/atlas.py --root <PROJECT> impact --node paper-id
+python <SKILL>/scripts/atlas.py --root <PROJECT> status
+python <SKILL>/scripts/atlas.py --root <PROJECT> resolve-review --node claim-id --reviewer 'researcher-name' --note 'What changed; evidence inspected; keep/narrow/amend decision and residual limits' --expected-revision 7
+```
+
+`impact` is read only. `upsert` automatically queues existing consumers after a substantive recorded premise changes or an evidence/dependency relationship is added, changed or removed. It follows transitive dependencies and terminates on cycles. Previously established hypothesis/claim interpretations also need review when their own stored content changes. Unchanged content and mere topical co-membership do not invalidate one another.
+
+| Relationship | Change propagation |
+|---|---|
+| `data.closest_paper_ids`, `data.evidence_ids`, `data.search_ids`, `data.depends_on` | Listed prerequisite → owning node |
+| `supports`, `contradicts`, `motivates` | Source → target |
+| `tests` | Experiment ↔ hypothesis: changed results affect interpretation; a changed hypothesis affects the suitability of its test |
+| `uses`, `derived_from`, `extends`, `supersedes` | Target prerequisite → source consumer |
+| `part_of`, `relates_to`, `compares_with`, domain membership | No automatic impact; add `data.depends_on` if there is a real logical dependency |
+
+The queue is conservative and only knows registered relationships. It does not read changed external pages or monitor files outside `upsert`; after noticing a corrected/retracted paper or a changed external artifact, record the revised evidence and explanation in the relevant node. Unrecorded dependencies can be missed. A same-domain relation is not sufficient evidence of logical dependence.
+
+Historical states such as `supported` remain visible until a reviewer changes them. Pending markers appear in the overview, relevant domain Markdown and interactive detail. **Do not reuse a pending historical status as a currently reviewed conclusion.** `check` certifies structural integrity, not absence of pending review. `audit.py project` returns actionable gap codes and capability IDs for the queue and other recorded omissions.
+
+Resolving one review requires the current revision, reviewer identity and a substantive note; it saves a new revision and the original trigger trail. It does not silently resolve descendants. Recheck each affected record. Recorded reviewer identity is an operator declaration, not an authentication service or independent peer review.

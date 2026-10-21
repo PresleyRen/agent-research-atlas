@@ -1,0 +1,87 @@
+{
+  "counts": {
+    "claim": 2,
+    "decision": 4,
+    "domain": 14,
+    "experiment": 1,
+    "exploration": 0,
+    "hypothesis": 0,
+    "paper": 0,
+    "problem": 0
+  },
+  "coverage": [
+    {
+      "coverage": "unsearched",
+      "id": "intent"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "clarification"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "routing"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "planning"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "ingestion-retrieval"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "reranking-context"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "knowledge-graphs"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "memory"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "tool-use"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "answer-grounding"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "multi-agent"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "evaluation"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "production"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "safety-security"
+    }
+  ],
+  "imports": [],
+  "maintenance": {
+    "pending_reviews": [],
+    "review_log": []
+  },
+  "project": {
+    "created_at": "2026-10-21T12:42:06.282017+00:00",
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "scope": "Offline scientific figure reconstruction and visualization of supplied synthetic fixtures only; no literature search, inference, experimental evaluation or publication.",
+    "synthetic": true,
+    "title": "科研图稿与可编辑重建（合成任务）",
+    "updated_at": "2026-10-21T12:50:32.085315+00:00"
+  },
+  "revision": 1
+}

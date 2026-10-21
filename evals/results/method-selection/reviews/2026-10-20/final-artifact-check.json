@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-10-20T05:15:57.433386+00:00",
+  "project": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+  "atlas": {
+    "edges": 12,
+    "meaning": "Structural integrity only; scientific interpretation requires evidence review.",
+    "nodes": 28,
+    "revision": 7,
+    "valid": true
+  },
+  "pending_reviews": 0,
+  "imports": 0,
+  "coverage": {
+    "partial": 6,
+    "unsearched": 8,
+    "reviewed": 0,
+    "stale": 0
+  },
+  "hypotheses": {
+    "c1-gap-routing": "proposed",
+    "c2-answer-sensitive-clarification": "proposed",
+    "c3-stagnation-switch": "parked",
+    "legacy-large-reranker": "parked"
+  },
+  "verified_real_papers": 0,
+  "planned_experiment_nodes": 2,
+  "executed_research_runs": 0,
+  "original_file_checks": [
+    {
+      "path": "PROJECT.md",
+      "expected_sha256": "4f8fcee878689c002dcf734f9d7506cdbdd89be310b5c4fea92575d81fcdefec",
+      "actual_sha256": "4f8fcee878689c002dcf734f9d7506cdbdd89be310b5c4fea92575d81fcdefec",
+      "unchanged": true
+    },
+    {
+      "path": "surveys/overview.md",
+      "expected_sha256": "a0af80b686c23f9114f66540096eaaf396509331c8180f452e4f26bf3c1c0788",
+      "actual_sha256": "a0af80b686c23f9114f66540096eaaf396509331c8180f452e4f26bf3c1c0788",
+      "unchanged": true
+    },
+    {
+      "path": "docs/observations.md",
+      "expected_sha256": "e85c389a840b8526b930a40ce48e16952929047648849c8011fcd24debd7346f",
+      "actual_sha256": "e85c389a840b8526b930a40ce48e16952929047648849c8011fcd24debd7346f",
+      "unchanged": true
+    },
+    {
+      "path": "docs/resources.md",
+      "expected_sha256": "6d8e92cc570b030e7dd84af7881ecdefe3790e797e8b2e0243e3d27dba3acd6d",
+      "actual_sha256": "6d8e92cc570b030e7dd84af7881ecdefe3790e797e8b2e0243e3d27dba3acd6d",
+      "unchanged": true
+    },
+    {
+      "path": "notes/shared-workflow.md",
+      "expected_sha256": "435617d2fdaf2846857b35ca30f042795c9c3f4a484e2dfbbbc94ea3236f6c3b",
+      "actual_sha256": "435617d2fdaf2846857b35ca30f042795c9c3f4a484e2dfbbbc94ea3236f6c3b",
+      "unchanged": true
+    }
+  ],
+  "used_skill_file_checks": [
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/SKILL.md",
+      "expected_sha256": "9e2fef60cf0ae464bf8ef4791bfdafca7003eab5c7a6059d9059974214384eee",
+      "actual_sha256": "9e2fef60cf0ae464bf8ef4791bfdafca7003eab5c7a6059d9059974214384eee",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/local-atlas.md",
+      "expected_sha256": "bff297c626f9c1e76ac82748831354a0535f7866739fab54c04cb9f17b17b1c6",
+      "actual_sha256": "bff297c626f9c1e76ac82748831354a0535f7866739fab54c04cb9f17b17b1c6",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/methodology.md",
+      "expected_sha256": "2fff220c393e03a10f77192ef3480e8d524e7a1ba355ea0958330ce2cf449e33",
+      "actual_sha256": "2fff220c393e03a10f77192ef3480e8d524e7a1ba355ea0958330ce2cf449e33",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/agent-domains.md",
+      "expected_sha256": "759a8ae66e9f9266a6faf5556cd3c994a21e0415951c9dbf175a49a1ee554a3a",
+      "actual_sha256": "759a8ae66e9f9266a6faf5556cd3c994a21e0415951c9dbf175a49a1ee554a3a",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/bilingual-retrieval.md",
+      "expected_sha256": "8b1e37bc89f583ee2224dfc6ed38e38d13fc84ef3782115b2f06c864558566f5",
+      "actual_sha256": "8b1e37bc89f583ee2224dfc6ed38e38d13fc84ef3782115b2f06c864558566f5",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/experiments.md",
+      "expected_sha256": "9c23a9e35fcb64c44bc8100773aaba35d7049e6922e396307b42b262209de5b1",
+      "actual_sha256": "9c23a9e35fcb64c44bc8100773aaba35d7049e6922e396307b42b262209de5b1",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/evidence-and-claims.md",
+      "expected_sha256": "5ce313f74b01be5d5da5706139348aaeefe7a1e886debaae059c8d9e35c36bce",
+      "actual_sha256": "5ce313f74b01be5d5da5706139348aaeefe7a1e886debaae059c8d9e35c36bce",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/extension-contract.md",
+      "expected_sha256": "5370cfadb1b27fd18d7e6c2722579e0276183abae2287d7babca5c30c9888816",
+      "actual_sha256": "5370cfadb1b27fd18d7e6c2722579e0276183abae2287d7babca5c30c9888816",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+      "expected_sha256": "bcf13a70cdff1f64dc10d2f054621d182fcd55bca04d9d128dc36d5973e9181b",
+      "actual_sha256": "bcf13a70cdff1f64dc10d2f054621d182fcd55bca04d9d128dc36d5973e9181b",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+      "expected_sha256": "9ad10da5eb49186d9d7a5c0323f2af51b56d52ab1e88d0b766ddb1541e877c61",
+      "actual_sha256": "9ad10da5eb49186d9d7a5c0323f2af51b56d52ab1e88d0b766ddb1541e877c61",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/experiments.py",
+      "expected_sha256": "653555bf96a36b74419cf47167ce9c9c05d89db774a4ff3bc45175848aae4219",
+      "actual_sha256": "653555bf96a36b74419cf47167ce9c9c05d89db774a4ff3bc45175848aae4219",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/assets/agent-taxonomy.json",
+      "expected_sha256": "22827ff1c41ba4e0687da33120f9e2be074e894a506b0c4ddd1579addabb2724",
+      "actual_sha256": "22827ff1c41ba4e0687da33120f9e2be074e894a506b0c4ddd1579addabb2724",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/assets/viewer.html",
+      "expected_sha256": "4c2d050457fbe42cea8496f10c95b8c8dcd2452e73d14c8e12a4138361fc8b19",
+      "actual_sha256": "4c2d050457fbe42cea8496f10c95b8c8dcd2452e73d14c8e12a4138361fc8b19",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/assets/capability-registry.json",
+      "expected_sha256": "69146c0a704b080aebe1c595bcf4ab2cd81b2bb2e5ba642efe1dabe98e7b7bf1",
+      "actual_sha256": "69146c0a704b080aebe1c595bcf4ab2cd81b2bb2e5ba642efe1dabe98e7b7bf1",
+      "unchanged": true
+    }
+  ],
+  "skill_tree": {
+    "before_count": 19,
+    "after_count": 19,
+    "changed_paths": []
+  },
+  "local_source_reference_problems": [],
+  "viewer_static_check": {
+    "embedded_state_matches": true,
+    "active_remote_resources": [],
+    "network_call_indicators": [],
+    "browser_rendering_performed": false
+  },
+  "project_gaps": {
+    "issues": [
+      {
+        "capabilities": [
+          "C01",
+          "C03"
+        ],
+        "code": "G-COVERAGE-UNSEARCHED",
+        "next": "Scope a bilingual search, execute available providers, record limits and actual results; seed folders are not a literature review.",
+        "node_ids": [
+          "planning",
+          "knowledge-graphs",
+          "memory",
+          "tool-use",
+          "answer-grounding",
+          "multi-agent",
+          "production",
+          "safety-security"
+        ],
+        "reason": "Recorded coverage is unsearched"
+      },
+      {
+        "capabilities": [
+          "C11",
+          "C13"
+        ],
+        "code": "G-FEASIBILITY",
+        "next": "Inspect local data rights, implementation, evaluator and budget. Resolve the cheapest decision-changing uncertainty before promotion.",
+        "node_ids": [
+          "c1-gap-routing",
+          "c2-answer-sensitive-clarification"
+        ],
+        "reason": "One or more resources are not verified available"
+      }
+    ],
+    "limits": "Only explicit recorded states are diagnosed. A clean report does not establish novelty, sound design, data rights or complete literature coverage.",
+    "revision": 7,
+    "scientific_verdict": "not_assessed"
+  },
+  "limits": "仅结构、路径、哈希、状态与HTML静态检查；不验证科学结论、近邻覆盖、标签、模型效果或部署可行性。",
+  "markdown_links": {
+    "checked": 58,
+    "broken": []
+  },
+  "json_files": {
+    "checked": 10,
+    "parse_problems": []
+  },
+  "all_delivery_checks_passed": true,
+  "completed_at": "2026-10-20T05:15:57.538501+00:00",
+  "deliverable_hashes": [
+    {
+      "path": "HANDOFF.md",
+      "sha256": "47ef850bdd1a636ea4a26f626f27b66689326600ae62eebfeaa8e9bb86ccc8b8",
+      "bytes": 6655
+    },
+    {
+      "path": "research-atlas/atlas.json",
+      "sha256": "4dfa2aa133b4aa3d49ad3780d8050e97af5c44d506467b934890325127e171c4",
+      "bytes": 72460
+    },
+    {
+      "path": "research-atlas/MAP.md",
+      "sha256": "5ec0ce8b469e7abbe06f2e688bbf5e2ea517b9e82f295fb1a1750df46a23d574",
+      "bytes": 2776
+    },
+    {
+      "path": "research-atlas/map.html",
+      "sha256": "f900db73bde0f40e9aa7c163f6a5067191c45bb408600bc20cb2b27bb7023b0c",
+      "bytes": 66375
+    },
+    {
+      "path": "plans/retrieval-followup.md",
+      "sha256": "56d659c1b0fe482b8b554f7601e98034e9dac8e709855439a93eaac60b5e801a",
+      "bytes": 4216
+    },
+    {
+      "path": "plans/minimal-discriminating-study.md",
+      "sha256": "f55bfaa4735fbc87840fe9fe0d6e5f537f2db1e04175b1ec58a9d7b8a7c9b671",
+      "bytes": 10730
+    },
+    {
+      "path": "docs/problem-anchor.md",
+      "sha256": "9d5cb508c12b901788781906b0f8eaa1f1ad31896cae7d58bbf08badee7a49cf",
+      "bytes": 3036
+    },
+    {
+      "path": "docs/candidates-and-methods.md",
+      "sha256": "14b2d12ba1b2f3cfc318e15de7dd813a6004f371cbb63ea5fa1535c573c0e560",
+      "bytes": 9622
+    },
+    {
+      "path": "docs/research-map.md",
+      "sha256": "e85dd2ae2bc02b165962ee93900ce130c371d8af5771dfd5dc2d09ccd13f7eb0",
+      "bytes": 2496
+    },
+    {
+      "path": "reviews/2026-10-20/source-ledger.json",
+      "sha256": "74c858d821db8dacda37f7e24ca47edef3cd3a528ada45f122892152ad274b6b",
+      "bytes": 3775
+    },
+    {
+      "path": "reviews/2026-10-20/skill-provenance.json",
+      "sha256": "fb0464c73b10953f4e1704e5130df9bcd6443b20a813fa9c11f83e2b92387b43",
+      "bytes": 6428
+    },
+    {
+      "path": "reviews/2026-10-20/independent-review.md",
+      "sha256": "10d4300d2303c297cbc778ead95f8008cdb6e746fd922fdf39579dc622a89728",
+      "bytes": 2753
+    },
+    {
+      "path": "reviews/2026-10-20/validate-deliverables.py",
+      "sha256": "e5baa9f6cd3b496b1e776a69c1974c6edf63a090377209b43b03b1c12606862c",
+      "bytes": 19533
+    }
+  ]
+}

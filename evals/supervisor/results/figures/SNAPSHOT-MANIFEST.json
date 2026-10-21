@@ -1,0 +1,387 @@
+{
+  "date": "2026-10-21",
+  "task": "figures",
+  "scope": "Exact local forward-task deliverables, excluding Python bytecode and regenerable font caches; this manifest excluded from itself. Original absolute paths in handoff/logs identify the source run.",
+  "files": [
+    {
+      "path": "CAPTIONS.md",
+      "bytes": 2895,
+      "sha256": "6b4bb8f8bb0783ddfab64984e6bb08da6596759ec59c1cc1fec48af209c89e19"
+    },
+    {
+      "path": "EDITING.md",
+      "bytes": 4422,
+      "sha256": "88c5a2e36ca1adc4025d227736c9043610f6911bedb07ec77510ba6af4a776f9"
+    },
+    {
+      "path": "HANDOFF.md",
+      "bytes": 7689,
+      "sha256": "da7d8b9ca63ab49f74f87f99f5d425fdca72504064849a1fa52bbc13eaa48f04"
+    },
+    {
+      "path": "INPUT-MANIFEST.json",
+      "bytes": 651,
+      "sha256": "b0bc91b925365501faebb4754555a8b2372784839a917fa4e695bfbf2bf825e6"
+    },
+    {
+      "path": "PROJECT.md",
+      "bytes": 783,
+      "sha256": "97bf554c824a41ff849432ed3daa1220daeade0b103042e88b047b538c5b0b54"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 5300,
+      "sha256": "14b224bbccbd76b6ae56f27e674ab08ac2e0e3f4fb34a45661fa1eef2742da63"
+    },
+    {
+      "path": "assets/source_detail.png",
+      "bytes": 318,
+      "sha256": "c394a86c0ea5580b110692ee1d2caa56eb03cf8982fc77027411b7c530a89d63"
+    },
+    {
+      "path": "checks/artifact_verification.json",
+      "bytes": 2444,
+      "sha256": "117af85477bda573df436c9c625ac96f88c7458260c763cf9736db323b56d843"
+    },
+    {
+      "path": "checks/atlas_audit.json",
+      "bytes": 910,
+      "sha256": "0be393b85af72d87519c7c2dc9ee5ecce324269a782b934db23b0d69b29ca142"
+    },
+    {
+      "path": "checks/atlas_check.json",
+      "bytes": 161,
+      "sha256": "bd8250a7deb8078105c0354a207645152225911d7b6787a6a3895b90ffb8d544"
+    },
+    {
+      "path": "checks/atlas_status.json",
+      "bytes": 1749,
+      "sha256": "bd011791bc64cadb96c603e42a4db21ffa29c76e263bd6a858a984defd4aa818"
+    },
+    {
+      "path": "checks/fig01_architecture_pdf_render.png",
+      "bytes": 28452,
+      "sha256": "1e9b64856db97cbb99a2a27ddf8281d2ba4203dbd605fefccd6616ffaebe1e0f"
+    },
+    {
+      "path": "checks/fig02_latency_accuracy_pdf_render.png",
+      "bytes": 37539,
+      "sha256": "22334da6c0c1ef6fe97db5f14959d6f4a84c68f8cc125e3028dde6a78d8f84ae"
+    },
+    {
+      "path": "checks/fig02_svg_render.png",
+      "bytes": 79313,
+      "sha256": "6d0db5b76bc297b16142f702c3a611ae0aaf1f74f2801dcbede3826be8feba77"
+    },
+    {
+      "path": "checks/numerical_audit.json",
+      "bytes": 3937,
+      "sha256": "604467884b55e7b1cf20b9eae8df687aa6242b12442e45ecf33cd67fc71e1d17"
+    },
+    {
+      "path": "checks/output_manifest.json",
+      "bytes": 2680,
+      "sha256": "7e0533773bab457e51a5c752fc6c728841dc38b2cd44ab160a18a7d8e41090a2"
+    },
+    {
+      "path": "checks/render_log.json",
+      "bytes": 2647,
+      "sha256": "8e01bc583e99df131a28703033dd0a43e7357ffdefd5469597f9bed8024cb76a"
+    },
+    {
+      "path": "notes/FIGURE-BRIEF.md",
+      "bytes": 5230,
+      "sha256": "b216a30ed65e62d95aa8930cb132586e5ba7be1a5db49f8af92ad7acc8127070"
+    },
+    {
+      "path": "notes/figure-context.md",
+      "bytes": 585,
+      "sha256": "fc9ae99935a21922bb39fbdef6d684bfa6681feb2d3c19787c41706f0ef1153c"
+    },
+    {
+      "path": "outputs/fig01_architecture.drawio",
+      "bytes": 7390,
+      "sha256": "175c795870b597a570b4482d3c66d9535334b65cb183011a151d3c43c5734efc"
+    },
+    {
+      "path": "outputs/fig01_architecture.pdf",
+      "bytes": 13238,
+      "sha256": "a74106cf91090969e519819f5aa3178cc46d63b4d9a710de3872bec85d84820d"
+    },
+    {
+      "path": "outputs/fig01_architecture.png",
+      "bytes": 46524,
+      "sha256": "778336c69655cc29a64b9d368b20959aa7b76f6c55371cae7c9828fc07936c3e"
+    },
+    {
+      "path": "outputs/fig01_architecture.svg",
+      "bytes": 4052,
+      "sha256": "e296acb4e528f2a1cc0ca8f6ecb80a7b7deca9e57bc2a1b46c9eed3bc7c3aa19"
+    },
+    {
+      "path": "outputs/fig02_data_ledger.json",
+      "bytes": 1300,
+      "sha256": "2eaad2116aa8cbdacf98bbf1e303019f45469592ddbc60463cd4ae8994d31a61"
+    },
+    {
+      "path": "outputs/fig02_latency_accuracy.pdf",
+      "bytes": 21269,
+      "sha256": "f8158108b18a69742ea254e33340f20fe4691eecd0aea4a988c80c41a5a7b35f"
+    },
+    {
+      "path": "outputs/fig02_latency_accuracy.png",
+      "bytes": 109795,
+      "sha256": "7198ef289cb05cf43077be562b4af643ef094001c03a94ba980837f70917cc0a"
+    },
+    {
+      "path": "outputs/fig02_latency_accuracy.svg",
+      "bytes": 14064,
+      "sha256": "7074063a6ca129bcaaefe5f206ab1a70e39f71e14703fa85c17c63217b5a11ea"
+    },
+    {
+      "path": "reference.png",
+      "bytes": 17358,
+      "sha256": "03eba4db7c14e85b31d9b5ae0bd963e07abf35d81552e165bf1cc53ec75b7055"
+    },
+    {
+      "path": "research-atlas/MAP.md",
+      "bytes": 2783,
+      "sha256": "4b7ccc09b62bd7cbec78af4551614c3811cf787781834c91850e0bc263fb18d8"
+    },
+    {
+      "path": "research-atlas/atlas.json",
+      "bytes": 34065,
+      "sha256": "2eecd02bbe421d1d52f6cc73cc4dd032203b7a687a0cb646ce8dfd1a1f35ff75"
+    },
+    {
+      "path": "research-atlas/domains/answer-grounding/MAP.md",
+      "bytes": 447,
+      "sha256": "85a2eb7ab99314fbe600e9486cd757f6c6698f5bfd6a4a2f5f40e97d99624c78"
+    },
+    {
+      "path": "research-atlas/domains/answer-grounding/notes.md",
+      "bytes": 167,
+      "sha256": "14d841439d676b39284242cde13e6f59eae6bc5efe374dc8e575b6bbf9de1937"
+    },
+    {
+      "path": "research-atlas/domains/clarification/MAP.md",
+      "bytes": 2716,
+      "sha256": "03161e406cead8846cb183b35db4f4b476819e33146febed60d1afe5c244a278"
+    },
+    {
+      "path": "research-atlas/domains/clarification/notes.md",
+      "bytes": 153,
+      "sha256": "72e24b7ba9da71f0f7966c947abfe7ff5a153c9ecc594ade82e8da8fcf060cc5"
+    },
+    {
+      "path": "research-atlas/domains/evaluation/MAP.md",
+      "bytes": 5089,
+      "sha256": "4607964781da34cf8a37ae9afaed1b2f47bd886cce8aec935391a1765db1c731"
+    },
+    {
+      "path": "research-atlas/domains/evaluation/notes.md",
+      "bytes": 175,
+      "sha256": "67f28688bfad1c9fd075735834964cfe237d00ebd4b00ccc1678aecf2ff1d33d"
+    },
+    {
+      "path": "research-atlas/domains/ingestion-retrieval/MAP.md",
+      "bytes": 2716,
+      "sha256": "ea782225ca849bb625581b78a9cdef99fa46ace894a3e5ae7920e9a88dbfff62"
+    },
+    {
+      "path": "research-atlas/domains/ingestion-retrieval/notes.md",
+      "bytes": 153,
+      "sha256": "877ff8884c9bb4b58f79d95bfdc97fcaa6828c93c4c9cba4a4f65067f38ad876"
+    },
+    {
+      "path": "research-atlas/domains/intent/MAP.md",
+      "bytes": 415,
+      "sha256": "86046bdbeb37f0e3c40f9af5b90893362e14671e9c5c070762502d53c350965d"
+    },
+    {
+      "path": "research-atlas/domains/intent/notes.md",
+      "bytes": 151,
+      "sha256": "7d3da4be7c73c38762ae705392087f16f82c59afcd889c4e31fa50447e18ce4c"
+    },
+    {
+      "path": "research-atlas/domains/knowledge-graphs/MAP.md",
+      "bytes": 459,
+      "sha256": "35529ad5e2716d613564ad2ad9ccf8026883e5d2cf7f02b0734ebd890957b626"
+    },
+    {
+      "path": "research-atlas/domains/knowledge-graphs/notes.md",
+      "bytes": 173,
+      "sha256": "5b979bc9fc00375c2bd1c351a98f4a66fc93134b475c8fec741457bbdc67cd56"
+    },
+    {
+      "path": "research-atlas/domains/memory/MAP.md",
+      "bytes": 411,
+      "sha256": "fd8de2432ffc36dec7d1744d8a21cc3ddccb5552733f05332517768ad8ea48b3"
+    },
+    {
+      "path": "research-atlas/domains/memory/notes.md",
+      "bytes": 149,
+      "sha256": "008aa3c759a539fd9396e3edb88b23743e3cf6a99ba0635d82fe8fffa73a3cd4"
+    },
+    {
+      "path": "research-atlas/domains/multi-agent/MAP.md",
+      "bytes": 421,
+      "sha256": "d8d92d080a7a68363f7808b8d813ee504de6d6dbe443cb6063e1ab0e622bda9c"
+    },
+    {
+      "path": "research-atlas/domains/multi-agent/notes.md",
+      "bytes": 154,
+      "sha256": "59c37f0dbdb2c15180697f4113eca227f69d21c54491f6bdfe9ee9d9b7ca1dde"
+    },
+    {
+      "path": "research-atlas/domains/planning/MAP.md",
+      "bytes": 383,
+      "sha256": "97b747b5b4fa5b8748e8cf1406701946b42ba3cea200428dce323eb8242c148d"
+    },
+    {
+      "path": "research-atlas/domains/planning/notes.md",
+      "bytes": 135,
+      "sha256": "facd4196694e61a0f6bd2f0f52fb3c2b0ac38a775715761d1e3fc514b9698dec"
+    },
+    {
+      "path": "research-atlas/domains/production/MAP.md",
+      "bytes": 5059,
+      "sha256": "00277ba7005730a058f73c63527e3330992f2a1af52bbfeb0294f32bf2bdc0a6"
+    },
+    {
+      "path": "research-atlas/domains/production/notes.md",
+      "bytes": 160,
+      "sha256": "e92f3d5acd9a788b4ecbaffa56ceea7356836c0b0c06ef9c7e92885a6f3d1af4"
+    },
+    {
+      "path": "research-atlas/domains/reranking-context/MAP.md",
+      "bytes": 429,
+      "sha256": "fb889dab59fdfae542fdb17f8fc0e4c0661539ef50fdbb3884140b3de6e259ac"
+    },
+    {
+      "path": "research-atlas/domains/reranking-context/notes.md",
+      "bytes": 158,
+      "sha256": "f0560806a214144c874f8f7cef5e3ad2529945a1c07e65ef97438579bc40dc00"
+    },
+    {
+      "path": "research-atlas/domains/routing/MAP.md",
+      "bytes": 4663,
+      "sha256": "956f62744d2dc3e630dd9890c73c4568dc4943606a6b79ceeaa24ce710eee453"
+    },
+    {
+      "path": "research-atlas/domains/routing/notes.md",
+      "bytes": 164,
+      "sha256": "eb33468ceefb7283d9432d1900044bc22432a117f6f6298b15af3d5dc2dd9ed4"
+    },
+    {
+      "path": "research-atlas/domains/safety-security/MAP.md",
+      "bytes": 447,
+      "sha256": "3aef207262882daef39c3bc3ed5d1605a7ee28da75544a8d84a6fd070002448d"
+    },
+    {
+      "path": "research-atlas/domains/safety-security/notes.md",
+      "bytes": 167,
+      "sha256": "9fb6f90066799e30c017b23d8e59bd30cf586f4ad6bdda7b5b0ba78bfd7398c1"
+    },
+    {
+      "path": "research-atlas/domains/tool-use/MAP.md",
+      "bytes": 409,
+      "sha256": "778c8133caefd6d7118acae9235882548556e857a132e9bc5aabceddea6be8ef"
+    },
+    {
+      "path": "research-atlas/domains/tool-use/notes.md",
+      "bytes": 148,
+      "sha256": "9d7f43eea9cd35c6b44c6801f3d3434a8a88cad75b00ee8f994eb6f384fd7e66"
+    },
+    {
+      "path": "research-atlas/history/revision-000000-ddb1c60ced05.json",
+      "bytes": 20524,
+      "sha256": "ddb1c60ced05d359e1b5b66dd926badfcceabd3d79360086ba301ab8058fb9f2"
+    },
+    {
+      "path": "research-atlas/history/views/05a7dee439a07b0d-MAP.md",
+      "bytes": 463,
+      "sha256": "05a7dee439a07b0d3e53d8062a797c8b783c6a27b4e6663c190c5588b610c646"
+    },
+    {
+      "path": "research-atlas/history/views/0662d59e6c3b5ead-MAP.md",
+      "bytes": 441,
+      "sha256": "0662d59e6c3b5ead35acea25eadb13a476f0e371173f4ab38ba9b1c96e78453f"
+    },
+    {
+      "path": "research-atlas/history/views/55fd7095ca9e85b6-MAP.md",
+      "bytes": 419,
+      "sha256": "55fd7095ca9e85b6cdf0e74cfb36d3c34c6cbb3e5db0ed6e83018e46266c6864"
+    },
+    {
+      "path": "research-atlas/history/views/5c24ba817e2e807d-map.html",
+      "bytes": 25903,
+      "sha256": "5c24ba817e2e807dc72236fc7e1e8c9aa6f475ed6a617e0bd10b7101437aa7d6"
+    },
+    {
+      "path": "research-atlas/history/views/6465c5ddb288e1d6-MAP.md",
+      "bytes": 2783,
+      "sha256": "6465c5ddb288e1d6aec627ec8690a05d3c01752b6943d38679e6f7a970b71096"
+    },
+    {
+      "path": "research-atlas/history/views/78cb6c0d8ee4b25a-MAP.md",
+      "bytes": 419,
+      "sha256": "78cb6c0d8ee4b25a1ec84521aed48d7e5333e8b517adc9428e8e2ed74e465757"
+    },
+    {
+      "path": "research-atlas/history/views/dc701dad4805a261-MAP.md",
+      "bytes": 433,
+      "sha256": "dc701dad4805a261131fc9e149dec57d6bf9bd7be4789745902b5888bea86dd5"
+    },
+    {
+      "path": "research-atlas/map.html",
+      "bytes": 36418,
+      "sha256": "b590cf4ee0fa50e3ca1b2aae2c7b00322707ea01c6adffa353dca79100a19d24"
+    },
+    {
+      "path": "research-atlas.config.json",
+      "bytes": 36,
+      "sha256": "5c82f16f4ae6f614adbb98a918f5084b1c06b6649611385dad9aeffb6cdfdf05"
+    },
+    {
+      "path": "results/latency-accuracy.csv",
+      "bytes": 102,
+      "sha256": "ed5f2384042cb46ec7c3989ddc2a5faa0ea1e2bd38fc3a0a210d3e0f4b446cef"
+    },
+    {
+      "path": "scripts/plot_latency_accuracy.py",
+      "bytes": 6066,
+      "sha256": "586f1255d187cc62dea8656faebdd9504a0d7f34a47cd13b6ae42a35d9e14eec"
+    },
+    {
+      "path": "scripts/rebuild_architecture.py",
+      "bytes": 12662,
+      "sha256": "27422757fcc1157e05c5baf9f0a686e40e2dd011dbd4bbd7d721922edd9758ec"
+    },
+    {
+      "path": "scripts/render_previews.py",
+      "bytes": 2327,
+      "sha256": "cec1e2812fa3c50e05b30d8789dfc2d22db8c3ed2cd5e8bbfda2385a4cc6c11e"
+    },
+    {
+      "path": "scripts/verify_artifacts.py",
+      "bytes": 5327,
+      "sha256": "2b57c04eb9d480b0b9b3087adaeacf7fbc4edce514836f38c317c7aa6eb854be"
+    },
+    {
+      "path": "sources/architecture_scene.json",
+      "bytes": 4382,
+      "sha256": "8fe39a5e2da96199cb722c15b0885ca3ad02b3648e90e70160d7d2f2707b7dbc"
+    },
+    {
+      "path": "sources/atlas_figures_batch.json",
+      "bytes": 12127,
+      "sha256": "06ec050bf394784fbb9dd755b7b2154471302600b4e5ad6143236009df9e5f02"
+    },
+    {
+      "path": "sources/numerical_claim_ledger.json",
+      "bytes": 3294,
+      "sha256": "489fef88ed9fe895159bde5e0eb8d33bb973fdf91f7df41f350941719f8bc4e6"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-10-20T05:03:04.534348+00:00",
+  "changed_paths": [
+    "assets/capability-registry.json"
+  ],
+  "beginning_sha256": {
+    "assets/capability-registry.json": "cc6d5c391a2640f0b2435725b18578314624ca7d68c1ff58e6b6635dbf1ad00e"
+  },
+  "ending_observed_sha256": {
+    "assets/capability-registry.json": "69146c0a704b080aebe1c595bcf4ab2cd81b2bb2e5ba642efe1dabe98e7b7bf1"
+  },
+  "unchanged_compared_files": 15,
+  "parent_confirmation": "/root confirmed in a collaboration message that the main release workflow updated capability-registry.json source-list/adoption-scope metadata during this cold task and may update validation references/optional definitions later. This executing agent was not asked to modify skill sources. atlas.py, experiments.py, audit.py and research protocols remained fixed during the cold task.",
+  "interpretation": "Do not report all source files unchanged. The cold-task reading/check is tied to its captured source hashes; subsequent parent publication metadata changes are outside this project mutation.",
+  "source_bytes_written_by_this_agent": false,
+  "full_initial_manifest": "docs/audit/baseline.json",
+  "used_source_footprint": "docs/audit/source-footprint.json"
+}

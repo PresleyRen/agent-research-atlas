@@ -1,0 +1,73 @@
+{
+  "checked_at": "2026-10-21T13:00:23.735604+00:00",
+  "synthetic": true,
+  "input_files": [
+    {
+      "path": "PROJECT.md",
+      "unchanged": true,
+      "sha256": "7f8f9cdc7d4e9af0e3b8ce445d559e968ec7fb714ed4e8f79b2a47e38db4f9ef",
+      "bytes": 695
+    },
+    {
+      "path": "notes/comparison.md",
+      "unchanged": true,
+      "sha256": "e338f6c411b6c4b25ec631dd63d063fd355f142422a9bc76137bf60cc4c72e46",
+      "bytes": 795
+    },
+    {
+      "path": "notes/research-options.md",
+      "unchanged": true,
+      "sha256": "9cdafcccb82284a261363e199ca0114dc2525df7e5d15843737c5edcf7288bf4",
+      "bytes": 462
+    },
+    {
+      "path": "notes/resources.md",
+      "unchanged": true,
+      "sha256": "bff6c6bb8e6b4d3b8202c272ccc4e114af823a1a83859f81d40181ca4008dc5e",
+      "bytes": 419
+    },
+    {
+      "path": "papers/local-counterexample.md",
+      "unchanged": true,
+      "sha256": "347e9d6748eda80d41ff10058ff9f2e38a8d042c68354cded9c57413ed44291c",
+      "bytes": 501
+    },
+    {
+      "path": "papers/local-review.md",
+      "unchanged": true,
+      "sha256": "d7f93f9f957c307f0c4d239057eec6c3d0c0439f9eacb10c8484759a2d9e9bd7",
+      "bytes": 469
+    },
+    {
+      "path": "research-map.md",
+      "unchanged": true,
+      "sha256": "7d0b0072893830a40b84bfc8d547b999a8dff5efe9ed32b8734052cab0d9abad",
+      "bytes": 479
+    },
+    {
+      "path": "INPUT-MANIFEST.json",
+      "unchanged": true,
+      "sha256": "87ce345c8405ff3e6f521592ec65f45170e5534e76aa79c753b8e88ff1671e5a",
+      "bytes": 1116
+    }
+  ],
+  "all_original_inputs_unchanged": true,
+  "original_map_semantic_import": "5_of_5_bullets_normalized",
+  "active_markdown_files_checked": 47,
+  "local_markdown_links_checked": 93,
+  "broken_links": [],
+  "json_files_parsed": 17,
+  "atlas_revision": 5,
+  "node_count": 40,
+  "edge_count": 15,
+  "pending_reviews": 0,
+  "resolved_protocol_reviews": 3,
+  "old_analysis_backup_sha256": "3aa81d73b5371c6b490fc6cad68d1c999a9f58eba2618600fba44a194415be69",
+  "no_scientific_run_records": true,
+  "no_empirical_hypothesis_states": true,
+  "remaining_audit_issue_codes": [
+    "G-COVERAGE-UNSEARCHED",
+    "G-FEASIBILITY"
+  ],
+  "scope": "Input-byte preservation, current local links, JSON syntax and declared graph states only. No model/benchmark experiment, literature novelty, visual browser rendering or scientific validity certification."
+}

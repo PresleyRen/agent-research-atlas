@@ -1,0 +1,536 @@
+{
+  "date": "2026-10-20",
+  "records": [
+    {
+      "artifact": "docs/audit/atlas-check-revision-2.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "Local read-only validation or dependency diagnosis; no experiment or retrieval."
+    },
+    {
+      "artifact": "docs/audit/atlas-check.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "Local-only file/state/CLI validation; no remote request or research load."
+    },
+    {
+      "artifact": "docs/audit/discover-before.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "discover"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/impact-counter-revision-2.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "impact",
+        "--node",
+        "local-counter"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "Local read-only validation or dependency diagnosis; no experiment or retrieval."
+    },
+    {
+      "artifact": "docs/audit/impact-counter.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "impact",
+        "--node",
+        "local-counter"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "Local-only file/state/CLI validation; no remote request or research load."
+    },
+    {
+      "artifact": "docs/audit/integrity-check.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers/scripts/validate_continuation.py"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": null,
+      "note": "Local-only file/state/CLI validation; no remote request or research load."
+    },
+    {
+      "artifact": "docs/audit/locate-C01.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C01"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/locate-C02.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C02"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/locate-C03.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C03"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/locate-C04.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C04"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "Local read-only validation or dependency diagnosis; no experiment or retrieval."
+    },
+    {
+      "artifact": "docs/audit/locate-C05.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C05"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/locate-C06.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C06"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/locate-C09.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C09"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/locate-C11.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C11"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/locate-C13.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C13"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/locate-C17.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C17"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/locate-C19.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C19"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/locate-C20.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C20"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/locate-C22.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C22"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/locate-C23.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C23"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/locate-C24.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C24"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/project-after-revision-2.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "project"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "Local read-only validation or dependency diagnosis; no experiment or retrieval."
+    },
+    {
+      "artifact": "docs/audit/project-after.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "project"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "Local-only file/state/CLI validation; no remote request or research load."
+    },
+    {
+      "artifact": "docs/audit/project-before.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "project"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/queries-custom-domain-with-existing-node.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "queries",
+        "--domain",
+        "temporal-intent-revocation",
+        "--focus-zh",
+        "时变意图与撤销约束",
+        "--focus-en",
+        "time-varying intent and revocation constraints"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "note": "Local-only file/state/CLI validation; no remote request or research load."
+    },
+    {
+      "artifact": "docs/audit/queries-custom-domain.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "queries",
+        "--domain",
+        "temporal-intent-revocation",
+        "--focus-zh",
+        "时变意图与撤销约束",
+        "--focus-en",
+        "time-varying intent and revocation constraints"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "note": "Local query planning/compatibility check only; not a literature search. Custom domain is expected to require a host-authored ledger."
+    },
+    {
+      "artifact": "docs/audit/queries-routing.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "queries",
+        "--domain",
+        "routing",
+        "--focus-zh",
+        "时变意图与撤销约束",
+        "--focus-en",
+        "time-varying intent and revocation constraints"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "note": "Local query planning/compatibility check only; not a literature search. Custom domain is expected to require a host-authored ledger."
+    },
+    {
+      "artifact": "docs/audit/registry-check.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "check",
+        "--repo",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/resolve-review.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "resolve-review",
+        "--node",
+        "decision-continue-temporal-slice",
+        "--reviewer",
+        "/root/cold_provider_extension (same-agent local semantic review)",
+        "--note",
+        "重读 support/counter 两个合成片段、第 3–7 节方向卡和当前 claim/继续决定：本次仅修正受审查外推陈述与 contradicts 边的极性，证据与机制没有升级。继续有限探索，H1 保持 proposed；真实近邻、数据、评价和预算仍未解决，旧关键词分支仍暂停。详见 docs/audit/SEMANTIC-REVIEW.md；这是同一执行代理自审，不是独立经验支持。",
+        "--expected-revision",
+        "3"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": ""
+    },
+    {
+      "artifact": "docs/audit/status-after-revision-2.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "status"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "Local read-only validation or dependency diagnosis; no experiment or retrieval."
+    },
+    {
+      "artifact": "docs/audit/status-after.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "status"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "Local-only file/state/CLI validation; no remote request or research load."
+    },
+    {
+      "artifact": "docs/audit/status-before.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "status"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "local read-only validation/diagnosis; no network or research load"
+    },
+    {
+      "artifact": "docs/audit/upsert-claim-correction.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "upsert",
+        "--file",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers/docs/correction-batch-claim-scope-2026-10-20.json",
+        "--expected-revision",
+        "2"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "Correct a local claim-wording polarity mismatch found while inspecting the generated map; preserve original revision and batch."
+    },
+    {
+      "artifact": "docs/audit/upsert-relative-input-error.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "upsert",
+        "--file",
+        "docs/update-batch-2026-10-20.json",
+        "--expected-revision",
+        "1"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": null,
+      "note": "Authorized project-local incremental atlas mutation and offline view generation."
+    },
+    {
+      "artifact": "docs/audit/upsert.json",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+        "upsert",
+        "--file",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-providers/docs/update-batch-2026-10-20.json",
+        "--expected-revision",
+        "1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": null,
+      "note": "Authorized project-local incremental mutation and offline view generation. Uses an absolute --file after preserved cwd-resolution failure."
+    }
+  ],
+  "limitations": "Includes preserved prior checkpoints and actual failures. No command executes network retrieval or a research workload.",
+  "source_version_boundary": "docs/audit/source-version-boundary.json"
+}

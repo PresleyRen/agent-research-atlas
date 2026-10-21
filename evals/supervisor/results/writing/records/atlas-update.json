@@ -1,0 +1,845 @@
+{
+  "project": {
+    "scope": "Synthetic offline writing exercise only: draft evidence-bounded English Introduction and Methods, polish supplied sentences, review and reply to five supplied synthetic reviewer concerns. Source cutoff 2026-10-21; no external retrieval, model execution, installation, research experiments, payments, or submission.",
+    "cutoff": "2026-10-21",
+    "task_type": "publish-package-with-local-synthetic-evidence",
+    "workbench_sections": [
+      "C26: supervisor-publication sections 3–5",
+      "C27: supervisor-publication sections 6–7"
+    ],
+    "output_paths": [
+      "manuscript/sections-en.md",
+      "manuscript/polished-sentences-en.md",
+      "review/response-en.md",
+      "review/pre-submission-review-zh.md",
+      "review/concern-ledger.md",
+      "records/edit-notes-zh.md",
+      "records/evidence-map-zh.md",
+      "HANDOFF.md"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "routing",
+      "data": {
+        "coverage": "partial",
+        "last_reviewed": "2026-10-21",
+        "search_ids": [
+          "local-writing-evidence-pass"
+        ],
+        "coverage_limits": "Read all six original local input files for this writing/review task only. No external literature search or nearest-work verification; seeded taxonomy is not survey coverage."
+      }
+    },
+    {
+      "id": "clarification",
+      "data": {
+        "coverage": "partial",
+        "last_reviewed": "2026-10-21",
+        "search_ids": [
+          "local-writing-evidence-pass"
+        ],
+        "coverage_limits": "Read all six original local input files for this writing/review task only. No external literature search or nearest-work verification; seeded taxonomy is not survey coverage."
+      }
+    },
+    {
+      "id": "evaluation",
+      "data": {
+        "coverage": "partial",
+        "last_reviewed": "2026-10-21",
+        "search_ids": [
+          "local-writing-evidence-pass"
+        ],
+        "coverage_limits": "Read all six original local input files for this writing/review task only. No external literature search or nearest-work verification; seeded taxonomy is not survey coverage."
+      }
+    },
+    {
+      "id": "local-writing-evidence-pass",
+      "type": "exploration",
+      "title": "本地六文件核对 / Scoped local evidence pass",
+      "status": "completed",
+      "data": {
+        "query": "Version-aware policy: supplied methods, counts, scope, limitations, and every reviewer concern",
+        "language": "mixed",
+        "provider": "local filesystem read and inspected standard-library tools",
+        "searched_at": "2026-10-21",
+        "scope": "Six original project files; discover examined 6 files with truncated=false before outputs existed",
+        "limitations": "No external retrieval. No code, original cases, paired scores, family mapping, scoring rubric, execution records, figures, or venue rules supplied. Empty literature result_ids is not a negative literature search.",
+        "result_ids": [],
+        "artifact_paths": [
+          "records/initial-discovery.json",
+          "records/evidence-map-zh.md",
+          "records/source-integrity.json"
+        ],
+        "status_reason": "Completed scoped reading and deterministic reconciliation of supplied local materials."
+      },
+      "sources": [
+        {
+          "path": "PROJECT.md",
+          "locator": "both paragraphs: explicitly synthetic fixture and offline permissions",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "notes/method.md",
+          "locator": "Method v0.1; Input, Actions, explicit-version/clarification rules, baseline and exploratory-comparison paragraphs",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "results/pilot.json",
+          "locator": "entire JSON; /fixture, /design, /n_cases, /n_case_families, /baseline, /version_aware, /datasets, /uncertainty_analysis, /new_model_comparison, /latency",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "draft-zh.md",
+          "locator": "Chinese paragraphs 1–2 and original English sentences",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "reviews.md",
+          "locator": "R1.1, R1.2, R2.1, R2.2, R3.1 and Old response memo",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "INPUT-MANIFEST.json",
+          "locator": "fixture and files array",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "fixture-pilot-record",
+      "type": "experiment",
+      "title": "合成汇总记录：64 案例、8 家族 / Supplied fictional pilot record",
+      "status": "provided_synthetic_record",
+      "data": {
+        "artifact_path": "results/pilot.json",
+        "synthetic": true,
+        "not_an_executed_study": true,
+        "design": "exploratory",
+        "n_cases": 64,
+        "n_case_families": 8,
+        "baseline_correct": 44,
+        "baseline_accuracy": 0.6875,
+        "version_aware_correct": 50,
+        "version_aware_accuracy": 0.78125,
+        "source_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+        "execution_provenance": "No research was executed to create a real empirical result in this task. This node indexes the supplied fictional aggregate JSON, not an experiments.py run.",
+        "limitations": "No raw cases, family memberships, paired outcomes, scoring rubric, evaluator implementation, uncertainty analysis, measured latency or independent replication.",
+        "status_reason": "Imported supplied fixture as a clearly synthetic evidence artifact; no empirical hypothesis status assigned."
+      },
+      "sources": [
+        {
+          "path": "results/pilot.json",
+          "locator": "entire JSON; /fixture, /design, /n_cases, /n_case_families, /baseline, /version_aware, /datasets, /uncertainty_analysis, /new_model_comparison, /latency",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "PROJECT.md",
+          "locator": "both paragraphs: explicitly synthetic fixture and offline permissions",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "documented-shared-version-design",
+      "type": "decision",
+      "title": "已述方法：共享版本状态支持过滤与追问 / Documented shared-state design",
+      "status": "documented",
+      "data": {
+        "method_version": "v0.1",
+        "input_boundary": "Initial message, supplied context and versioned snippets; hidden labels evaluator-only according to specification, implementation unverified.",
+        "actions": [
+          "answer",
+          "retrieve one additional passage",
+          "ask one targeted clarification"
+        ],
+        "gate": "rule-based; not learned",
+        "shared_roles": [
+          "explicit version constraint determines document eligibility through deterministic filtering",
+          "implicit preference can trigger targeted clarification only if a response could change the answer"
+        ],
+        "not_specified": [
+          "complete rule table and precedence",
+          "state schema and transitions",
+          "default/conflicting/missing version behavior",
+          "behavior after unanswered clarification",
+          "model/prompt/retriever/execution settings"
+        ],
+        "artifact_paths": [
+          "manuscript/sections-en.md",
+          "records/evidence-map-zh.md"
+        ],
+        "status_reason": "Reorganized the supplied descriptions without adding implementation or component-effect claims."
+      },
+      "sources": [
+        {
+          "path": "notes/method.md",
+          "locator": "Method v0.1; Input, Actions, explicit-version/clarification rules, baseline and exploratory-comparison paragraphs",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "draft-zh.md",
+          "locator": "Chinese paragraphs 1–2 and original English sentences",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "claim-fixture-accuracy",
+      "type": "claim",
+      "title": "仅限给定合成 JSON：78.125% 对 68.75% / Bounded descriptive counts",
+      "status": "supported",
+      "data": {
+        "exact_statement": "The supplied synthetic record contains 50/64 correct cases (78.125%) for the version-aware policy and 44/64 (68.75%) for the baseline, an absolute difference of 9.375 percentage points.",
+        "evidence_ids": [
+          "fixture-pilot-record"
+        ],
+        "reasoning": "Exact counts divided by the stated 64-case denominator match the source accuracy fields; Fraction arithmetic reproduces percentages and absolute difference.",
+        "limitations": "Supported means the wording matches this synthetic artifact. It is not support for a real experiment, independence, significance, causal attribution, equal-budget superiority or generalization.",
+        "claim_type": "descriptive_of_supplied_fixture",
+        "artifact_paths": [
+          "records/numerical-ledger.json",
+          "records/numerical-audit.json",
+          "records/calculations.json",
+          "manuscript/sections-en.md"
+        ],
+        "review": {
+          "reviewer": "writing agent, serial self-review",
+          "reviewed_at": "2026-10-21",
+          "summary": "Checked original bytes, JSON pointers, counts, percentages and exact wording."
+        },
+        "status_reason": "Source and derived arithmetic verified; scoped to the fictional supplied record."
+      },
+      "sources": [
+        {
+          "path": "results/pilot.json",
+          "locator": "entire JSON; /fixture, /design, /n_cases, /n_case_families, /baseline, /version_aware, /datasets, /uncertainty_analysis, /new_model_comparison, /latency",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "records/calculations.json",
+          "locator": "/derived and /formulas",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "records/numerical-audit.json",
+          "locator": "/output/all_values_match and all 11 claim statuses",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "claim-fixture-scope",
+      "type": "claim",
+      "title": "范围仅为单个合成集和8家族 / Single synthetic set; family independence unverified",
+      "status": "supported",
+      "data": {
+        "exact_statement": "The provided record describes one hand-authored synthetic pilot with 64 cases spanning eight recorded families; it does not establish independence of families, real-world generalization or causal improvement in reasoning.",
+        "evidence_ids": [
+          "fixture-pilot-record"
+        ],
+        "reasoning": "The datasets array has one synthetic entry; PROJECT identifies the fixture as fictional; method note explicitly states missing replication and causal analysis.",
+        "limitations": "No actual research execution or raw case/family records; count of families is not a verified independent sample size.",
+        "claim_type": "scope_statement_about_fixture",
+        "status_reason": "Reconciled original overclaims against source provenance and recorded limitations."
+      },
+      "sources": [
+        {
+          "path": "PROJECT.md",
+          "locator": "both paragraphs: explicitly synthetic fixture and offline permissions",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "results/pilot.json",
+          "locator": "entire JSON; /fixture, /design, /n_cases, /n_case_families, /baseline, /version_aware, /datasets, /uncertainty_analysis, /new_model_comparison, /latency",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "notes/method.md",
+          "locator": "Method v0.1; Input, Actions, explicit-version/clarification rules, baseline and exploratory-comparison paragraphs",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "old-accuracy-96",
+      "type": "claim",
+      "title": "撤回：原稿96% / Withdrawn original accuracy",
+      "status": "withdrawn",
+      "data": {
+        "original_text": "该方法在 64 个请求上准确率为 96%",
+        "status_reason": "Contradicted by results/pilot.json: 50/64=0.78125. Original input remains unchanged; corrected wording is claim-fixture-accuracy.",
+        "reasoning": "Exact JSON audit gives mismatch for original 0.96.",
+        "artifact_paths": [
+          "records/original-claim-ledger.json",
+          "records/original-claim-audit.json"
+        ]
+      },
+      "sources": [
+        {
+          "path": "draft-zh.md",
+          "locator": "Chinese paragraphs 1–2 and original English sentences",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "results/pilot.json",
+          "locator": "entire JSON; /fixture, /design, /n_cases, /n_case_families, /baseline, /version_aware, /datasets, /uncertainty_analysis, /new_model_comparison, /latency",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "old-three-real-datasets",
+      "type": "claim",
+      "title": "撤回：三个真实业务集 / Withdrawn real-dataset claim",
+      "status": "withdrawn",
+      "data": {
+        "original_text": "我们在三个真实业务数据集上验证了它的泛化。",
+        "status_reason": "Contradicted by the single synthetic datasets entry and PROJECT provenance. No real production workload is represented."
+      },
+      "sources": [
+        {
+          "path": "draft-zh.md",
+          "locator": "Chinese paragraphs 1–2 and original English sentences",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "results/pilot.json",
+          "locator": "entire JSON; /fixture, /design, /n_cases, /n_case_families, /baseline, /version_aware, /datasets, /uncertainty_analysis, /new_model_comparison, /latency",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "PROJECT.md",
+          "locator": "both paragraphs: explicitly synthetic fixture and offline permissions",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "old-universal-intent-solution",
+      "type": "claim",
+      "title": "撤回：解决所有Agent意图问题 / Withdrawn universal solution claim",
+      "status": "withdrawn",
+      "data": {
+        "original_text": "解决了所有文档 Agent 的意图理解问题",
+        "status_reason": "No supporting population, independent replication, multi-model study or real-world evidence. Withdrawal of support is not proof that the method never works."
+      },
+      "sources": [
+        {
+          "path": "draft-zh.md",
+          "locator": "Chinese paragraphs 1–2 and original English sentences",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "results/pilot.json",
+          "locator": "entire JSON; /fixture, /design, /n_cases, /n_case_families, /baseline, /version_aware, /datasets, /uncertainty_analysis, /new_model_comparison, /latency",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "notes/method.md",
+          "locator": "Method v0.1; Input, Actions, explicit-version/clarification rules, baseline and exploratory-comparison paragraphs",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "old-clarification-causality",
+      "type": "claim",
+      "title": "撤回：澄清必然提高推理 / Withdrawn causal mechanism claim",
+      "status": "withdrawn",
+      "data": {
+        "original_text": "证明澄清必然提高推理能力",
+        "status_reason": "No causal mechanism study or separated component comparison; retain association wording only. This does not establish an opposite causal effect."
+      },
+      "sources": [
+        {
+          "path": "draft-zh.md",
+          "locator": "Chinese paragraphs 1–2 and original English sentences",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "notes/method.md",
+          "locator": "Method v0.1; Input, Actions, explicit-version/clarification rules, baseline and exploratory-comparison paragraphs",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "results/pilot.json",
+          "locator": "entire JSON; /fixture, /design, /n_cases, /n_case_families, /baseline, /version_aware, /datasets, /uncertainty_analysis, /new_model_comparison, /latency",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "hyp-shared-state-mechanism",
+      "type": "hypothesis",
+      "title": "暂存：共享状态是否产生可归因收益 / Parked mechanism question",
+      "status": "parked",
+      "data": {
+        "problem": "A recorded accuracy difference does not isolate version filtering, clarification, extra information or budget.",
+        "mechanism": "A shared version representation could coordinate explicit filtering and answer-sensitive clarification; this is a candidate explanation, not an established effect.",
+        "prediction": "If pursued later, gains attributed to shared state should survive a design that separates filtering, clarification and information/time budgets on untouched families.",
+        "rival_explanations": [
+          "additional user information",
+          "different action or latency budgets",
+          "deterministic filtering rather than clarification",
+          "case selection after inspection",
+          "family dependence or scoring differences"
+        ],
+        "closest_paper_ids": [],
+        "unknowns": [
+          "nearest verified publications",
+          "case-level outcomes and family independence",
+          "executable method and scoring rubric",
+          "model versions and latency definition"
+        ],
+        "feasibility": {
+          "data": "unavailable",
+          "compute": "unavailable",
+          "evaluation": "unavailable",
+          "budget": "unavailable"
+        },
+        "feasibility_notes": "Only fictional aggregates supplied; no research execution authorized. These values refer to the proposed follow-up, not the already authorized writing work.",
+        "reopening_condition": "Receive appropriate raw evidence/implementation and explicit authorization for any future research execution; verify nearest work before promotion.",
+        "depends_on": [
+          "fixture-pilot-record",
+          "documented-shared-version-design"
+        ],
+        "status_reason": "Parked to prevent unsupported promotion or unauthorized runs; synthetic aggregate association is not a pilot-supported mechanism."
+      },
+      "sources": [
+        {
+          "path": "PROJECT.md",
+          "locator": "both paragraphs: explicitly synthetic fixture and offline permissions",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "notes/method.md",
+          "locator": "Method v0.1; Input, Actions, explicit-version/clarification rules, baseline and exploratory-comparison paragraphs",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "results/pilot.json",
+          "locator": "entire JSON; /fixture, /design, /n_cases, /n_case_families, /baseline, /version_aware, /datasets, /uncertainty_analysis, /new_model_comparison, /latency",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "records/edit-notes-zh.md",
+          "locator": "§7 后续继续工作",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "problem-reproducibility-gaps",
+      "type": "problem",
+      "title": "未解决：原始案例、规则、评分与执行记录 / Reproducibility gaps",
+      "status": "open",
+      "data": {
+        "missing": [
+          "per-case IDs and family membership",
+          "paired predictions and scores",
+          "scoring rubric and adjudication",
+          "complete rule/state specification",
+          "model/prompt/retriever/hardware settings",
+          "execution traces and label isolation verification",
+          "measured latency"
+        ],
+        "consequence": "Cannot independently rescore, reconstruct policy execution, verify case alignment, estimate dependence-aware uncertainty or validate efficiency.",
+        "depends_on": [
+          "fixture-pilot-record",
+          "documented-shared-version-design"
+        ],
+        "artifact_paths": [
+          "review/pre-submission-review-zh.md",
+          "manuscript/sections-en.md"
+        ],
+        "status_reason": "These materials were not in the scoped local inventory; not filled with invented defaults."
+      },
+      "sources": [
+        {
+          "path": "notes/method.md",
+          "locator": "Method v0.1; Input, Actions, explicit-version/clarification rules, baseline and exploratory-comparison paragraphs",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "results/pilot.json",
+          "locator": "entire JSON; /fixture, /design, /n_cases, /n_case_families, /baseline, /version_aware, /datasets, /uncertainty_analysis, /new_model_comparison, /latency",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "records/initial-discovery.json",
+          "locator": "files_examined and candidates",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "problem-nearest-work-unresolved",
+      "type": "problem",
+      "title": "未解决：最近工作与新颖性 / Nearest work unresolved",
+      "status": "open",
+      "data": {
+        "scope": "No external publications were supplied or retrieved; no bibliography invented.",
+        "reason": "Offline constraint prevents external verification and the task is a synthetic writing exercise.",
+        "next": "With suitable supplied sources or later authorization, perform targeted nearest-work checks; never treat empty paper records as novelty confirmation.",
+        "status_reason": "Recorded explicitly as an unresolved source gap."
+      },
+      "sources": [
+        {
+          "path": "PROJECT.md",
+          "locator": "both paragraphs: explicitly synthetic fixture and offline permissions",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "records/edit-notes-zh.md",
+          "locator": "§1 阅读范围与证据边界",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "decision-narrow-manuscript",
+      "type": "decision",
+      "title": "已完成：纠错并收窄英文稿 / Correct and bound the manuscript",
+      "status": "completed",
+      "data": {
+        "depends_on": [
+          "fixture-pilot-record",
+          "documented-shared-version-design",
+          "claim-fixture-accuracy",
+          "claim-fixture-scope"
+        ],
+        "actions": [
+          "replace 96% by 78.125%; add denominator/baseline/difference",
+          "replace three real datasets by one synthetic pilot",
+          "withdraw universal and causal claims",
+          "state exploratory and unpreregistered design",
+          "describe one shared state serving two roles",
+          "retain implementation, dependence, latency and evidence limitations"
+        ],
+        "artifact_paths": [
+          "manuscript/sections-en.md",
+          "manuscript/polished-sentences-en.md",
+          "records/edit-notes-zh.md",
+          "records/evidence-map-zh.md"
+        ],
+        "status_reason": "All changes written as new files; original author inputs retained."
+      },
+      "sources": [
+        {
+          "path": "manuscript/sections-en.md",
+          "locator": "Introduction and Methods §§2.1–2.6",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "records/edit-notes-zh.md",
+          "locator": "§3 E01–E11",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "decision-response-package",
+      "type": "decision",
+      "title": "已完成英文逐条回复；新实验仍未完成 / Complete response with open empirical requests",
+      "status": "completed_with_open_requests",
+      "data": {
+        "depends_on": [
+          "decision-narrow-manuscript",
+          "claim-fixture-accuracy",
+          "claim-fixture-scope",
+          "problem-reproducibility-gaps"
+        ],
+        "original_concern_ids": [
+          "R1.1",
+          "R1.2",
+          "R2.1",
+          "R2.2",
+          "R3.1"
+        ],
+        "subitems": 12,
+        "completed": "Corrected prose, bounded claims, design clarification, preregistration disclosure and language edits.",
+        "not_completed": "Two larger-model comparisons, equal-latency measurement, independent replication and uncertainty/causal analyses.",
+        "artifact_paths": [
+          "review/response-en.md",
+          "review/concern-ledger.md",
+          "review/pre-submission-review-zh.md",
+          "records/review-coverage-check.json"
+        ],
+        "status_reason": "All supplied concerns have actual response prose; no claim that unrun experiments were added."
+      },
+      "sources": [
+        {
+          "path": "reviews.md",
+          "locator": "R1.1, R1.2, R2.1, R2.2, R3.1 and Old response memo",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "review/response-en.md",
+          "locator": "R1.1–R3.1",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "review/concern-ledger.md",
+          "locator": "§2 all twelve subitems",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "decision-park-model-latency-comparison",
+      "type": "decision",
+      "title": "暂缓：两个大模型与等时延研究 / Unrun larger-model and latency comparisons",
+      "status": "parked",
+      "data": {
+        "depends_on": [
+          "fixture-pilot-record",
+          "problem-reproducibility-gaps"
+        ],
+        "reason": "New-model comparison is only planned; latency not measured; no new research/model runs authorized.",
+        "reopening_condition": "Explicit future authorization plus identified model versions, common latency protocol, raw cases/families and evaluator.",
+        "artifact_paths": [
+          "review/response-en.md",
+          "review/concern-ledger.md"
+        ],
+        "status_reason": "R2.1 response acknowledges incomplete empirical work and removes associated superiority implications."
+      },
+      "sources": [
+        {
+          "path": "PROJECT.md",
+          "locator": "both paragraphs: explicitly synthetic fixture and offline permissions",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "results/pilot.json",
+          "locator": "entire JSON; /fixture, /design, /n_cases, /n_case_families, /baseline, /version_aware, /datasets, /uncertainty_analysis, /new_model_comparison, /latency",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "reviews.md",
+          "locator": "R1.1, R1.2, R2.1, R2.2, R3.1 and Old response memo",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "decision-reject-reviewer-profiling",
+      "type": "decision",
+      "title": "弃用旧建议：不猜评审人格或加分概率 / Reject unsupported reviewer profiling",
+      "status": "abandon",
+      "data": {
+        "original_memo_location": "reviews.md, Old response memo",
+        "reason": "Reviewer tone is not evidence of personality or individual score-change probability; the technical concerns are addressed directly.",
+        "preservation": "Original reviews.md unchanged; abandoned strategy retained here and in concern ledger.",
+        "status_reason": "Do not reuse old memo as evidence or generate an unsupported historical percentage."
+      },
+      "sources": [
+        {
+          "path": "reviews.md",
+          "locator": "R1.1, R1.2, R2.1, R2.2, R3.1 and Old response memo",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        },
+        {
+          "path": "review/concern-ledger.md",
+          "locator": "§3 旧备忘录处理",
+          "access": "local",
+          "accessed_at": "2026-10-21"
+        }
+      ],
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "record-supports-accuracy",
+      "source": "fixture-pilot-record",
+      "target": "claim-fixture-accuracy",
+      "relation": "supports",
+      "note": "Only the bounded descriptive statement about the supplied synthetic artifact."
+    },
+    {
+      "id": "record-supports-scope",
+      "source": "fixture-pilot-record",
+      "target": "claim-fixture-scope",
+      "relation": "supports"
+    },
+    {
+      "id": "record-contradicts-96",
+      "source": "fixture-pilot-record",
+      "target": "old-accuracy-96",
+      "relation": "contradicts"
+    },
+    {
+      "id": "record-contradicts-real",
+      "source": "fixture-pilot-record",
+      "target": "old-three-real-datasets",
+      "relation": "contradicts"
+    },
+    {
+      "id": "accuracy-supersedes-96",
+      "source": "claim-fixture-accuracy",
+      "target": "old-accuracy-96",
+      "relation": "supersedes"
+    },
+    {
+      "id": "scope-supersedes-real",
+      "source": "claim-fixture-scope",
+      "target": "old-three-real-datasets",
+      "relation": "supersedes"
+    },
+    {
+      "id": "scope-supersedes-universal",
+      "source": "claim-fixture-scope",
+      "target": "old-universal-intent-solution",
+      "relation": "supersedes"
+    },
+    {
+      "id": "bounded-accuracy-supersedes-causal",
+      "source": "claim-fixture-accuracy",
+      "target": "old-clarification-causality",
+      "relation": "supersedes",
+      "note": "Replaces causal wording with a descriptive association, not a causal refutation."
+    },
+    {
+      "id": "draft-derived-from-design",
+      "source": "decision-narrow-manuscript",
+      "target": "documented-shared-version-design",
+      "relation": "derived_from"
+    },
+    {
+      "id": "reply-derived-from-draft",
+      "source": "decision-response-package",
+      "target": "decision-narrow-manuscript",
+      "relation": "derived_from"
+    },
+    {
+      "id": "hyp-related-to-gaps",
+      "source": "hyp-shared-state-mechanism",
+      "target": "problem-reproducibility-gaps",
+      "relation": "relates_to"
+    }
+  ]
+}

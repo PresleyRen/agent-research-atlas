@@ -1,0 +1,14 @@
+{
+  "claims": [
+    {
+      "abs_tol": 0,
+      "artifact_path": "results/pilot.json",
+      "expected_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+      "id": "withdrawn-original-96-percent",
+      "pointer": "/version_aware/accuracy",
+      "rel_tol": 0,
+      "reported_value": 0.96
+    }
+  ],
+  "schema_version": 1
+}

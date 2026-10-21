@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180mm" height="97.2mm" viewBox="0 0 1000 540" version="1.1" role="img" aria-labelledby="title desc">
+  <title id="title">Editable reconstruction of the supplied agent architecture</title>
+  <desc id="desc">User request to Version state to Router. Router to Retriever to Answer. Router to Clarify to User request. Small source detail is a raster crop, not measured data. Companion SVG generated from the same scene as draw.io; not a native draw.io export.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 8" refX="10" refY="4" markerWidth="10" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M 0 0 L 10 4 L 0 8 z" fill="#35445c" />
+    </marker>
+  </defs>
+  <rect id="background" width="1000" height="540" fill="#ffffff" />
+  <g id="connectors" fill="none" stroke="#35445c" stroke-width="4" stroke-linejoin="round">
+    <path id="e_request_state" d="M 235,113 L 301,113" marker-end="url(#arrow)" data-source="user_request" data-target="version_state" />
+    <path id="e_state_router" d="M 510,113 L 581,113" marker-end="url(#arrow)" data-source="version_state" data-target="router" />
+    <path id="e_router_retriever" d="M 670.5,145 L 670.5,236" marker-end="url(#arrow)" data-source="router" data-target="retriever" />
+    <path id="e_retriever_answer" d="M 670.5,300 L 670.5,397" marker-end="url(#arrow)" data-source="retriever" data-target="answer" />
+    <path id="e_router_clarify" d="M 581,130 L 551,130 L 551,268 L 510,268" marker-end="url(#arrow)" data-source="router" data-target="clarify" />
+    <path id="e_clarify_request" d="M 301,268 L 135.5,268 L 135.5,145" marker-end="url(#arrow)" data-source="clarify" data-target="user_request" />
+  </g>
+  <g id="modules" font-family="DejaVu Sans" font-size="21" fill="#183153">
+    <g id="user_request">
+      <rect x="36" y="81" width="199" height="64" rx="12" fill="#eaf2ff" stroke="#203e63" stroke-width="2.5" />
+      <text x="135.5" y="120.4" text-anchor="middle">User request</text>
+    </g>
+    <g id="version_state">
+      <rect x="301" y="81" width="209" height="64" rx="12" fill="#eaf2ff" stroke="#203e63" stroke-width="2.5" />
+      <text x="405.5" y="120.4" text-anchor="middle">Version state</text>
+    </g>
+    <g id="router">
+      <rect x="581" y="81" width="179" height="64" rx="12" fill="#eaf2ff" stroke="#203e63" stroke-width="2.5" />
+      <text x="670.5" y="120.4" text-anchor="middle">Router</text>
+    </g>
+    <g id="clarify">
+      <rect x="301" y="236" width="209" height="64" rx="12" fill="#eaf2ff" stroke="#203e63" stroke-width="2.5" />
+      <text x="405.5" y="275.4" text-anchor="middle">Clarify</text>
+    </g>
+    <g id="retriever">
+      <rect x="581" y="236" width="179" height="64" rx="12" fill="#eaf2ff" stroke="#203e63" stroke-width="2.5" />
+      <text x="670.5" y="275.4" text-anchor="middle">Retriever</text>
+    </g>
+    <g id="answer">
+      <rect x="581" y="397" width="179" height="64" rx="12" fill="#eaf2ff" stroke="#203e63" stroke-width="2.5" />
+      <text x="670.5" y="436.4" text-anchor="middle">Answer</text>
+    </g>
+  </g>
+  <g id="labels" font-family="DejaVu Sans" fill="#35445c">
+    <text id="feedback_label" x="91" y="330.4" text-anchor="start" font-size="21">clarification feedback</text>
+    <text id="source_detail_label" x="877.5" y="482.4" text-anchor="middle" font-size="21">source detail</text>
+  </g>
+  <image id="source_detail_image" x="825" y="345" width="101" height="101" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGUAAABlCAIAAADbHrqYAAABBUlEQVR4nO3YsQ3CQBBFwQVRgyOKohf356KowDU8HFjoZvKTTk8/2sdnP+ZX7/ku9XZmnlceL0ivRq9Gr0avRq9Gr0avRq9Gr0avRq9Gr0avRq9Gr0avRq9Gr+Y1291f+Cv21ejV6NXo1ejV6NXo1ejV6NXo1ejV6NXo1ejV6NXo1ejV6NXo1bjfN/bV6NXo1ejV6NXo1ejV6NXo1ejV6NXo1ejV6NXo1ejV6NXo1ejVuN839tXo1ejV6NXo1ejV6NXo1ejV6NXo1ejV6NXo1ejV6NXo1ejV6NW43zf21ejV6NXo1ejV6NXo1ejV6NXo1ejV6NXo1ejV6NXo1ejV6NXo1ejVnH+GBuPaovmjAAAAAElFTkSuQmCC" />
+</svg>

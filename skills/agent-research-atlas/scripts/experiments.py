@@ -287,7 +287,7 @@ def validate_plan(plan: Any) -> dict[str, Any]:
     criteria = object_fields(plan["decision_thresholds"], {"success", "failure", "inconclusive"}, "decision_thresholds")
     for key, value in criteria.items():
         nonempty(value, f"decision_thresholds.{key}")
-    command = object_fields(plan["command"], {"argv", "cwd", "input_files"}, "command")
+    command = object_fields(plan["command"], {"argv", "cwd", "input_files"}, "command", {"mutable_input_files"})
     text_list(command["argv"], "command.argv")
     relative_parts(command["cwd"], allow_dot=True)
     inputs = command["input_files"]
@@ -297,6 +297,10 @@ def validate_plan(plan: Any) -> dict[str, Any]:
         raise RecordError("command.input_files must not contain duplicates")
     for item in inputs:
         relative_parts(item)
+    mutable = command.get("mutable_input_files", [])
+    if (not isinstance(mutable, list) or any(not isinstance(item, str) or item not in inputs for item in mutable)
+            or len(mutable) != len(set(mutable))):
+        raise RecordError("command.mutable_input_files must be a unique subset of input_files")
     finite_tree(plan)
     return plan
 
@@ -313,12 +317,20 @@ def load_plan(project: Project, experiment_id: str) -> tuple[dict[str, Any], byt
 def load_frozen(project: Project, experiment_id: str) -> tuple[dict[str, Any], dict[str, Any]]:
     plan, data = load_plan(project, experiment_id)
     frozen = checked_record(project.experiment(experiment_id) / "freeze.json")
-    if frozen.get("schema_version") != SCHEMA_VERSION or frozen.get("plan_sha256") != digest(data):
+    if type(frozen.get("schema_version")) is not int or frozen["schema_version"] != SCHEMA_VERSION or frozen.get("plan_sha256") != digest(data):
         raise RecordError("Frozen plan has changed or its schema is unsupported")
     if frozen.get("experiment_id") != experiment_id or frozen.get("mode") not in ("prospective", "exploratory"):
         raise RecordError("Invalid freeze identity or mode")
     if frozen.get("synthetic") is not plan["synthetic"]:
         raise RecordError("Frozen synthetic label differs from plan")
+    if "declared_inputs" in frozen:
+        if not isinstance(frozen["declared_inputs"], dict) or set(frozen["declared_inputs"]) != set(plan["command"]["input_files"]):
+            raise RecordError("Frozen input manifest differs from declared inputs")
+        for metadata in frozen["declared_inputs"].values():
+            if (not isinstance(metadata, dict) or not isinstance(metadata.get("sha256"), str)
+                    or not re.fullmatch(r"[0-9a-f]{64}", metadata["sha256"])
+                    or type(metadata.get("bytes")) is not int or metadata["bytes"] < 0):
+                raise RecordError("Invalid frozen input hash")
     return plan, frozen
 
 
@@ -338,7 +350,9 @@ def freeze_plan(project: Project, experiment_id: str, mode: str, rationale: str)
     frozen = {"schema_version": SCHEMA_VERSION, "experiment_id": experiment_id,
               "created_at": utc_now(), "plan_sha256": digest(data), "mode": mode,
               "mode_is_operator_declaration": True, "rationale": rationale,
-              "synthetic": plan["synthetic"]}
+              "synthetic": plan["synthetic"],
+              "declared_inputs": {name: hash_file(project.path(name)) for name in plan["command"]["input_files"]},
+              "input_policy": "frozen_except_declared_mutable"}
     write_record(project.experiment(experiment_id) / "freeze.json", frozen)
     return {"status": "frozen", **frozen,
             "note": "Local freeze records timing; it does not independently prove no earlier observations existed."}
@@ -483,6 +497,12 @@ def run_local(project: Project, experiment_id: str, run_id: str, *, authorized: 
                 raise RecordError("command.cwd is not a directory")
             provenance["declared_inputs"] = {name: hash_file(project.path(name))
                                               for name in plan["command"]["input_files"]}
+            provenance["input_policy"] = "frozen_except_declared_mutable" if "declared_inputs" in frozen else "legacy_unpinned"
+            mutable = set(plan["command"].get("mutable_input_files", []))
+            if "declared_inputs" in frozen:
+                for name, metadata in provenance["declared_inputs"].items():
+                    if name not in mutable and metadata != frozen["declared_inputs"][name]:
+                        raise RecordError("Frozen input changed before execution: " + name + "; use a new experiment ID for a changed protocol")
             provenance["git"] = git_provenance(project)
             provenance["executable_resolved"] = shutil.which(argv[0])
             process = subprocess.Popen(argv, cwd=cwd, stdin=subprocess.DEVNULL,
@@ -509,6 +529,25 @@ def run_local(project: Project, experiment_id: str, run_id: str, *, authorized: 
                     os.killpg(process.pid, signal.SIGKILL)
                 except ProcessLookupError:
                     pass
+            if process is not None:
+                # Detect changes made by this payload or another writer. This cannot
+                # detect a transient modification restored between observations.
+                changed, observed = [], {}
+                for name, before in provenance.get("declared_inputs", {}).items():
+                    try:
+                        after = hash_file(project.path(name))
+                        observed[name] = after
+                        different = before != after
+                    except (OSError, RecordError) as exc:
+                        observed[name] = {"error": str(exc)}
+                        different = True
+                    if different and name not in plan["command"].get("mutable_input_files", []):
+                        changed.append(name)
+                provenance["declared_inputs_after"] = observed
+                provenance["immutable_inputs_changed_during_run"] = sorted(changed)
+                if changed and status == "succeeded":
+                    status = "failed"
+                    error = {"type": "InputIntegrityError", "message": "Immutable input changed during execution: " + ", ".join(sorted(changed))}
             stdout.flush()
             stderr.flush()
             os.fsync(stdout.fileno())
@@ -570,7 +609,7 @@ def validate_records(project: Project, experiment_id: str, *, allow_incomplete: 
     summaries, incomplete = [], []
     for directory in run_directories(project, experiment_id):
         attempt = checked_record(directory / "attempt.json")
-        if (attempt.get("schema_version") != SCHEMA_VERSION
+        if (type(attempt.get("schema_version")) is not int or attempt["schema_version"] != SCHEMA_VERSION
                 or attempt.get("run_id") != directory.name
                 or attempt.get("experiment_id") != experiment_id
                 or attempt.get("plan_sha256") != frozen["plan_sha256"]
@@ -581,6 +620,8 @@ def validate_records(project: Project, experiment_id: str, *, allow_incomplete: 
             incomplete.append(directory.name)
             continue
         record = checked_record(directory / "record.json")
+        if type(record.get("schema_version")) is not int or record["schema_version"] != SCHEMA_VERSION:
+            raise RecordError("Invalid final record schema_version")
         if any(record.get(key) != value for key, value in attempt.items()):
             raise RecordError(f"Final record differs from reserved attempt: {directory.name}")
         if record.get("attempt_sha256") != hash_file(directory / "attempt.json")["sha256"]:
@@ -607,7 +648,8 @@ def validate_records(project: Project, experiment_id: str, *, allow_incomplete: 
         raise RecordError(f"Incomplete attempts retained (inspect, do not delete): {', '.join(incomplete)}")
     return {"status": "integrity_checked", "experiment_id": experiment_id,
             "mode": frozen["mode"], "synthetic": plan["synthetic"], "runs": summaries,
-            "incomplete_attempts": incomplete, "scientific_verdict": "not_assessed", "note": LABEL}
+            "incomplete_attempts": incomplete, "scientific_verdict": "not_assessed",
+            "input_policy": "frozen_except_declared_mutable" if "declared_inputs" in frozen else "legacy_unpinned", "note": LABEL}
 
 
 def parser() -> argparse.ArgumentParser:

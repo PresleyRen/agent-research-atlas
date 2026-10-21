@@ -1,0 +1,32 @@
+{
+  "effect": "baseline_loss_minus_candidate_loss",
+  "strict_practical_threshold": 0.02,
+  "status": "hypothetical_design_scenarios_not_observed",
+  "scenarios": [
+    {
+      "id": "A",
+      "lower": 0.03,
+      "upper": 0.05
+    },
+    {
+      "id": "B",
+      "lower": 0.005,
+      "upper": 0.015
+    },
+    {
+      "id": "C",
+      "lower": 0.01,
+      "upper": 0.035
+    },
+    {
+      "id": "D",
+      "lower": -0.04,
+      "upper": -0.01
+    },
+    {
+      "id": "E",
+      "lower": 0.02,
+      "upper": 0.05
+    }
+  ]
+}

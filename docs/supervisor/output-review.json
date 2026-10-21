@@ -1,0 +1,1852 @@
+{
+  "schema_version": "output_review_v1",
+  "completed_at_utc": "2026-10-21T13:06:17.864716+00:00",
+  "reviewer": "/root/supervisor_output_review",
+  "review_type": "Read-only artifact consistency and protocol-logic review; separate agent context, shared task background; not blind peer review or independent scientific validation.",
+  "project_root": "/workspace/scratch/f7a517081da8/supervisor-forward",
+  "conclusion_zh": "初版发现1处实际的区间判决方向缺陷；作者保留原字节后修订，定向复核已通过。在所列范围内，未发现其他事实、数字、意见覆盖或图稿声明不一致。未查项不作正确性推定。",
+  "defects_identified": 1,
+  "unresolved_defects_in_reviewed_scope": 0,
+  "findings": [
+    {
+      "id": "D01",
+      "project": "discovery",
+      "severity": "major_design_logic",
+      "status": "corrected_by_author_and_targeted_rereview_passed",
+      "location": "design/analysis-and-execution.md, design-v1 §6 result-to-decision table",
+      "initial_file_sha256": "3aa81d73b5371c6b490fc6cad68d1c999a9f58eba2618600fba44a194415be69",
+      "initial_file_bytes": 13098,
+      "initial_quote": "在有效受控条件下，主要效应区间排除事前 δ 或反向且稳定",
+      "initial_consequence_quote": "挑战这版优越性预测；按具体切片缩小或停止",
+      "issue_zh": "不包含正向δ不能判断方向：区间可能整体高于δ，原规则会把达到实际意义的正向结果归入负判决。",
+      "logical_counterexample": {
+        "not_observed_data": true,
+        "delta": 0.05,
+        "interval": [
+          0.1,
+          0.2
+        ],
+        "excludes_delta": true,
+        "correct_direction": "Interval wholly above the positive decision threshold; supports exceeding that threshold in the specified setting, subject to valid interval construction."
+      },
+      "impact_zh": "可能反转未来研究继续/停止判断。该协议尚未执行，本复核未发现已经发生的实证误判。",
+      "recommended_repair_zh": "分别规定区间下界>δ、上界<δ、整个区间<0、包含/触及δ；把低于最小实际效果、负向比较及机制反驳分开。",
+      "recheck": {
+        "amended_file_sha256": "f38e8fb57169aa5967bcad3b9839e184ca4b3a7a61fa99413eb0de110be8e3a6",
+        "amended_file_bytes": 14479,
+        "amended_version": "design-v1.1",
+        "archive_path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/worklog/analysis-before-interval-review.md",
+        "archive_sha256": "3aa81d73b5371c6b490fc6cad68d1c999a9f58eba2618600fba44a194415be69",
+        "archive_matches_initial_read": true,
+        "observations_zh": "§6已明确四种方向，并说明没有观测区间、新数据或假设升级。protocol、交接及图谱记录已同步至修订状态。",
+        "scope": "Textual decision logic and file-version correspondence only; no research execution."
+      }
+    }
+  ],
+  "input_integrity": [
+    {
+      "project": "discovery",
+      "path": "PROJECT.md",
+      "match": true
+    },
+    {
+      "project": "discovery",
+      "path": "notes/comparison.md",
+      "match": true
+    },
+    {
+      "project": "discovery",
+      "path": "notes/research-options.md",
+      "match": true
+    },
+    {
+      "project": "discovery",
+      "path": "notes/resources.md",
+      "match": true
+    },
+    {
+      "project": "discovery",
+      "path": "papers/local-counterexample.md",
+      "match": true
+    },
+    {
+      "project": "discovery",
+      "path": "papers/local-review.md",
+      "match": true
+    },
+    {
+      "project": "discovery",
+      "path": "research-map.md",
+      "match": true
+    },
+    {
+      "project": "writing",
+      "path": "PROJECT.md",
+      "match": true
+    },
+    {
+      "project": "writing",
+      "path": "draft-zh.md",
+      "match": true
+    },
+    {
+      "project": "writing",
+      "path": "notes/method.md",
+      "match": true
+    },
+    {
+      "project": "writing",
+      "path": "results/pilot.json",
+      "match": true
+    },
+    {
+      "project": "writing",
+      "path": "reviews.md",
+      "match": true
+    },
+    {
+      "project": "figures",
+      "path": "PROJECT.md",
+      "match": true
+    },
+    {
+      "project": "figures",
+      "path": "notes/figure-context.md",
+      "match": true
+    },
+    {
+      "project": "figures",
+      "path": "reference.png",
+      "match": true
+    },
+    {
+      "project": "figures",
+      "path": "results/latency-accuracy.csv",
+      "match": true
+    }
+  ],
+  "checked_findings_zh": {
+    "discovery": [
+      "7项原始输入完整；两份虚构paper及调试数62/64、51/64未被当作真实学术证据。",
+      "基线读取事后reference_intent、8家族改写跨分割、成本未测均被正确识别；未据不公平比较宣告候选获胜或研究问题无效。",
+      "保留原图5条内容，旧文档提醒及parked方向未丢失；检索计划明确not_run。",
+      "数据行、标注人员、预算与实现缺口明确；设计/空白模板未被冒称已执行实验。",
+      "除D01外，所读设计的观察/提案边界与原输入一致。"
+    ],
+    "writing": [
+      "50/64=78.125%，44/64=68.75%，差为9.375个百分点；11项数值账本值与来源哈希独立复核一致。",
+      "R1.1、R1.2、R2.1、R2.2、R3.1全部原文和回复齐备；12个子项都有动作/状态/位置映射。",
+      "两个更大模型与等时延比较仍明确未完成；未伪造预注册、真实数据、机制或统计证据。",
+      "共享版本状态对应两类设计角色有说明；关联措辞保留，in descending order保留为独立语言示例，未冒造错误类别结果。",
+      "1146词和1019词按记录中的正则复算一致；不是刊会字数认证。"
+    ],
+    "figures": [
+      "三行CSV数值、百分比及四个差值一致；10项数值账本与来源哈希复核一致。",
+      "从SVG实际点坐标反算三组latency/accuracy，与CSV在1e-5显示坐标舍入容差内一致；不是只检查文字标签。",
+      "低延迟高准确率方向为左上；纵轴65–86%范围及合成/无不确定性边界已说明。",
+      "drawio中6个模块、6条有向边、2条说明标签和1块位图，与参考图拓扑一致；不是整页截图封装。",
+      "101×101裁剪与原图[825,345,926,446)像素一致；只作为视觉细节。",
+      "实际查看原图及5张已有最终预览；两份PDF各1页，文本和尺寸独立读取符合声明。",
+      "drawio原生渲染与交互未完成，在交接/检查/图谱中均明确保留。"
+    ]
+  },
+  "independent_checks": {
+    "input_integrity": [
+      {
+        "project": "discovery",
+        "path": "PROJECT.md",
+        "match": true
+      },
+      {
+        "project": "discovery",
+        "path": "notes/comparison.md",
+        "match": true
+      },
+      {
+        "project": "discovery",
+        "path": "notes/research-options.md",
+        "match": true
+      },
+      {
+        "project": "discovery",
+        "path": "notes/resources.md",
+        "match": true
+      },
+      {
+        "project": "discovery",
+        "path": "papers/local-counterexample.md",
+        "match": true
+      },
+      {
+        "project": "discovery",
+        "path": "papers/local-review.md",
+        "match": true
+      },
+      {
+        "project": "discovery",
+        "path": "research-map.md",
+        "match": true
+      },
+      {
+        "project": "writing",
+        "path": "PROJECT.md",
+        "match": true
+      },
+      {
+        "project": "writing",
+        "path": "draft-zh.md",
+        "match": true
+      },
+      {
+        "project": "writing",
+        "path": "notes/method.md",
+        "match": true
+      },
+      {
+        "project": "writing",
+        "path": "results/pilot.json",
+        "match": true
+      },
+      {
+        "project": "writing",
+        "path": "reviews.md",
+        "match": true
+      },
+      {
+        "project": "figures",
+        "path": "PROJECT.md",
+        "match": true
+      },
+      {
+        "project": "figures",
+        "path": "notes/figure-context.md",
+        "match": true
+      },
+      {
+        "project": "figures",
+        "path": "reference.png",
+        "match": true
+      },
+      {
+        "project": "figures",
+        "path": "results/latency-accuracy.csv",
+        "match": true
+      }
+    ],
+    "writing_arithmetic": {
+      "baseline_percent": 68.75,
+      "version_aware_percent": 78.125,
+      "difference_pp": 9.375
+    },
+    "review_coverage": [
+      {
+        "id": "R1.1",
+        "heading_present": true,
+        "original_wording_present": true
+      },
+      {
+        "id": "R1.2",
+        "heading_present": true,
+        "original_wording_present": true
+      },
+      {
+        "id": "R2.1",
+        "heading_present": true,
+        "original_wording_present": true
+      },
+      {
+        "id": "R2.2",
+        "heading_present": true,
+        "original_wording_present": true
+      },
+      {
+        "id": "R3.1",
+        "heading_present": true,
+        "original_wording_present": true
+      }
+    ],
+    "review_coverage_subitems": [
+      "R1.1a",
+      "R1.1b",
+      "R1.2a",
+      "R1.2b",
+      "R1.2c",
+      "R2.1a",
+      "R2.1b",
+      "R2.1c",
+      "R2.2a",
+      "R2.2b",
+      "R3.1a",
+      "R3.1b"
+    ],
+    "figure_point_geometry": [
+      {
+        "method": "Single-pass",
+        "csv_latency_ms": 120,
+        "csv_accuracy_pct": 68.75,
+        "svg_inverse_latency_ms": 120.00000040202598,
+        "svg_inverse_accuracy_pct": 68.75000002901132,
+        "matches_geometry_to_1e-5": true,
+        "name_in_text": true
+      },
+      {
+        "method": "Version-aware",
+        "csv_latency_ms": 180,
+        "csv_accuracy_pct": 78.125,
+        "svg_inverse_latency_ms": 179.99999884417537,
+        "svg_inverse_accuracy_pct": 78.12500002030794,
+        "matches_geometry_to_1e-5": true,
+        "name_in_text": true
+      },
+      {
+        "method": "Always-clarify",
+        "csv_latency_ms": 310,
+        "csv_accuracy_pct": 81.25,
+        "svg_inverse_latency_ms": 310.00000045227915,
+        "svg_inverse_accuracy_pct": 81.25000007156127,
+        "matches_geometry_to_1e-5": true,
+        "name_in_text": true
+      }
+    ],
+    "figure_svg_text_count": 24,
+    "figure_svg_raster_count": 0,
+    "drawio_edges": [
+      {
+        "id": "e_request_state",
+        "source": "user_request",
+        "target": "version_state",
+        "end_arrow": "block"
+      },
+      {
+        "id": "e_state_router",
+        "source": "version_state",
+        "target": "router",
+        "end_arrow": "block"
+      },
+      {
+        "id": "e_router_retriever",
+        "source": "router",
+        "target": "retriever",
+        "end_arrow": "block"
+      },
+      {
+        "id": "e_retriever_answer",
+        "source": "retriever",
+        "target": "answer",
+        "end_arrow": "block"
+      },
+      {
+        "id": "e_router_clarify",
+        "source": "router",
+        "target": "clarify",
+        "end_arrow": "block"
+      },
+      {
+        "id": "e_clarify_request",
+        "source": "clarify",
+        "target": "user_request",
+        "end_arrow": "block"
+      }
+    ],
+    "drawio_module_labels": [
+      "User request",
+      "Version state",
+      "Router",
+      "Clarify",
+      "Retriever",
+      "Answer"
+    ],
+    "drawio_raster_regions": 1,
+    "crop": {
+      "size": [
+        101,
+        101
+      ],
+      "pixels_match": true
+    },
+    "pdf_text_checks": [
+      {
+        "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig01_architecture.pdf",
+        "pages": 1,
+        "size_pt": [
+          0,
+          0,
+          510.2362060546875,
+          275.5275573730469
+        ],
+        "text": "User request\nVersion state\nRouter\nClarify\nRetriever\nAnswer\nclariﬁcation feedback\nsource detail\n"
+      },
+      {
+        "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig02_latency_accuracy.pdf",
+        "pages": 1,
+        "size_pt": [
+          0,
+          0,
+          255.11810302734375,
+          215.43307495117188
+        ],
+        "text": "0\n50\n100\n150\n200\n250\n300\n350\nLatency (ms; lower is better)\n65\n70\n75\n80\n85\nAccuracy (%; higher is better)\nSingle-pass\n120 ms, 68.75%\nVersion-aware\n180 ms, 78.125%\nAlways-clarify\n310 ms, 81.25%\nLatency–accuracy trade-off\nSynthetic fixtures; no repeated runs or uncertainty supplied.\nY-axis shown from 65%; each marker is one supplied value.\n"
+      }
+    ]
+  },
+  "numerical_and_manifest_checks": [
+    {
+      "project": "writing",
+      "numeric_checks": [
+        {
+          "id": "n-cases",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "n-case-families",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "baseline-correct",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "baseline-accuracy",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "version-aware-correct",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "version-aware-accuracy",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "baseline-percent",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "version-aware-percent",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "absolute-difference-percentage-points",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "net-correct-count-difference",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "dataset-entry-count",
+          "value_matches": true,
+          "hash_matches": true
+        }
+      ]
+    },
+    {
+      "project": "figures",
+      "numeric_checks": [
+        {
+          "id": "single-latency_ms",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "single-accuracy_pct",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "version-latency_ms",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "version-accuracy_pct",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "always-latency_ms",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "always-accuracy_pct",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "version_minus_single_latency_ms",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "version_minus_single_accuracy_pp",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "always_minus_version_latency_ms",
+          "value_matches": true,
+          "hash_matches": true
+        },
+        {
+          "id": "always_minus_version_accuracy_pp",
+          "value_matches": true,
+          "hash_matches": true
+        }
+      ]
+    },
+    {
+      "project": "writing",
+      "artifact_hash_matches": [
+        {
+          "path": "manuscript/sections-en.md",
+          "matches": true
+        },
+        {
+          "path": "manuscript/polished-sentences-en.md",
+          "matches": true
+        },
+        {
+          "path": "review/response-en.md",
+          "matches": true
+        },
+        {
+          "path": "review/concern-ledger.md",
+          "matches": true
+        },
+        {
+          "path": "review/pre-submission-review-zh.md",
+          "matches": true
+        },
+        {
+          "path": "records/edit-notes-zh.md",
+          "matches": true
+        },
+        {
+          "path": "records/evidence-map-zh.md",
+          "matches": true
+        },
+        {
+          "path": "HANDOFF.md",
+          "matches": true
+        },
+        {
+          "path": "research-atlas/atlas.json",
+          "matches": true
+        },
+        {
+          "path": "research-atlas/MAP.md",
+          "matches": true
+        },
+        {
+          "path": "research-atlas/map.html",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "project": "figures",
+      "artifact_hash_matches": [
+        {
+          "path": "outputs/fig01_architecture.drawio",
+          "matches": true
+        },
+        {
+          "path": "outputs/fig01_architecture.pdf",
+          "matches": true
+        },
+        {
+          "path": "outputs/fig01_architecture.png",
+          "matches": true
+        },
+        {
+          "path": "outputs/fig01_architecture.svg",
+          "matches": true
+        },
+        {
+          "path": "outputs/fig02_data_ledger.json",
+          "matches": true
+        },
+        {
+          "path": "outputs/fig02_latency_accuracy.pdf",
+          "matches": true
+        },
+        {
+          "path": "outputs/fig02_latency_accuracy.png",
+          "matches": true
+        },
+        {
+          "path": "outputs/fig02_latency_accuracy.svg",
+          "matches": true
+        },
+        {
+          "path": "sources/architecture_scene.json",
+          "matches": true
+        },
+        {
+          "path": "sources/atlas_figures_batch.json",
+          "matches": true
+        },
+        {
+          "path": "sources/numerical_claim_ledger.json",
+          "matches": true
+        },
+        {
+          "path": "scripts/plot_latency_accuracy.py",
+          "matches": true
+        },
+        {
+          "path": "scripts/rebuild_architecture.py",
+          "matches": true
+        },
+        {
+          "path": "scripts/render_previews.py",
+          "matches": true
+        },
+        {
+          "path": "scripts/verify_artifacts.py",
+          "matches": true
+        },
+        {
+          "path": "assets/source_detail.png",
+          "matches": true
+        }
+      ]
+    }
+  ],
+  "graph_metadata": [
+    {
+      "project": "discovery",
+      "revision": 5,
+      "node_count": 40,
+      "edge_count": 15,
+      "domains": [
+        {
+          "id": "intent",
+          "coverage": "partial"
+        },
+        {
+          "id": "clarification",
+          "coverage": "partial"
+        },
+        {
+          "id": "routing",
+          "coverage": "partial"
+        },
+        {
+          "id": "planning",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "ingestion-retrieval",
+          "coverage": "partial"
+        },
+        {
+          "id": "reranking-context",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "knowledge-graphs",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "memory",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "tool-use",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "answer-grounding",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "multi-agent",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "evaluation",
+          "coverage": "partial"
+        },
+        {
+          "id": "production",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "safety-security",
+          "coverage": "unsearched"
+        }
+      ],
+      "pending_reviews": []
+    },
+    {
+      "project": "writing",
+      "revision": 4,
+      "node_count": 30,
+      "edge_count": 11,
+      "domains": [
+        {
+          "id": "intent",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "clarification",
+          "coverage": "partial"
+        },
+        {
+          "id": "routing",
+          "coverage": "partial"
+        },
+        {
+          "id": "planning",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "ingestion-retrieval",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "reranking-context",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "knowledge-graphs",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "memory",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "tool-use",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "answer-grounding",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "multi-agent",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "evaluation",
+          "coverage": "partial"
+        },
+        {
+          "id": "production",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "safety-security",
+          "coverage": "unsearched"
+        }
+      ],
+      "pending_reviews": []
+    },
+    {
+      "project": "figures",
+      "revision": 1,
+      "node_count": 21,
+      "edge_count": 6,
+      "domains": [
+        {
+          "id": "intent",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "clarification",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "routing",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "planning",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "ingestion-retrieval",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "reranking-context",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "knowledge-graphs",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "memory",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "tool-use",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "answer-grounding",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "multi-agent",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "evaluation",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "production",
+          "coverage": "unsearched"
+        },
+        {
+          "id": "safety-security",
+          "coverage": "unsearched"
+        }
+      ],
+      "pending_reviews": []
+    }
+  ],
+  "scope": {
+    "original_inputs": "All 16 manifest-listed original input files, plus all 3 manifests; text read fully and reference.png viewed before generated artifacts.",
+    "discovery": "RESEARCH-DESIGN, all 7 design files, HANDOFF, revised research map; initial atlas imports and all non-domain nodes; amendment section/diffs and graph metadata; project-local amendment record read only for version/provenance correspondence.",
+    "writing": "Both manuscript files, all 3 review files, edit notes, 23-claim evidence map, calculations, numerical ledger, selected verification/audit fields, HANDOFF; atlas metadata, headers, edges and claim/experiment/hypothesis nodes.",
+    "figures": "HANDOFF, captions, editing/validation/brief, scene JSON, drawio XML, SVG object/point checks, data ledger, chart and render source read without execution, selected producer logs/manifests, image/crop pixels, PDF page dimensions/text, original plus 5 existing previews.",
+    "contracts": "SKILL.md and supervisor-discovery.md, supervisor-publication.md, supervisor-figures.md read; hashes listed.",
+    "per_file_detail": "file_versions.scopes distinguishes full text, targeted structured inspection, image review and hash-only checks."
+  },
+  "uninspected_or_not_performed_zh": [
+    "未进行外部文献/新颖性/实际科研有效性审查；所有输入本身是合成材料。",
+    "未执行模型、研究负载、真实标注、原始案例重评分、家族独立性验证、统计区间或因果验证。",
+    "未打开draw.io原生应用、验证拖动吸附/字体替换/原生导出；这一余项在制图产物中已明示。",
+    "未独立重新渲染SVG/PDF；查看的是已有5张预览。另独立读取实际PDF页数、文本、尺寸，不能代替原生应用检查。",
+    "未逐一检查所有图谱历史、领域笔记或HTML浏览器布局；图谱检查限定于列明字段和节点。",
+    "未执行项目生成脚本、atlas/audit工具或完整测试；仅执行本复核的只读解析、哈希、图像像素及算术检查。源代码全面安全性/可复现性不在范围内。",
+    "未独立核验产出者全部历史操作或每项自述检查；产物中的协调者阅读声明未作为正确性依据。",
+    "未读取主仓库docs/supervisor-validation.md或协调者测试总结；未联网、安装或修改研究项目。"
+  ],
+  "observed_version_changes_zh": "审阅期间作者修订了discovery协议及相应记录；初版与修订版哈希分别保留，不把修订结果回写成初版无缺陷。",
+  "final_stability_check": {
+    "checked_at": "2026-10-21T13:06:17.864716+00:00",
+    "unique_paths": 80,
+    "changed": []
+  },
+  "file_versions": [
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/INPUT-MANIFEST.json",
+      "sha256": "87ce345c8405ff3e6f521592ec65f45170e5534e76aa79c753b8e88ff1671e5a",
+      "bytes": 1116,
+      "scopes": [
+        "input_manifest"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/PROJECT.md",
+      "sha256": "7f8f9cdc7d4e9af0e3b8ce445d559e968ec7fb714ed4e8f79b2a47e38db4f9ef",
+      "bytes": 695,
+      "scopes": [
+        "original_input_full_read_or_image_view"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/notes/comparison.md",
+      "sha256": "e338f6c411b6c4b25ec631dd63d063fd355f142422a9bc76137bf60cc4c72e46",
+      "bytes": 795,
+      "scopes": [
+        "original_input_full_read_or_image_view"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/notes/research-options.md",
+      "sha256": "9cdafcccb82284a261363e199ca0114dc2525df7e5d15843737c5edcf7288bf4",
+      "bytes": 462,
+      "scopes": [
+        "original_input_full_read_or_image_view"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/notes/resources.md",
+      "sha256": "bff6c6bb8e6b4d3b8202c272ccc4e114af823a1a83859f81d40181ca4008dc5e",
+      "bytes": 419,
+      "scopes": [
+        "original_input_full_read_or_image_view"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/papers/local-counterexample.md",
+      "sha256": "347e9d6748eda80d41ff10058ff9f2e38a8d042c68354cded9c57413ed44291c",
+      "bytes": 501,
+      "scopes": [
+        "original_input_full_read_or_image_view"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/papers/local-review.md",
+      "sha256": "d7f93f9f957c307f0c4d239057eec6c3d0c0439f9eacb10c8484759a2d9e9bd7",
+      "bytes": 469,
+      "scopes": [
+        "original_input_full_read_or_image_view"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/research-map.md",
+      "sha256": "7d0b0072893830a40b84bfc8d547b999a8dff5efe9ed32b8734052cab0d9abad",
+      "bytes": 479,
+      "scopes": [
+        "original_input_full_read_or_image_view"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/INPUT-MANIFEST.json",
+      "sha256": "4436993ce0a65727c11a974d7359816cbc7fdc43ccc41b14eb08154ada7cb13a",
+      "bytes": 773,
+      "scopes": [
+        "input_manifest"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/PROJECT.md",
+      "sha256": "65898efa70ce439c1dbb6c0e25e626f198e1d1434d8418aa8f2f01bc3283573d",
+      "bytes": 494,
+      "scopes": [
+        "original_input_full_read_or_image_view"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/draft-zh.md",
+      "sha256": "fe4e7250d0e41b8f4de0172b445ea94dc957204372042ce4dc37e3953bc9711b",
+      "bytes": 706,
+      "scopes": [
+        "original_input_full_read_or_image_view"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/notes/method.md",
+      "sha256": "fa747eadf08600554fa88e665137684e6c09ff6e9130285e56d210956d0ae953",
+      "bytes": 776,
+      "scopes": [
+        "original_input_full_read_or_image_view"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/results/pilot.json",
+      "sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+      "bytes": 431,
+      "scopes": [
+        "original_input_full_read_or_image_view",
+        "independent_arithmetic"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/reviews.md",
+      "sha256": "cb296b7b37d10efaec4b732f9c4eb3775352c186112e7e9bd78a11d55c388089",
+      "bytes": 808,
+      "scopes": [
+        "original_input_full_read_or_image_view",
+        "review_coverage_source"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/INPUT-MANIFEST.json",
+      "sha256": "b0bc91b925365501faebb4754555a8b2372784839a917fa4e695bfbf2bf825e6",
+      "bytes": 651,
+      "scopes": [
+        "input_manifest"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/PROJECT.md",
+      "sha256": "97bf554c824a41ff849432ed3daa1220daeade0b103042e88b047b538c5b0b54",
+      "bytes": 783,
+      "scopes": [
+        "original_input_full_read_or_image_view"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/notes/figure-context.md",
+      "sha256": "fc9ae99935a21922bb39fbdef6d684bfa6681feb2d3c19787c41706f0ef1153c",
+      "bytes": 585,
+      "scopes": [
+        "original_input_full_read_or_image_view"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/reference.png",
+      "sha256": "03eba4db7c14e85b31d9b5ae0bd963e07abf35d81552e165bf1cc53ec75b7055",
+      "bytes": 17358,
+      "scopes": [
+        "original_input_full_read_or_image_view",
+        "reference_image_pixels"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/results/latency-accuracy.csv",
+      "sha256": "ed5f2384042cb46ec7c3989ddc2a5faa0ea1e2bd38fc3a0a210d3e0f4b446cef",
+      "bytes": 102,
+      "scopes": [
+        "original_input_full_read_or_image_view",
+        "csv_values"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/review/response-en.md",
+      "sha256": "95f6f179d6aeff30dba4b166bc4ab875150c0df4f85a14c5b519e10f8accacd2",
+      "bytes": 6991,
+      "scopes": [
+        "review_coverage_target",
+        "full_text_review",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "independent_recheck",
+        "initial_semantic_review",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/review/concern-ledger.md",
+      "sha256": "1e66c0cbaf82c5bb3890e119aae75bb302aa468598f9a8e22389aa64cbe49c7d",
+      "bytes": 4776,
+      "scopes": [
+        "review_coverage_ledger",
+        "full_text_review",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "independent_recheck",
+        "initial_semantic_review",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig02_latency_accuracy.svg",
+      "sha256": "7074063a6ca129bcaaefe5f206ab1a70e39f71e14703fa85c17c63217b5a11ea",
+      "bytes": 14064,
+      "scopes": [
+        "svg_text_and_point_coordinates",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "independent_recheck",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig01_architecture.drawio",
+      "sha256": "175c795870b597a570b4482d3c66d9535334b65cb183011a151d3c43c5734efc",
+      "bytes": 7390,
+      "scopes": [
+        "native_object_and_connector_structure",
+        "full_text_review",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "independent_recheck",
+        "initial_semantic_review",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/assets/source_detail.png",
+      "sha256": "c394a86c0ea5580b110692ee1d2caa56eb03cf8982fc77027411b7c530a89d63",
+      "bytes": 318,
+      "scopes": [
+        "crop_pixels",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "independent_recheck",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig01_architecture.pdf",
+      "sha256": "a74106cf91090969e519819f5aa3178cc46d63b4d9a710de3872bec85d84820d",
+      "bytes": 13238,
+      "scopes": [
+        "pdf_page_dimensions_and_text_only",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "independent_recheck",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig02_latency_accuracy.pdf",
+      "sha256": "f8158108b18a69742ea254e33340f20fe4691eecd0aea4a988c80c41a5a7b35f",
+      "bytes": 21269,
+      "scopes": [
+        "pdf_page_dimensions_and_text_only",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "independent_recheck",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig01_architecture.png",
+      "sha256": "778336c69655cc29a64b9d368b20959aa7b76f6c55371cae7c9828fc07936c3e",
+      "bytes": 46524,
+      "scopes": [
+        "existing_preview_visually_inspected",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "independent_recheck",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig02_latency_accuracy.png",
+      "sha256": "7198ef289cb05cf43077be562b4af643ef094001c03a94ba980837f70917cc0a",
+      "bytes": 109795,
+      "scopes": [
+        "existing_preview_visually_inspected",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "independent_recheck",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/checks/fig01_architecture_pdf_render.png",
+      "sha256": "1e9b64856db97cbb99a2a27ddf8281d2ba4203dbd605fefccd6616ffaebe1e0f",
+      "bytes": 28452,
+      "scopes": [
+        "existing_preview_visually_inspected"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/checks/fig02_latency_accuracy_pdf_render.png",
+      "sha256": "22334da6c0c1ef6fe97db5f14959d6f4a84c68f8cc125e3028dde6a78d8f84ae",
+      "bytes": 37539,
+      "scopes": [
+        "existing_preview_visually_inspected"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/checks/fig02_svg_render.png",
+      "sha256": "6d0db5b76bc297b16142f702c3a611ae0aaf1f74f2801dcbede3826be8feba77",
+      "bytes": 79313,
+      "scopes": [
+        "existing_preview_visually_inspected"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/HANDOFF.md",
+      "sha256": "da7d8b9ca63ab49f74f87f99f5d425fdca72504064849a1fa52bbc13eaa48f04",
+      "bytes": 7689,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/CAPTIONS.md",
+      "sha256": "6b4bb8f8bb0783ddfab64984e6bb08da6596759ec59c1cc1fec48af209c89e19",
+      "bytes": 2895,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/EDITING.md",
+      "sha256": "88c5a2e36ca1adc4025d227736c9043610f6911bedb07ec77510ba6af4a776f9",
+      "bytes": 4422,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/VALIDATION.md",
+      "sha256": "14b224bbccbd76b6ae56f27e674ab08ac2e0e3f4fb34a45661fa1eef2742da63",
+      "bytes": 5300,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/notes/FIGURE-BRIEF.md",
+      "sha256": "b216a30ed65e62d95aa8930cb132586e5ba7be1a5db49f8af92ad7acc8127070",
+      "bytes": 5230,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/sources/architecture_scene.json",
+      "sha256": "8fe39a5e2da96199cb722c15b0885ca3ad02b3648e90e70160d7d2f2707b7dbc",
+      "bytes": 4382,
+      "scopes": [
+        "full_text_review",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "initial_semantic_review",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig02_data_ledger.json",
+      "sha256": "2eaad2116aa8cbdacf98bbf1e303019f45469592ddbc60463cd4ae8994d31a61",
+      "bytes": 1300,
+      "scopes": [
+        "full_text_review",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "initial_semantic_review",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/manuscript/sections-en.md",
+      "sha256": "d324e6b9dbbcb5ca71be44fff9873f36cb1180ccfd9921ddadf3a763aa6297c5",
+      "bytes": 8155,
+      "scopes": [
+        "full_text_review",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "initial_semantic_review",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/manuscript/polished-sentences-en.md",
+      "sha256": "4fcc3700b89adb3a86faa22158e77a31660da2e3c8498d18da6b3edb9b9cc93f",
+      "bytes": 698,
+      "scopes": [
+        "full_text_review",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "initial_semantic_review",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/HANDOFF.md",
+      "sha256": "4d24a3bdd6d6abc8bdb2f80a32750e05cd5dbc70800ec5fad93d064c88c389af",
+      "bytes": 8708,
+      "scopes": [
+        "full_text_review",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "initial_semantic_review",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/review/pre-submission-review-zh.md",
+      "sha256": "9b4ff7a633bdfdc938d4aec6cabc25c397e3daf2d5d5cd7df54900068114fe57",
+      "bytes": 6295,
+      "scopes": [
+        "full_text_review",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "initial_semantic_review",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/records/edit-notes-zh.md",
+      "sha256": "5510cff9ce4ca40a02b6da565a88784c574f1509cd0b27abcc88936c0727965c",
+      "bytes": 8941,
+      "scopes": [
+        "full_text_review",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "initial_semantic_review",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/records/evidence-map-zh.md",
+      "sha256": "a30a8dbfc86950503b51110f66f06bee32f618c787a7f94a3fd402366ad6df48",
+      "bytes": 9554,
+      "scopes": [
+        "full_text_review",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "initial_semantic_review",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/records/calculations.json",
+      "sha256": "c1bfe49b44893298420f9be8455bc53e9071439270757eb60b16618a4539a3a9",
+      "bytes": 950,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/records/numerical-ledger.json",
+      "sha256": "85b681c777639df44c54dc27a9d577aeeee4e61697147d107fe7cf8c1d97ada9",
+      "bytes": 3389,
+      "scopes": [
+        "full_text_review",
+        "numerical_ledger_full"
+      ],
+      "phases": [
+        "initial_semantic_review",
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/records/numerical-audit.json",
+      "sha256": "38e08821cc4a5af523afb5ce577567ada86457b9577394d3e1f68cbbfc5d5d86",
+      "bytes": 4324,
+      "scopes": [
+        "audit_status_fields_only",
+        "numerical_audit_report_status_fields_only"
+      ],
+      "phases": [
+        "initial_semantic_review",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/records/verification.json",
+      "sha256": "75c57b801ab2bf99e96b61298dafa196116abcba29829f624854822d4bd20c38",
+      "bytes": 5430,
+      "scopes": [
+        "artifact_metadata_counts_and_coverage_fields",
+        "artifact_hash_manifest_checked"
+      ],
+      "phases": [
+        "initial_semantic_review",
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/RESEARCH-DESIGN.md",
+      "sha256": "f6e065ab65f11c1713681637111a1139470f4559311386f7254a7599752a565a",
+      "bytes": 10752,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/design/evidence-synthesis.md",
+      "sha256": "b2e4f7a7895b423091a0eea4250ab56ff1942305f789365c3c95d7305cd0803b",
+      "bytes": 8384,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/design/benchmark-dossier.md",
+      "sha256": "bf83b42e31c05a30bde8134495c6d21928657e884975885b40401b508ba296ed",
+      "bytes": 12987,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/design/protocol.json",
+      "sha256": "f4291bba865b207f4263c7fab35158e3dc5ad1963ad751a0ad284dce1804d7b4",
+      "bytes": 4652,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/design/annotation-template.json",
+      "sha256": "146ab07964a42acbe79c91ba74b8d9d73baaf5fa450736097be357e2075d943a",
+      "bytes": 1534,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/design/annotation-and-data-contract.md",
+      "sha256": "a6df3fe53b7ae1abf13f32b19d275927851d357acbfe2dd3a4fb2f13fa989e63",
+      "bytes": 9045,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/design/analysis-and-execution.md",
+      "sha256": "3aa81d73b5371c6b490fc6cad68d1c999a9f58eba2618600fba44a194415be69",
+      "bytes": 13098,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/design/bilingual-retrieval-plan.md",
+      "sha256": "8d442b1f42c7f9da1dc4f508f34819d4fcd445e4fbcefa45f371508ea0a6ec7d",
+      "bytes": 6332,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/HANDOFF.md",
+      "sha256": "59c6fc95bee42eee29a2d36ee5c56acd04bc0b539f63dd363f4bfcfd68220e8e",
+      "bytes": 7950,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "amendment_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/research-map.revised.md",
+      "sha256": "0239d188db6208f6665bcafbfd5164e368b21eaf97a58f778bce83d5768ab2c3",
+      "bytes": 3810,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "amendment_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/design/analysis-and-execution.md",
+      "sha256": "f38e8fb57169aa5967bcad3b9839e184ca4b3a7a61fa99413eb0de110be8e3a6",
+      "bytes": 14479,
+      "scopes": [
+        "amended_section_and_version_diff_review"
+      ],
+      "phases": [
+        "amendment_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/worklog/analysis-before-interval-review.md",
+      "sha256": "3aa81d73b5371c6b490fc6cad68d1c999a9f58eba2618600fba44a194415be69",
+      "bytes": 13098,
+      "scopes": [
+        "archive_hash_matches_initial_read"
+      ],
+      "phases": [
+        "amendment_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/research-atlas/atlas.json",
+      "sha256": "b582841f8714a40c87a87b08f93b83cb41def07bc717fe5cf8baba6ab82d995d",
+      "bytes": 56161,
+      "scopes": [
+        "initial_metadata_imports_and_all_non_domain_nodes"
+      ],
+      "phases": [
+        "initial_semantic_review"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/sources/numerical_claim_ledger.json",
+      "sha256": "489fef88ed9fe895159bde5e0eb8d33bb973fdf91f7df41f350941719f8bc4e6",
+      "bytes": 3294,
+      "scopes": [
+        "numerical_ledger_full",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "independent_recheck",
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/checks/output_manifest.json",
+      "sha256": "7e0533773bab457e51a5c752fc6c728841dc38b2cd44ab160a18a7d8e41090a2",
+      "bytes": 2680,
+      "scopes": [
+        "artifact_hash_manifest_checked"
+      ],
+      "phases": [
+        "independent_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/SKILL.md",
+      "sha256": "6ba73a8d4e0d0e62e214895a8e44010048da85f737c7ce1573fd66e73f3de79b",
+      "bytes": 16672,
+      "scopes": [
+        "contract_full_text"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/supervisor-discovery.md",
+      "sha256": "aa216abcfb58442c6143ac7e0ca7d1187f58a230825d9a56f15bc2b06d098bf8",
+      "bytes": 11391,
+      "scopes": [
+        "contract_full_text"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/supervisor-publication.md",
+      "sha256": "49c4dbdcc495e5619c47cf6ac35cef7216cda6badfe7869d6b6cc81146db7fc2",
+      "bytes": 14614,
+      "scopes": [
+        "contract_full_text"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/supervisor-figures.md",
+      "sha256": "82b43ee026f1776c72ea65e49b2406efb1cc78e4bc9e5deec767a2d0084b3d15",
+      "bytes": 5332,
+      "scopes": [
+        "contract_full_text"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/scripts/plot_latency_accuracy.py",
+      "sha256": "586f1255d187cc62dea8656faebdd9504a0d7f34a47cd13b6ae42a35d9e14eec",
+      "bytes": 6066,
+      "scopes": [
+        "plot_source_full_text_no_execution",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/scripts/render_previews.py",
+      "sha256": "cec1e2812fa3c50e05b30d8789dfc2d22db8c3ed2cd5e8bbfda2385a4cc6c11e",
+      "bytes": 2327,
+      "scopes": [
+        "render_source_full_text_no_execution",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/checks/artifact_verification.json",
+      "sha256": "117af85477bda573df436c9c625ac96f88c7458260c763cf9736db323b56d843",
+      "bytes": 2444,
+      "scopes": [
+        "read_declared_checks_then_independently_checked_objects_values"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/checks/render_log.json",
+      "sha256": "8e01bc583e99df131a28703033dd0a43e7357ffdefd5469597f9bed8024cb76a",
+      "bytes": 2647,
+      "scopes": [
+        "read_export_and_pdf_text_logs_no_rerun"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/research-atlas/atlas.json",
+      "sha256": "4bf1c4834512eae3e1bf9b14fec728bf3ce7cc9571e317467c63c4af49c499df",
+      "bytes": 60517,
+      "scopes": [
+        "metadata_initial_non_domain_node_review_then_current_revision_update_review"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/research-atlas/atlas.json",
+      "sha256": "73c4b5a3aa72d70d698c3bfe2e731179f8bdc75f4e2950ff050a1e81e71f65d6",
+      "bytes": 59090,
+      "scopes": [
+        "metadata_headers_edges_claim_experiment_hypothesis_nodes_domain_states",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/research-atlas/atlas.json",
+      "sha256": "2eecd02bbe421d1d52f6cc73cc4dd032203b7a687a0cb646ce8dfd1a1f35ff75",
+      "bytes": 34065,
+      "scopes": [
+        "metadata_headers_edges_all_non_domain_nodes_and_domain_states"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/outputs/fig01_architecture.svg",
+      "sha256": "e296acb4e528f2a1cc0ca8f6ecb80a7b7deca9e57bc2a1b46c9eed3bc7c3aa19",
+      "bytes": 4052,
+      "scopes": [
+        "svg_native_shape_text_edge_and_raster_counts",
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/HANDOFF.md",
+      "sha256": "2ad01fb36f51466e00c4da659fa7f2e60b3d3ba38a29e99034e2908843443e83",
+      "bytes": 8306,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/research-map.revised.md",
+      "sha256": "e91a20140663a9d9e1173b08ac32a4f5a631587ee8dcc692c1c7e90a48261d9f",
+      "bytes": 4148,
+      "scopes": [
+        "version_diff_review"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/design/protocol.json",
+      "sha256": "9de2a3eefbe1c1bffae198f881a7b2acc9e2725e12a87ae25226fe3e28616862",
+      "bytes": 4844,
+      "scopes": [
+        "version_diff_review"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/worklog/coordinator-protocol-review.md",
+      "sha256": "5d71fdeb81eaddf5265556d9f1b8d181fa0a8be2fca765591836b68fd9e6238f",
+      "bytes": 2037,
+      "scopes": [
+        "full_text_review"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/research-atlas/MAP.md",
+      "sha256": "dd99968e4bdcca14e9b1e359e1c09aefaf37d8ff4d0f5c4583244934c7a16730",
+      "bytes": 2820,
+      "scopes": [
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/writing/research-atlas/map.html",
+      "sha256": "cab0690928a6ec2ee5914fe95485408c0aa94fc605d904d5ec9267f71c2f182c",
+      "bytes": 56621,
+      "scopes": [
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/sources/atlas_figures_batch.json",
+      "sha256": "06ec050bf394784fbb9dd755b7b2154471302600b4e5ad6143236009df9e5f02",
+      "bytes": 12127,
+      "scopes": [
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/scripts/rebuild_architecture.py",
+      "sha256": "27422757fcc1157e05c5baf9f0a686e40e2dd011dbd4bbd7d721922edd9758ec",
+      "bytes": 12662,
+      "scopes": [
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/scripts/verify_artifacts.py",
+      "sha256": "2b57c04eb9d480b0b9b3087adaeacf7fbc4edce514836f38c317c7aa6eb854be",
+      "bytes": 5327,
+      "scopes": [
+        "hash_only_against_producer_manifest"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/figures/checks/numerical_audit.json",
+      "sha256": "604467884b55e7b1cf20b9eae8df687aa6242b12442e45ecf33cd67fc71e1d17",
+      "bytes": 3937,
+      "scopes": [
+        "numerical_audit_report_status_fields_only"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/supervisor-forward/discovery/design/evidence-synthesis.md",
+      "sha256": "2e01d94e607e97da8deb4cec0c1cb8bc6c1b6ebabe90e70b9c7a430a7aa05725",
+      "bytes": 8525,
+      "scopes": [
+        "version_diff_review"
+      ],
+      "phases": [
+        "closing_recheck"
+      ]
+    }
+  ]
+}

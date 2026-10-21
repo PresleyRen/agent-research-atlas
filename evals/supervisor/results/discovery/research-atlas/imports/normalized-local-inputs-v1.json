@@ -1,0 +1,966 @@
+{
+  "project": {
+    "scope": "离线合成文档QA：比较相同决策前信息下澄清、检索和版本过滤的价值。当前只读本地材料与设计，无真实文献查新/数据实验/模型调用。",
+    "cutoff": "2026-10-21",
+    "problem_anchor": "RESEARCH-DESIGN.md",
+    "handoff": "HANDOFF.md"
+  },
+  "nodes": [
+    {
+      "id": "intent",
+      "data": {
+        "coverage": "partial",
+        "coverage_limits": "只读本项目虚构材料并完成设计；真实中英文献、最近评测和生产分布均未检索。",
+        "local_reading_record": "explore-local-inputs-20261021",
+        "next_search_plan": "design/bilingual-retrieval-plan.md"
+      }
+    },
+    {
+      "id": "clarification",
+      "data": {
+        "coverage": "partial",
+        "coverage_limits": "只读本项目虚构材料并完成设计；真实中英文献、最近评测和生产分布均未检索。",
+        "local_reading_record": "explore-local-inputs-20261021",
+        "next_search_plan": "design/bilingual-retrieval-plan.md"
+      }
+    },
+    {
+      "id": "routing",
+      "data": {
+        "coverage": "partial",
+        "coverage_limits": "只读本项目虚构材料并完成设计；真实中英文献、最近评测和生产分布均未检索。",
+        "local_reading_record": "explore-local-inputs-20261021",
+        "next_search_plan": "design/bilingual-retrieval-plan.md"
+      }
+    },
+    {
+      "id": "ingestion-retrieval",
+      "data": {
+        "coverage": "partial",
+        "coverage_limits": "只读本项目虚构材料并完成设计；真实中英文献、最近评测和生产分布均未检索。",
+        "local_reading_record": "explore-local-inputs-20261021",
+        "next_search_plan": "design/bilingual-retrieval-plan.md"
+      }
+    },
+    {
+      "id": "evaluation",
+      "data": {
+        "coverage": "partial",
+        "coverage_limits": "只读本项目虚构材料并完成设计；真实中英文献、最近评测和生产分布均未检索。",
+        "local_reading_record": "explore-local-inputs-20261021",
+        "next_search_plan": "design/bilingual-retrieval-plan.md"
+      }
+    },
+    {
+      "id": "fixture-review-a",
+      "type": "paper",
+      "title": "Fictional local review A / 虚构本地综述 A",
+      "status": "synthetic_fixture",
+      "domains": [
+        "intent",
+        "clarification",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "papers/local-review.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "Sections 1–3 (L4–6); full supplied fictional note"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "publication_status": "fictional_not_published",
+        "read_depth": "full_supplied_note",
+        "claims": [
+          "固定意图例子未描述约束修正",
+          "在供应例子中补检索可补证据，无法揭示未表明偏好",
+          "比较取决于决策前可用信息"
+        ],
+        "limitations": "非真实发表研究；无实验原数据或检索边界"
+      }
+    },
+    {
+      "id": "fixture-study-b",
+      "type": "paper",
+      "title": "Fictional local study B / 虚构本地研究 B",
+      "status": "synthetic_fixture",
+      "domains": [
+        "clarification",
+        "ingestion-retrieval",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "papers/local-counterexample.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "Sections 1–3 (L4–6); full supplied fictional note"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "publication_status": "fictional_not_published",
+        "read_depth": "full_supplied_note",
+        "claims": [
+          "明确旧版本可用确定性过滤",
+          "真正未指定且答案敏感的版本可通过澄清改变答案",
+          "生产频率与用户容忍度未测"
+        ],
+        "limitations": "非真实发表研究；不证明所有歧义都值得问"
+      }
+    },
+    {
+      "id": "explore-local-inputs-20261021",
+      "type": "exploration",
+      "title": "已完成：项目文件发现与全量本地材料读取",
+      "status": "completed_local_only",
+      "domains": [
+        "intent",
+        "clarification",
+        "routing",
+        "ingestion-retrieval",
+        "evaluation"
+      ],
+      "sources": [
+        {
+          "path": "worklog/inputs-before.json",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "files array; physical input inventory and hashes"
+        },
+        {
+          "path": "research-map.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "Five original bullets L3–7; full file"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "query": "atlas discover --root PROJECT; rg --files PROJECT; read all seven supplied content files and INPUT-MANIFEST.json",
+        "language": "mixed",
+        "provider": "local_filesystem",
+        "searched_at": "2026-10-21",
+        "scope": "指定 discovery 项目；初始8文件，1个非原生地图；discover未截断",
+        "limitations": "无网络、无真实论文核验；逐行64例、文档、标签不在本次可见输入中；非全域综述",
+        "result_ids": [
+          "fixture-review-a",
+          "fixture-study-b"
+        ],
+        "artifact_path": "design/evidence-synthesis.md"
+      }
+    },
+    {
+      "id": "problem-explicit-version",
+      "type": "problem",
+      "title": "明确旧版任务却选最新文档的适用性错误",
+      "status": "documented_fixture_candidate",
+      "domains": [
+        "intent",
+        "ingestion-retrieval"
+      ],
+      "sources": [
+        {
+          "path": "research-map.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "L3"
+        },
+        {
+          "path": "papers/local-counterexample.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "Sections 1–3 (L4–6); full supplied fictional note"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "problem": "目标版本与文档适用版本不匹配",
+        "boundary": "参考日期、版本与范围能明确解析时优先检查确定性过滤；无法解析另列",
+        "next_check": "取得实际版本/文档对并按目标版本标注"
+      }
+    },
+    {
+      "id": "problem-uncertainty-source",
+      "type": "problem",
+      "title": "低置信度混合文档缺证据与答案敏感意图歧义",
+      "status": "open",
+      "domains": [
+        "clarification",
+        "routing",
+        "evaluation"
+      ],
+      "sources": [
+        {
+          "path": "research-map.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "L4"
+        },
+        {
+          "path": "papers/local-review.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "Sections 1–3 (L4–6); full supplied fictional note"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "problem": "低置信度不足以识别应该从用户还是文档取得信息",
+        "artifact_path": "RESEARCH-DESIGN.md"
+      }
+    },
+    {
+      "id": "hyp-ask-all-lowconfidence",
+      "type": "hypothesis",
+      "title": "所有低置信度请求都追问（旧地图暂停方向）",
+      "status": "parked",
+      "domains": [
+        "clarification",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "research-map.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "L5"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "status_reason": "原地图已暂停：成本不可控、没有证明追问的信息价值；本轮无足以重启的新实证",
+        "reopening_condition": "获得实际信息收益、用户可提供信息和可接受成本的证据；与条件回答/检索公平比较",
+        "evidence_state": "not_empirically_tested_here"
+      }
+    },
+    {
+      "id": "claim-old-document-valid",
+      "type": "claim",
+      "title": "旧版任务里的旧文档不一定错误",
+      "status": "draft",
+      "domains": [
+        "ingestion-retrieval",
+        "evaluation"
+      ],
+      "sources": [
+        {
+          "path": "research-map.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "L6"
+        },
+        {
+          "path": "papers/local-counterexample.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "Sections 1–3 (L4–6); full supplied fictional note"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "exact_note": "旧版任务里的旧文档不一定错误。保留这条提醒。",
+        "interpretation": "正确性依任务目标版本和适用范围，不等同于新旧排序",
+        "status_reason": "保留人工提醒并作为评分约束；不是由真实研究验证的性能结论",
+        "limitations": "合成情景的条件性设计原则"
+      }
+    },
+    {
+      "id": "problem-neighboring-prior-art",
+      "type": "problem",
+      "title": "selective prediction 与 value of information 等邻近工作未查",
+      "status": "unsearched",
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ],
+      "sources": [
+        {
+          "path": "research-map.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "L7"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "unknowns": [
+          "真实最近论文",
+          "既有 benchmark 是否覆盖",
+          "可复用许可与代码"
+        ],
+        "artifact_path": "design/bilingual-retrieval-plan.md",
+        "search_state": "all_remote_not_run_by_user_constraint"
+      }
+    },
+    {
+      "id": "problem-unfair-pilot",
+      "type": "problem",
+      "title": "调试比较存在事后意图泄漏、家族交叉与缺失成本",
+      "status": "documented_fixture_issue",
+      "domains": [
+        "evaluation",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "notes/comparison.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "L3–8; full supplied fictional debug note"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "observed_in_note": {
+          "baseline_correct": 62,
+          "router_correct": 51,
+          "rows": 64,
+          "families": 8
+        },
+        "reported_not_recomputed": true,
+        "information_issue": "基线在路由前读取完整上下文后标注的reference_intent，候选没有",
+        "independence_issue": "8家族的64改写跨非正式训练/测试",
+        "consequence": "不能据此确定方法优劣或放弃整个问题",
+        "artifact_path": "design/evidence-synthesis.md"
+      }
+    },
+    {
+      "id": "claim-abandon-from-debug",
+      "type": "claim",
+      "title": "同事建议：简单基线胜出就立即放弃整个研究问题",
+      "status": "unsupported",
+      "domains": [
+        "evaluation",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "notes/comparison.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "L3–8; full supplied fictional debug note"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "status_reason": "保留原建议以供审查；不公平输入与家族泄漏使该推断不成立，且没有可比较held-out",
+        "reasoning": "调试分数不能识别方法效果；修复评测不代表候选其实获胜",
+        "limitations": "未运行有效新比较"
+      }
+    },
+    {
+      "id": "problem-data-availability",
+      "type": "problem",
+      "title": "资源笔记中的64条案例未在当前文件中提供",
+      "status": "blocked",
+      "domains": [
+        "evaluation"
+      ],
+      "sources": [
+        {
+          "path": "notes/resources.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "L3–5; full supplied resource note"
+        },
+        {
+          "path": "worklog/inputs-before.json",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "files array; physical input inventory and hashes"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "reported_resource": "8 synthetic case families with 8 paraphrases",
+        "actual_inventory": "7 content files and one manifest; no case rows, document corpus, labels, family IDs or implementation",
+        "next_check": "取得原始案例/文档/谱系和许可，不补造原数据",
+        "artifact_path": "worklog/inputs-before.json"
+      }
+    },
+    {
+      "id": "problem-information-action-value",
+      "type": "problem",
+      "title": "同一决策前信息下，怎样测清澄清相对检索/规则的增量价值？",
+      "status": "selected_for_design",
+      "domains": [
+        "clarification",
+        "routing",
+        "evaluation",
+        "ingestion-retrieval"
+      ],
+      "sources": [
+        {
+          "path": "papers/local-review.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "Sections 1–3 (L4–6); full supplied fictional note"
+        },
+        {
+          "path": "papers/local-counterexample.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "Sections 1–3 (L4–6); full supplied fictional note"
+        },
+        {
+          "path": "PROJECT.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "L3–7; full supplied file"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "problem_anchor": "RESEARCH-DESIGN.md",
+        "primary_contribution": "measurement_and_evaluation",
+        "non_goals": [
+          "训练新模型",
+          "声称新颖性",
+          "生产用户收益外推"
+        ],
+        "artifact_path": "design/benchmark-dossier.md",
+        "depends_on": [
+          "problem-uncertainty-source",
+          "problem-explicit-version",
+          "problem-unfair-pilot",
+          "problem-data-availability"
+        ]
+      }
+    },
+    {
+      "id": "hyp-information-source-value",
+      "type": "hypothesis",
+      "title": "答案敏感歧义和文档缺证据应产生不同的动作收益模式",
+      "status": "proposed",
+      "domains": [
+        "clarification",
+        "evaluation",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "papers/local-review.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "Sections 1–3 (L4–6); full supplied fictional note"
+        },
+        {
+          "path": "papers/local-counterexample.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "Sections 1–3 (L4–6); full supplied fictional note"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "feasibility": {
+          "data": "unverified",
+          "compute": "unverified",
+          "evaluation": "unverified",
+          "budget": "unverified"
+        },
+        "feasibility_notes": "本地设计可行；案例/文档未提供，双人标注/实现/未来运行预算未核实，本轮模型禁止",
+        "status_reason": "提出可反驳方案但真实最近工作、数据与执行条件不足，不升级testable或实证状态",
+        "problem": "同一低置信度可能对应不同的信息来源",
+        "mechanism": "仅从正确来源新增与答案相关的信息，才可能降低相应的不确定性；成本另计",
+        "prediction": "完整证据且缺用户目标的切片中有效澄清优于纯追加检索；目标确定且证据可检索的切片中检索有更直接收益",
+        "rival_explanations": [
+          "额外推理/上下文",
+          "循环构念与评分偏好",
+          "隐藏意图泄漏",
+          "家族/模板记忆",
+          "合法条件回答已足够"
+        ],
+        "closest_paper_ids": [
+          "fixture-review-a",
+          "fixture-study-b"
+        ],
+        "closest_work_scope": "只覆盖本地虚构材料，真实最近工作未验证",
+        "minimal_test": "合法同O0反事实对；有效/无关/无回复澄清与追加检索；族级配对",
+        "falsification": "有效协议下分层预测反向或由无关回复同幅解释；先排除标签、泄漏和实现错误",
+        "artifact_path": "design/analysis-and-execution.md"
+      }
+    },
+    {
+      "id": "hyp-explicit-version-rule",
+      "type": "hypothesis",
+      "title": "明确可解析版本的任务可能优先由确定性过滤解决",
+      "status": "proposed",
+      "domains": [
+        "ingestion-retrieval",
+        "routing",
+        "evaluation"
+      ],
+      "sources": [
+        {
+          "path": "papers/local-counterexample.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "Sections 1–3 (L4–6); full supplied fictional note"
+        },
+        {
+          "path": "research-map.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "Five original bullets L3–7; full file"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "feasibility": {
+          "data": "unverified",
+          "compute": "unverified",
+          "evaluation": "unverified",
+          "budget": "unverified"
+        },
+        "feasibility_notes": "本地设计可行；案例/文档未提供，双人标注/实现/未来运行预算未核实，本轮模型禁止",
+        "status_reason": "提出可反驳方案但真实最近工作、数据与执行条件不足，不升级testable或实证状态",
+        "problem": "明确旧版任务不应盲用最新文档",
+        "mechanism": "从公开目标解析版本并过滤适用证据",
+        "prediction": "规则减少明确版本错误；学习门控未必有剩余价值",
+        "rival_explanations": [
+          "时间锚点/地域缺失",
+          "解析规则过弱",
+          "生成端未使用已正确过滤证据"
+        ],
+        "closest_paper_ids": [
+          "fixture-study-b"
+        ],
+        "minimal_test": "明确旧/新版、无法解析参考日期分开，规则/无过滤/候选同信息比较",
+        "falsification": "强规则仍稳定失败且正确可见版本输入足够；排查解析与生成责任",
+        "artifact_path": "design/analysis-and-execution.md"
+      }
+    },
+    {
+      "id": "hyp-learned-gate",
+      "type": "hypothesis",
+      "title": "学习 retrieve/clarify/answer 门控（方向 A）",
+      "status": "parked",
+      "domains": [
+        "routing",
+        "clarification"
+      ],
+      "sources": [
+        {
+          "path": "notes/research-options.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "L3–7; full supplied note"
+        },
+        {
+          "path": "notes/comparison.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "L3–8; full supplied fictional debug note"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "status_reason": "评测和数据尚未可用；先以强规则与同信息协议确认残余失败，不因旧比较判refuted",
+        "reopening_condition": "独立家族上出现简单规则无法解释的稳定残余错误，且数据/标注/算力/预算落实",
+        "artifact_path": "RESEARCH-DESIGN.md"
+      }
+    },
+    {
+      "id": "hyp-retrieve-all-lowconfidence",
+      "type": "hypothesis",
+      "title": "低置信度一律增加检索（方向 C）",
+      "status": "parked",
+      "domains": [
+        "routing",
+        "ingestion-retrieval"
+      ],
+      "sources": [
+        {
+          "path": "notes/research-options.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "L3–7; full supplied note"
+        },
+        {
+          "path": "papers/local-review.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "Sections 1–3 (L4–6); full supplied fictional note"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "status_reason": "跨所有不确定来源的主线暂缓；保留B2为强基线和缺证据切片方案",
+        "reopening_condition": "明确文档证据可取得且追加检索在成本边界内有益",
+        "artifact_path": "design/benchmark-dossier.md"
+      }
+    },
+    {
+      "id": "experiment-e0-construct",
+      "type": "experiment",
+      "title": "E0 数据、信息边界与构念标注审计",
+      "status": "planned_not_run",
+      "domains": [
+        "evaluation",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "design/annotation-and-data-contract.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "对应设计节；全部为planned"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "artifact_path": "design/annotation-and-data-contract.md",
+        "artifact_kind": "design_only_not_run_record",
+        "execution_ready": false,
+        "depends_on": [
+          "problem-data-availability",
+          "problem-information-action-value"
+        ],
+        "no_observed_result": true,
+        "blocking_condition": "数据/标注/实现未取得；模型运行不在本轮授权内"
+      }
+    },
+    {
+      "id": "experiment-e1-information",
+      "type": "experiment",
+      "title": "E1 同信息的澄清/检索机制对比",
+      "status": "planned_not_run",
+      "domains": [
+        "evaluation",
+        "clarification"
+      ],
+      "sources": [
+        {
+          "path": "design/analysis-and-execution.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "对应设计节；全部为planned"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "artifact_path": "design/analysis-and-execution.md",
+        "artifact_kind": "design_only_not_run_record",
+        "execution_ready": false,
+        "depends_on": [
+          "hyp-information-source-value",
+          "experiment-e0-construct"
+        ],
+        "no_observed_result": true,
+        "blocking_condition": "数据/标注/实现未取得；模型运行不在本轮授权内"
+      }
+    },
+    {
+      "id": "experiment-e2-version",
+      "type": "experiment",
+      "title": "E2 显式版本强规则判别",
+      "status": "planned_not_run",
+      "domains": [
+        "evaluation",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "design/analysis-and-execution.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "对应设计节；全部为planned"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "artifact_path": "design/analysis-and-execution.md",
+        "artifact_kind": "design_only_not_run_record",
+        "execution_ready": false,
+        "depends_on": [
+          "hyp-explicit-version-rule",
+          "experiment-e0-construct"
+        ],
+        "no_observed_result": true,
+        "blocking_condition": "数据/标注/实现未取得；模型运行不在本轮授权内"
+      }
+    },
+    {
+      "id": "experiment-e3-cost",
+      "type": "experiment",
+      "title": "E3 用户可得性、成本与鲁棒性诊断",
+      "status": "planned_not_run",
+      "domains": [
+        "evaluation",
+        "clarification"
+      ],
+      "sources": [
+        {
+          "path": "design/analysis-and-execution.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "对应设计节；全部为planned"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "artifact_path": "design/analysis-and-execution.md",
+        "artifact_kind": "design_only_not_run_record",
+        "execution_ready": false,
+        "depends_on": [
+          "experiment-e1-information",
+          "experiment-e2-version"
+        ],
+        "no_observed_result": true,
+        "blocking_condition": "数据/标注/实现未取得；模型运行不在本轮授权内"
+      }
+    },
+    {
+      "id": "decision-prioritize-evaluation",
+      "type": "decision",
+      "title": "优先推进方向B的诊断评测设计",
+      "status": "proceed_design",
+      "domains": [
+        "evaluation",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "RESEARCH-DESIGN.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "对应决策与计划正文"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "depends_on": [
+          "problem-information-action-value",
+          "hyp-information-source-value"
+        ],
+        "reason": "当前可改变投资决策的瓶颈是测量与公平性；不需要先提出新模型",
+        "artifact_path": "RESEARCH-DESIGN.md"
+      }
+    },
+    {
+      "id": "decision-repair-comparison",
+      "type": "decision",
+      "title": "保留原分数，停止使用旧比较推断方法胜负",
+      "status": "revise",
+      "domains": [
+        "evaluation",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "design/evidence-synthesis.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "对应决策与计划正文"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "depends_on": [
+          "problem-unfair-pilot",
+          "claim-abandon-from-debug"
+        ],
+        "reason": "修复同信息输入和家族切分；oracle只作诊断上界",
+        "artifact_path": "design/evidence-synthesis.md"
+      }
+    },
+    {
+      "id": "decision-strong-version-rule",
+      "type": "decision",
+      "title": "把确定性版本过滤纳入强基线",
+      "status": "proceed_design",
+      "domains": [
+        "evaluation",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "design/benchmark-dossier.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "对应决策与计划正文"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "depends_on": [
+          "hyp-explicit-version-rule",
+          "fixture-study-b"
+        ],
+        "reason": "明确版本与真正未指定版本是不同问题",
+        "artifact_path": "design/benchmark-dossier.md"
+      }
+    },
+    {
+      "id": "decision-reject-fixed-template",
+      "type": "decision",
+      "title": "不采用新模型/15模型/9%难度的固定模板",
+      "status": "reject_template",
+      "domains": [
+        "evaluation",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "RESEARCH-DESIGN.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "对应决策与计划正文"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "depends_on": [
+          "problem-information-action-value"
+        ],
+        "reason": "这些固定阈值无本项目构念与资源依据；不等同发表规则",
+        "artifact_path": "RESEARCH-DESIGN.md"
+      }
+    },
+    {
+      "id": "decision-bilingual-next",
+      "type": "decision",
+      "title": "中英最近工作和反证检索留作未执行计划",
+      "status": "planned_not_run",
+      "domains": [
+        "evaluation",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "design/bilingual-retrieval-plan.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "对应决策与计划正文"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "depends_on": [
+          "problem-neighboring-prior-art"
+        ],
+        "reason": "本轮禁止联网；真实查新 unresolved",
+        "artifact_path": "design/bilingual-retrieval-plan.md"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-001",
+      "source": "fixture-review-a",
+      "target": "problem-uncertainty-source",
+      "relation": "motivates",
+      "note": ""
+    },
+    {
+      "id": "e-002",
+      "source": "fixture-study-b",
+      "target": "problem-explicit-version",
+      "relation": "motivates",
+      "note": ""
+    },
+    {
+      "id": "e-003",
+      "source": "fixture-study-b",
+      "target": "hyp-explicit-version-rule",
+      "relation": "motivates",
+      "note": "仅合成来源的机制线索"
+    },
+    {
+      "id": "e-004",
+      "source": "problem-unfair-pilot",
+      "target": "claim-abandon-from-debug",
+      "relation": "contradicts",
+      "note": "不公平比较不能支持整体弃题"
+    },
+    {
+      "id": "e-005",
+      "source": "problem-uncertainty-source",
+      "target": "problem-information-action-value",
+      "relation": "motivates",
+      "note": ""
+    },
+    {
+      "id": "e-006",
+      "source": "hyp-information-source-value",
+      "target": "problem-information-action-value",
+      "relation": "addresses",
+      "note": ""
+    },
+    {
+      "id": "e-007",
+      "source": "hyp-explicit-version-rule",
+      "target": "problem-explicit-version",
+      "relation": "addresses",
+      "note": ""
+    },
+    {
+      "id": "e-008",
+      "source": "experiment-e1-information",
+      "target": "hyp-information-source-value",
+      "relation": "tests",
+      "note": "计划边，无实验结果"
+    },
+    {
+      "id": "e-009",
+      "source": "experiment-e2-version",
+      "target": "hyp-explicit-version-rule",
+      "relation": "tests",
+      "note": "计划边，无实验结果"
+    },
+    {
+      "id": "e-010",
+      "source": "claim-old-document-valid",
+      "target": "problem-explicit-version",
+      "relation": "relates_to",
+      "note": ""
+    },
+    {
+      "id": "e-011",
+      "source": "hyp-learned-gate",
+      "target": "hyp-explicit-version-rule",
+      "relation": "compares_with",
+      "note": "未来公平比较，尚未运行"
+    },
+    {
+      "id": "e-012",
+      "source": "decision-prioritize-evaluation",
+      "target": "hyp-learned-gate",
+      "relation": "relates_to",
+      "note": "学习门控保留为后续条件性路线"
+    },
+    {
+      "id": "e-013",
+      "source": "explore-local-inputs-20261021",
+      "target": "fixture-review-a",
+      "relation": "relates_to",
+      "note": "已读取，不代表外部文献检索"
+    },
+    {
+      "id": "e-014",
+      "source": "explore-local-inputs-20261021",
+      "target": "fixture-study-b",
+      "relation": "relates_to",
+      "note": ""
+    }
+  ],
+  "imports": [
+    {
+      "path": "research-map.md",
+      "status": "normalized",
+      "node_ids": [
+        "problem-explicit-version",
+        "problem-uncertainty-source",
+        "hyp-ask-all-lowconfidence",
+        "claim-old-document-valid",
+        "problem-neighboring-prior-art"
+      ],
+      "note": "已逐条读取L3–7并映射五个stable IDs；保留原文与原SHA256。人工备注和旧parked方向均保留；未查邻域没有标成已检索。归一化仅语义整理，不增加实证证据。"
+    }
+  ]
+}

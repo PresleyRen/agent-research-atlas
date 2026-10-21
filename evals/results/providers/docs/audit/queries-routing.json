@@ -1,0 +1,122 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+    "--root",
+    "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+    "queries",
+    "--domain",
+    "routing",
+    "--focus-zh",
+    "时变意图与撤销约束",
+    "--focus-en",
+    "time-varying intent and revocation constraints"
+  ],
+  "exit_code": 0,
+  "stdout": {
+    "domain": "routing",
+    "note": "Query planning only. Execute through available search tools and record actual results as exploration nodes.",
+    "queries": [
+      {
+        "alternate_terms": [
+          "模型路由",
+          "任务路由"
+        ],
+        "executed": false,
+        "instruction": "Adapt syntax/date filters to the provider; run synonyms separately when Boolean syntax is unsupported.",
+        "language": "zh",
+        "query": "智能体路由 时变意图与撤销约束 综述 研究进展",
+        "since_year": null,
+        "stage": "survey"
+      },
+      {
+        "alternate_terms": [
+          "模型路由",
+          "任务路由"
+        ],
+        "executed": false,
+        "instruction": "Adapt syntax/date filters to the provider; run synonyms separately when Boolean syntax is unsupported.",
+        "language": "zh",
+        "query": "智能体路由 时变意图与撤销约束 方法 机制 对比",
+        "since_year": null,
+        "stage": "closest-work"
+      },
+      {
+        "alternate_terms": [
+          "模型路由",
+          "任务路由"
+        ],
+        "executed": false,
+        "instruction": "Adapt syntax/date filters to the provider; run synonyms separately when Boolean syntax is unsupported.",
+        "language": "zh",
+        "query": "智能体路由 时变意图与撤销约束 局限 失败 鲁棒性",
+        "since_year": null,
+        "stage": "negative-evidence"
+      },
+      {
+        "alternate_terms": [
+          "模型路由",
+          "任务路由"
+        ],
+        "executed": false,
+        "instruction": "Adapt syntax/date filters to the provider; run synonyms separately when Boolean syntax is unsupported.",
+        "language": "zh",
+        "query": "智能体路由 时变意图与撤销约束 评测 数据集 基线",
+        "since_year": null,
+        "stage": "evaluation"
+      },
+      {
+        "alternate_terms": [
+          "model routing",
+          "task routing"
+        ],
+        "executed": false,
+        "instruction": "Adapt syntax/date filters to the provider; run synonyms separately when Boolean syntax is unsupported.",
+        "language": "en",
+        "query": "agent routing time-varying intent and revocation constraints survey review",
+        "since_year": null,
+        "stage": "survey"
+      },
+      {
+        "alternate_terms": [
+          "model routing",
+          "task routing"
+        ],
+        "executed": false,
+        "instruction": "Adapt syntax/date filters to the provider; run synonyms separately when Boolean syntax is unsupported.",
+        "language": "en",
+        "query": "agent routing time-varying intent and revocation constraints method mechanism comparison",
+        "since_year": null,
+        "stage": "closest-work"
+      },
+      {
+        "alternate_terms": [
+          "model routing",
+          "task routing"
+        ],
+        "executed": false,
+        "instruction": "Adapt syntax/date filters to the provider; run synonyms separately when Boolean syntax is unsupported.",
+        "language": "en",
+        "query": "agent routing time-varying intent and revocation constraints limitations failure robustness",
+        "since_year": null,
+        "stage": "negative-evidence"
+      },
+      {
+        "alternate_terms": [
+          "model routing",
+          "task routing"
+        ],
+        "executed": false,
+        "instruction": "Adapt syntax/date filters to the provider; run synonyms separately when Boolean syntax is unsupported.",
+        "language": "en",
+        "query": "agent routing time-varying intent and revocation constraints evaluation benchmark baseline",
+        "since_year": null,
+        "stage": "evaluation"
+      }
+    ]
+  },
+  "stderr": "",
+  "expected_exit_code": 0,
+  "meaning": "Local query planning/compatibility check only; not a literature search. Custom domain is expected to require a host-authored ledger."
+}

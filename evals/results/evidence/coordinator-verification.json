@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "checks": {
+    "all_eight_original_fixture_bytes_preserved": true,
+    "expected_exit_codes_observed": true,
+    "hypotheses_not_promoted": true,
+    "parked_keyword_preserved": true
+  },
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": {
+        "edges": 20,
+        "meaning": "Structural integrity only; scientific interpretation requires evidence review.",
+        "nodes": 40,
+        "revision": 5,
+        "valid": true
+      },
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence",
+        "values",
+        "--ledger",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence/reviews/2026-10-20/values-draft.json"
+      ],
+      "exit_code": 3,
+      "stdout": {
+        "all_values_match": false,
+        "claims": [
+          {
+            "artifact_path": "results/run-a.json",
+            "id": "draft-accuracy-a",
+            "observed_value": 0.625,
+            "pointer": "/metrics/accuracy",
+            "reported_value": 0.97,
+            "source_sha256": "18e88e62b456f7ce02adabb09965602d091aac59541a47dd1a2c6b0cc049ad08",
+            "status": "mismatch",
+            "version_match": true
+          },
+          {
+            "artifact_path": "results/run-a.json",
+            "id": "draft-n-a",
+            "observed_value": 8,
+            "pointer": "/metrics/n",
+            "reported_value": 8,
+            "source_sha256": "18e88e62b456f7ce02adabb09965602d091aac59541a47dd1a2c6b0cc049ad08",
+            "status": "match",
+            "version_match": true
+          },
+          {
+            "artifact_path": "results/run-b.json",
+            "id": "draft-accuracy-b",
+            "observed_value": 0.625,
+            "pointer": "/metrics/accuracy",
+            "reported_value": 0.97,
+            "source_sha256": "72b2702d0a7c2c1466b2c6e15d67699b23563b91c1408deecccedd780bcf87a1",
+            "status": "mismatch",
+            "version_match": true
+          },
+          {
+            "artifact_path": "results/run-b.json",
+            "id": "draft-n-b",
+            "observed_value": 8,
+            "pointer": "/metrics/n",
+            "reported_value": 8,
+            "source_sha256": "72b2702d0a7c2c1466b2c6e15d67699b23563b91c1408deecccedd780bcf87a1",
+            "status": "match",
+            "version_match": true
+          }
+        ],
+        "meaning": "Numbers checked against specified local JSON locations. This does not validate measurement, independence, statistical analysis or the scientific claim.",
+        "scientific_verdict": "not_assessed"
+      },
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence",
+        "values",
+        "--ledger",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence/reviews/2026-10-20/values-observed.json"
+      ],
+      "exit_code": 0,
+      "stdout": {
+        "all_values_match": true,
+        "claims": [
+          {
+            "artifact_path": "results/run-a.json",
+            "id": "observed-accuracy-a",
+            "observed_value": 0.625,
+            "pointer": "/metrics/accuracy",
+            "reported_value": 0.625,
+            "source_sha256": "18e88e62b456f7ce02adabb09965602d091aac59541a47dd1a2c6b0cc049ad08",
+            "status": "match",
+            "version_match": true
+          },
+          {
+            "artifact_path": "results/run-a.json",
+            "id": "observed-n-a",
+            "observed_value": 8,
+            "pointer": "/metrics/n",
+            "reported_value": 8,
+            "source_sha256": "18e88e62b456f7ce02adabb09965602d091aac59541a47dd1a2c6b0cc049ad08",
+            "status": "match",
+            "version_match": true
+          },
+          {
+            "artifact_path": "results/run-a.json",
+            "id": "observed-seed-a",
+            "observed_value": 7,
+            "pointer": "/seed",
+            "reported_value": 7,
+            "source_sha256": "18e88e62b456f7ce02adabb09965602d091aac59541a47dd1a2c6b0cc049ad08",
+            "status": "match",
+            "version_match": true
+          },
+          {
+            "artifact_path": "results/run-b.json",
+            "id": "observed-accuracy-b",
+            "observed_value": 0.625,
+            "pointer": "/metrics/accuracy",
+            "reported_value": 0.625,
+            "source_sha256": "72b2702d0a7c2c1466b2c6e15d67699b23563b91c1408deecccedd780bcf87a1",
+            "status": "match",
+            "version_match": true
+          },
+          {
+            "artifact_path": "results/run-b.json",
+            "id": "observed-n-b",
+            "observed_value": 8,
+            "pointer": "/metrics/n",
+            "reported_value": 8,
+            "source_sha256": "72b2702d0a7c2c1466b2c6e15d67699b23563b91c1408deecccedd780bcf87a1",
+            "status": "match",
+            "version_match": true
+          },
+          {
+            "artifact_path": "results/run-b.json",
+            "id": "observed-seed-b",
+            "observed_value": 13,
+            "pointer": "/seed",
+            "reported_value": 13,
+            "source_sha256": "72b2702d0a7c2c1466b2c6e15d67699b23563b91c1408deecccedd780bcf87a1",
+            "status": "match",
+            "version_match": true
+          }
+        ],
+        "meaning": "Numbers checked against specified local JSON locations. This does not validate measurement, independence, statistical analysis or the scientific claim.",
+        "scientific_verdict": "not_assessed"
+      },
+      "stderr": ""
+    }
+  ],
+  "scope": "Independent local rechecks of source bytes, atlas structure and numerical ledgers; no research payload or external call."
+}

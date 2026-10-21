@@ -1,0 +1,462 @@
+{
+  "date": "2026-10-21",
+  "task": "discovery",
+  "scope": "Exact local forward-task files, excluding Python bytecode; this manifest excluded from itself. Original absolute paths in handoff/logs identify the source run.",
+  "files": [
+    {
+      "path": "HANDOFF.md",
+      "bytes": 8306,
+      "sha256": "2ad01fb36f51466e00c4da659fa7f2e60b3d3ba38a29e99034e2908843443e83"
+    },
+    {
+      "path": "INPUT-MANIFEST.json",
+      "bytes": 1116,
+      "sha256": "87ce345c8405ff3e6f521592ec65f45170e5534e76aa79c753b8e88ff1671e5a"
+    },
+    {
+      "path": "PROJECT.md",
+      "bytes": 695,
+      "sha256": "7f8f9cdc7d4e9af0e3b8ce445d559e968ec7fb714ed4e8f79b2a47e38db4f9ef"
+    },
+    {
+      "path": "RESEARCH-DESIGN.md",
+      "bytes": 10752,
+      "sha256": "f6e065ab65f11c1713681637111a1139470f4559311386f7254a7599752a565a"
+    },
+    {
+      "path": "design/analysis-and-execution.md",
+      "bytes": 14479,
+      "sha256": "f38e8fb57169aa5967bcad3b9839e184ca4b3a7a61fa99413eb0de110be8e3a6"
+    },
+    {
+      "path": "design/annotation-and-data-contract.md",
+      "bytes": 9045,
+      "sha256": "a6df3fe53b7ae1abf13f32b19d275927851d357acbfe2dd3a4fb2f13fa989e63"
+    },
+    {
+      "path": "design/annotation-template.json",
+      "bytes": 1534,
+      "sha256": "146ab07964a42acbe79c91ba74b8d9d73baaf5fa450736097be357e2075d943a"
+    },
+    {
+      "path": "design/benchmark-dossier.md",
+      "bytes": 12987,
+      "sha256": "bf83b42e31c05a30bde8134495c6d21928657e884975885b40401b508ba296ed"
+    },
+    {
+      "path": "design/bilingual-retrieval-plan.md",
+      "bytes": 6332,
+      "sha256": "8d442b1f42c7f9da1dc4f508f34819d4fcd445e4fbcefa45f371508ea0a6ec7d"
+    },
+    {
+      "path": "design/evidence-synthesis.md",
+      "bytes": 8525,
+      "sha256": "2e01d94e607e97da8deb4cec0c1cb8bc6c1b6ebabe90e70b9c7a430a7aa05725"
+    },
+    {
+      "path": "design/protocol.json",
+      "bytes": 4844,
+      "sha256": "9de2a3eefbe1c1bffae198f881a7b2acc9e2725e12a87ae25226fe3e28616862"
+    },
+    {
+      "path": "notes/comparison.md",
+      "bytes": 795,
+      "sha256": "e338f6c411b6c4b25ec631dd63d063fd355f142422a9bc76137bf60cc4c72e46"
+    },
+    {
+      "path": "notes/research-options.md",
+      "bytes": 462,
+      "sha256": "9cdafcccb82284a261363e199ca0114dc2525df7e5d15843737c5edcf7288bf4"
+    },
+    {
+      "path": "notes/resources.md",
+      "bytes": 419,
+      "sha256": "bff6c6bb8e6b4d3b8202c272ccc4e114af823a1a83859f81d40181ca4008dc5e"
+    },
+    {
+      "path": "papers/local-counterexample.md",
+      "bytes": 501,
+      "sha256": "347e9d6748eda80d41ff10058ff9f2e38a8d042c68354cded9c57413ed44291c"
+    },
+    {
+      "path": "papers/local-review.md",
+      "bytes": 469,
+      "sha256": "d7f93f9f957c307f0c4d239057eec6c3d0c0439f9eacb10c8484759a2d9e9bd7"
+    },
+    {
+      "path": "research-atlas/MAP.md",
+      "bytes": 2834,
+      "sha256": "68626366b814a6e731cc890d9eee05519f395f7999a1b29b62ea56f94aac16ad"
+    },
+    {
+      "path": "research-atlas/atlas.json",
+      "bytes": 60517,
+      "sha256": "4bf1c4834512eae3e1bf9b14fec728bf3ce7cc9571e317467c63c4af49c499df"
+    },
+    {
+      "path": "research-atlas/domains/answer-grounding/MAP.md",
+      "bytes": 447,
+      "sha256": "85a2eb7ab99314fbe600e9486cd757f6c6698f5bfd6a4a2f5f40e97d99624c78"
+    },
+    {
+      "path": "research-atlas/domains/answer-grounding/notes.md",
+      "bytes": 167,
+      "sha256": "14d841439d676b39284242cde13e6f59eae6bc5efe374dc8e575b6bbf9de1937"
+    },
+    {
+      "path": "research-atlas/domains/clarification/MAP.md",
+      "bytes": 9854,
+      "sha256": "f3c885e4833e3c3f75d6becab9f01905ec764c966c00439126be092d12442152"
+    },
+    {
+      "path": "research-atlas/domains/clarification/notes.md",
+      "bytes": 1521,
+      "sha256": "3808ef0890d91e593d6cfc062040b864108178802755d5963e73ded2ff2152f4"
+    },
+    {
+      "path": "research-atlas/domains/evaluation/MAP.md",
+      "bytes": 16278,
+      "sha256": "5be7912cead5ad4d514c3bf4c69ff6a98ec617c517a845a741cb0ca25be197a8"
+    },
+    {
+      "path": "research-atlas/domains/evaluation/notes.md",
+      "bytes": 2001,
+      "sha256": "5a58db1a702e7c7abccc38443d15255682d590531662fd7aad36488e543e81d0"
+    },
+    {
+      "path": "research-atlas/domains/ingestion-retrieval/MAP.md",
+      "bytes": 6862,
+      "sha256": "ffb391199f9d70c10b322c1173736f2e514f7e84ebcc7f8ee8ab6ecc5dc7442a"
+    },
+    {
+      "path": "research-atlas/domains/ingestion-retrieval/notes.md",
+      "bytes": 1437,
+      "sha256": "f3444027855832ad2f77fcb00b292d2abdb6c0343a3fcf7d42d058bb0e5cedf9"
+    },
+    {
+      "path": "research-atlas/domains/intent/MAP.md",
+      "bytes": 2814,
+      "sha256": "adbe1e54580e2a414da00c83dcebb848b5476bed9db03b3de8a4ee180c52c1c7"
+    },
+    {
+      "path": "research-atlas/domains/intent/notes.md",
+      "bytes": 1537,
+      "sha256": "780227edfdc7ba669bb5e01c43c3e2952da65dc14486d5220705c6899564f4d4"
+    },
+    {
+      "path": "research-atlas/domains/knowledge-graphs/MAP.md",
+      "bytes": 459,
+      "sha256": "35529ad5e2716d613564ad2ad9ccf8026883e5d2cf7f02b0734ebd890957b626"
+    },
+    {
+      "path": "research-atlas/domains/knowledge-graphs/notes.md",
+      "bytes": 173,
+      "sha256": "5b979bc9fc00375c2bd1c351a98f4a66fc93134b475c8fec741457bbdc67cd56"
+    },
+    {
+      "path": "research-atlas/domains/memory/MAP.md",
+      "bytes": 411,
+      "sha256": "fd8de2432ffc36dec7d1744d8a21cc3ddccb5552733f05332517768ad8ea48b3"
+    },
+    {
+      "path": "research-atlas/domains/memory/notes.md",
+      "bytes": 149,
+      "sha256": "008aa3c759a539fd9396e3edb88b23743e3cf6a99ba0635d82fe8fffa73a3cd4"
+    },
+    {
+      "path": "research-atlas/domains/multi-agent/MAP.md",
+      "bytes": 421,
+      "sha256": "d8d92d080a7a68363f7808b8d813ee504de6d6dbe443cb6063e1ab0e622bda9c"
+    },
+    {
+      "path": "research-atlas/domains/multi-agent/notes.md",
+      "bytes": 154,
+      "sha256": "59c37f0dbdb2c15180697f4113eca227f69d21c54491f6bdfe9ee9d9b7ca1dde"
+    },
+    {
+      "path": "research-atlas/domains/planning/MAP.md",
+      "bytes": 383,
+      "sha256": "97b747b5b4fa5b8748e8cf1406701946b42ba3cea200428dce323eb8242c148d"
+    },
+    {
+      "path": "research-atlas/domains/planning/notes.md",
+      "bytes": 135,
+      "sha256": "facd4196694e61a0f6bd2f0f52fb3c2b0ac38a775715761d1e3fc514b9698dec"
+    },
+    {
+      "path": "research-atlas/domains/production/MAP.md",
+      "bytes": 433,
+      "sha256": "dc701dad4805a261131fc9e149dec57d6bf9bd7be4789745902b5888bea86dd5"
+    },
+    {
+      "path": "research-atlas/domains/production/notes.md",
+      "bytes": 160,
+      "sha256": "e92f3d5acd9a788b4ecbaffa56ceea7356836c0b0c06ef9c7e92885a6f3d1af4"
+    },
+    {
+      "path": "research-atlas/domains/reranking-context/MAP.md",
+      "bytes": 429,
+      "sha256": "fb889dab59fdfae542fdb17f8fc0e4c0661539ef50fdbb3884140b3de6e259ac"
+    },
+    {
+      "path": "research-atlas/domains/reranking-context/notes.md",
+      "bytes": 158,
+      "sha256": "f0560806a214144c874f8f7cef5e3ad2529945a1c07e65ef97438579bc40dc00"
+    },
+    {
+      "path": "research-atlas/domains/routing/MAP.md",
+      "bytes": 16073,
+      "sha256": "230f995edc47fe950aa9c1d984515fe04d8be0194590ad2894ff73cd0a309b24"
+    },
+    {
+      "path": "research-atlas/domains/routing/notes.md",
+      "bytes": 1452,
+      "sha256": "2cf110aac7e32adf75e073b585669c1c44970cfa2eec27407b05d5ddacb04a51"
+    },
+    {
+      "path": "research-atlas/domains/safety-security/MAP.md",
+      "bytes": 447,
+      "sha256": "3aef207262882daef39c3bc3ed5d1605a7ee28da75544a8d84a6fd070002448d"
+    },
+    {
+      "path": "research-atlas/domains/safety-security/notes.md",
+      "bytes": 167,
+      "sha256": "9fb6f90066799e30c017b23d8e59bd30cf586f4ad6bdda7b5b0ba78bfd7398c1"
+    },
+    {
+      "path": "research-atlas/domains/tool-use/MAP.md",
+      "bytes": 409,
+      "sha256": "778c8133caefd6d7118acae9235882548556e857a132e9bc5aabceddea6be8ef"
+    },
+    {
+      "path": "research-atlas/domains/tool-use/notes.md",
+      "bytes": 148,
+      "sha256": "9d7f43eea9cd35c6b44c6801f3d3434a8a88cad75b00ee8f994eb6f384fd7e66"
+    },
+    {
+      "path": "research-atlas/history/revision-000000-410c824ef5ee.json",
+      "bytes": 20921,
+      "sha256": "410c824ef5eeafa4002ed23bbbd7bd414ee34c082b0b2f2185661a0c623c5475"
+    },
+    {
+      "path": "research-atlas/history/revision-000001-b582841f8714.json",
+      "bytes": 56161,
+      "sha256": "b582841f8714a40c87a87b08f93b83cb41def07bc717fe5cf8baba6ab82d995d"
+    },
+    {
+      "path": "research-atlas/history/revision-000002-1d0b6d98d476.json",
+      "bytes": 59515,
+      "sha256": "1d0b6d98d4767142878f715f3442036e1a547bf96f19ab0d6dc723fc2882e6d3"
+    },
+    {
+      "path": "research-atlas/history/revision-000003-7ac9b19a4039.json",
+      "bytes": 59865,
+      "sha256": "7ac9b19a4039f293baf09d9c0b9ad766030046e83c880757f32814dadecf4c37"
+    },
+    {
+      "path": "research-atlas/history/revision-000004-daab7dfab130.json",
+      "bytes": 60192,
+      "sha256": "daab7dfab1304a13bc5ad7374db8b83a3f55cb1f109d0d583babc3c3cfe6052c"
+    },
+    {
+      "path": "research-atlas/history/views/000fbd99314414d0-MAP.md",
+      "bytes": 3238,
+      "sha256": "000fbd99314414d008642b81752942c06e7faf8ec475c114b9fc42cd3efc82bd"
+    },
+    {
+      "path": "research-atlas/history/views/05a7dee439a07b0d-MAP.md",
+      "bytes": 463,
+      "sha256": "05a7dee439a07b0d3e53d8062a797c8b783c6a27b4e6663c190c5588b610c646"
+    },
+    {
+      "path": "research-atlas/history/views/0662d59e6c3b5ead-MAP.md",
+      "bytes": 441,
+      "sha256": "0662d59e6c3b5ead35acea25eadb13a476f0e371173f4ab38ba9b1c96e78453f"
+    },
+    {
+      "path": "research-atlas/history/views/22c49ad7851e89d2-MAP.md",
+      "bytes": 16464,
+      "sha256": "22c49ad7851e89d2defd518e8317c50dbc0134bee0f2c62b1a58ad794bb662cb"
+    },
+    {
+      "path": "research-atlas/history/views/230f995edc47fe95-MAP.md",
+      "bytes": 16073,
+      "sha256": "230f995edc47fe950aa9c1d984515fe04d8be0194590ad2894ff73cd0a309b24"
+    },
+    {
+      "path": "research-atlas/history/views/25349d62c18ffc15-map.html",
+      "bytes": 56811,
+      "sha256": "25349d62c18ffc15c38d9bfb4aacc2a1bf8d7b7ccd4472f74884de82c9c1cadf"
+    },
+    {
+      "path": "research-atlas/history/views/4f344690ec43091e-map.html",
+      "bytes": 56516,
+      "sha256": "4f344690ec43091ed08a99601b87efc440303d3c2a65ae3353d05662d6670cad"
+    },
+    {
+      "path": "research-atlas/history/views/4fa5f511e340b635-map.html",
+      "bytes": 56204,
+      "sha256": "4fa5f511e340b635c3790991985abff56fac4522c8da862f372a5f7a1577e5d6"
+    },
+    {
+      "path": "research-atlas/history/views/55fd7095ca9e85b6-MAP.md",
+      "bytes": 419,
+      "sha256": "55fd7095ca9e85b6cdf0e74cfb36d3c34c6cbb3e5db0ed6e83018e46266c6864"
+    },
+    {
+      "path": "research-atlas/history/views/5b850d4dd13451cb-MAP.md",
+      "bytes": 16371,
+      "sha256": "5b850d4dd13451cbb3432888612a889bcc1cd0b28135bb21a9002b608c1328e8"
+    },
+    {
+      "path": "research-atlas/history/views/5f0b94da21d9bcaf-MAP.md",
+      "bytes": 3076,
+      "sha256": "5f0b94da21d9bcaf2c4b85c7c1d4ac91074559c7c79db167f86b7d5411595376"
+    },
+    {
+      "path": "research-atlas/history/views/64279290b8fa48f8-MAP.md",
+      "bytes": 9947,
+      "sha256": "64279290b8fa48f8d7b49d03c822d6964351b272cf3c7d7676dad10e6cb580b3"
+    },
+    {
+      "path": "research-atlas/history/views/6a7a3fcf5b218ffd-map.html",
+      "bytes": 26256,
+      "sha256": "6a7a3fcf5b218ffd4887458a7a5f8ab99efe040be79f55dd365e30a79c3f39e0"
+    },
+    {
+      "path": "research-atlas/history/views/76aa50c864f99f83-MAP.md",
+      "bytes": 2870,
+      "sha256": "76aa50c864f99f83ea6f596d406c876d7efc3d8946034170c23f7cae9378fdbb"
+    },
+    {
+      "path": "research-atlas/history/views/77ec6fad8fb6ef20-MAP.md",
+      "bytes": 9607,
+      "sha256": "77ec6fad8fb6ef207b5610ea2b098fe0fda00a99089972b517792f2ada74c871"
+    },
+    {
+      "path": "research-atlas/history/views/78cb6c0d8ee4b25a-MAP.md",
+      "bytes": 419,
+      "sha256": "78cb6c0d8ee4b25a1ec84521aed48d7e5333e8b517adc9428e8e2ed74e465757"
+    },
+    {
+      "path": "research-atlas/history/views/7d960b81a5069db3-MAP.md",
+      "bytes": 2834,
+      "sha256": "7d960b81a5069db3ec92ddbe8e009a7f04f0acbd5ebf11d6ad7ee605c502ecf3"
+    },
+    {
+      "path": "research-atlas/history/views/86046bdbeb37f0e3-MAP.md",
+      "bytes": 415,
+      "sha256": "86046bdbeb37f0e3c40f9af5b90893362e14671e9c5c070762502d53c350965d"
+    },
+    {
+      "path": "research-atlas/history/views/968c64e908a4cd51-MAP.md",
+      "bytes": 16166,
+      "sha256": "968c64e908a4cd51945f8974b0d9eba5b2bab96b117a7db126a1dcc8a1a33bb0"
+    },
+    {
+      "path": "research-atlas/history/views/a2a128e13aeccb3a-MAP.md",
+      "bytes": 16557,
+      "sha256": "a2a128e13aeccb3a8687ccff9fe248fe297a1e7e6fd1c435edb609ebf3b5ef8c"
+    },
+    {
+      "path": "research-atlas/history/views/ac5c0a2837aece47-map.html",
+      "bytes": 53870,
+      "sha256": "ac5c0a2837aece477f365fc488dbbfab5b5b45c394f2e9ec2df816f8054c141c"
+    },
+    {
+      "path": "research-atlas/history/views/b66fe0fb5b741000-MAP.md",
+      "bytes": 16259,
+      "sha256": "b66fe0fb5b7410005bd2a3deaaf2b43be59a7f779c2560720c697107703334a7"
+    },
+    {
+      "path": "research-atlas/history/views/d565e4acf81e9579-MAP.md",
+      "bytes": 10040,
+      "sha256": "d565e4acf81e9579b459556d96807f5ae6eaba8bdbd767cc02aba0b900719955"
+    },
+    {
+      "path": "research-atlas/history/views/d99d38311ed1d18e-MAP.md",
+      "bytes": 15398,
+      "sha256": "d99d38311ed1d18ef50876cf228de67c109f235abbc98396fa8b6df8f44ce10f"
+    },
+    {
+      "path": "research-atlas/history/views/dc6ed2724b155fc8-MAP.md",
+      "bytes": 3151,
+      "sha256": "dc6ed2724b155fc8bd99cdabd11d8291018325f1a2efb502823e8bab6545fc1b"
+    },
+    {
+      "path": "research-atlas/imports/interval-review-amendment-v1.json",
+      "bytes": 1409,
+      "sha256": "517f8eb0c490ba9fa01592714dc364329697af8ab902c5fa089af2233302e4d5"
+    },
+    {
+      "path": "research-atlas/imports/normalized-local-inputs-v1.json",
+      "bytes": 31658,
+      "sha256": "b91b35eea17b9ed60ff62604ecda8b1ccb3ca48f5f99db3bd63cc60efe8c84ff"
+    },
+    {
+      "path": "research-atlas/map.html",
+      "bytes": 57110,
+      "sha256": "87e2c72b49aa4194af6d146053560970789566828814dc321f15edad58674760"
+    },
+    {
+      "path": "research-atlas.config.json",
+      "bytes": 36,
+      "sha256": "5c82f16f4ae6f614adbb98a918f5084b1c06b6649611385dad9aeffb6cdfdf05"
+    },
+    {
+      "path": "research-map.md",
+      "bytes": 479,
+      "sha256": "7d0b0072893830a40b84bfc8d547b999a8dff5efe9ed32b8734052cab0d9abad"
+    },
+    {
+      "path": "research-map.revised.md",
+      "bytes": 4148,
+      "sha256": "e91a20140663a9d9e1173b08ac32a4f5a631587ee8dcc692c1c7e90a48261d9f"
+    },
+    {
+      "path": "worklog/analysis-before-interval-review.md",
+      "bytes": 13098,
+      "sha256": "3aa81d73b5371c6b490fc6cad68d1c999a9f58eba2618600fba44a194415be69"
+    },
+    {
+      "path": "worklog/audit-project-final.json",
+      "bytes": 1224,
+      "sha256": "e9f489d510d0344c161cf5903757e5817be8d89f008e14819dc3fc7b31830d4b"
+    },
+    {
+      "path": "worklog/check-final.json",
+      "bytes": 162,
+      "sha256": "b1fb35c2f35906be10ed6742418b2ca512313e8fc57340b64dc1864dad6f2cfa"
+    },
+    {
+      "path": "worklog/commands.jsonl",
+      "bytes": 29769,
+      "sha256": "408f695117e93cdfb72e95afe3ee03331762715b9443406cfdaf1da05eaa4eab"
+    },
+    {
+      "path": "worklog/coordinator-protocol-review.md",
+      "bytes": 2037,
+      "sha256": "5d71fdeb81eaddf5265556d9f1b8d181fa0a8be2fca765591836b68fd9e6238f"
+    },
+    {
+      "path": "worklog/inputs-before.json",
+      "bytes": 1525,
+      "sha256": "149285af7865827b45633425d5b90c07bab6fe8d0e20e289536a728249a905c1"
+    },
+    {
+      "path": "worklog/reading-and-provenance.md",
+      "bytes": 4141,
+      "sha256": "ade56e723197e7f18bfdd3410e6fadea343bb03a2c31029d858199805955f0d2"
+    },
+    {
+      "path": "worklog/status-final.json",
+      "bytes": 5356,
+      "sha256": "69f3cb1639f27f546b3b19fdf7988f548902ca6b7f7543d17679dcc2cb5c0722"
+    },
+    {
+      "path": "worklog/verification-final.json",
+      "bytes": 2367,
+      "sha256": "e5e173ba10652e9c50092292364a57913bf78b1776b51c319a38af77e3d28009"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "exit_code": 0,
+  "output": {
+    "counts": {
+      "claim": 6,
+      "decision": 5,
+      "domain": 14,
+      "experiment": 1,
+      "exploration": 1,
+      "hypothesis": 1,
+      "paper": 0,
+      "problem": 2
+    },
+    "coverage": [
+      {
+        "coverage": "unsearched",
+        "id": "intent"
+      },
+      {
+        "coverage": "partial",
+        "id": "clarification"
+      },
+      {
+        "coverage": "partial",
+        "id": "routing"
+      },
+      {
+        "coverage": "unsearched",
+        "id": "planning"
+      },
+      {
+        "coverage": "unsearched",
+        "id": "ingestion-retrieval"
+      },
+      {
+        "coverage": "unsearched",
+        "id": "reranking-context"
+      },
+      {
+        "coverage": "unsearched",
+        "id": "knowledge-graphs"
+      },
+      {
+        "coverage": "unsearched",
+        "id": "memory"
+      },
+      {
+        "coverage": "unsearched",
+        "id": "tool-use"
+      },
+      {
+        "coverage": "unsearched",
+        "id": "answer-grounding"
+      },
+      {
+        "coverage": "unsearched",
+        "id": "multi-agent"
+      },
+      {
+        "coverage": "partial",
+        "id": "evaluation"
+      },
+      {
+        "coverage": "unsearched",
+        "id": "production"
+      },
+      {
+        "coverage": "unsearched",
+        "id": "safety-security"
+      }
+    ],
+    "imports": [],
+    "maintenance": {
+      "pending_reviews": [
+        {
+          "first_flagged_revision": 1,
+          "last_flagged_revision": 1,
+          "node_id": "clarification",
+          "triggers": [
+            {
+              "node_id": "clarification",
+              "path": [
+                {
+                  "relation": "data.search_ids",
+                  "source": "local-writing-evidence-pass",
+                  "target": "clarification"
+                }
+              ],
+              "reason": "dependency_or_evidence_changed",
+              "revision": 1,
+              "source_id": "local-writing-evidence-pass"
+            }
+          ]
+        },
+        {
+          "first_flagged_revision": 1,
+          "last_flagged_revision": 1,
+          "node_id": "evaluation",
+          "triggers": [
+            {
+              "node_id": "evaluation",
+              "path": [
+                {
+                  "relation": "data.search_ids",
+                  "source": "local-writing-evidence-pass",
+                  "target": "evaluation"
+                }
+              ],
+              "reason": "dependency_or_evidence_changed",
+              "revision": 1,
+              "source_id": "local-writing-evidence-pass"
+            }
+          ]
+        },
+        {
+          "first_flagged_revision": 1,
+          "last_flagged_revision": 1,
+          "node_id": "routing",
+          "triggers": [
+            {
+              "node_id": "routing",
+              "path": [
+                {
+                  "relation": "data.search_ids",
+                  "source": "local-writing-evidence-pass",
+                  "target": "routing"
+                }
+              ],
+              "reason": "dependency_or_evidence_changed",
+              "revision": 1,
+              "source_id": "local-writing-evidence-pass"
+            }
+          ]
+        }
+      ],
+      "review_log": []
+    },
+    "project": {
+      "created_at": "2026-10-21T12:42:09.773433+00:00",
+      "cutoff": "2026-10-21",
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "output_paths": [
+        "manuscript/sections-en.md",
+        "manuscript/polished-sentences-en.md",
+        "review/response-en.md",
+        "review/pre-submission-review-zh.md",
+        "review/concern-ledger.md",
+        "records/edit-notes-zh.md",
+        "records/evidence-map-zh.md",
+        "HANDOFF.md"
+      ],
+      "scope": "Synthetic offline writing exercise only: draft evidence-bounded English Introduction and Methods, polish supplied sentences, review and reply to five supplied synthetic reviewer concerns. Source cutoff 2026-10-21; no external retrieval, model execution, installation, research experiments, payments, or submission.",
+      "synthetic": true,
+      "task_type": "publish-package-with-local-synthetic-evidence",
+      "title": "Version-aware routing: synthetic offline manuscript and review package",
+      "updated_at": "2026-10-21T12:51:35.220123+00:00",
+      "workbench_sections": [
+        "C26: supervisor-publication sections 3–5",
+        "C27: supervisor-publication sections 6–7"
+      ]
+    },
+    "revision": 1
+  }
+}

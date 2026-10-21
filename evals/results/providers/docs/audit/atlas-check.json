@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+    "--root",
+    "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+    "check"
+  ],
+  "exit_code": 0,
+  "stdout": {
+    "edges": 15,
+    "meaning": "Structural integrity only; scientific interpretation requires evidence review.",
+    "nodes": 30,
+    "revision": 4,
+    "valid": true
+  },
+  "stderr": "",
+  "execution_scope": "Local-only file/state/CLI validation; no remote request or research load."
+}

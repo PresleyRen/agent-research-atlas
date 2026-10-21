@@ -1,0 +1,355 @@
+{
+  "project": {
+    "scope": "Offline scientific figure reconstruction and visualization of supplied synthetic fixtures only; no literature search, inference, experimental evaluation or publication."
+  },
+  "nodes": [
+    {
+      "id": "fixture-latency-accuracy",
+      "type": "experiment",
+      "title": "给定延迟—准确率合成夹具（未执行研究实验）",
+      "status": "supplied_synthetic_fixture_not_run",
+      "domains": [
+        "evaluation",
+        "production"
+      ],
+      "sources": [
+        {
+          "path": "results/latency-accuracy.csv",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "header and rows 2–4"
+        },
+        {
+          "path": "PROJECT.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "line 3: synthetic and resource constraints"
+        },
+        {
+          "path": "notes/figure-context.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "line 3: synthetic data and missing uncertainty"
+        }
+      ],
+      "data": {
+        "artifact_path": "results/latency-accuracy.csv",
+        "record_type": "supplied_fixture_only",
+        "actual_execution": "none; only local chart generation occurred",
+        "synthetic": true,
+        "limitations": [
+          "All input values are synthetic fixtures.",
+          "No repeated runs, sample denominator, task setting, hardware, or uncertainty estimates were supplied.",
+          "No literature search or novelty assessment was authorized or performed."
+        ],
+        "status_reason": "Source values are explicitly synthetic; recording their provenance without marking any method scientifically supported."
+      }
+    },
+    {
+      "id": "claim-reference-topology",
+      "type": "claim",
+      "title": "参考图描述请求—版本状态—路由主链及澄清反馈回路",
+      "status": "draft",
+      "domains": [
+        "routing",
+        "clarification",
+        "ingestion-retrieval"
+      ],
+      "sources": [
+        {
+          "path": "reference.png",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "whole 1000 x 540 image; visually inspected six modules and six directed connectors"
+        },
+        {
+          "path": "PROJECT.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "line 5: reference topology"
+        }
+      ],
+      "data": {
+        "claim_type": "descriptive_diagram",
+        "statement": "User request → Version state → Router; Router → Retriever → Answer; Router → Clarify → User request.",
+        "limitations": [
+          "Describes supplied architecture topology only; does not establish method effectiveness."
+        ],
+        "status_reason": "Bounded descriptive figure text; no empirical support state assigned."
+      }
+    },
+    {
+      "id": "claim-fixture-tradeoff",
+      "type": "claim",
+      "title": "合成夹具显示更高准确率同时伴随更高延迟",
+      "status": "draft",
+      "domains": [
+        "evaluation",
+        "production",
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "results/latency-accuracy.csv",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "rows 2–4"
+        },
+        {
+          "path": "outputs/fig02_data_ledger.json",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "/rows and /derived_differences"
+        },
+        {
+          "path": "CAPTIONS.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "图 2 / Figure 2"
+        }
+      ],
+      "data": {
+        "claim_type": "descriptive_fixture_only",
+        "statement": "Single-pass: 120 ms, 68.75%; Version-aware: 180 ms, 78.125%; Always-clarify: 310 ms, 81.25%. The values form a latency–accuracy trade-off; no statistical conclusion is drawn.",
+        "depends_on": [
+          "fixture-latency-accuracy"
+        ],
+        "limitations": [
+          "All input values are synthetic fixtures.",
+          "No repeated runs, sample denominator, task setting, hardware, or uncertainty estimates were supplied.",
+          "No literature search or novelty assessment was authorized or performed."
+        ],
+        "status_reason": "Retain draft scientific wording because supplied fixture values are not real experimental evidence."
+      }
+    },
+    {
+      "id": "decision-axis-semantics",
+      "type": "decision",
+      "title": "采用延迟横轴、准确率纵轴，改善方向为左上方",
+      "status": "adopted",
+      "domains": [
+        "evaluation",
+        "production"
+      ],
+      "sources": [
+        {
+          "path": "notes/figure-context.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "line 3: quantity direction and conflicting team note"
+        },
+        {
+          "path": "notes/FIGURE-BRIEF.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "图 2: 编码与量纲"
+        }
+      ],
+      "data": {
+        "reason": "Latency is minimized and accuracy maximized. Upper right means higher latency as well as higher accuracy, so the informal team note does not govern the plot.",
+        "axes": {
+          "x": "latency_ms; lower is better",
+          "y": "accuracy*100; higher is better",
+          "x_range": [
+            0,
+            350
+          ],
+          "y_range": [
+            65,
+            86
+          ]
+        },
+        "status_reason": "Preserve the supplied quantities and their optimization directions."
+      }
+    },
+    {
+      "id": "figure-architecture",
+      "type": "decision",
+      "title": "图 1：可编辑架构重建与伴随预览",
+      "status": "produced_native_render_pending",
+      "domains": [
+        "routing",
+        "clarification",
+        "ingestion-retrieval"
+      ],
+      "sources": [
+        {
+          "path": "outputs/fig01_architecture.drawio",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "mxGraphModel/root: six module vertices and six directed edges"
+        },
+        {
+          "path": "outputs/fig01_architecture.svg",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "modules/connectors/labels/source_detail_image"
+        },
+        {
+          "path": "VALIDATION.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "架构图"
+        },
+        {
+          "path": "EDITING.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "drawio 对象与连线"
+        }
+      ],
+      "data": {
+        "figure_id": "fig01_architecture",
+        "depends_on": [
+          "claim-reference-topology"
+        ],
+        "artifact_path": "outputs/fig01_architecture.drawio",
+        "editable_source": "sources/architecture_scene.json",
+        "code_path": "scripts/rebuild_architecture.py",
+        "previews": [
+          "outputs/fig01_architecture.png",
+          "outputs/fig01_architecture.pdf",
+          "checks/fig01_architecture_pdf_render.png"
+        ],
+        "native_elements": {
+          "modules": 6,
+          "connectors": 6,
+          "extra_labels": 2,
+          "raster_regions": 1
+        },
+        "native_drawio_render": "not performed: no installed renderer",
+        "raster_source": "reference.png crop [825,345,926,446)",
+        "layout_change": "Feedback label moved below Clarify to avoid overlap; topology unchanged.",
+        "status_reason": "Native source structurally checked and SVG/PDF previews inspected; draw.io application render and interactive endpoint behavior remain unverified."
+      }
+    },
+    {
+      "id": "figure-latency-accuracy",
+      "type": "decision",
+      "title": "图 2：延迟—准确率论文格式散点图",
+      "status": "produced_and_previewed",
+      "domains": [
+        "evaluation",
+        "production"
+      ],
+      "sources": [
+        {
+          "path": "outputs/fig02_latency_accuracy.svg",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "vector chart with editable text"
+        },
+        {
+          "path": "outputs/fig02_data_ledger.json",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "/rows, /axes and /derived_differences"
+        },
+        {
+          "path": "VALIDATION.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "数据图"
+        },
+        {
+          "path": "scripts/plot_latency_accuracy.py",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "main: direct CSV plotting and layout checks"
+        }
+      ],
+      "data": {
+        "figure_id": "fig02_latency_accuracy",
+        "depends_on": [
+          "claim-fixture-tradeoff",
+          "fixture-latency-accuracy",
+          "decision-axis-semantics"
+        ],
+        "artifact_path": "outputs/fig02_latency_accuracy.svg",
+        "code_path": "scripts/plot_latency_accuracy.py",
+        "previews": [
+          "outputs/fig02_latency_accuracy.png",
+          "outputs/fig02_latency_accuracy.pdf",
+          "checks/fig02_svg_render.png",
+          "checks/fig02_latency_accuracy_pdf_render.png"
+        ],
+        "limitations": [
+          "All input values are synthetic fixtures.",
+          "No repeated runs, sample denominator, task setting, hardware, or uncertainty estimates were supplied.",
+          "No literature search or novelty assessment was authorized or performed."
+        ],
+        "status_reason": "CSV values checked and actual Matplotlib/ SVG/PDF previews inspected after repairing the x-axis/footer overlap. Artifact readiness is not empirical validation."
+      }
+    },
+    {
+      "id": "decision-native-review-pending",
+      "type": "decision",
+      "title": "待办：离线 drawio 原生预览与交互检查",
+      "status": "open",
+      "domains": [
+        "routing"
+      ],
+      "sources": [
+        {
+          "path": "VALIDATION.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "保留余项 item 1"
+        },
+        {
+          "path": "EDITING.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "drawio 对象与连线"
+        }
+      ],
+      "data": {
+        "reason": "No native draw.io renderer was installed; no installation or network use is authorized.",
+        "next_action": "Open the delivered .drawio in an already available offline editor; verify all six directed edges, editable text, raster panel and endpoint attachment, then export and inspect a native preview.",
+        "depends_on": [
+          "figure-architecture"
+        ],
+        "status_reason": "Do not substitute SVG rendering or XML validity for native draw.io validation."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-fixture-claim",
+      "source": "claim-fixture-tradeoff",
+      "target": "fixture-latency-accuracy",
+      "relation": "derived_from",
+      "note": "Descriptive arithmetic of supplied fixture only."
+    },
+    {
+      "id": "edge-fig01-claim",
+      "source": "figure-architecture",
+      "target": "claim-reference-topology",
+      "relation": "uses"
+    },
+    {
+      "id": "edge-fig02-claim",
+      "source": "figure-latency-accuracy",
+      "target": "claim-fixture-tradeoff",
+      "relation": "uses"
+    },
+    {
+      "id": "edge-fig02-data",
+      "source": "figure-latency-accuracy",
+      "target": "fixture-latency-accuracy",
+      "relation": "derived_from"
+    },
+    {
+      "id": "edge-fig02-axes",
+      "source": "figure-latency-accuracy",
+      "target": "decision-axis-semantics",
+      "relation": "uses"
+    },
+    {
+      "id": "edge-native-review",
+      "source": "decision-native-review-pending",
+      "target": "figure-architecture",
+      "relation": "uses"
+    }
+  ]
+}

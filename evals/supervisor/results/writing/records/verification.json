@@ -1,0 +1,180 @@
+{
+  "artifacts": [
+    {
+      "bytes": 8155,
+      "path": "manuscript/sections-en.md",
+      "sha256": "d324e6b9dbbcb5ca71be44fff9873f36cb1180ccfd9921ddadf3a763aa6297c5"
+    },
+    {
+      "bytes": 698,
+      "path": "manuscript/polished-sentences-en.md",
+      "sha256": "4fcc3700b89adb3a86faa22158e77a31660da2e3c8498d18da6b3edb9b9cc93f"
+    },
+    {
+      "bytes": 6991,
+      "path": "review/response-en.md",
+      "sha256": "95f6f179d6aeff30dba4b166bc4ab875150c0df4f85a14c5b519e10f8accacd2"
+    },
+    {
+      "bytes": 4776,
+      "path": "review/concern-ledger.md",
+      "sha256": "1e66c0cbaf82c5bb3890e119aae75bb302aa468598f9a8e22389aa64cbe49c7d"
+    },
+    {
+      "bytes": 6295,
+      "path": "review/pre-submission-review-zh.md",
+      "sha256": "9b4ff7a633bdfdc938d4aec6cabc25c397e3daf2d5d5cd7df54900068114fe57"
+    },
+    {
+      "bytes": 8941,
+      "path": "records/edit-notes-zh.md",
+      "sha256": "5510cff9ce4ca40a02b6da565a88784c574f1509cd0b27abcc88936c0727965c"
+    },
+    {
+      "bytes": 9554,
+      "path": "records/evidence-map-zh.md",
+      "sha256": "a30a8dbfc86950503b51110f66f06bee32f618c787a7f94a3fd402366ad6df48"
+    },
+    {
+      "bytes": 8708,
+      "path": "HANDOFF.md",
+      "sha256": "4d24a3bdd6d6abc8bdb2f80a32750e05cd5dbc70800ec5fad93d064c88c389af"
+    },
+    {
+      "bytes": 59090,
+      "path": "research-atlas/atlas.json",
+      "sha256": "73c4b5a3aa72d70d698c3bfe2e731179f8bdc75f4e2950ff050a1e81e71f65d6"
+    },
+    {
+      "bytes": 2820,
+      "path": "research-atlas/MAP.md",
+      "sha256": "dd99968e4bdcca14e9b1e359e1c09aefaf37d8ff4d0f5c4583244934c7a16730"
+    },
+    {
+      "bytes": 56621,
+      "path": "research-atlas/map.html",
+      "sha256": "cab0690928a6ec2ee5914fe95485408c0aa94fc605d904d5ec9267f71c2f182c"
+    }
+  ],
+  "atlas": {
+    "edges": 11,
+    "nodes": 30,
+    "pending_reviews": 0,
+    "remaining_project_gap_codes": [
+      "G-COVERAGE-UNSEARCHED"
+    ],
+    "revision": 4,
+    "structural_check": "passed",
+    "unfinished_imports": 0
+  },
+  "checked_at": "2026-10-21T12:55:01.501790+00:00",
+  "editorial_review": {
+    "coordinator": "Reported full reading of sections-en.md and response-en.md against inputs, with no added unprovided measurements or missing original concerns found.",
+    "independence_limit": "Shared task context; not blind peer review or independent scientific replication.",
+    "writer": "Serial evidence, wording, location and numerical consistency review."
+  },
+  "input_checks": [
+    {
+      "path": "PROJECT.md",
+      "sha256": "65898efa70ce439c1dbb6c0e25e626f198e1d1434d8418aa8f2f01bc3283573d",
+      "unchanged": true
+    },
+    {
+      "path": "draft-zh.md",
+      "sha256": "fe4e7250d0e41b8f4de0172b445ea94dc957204372042ce4dc37e3953bc9711b",
+      "unchanged": true
+    },
+    {
+      "path": "notes/method.md",
+      "sha256": "fa747eadf08600554fa88e665137684e6c09ff6e9130285e56d210956d0ae953",
+      "unchanged": true
+    },
+    {
+      "path": "results/pilot.json",
+      "sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+      "unchanged": true
+    },
+    {
+      "path": "reviews.md",
+      "sha256": "cb296b7b37d10efaec4b732f9c4eb3775352c186112e7e9bd78a11d55c388089",
+      "unchanged": true
+    }
+  ],
+  "input_files_unchanged": true,
+  "input_manifest_unchanged": true,
+  "not_performed": [
+    "network access",
+    "installation",
+    "additional model or research runs",
+    "payments",
+    "external submission",
+    "external citation or nearest-work verification",
+    "case-level rescoring",
+    "family-aware uncertainty or causal estimation",
+    "code-to-method fidelity audit",
+    "complete-manuscript or PDF/Word layout review",
+    "browser visual inspection of the generated atlas HTML"
+  ],
+  "numerical_audit": {
+    "exit_code": 0,
+    "matched": 11,
+    "path": "records/numerical-audit.json",
+    "tolerances": "zero; exact source hashes",
+    "total": 11
+  },
+  "original_error_audit": {
+    "exit_code": 3,
+    "meaning": "Expected detection of original unsupported 96%; corrected manuscript is checked separately.",
+    "path": "records/original-claim-audit.json",
+    "status": "mismatch"
+  },
+  "review_parent_coverage": [
+    {
+      "heading_present": true,
+      "id": "R1.1",
+      "original_wording_preserved": true
+    },
+    {
+      "heading_present": true,
+      "id": "R1.2",
+      "original_wording_preserved": true
+    },
+    {
+      "heading_present": true,
+      "id": "R2.1",
+      "original_wording_preserved": true
+    },
+    {
+      "heading_present": true,
+      "id": "R2.2",
+      "original_wording_preserved": true
+    },
+    {
+      "heading_present": true,
+      "id": "R3.1",
+      "original_wording_preserved": true
+    }
+  ],
+  "review_subitem_ids": [
+    "R1.1a",
+    "R1.1b",
+    "R1.2a",
+    "R1.2b",
+    "R1.2c",
+    "R2.1a",
+    "R2.1b",
+    "R2.1c",
+    "R2.2a",
+    "R2.2b",
+    "R3.1a",
+    "R3.1b"
+  ],
+  "scope_limit": "All consistency checks concern supplied fictional materials and generated local text. Passing checks do not establish scientific validity or real submission readiness.",
+  "task_kind": "synthetic offline manuscript revision; not real research",
+  "word_count_rule": "\\b[\\w]+(?:[-’'][\\w]+)*\\b",
+  "word_count_scope": "Entire Markdown file including titles and quoted reviewer concerns; not a venue word count.",
+  "word_counts": {
+    "manuscript_sections_en": 1146,
+    "review_response_en": 1019
+  }
+}

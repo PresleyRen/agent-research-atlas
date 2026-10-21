@@ -1,0 +1,104 @@
+{
+  "claims": [
+    {
+      "abs_tol": 0,
+      "artifact_path": "results/pilot.json",
+      "expected_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+      "id": "n-cases",
+      "pointer": "/n_cases",
+      "rel_tol": 0,
+      "reported_value": 64
+    },
+    {
+      "abs_tol": 0,
+      "artifact_path": "results/pilot.json",
+      "expected_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+      "id": "n-case-families",
+      "pointer": "/n_case_families",
+      "rel_tol": 0,
+      "reported_value": 8
+    },
+    {
+      "abs_tol": 0,
+      "artifact_path": "results/pilot.json",
+      "expected_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+      "id": "baseline-correct",
+      "pointer": "/baseline/correct",
+      "rel_tol": 0,
+      "reported_value": 44
+    },
+    {
+      "abs_tol": 0,
+      "artifact_path": "results/pilot.json",
+      "expected_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+      "id": "baseline-accuracy",
+      "pointer": "/baseline/accuracy",
+      "rel_tol": 0,
+      "reported_value": 0.6875
+    },
+    {
+      "abs_tol": 0,
+      "artifact_path": "results/pilot.json",
+      "expected_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+      "id": "version-aware-correct",
+      "pointer": "/version_aware/correct",
+      "rel_tol": 0,
+      "reported_value": 50
+    },
+    {
+      "abs_tol": 0,
+      "artifact_path": "results/pilot.json",
+      "expected_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+      "id": "version-aware-accuracy",
+      "pointer": "/version_aware/accuracy",
+      "rel_tol": 0,
+      "reported_value": 0.78125
+    },
+    {
+      "abs_tol": 0,
+      "artifact_path": "records/calculations.json",
+      "expected_sha256": "c1bfe49b44893298420f9be8455bc53e9071439270757eb60b16618a4539a3a9",
+      "id": "baseline-percent",
+      "pointer": "/derived/baseline_percent",
+      "rel_tol": 0,
+      "reported_value": 68.75
+    },
+    {
+      "abs_tol": 0,
+      "artifact_path": "records/calculations.json",
+      "expected_sha256": "c1bfe49b44893298420f9be8455bc53e9071439270757eb60b16618a4539a3a9",
+      "id": "version-aware-percent",
+      "pointer": "/derived/version_aware_percent",
+      "rel_tol": 0,
+      "reported_value": 78.125
+    },
+    {
+      "abs_tol": 0,
+      "artifact_path": "records/calculations.json",
+      "expected_sha256": "c1bfe49b44893298420f9be8455bc53e9071439270757eb60b16618a4539a3a9",
+      "id": "absolute-difference-percentage-points",
+      "pointer": "/derived/absolute_difference_percentage_points",
+      "rel_tol": 0,
+      "reported_value": 9.375
+    },
+    {
+      "abs_tol": 0,
+      "artifact_path": "records/calculations.json",
+      "expected_sha256": "c1bfe49b44893298420f9be8455bc53e9071439270757eb60b16618a4539a3a9",
+      "id": "net-correct-count-difference",
+      "pointer": "/derived/net_correct_count_difference",
+      "rel_tol": 0,
+      "reported_value": 6
+    },
+    {
+      "abs_tol": 0,
+      "artifact_path": "records/calculations.json",
+      "expected_sha256": "c1bfe49b44893298420f9be8455bc53e9071439270757eb60b16618a4539a3a9",
+      "id": "dataset-entry-count",
+      "pointer": "/derived/dataset_entry_count",
+      "rel_tol": 0,
+      "reported_value": 1
+    }
+  ],
+  "schema_version": 1
+}

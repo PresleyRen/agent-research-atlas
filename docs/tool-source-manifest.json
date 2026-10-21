@@ -1,0 +1,1707 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-10-20",
+  "scope": "Previously named retrieval tools and autonomous-research references; all nine named RE SKILL.md files were read in full, not their entire reference/script trees. Seven HF skills are extension candidates, not prior installed Atlas integrations. Entire upstream repositories and unmentioned skills are outside this audit.",
+  "integration_boundary": "Protocol adoption and documented interfaces are not authenticated integrations, upstream end-to-end reproductions, scientific validity, or publication guarantees.",
+  "sources": [
+    {
+      "id": "SRC-UNDERMIND",
+      "name": "Undermind MCP",
+      "url": "https://www.undermind.ai/mcp",
+      "read_depth": "Official toolkit, tool list, setup and search-method sections inspected",
+      "revision": "2026-10-20 official documentation inspection; moving page",
+      "features": [
+        {
+          "id": "SRC-UNDERMIND-F01",
+          "label": "开放问题深搜、引用及作者扩展、元数据批量定位",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C09",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未登录或执行 Undermind 搜索；停止信号不等于全域查全",
+          "remedy": "可用时保留 exact query、scope、筛选和停止原因；不可用时走宿主双语检索",
+          "complements": [
+            "SRC-S2",
+            "SRC-RESEARCHRABBIT"
+          ]
+        },
+        {
+          "id": "SRC-UNDERMIND-F02",
+          "label": "并行 PDF、图表与公式的有定位问答",
+          "capabilities": [
+            "C05",
+            "C06",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "全文可得性与已读深度尚未实测",
+          "remedy": "合法取得全文后抽样回查定位；无全文保留 metadata/abstract",
+          "complements": [
+            "SRC-PAPERQA",
+            "SRC-ELICIT"
+          ]
+        },
+        {
+          "id": "SRC-UNDERMIND-F03",
+          "label": "远端工作区的笔记、文件、历史搜索、收藏与目录组织",
+          "capabilities": [
+            "C02",
+            "C20",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "本项目未接入远端工作区同步",
+          "remedy": "本地 atlas 为项目权威状态；远端内容经保留来源的导入和 revision 冲突处理",
+          "complements": [
+            "SRC-RE-DIRECTION"
+          ]
+        },
+        {
+          "id": "SRC-UNDERMIND-F04",
+          "label": "可视化引用/搜索卡片与不同宿主的文本回退",
+          "capabilities": [
+            "C04",
+            "C24",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未实测 MCP Apps 卡片和客户端兼容性",
+          "remedy": "无卡片时输出论文链接和本地图，检索结果仍使用同一来源记录",
+          "complements": [
+            "SRC-RESEARCHRABBIT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-ELICIT",
+      "name": "Elicit REST v2 and MCP",
+      "url": "https://docs.elicit.com/",
+      "read_depth": "REST getting-started/endpoints/search/systematic-review/error excerpts and MCP README inspected",
+      "revision": "REST API 2.0.0; MCP README blob 713d1ef80883f38c3ac346ebada1ddc8a87fc26b; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-ELICIT-F01",
+          "label": "语义/关键词论文检索与 corpus-specific 查询语法",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未执行账号检索；MCP 与 REST 参数能力不可推定一致",
+          "remedy": "核对 endpoint/version/mode；keyword 不混 filters，保留 warnings 和真实上限",
+          "complements": [
+            "SRC-S2",
+            "SRC-OPENALEX"
+          ]
+        },
+        {
+          "id": "SRC-ELICIT-F02",
+          "label": "系统综述的搜索、摘要/全文筛选、字段及图表抽取与阶段导出",
+          "capabilities": [
+            "C05",
+            "C06",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未运行付费 review 或验证抽取准确率",
+          "remedy": "先定义纳入排除及证据字段，核对实际 settings 和原文定位，再导入图谱",
+          "complements": [
+            "SRC-PAPERQA",
+            "SRC-SCITE"
+          ]
+        },
+        {
+          "id": "SRC-ELICIT-F03",
+          "label": "异步报告、Research Agent 会话、配额暂停和续作",
+          "capabilities": [
+            "C20",
+            "C22",
+            "C24"
+          ],
+          "status": "optional",
+          "gap": "未实测异步任务、用量和恢复",
+          "remedy": "保存 session ID；未知创建结果先核实，不能盲重试计费创建",
+          "complements": [
+            "SRC-AIRAS"
+          ]
+        },
+        {
+          "id": "SRC-ELICIT-F04",
+          "label": "文库/PDF导入/目录、共享项目、routines 与 usage",
+          "capabilities": [
+            "C02",
+            "C20",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "远端组织、分享、调度均未集成",
+          "remedy": "按用户已授权范围单独启用；本地更新不要求账户、分享或周期任务",
+          "complements": [
+            "SRC-UNDERMIND",
+            "SRC-HF-JOBS"
+          ]
+        },
+        {
+          "id": "SRC-ELICIT-F05",
+          "label": "临床试验检索及生医专用筛选",
+          "capabilities": [
+            "C03",
+            "C12"
+          ],
+          "status": "deferred",
+          "gap": "不是当前 Agent 研究的默认数据源或评估框架",
+          "remedy": "涉及医疗 Agent 时按具体问题扩展；不把 RCT/PICO 模板套到所有计算实验",
+          "complements": [
+            "SRC-HF-DATASETS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-SCITE",
+      "name": "Scite MCP / Smart Citations",
+      "url": "https://scite.ai/mcp",
+      "read_depth": "Official capability and setup sections inspected; citation-label interpretation from linked official literature guide",
+      "revision": "2026-10-20 official documentation inspection; moving page",
+      "features": [
+        {
+          "id": "SRC-SCITE-F01",
+          "label": "全文引用语境及 supporting/contrasting/mentioning 分类",
+          "capabilities": [
+            "C04",
+            "C06",
+            "C09",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未使用账号检索，分类并非论点真值",
+          "remedy": "回查引用段落、条件与具体论点；相关反证必须保留",
+          "complements": [
+            "SRC-PAPERQA",
+            "SRC-S2"
+          ]
+        },
+        {
+          "id": "SRC-SCITE-F02",
+          "label": "机构 holdings 全文与 collections/monitoring",
+          "capabilities": [
+            "C05",
+            "C20",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "机构全文权限、监测通路未测试",
+          "remedy": "记录权限和可读深度；先用公开原文和本地更新，不假定订阅存在",
+          "complements": [
+            "SRC-UNDERMIND",
+            "SRC-ELICIT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-PAPERQA",
+      "name": "PaperQA2",
+      "url": "https://github.com/Future-House/paper-qa",
+      "read_depth": "README algorithm, local SearchPapers, CLI, contracrow, metadata, multimodal and configuration sections inspected",
+      "revision": "README blob 0b5639921586f03bd1f9d93445af9e0d17f37c48; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-PAPERQA-F01",
+          "label": "本地论文索引、分块、重排、上下文摘要和带定位答案",
+          "capabilities": [
+            "C05",
+            "C06",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未安装或执行 PaperQA2；本地 corpus 不能代表全球论文",
+          "remedy": "先外部发现与合法收集，再本地问答；记录 corpus 清单和源定位",
+          "complements": [
+            "SRC-OPENALEX",
+            "SRC-UNDERMIND"
+          ]
+        },
+        {
+          "id": "SRC-PAPERQA-F02",
+          "label": "contracrow 矛盾线索与多源元数据/撤稿检查",
+          "capabilities": [
+            "C04",
+            "C06",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "没有独立验证该配置的矛盾检测性能",
+          "remedy": "把输出作待核对线索，用原始论文和版本信息处理冲突",
+          "complements": [
+            "SRC-SCITE",
+            "SRC-CROSSREF"
+          ]
+        },
+        {
+          "id": "SRC-PAPERQA-F03",
+          "label": "多模态/非英语/Office/代码材料、解析器及模型配置",
+          "capabilities": [
+            "C03",
+            "C05",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未测中文 PDF、公式和表格解析；上游使用 CalVer",
+          "remedy": "锁定实际 package/reader/model 版本；固定中文与英文有定位样例做回归",
+          "complements": [
+            "SRC-ELICIT",
+            "SRC-HF-PAPERS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-OPENALEX",
+      "name": "OpenAlex",
+      "url": "https://help.openalex.org/access/agents/",
+      "read_depth": "Official agent and access/query documentation inspected",
+      "revision": "2026-10-20 official documentation inspection; moving page",
+      "features": [
+        {
+          "id": "SRC-OPENALEX-F01",
+          "label": "可复跑学术图谱检索、过滤、元数据和引用关联",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未实测本项目 API 调用；不保证全集或所有全文",
+          "remedy": "保存 API/查询/页数/截断；用出版原始记录解决元数据冲突",
+          "complements": [
+            "SRC-CROSSREF",
+            "SRC-DBLP"
+          ]
+        },
+        {
+          "id": "SRC-OPENALEX-F02",
+          "label": "CLI/agent connector、snapshot/sync/fulltext 等独立访问入口",
+          "capabilities": [
+            "C05",
+            "C20",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "这些访问层没有在 Atlas 内集成",
+          "remedy": "接入前核实当时额度、身份与全文边界；按所需入口单独测试",
+          "complements": [
+            "SRC-PAPERQA",
+            "SRC-S2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-S2",
+      "name": "Semantic Scholar",
+      "url": "https://api.semanticscholar.org/api-docs/",
+      "read_depth": "Official Graph API/recommendations docs and official tutorial excerpts inspected",
+      "revision": "Graph API 1.0 and Recommendations API 1.0; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-S2-F01",
+          "label": "论文/作者查询、引用与参考文献、外部 ID",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "直接文档抓取曾429，检索缓存官方内容可读；未发科研 API 请求",
+          "remedy": "真实失败不记空结果，按当前速率和语法重试；出版信息交叉核实",
+          "complements": [
+            "SRC-OPENALEX",
+            "SRC-CROSSREF"
+          ]
+        },
+        {
+          "id": "SRC-S2-F02",
+          "label": "positive/negative seed 推荐与领域扩展",
+          "capabilities": [
+            "C04",
+            "C09",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未实测推荐；negative seed 容易误删反证",
+          "remedy": "仅将不相关方向作为 negative seed；有争议但相关论文保留在反证集合",
+          "complements": [
+            "SRC-RESEARCHRABBIT",
+            "SRC-SCITE"
+          ]
+        },
+        {
+          "id": "SRC-S2-F03",
+          "label": "可下载学术数据集与 snippet 接口",
+          "capabilities": [
+            "C05",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "本项目不自建全量 S2 索引，也未验证 snippet 覆盖",
+          "remedy": "按具体任务建立小型适配与回归；snippet 不替代未读全文",
+          "complements": [
+            "SRC-PAPERQA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-RESEARCHRABBIT",
+      "name": "ResearchRabbit",
+      "url": "https://learn.researchrabbit.ai/en/articles/12865509-researchrabbit-free-tier",
+      "read_depth": "Official free-tier feature table inspected",
+      "revision": "Official guide dated 2026-05-13; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-RESEARCHRABBIT-F01",
+          "label": "多种子相近论文、参考/被引浏览与引用图",
+          "capabilities": [
+            "C04",
+            "C09",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未运行其 UI；通用官方 API/MCP 未在本次审计中核实",
+          "remedy": "用户已有访问时作为邻域发现；原文决定机制与贡献差异",
+          "complements": [
+            "SRC-S2",
+            "SRC-OPENALEX"
+          ]
+        },
+        {
+          "id": "SRC-RESEARCHRABBIT-F02",
+          "label": "集合/子集合、Zotero导入、BibTeX导入导出、笔记与共享",
+          "capabilities": [
+            "C02",
+            "C20",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "与本地 Atlas 无自动同步，分享未启用",
+          "remedy": "用户授权导出后保存来源并归一化；不要把云端收藏当本地已读记录",
+          "complements": [
+            "SRC-UNDERMIND",
+            "SRC-RE-DIRECTION"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-CROSSREF",
+      "name": "Crossref REST",
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "read_depth": "Official REST API page inspected",
+      "revision": "2026-10-20 official documentation inspection; moving page",
+      "features": [
+        {
+          "id": "SRC-CROSSREF-F01",
+          "label": "DOI、出版元数据、文献关系和更新线索",
+          "capabilities": [
+            "C04",
+            "C06",
+            "C22"
+          ],
+          "status": "protocol",
+          "gap": "Atlas 会归一化 DOI，但没有内置 Crossref 客户端",
+          "remedy": "宿主查询原始记录，缺字段不猜；未来客户端需重复/版本/失败回归",
+          "complements": [
+            "SRC-DBLP",
+            "SRC-ARXIV"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-ARXIV",
+      "name": "arXiv",
+      "url": "https://info.arxiv.org/help/api/user-manual.html",
+      "read_depth": "API query, paging, metadata and version sections inspected",
+      "revision": "2026-10-20 official documentation inspection; moving page",
+      "features": [
+        {
+          "id": "SRC-ARXIV-F01",
+          "label": "字段检索、Atom 元数据、提交/更新排序和版本历史",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C22"
+          ],
+          "status": "protocol",
+          "gap": "本地 arXiv ID 去重已实现，API 自动采集未内置",
+          "remedy": "保留版本与最早日期；字段/分页/解析单独适配",
+          "complements": [
+            "SRC-CROSSREF",
+            "SRC-HF-PAPERS"
+          ]
+        },
+        {
+          "id": "SRC-ARXIV-F02",
+          "label": "可得 PDF/HTML 与正式发表状态核对",
+          "capabilities": [
+            "C05",
+            "C21"
+          ],
+          "status": "protocol",
+          "gap": "预印本/全文链接不代表录用或已读",
+          "remedy": "读相关原文；与正式 venue/DOI 建关联而非重复计独立证据",
+          "complements": [
+            "SRC-ACL",
+            "SRC-OPENREVIEW"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-DBLP",
+      "name": "DBLP",
+      "url": "https://dblp.org/faq/How+to+use+the+dblp+search+API.html",
+      "read_depth": "Official search API query/paging/format documentation inspected",
+      "revision": "2026-10-20 official documentation inspection; moving page",
+      "features": [
+        {
+          "id": "SRC-DBLP-F01",
+          "label": "计算机论文、作者、venue 消歧与 API 分页",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C22"
+          ],
+          "status": "protocol",
+          "gap": "协议可用但本项目未内置 DBLP 客户端",
+          "remedy": "核对作者与venue，分页截断明确；元数据不替代方法全文",
+          "complements": [
+            "SRC-CROSSREF",
+            "SRC-ACL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-OPENREVIEW",
+      "name": "OpenReview",
+      "url": "https://docs.openreview.net/",
+      "read_depth": "Official documentation index and workflow categories inspected; article-level use remains task-specific",
+      "revision": "2026-10-20 official documentation inspection; moving page",
+      "features": [
+        {
+          "id": "SRC-OPENREVIEW-F01",
+          "label": "投稿版本、公开评审、rebuttal 和决定状态",
+          "capabilities": [
+            "C04",
+            "C06",
+            "C21",
+            "C22"
+          ],
+          "status": "protocol",
+          "gap": "本次未执行特定投稿页审计或内置 API 客户端",
+          "remedy": "按 venue 与 track 查原始决定；公开页不能推定录用，评审是带身份和时间的意见",
+          "complements": [
+            "SRC-ARXIV",
+            "SRC-ACL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-ACL",
+      "name": "ACL Anthology",
+      "url": "https://aclanthology.org/",
+      "read_depth": "Actual article metadata/abstract pages opened in docs/retrieval-smoke.md; general entry points revisited",
+      "revision": "Article-level retrieval smoke 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-ACL-F01",
+          "label": "NLP/Agent 原始 proceedings、作者、PDF 与论文标识",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C05",
+            "C21"
+          ],
+          "status": "protocol",
+          "gap": "已验证公开文章路径；不是全域检索或每篇 PDF 全文阅读",
+          "remedy": "按具体卷和 track 引用，保留原文读取深度；扩展跨 NLP 的来源",
+          "complements": [
+            "SRC-DBLP",
+            "SRC-ARXIV",
+            "SRC-ZH-JOURNALS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-CHINAXIV",
+      "name": "ChinaXiv",
+      "url": "https://www.chinaxiv.org/",
+      "read_depth": "Official portal inspected; no successful full-database query demonstrated",
+      "revision": "Portal inspection 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-CHINAXIV-F01",
+          "label": "中文/相关预印本线索与后续正式版本追踪",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C22"
+          ],
+          "status": "protocol",
+          "gap": "仅门户核对，不是已完成库内检索",
+          "remedy": "实际执行时保留查询和条目；预印本与正式版本状态分别核实",
+          "complements": [
+            "SRC-ARXIV",
+            "SRC-ZH-JOURNALS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-CNKI",
+      "name": "CNKI",
+      "url": "https://kns.cnki.net/",
+      "read_depth": "Entry point identified; fetch blocked in retrieval smoke",
+      "revision": "Access limitation retained from 2026-10-20 smoke",
+      "features": [
+        {
+          "id": "SRC-CNKI-F01",
+          "label": "中文期刊、会议、学位论文的补充发现入口",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未证明账号/库内检索/订阅全文能力",
+          "remedy": "有现成权限才调用；受阻先用期刊/机构/作者公开页，保留 blocked",
+          "complements": [
+            "SRC-WANFANG",
+            "SRC-ZH-JOURNALS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-WANFANG",
+      "name": "Wanfang",
+      "url": "https://www.wanfangdata.com.cn/",
+      "read_depth": "Portal visible; no successful native search/fulltext access demonstrated",
+      "revision": "Portal inspection 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-WANFANG-F01",
+          "label": "中文学术元数据及期刊/学位论文补查",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "门户可见不能说明查询和全文可用",
+          "remedy": "有权访问时记录真实检索；无权时用原始公开文献并标未覆盖",
+          "complements": [
+            "SRC-CNKI",
+            "SRC-ZH-JOURNALS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-ZH-JOURNALS",
+      "name": "Chinese original journal portals",
+      "url": "https://www.china-simulation.com/CN/abstract/article/1004-731X/3623",
+      "read_depth": "Named article metadata and abstract actually read; other portals include failed accesses",
+      "revision": "2026-10-20; details in docs/retrieval-smoke.md",
+      "features": [
+        {
+          "id": "SRC-ZH-JOURNALS-F01",
+          "label": "中文综述/原始研究、出版信息与英文原始工作的跨语言核对",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C05"
+          ],
+          "status": "protocol",
+          "gap": "成功文章页不等于读完所有中文综述；部分站点超时",
+          "remedy": "保留逐条访问记录和原题；先综述定词再回查原始论文",
+          "complements": [
+            "SRC-ACL",
+            "SRC-CHINAXIV"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-AIRAS",
+      "name": "AIRAS",
+      "url": "https://github.com/airas-org/airas",
+      "read_depth": "README flow, verification, execution backend and roadmap sections inspected",
+      "revision": "README blob 7d3ddb703ef33a5e1aad2a6e6219b8eff3979466; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-AIRAS-F01",
+          "label": "分阶段契约：文献、假设、预注册、代码、运行、分析和论文",
+          "capabilities": [
+            "C13",
+            "C14",
+            "C15",
+            "C18",
+            "C24"
+          ],
+          "status": "protocol",
+          "gap": "Atlas 采用阶段交接思想，未运行 AIRAS 全链",
+          "remedy": "按实际项目选阶段，记录输入/输出/未决条件，不照搬云端默认",
+          "complements": [
+            "SRC-ORCHESTRA-LOOP",
+            "SRC-AI-RESEARCHER"
+          ]
+        },
+        {
+          "id": "SRC-AIRAS-F02",
+          "label": "外部固定 evaluator、git 前置冻结、单调记录与数值引用校验",
+          "capabilities": [
+            "C14",
+            "C16",
+            "C21"
+          ],
+          "status": "reference",
+          "gap": "Atlas 文件哈希与本地记录不是 AIRAS 的远端不可改存储/分支门禁",
+          "remedy": "保留本地验证边界；需要防同一代理改全套记录时另接独立后端和 CI",
+          "complements": [
+            "SRC-AUTORESEARCH",
+            "SRC-HF-EVALS"
+          ]
+        },
+        {
+          "id": "SRC-AIRAS-F03",
+          "label": "GitHub Actions/Seyval 执行、输出回收与论文构建",
+          "capabilities": [
+            "C15",
+            "C16",
+            "C21",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未部署后端或验证 AIRAS 论文 gate；publish-paper 不代表期刊投稿",
+          "remedy": "用户授权且资源明确后单独适配；先生成可审查论文包",
+          "complements": [
+            "SRC-HF-JOBS",
+            "SRC-HF-PUBLISHER"
+          ]
+        },
+        {
+          "id": "SRC-AIRAS-F04",
+          "label": "完整性检查仍不能覆盖泄漏/设计偏离的显式边界",
+          "capabilities": [
+            "C06",
+            "C13",
+            "C16"
+          ],
+          "status": "protocol",
+          "gap": "结构验证无法认定科学真实性",
+          "remedy": "继续数据隔离、评价器审计和独立复核；记录未解决有效性风险",
+          "complements": [
+            "SRC-AI-SCIENTIST-V2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-AUTORESEARCH",
+      "name": "karpathy/autoresearch",
+      "url": "https://github.com/karpathy/autoresearch",
+      "read_depth": "README read in full",
+      "revision": "README blob 953ea55d5599c45c1be7dad93ec03e47dfa7df9d; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-AUTORESEARCH-F01",
+          "label": "固定 evaluator 与训练预算、限定可改代码、保留/丢弃/崩溃迭代",
+          "capabilities": [
+            "C13",
+            "C14",
+            "C15",
+            "C16"
+          ],
+          "status": "protocol",
+          "gap": "Atlas 记录 runner 不自带模型优化搜索器",
+          "remedy": "固定评价输入和成本维度；不同硬件/预算不直接比较收益",
+          "complements": [
+            "SRC-AIRAS",
+            "SRC-ORCHESTRA-LOOP"
+          ]
+        },
+        {
+          "id": "SRC-AUTORESEARCH-F02",
+          "label": "特定单 NVIDIA GPU 的训练脚手架",
+          "capabilities": [
+            "C11",
+            "C15",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未下载数据或在 GPU 复现；不是 Agent 通用实验模板",
+          "remedy": "先判断问题是否适合训练优化，按本地预算适配或改小规模诊断",
+          "complements": [
+            "SRC-HF-TRAINER"
+          ]
+        },
+        {
+          "id": "SRC-AUTORESEARCH-F03",
+          "label": "忽略权限提示并持续夜间运行的上游快捷建议",
+          "capabilities": [
+            "C15",
+            "C22"
+          ],
+          "status": "rejected",
+          "gap": "上游 README 无权扩大当前任务授权",
+          "remedy": "保留资源与执行边界；仅已授权循环，失败和预算耗尽应能停止",
+          "complements": [
+            "SRC-HF-JOBS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-ORCHESTRA-LOOP",
+      "name": "Orchestra autoresearch",
+      "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/0-autoresearch-skill/SKILL.md",
+      "read_depth": "Named SKILL.md read in full; linked resources not implicitly included",
+      "revision": "version 1.0.0; blob cf2ef23d6f571624bc950d3b0de4797308cd9955; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-ORCHESTRA-LOOP-F01",
+          "label": "实验内循环与综合/回文献/转向的外循环",
+          "capabilities": [
+            "C07",
+            "C15",
+            "C18",
+            "C20"
+          ],
+          "status": "protocol",
+          "gap": "Atlas 无后台持续调度器；定性综合由宿主推理",
+          "remedy": "用证据变化触发外循环，统一 atlas 状态/负面记忆而非另建平行权威目录",
+          "complements": [
+            "SRC-RE-DIRECTION",
+            "SRC-AUTORESEARCH"
+          ]
+        },
+        {
+          "id": "SRC-ORCHESTRA-LOOP-F02",
+          "label": "按领域路由执行技能、研究叙事和进度图",
+          "capabilities": [
+            "C12",
+            "C21",
+            "C22",
+            "C24"
+          ],
+          "status": "protocol",
+          "gap": "未集成整个 Orchestra 工程技能集合或论文模板库",
+          "remedy": "仅按任务定位需要的专门技能；每个外部能力单独注册/核实/测试",
+          "complements": [
+            "SRC-HF-EVALS",
+            "SRC-HF-TRAINER"
+          ]
+        },
+        {
+          "id": "SRC-ORCHESTRA-LOOP-F03",
+          "label": "强制无限/20分钟续作与外部消息发送",
+          "capabilities": [
+            "C15",
+            "C22"
+          ],
+          "status": "rejected",
+          "gap": "定时循环/外发不是科研请求的默认必需动作",
+          "remedy": "只在明确授权下启用可停止调度；当前以手动 update 和有预算单次运行继续",
+          "complements": [
+            "SRC-HF-JOBS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-AI-RESEARCHER",
+      "name": "HKUDS AI-Researcher",
+      "url": "https://github.com/HKUDS/AI-Researcher",
+      "read_depth": "README introduction, How it works, two task levels and usage inspected; no full source audit",
+      "revision": "README blob e595c70cb2a6f366bd9ce0766aff295ad008993f; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-AI-RESEARCHER-F01",
+          "label": "给定想法执行 / 参考论文出发的两个入口与代码-写作链",
+          "capabilities": [
+            "C01",
+            "C07",
+            "C13",
+            "C21",
+            "C24"
+          ],
+          "status": "reference",
+          "gap": "未运行 Docker/GPU/多代理完整链",
+          "remedy": "Atlas 保留入口分流和阶段产物；真实实现与结果仍逐项核验",
+          "complements": [
+            "SRC-RE-IDEA",
+            "SRC-AIRAS"
+          ]
+        },
+        {
+          "id": "SRC-AI-RESEARCHER-F02",
+          "label": "文献/代码/数据资源收集筛选与多维代理评审",
+          "capabilities": [
+            "C06",
+            "C11",
+            "C19"
+          ],
+          "status": "reference",
+          "gap": "高引用和自动评分无法替代独立有效性判断",
+          "remedy": "补最相近工作、强基线、失败与可行性实证；不选热门论文作为唯一证据",
+          "complements": [
+            "SRC-SCITE",
+            "SRC-HF-DATASETS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-AI-SCIENTIST-V2",
+      "name": "SakanaAI AI-Scientist-v2",
+      "url": "https://github.com/SakanaAI/AI-Scientist-v2",
+      "read_depth": "README intro, ideation, tree search configuration, output and FAQ sections inspected",
+      "revision": "README blob 3bb62d43ab4632b3bbffc2642f12beafe869d3a4; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-AI-SCIENTIST-V2-F01",
+          "label": "开放想法生成、实验树搜索、分支调试与研究稿生成",
+          "capabilities": [
+            "C07",
+            "C15",
+            "C19",
+            "C21"
+          ],
+          "status": "reference",
+          "gap": "没有在 Atlas 中实现树搜索或复现作者实验",
+          "remedy": "可选实现搜索控制器需独立预算、所有分支日志与冻结评测，先验证小例",
+          "complements": [
+            "SRC-ORCHESTRA-LOOP",
+            "SRC-AIRAS"
+          ]
+        },
+        {
+          "id": "SRC-AI-SCIENTIST-V2-F02",
+          "label": "开阔探索与强脚手架之间的取舍",
+          "capabilities": [
+            "C08",
+            "C11",
+            "C12"
+          ],
+          "status": "protocol",
+          "gap": "README 自身说明广泛探索不总比强模板好",
+          "remedy": "根据已有代码/资源选入口，以具体诊断结果决定保留，不宣布工具普遍胜者",
+          "complements": [
+            "SRC-RE-IDEA",
+            "SRC-AUTORESEARCH"
+          ]
+        },
+        {
+          "id": "SRC-AI-SCIENTIST-V2-F03",
+          "label": "workshop 个案与通用录用能力的边界",
+          "capabilities": [
+            "C21"
+          ],
+          "status": "protocol",
+          "gap": "作者个案不是用户 SCI/顶刊保证，具体论文评价另见 SOURCES",
+          "remedy": "精确记录 venue/track/选择/撤回状态，论文包仍需真实证据和当前官方要求",
+          "complements": [
+            "SRC-HF-PUBLISHER"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-IDEASCIENTIST",
+      "name": "IdeaScientist",
+      "url": "https://github.com/jiarui-liu/IdeaScientist",
+      "read_depth": "README intro, harness, vault/split/build and role isolation sections inspected",
+      "revision": "README blob 0f421cd7bba94ff9d34d3c5309ff41972f217173; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-IDEASCIENTIST-F01",
+          "label": "gap finder → 跨领域机制迁移 → proposal 的角色分解",
+          "capabilities": [
+            "C07",
+            "C09",
+            "C10",
+            "C19"
+          ],
+          "status": "protocol",
+          "gap": "Atlas 用宿主角色分离，不提供其训练过的策略权重",
+          "remedy": "分别给近似工作与邻域迁移任务，迁移必须产出可区分预测",
+          "complements": [
+            "SRC-RE-IDEATION"
+          ]
+        },
+        {
+          "id": "SRC-IDEASCIENTIST-F02",
+          "label": "结果遮蔽语料、时间截止与角色工具权限隔离",
+          "capabilities": [
+            "C06",
+            "C14",
+            "C19"
+          ],
+          "status": "reference",
+          "gap": "未重建语料/嵌入或实现硬工具隔离",
+          "remedy": "历史回测显式掩蔽答案与时间；同上下文模拟不声称独立盲审",
+          "complements": [
+            "SRC-AIRAS"
+          ]
+        },
+        {
+          "id": "SRC-IDEASCIENTIST-F03",
+          "label": "逐角色 RL 奖励/训练/评估及专用索引",
+          "capabilities": [
+            "C12",
+            "C15",
+            "C22"
+          ],
+          "status": "deferred",
+          "gap": "本项目未复现；上游 README 标 CC BY-NC 4.0",
+          "remedy": "需要时独立核对代码/数据许可、资源和评价设计，不直接打包或宣称性能",
+          "complements": [
+            "SRC-HF-TRAINER",
+            "SRC-HF-EVALS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-GOOGLE-COSCIENTIST",
+      "name": "Google Co-Scientist / AlphaEvolve entry",
+      "url": "https://docs.cloud.google.com/gemini/enterprise/docs/co-scientist-and-alphaevolve",
+      "read_depth": "Official Co-Scientist overview, role architecture and access boundary inspected; AlphaEvolve detailed internals not inspected",
+      "revision": "Official page updated 2026-10-14; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-GOOGLE-COSCIENTIST-F01",
+          "label": "生成、反思、Elo排名、演进、近邻与元评审分工",
+          "capabilities": [
+            "C07",
+            "C08",
+            "C19",
+            "C20"
+          ],
+          "status": "reference",
+          "gap": "Atlas 没有 Google 受限服务接入或复制 Elo系统",
+          "remedy": "保留角色目的和证据交接；排名只是相对选择信号，不是科学真值",
+          "complements": [
+            "SRC-RE-IDEATION",
+            "SRC-IDEASCIENTIST"
+          ]
+        },
+        {
+          "id": "SRC-GOOGLE-COSCIENTIST-F02",
+          "label": "受限 Preview 与 AlphaEvolve 入口",
+          "capabilities": [
+            "C22"
+          ],
+          "status": "deferred",
+          "gap": "无已授权服务权限；AlphaEvolve未做细节审计",
+          "remedy": "需要时向当前官方文档核对可用性与执行合同，当前用本地工作流",
+          "complements": [
+            "SRC-AUTORESEARCH"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-RE-IDEA",
+      "name": "RE idea-generation",
+      "url": "https://github.com/Research-Equality/RE-idea-generation/blob/main/skills/idea-generation/SKILL.md",
+      "read_depth": "Named SKILL.md read in full; referenced scripts not executed",
+      "revision": "version 2.0.0; blob 46931fc5addc4fe2b47a32fb928e071508923d26; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-RE-IDEA-F01",
+          "label": "topic-first 与 template-grounded 两入口、代码接缝/缺失基线/评估切片图",
+          "capabilities": [
+            "C07",
+            "C11",
+            "C12"
+          ],
+          "status": "protocol",
+          "gap": "v1.0.0 未显式列双入口和脚手架缺口表；本次方法协议补齐",
+          "remedy": "已有项目先读代码、baseline与归档，再把干预点映射最小实验",
+          "complements": [
+            "SRC-AI-RESEARCHER",
+            "SRC-AUTORESEARCH"
+          ]
+        },
+        {
+          "id": "SRC-RE-IDEA-F02",
+          "label": "候选细化、真实资源内约束和先验重叠检查",
+          "capabilities": [
+            "C08",
+            "C09",
+            "C10"
+          ],
+          "status": "protocol",
+          "gap": "提案评分/novel true 不能作为真值或可发表概率",
+          "remedy": "记录证据、取舍和最相近差异，保留失败/不确定决策",
+          "complements": [
+            "SRC-RE-NOVELTY",
+            "SRC-RE-DIRECTION"
+          ]
+        },
+        {
+          "id": "SRC-RE-IDEA-F03",
+          "label": "固定数值 interestingness/feasibility/novelty 当认证",
+          "capabilities": [
+            "C08",
+            "C09"
+          ],
+          "status": "rejected",
+          "gap": "未校准打分无法证明可行或新颖",
+          "remedy": "用户优先级可排序，但推进门槛采用实际证据与资源条件",
+          "complements": [
+            "SRC-S2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-RE-NOVELTY",
+      "name": "RE novelty-assessment",
+      "url": "https://github.com/Research-Equality/RE-idea-generation/blob/main/skills/novelty-assessment/SKILL.md",
+      "read_depth": "Named SKILL.md read in full; novelty_check.py not executed",
+      "revision": "version 1.0.0; blob 786fee4aeb27b1f59a0519f12717404b343705c6; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-RE-NOVELTY-F01",
+          "label": "多轮定向文献重叠审查和最相近差異说明",
+          "capabilities": [
+            "C09",
+            "C19"
+          ],
+          "status": "protocol",
+          "gap": "仅查摘要会漏关键方法条件",
+          "remedy": "按问题决定深度和停止，关键重叠回到相关章节与版本",
+          "complements": [
+            "SRC-S2",
+            "SRC-ARXIV",
+            "SRC-OPENALEX"
+          ]
+        },
+        {
+          "id": "SRC-RE-NOVELTY-F02",
+          "label": "最低轮数加二元 novel/high confidence 的固定门槛",
+          "capabilities": [
+            "C09"
+          ],
+          "status": "rejected",
+          "gap": "轮数和未检出不能认证全域创新",
+          "remedy": "改为记录检索边界、近似工作和未决 overlap；允许 blocked/inconclusive",
+          "complements": [
+            "SRC-SCITE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-RE-IDEATION",
+      "name": "RE ideation",
+      "url": "https://github.com/Research-Equality/RE-idea-generation/blob/main/skills/ideation/SKILL.md",
+      "read_depth": "Named SKILL.md read in full; template files not implicitly audited",
+      "revision": "version 1.0.0; blob ba494152b427c6ae4b15d42331b3b8f7261c69ca; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-RE-IDEATION-F01",
+          "label": "发散者/收敛者/记录者/仲裁者/可选事实研究者与会话 lineage",
+          "capabilities": [
+            "C07",
+            "C19",
+            "C20",
+            "C24"
+          ],
+          "status": "protocol",
+          "gap": "Atlas不要求五个常驻代理；没有复制原会话模板目录",
+          "remedy": "按当前宿主槽位分工；保存谁看到哪些证据和继续原因，atlas复用历史",
+          "complements": [
+            "SRC-IDEASCIENTIST",
+            "SRC-RE-DIRECTION"
+          ]
+        },
+        {
+          "id": "SRC-RE-IDEATION-F02",
+          "label": "按深度的探索/收敛检查与角色模拟回退",
+          "capabilities": [
+            "C01",
+            "C08",
+            "C19"
+          ],
+          "status": "protocol",
+          "gap": "单上下文角色模拟不是独立评审",
+          "remedy": "减少已知明确任务的访谈；有预算停止，披露 serial self-review",
+          "complements": [
+            "SRC-ORCHESTRA-LOOP"
+          ]
+        },
+        {
+          "id": "SRC-RE-IDEATION-F03",
+          "label": "exhaustive 无固定上限、机械计数判有趣",
+          "capabilities": [
+            "C08",
+            "C15"
+          ],
+          "status": "rejected",
+          "gap": "无上限探索不符合可控科研；有趣数量不是证据",
+          "remedy": "采用明确探索预算和证据改变判断的停止条件",
+          "complements": [
+            "SRC-AUTORESEARCH"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-RE-DIRECTION",
+      "name": "RE direction-evolution",
+      "url": "https://github.com/Research-Equality/RE-idea-generation/blob/main/skills/direction-evolution/SKILL.md",
+      "read_depth": "Named SKILL.md read in full; referenced schemas not implicitly included",
+      "revision": "version 1.0.0; blob 69bba2511c36331228fd84374f914b64e6e625e5; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-RE-DIRECTION-F01",
+          "label": "memory-update 与 stage-reflection 两种后续操作",
+          "capabilities": [
+            "C18",
+            "C20",
+            "C24"
+          ],
+          "status": "protocol",
+          "gap": "v1.0.0 有负面记忆但未显式分两种诊断入口",
+          "remedy": "把持久方向教训与本轮修改计划分开记录并交叉链接",
+          "complements": [
+            "SRC-ORCHESTRA-LOOP"
+          ]
+        },
+        {
+          "id": "SRC-RE-DIRECTION-F02",
+          "label": "区分坏想法/坏实现，按指标异常/混淆/数据/基线/运行分诊",
+          "capabilities": [
+            "C06",
+            "C11",
+            "C18",
+            "C23"
+          ],
+          "status": "protocol",
+          "gap": "分类需要真实结果和资源，不能自动由单个数值判定",
+          "remedy": "先看原始工件，再选最小诊断步骤，保留 ambiguous 与失败重启条件",
+          "complements": [
+            "SRC-AIRAS",
+            "SRC-HF-TRACKIO"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-RE-BRAINSTORM",
+      "name": "RE snapshot: brainstorming-research-ideas",
+      "url": "https://github.com/Research-Equality/RE-idea-generation/blob/main/skills/brainstorming-research-ideas/SKILL.md",
+      "read_depth": "Named SKILL.md read in full; referenced resources/scripts not implicitly included",
+      "revision": "version 1.0.0; blob aff634911cb76b187592a5032d8c1eb3dd756982; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-RE-BRAINSTORM-F01",
+          "label": "十种选题视角：问题/解法起点、抽象、张力、迁移、条件变化、失败边界、简单基线、利益相关方、组合分解、简明表述",
+          "capabilities": [
+            "C07",
+            "C08",
+            "C10"
+          ],
+          "status": "protocol",
+          "gap": "上游框架不是研究效果保证",
+          "remedy": "按瓶颈选择少量视角，产出机制和可检验差异",
+          "complements": [
+            "SRC-RE-CREATIVE",
+            "SRC-RE-IDEA"
+          ]
+        },
+        {
+          "id": "SRC-RE-BRAINSTORM-F02",
+          "label": "发散→筛选→细化和候选/淘汰原因保留",
+          "capabilities": [
+            "C08",
+            "C11",
+            "C20"
+          ],
+          "status": "protocol",
+          "gap": "固定候选数量与两周pilot未必适合当前资源",
+          "remedy": "取舍写证据和理由；预算未知先诊断，不机械凑数",
+          "complements": [
+            "SRC-RE-DIRECTION",
+            "SRC-RE-NOVELTY"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-RE-CREATIVE",
+      "name": "RE snapshot: creative-thinking-for-research",
+      "url": "https://github.com/Research-Equality/RE-idea-generation/blob/main/skills/creative-thinking-for-research/SKILL.md",
+      "read_depth": "Named SKILL.md read in full; referenced resources/scripts not implicitly included",
+      "revision": "version 1.0.0; blob 7f302526aa1fd8f9b02ab5801c3dc9f9d47d1697; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-RE-CREATIVE-F01",
+          "label": "八种思考操作：跨概念组合、重述问题、结构类比、约束变化、反向、抽象层次、当前可行边界、矛盾综合",
+          "capabilities": [
+            "C07",
+            "C08",
+            "C10"
+          ],
+          "status": "protocol",
+          "gap": "方法是启发而非已验证的科研产出算法",
+          "remedy": "保留结构映射、前提和区分性预测，随后查最相近工作",
+          "complements": [
+            "SRC-RE-BRAINSTORM",
+            "SRC-IDEASCIENTIST"
+          ]
+        },
+        {
+          "id": "SRC-RE-CREATIVE-F02",
+          "label": "框架例子的历史归因/理论强断言与完成框架即有价值的推断",
+          "capabilities": [
+            "C06",
+            "C09"
+          ],
+          "status": "rejected",
+          "gap": "示例含超出原始证据或过度简化的断言，不能直接继承为事实",
+          "remedy": "每个实质理论主张另查原始文献；没有推翻真实限制的证据就不宣称突破",
+          "complements": [
+            "SRC-RE-CRITICAL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-RE-SCIENTIFIC-BRAINSTORM",
+      "name": "RE snapshot: scientific-brainstorming",
+      "url": "https://github.com/Research-Equality/RE-idea-generation/blob/main/skills/scientific-brainstorming/SKILL.md",
+      "read_depth": "Named SKILL.md read in full; referenced resources/scripts not implicitly included",
+      "revision": "version 1.0.0; blob 0ae71bda1311310934fd02fa2f0c4c474a598e1a; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-RE-SCIENTIFIC-BRAINSTORM-F01",
+          "label": "对话式探索：上下文、发散、连接、建设性评估和下一步",
+          "capabilities": [
+            "C01",
+            "C07",
+            "C08"
+          ],
+          "status": "protocol",
+          "gap": "明确任务不需要重复访谈；本次未验证对话产出优于其他技能",
+          "remedy": "按用户已给信息直接推进，开放问题才补最小澄清",
+          "complements": [
+            "SRC-RE-BRAINSTORM",
+            "SRC-RE-IDEATION"
+          ]
+        },
+        {
+          "id": "SRC-RE-SCIENTIFIC-BRAINSTORM-F02",
+          "label": "类比/反假设/尺度/约束/跨学科/新条件六类探索与后续路由",
+          "capabilities": [
+            "C07",
+            "C10",
+            "C12"
+          ],
+          "status": "protocol",
+          "gap": "未全文审计引用资源内 SCAMPER/TRIZ 等独立方法教程",
+          "remedy": "适用时选一条机制路径，强观测转竞争假设、弱证据转批判审查",
+          "complements": [
+            "SRC-RE-HYPOTHESIS",
+            "SRC-RE-CRITICAL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-RE-HYPOTHESIS",
+      "name": "RE snapshot: hypothesis-generation",
+      "url": "https://github.com/Research-Equality/RE-idea-generation/blob/main/skills/hypothesis-generation/SKILL.md",
+      "read_depth": "Named SKILL.md read in full; referenced resources/scripts not implicitly included",
+      "revision": "version 1.0.0; blob b75da14370e81f3fd2c59654253fd12e10e4c4e9; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-RE-HYPOTHESIS-F01",
+          "label": "观测、解释、猜想分离；文献/反证约束后生成竞争机制",
+          "capabilities": [
+            "C05",
+            "C06",
+            "C10"
+          ],
+          "status": "protocol",
+          "gap": "提出竞争故事不等于机制成立",
+          "remedy": "每项观测有来源，区分测量伪影/隐藏变量/时序/尺度",
+          "complements": [
+            "SRC-RE-CRITICAL",
+            "SRC-SCITE"
+          ]
+        },
+        {
+          "id": "SRC-RE-HYPOTHESIS-F02",
+          "label": "可区分预测、对照、可证伪条件和最便宜信息性下一步",
+          "capabilities": [
+            "C10",
+            "C11",
+            "C13"
+          ],
+          "status": "protocol",
+          "gap": "不得把粗略可行性评分升级为 testable",
+          "remedy": "核实数据/计算/评价/预算，再比较正、负和不确定结果",
+          "complements": [
+            "SRC-RE-IDEA",
+            "SRC-RE-DIRECTION"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-RE-CRITICAL",
+      "name": "RE snapshot: scientific-critical-thinking",
+      "url": "https://github.com/Research-Equality/RE-idea-generation/blob/main/skills/scientific-critical-thinking/SKILL.md",
+      "read_depth": "Named SKILL.md read in full; referenced resources/scripts not implicitly included",
+      "revision": "version 1.0.0; blob c0a1d2ffcee623cc18d34c76e97aacf0e2c2ad34; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-RE-CRITICAL-F01",
+          "label": "论点证据/研究设计/偏差混淆/统计/证据质量五视角",
+          "capabilities": [
+            "C06",
+            "C13",
+            "C17",
+            "C18"
+          ],
+          "status": "protocol",
+          "gap": "没有通用评分或固定证据层级可认证所有 Agent 研究",
+          "remedy": "按论点类型和独立实验单位选择有效性检查，避免机械照搬生医层级",
+          "complements": [
+            "SRC-RE-HYPOTHESIS",
+            "SRC-HF-EVALS"
+          ]
+        },
+        {
+          "id": "SRC-RE-CRITICAL-F02",
+          "label": "批判转问题：最强替代解释、缺失实验、隐藏假设和更明确的方向",
+          "capabilities": [
+            "C06",
+            "C08",
+            "C10",
+            "C23"
+          ],
+          "status": "protocol",
+          "gap": "单列缺点不能说明如何继续",
+          "remedy": "每个重大问题写影响、剩余不确定性和最小修补/检验",
+          "complements": [
+            "SRC-RE-DIRECTION",
+            "SRC-RE-IDEA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-HF-PAPERS",
+      "name": "Hugging Face papers",
+      "url": "https://github.com/huggingface/skills/tree/main/skills/huggingface-papers",
+      "read_depth": "Current installed skill package selected scope/overview/workflow sections inspected; not script execution or whole-package audit",
+      "revision": "c1/huggingface-papers package snapshot inspected 2026-10-20; public path exists",
+      "features": [
+        {
+          "id": "SRC-HF-PAPERS-F01",
+          "label": "paper Markdown/metadata、arXiv ID、关联模型/数据/Spaces、检索与daily feed",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C05",
+            "C11",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "新列扩展候选，未在Atlas调用该插件；Markdown可能回退为主页",
+          "remedy": "内容检查后标实际读取深度；热榜仅线索，发现后回原始论文",
+          "complements": [
+            "SRC-ARXIV",
+            "SRC-PAPERQA"
+          ]
+        },
+        {
+          "id": "SRC-HF-PAPERS-F02",
+          "label": "index/claim/link 等论文页写入",
+          "capabilities": [
+            "C21",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未执行写入或作者身份核实",
+          "remedy": "按已授权目的验证作者和目标；不能把Hub索引等于期刊录用",
+          "complements": [
+            "SRC-HF-PUBLISHER"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-HF-DATASETS",
+      "name": "Hugging Face datasets",
+      "url": "https://github.com/huggingface/skills/tree/main/skills/huggingface-datasets",
+      "read_depth": "Current installed skill package selected scope/overview/workflow sections inspected; not script execution or whole-package audit",
+      "revision": "c1/huggingface-datasets package snapshot inspected 2026-10-20; public path exists",
+      "features": [
+        {
+          "id": "SRC-HF-DATASETS-F01",
+          "label": "subset/split、分页行、搜索/过滤、Parquet、大小/统计/Croissant",
+          "capabilities": [
+            "C11",
+            "C13",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "数据存在不代表许可/标签/评估切分适用；本次未下数据",
+          "remedy": "保存revision、config/split和读入范围，审查泄漏/许可后再冻结",
+          "complements": [
+            "SRC-HF-PAPERS",
+            "SRC-HF-EVALS"
+          ]
+        },
+        {
+          "id": "SRC-HF-DATASETS-F02",
+          "label": "数据上传、SQL提取与远端库创建",
+          "capabilities": [
+            "C11",
+            "C22",
+            "C24"
+          ],
+          "status": "optional",
+          "gap": "未上传/发布用户数据或安装查询依赖",
+          "remedy": "本地处理和公开发布分清，具体授权后保存源/转换/产物清单",
+          "complements": [
+            "SRC-HF-JOBS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-HF-EVALS",
+      "name": "Hugging Face community evals",
+      "url": "https://github.com/huggingface/skills/tree/main/skills/huggingface-community-evals",
+      "read_depth": "Current installed skill package selected scope/overview/workflow sections inspected; not script execution or whole-package audit",
+      "revision": "c1/huggingface-community-evals package snapshot inspected 2026-10-20; public path exists",
+      "features": [
+        {
+          "id": "SRC-HF-EVALS-F01",
+          "label": "inspect-ai/lighteval、本地或provider执行、vLLM/HF/accelerate回退",
+          "capabilities": [
+            "C12",
+            "C13",
+            "C15",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "没执行真实模型评估；名字不代表已发布community结果",
+          "remedy": "先任务适配+小样例，固定模型revision/提示/评估器，公平成本对齐",
+          "complements": [
+            "SRC-HF-DATASETS",
+            "SRC-HF-TRACKIO"
+          ]
+        },
+        {
+          "id": "SRC-HF-EVALS-F02",
+          "label": "远端Jobs与评估发布的职责交接",
+          "capabilities": [
+            "C15",
+            "C21",
+            "C22"
+          ],
+          "status": "protocol",
+          "gap": "Atlas不默认作云端训练或模型卡发布",
+          "remedy": "远端执行交Jobs、发布另审目标；退出0不升级科研论点",
+          "complements": [
+            "SRC-HF-JOBS",
+            "SRC-HF-PUBLISHER"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-HF-TRACKIO",
+      "name": "Hugging Face Trackio",
+      "url": "https://github.com/huggingface/skills/tree/main/skills/huggingface-trackio",
+      "read_depth": "Current installed skill package selected scope/overview/workflow sections inspected; not script execution or whole-package audit",
+      "revision": "c1/huggingface-trackio package snapshot inspected 2026-10-20; public path exists",
+      "features": [
+        {
+          "id": "SRC-HF-TRACKIO-F01",
+          "label": "训练日志、配置、指标、告警、CLI JSON与dashboard",
+          "capabilities": [
+            "C15",
+            "C16",
+            "C18",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "Atlas保留原始run记录，但未集成时间序列监控/告警",
+          "remedy": "未来适配将 run ID 与本地原始工件关联，告警是诊断线索",
+          "complements": [
+            "SRC-HF-EVALS",
+            "SRC-RE-DIRECTION"
+          ]
+        },
+        {
+          "id": "SRC-HF-TRACKIO-F02",
+          "label": "本地记录与HF Space同步",
+          "capabilities": [
+            "C20",
+            "C22",
+            "C24"
+          ],
+          "status": "optional",
+          "gap": "同步与远端展示未测试",
+          "remedy": "明确源文件、同步方向、权限、失败恢复，展示不替代原始记录",
+          "complements": [
+            "SRC-HF-JOBS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-HF-JOBS",
+      "name": "Hugging Face Jobs",
+      "url": "https://huggingface.co/docs/hub/jobs",
+      "read_depth": "Current installed skill package selected scope/overview/workflow sections inspected; not script execution or whole-package audit",
+      "revision": "c1/huggingface-jobs package snapshot and official Jobs documentation inspected 2026-10-20; same named current public skills directory absent",
+      "features": [
+        {
+          "id": "SRC-HF-JOBS-F01",
+          "label": "UV/Docker远端CPU/GPU/TPU、硬件/成本/超时、秘密传递与工件持久化",
+          "capabilities": [
+            "C11",
+            "C15",
+            "C16",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未提交远端作业，价格/可用性需在执行时核实",
+          "remedy": "本地计划先冻结；远端传脚本内容或可访问URL，不传仅本地路径；导入原始结果",
+          "complements": [
+            "SRC-AIRAS",
+            "SRC-HF-EVALS"
+          ]
+        },
+        {
+          "id": "SRC-HF-JOBS-F02",
+          "label": "异步状态/取消、计划任务和webhook",
+          "capabilities": [
+            "C15",
+            "C20",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "没有常驻调度/云监控，未用用户额度",
+          "remedy": "只有已授权预算与频率才设置，记录job ID并可停止，结果先保留",
+          "complements": [
+            "SRC-ORCHESTRA-LOOP",
+            "SRC-HF-TRACKIO"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-HF-TRAINER",
+      "name": "Hugging Face LLM trainer",
+      "url": "https://github.com/huggingface/skills/tree/main/skills/huggingface-llm-trainer",
+      "read_depth": "Current installed skill package selected scope/overview/workflow sections inspected; not script execution or whole-package audit",
+      "revision": "c1/huggingface-llm-trainer package snapshot inspected 2026-10-20; public path exists",
+      "features": [
+        {
+          "id": "SRC-HF-TRAINER-F01",
+          "label": "TRL的SFT/DPO/GRPO/reward、数据格式验证、GGUF/模型保存",
+          "capabilities": [
+            "C11",
+            "C12",
+            "C15",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "没有训练/验证模型，也不保证其中方法适合任何Agent问题",
+          "remedy": "按标注/偏好/反馈条件选方法，强基线和独立评估先确定",
+          "complements": [
+            "SRC-HF-DATASETS",
+            "SRC-HF-EVALS"
+          ]
+        },
+        {
+          "id": "SRC-HF-TRAINER-F02",
+          "label": "远端训练、Trackio监控与成本/持久化方案",
+          "capabilities": [
+            "C15",
+            "C16",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "上游即时提交默认不能扩大当前用户预算授权",
+          "remedy": "已有明确训练授权才执行；本次只审计，不启动作业",
+          "complements": [
+            "SRC-HF-JOBS",
+            "SRC-HF-TRACKIO"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-HF-PUBLISHER",
+      "name": "Hugging Face paper publisher",
+      "url": "https://github.com/huggingface/skills/tree/main/skills/huggingface-paper-publisher",
+      "read_depth": "Current installed skill package selected scope/overview/workflow sections inspected; not script execution or whole-package audit",
+      "revision": "package version 1.0.0; c1/huggingface-paper-publisher inspected 2026-10-20; public path exists",
+      "features": [
+        {
+          "id": "SRC-HF-PUBLISHER-F01",
+          "label": "paper page/index/作者认领/可见性，论文到模型数据的双向关联",
+          "capabilities": [
+            "C04",
+            "C21",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未操作用户HF账号；社区托管与SCI/期刊投稿不同",
+          "remedy": "按授权目标处理真实作者与artifact metadata，原始论文状态分别核验",
+          "complements": [
+            "SRC-HF-PAPERS"
+          ]
+        },
+        {
+          "id": "SRC-HF-PUBLISHER-F02",
+          "label": "Markdown论文模板、数学/目录/HTML展示和引用信息",
+          "capabilities": [
+            "C21",
+            "C24",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未运行该技能脚本或验证模板；不能生成虚构结果",
+          "remedy": "先完成claim-evidence-run映射，再按目标格式渲染校验",
+          "complements": [
+            "SRC-AIRAS",
+            "SRC-ACL"
+          ]
+        }
+      ]
+    }
+  ]
+}

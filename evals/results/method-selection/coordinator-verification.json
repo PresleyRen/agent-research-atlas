@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "checks": {
+    "all_five_originals_unchanged": true,
+    "no_hypothesis_upgraded": true,
+    "two_designs_only": true,
+    "old_reranker_parked": true,
+    "source_claims_distinguished": true,
+    "atlas_valid": true
+  },
+  "command": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+      "--root",
+      "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "check"
+    ],
+    "exit_code": 0,
+    "stdout": {
+      "edges": 12,
+      "meaning": "Structural integrity only; scientific interpretation requires evidence review.",
+      "nodes": 28,
+      "revision": 7,
+      "valid": true
+    },
+    "stderr": ""
+  },
+  "manual_review_scope": "Read problem-anchor, candidates-and-methods, minimal-discriminating-study and independent-review. Checked hidden-truth separation, old-target version, strong simple baselines, cost non-equivalence, unknown data and staged decisions. This is a design logic review, not an empirical test."
+}

@@ -1,0 +1,40 @@
+{
+  "fixture": true,
+  "files": [
+    {
+      "path": "PROJECT.md",
+      "bytes": 695,
+      "sha256": "7f8f9cdc7d4e9af0e3b8ce445d559e968ec7fb714ed4e8f79b2a47e38db4f9ef"
+    },
+    {
+      "path": "notes/comparison.md",
+      "bytes": 795,
+      "sha256": "e338f6c411b6c4b25ec631dd63d063fd355f142422a9bc76137bf60cc4c72e46"
+    },
+    {
+      "path": "notes/research-options.md",
+      "bytes": 462,
+      "sha256": "9cdafcccb82284a261363e199ca0114dc2525df7e5d15843737c5edcf7288bf4"
+    },
+    {
+      "path": "notes/resources.md",
+      "bytes": 419,
+      "sha256": "bff6c6bb8e6b4d3b8202c272ccc4e114af823a1a83859f81d40181ca4008dc5e"
+    },
+    {
+      "path": "papers/local-counterexample.md",
+      "bytes": 501,
+      "sha256": "347e9d6748eda80d41ff10058ff9f2e38a8d042c68354cded9c57413ed44291c"
+    },
+    {
+      "path": "papers/local-review.md",
+      "bytes": 469,
+      "sha256": "d7f93f9f957c307f0c4d239057eec6c3d0c0439f9eacb10c8484759a2d9e9bd7"
+    },
+    {
+      "path": "research-map.md",
+      "bytes": 479,
+      "sha256": "7d0b0072893830a40b84bfc8d547b999a8dff5efe9ed32b8734052cab0d9abad"
+    }
+  ]
+}

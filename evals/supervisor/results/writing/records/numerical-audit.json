@@ -1,0 +1,120 @@
+{
+  "exit_code": 0,
+  "output": {
+    "all_values_match": true,
+    "claims": [
+      {
+        "artifact_path": "results/pilot.json",
+        "id": "n-cases",
+        "observed_value": 64,
+        "pointer": "/n_cases",
+        "reported_value": 64,
+        "source_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+        "status": "match",
+        "version_match": true
+      },
+      {
+        "artifact_path": "results/pilot.json",
+        "id": "n-case-families",
+        "observed_value": 8,
+        "pointer": "/n_case_families",
+        "reported_value": 8,
+        "source_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+        "status": "match",
+        "version_match": true
+      },
+      {
+        "artifact_path": "results/pilot.json",
+        "id": "baseline-correct",
+        "observed_value": 44,
+        "pointer": "/baseline/correct",
+        "reported_value": 44,
+        "source_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+        "status": "match",
+        "version_match": true
+      },
+      {
+        "artifact_path": "results/pilot.json",
+        "id": "baseline-accuracy",
+        "observed_value": 0.6875,
+        "pointer": "/baseline/accuracy",
+        "reported_value": 0.6875,
+        "source_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+        "status": "match",
+        "version_match": true
+      },
+      {
+        "artifact_path": "results/pilot.json",
+        "id": "version-aware-correct",
+        "observed_value": 50,
+        "pointer": "/version_aware/correct",
+        "reported_value": 50,
+        "source_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+        "status": "match",
+        "version_match": true
+      },
+      {
+        "artifact_path": "results/pilot.json",
+        "id": "version-aware-accuracy",
+        "observed_value": 0.78125,
+        "pointer": "/version_aware/accuracy",
+        "reported_value": 0.78125,
+        "source_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+        "status": "match",
+        "version_match": true
+      },
+      {
+        "artifact_path": "records/calculations.json",
+        "id": "baseline-percent",
+        "observed_value": 68.75,
+        "pointer": "/derived/baseline_percent",
+        "reported_value": 68.75,
+        "source_sha256": "c1bfe49b44893298420f9be8455bc53e9071439270757eb60b16618a4539a3a9",
+        "status": "match",
+        "version_match": true
+      },
+      {
+        "artifact_path": "records/calculations.json",
+        "id": "version-aware-percent",
+        "observed_value": 78.125,
+        "pointer": "/derived/version_aware_percent",
+        "reported_value": 78.125,
+        "source_sha256": "c1bfe49b44893298420f9be8455bc53e9071439270757eb60b16618a4539a3a9",
+        "status": "match",
+        "version_match": true
+      },
+      {
+        "artifact_path": "records/calculations.json",
+        "id": "absolute-difference-percentage-points",
+        "observed_value": 9.375,
+        "pointer": "/derived/absolute_difference_percentage_points",
+        "reported_value": 9.375,
+        "source_sha256": "c1bfe49b44893298420f9be8455bc53e9071439270757eb60b16618a4539a3a9",
+        "status": "match",
+        "version_match": true
+      },
+      {
+        "artifact_path": "records/calculations.json",
+        "id": "net-correct-count-difference",
+        "observed_value": 6,
+        "pointer": "/derived/net_correct_count_difference",
+        "reported_value": 6,
+        "source_sha256": "c1bfe49b44893298420f9be8455bc53e9071439270757eb60b16618a4539a3a9",
+        "status": "match",
+        "version_match": true
+      },
+      {
+        "artifact_path": "records/calculations.json",
+        "id": "dataset-entry-count",
+        "observed_value": 1,
+        "pointer": "/derived/dataset_entry_count",
+        "reported_value": 1,
+        "source_sha256": "c1bfe49b44893298420f9be8455bc53e9071439270757eb60b16618a4539a3a9",
+        "status": "match",
+        "version_match": true
+      }
+    ],
+    "meaning": "Numbers checked against specified local JSON locations. This does not validate measurement, independence, statistical analysis or the scientific claim.",
+    "scientific_verdict": "not_assessed"
+  }
+}

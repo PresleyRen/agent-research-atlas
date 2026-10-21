@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+    "check",
+    "--repo",
+    "/workspace/scratch/f7a517081da8/agent-research-atlas-public"
+  ],
+  "exit_code": 0,
+  "stdout": {
+    "capabilities": 24,
+    "conflicts": 20,
+    "features": 222,
+    "meaning": "Registry IDs, files, symbols and dependencies checked; coverage labels are reviewed declarations, not effectiveness scores.",
+    "sources": 65,
+    "test_references_checked": true,
+    "valid": true
+  },
+  "stderr": "",
+  "execution_scope": "local read-only validation/diagnosis; no network or research load"
+}

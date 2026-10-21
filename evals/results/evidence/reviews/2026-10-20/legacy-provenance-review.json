@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "reviewed_at": "2026-10-20T04:57:02.382504+00:00",
+  "artifacts": [
+    "results/run-a.json",
+    "results/run-b.json"
+  ],
+  "self_reported_status": [
+    "succeeded",
+    "succeeded"
+  ],
+  "code_paths_equal": true,
+  "dataset_identifiers_equal": true,
+  "missing_from_legacy_records": [
+    "command",
+    "run timestamp",
+    "frozen plan",
+    "code and data hashes",
+    "environment",
+    "stdout/stderr",
+    "case IDs and predictions",
+    "reference labels"
+  ],
+  "dataset_artifact_in_original_package": null,
+  "measurement_validity": "unresolved; current evaluator returns a constant and differs from log values",
+  "independence": "not independent evidence; same code and same eight-item material declared in resources; no new evaluation set",
+  "canonical_validate_record": {
+    "status": "not_applicable",
+    "reason": "No native experiment plan, freeze or run directory. Original logs lack required schema/elapsed-time fields; no fields were fabricated to import them."
+  },
+  "scientific_verdict": "not_assessed"
+}

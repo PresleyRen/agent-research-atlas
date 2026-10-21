@@ -1,0 +1,35 @@
+{
+  "synthetic": true,
+  "goal": "查找与路由候选相关的支持和反驳工作",
+  "planned_requests": [
+    {
+      "provider": "S2-relevance",
+      "query": "agent AND routing NOT failure",
+      "executed": false
+    },
+    {
+      "provider": "S2-recommendations",
+      "positivePaperIds": [
+        "local-support"
+      ],
+      "negativePaperIds": [
+        "local-counter"
+      ],
+      "executed": false
+    },
+    {
+      "provider": "Elicit",
+      "mode": "keyword",
+      "query": "agent routing",
+      "filters": {
+        "year_min": 2024
+      },
+      "executed": false
+    }
+  ],
+  "access": {
+    "S2": "no account check performed",
+    "Elicit": "not connected",
+    "PaperQA2": "only the three local documents are in scope"
+  }
+}

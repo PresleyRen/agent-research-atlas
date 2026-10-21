@@ -1,0 +1,2211 @@
+{
+  "edges": [
+    {
+      "created_at": "2026-10-20T04:55:30.256333+00:00",
+      "id": "e-1",
+      "note": "保留旧问题并缩小到等预算",
+      "relation": "addresses",
+      "source": "hyp-targeted-clarification",
+      "target": "problem-anchor",
+      "updated_at": "2026-10-20T04:55:30.256335+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256339+00:00",
+      "id": "e-2",
+      "note": "标签歧义待诊断，非已确认",
+      "relation": "addresses",
+      "source": "hyp-label-ambiguity",
+      "target": "problem-labels",
+      "updated_at": "2026-10-20T04:55:30.256340+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256344+00:00",
+      "id": "e-3",
+      "note": "仅计划，未执行",
+      "relation": "tests",
+      "source": "exp-plan-clarification",
+      "target": "hyp-targeted-clarification",
+      "updated_at": "2026-10-20T04:55:30.256345+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256349+00:00",
+      "id": "e-4",
+      "note": "无效计量限制状态",
+      "relation": "motivates",
+      "source": "problem-measurement",
+      "target": "hyp-targeted-clarification",
+      "updated_at": "2026-10-20T04:55:30.256350+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256354+00:00",
+      "id": "e-5",
+      "note": "先检查标注歧义，再归因于模型",
+      "relation": "motivates",
+      "source": "problem-labels",
+      "target": "hyp-targeted-clarification",
+      "updated_at": "2026-10-20T04:55:30.256356+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256359+00:00",
+      "id": "e-6",
+      "note": "只支持JSON字段描述",
+      "relation": "supports",
+      "source": "exp-legacy-a",
+      "target": "claim-log-observation",
+      "updated_at": "2026-10-20T04:55:30.256360+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256364+00:00",
+      "id": "e-7",
+      "note": "同材料第二日志，非独立支持",
+      "relation": "supports",
+      "source": "exp-legacy-b",
+      "target": "claim-log-observation",
+      "updated_at": "2026-10-20T04:55:30.256365+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256369+00:00",
+      "id": "e-8",
+      "note": "仅支持虚构摘要文字范围",
+      "relation": "supports",
+      "source": "paper-synthetic-abstract-a",
+      "target": "claim-abstract-scope",
+      "updated_at": "2026-10-20T04:55:30.256370+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256374+00:00",
+      "id": "e-9",
+      "note": "字段0.625与拟写0.97不符",
+      "relation": "contradicts",
+      "source": "exp-legacy-a",
+      "target": "claim-old-accuracy",
+      "updated_at": "2026-10-20T04:55:30.256375+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256379+00:00",
+      "id": "e-10",
+      "note": "第二日志也不符",
+      "relation": "contradicts",
+      "source": "exp-legacy-b",
+      "target": "claim-old-accuracy",
+      "updated_at": "2026-10-20T04:55:30.256380+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256384+00:00",
+      "id": "e-11",
+      "note": "反对无依据推论，非机制本身的反证",
+      "relation": "contradicts",
+      "source": "problem-measurement",
+      "target": "claim-old-universal",
+      "updated_at": "2026-10-20T04:55:30.256385+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256389+00:00",
+      "id": "e-12",
+      "note": "引用语境不支持机制证明",
+      "relation": "contradicts",
+      "source": "paper-synthetic-abstract-a",
+      "target": "claim-old-citation",
+      "updated_at": "2026-10-20T04:55:30.256391+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256394+00:00",
+      "id": "e-13",
+      "note": "有限材料描述替代成绩",
+      "relation": "supersedes",
+      "source": "claim-log-observation",
+      "target": "claim-old-accuracy",
+      "updated_at": "2026-10-20T04:55:30.256396+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256399+00:00",
+      "id": "e-14",
+      "note": "摘录范围替代机制证明",
+      "relation": "supersedes",
+      "source": "claim-abstract-scope",
+      "target": "claim-old-citation",
+      "updated_at": "2026-10-20T04:55:30.256402+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256408+00:00",
+      "id": "e-15",
+      "note": "429不支持首创",
+      "relation": "contradicts",
+      "source": "explore-receipt-s2",
+      "target": "claim-old-novelty",
+      "updated_at": "2026-10-20T04:55:30.256409+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256413+00:00",
+      "id": "e-16",
+      "note": "单查询空结果不支持首创",
+      "relation": "contradicts",
+      "source": "explore-receipt-zh",
+      "target": "claim-old-novelty",
+      "updated_at": "2026-10-20T04:55:30.256414+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256418+00:00",
+      "id": "e-17",
+      "note": "未核验线索不能完成查新",
+      "relation": "contradicts",
+      "source": "explore-model-recall",
+      "target": "claim-old-novelty",
+      "updated_at": "2026-10-20T04:55:30.256420+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256424+00:00",
+      "id": "e-18",
+      "note": "使用未执行方案",
+      "relation": "uses",
+      "source": "decision-prioritize-measurement",
+      "target": "exp-plan-clarification",
+      "updated_at": "2026-10-20T04:55:30.256425+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256429+00:00",
+      "id": "e-19",
+      "note": "保留旧暂停",
+      "relation": "uses",
+      "source": "decision-retain-keyword-park",
+      "target": "hyp-keywords-only",
+      "updated_at": "2026-10-20T04:55:30.256430+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256434+00:00",
+      "id": "e-20",
+      "note": "不用分数/失败搜索代替证据",
+      "relation": "motivates",
+      "source": "decision-reject-score-shortcut",
+      "target": "decision-withdraw-draft",
+      "updated_at": "2026-10-20T04:55:30.256436+00:00"
+    }
+  ],
+  "imports": [
+    {
+      "adopted_at": "2026-10-20T04:44:49.705723+00:00",
+      "node_ids": [
+        "problem-anchor",
+        "problem-labels",
+        "hyp-targeted-clarification",
+        "hyp-keywords-only",
+        "decision-retain-keyword-park",
+        "decision-reject-score-shortcut"
+      ],
+      "note": "2026-10-20全文读后归一：SYNTHETIC声明、旧问题、关键词暂停及重启条件、标注歧义笔记、模型9.2与空结果新颖性旧想法均保留或注明纠正。原文件哈希不变；不是仅注册。",
+      "path": "docs/prior-map.md",
+      "sha256": "f04df03466b8d808d83a00eb63bf85daf768a90afd3d5ce940b3780d777ea270",
+      "status": "normalized"
+    }
+  ],
+  "maintenance": {
+    "pending_reviews": [],
+    "review_log": [
+      {
+        "first_flagged_revision": 1,
+        "last_flagged_revision": 1,
+        "node_id": "clarification",
+        "note": "已重读本地虚构摘要、旧问题及S2/中文回执；摘要无等预算/机制证据，429与空回执未完成真实查新。维持coverage=partial；没有已支持的澄清机制，候选proposed和未执行方案已按这些限制编写。",
+        "resolved_at": "2026-10-20T04:56:58.862333+00:00",
+        "resolved_revision": 2,
+        "reviewer": "cold_evidence_review",
+        "triggers": [
+          {
+            "node_id": "clarification",
+            "path": [
+              {
+                "relation": "data.search_ids",
+                "source": "explore-local-review",
+                "target": "clarification"
+              }
+            ],
+            "reason": "dependency_or_evidence_changed",
+            "revision": 1,
+            "source_id": "explore-local-review"
+          },
+          {
+            "node_id": "clarification",
+            "path": [
+              {
+                "relation": "data.search_ids",
+                "source": "explore-receipt-s2",
+                "target": "clarification"
+              }
+            ],
+            "reason": "dependency_or_evidence_changed",
+            "revision": 1,
+            "source_id": "explore-receipt-s2"
+          },
+          {
+            "node_id": "clarification",
+            "path": [
+              {
+                "relation": "data.search_ids",
+                "source": "explore-receipt-zh",
+                "target": "clarification"
+              }
+            ],
+            "reason": "dependency_or_evidence_changed",
+            "revision": 1,
+            "source_id": "explore-receipt-zh"
+          }
+        ]
+      },
+      {
+        "first_flagged_revision": 1,
+        "last_flagged_revision": 1,
+        "node_id": "evaluation",
+        "note": "已重读现代码、两日志、数值账本和资源说明；accuracy常量且与日志不符，缺标签与执行来源。维持coverage=partial；旧0.97/独立验证/普遍有效主张撤回，日志字段仅作材料观察。",
+        "resolved_at": "2026-10-20T04:56:58.983006+00:00",
+        "resolved_revision": 3,
+        "reviewer": "cold_evidence_review",
+        "triggers": [
+          {
+            "node_id": "evaluation",
+            "path": [
+              {
+                "relation": "data.search_ids",
+                "source": "explore-local-review",
+                "target": "evaluation"
+              }
+            ],
+            "reason": "dependency_or_evidence_changed",
+            "revision": 1,
+            "source_id": "explore-local-review"
+          },
+          {
+            "node_id": "evaluation",
+            "path": [
+              {
+                "relation": "data.search_ids",
+                "source": "explore-receipt-s2",
+                "target": "evaluation"
+              }
+            ],
+            "reason": "dependency_or_evidence_changed",
+            "revision": 1,
+            "source_id": "explore-receipt-s2"
+          },
+          {
+            "node_id": "evaluation",
+            "path": [
+              {
+                "relation": "data.search_ids",
+                "source": "explore-receipt-zh",
+                "target": "evaluation"
+              }
+            ],
+            "reason": "dependency_or_evidence_changed",
+            "revision": 1,
+            "source_id": "explore-receipt-zh"
+          }
+        ]
+      },
+      {
+        "first_flagged_revision": 1,
+        "last_flagged_revision": 1,
+        "node_id": "intent",
+        "note": "已重读旧笔记与八原件清单，未找到案例或真值。保留先检查标注歧义再归因于模型，维持coverage=partial；不声称已发现具体标注错误。",
+        "resolved_at": "2026-10-20T04:56:59.109460+00:00",
+        "resolved_revision": 4,
+        "reviewer": "cold_evidence_review",
+        "triggers": [
+          {
+            "node_id": "intent",
+            "path": [
+              {
+                "relation": "data.search_ids",
+                "source": "explore-local-review",
+                "target": "intent"
+              }
+            ],
+            "reason": "dependency_or_evidence_changed",
+            "revision": 1,
+            "source_id": "explore-local-review"
+          },
+          {
+            "node_id": "intent",
+            "path": [
+              {
+                "relation": "data.search_ids",
+                "source": "explore-receipt-s2",
+                "target": "intent"
+              }
+            ],
+            "reason": "dependency_or_evidence_changed",
+            "revision": 1,
+            "source_id": "explore-receipt-s2"
+          },
+          {
+            "node_id": "intent",
+            "path": [
+              {
+                "relation": "data.search_ids",
+                "source": "explore-receipt-zh",
+                "target": "intent"
+              }
+            ],
+            "reason": "dependency_or_evidence_changed",
+            "revision": 1,
+            "source_id": "explore-receipt-zh"
+          }
+        ]
+      },
+      {
+        "first_flagged_revision": 1,
+        "last_flagged_revision": 1,
+        "node_id": "routing",
+        "note": "已重读旧地图、词面路由源码、两日志和失败/空回执。维持coverage=partial；旧关键词路线继续parked，等预算针对性澄清候选proposed，数据/计量/真实近邻未决。",
+        "resolved_at": "2026-10-20T04:56:59.233268+00:00",
+        "resolved_revision": 5,
+        "reviewer": "cold_evidence_review",
+        "triggers": [
+          {
+            "node_id": "routing",
+            "path": [
+              {
+                "relation": "data.search_ids",
+                "source": "explore-local-review",
+                "target": "routing"
+              }
+            ],
+            "reason": "dependency_or_evidence_changed",
+            "revision": 1,
+            "source_id": "explore-local-review"
+          },
+          {
+            "node_id": "routing",
+            "path": [
+              {
+                "relation": "data.search_ids",
+                "source": "explore-receipt-s2",
+                "target": "routing"
+              }
+            ],
+            "reason": "dependency_or_evidence_changed",
+            "revision": 1,
+            "source_id": "explore-receipt-s2"
+          },
+          {
+            "node_id": "routing",
+            "path": [
+              {
+                "relation": "data.search_ids",
+                "source": "explore-receipt-zh",
+                "target": "routing"
+              }
+            ],
+            "reason": "dependency_or_evidence_changed",
+            "revision": 1,
+            "source_id": "explore-receipt-zh"
+          }
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "partial",
+        "coverage_limits": "仅完成本地虚构材料审查；真实论文近邻、双语真实检索和独立数据未核验。不是全领域reviewed。",
+        "last_reviewed": "2026-10-20",
+        "questions": [
+          {
+            "en": "How are intent labels, target states, and execution constraints kept consistent?",
+            "zh": "意图标签、目标状态和执行约束之间如何保持一致？"
+          },
+          {
+            "en": "How does the system detect uncertainty and revise state for unseen intents or changed goals?",
+            "zh": "遇到未见意图或目标变更时，系统如何识别不确定性并修正状态？"
+          }
+        ],
+        "scope": "SYNTHETIC教学材料的离线证据审计：歧义请求的一次澄清、二路由、标签与评测；仅本地8个原始文件，截至2026-10-20。未联网、安装、运行研究负载、调用付费资源或发布。真实文献查新与独立实验均未完成。",
+        "search_ids": [
+          "explore-local-review",
+          "explore-receipt-s2",
+          "explore-receipt-zh"
+        ],
+        "status_reason": "将已读的本地证据切片记录为partial；未扩张为文献全覆盖。",
+        "terms_en": [
+          "intent detection",
+          "intent understanding",
+          "goal recognition",
+          "user goals",
+          "dialogue state tracking",
+          "out-of-distribution intent",
+          "goal representation"
+        ],
+        "terms_zh": [
+          "意图识别",
+          "意图理解",
+          "目标识别",
+          "用户目标",
+          "对话状态跟踪",
+          "分布外意图",
+          "目标表示"
+        ]
+      },
+      "domains": [],
+      "id": "intent",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/prior-map.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "一、范围与来源",
+          "path": "reviews/2026-10-20/evidence-review.md"
+        }
+      ],
+      "status": "active",
+      "title": "意图理解与标签边界 / Intent and label validity",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:55:30.255720+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "partial",
+        "coverage_limits": "仅完成本地虚构材料审查；真实论文近邻、双语真实检索和独立数据未核验。不是全领域reviewed。",
+        "last_reviewed": "2026-10-20",
+        "questions": [
+          {
+            "en": "When should an agent ask a clarification question rather than act under uncertainty?",
+            "zh": "何时应追问，何时可在不确定条件下行动？"
+          },
+          {
+            "en": "How are conflicts and omissions detected when one utterance contains multiple conditionally dependent tasks?",
+            "zh": "用户一句话含多个有条件依赖的任务时，如何发现冲突和遗漏？"
+          }
+        ],
+        "scope": "SYNTHETIC教学材料的离线证据审计：歧义请求的一次澄清、二路由、标签与评测；仅本地8个原始文件，截至2026-10-20。未联网、安装、运行研究负载、调用付费资源或发布。真实文献查新与独立实验均未完成。",
+        "search_ids": [
+          "explore-local-review",
+          "explore-receipt-s2",
+          "explore-receipt-zh"
+        ],
+        "status_reason": "将已读的本地证据切片记录为partial；未扩张为文献全覆盖。",
+        "terms_en": [
+          "multi-intent detection",
+          "compound intent",
+          "ambiguity resolution",
+          "clarification question",
+          "user correction",
+          "preference elicitation",
+          "partial observability"
+        ],
+        "terms_zh": [
+          "多意图识别",
+          "复合意图",
+          "歧义消解",
+          "澄清问题",
+          "用户纠正",
+          "偏好获取",
+          "部分可观测"
+        ]
+      },
+      "domains": [],
+      "id": "clarification",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/prior-map.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "一、范围与来源",
+          "path": "reviews/2026-10-20/evidence-review.md"
+        }
+      ],
+      "status": "active",
+      "title": "一次澄清的条件与信息价值 / One-question clarification",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:55:30.255779+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "partial",
+        "coverage_limits": "仅完成本地虚构材料审查；真实论文近邻、双语真实检索和独立数据未核验。不是全领域reviewed。",
+        "last_reviewed": "2026-10-20",
+        "questions": [
+          {
+            "en": "Which observable signals predict whether a tool, model, or strategy fits the current task?",
+            "zh": "什么可观察信号能预测某种工具、模型或策略适合当前任务？"
+          },
+          {
+            "en": "Do routing gains persist under matched budgets and a strong single-model baseline?",
+            "zh": "路由收益在相同预算和强单模型基线下是否仍然存在？"
+          }
+        ],
+        "scope": "SYNTHETIC教学材料的离线证据审计：歧义请求的一次澄清、二路由、标签与评测；仅本地8个原始文件，截至2026-10-20。未联网、安装、运行研究负载、调用付费资源或发布。真实文献查新与独立实验均未完成。",
+        "search_ids": [
+          "explore-local-review",
+          "explore-receipt-s2",
+          "explore-receipt-zh"
+        ],
+        "status_reason": "将已读的本地证据切片记录为partial；未扩张为文献全覆盖。",
+        "terms_en": [
+          "agent routing",
+          "model routing",
+          "task routing",
+          "strategy selection",
+          "dynamic workflow",
+          "cost-sensitive selection",
+          "selective prediction"
+        ],
+        "terms_zh": [
+          "智能体路由",
+          "模型路由",
+          "任务路由",
+          "策略选择",
+          "动态工作流",
+          "成本敏感选择",
+          "选择性预测"
+        ]
+      },
+      "domains": [],
+      "id": "routing",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/prior-map.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "一、范围与来源",
+          "path": "reviews/2026-10-20/evidence-review.md"
+        }
+      ],
+      "status": "active",
+      "title": "歧义请求的路由 / Ambiguous-request routing",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:55:30.255813+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "Does planning fail because of goal representation, state estimation, constraint handling, or execution feedback?",
+            "zh": "规划失败来自目标表示、状态估计、约束处理还是执行反馈？"
+          },
+          {
+            "en": "What does reflection or search improve after controlling call count, and under which conditions does it worsen performance?",
+            "zh": "反思或搜索在控制调用次数后改善了什么，而哪些条件下会恶化？"
+          }
+        ],
+        "terms_en": [
+          "task decomposition",
+          "automated planning",
+          "replanning",
+          "constraint satisfaction",
+          "closed-loop control",
+          "world model",
+          "reflection",
+          "hierarchical planning"
+        ],
+        "terms_zh": [
+          "任务分解",
+          "智能规划",
+          "重规划",
+          "约束满足",
+          "闭环控制",
+          "世界模型",
+          "反思",
+          "层次规划"
+        ]
+      },
+      "domains": [],
+      "id": "planning",
+      "sources": [],
+      "status": "active",
+      "title": "规划、反馈与控制 / Planning, feedback, and control",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:44:49.705723+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "When relevant evidence never enters the candidate set, is parsing, chunking, indexing, or querying responsible?",
+            "zh": "相关证据未进入候选集合，是解析、切分、索引还是查询造成的？"
+          },
+          {
+            "en": "How should retrieval evaluation reflect document additions, version changes, and changing access rights?",
+            "zh": "文档新增、版本更新及访问权限变化时，检索评测如何反映真实状态？"
+          }
+        ],
+        "terms_en": [
+          "document parsing",
+          "document chunking",
+          "incremental indexing",
+          "hybrid retrieval",
+          "query rewriting",
+          "retrieval-augmented generation",
+          "temporal retrieval",
+          "retrieval recall"
+        ],
+        "terms_zh": [
+          "文档解析",
+          "文档切分",
+          "增量索引",
+          "混合检索",
+          "查询改写",
+          "检索增强生成",
+          "时间检索",
+          "检索召回"
+        ]
+      },
+      "domains": [],
+      "id": "ingestion-retrieval",
+      "sources": [],
+      "status": "active",
+      "title": "文档摄入、索引与检索 / Document ingestion, indexing, and retrieval",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:44:49.705723+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "After retrieval finds the evidence, which selection or compression operations lose essential conditions?",
+            "zh": "检索已召回证据后，哪些选择或压缩操作使关键条件丢失？"
+          },
+          {
+            "en": "How can gains from more context be separated from inference cost, conflicting information, and position bias?",
+            "zh": "更多上下文带来的收益如何与推理成本、冲突信息及位置偏差区分？"
+          }
+        ],
+        "terms_en": [
+          "reranking",
+          "context construction",
+          "evidence selection",
+          "long context",
+          "context compression",
+          "position bias",
+          "redundant evidence"
+        ],
+        "terms_zh": [
+          "重排序",
+          "上下文构建",
+          "证据选择",
+          "长上下文",
+          "上下文压缩",
+          "位置偏差",
+          "冗余证据"
+        ]
+      },
+      "domains": [],
+      "id": "reranking-context",
+      "sources": [],
+      "status": "active",
+      "title": "重排、上下文选择与压缩 / Reranking, context selection, and compression",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:44:49.705723+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "Can gains from an ontology or graph be distinguished from ordinary schema validation and rule-based baselines?",
+            "zh": "本体或图结构产生的收益能否与普通模式校验及规则基线区分？"
+          },
+          {
+            "en": "How does new or conflicting evidence propagate to entities, relations, inferred results, and provenance?",
+            "zh": "新增或冲突证据如何传播到实体、关系、推理结果与来源链？"
+          }
+        ],
+        "terms_en": [
+          "knowledge graph construction",
+          "ontology constraints",
+          "entity disambiguation",
+          "relation extraction",
+          "provenance",
+          "graph reasoning",
+          "neuro-symbolic",
+          "knowledge updating"
+        ],
+        "terms_zh": [
+          "知识图谱构建",
+          "本体约束",
+          "实体消歧",
+          "关系抽取",
+          "证据溯源",
+          "图推理",
+          "神经符号",
+          "知识更新"
+        ]
+      },
+      "domains": [],
+      "id": "knowledge-graphs",
+      "sources": [],
+      "status": "active",
+      "title": "知识图谱、本体与结构化知识 / Knowledge graphs, ontologies, and structured knowledge",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:44:49.705723+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "Which errors arise separately from memory writing, reading, updating, and forgetting?",
+            "zh": "记忆写入、读取、更新与遗忘各自造成什么错误？"
+          },
+          {
+            "en": "Do memory gains transfer across users, time, and tasks without depending on evaluation leakage?",
+            "zh": "记忆收益是否能跨用户、时间和任务迁移，而不是依赖评测泄漏？"
+          }
+        ],
+        "terms_en": [
+          "long-term memory",
+          "episodic memory",
+          "semantic memory",
+          "memory retrieval",
+          "memory updating",
+          "forgetting",
+          "state recovery",
+          "continual learning"
+        ],
+        "terms_zh": [
+          "长期记忆",
+          "情景记忆",
+          "语义记忆",
+          "记忆检索",
+          "记忆更新",
+          "遗忘",
+          "状态恢复",
+          "持续学习"
+        ]
+      },
+      "domains": [],
+      "id": "memory",
+      "sources": [],
+      "status": "active",
+      "title": "记忆、状态与持续适应 / Memory, state, and continual adaptation",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:44:49.705723+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "How can failures be attributed when the tool is correct but arguments, execution order, or result interpretation are wrong?",
+            "zh": "工具名称正确但参数、执行顺序或返回值理解错误时，如何定位责任？"
+          },
+          {
+            "en": "How can an agent recover from timeouts, partial success, or schema changes without duplicate side effects?",
+            "zh": "工具超时、部分成功或模式变更时，怎样恢复并避免重复副作用？"
+          }
+        ],
+        "terms_en": [
+          "tool use",
+          "tool learning",
+          "function calling",
+          "argument generation",
+          "execution verification",
+          "error recovery",
+          "idempotency",
+          "compensating transactions"
+        ],
+        "terms_zh": [
+          "工具使用",
+          "工具学习",
+          "函数调用",
+          "参数生成",
+          "执行验证",
+          "错误恢复",
+          "幂等性",
+          "事务补偿"
+        ]
+      },
+      "domains": [],
+      "id": "tool-use",
+      "sources": [],
+      "status": "active",
+      "title": "工具学习、执行与恢复 / Tool learning, execution, and recovery",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:44:49.705723+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "Is every answer claim supported precisely by its linked evidence?",
+            "zh": "每条回答断言是否受到相应证据的精确支持？"
+          },
+          {
+            "en": "How does the system calibrate conclusions and actions when evidence is missing, conflicting, or stale?",
+            "zh": "证据缺失、冲突或过期时，系统如何校准结论强度与行动选择？"
+          }
+        ],
+        "terms_en": [
+          "factual consistency",
+          "evidence grounding",
+          "citation accuracy",
+          "hallucination detection",
+          "uncertainty calibration",
+          "abstention",
+          "verifiable generation"
+        ],
+        "terms_zh": [
+          "事实一致性",
+          "证据支持",
+          "引用准确性",
+          "幻觉检测",
+          "不确定性校准",
+          "拒答",
+          "可验证生成"
+        ]
+      },
+      "domains": [],
+      "id": "answer-grounding",
+      "sources": [],
+      "status": "active",
+      "title": "回答生成、事实支持与不确定性 / Answer generation, grounding, and uncertainty",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:44:49.705723+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "Do collaboration gains exceed a single agent or independent sampling under the same total budget?",
+            "zh": "协作增益能否超过相同总预算的单智能体或独立采样基线？"
+          },
+          {
+            "en": "When do communication, shared memory, and role assignments propagate or reinforce errors?",
+            "zh": "通信、共享记忆与角色安排何时造成错误传播或相互强化？"
+          }
+        ],
+        "terms_en": [
+          "multi-agent collaboration",
+          "task allocation",
+          "communication protocol",
+          "negotiation",
+          "role specialization",
+          "cooperative planning",
+          "human-agent collaboration",
+          "correlated errors"
+        ],
+        "terms_zh": [
+          "多智能体协作",
+          "任务分配",
+          "通信协议",
+          "协商",
+          "角色分工",
+          "协同规划",
+          "人机协作",
+          "群体错误"
+        ]
+      },
+      "domains": [],
+      "id": "multi-agent",
+      "sources": [],
+      "status": "active",
+      "title": "多智能体协作与人机协作 / Multi-agent and human-agent collaboration",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:44:49.705723+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "partial",
+        "coverage_limits": "仅完成本地虚构材料审查；真实论文近邻、双语真实检索和独立数据未核验。不是全领域reviewed。",
+        "last_reviewed": "2026-10-20",
+        "questions": [
+          {
+            "en": "Does metric improvement correspond to real task success, or is a proxy being optimized instead?",
+            "zh": "指标改善是否对应实际任务成功，是否存在代理指标被优化的问题？"
+          },
+          {
+            "en": "Can the experiment rule out budget differences, leakage, judge bias, and random variation as alternative explanations?",
+            "zh": "实验能排除预算、数据泄漏、评测器偏差和随机波动等替代解释吗？"
+          }
+        ],
+        "scope": "SYNTHETIC教学材料的离线证据审计：歧义请求的一次澄清、二路由、标签与评测；仅本地8个原始文件，截至2026-10-20。未联网、安装、运行研究负载、调用付费资源或发布。真实文献查新与独立实验均未完成。",
+        "search_ids": [
+          "explore-local-review",
+          "explore-receipt-s2",
+          "explore-receipt-zh"
+        ],
+        "status_reason": "将已读的本地证据切片记录为partial；未扩张为文献全覆盖。",
+        "terms_en": [
+          "agent evaluation",
+          "trajectory evaluation",
+          "task success rate",
+          "benchmark contamination",
+          "judge bias",
+          "ablation study",
+          "external validity",
+          "statistical uncertainty"
+        ],
+        "terms_zh": [
+          "智能体评测",
+          "过程评测",
+          "任务成功率",
+          "基准污染",
+          "评测器偏差",
+          "消融实验",
+          "外部效度",
+          "统计不确定性"
+        ]
+      },
+      "domains": [],
+      "id": "evaluation",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/prior-map.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "一、范围与来源",
+          "path": "reviews/2026-10-20/evidence-review.md"
+        }
+      ],
+      "status": "active",
+      "title": "路由计量、来源与独立性 / Routing evidence validity",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:55:30.255847+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "How much of an offline gain survives realistic latency, concurrency, budgets, and service failures?",
+            "zh": "离线收益在真实延迟、并发、预算和服务故障下能保留多少？"
+          },
+          {
+            "en": "Which reproducible system failures reveal a research mechanism that generalizes?",
+            "zh": "什么可重现的系统失效揭示了可推广的研究机制？"
+          }
+        ],
+        "terms_en": [
+          "agent observability",
+          "end-to-end latency",
+          "cost evaluation",
+          "concurrent execution",
+          "checkpointing",
+          "workflow recovery",
+          "distribution shift",
+          "service reliability"
+        ],
+        "terms_zh": [
+          "智能体可观测性",
+          "端到端延迟",
+          "成本评测",
+          "并发执行",
+          "检查点",
+          "工作流恢复",
+          "分布漂移",
+          "服务可靠性"
+        ]
+      },
+      "domains": [],
+      "id": "production",
+      "sources": [],
+      "status": "active",
+      "title": "生产系统、效率与可靠性 / Production systems, efficiency, and reliability",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:44:49.705723+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:44:49.705723+00:00",
+      "data": {
+        "coverage": "unsearched",
+        "questions": [
+          {
+            "en": "How do untrusted documents, tool outputs, or other agents' messages affect execution authority?",
+            "zh": "不可信文档、工具输出或其他智能体信息如何影响执行权限？"
+          },
+          {
+            "en": "How can a defense be evaluated jointly for attack success, legitimate-task utility, and added cost?",
+            "zh": "防护有效性如何同时测量攻击成功率、正常任务效用与新增成本？"
+          }
+        ],
+        "terms_en": [
+          "prompt injection",
+          "tool authorization",
+          "least privilege",
+          "privacy preservation",
+          "attack surface",
+          "instruction boundaries",
+          "policy constraints",
+          "security evaluation"
+        ],
+        "terms_zh": [
+          "提示注入",
+          "工具权限",
+          "最小权限",
+          "隐私保护",
+          "攻击面",
+          "指令边界",
+          "策略约束",
+          "安全评测"
+        ]
+      },
+      "domains": [],
+      "id": "safety-security",
+      "sources": [],
+      "status": "active",
+      "title": "安全、权限、隐私与可控性 / Safety, authorization, privacy, and controllability",
+      "type": "domain",
+      "updated_at": "2026-10-20T04:44:49.705723+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.255859+00:00",
+      "data": {
+        "boundary": "二路由、合成离线开发诊断；真实效用与跨任务泛化另需证据。",
+        "legacy_source_preserved": "docs/prior-map.md",
+        "question": "在信息不足的用户请求上，先澄清一次是否改善search/chat路由？",
+        "status_reason": "保留旧问题，缩小当前能检验的范围。"
+      },
+      "domains": [
+        "routing",
+        "clarification"
+      ],
+      "id": "problem-anchor",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "研究问题",
+          "path": "docs/prior-map.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "当前判断",
+          "path": "reviews/2026-10-20/evidence-review.md"
+        }
+      ],
+      "status": "open",
+      "title": "含歧义请求先澄清一次是否改善路由？",
+      "type": "problem",
+      "updated_at": "2026-10-20T04:55:30.255862+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.255880+00:00",
+      "data": {
+        "artifact_path": "reviews/2026-10-20/static-code-review.json",
+        "inference": "现代码不能测量澄清效果；原日志产生版本和计量方式未解决。",
+        "minimal_fix": "恢复案例与原命令版本；另建真实评价器，保留逐条输出与真值。",
+        "observation": "evaluate创建predictions后返回常量0.97，未读取真值；两日志为0.625。源码无澄清、答复或seed处理，主入口传入空列表。",
+        "research_code_executed": false,
+        "severity": "critical"
+      },
+      "domains": [
+        "evaluation",
+        "routing"
+      ],
+      "id": "problem-measurement",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "route、evaluate与__main__",
+          "path": "code/router.py"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "/functions、/accuracy_is_constant_097",
+          "path": "reviews/2026-10-20/static-code-review.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "/metrics/accuracy",
+          "path": "results/run-a.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "/metrics/accuracy",
+          "path": "results/run-b.json"
+        }
+      ],
+      "status": "observed_static_defect",
+      "title": "准确率是常量，且当前代码与历史日志冲突",
+      "type": "problem",
+      "updated_at": "2026-10-20T04:55:30.255881+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.255897+00:00",
+      "data": {
+        "legacy_note": "先检查标注歧义，再归因于模型。",
+        "observation": "资源说明称有8条合成案例；原始8个文件不含案例/真值表。",
+        "unknowns": [
+          "每条案例内容、case/family ID",
+          "标签定义和来源",
+          "多路由是否合法",
+          "逐案例预测"
+        ]
+      },
+      "domains": [
+        "intent",
+        "evaluation"
+      ],
+      "id": "problem-labels",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "保留笔记",
+          "path": "docs/prior-map.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/resources.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "/sources",
+          "path": "reviews/2026-10-20/source-manifest.json"
+        }
+      ],
+      "status": "unresolved",
+      "title": "八案例与标签本体未交付，先核对标注歧义",
+      "type": "problem",
+      "updated_at": "2026-10-20T04:55:30.255898+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.255912+00:00",
+      "data": {
+        "access_level": "local abstract record only",
+        "authors": null,
+        "doi": null,
+        "not_reported_in_excerpt": [
+          "等提问预算比较",
+          "机制结论",
+          "因果结论"
+        ],
+        "original_title": "Uncertainty-guided clarification for routing",
+        "publication_identity_verified": false,
+        "read_depth": "全部三行本地摘要记录；没有正文",
+        "real_closest_work": "unverified",
+        "source_claim": "探索在选定案例上先问一个问题再选路由。",
+        "synthetic": true,
+        "use_limit": "只能支持该教学记录写了什么，不能当真实论文或机制证明。",
+        "year": null
+      },
+      "domains": [
+        "routing",
+        "clarification"
+      ],
+      "id": "paper-synthetic-abstract-a",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文；SYNTHETIC、Title、Only abstract available",
+          "path": "papers/abstract-a.md"
+        }
+      ],
+      "status": "fictional_fixture",
+      "title": "SYNTHETIC：Uncertainty-guided clarification for routing（虚构摘要）",
+      "type": "paper",
+      "updated_at": "2026-10-20T04:55:30.255913+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.255928+00:00",
+      "data": {
+        "executed_this_round": false,
+        "language": "en",
+        "limitations": "HTTP429、results=null；未取回结果，不能当零命中。该fixture未证明真实在线请求，本轮未联网。",
+        "original_receipt_index": 0,
+        "provider": "S2 (synthetic historical receipt)",
+        "query": "uncertainty clarification agent routing",
+        "result_ids": [],
+        "returned_count": null,
+        "scope": "读取已有synthetic回执；原回执日期2026-10-20；不是本轮检索",
+        "searched_at": "2026-10-20",
+        "synthetic": true
+      },
+      "domains": [
+        "routing",
+        "clarification"
+      ],
+      "id": "explore-receipt-s2",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "/receipts/0",
+          "path": "searches/receipts.json"
+        }
+      ],
+      "status": "blocked_rate_limited",
+      "title": "保留回执：uncertainty clarification agent routing",
+      "type": "exploration",
+      "updated_at": "2026-10-20T04:55:30.255929+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.255941+00:00",
+      "data": {
+        "executed_this_round": false,
+        "language": "zh",
+        "limitations": "仅该教学回执的单一查询为空；不是全库或全域穷尽，本轮未执行此查询。",
+        "original_receipt_index": 1,
+        "provider": "host-search (synthetic historical receipt)",
+        "query": "意图 路由 澄清 不确定性",
+        "result_ids": [],
+        "returned_count": 0,
+        "scope": "读取已有synthetic回执；原回执日期2026-10-20；不是本轮检索",
+        "searched_at": "2026-10-20",
+        "synthetic": true
+      },
+      "domains": [
+        "routing",
+        "clarification"
+      ],
+      "id": "explore-receipt-zh",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "/receipts/1",
+          "path": "searches/receipts.json"
+        }
+      ],
+      "status": "empty_recorded",
+      "title": "保留回执：意图 路由 澄清 不确定性",
+      "type": "exploration",
+      "updated_at": "2026-10-20T04:55:30.255943+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.255956+00:00",
+      "data": {
+        "doi": null,
+        "executed_this_round": false,
+        "language": "en",
+        "limitations": "verified=false、doi/url为空；没有真实身份，不作为paper或检索成功证据。",
+        "original_searched_at": null,
+        "provider": "local review of model-recall receipt",
+        "query": "本地核读模型回忆题目Budget-Revisable Dialogue Routing（不是已发送检索式）",
+        "result_ids": [],
+        "scope": "本轮本地核读日期；原回忆回执没有日期，不补造原检索日期",
+        "searched_at": "2026-10-20",
+        "title_string": "Budget-Revisable Dialogue Routing",
+        "url": null,
+        "verified": false
+      },
+      "domains": [
+        "routing",
+        "clarification"
+      ],
+      "id": "explore-model-recall",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "/receipts/2",
+          "path": "searches/receipts.json"
+        }
+      ],
+      "status": "unverified_lead",
+      "title": "未核验模型回忆：Budget-Revisable Dialogue Routing",
+      "type": "exploration",
+      "updated_at": "2026-10-20T04:55:30.255957+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.255975+00:00",
+      "data": {
+        "actual_read_scope": "所有8份原始文件全文",
+        "artifact_path": "reviews/2026-10-20/evidence-review.md",
+        "discovery_truncated": false,
+        "language": "mixed",
+        "limitations": "0次外部检索；没有研究执行、有效新测量或独立评测。只知道本地材料内容。",
+        "provider": "local file reading / static AST / standard-library audit tools",
+        "query": "既有地图、论文记录、回执、代码和结果草稿能支持哪些结论？",
+        "read_files": 8,
+        "result_ids": [
+          "paper-synthetic-abstract-a"
+        ],
+        "review": {
+          "limitations": "同一审查者做本轮整理；未复现实验，所有项目材料为教学用合成fixture。",
+          "reviewed_at": "2026-10-20",
+          "reviewer": "cold_evidence_review",
+          "summary": "全文冷读原始八文件；旧草稿撤回越界表述，主问题保留。"
+        },
+        "scope": "SYNTHETIC教学材料的离线证据审计：歧义请求的一次澄清、二路由、标签与评测；仅本地8个原始文件，截至2026-10-20。未联网、安装、运行研究负载、调用付费资源或发布。真实文献查新与独立实验均未完成。",
+        "searched_at": "2026-10-20"
+      },
+      "domains": [
+        "routing",
+        "clarification",
+        "intent",
+        "evaluation"
+      ],
+      "id": "explore-local-review",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "/sources",
+          "path": "reviews/2026-10-20/source-manifest.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "reviews/2026-10-20/evidence-review.md"
+        }
+      ],
+      "status": "local_pass_completed",
+      "title": "2026-10-20本地八材料冷读与证据核查",
+      "type": "exploration",
+      "updated_at": "2026-10-20T04:55:30.255976+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256000+00:00",
+      "data": {
+        "closest_paper_ids": [],
+        "closest_work_status": "真实近邻未核验；虚构摘要仅作问题线索，不填入真实近邻列表",
+        "contribution_type": "候选测量与机制边界研究，尚未成立的方法贡献",
+        "depends_on": [
+          "problem-anchor",
+          "problem-measurement",
+          "problem-labels",
+          "explore-receipt-s2",
+          "explore-receipt-zh",
+          "explore-model-recall"
+        ],
+        "falsification": "有效计量下C不超过B1或收益仅来自特定关键词，削弱当前额外策略或语义机制版本；标签失效不是机制反证。",
+        "feasibility": {
+          "budget": "unavailable",
+          "compute": "available",
+          "data": "unverified",
+          "evaluation": "unavailable"
+        },
+        "feasibility_notes": "资源说明为本地CPU，适用于未来规则型小诊断的条件估计；但八条案例/标签未交付、真实评价器缺失、本轮明确不授权研究负载。无GPU/API支出授权。真实近邻未知，不能升级testable。",
+        "mechanism": "针对缺失意图槽位取得有用信息，超过仅增加一轮文本或通用追问。",
+        "minimal_test": "P0恢复案例/标签并真实计量；P1同案例比较不问、通用一问、针对性一问、等长度无关一问；见plans/minimal-discriminating-study.md。",
+        "prediction": "有效标签的歧义场景中，C对比同为一次提问的B1净改对为正；相关答复优于等长度无关答复；语义保持改写不消除方向。",
+        "priority": "P1 after measurement gate",
+        "problem": "problem-anchor：歧义请求的一次澄清增量价值",
+        "rival_explanations": [
+          "通用追问或额外信息解释全部收益",
+          "关键词文档触发而非语义消歧",
+          "硬编码指标、标签歧义或真值泄漏",
+          "开发案例选择偏差"
+        ],
+        "status_reason": "保留旧问题并缩小到等提问预算；现有不完整/无效证据不能支持或反驳机制，故不设经验状态。",
+        "unknowns": [
+          "真实近邻与新颖性",
+          "有效标签、数据与独立评测",
+          "候选实现与共同路由器",
+          "配对效应与最小有意义收益",
+          "执行授权"
+        ]
+      },
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ],
+      "id": "hyp-targeted-clarification",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "研究问题",
+          "path": "docs/prior-map.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "plans/minimal-discriminating-study.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "四、候选取舍",
+          "path": "reviews/2026-10-20/evidence-review.md"
+        }
+      ],
+      "status": "proposed",
+      "title": "一次针对性澄清是否优于等预算通用追问？",
+      "type": "hypothesis",
+      "updated_at": "2026-10-20T04:55:30.256001+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256021+00:00",
+      "data": {
+        "closest_paper_ids": [],
+        "depends_on": [
+          "problem-labels",
+          "problem-measurement"
+        ],
+        "falsification": "有效复核显示所有标签唯一一致，会削弱该批数据上的标签歧义解释；仍须修复计量。",
+        "feasibility": {
+          "budget": "unavailable",
+          "compute": "available",
+          "data": "unverified",
+          "evaluation": "unavailable"
+        },
+        "feasibility_notes": "资源说明为本地CPU，适用于未来规则型小诊断的条件估计；但八条案例/标签未交付、真实评价器缺失、本轮明确不授权研究负载。无GPU/API支出授权。真实近邻未知，不能升级testable。",
+        "mechanism": "存在多种合法路由时，固定单标签可能把合规输出计成错误。",
+        "minimal_test": "恢复原八条案例，先定义search/chat语义和允许标签集，保留争议与版本，再看输出。",
+        "prediction": "盲于方法预测的标签复核会标出需多标签/条件规则或澄清的案例；目前没有已观察数量。",
+        "priority": "P0 diagnostic prerequisite",
+        "problem": "参考标签与案例未交付，无法检查路线判断是否唯一。",
+        "rival_explanations": [
+          "标签明确正确，问题在词面原型或评价器",
+          "复核者受结果影响迁就方法"
+        ],
+        "status_reason": "保留旧笔记的诊断优先级；没有案例，不能声称已发现标注错误。"
+      },
+      "domains": [
+        "intent",
+        "evaluation"
+      ],
+      "id": "hyp-label-ambiguity",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "保留笔记",
+          "path": "docs/prior-map.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "P0",
+          "path": "plans/minimal-discriminating-study.md"
+        }
+      ],
+      "status": "proposed",
+      "title": "部分表观错路由是否首先来自标签定义歧义？",
+      "type": "hypothesis",
+      "updated_at": "2026-10-20T04:55:30.256022+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256034+00:00",
+      "data": {
+        "depends_on": [
+          "problem-labels",
+          "problem-measurement"
+        ],
+        "reason": "旧地图已暂停，本轮未先完成标签定义与错误分类。当前字面原型没有有效性能测量。",
+        "reopen_condition": "先取得可审核标签和错误分类，确认可分离的词汇覆盖缺口，再记录重启原因；作为弱基线不等于重启主线。",
+        "status_reason": "沿用旧暂停；不因模型高分或空结果重新开启。"
+      },
+      "domains": [
+        "routing"
+      ],
+      "id": "hyp-keywords-only",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "旧决定",
+          "path": "docs/prior-map.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "route",
+          "path": "code/router.py"
+        }
+      ],
+      "status": "parked",
+      "title": "仅增加关键词的路由路线",
+      "type": "hypothesis",
+      "updated_at": "2026-10-20T04:55:30.256036+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256053+00:00",
+      "data": {
+        "artifact_path": "results/run-a.json",
+        "executed_this_round": false,
+        "execution_verified": false,
+        "limitations": "缺命令、版本哈希、原数据、标签、逐条预测、冻结和stdout/stderr；当前代码硬编码且与字段冲突。",
+        "measurement_verified": false,
+        "provenance_review_path": "reviews/2026-10-20/legacy-provenance-review.json",
+        "reported_accuracy": 0.625,
+        "reported_n": 8,
+        "seed": 7,
+        "self_reported_status": "succeeded",
+        "shared_dependencies": "同code/router.py路径、同same-eight-synthetic-items；resources说明同代码同材料。",
+        "synthetic": true,
+        "validation": "原字段值和字节哈希已核查；不适用原生validate-record；没有补造完整运行记录。"
+      },
+      "domains": [
+        "routing",
+        "evaluation"
+      ],
+      "id": "exp-legacy-a",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "/metrics、/seed、/code、/dataset、/status",
+          "path": "results/run-a.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/resources.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "reviews/2026-10-20/legacy-provenance-review.json"
+        }
+      ],
+      "status": "legacy_record_unverified",
+      "title": "SYNTHETIC历史日志：seed 7",
+      "type": "experiment",
+      "updated_at": "2026-10-20T04:55:30.256054+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256070+00:00",
+      "data": {
+        "artifact_path": "results/run-b.json",
+        "executed_this_round": false,
+        "execution_verified": false,
+        "limitations": "缺命令、版本哈希、原数据、标签、逐条预测、冻结和stdout/stderr；当前代码硬编码且与字段冲突。",
+        "measurement_verified": false,
+        "provenance_review_path": "reviews/2026-10-20/legacy-provenance-review.json",
+        "reported_accuracy": 0.625,
+        "reported_n": 8,
+        "seed": 13,
+        "self_reported_status": "succeeded",
+        "shared_dependencies": "同code/router.py路径、同same-eight-synthetic-items；resources说明同代码同材料。",
+        "synthetic": true,
+        "validation": "原字段值和字节哈希已核查；不适用原生validate-record；没有补造完整运行记录。"
+      },
+      "domains": [
+        "routing",
+        "evaluation"
+      ],
+      "id": "exp-legacy-b",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "/metrics、/seed、/code、/dataset、/status",
+          "path": "results/run-b.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/resources.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "reviews/2026-10-20/legacy-provenance-review.json"
+        }
+      ],
+      "status": "legacy_record_unverified",
+      "title": "SYNTHETIC历史日志：seed 13",
+      "type": "experiment",
+      "updated_at": "2026-10-20T04:55:30.256071+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256089+00:00",
+      "data": {
+        "artifact_path": "plans/minimal-discriminating-study.md",
+        "blockers": [
+          "数据/标签缺失",
+          "评价器不可信",
+          "无研究执行授权",
+          "真实近邻未知"
+        ],
+        "depends_on": [
+          "hyp-targeted-clarification",
+          "hyp-label-ambiguity",
+          "problem-measurement"
+        ],
+        "executed": false,
+        "frozen": false,
+        "mode": "exploratory design after inspecting existing materials",
+        "research_runs_this_round": 0,
+        "status_reason": "已写最小比较和决策分支；未伪装成输入与命令齐备的冻结研究。",
+        "synthetic": true
+      },
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ],
+      "id": "exp-plan-clarification",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "plans/minimal-discriminating-study.md"
+        }
+      ],
+      "status": "draft_blocked",
+      "title": "SYNTHETIC一次澄清的配对诊断方案（未执行）",
+      "type": "experiment",
+      "updated_at": "2026-10-20T04:55:30.256090+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256108+00:00",
+      "data": {
+        "evidence_ids": [
+          "exp-legacy-a",
+          "exp-legacy-b"
+        ],
+        "limitations": "撤回句子不等于对澄清假设完成有效反证。",
+        "origin": "旧草稿拟写句，不是曾验证的科学结论",
+        "original_statement": "accuracy=0.97",
+        "review": {
+          "limitations": "同一审查者做本轮整理；未复现实验，所有项目材料为教学用合成fixture。",
+          "reviewed_at": "2026-10-20",
+          "reviewer": "cold_evidence_review",
+          "summary": "全文冷读原始八文件；旧草稿撤回越界表述，主问题保留。"
+        },
+        "status_reason": "两日志均为0.625；代码0.97是常量，不是测量。",
+        "wording_decision": "撤回当前写作使用，保留原草稿与历史"
+      },
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ],
+      "id": "claim-old-accuracy",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/draft-results.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "reviews/2026-10-20/values-draft-report.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "evaluate",
+          "path": "code/router.py"
+        }
+      ],
+      "status": "withdrawn",
+      "title": "旧拟写：accuracy=0.97",
+      "type": "claim",
+      "updated_at": "2026-10-20T04:55:30.256110+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256128+00:00",
+      "data": {
+        "evidence_ids": [
+          "exp-legacy-a",
+          "exp-legacy-b"
+        ],
+        "limitations": "撤回句子不等于对澄清假设完成有效反证。",
+        "origin": "旧草稿拟写句，不是曾验证的科学结论",
+        "original_statement": "独立验证",
+        "review": {
+          "limitations": "同一审查者做本轮整理；未复现实验，所有项目材料为教学用合成fixture。",
+          "reviewed_at": "2026-10-20",
+          "reviewer": "cold_evidence_review",
+          "summary": "全文冷读原始八文件；旧草稿撤回越界表述，主问题保留。"
+        },
+        "status_reason": "共享代码和材料，缺完整运行来源与新独立集。",
+        "wording_decision": "撤回当前写作使用，保留原草稿与历史"
+      },
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ],
+      "id": "claim-old-independent",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/draft-results.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/resources.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "reviews/2026-10-20/legacy-provenance-review.json"
+        }
+      ],
+      "status": "withdrawn",
+      "title": "旧拟写：两seed独立验证",
+      "type": "claim",
+      "updated_at": "2026-10-20T04:55:30.256129+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256146+00:00",
+      "data": {
+        "evidence_ids": [
+          "exp-legacy-a",
+          "exp-legacy-b"
+        ],
+        "limitations": "撤回句子不等于对澄清假设完成有效反证。",
+        "origin": "旧草稿拟写句，不是曾验证的科学结论",
+        "original_statement": "澄清机制的普遍有效性",
+        "review": {
+          "limitations": "同一审查者做本轮整理；未复现实验，所有项目材料为教学用合成fixture。",
+          "reviewed_at": "2026-10-20",
+          "reviewer": "cold_evidence_review",
+          "summary": "全文冷读原始八文件；旧草稿撤回越界表述，主问题保留。"
+        },
+        "status_reason": "没有澄清干预、有效比较或外部评测；不能反向推断普遍无效。",
+        "wording_decision": "撤回当前写作使用，保留原草稿与历史"
+      },
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ],
+      "id": "claim-old-universal",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/draft-results.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "code/router.py"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "D.逐句主张与引用语境",
+          "path": "reviews/2026-10-20/evidence-review.md"
+        }
+      ],
+      "status": "withdrawn",
+      "title": "旧拟写：澄清机制普遍有效",
+      "type": "claim",
+      "updated_at": "2026-10-20T04:55:30.256147+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256162+00:00",
+      "data": {
+        "evidence_ids": [
+          "paper-synthetic-abstract-a"
+        ],
+        "limitations": "撤回句子不等于对澄清假设完成有效反证。",
+        "origin": "旧草稿拟写句，不是曾验证的科学结论",
+        "original_statement": "引用abstract-a作为机制证明",
+        "review": {
+          "limitations": "同一审查者做本轮整理；未复现实验，所有项目材料为教学用合成fixture。",
+          "reviewed_at": "2026-10-20",
+          "reviewer": "cold_evidence_review",
+          "summary": "全文冷读原始八文件；旧草稿撤回越界表述，主问题保留。"
+        },
+        "status_reason": "虚构摘要不含机制/因果结论，没有真实出版身份。",
+        "wording_decision": "撤回当前写作使用，保留原草稿与历史"
+      },
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ],
+      "id": "claim-old-citation",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/draft-results.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "papers/abstract-a.md"
+        }
+      ],
+      "status": "withdrawn",
+      "title": "旧拟写：abstract-a作为机制证明",
+      "type": "claim",
+      "updated_at": "2026-10-20T04:55:30.256163+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256180+00:00",
+      "data": {
+        "evidence_ids": [],
+        "limitations": "撤回句子不等于对澄清假设完成有效反证。",
+        "origin": "旧草稿拟写句，不是曾验证的科学结论",
+        "original_statement": "首次提出",
+        "review": {
+          "limitations": "同一审查者做本轮整理；未复现实验，所有项目材料为教学用合成fixture。",
+          "reviewed_at": "2026-10-20",
+          "reviewer": "cold_evidence_review",
+          "summary": "全文冷读原始八文件；旧草稿撤回越界表述，主问题保留。"
+        },
+        "status_reason": "429不等于零命中；中文单查询空不穷尽；模型回忆未核验。",
+        "wording_decision": "撤回当前写作使用，保留原草稿与历史"
+      },
+      "domains": [
+        "routing",
+        "clarification",
+        "evaluation"
+      ],
+      "id": "claim-old-novelty",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/draft-results.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "/receipts/0..2",
+          "path": "searches/receipts.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "上轮想法",
+          "path": "docs/prior-map.md"
+        }
+      ],
+      "status": "withdrawn",
+      "title": "旧拟写：首次提出",
+      "type": "claim",
+      "updated_at": "2026-10-20T04:55:30.256182+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256199+00:00",
+      "data": {
+        "claim_type": "descriptive_artifact_observation",
+        "evidence_ids": [
+          "exp-legacy-a",
+          "exp-legacy-b"
+        ],
+        "exact_statement": "两份合成历史日志的accuracy字段均为0.625，n字段均为8，seed分别为7、13。",
+        "limitations": "只支持文件内容描述；未验证真实性、计量、独立样本或方法有效性。",
+        "reasoning": "读取两个JSON并用零容差、SHA-256绑定的数值账本核查。",
+        "review": {
+          "limitations": "同一审查者做本轮整理；未复现实验，所有项目材料为教学用合成fixture。",
+          "reviewed_at": "2026-10-20",
+          "reviewer": "cold_evidence_review",
+          "summary": "全文冷读原始八文件；旧草稿撤回越界表述，主问题保留。"
+        },
+        "status_reason": "保留可以如实写出的有限观察。"
+      },
+      "domains": [
+        "routing",
+        "evaluation"
+      ],
+      "id": "claim-log-observation",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "/metrics、/seed",
+          "path": "results/run-a.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "/metrics、/seed",
+          "path": "results/run-b.json"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "reviews/2026-10-20/values-observed-report.json"
+        }
+      ],
+      "status": "supported",
+      "title": "材料观察：两日志字段均为accuracy 0.625、n 8",
+      "type": "claim",
+      "updated_at": "2026-10-20T04:55:30.256200+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256248+00:00",
+      "data": {
+        "claim_type": "descriptive_artifact_observation",
+        "evidence_ids": [
+          "paper-synthetic-abstract-a"
+        ],
+        "exact_statement": "本地abstract-a仅描述选定案例先问一次再路由，未报告等提问预算比较、机制或因果结论，且明确为虚构。",
+        "limitations": "不能由摘录未报告推断真实领域无人研究；不是已核验真实论文。",
+        "reasoning": "全文阅读唯一可用摘要记录；范围限于该文本。",
+        "review": {
+          "limitations": "同一审查者做本轮整理；未复现实验，所有项目材料为教学用合成fixture。",
+          "reviewed_at": "2026-10-20",
+          "reviewer": "cold_evidence_review",
+          "summary": "全文冷读原始八文件；旧草稿撤回越界表述，主问题保留。"
+        },
+        "status_reason": "支持摘录范围描述，不支持机制实证。"
+      },
+      "domains": [
+        "clarification",
+        "routing"
+      ],
+      "id": "claim-abstract-scope",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "papers/abstract-a.md"
+        }
+      ],
+      "status": "supported",
+      "title": "材料观察：虚构摘要没有等预算或机制结论",
+      "type": "claim",
+      "updated_at": "2026-10-20T04:55:30.256249+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256263+00:00",
+      "data": {
+        "action": "读取、静态分析、原件保存、图谱与结果账本整理和校验",
+        "authorization": "仅本地阅读、分析、整理和校验；不联网、不安装、不执行研究负载、不付费、不发布。",
+        "status_reason": "按用户明确边界完成可完成工作。",
+        "unresolved": [
+          "真实查新",
+          "有效数据和标签",
+          "实验产生链",
+          "研究执行"
+        ]
+      },
+      "domains": [
+        "evaluation"
+      ],
+      "id": "decision-current-scope",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "reviews/2026-10-20/evidence-review.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "当前可行性",
+          "path": "plans/minimal-discriminating-study.md"
+        }
+      ],
+      "status": "completed_with_gaps",
+      "title": "本轮只做离线审查与交接，研究负载为零",
+      "type": "decision",
+      "updated_at": "2026-10-20T04:55:30.256264+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256278+00:00",
+      "data": {
+        "depends_on": [
+          "problem-measurement",
+          "problem-labels",
+          "hyp-targeted-clarification"
+        ],
+        "next": "完成方案P0，再执行后续获授权的P1。",
+        "reason": "更多seed不能解决硬编码指标和缺失真值；计量有效性最先改变判断。",
+        "status_reason": "保留研究问题，先解决可见证据缺口。"
+      },
+      "domains": [
+        "evaluation",
+        "intent",
+        "clarification"
+      ],
+      "id": "decision-prioritize-measurement",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "四、候选取舍",
+          "path": "reviews/2026-10-20/evidence-review.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "plans/minimal-discriminating-study.md"
+        }
+      ],
+      "status": "continue_after_prerequisites",
+      "title": "先完成标签与真实计量，再判断澄清候选",
+      "type": "decision",
+      "updated_at": "2026-10-20T04:55:30.256279+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256292+00:00",
+      "data": {
+        "depends_on": [
+          "hyp-keywords-only"
+        ],
+        "reason": "本轮未完成标签定义和错误分类，旧重启条件未满足。",
+        "status_reason": "保留旧进度；未静默重启。"
+      },
+      "domains": [
+        "routing"
+      ],
+      "id": "decision-retain-keyword-park",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "旧决定",
+          "path": "docs/prior-map.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "四、候选取舍",
+          "path": "reviews/2026-10-20/evidence-review.md"
+        }
+      ],
+      "status": "park",
+      "title": "沿用关键词路线的旧暂停与重启条件",
+      "type": "decision",
+      "updated_at": "2026-10-20T04:55:30.256293+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256308+00:00",
+      "data": {
+        "historical_observation": "旧图记录模型评分9.2，并有模板称空结果可标最高新颖等级。",
+        "reason": "评分无校准；空结果/访问失败不证明首创；外部模板不是授权或研究判据。",
+        "status_reason": "保留被纠正的历史推断，不删除原文件、不采纳无依据结论。"
+      },
+      "domains": [
+        "evaluation",
+        "routing"
+      ],
+      "id": "decision-reject-score-shortcut",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "上轮想法",
+          "path": "docs/prior-map.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "searches/receipts.json"
+        }
+      ],
+      "status": "reject_inference_preserve_history",
+      "title": "保留9.2与零命中旧记录，拒绝当科学依据",
+      "type": "decision",
+      "updated_at": "2026-10-20T04:55:30.256309+00:00"
+    },
+    {
+      "created_at": "2026-10-20T04:55:30.256324+00:00",
+      "data": {
+        "current_draft": "docs/results-reviewed.md",
+        "depends_on": [
+          "claim-old-accuracy",
+          "claim-old-independent",
+          "claim-old-universal",
+          "claim-old-citation",
+          "claim-old-novelty",
+          "claim-log-observation",
+          "claim-abstract-scope"
+        ],
+        "old_draft": "docs/draft-results.md",
+        "reason": "撤回0.97、独立性、普遍机制、摘要证明和首创；保留日志观察与候选。",
+        "status_reason": "原件与论点历史保留，当前写作指向修订版。"
+      },
+      "domains": [
+        "evaluation",
+        "routing",
+        "clarification"
+      ],
+      "id": "decision-withdraw-draft",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/draft-results.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "全文",
+          "path": "docs/results-reviewed.md"
+        },
+        {
+          "access": "local",
+          "accessed_at": "2026-10-20",
+          "locator": "D.逐句主张与引用语境",
+          "path": "reviews/2026-10-20/evidence-review.md"
+        }
+      ],
+      "status": "supersede_wording",
+      "title": "撤回越界草稿，改用可追溯的有限观察",
+      "type": "decision",
+      "updated_at": "2026-10-20T04:55:30.256325+00:00"
+    }
+  ],
+  "project": {
+    "created_at": "2026-10-20T04:44:49.705723+00:00",
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "scope": "SYNTHETIC教学材料的离线证据审计：歧义请求的一次澄清、二路由、标签与评测；仅本地8个原始文件，截至2026-10-20。未联网、安装、运行研究负载、调用付费资源或发布。真实文献查新与独立实验均未完成。",
+    "synthetic": true,
+    "title": "歧义请求的一次澄清路由：离线合成证据审计",
+    "updated_at": "2026-10-20T04:56:59.233282+00:00"
+  },
+  "revision": 5,
+  "schema_version": 1
+}

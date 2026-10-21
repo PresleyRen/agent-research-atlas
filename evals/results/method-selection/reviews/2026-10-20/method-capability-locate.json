@@ -1,0 +1,987 @@
+{
+  "matches": [
+    {
+      "conflicts": [
+        "CF04",
+        "CF15"
+      ],
+      "depends_on": [
+        "C07"
+      ],
+      "description": "9模块：直觉、风险、目标、固定/浮动条件、决策树、逆境、反演、综合和编排。",
+      "id": "C08",
+      "implementation": [
+        {
+          "path": "references/methodology.md"
+        }
+      ],
+      "keywords": [
+        "选题",
+        "decision tree",
+        "重要性",
+        "risk"
+      ],
+      "limits": "没有通用发表分数；固定预算/数据权限不会因框架建议自动放松。",
+      "match_terms": 1,
+      "mode": "host protocol",
+      "name": "问题选择与决策树 / Problem choice",
+      "remedy": "明确知识目标与实用目标，记录不变约束和可调整项，用有信息量的早期分支检查。",
+      "sources": [
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C08",
+                "C09"
+              ],
+              "complements": [
+                "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+              ],
+              "gap": "数量阈值与简单轴计数不具通用科学充分性。",
+              "id": "SRC-RESEARCHSTUDIO-SCOOP-CHECK-F05",
+              "label": "固定候选数量和轴计数决定全局novelty",
+              "remedy": "以最危险近邻、证据成熟度和实际预算决定深读范围。",
+              "status": "rejected"
+            }
+          ],
+          "id": "SRC-RESEARCHSTUDIO-SCOOP-CHECK",
+          "name": "ResearchStudio scoop-check"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C08",
+                "C11",
+                "C19"
+              ],
+              "complements": [
+                "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+              ],
+              "gap": "评分和固定资源不能替代独立证据与用户预算。",
+              "id": "SRC-ARIS-IDEA-CREATOR-F04",
+              "label": "模型族评分、固定GPU和pilot默认作为门槛",
+              "remedy": "公开理由和分歧；按实际可行性与信息增益选择。",
+              "status": "rejected"
+            }
+          ],
+          "id": "SRC-ARIS-IDEA-CREATOR",
+          "name": "ARIS idea-creator"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C08",
+                "C09",
+                "C20"
+              ],
+              "complements": [
+                "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+              ],
+              "gap": "项目仍可能因价值或资源不足而停止。",
+              "id": "SRC-ARIS-NOVELTY-CHECK-F03",
+              "label": "竞争/并发工作用于精炼贡献",
+              "remedy": "记录范围内的贡献差异及继续/修改/停止理由。",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-ARIS-NOVELTY-CHECK",
+          "name": "ARIS novelty-check"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C08",
+                "C11"
+              ],
+              "complements": [
+                "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+              ],
+              "gap": "未移植weighted matrix脚本，评分不能估计科学真值。",
+              "id": "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING-F03",
+              "label": "预先定义准则、权重、范围、异议与敏感性",
+              "remedy": "用透明理由和不确定性辅助选择，不自动选winner。",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING",
+          "name": "K-Dense scientific-brainstorming"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C07",
+                "C08"
+              ],
+              "complements": [
+                "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+              ],
+              "gap": "有技术不等于有重要问题。",
+              "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F01",
+              "label": "问题优先与能力优先",
+              "remedy": "核实真实瓶颈与新增能力。",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C07",
+                "C08"
+              ],
+              "complements": [
+                "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH"
+              ],
+              "gap": "冲突可能是设定造成，不能凭直觉认定基本限制。",
+              "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F03",
+              "label": "目标取舍与矛盾寻找",
+              "remedy": "找两侧证据和可判别解释。",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C07",
+                "C08"
+              ],
+              "complements": [
+                "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING"
+              ],
+              "gap": "角色模拟不是实际参与者证据。",
+              "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F08",
+              "label": "利益相关者轮换",
+              "remedy": "记录视角来源与缺失群体。",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C08",
+                "C11",
+                "C13"
+              ],
+              "complements": [
+                "SRC-KDENSE-STATISTICAL-POWER"
+              ],
+              "gap": "固定数目与工期不适合所有任务。",
+              "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F11",
+              "label": "固定10–20想法、3实验或两周pilot作为通则",
+              "remedy": "按信息价值、成本和用户范围定停止条件。",
+              "status": "rejected"
+            }
+          ],
+          "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS",
+          "name": "Orchestra brainstorming-research-ideas"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C08",
+                "C11"
+              ],
+              "complements": [
+                "SRC-RESEARCHSTUDIO-PAPER-SEARCH"
+              ],
+              "gap": "时效例子与成本断言需重查。",
+              "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH-F07",
+              "label": "近期可行边界与新使能条件",
+              "remedy": "核实可用性和竞争工作再推进。",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH",
+          "name": "Orchestra creative-thinking-for-research"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C07",
+                "C08"
+              ],
+              "complements": [
+                "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS"
+              ],
+              "gap": "生物学案例并非Agent领域的实证发现。",
+              "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F01",
+              "label": "直觉启发：系统化/技术限制/缺失能力/动态/新坐标/平台/缺席现象",
+              "remedy": "将启发转成有来源的问题和新的判别预测。",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C08",
+                "C11",
+                "C13"
+              ],
+              "complements": [
+                "SRC-ARIS-EXPERIMENT-PLAN"
+              ],
+              "gap": "主观风险分档不是校准成功概率。",
+              "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F02",
+              "label": "科学与技术假设、依赖及最早风险检查",
+              "remedy": "记录证据、得到答案的时间与go/pivot/stop条件。",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C08"
+              ],
+              "complements": [
+                "SRC-KDENSE-SCIENTIFIC-BRAINSTORMING"
+              ],
+              "gap": "高分或影响自述不认证科学或发表价值。",
+              "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F03",
+              "label": "按知识/工具/应用选择价值函数",
+              "remedy": "分开学习深度、适用性、新能力和实际收益。",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C08",
+                "C20"
+              ],
+              "complements": [
+                "SRC-ARIS-RESEARCH-WIKI"
+              ],
+              "gap": "日/周/月节奏不是已部署自动任务。",
+              "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F05",
+              "label": "实施与战略层切换的决策树",
+              "remedy": "按重大证据与任务约定更新观察到动作的分支。",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C08",
+                "C20"
+              ],
+              "complements": [
+                "SRC-ARIS-RESULT-TO-CLAIM"
+              ],
+              "gap": "不能承诺所有失败都变成有价值发表。",
+              "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F06",
+              "label": "逆境预案：修复、升级、替代或停止",
+              "remedy": "保存负结果、可学内容与停止条件。",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION",
+          "name": "Anthropic scientific-problem-selection"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C08",
+                "C11",
+                "C12"
+              ],
+              "complements": [
+                "SRC-RE-IDEA",
+                "SRC-AUTORESEARCH"
+              ],
+              "gap": "README 自身说明广泛探索不总比强模板好",
+              "id": "SRC-AI-SCIENTIST-V2-F02",
+              "label": "开阔探索与强脚手架之间的取舍",
+              "remedy": "根据已有代码/资源选入口，以具体诊断结果决定保留，不宣布工具普遍胜者",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-AI-SCIENTIST-V2",
+          "name": "SakanaAI AI-Scientist-v2"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C07",
+                "C08",
+                "C19",
+                "C20"
+              ],
+              "complements": [
+                "SRC-RE-IDEATION",
+                "SRC-IDEASCIENTIST"
+              ],
+              "gap": "Atlas 没有 Google 受限服务接入或复制 Elo系统",
+              "id": "SRC-GOOGLE-COSCIENTIST-F01",
+              "label": "生成、反思、Elo排名、演进、近邻与元评审分工",
+              "remedy": "保留角色目的和证据交接；排名只是相对选择信号，不是科学真值",
+              "status": "reference"
+            }
+          ],
+          "id": "SRC-GOOGLE-COSCIENTIST",
+          "name": "Google Co-Scientist / AlphaEvolve entry"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C08",
+                "C09",
+                "C10"
+              ],
+              "complements": [
+                "SRC-RE-NOVELTY",
+                "SRC-RE-DIRECTION"
+              ],
+              "gap": "提案评分/novel true 不能作为真值或可发表概率",
+              "id": "SRC-RE-IDEA-F02",
+              "label": "候选细化、真实资源内约束和先验重叠检查",
+              "remedy": "记录证据、取舍和最相近差异，保留失败/不确定决策",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C08",
+                "C09"
+              ],
+              "complements": [
+                "SRC-S2"
+              ],
+              "gap": "未校准打分无法证明可行或新颖",
+              "id": "SRC-RE-IDEA-F03",
+              "label": "固定数值 interestingness/feasibility/novelty 当认证",
+              "remedy": "用户优先级可排序，但推进门槛采用实际证据与资源条件",
+              "status": "rejected"
+            }
+          ],
+          "id": "SRC-RE-IDEA",
+          "name": "RE idea-generation"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C01",
+                "C08",
+                "C19"
+              ],
+              "complements": [
+                "SRC-ORCHESTRA-LOOP"
+              ],
+              "gap": "单上下文角色模拟不是独立评审",
+              "id": "SRC-RE-IDEATION-F02",
+              "label": "按深度的探索/收敛检查与角色模拟回退",
+              "remedy": "减少已知明确任务的访谈；有预算停止，披露 serial self-review",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C08",
+                "C15"
+              ],
+              "complements": [
+                "SRC-AUTORESEARCH"
+              ],
+              "gap": "无上限探索不符合可控科研；有趣数量不是证据",
+              "id": "SRC-RE-IDEATION-F03",
+              "label": "exhaustive 无固定上限、机械计数判有趣",
+              "remedy": "采用明确探索预算和证据改变判断的停止条件",
+              "status": "rejected"
+            }
+          ],
+          "id": "SRC-RE-IDEATION",
+          "name": "RE ideation"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C07",
+                "C08",
+                "C10"
+              ],
+              "complements": [
+                "SRC-RE-CREATIVE",
+                "SRC-RE-IDEA"
+              ],
+              "gap": "上游框架不是研究效果保证",
+              "id": "SRC-RE-BRAINSTORM-F01",
+              "label": "十种选题视角：问题/解法起点、抽象、张力、迁移、条件变化、失败边界、简单基线、利益相关方、组合分解、简明表述",
+              "remedy": "按瓶颈选择少量视角，产出机制和可检验差异",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C08",
+                "C11",
+                "C20"
+              ],
+              "complements": [
+                "SRC-RE-DIRECTION",
+                "SRC-RE-NOVELTY"
+              ],
+              "gap": "固定候选数量与两周pilot未必适合当前资源",
+              "id": "SRC-RE-BRAINSTORM-F02",
+              "label": "发散→筛选→细化和候选/淘汰原因保留",
+              "remedy": "取舍写证据和理由；预算未知先诊断，不机械凑数",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-RE-BRAINSTORM",
+          "name": "RE snapshot: brainstorming-research-ideas"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C07",
+                "C08",
+                "C10"
+              ],
+              "complements": [
+                "SRC-RE-BRAINSTORM",
+                "SRC-IDEASCIENTIST"
+              ],
+              "gap": "方法是启发而非已验证的科研产出算法",
+              "id": "SRC-RE-CREATIVE-F01",
+              "label": "八种思考操作：跨概念组合、重述问题、结构类比、约束变化、反向、抽象层次、当前可行边界、矛盾综合",
+              "remedy": "保留结构映射、前提和区分性预测，随后查最相近工作",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-RE-CREATIVE",
+          "name": "RE snapshot: creative-thinking-for-research"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C01",
+                "C07",
+                "C08"
+              ],
+              "complements": [
+                "SRC-RE-BRAINSTORM",
+                "SRC-RE-IDEATION"
+              ],
+              "gap": "明确任务不需要重复访谈；本次未验证对话产出优于其他技能",
+              "id": "SRC-RE-SCIENTIFIC-BRAINSTORM-F01",
+              "label": "对话式探索：上下文、发散、连接、建设性评估和下一步",
+              "remedy": "按用户已给信息直接推进，开放问题才补最小澄清",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-RE-SCIENTIFIC-BRAINSTORM",
+          "name": "RE snapshot: scientific-brainstorming"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C06",
+                "C08",
+                "C10",
+                "C23"
+              ],
+              "complements": [
+                "SRC-RE-DIRECTION",
+                "SRC-RE-IDEA"
+              ],
+              "gap": "单列缺点不能说明如何继续",
+              "id": "SRC-RE-CRITICAL-F02",
+              "label": "批判转问题：最强替代解释、缺失实验、隐藏假设和更明确的方向",
+              "remedy": "每个重大问题写影响、剩余不确定性和最小修补/检验",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-RE-CRITICAL",
+          "name": "RE snapshot: scientific-critical-thinking"
+        }
+      ],
+      "symptoms": [
+        "选题",
+        "decision tree",
+        "重要性",
+        "risk"
+      ],
+      "tests": [
+        {
+          "kind": "not_run",
+          "path": "docs/forward-conflicts.md"
+        }
+      ]
+    },
+    {
+      "conflicts": [
+        "CF15"
+      ],
+      "depends_on": [
+        "C10"
+      ],
+      "description": "理论/反例/误差/因果/比较/测量等按问题选择；problem anchor与method→code→metric映射。",
+      "id": "C12",
+      "implementation": [
+        {
+          "path": "references/methodology.md"
+        }
+      ],
+      "keywords": [
+        "方法论",
+        "method",
+        "实现",
+        "GT",
+        "loss"
+      ],
+      "limits": "不声称精通所有学科方法；未执行的方法只有协议支持。",
+      "match_terms": 1,
+      "mode": "host protocol",
+      "name": "方法选择与实现忠实度 / Method routing",
+      "remedy": "补实际输入输出/表示/训练推理/评价调用；专业统计/形式化工具作为显式适配。",
+      "sources": [
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C01",
+                "C12"
+              ],
+              "complements": [
+                "SRC-ARIS-RESEARCH-REFINE"
+              ],
+              "gap": "需要宿主逐次检查锚点和技术定义，字段存在不保证忠实。",
+              "id": "SRC-RESEARCHSTUDIO-IDEA-SPARK-F02",
+              "label": "保留原始用户意图，区分普通参数选择与未定义核心操作",
+              "remedy": "修订时核对problem anchor及输入输出、核心操作。",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C12",
+                "C13",
+                "C16"
+              ],
+              "complements": [
+                "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS",
+                "SRC-ARIS-EXPERIMENT-AUDIT"
+              ],
+              "gap": "没有通用公式执行、移除测试或成本计算器。",
+              "id": "SRC-RESEARCHSTUDIO-IDEA-SPARK-F03",
+              "label": "朴素基线、组件生产消费链与可计算缺陷核对",
+              "remedy": "仅对已检查的本地实现做授权的具体计算与负对照。",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C12",
+                "C21",
+                "C24"
+              ],
+              "complements": [
+                "SRC-ARIS-RESEARCH-REFINE"
+              ],
+              "gap": "不提供IdeaSpark中英卡片、LaTeX/PDF构建及逐阶段修复器。",
+              "id": "SRC-RESEARCHSTUDIO-IDEA-SPARK-F05",
+              "label": "idea/experiment审查深度与解释改写的来源忠实性",
+              "remedy": "交付深度据任务确定；改写不得增添机制、保证或已运行含义。",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-RESEARCHSTUDIO-IDEA-SPARK",
+          "name": "ResearchStudio idea-spark"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C01",
+                "C12",
+                "C19"
+              ],
+              "complements": [
+                "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+              ],
+              "gap": "锚点语义漂移尚无自动检测器。",
+              "id": "SRC-ARIS-RESEARCH-REFINE-F01",
+              "label": "problem anchor与每轮scope/简洁性检查",
+              "remedy": "对照瓶颈、非目标、资源和成功条件逐次说明变化。",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C10",
+                "C12",
+                "C13"
+              ],
+              "complements": [
+                "SRC-RESEARCHSTUDIO-IDEA-SPARK",
+                "SRC-ARIS-EXPERIMENT-BRIDGE"
+              ],
+              "gap": "详细字段仍需与代码真实核对。",
+              "id": "SRC-ARIS-RESEARCH-REFINE-F02",
+              "label": "可实现方法卡：接口/表示/学习信号/训练/推理",
+              "remedy": "在methodology 6填写，未训练或不适用则解释。",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C12",
+                "C13"
+              ],
+              "complements": [
+                "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS"
+              ],
+              "gap": "使用新组件不自动带来贡献。",
+              "id": "SRC-ARIS-RESEARCH-REFINE-F03",
+              "label": "最小路线与有必要的现代替代对照",
+              "remedy": "说明每个部件新增能力和最简单反例/基线。",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-ARIS-RESEARCH-REFINE",
+          "name": "ARIS research-refine"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C12",
+                "C16",
+                "C24"
+              ],
+              "complements": [
+                "SRC-ARIS-EXPERIMENT-AUDIT"
+              ],
+              "gap": "runner不验证算法或标签来源是否正确。",
+              "id": "SRC-ARIS-EXPERIMENT-BRIDGE-F01",
+              "label": "方法→计划→代码→metric/GT忠实度检查",
+              "remedy": "先完成methodology 9/11逐位置检查，再实质执行。",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-ARIS-EXPERIMENT-BRIDGE",
+          "name": "ARIS experiment-bridge"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C12",
+                "C13",
+                "C17"
+              ],
+              "complements": [
+                "SRC-KDENSE-EXPERIMENTAL-DESIGN",
+                "SRC-KDENSE-STATISTICAL-POWER"
+              ],
+              "gap": "无通用因果推断或统计分析引擎。",
+              "id": "SRC-KDENSE-HYPOTHESIS-GENERATION-F04",
+              "label": "设计匹配estimand、依赖、多重性和未知效应",
+              "remedy": "必要时转实际领域/统计工具并保留识别假设。",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-KDENSE-HYPOTHESIS-GENERATION",
+          "name": "K-Dense hypothesis-generation"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C06",
+                "C12"
+              ],
+              "complements": [
+                "SRC-KDENSE-LITERATURE-REVIEW"
+              ],
+              "gap": "没有领域通用证据等级器；医学层级不直接适用全部CS研究。",
+              "id": "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING-F03",
+              "label": "GRADE/RoB等按目标结果与工具版本适用",
+              "remedy": "先判断框架适用性，再评具体结果或证据集合。",
+              "status": "optional"
+            }
+          ],
+          "id": "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING",
+          "name": "K-Dense scientific-critical-thinking"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C12",
+                "C13"
+              ],
+              "complements": [
+                "SRC-KDENSE-STATISTICAL-POWER"
+              ],
+              "gap": "需要处理携带效应、别名、结构依赖和适用假设。",
+              "id": "SRC-KDENSE-EXPERIMENTAL-DESIGN-F02",
+              "label": "比较/交叉/聚类/因子/响应面/序贯按问题选择",
+              "remedy": "在methodology 9选设计并用对应分析。",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-KDENSE-EXPERIMENTAL-DESIGN",
+          "name": "K-Dense experimental-design"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C12",
+                "C17"
+              ],
+              "complements": [
+                "SRC-KDENSE-EXPERIMENTAL-DESIGN"
+              ],
+              "gap": "上游常用power helper主要是优效检验，不覆盖所有目标。",
+              "id": "SRC-KDENSE-STATISTICAL-POWER-F01",
+              "label": "检出、固定n的MDE、精度、等效/非劣和序贯分开",
+              "remedy": "按methodology 9选目标；缺专用方法时明确转工具/专家。",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-KDENSE-STATISTICAL-POWER",
+          "name": "K-Dense statistical-power"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C12",
+                "C13"
+              ],
+              "complements": [
+                "SRC-RESEARCHSTUDIO-IDEA-SPARK"
+              ],
+              "gap": "更少组件本身不证明更深贡献。",
+              "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F07",
+              "label": "简洁性与公平最小基线",
+              "remedy": "匹配信息、计算和调参机会。",
+              "status": "protocol"
+            },
+            {
+              "capabilities": [
+                "C07",
+                "C12"
+              ],
+              "complements": [
+                "SRC-RESEARCHSTUDIO-IDEA-SPARK"
+              ],
+              "gap": "拼接不自动产生新贡献。",
+              "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F09",
+              "label": "组件组合和分解",
+              "remedy": "说明生产/消费关系及移除变化。",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS",
+          "name": "Orchestra brainstorming-research-ideas"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C07",
+                "C12"
+              ],
+              "complements": [
+                "SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS"
+              ],
+              "gap": "综合可能隐藏未解决取舍。",
+              "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH-F08",
+              "label": "对立观点并置与新设定综合",
+              "remedy": "测试两目标能否同时改善及代价。",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH",
+          "name": "Orchestra creative-thinking-for-research"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C03",
+                "C12"
+              ],
+              "complements": [
+                "SRC-HF-DATASETS"
+              ],
+              "gap": "不是当前 Agent 研究的默认数据源或评估框架",
+              "id": "SRC-ELICIT-F05",
+              "label": "临床试验检索及生医专用筛选",
+              "remedy": "涉及医疗 Agent 时按具体问题扩展；不把 RCT/PICO 模板套到所有计算实验",
+              "status": "deferred"
+            }
+          ],
+          "id": "SRC-ELICIT",
+          "name": "Elicit REST v2 and MCP"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C12",
+                "C21",
+                "C22",
+                "C24"
+              ],
+              "complements": [
+                "SRC-HF-EVALS",
+                "SRC-HF-TRAINER"
+              ],
+              "gap": "未集成整个 Orchestra 工程技能集合或论文模板库",
+              "id": "SRC-ORCHESTRA-LOOP-F02",
+              "label": "按领域路由执行技能、研究叙事和进度图",
+              "remedy": "仅按任务定位需要的专门技能；每个外部能力单独注册/核实/测试",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-ORCHESTRA-LOOP",
+          "name": "Orchestra autoresearch"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C08",
+                "C11",
+                "C12"
+              ],
+              "complements": [
+                "SRC-RE-IDEA",
+                "SRC-AUTORESEARCH"
+              ],
+              "gap": "README 自身说明广泛探索不总比强模板好",
+              "id": "SRC-AI-SCIENTIST-V2-F02",
+              "label": "开阔探索与强脚手架之间的取舍",
+              "remedy": "根据已有代码/资源选入口，以具体诊断结果决定保留，不宣布工具普遍胜者",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-AI-SCIENTIST-V2",
+          "name": "SakanaAI AI-Scientist-v2"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C12",
+                "C15",
+                "C22"
+              ],
+              "complements": [
+                "SRC-HF-TRAINER",
+                "SRC-HF-EVALS"
+              ],
+              "gap": "本项目未复现；上游 README 标 CC BY-NC 4.0",
+              "id": "SRC-IDEASCIENTIST-F03",
+              "label": "逐角色 RL 奖励/训练/评估及专用索引",
+              "remedy": "需要时独立核对代码/数据许可、资源和评价设计，不直接打包或宣称性能",
+              "status": "deferred"
+            }
+          ],
+          "id": "SRC-IDEASCIENTIST",
+          "name": "IdeaScientist"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C07",
+                "C11",
+                "C12"
+              ],
+              "complements": [
+                "SRC-AI-RESEARCHER",
+                "SRC-AUTORESEARCH"
+              ],
+              "gap": "v1.0.0 未显式列双入口和脚手架缺口表；本次方法协议补齐",
+              "id": "SRC-RE-IDEA-F01",
+              "label": "topic-first 与 template-grounded 两入口、代码接缝/缺失基线/评估切片图",
+              "remedy": "已有项目先读代码、baseline与归档，再把干预点映射最小实验",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-RE-IDEA",
+          "name": "RE idea-generation"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C07",
+                "C10",
+                "C12"
+              ],
+              "complements": [
+                "SRC-RE-HYPOTHESIS",
+                "SRC-RE-CRITICAL"
+              ],
+              "gap": "未全文审计引用资源内 SCAMPER/TRIZ 等独立方法教程",
+              "id": "SRC-RE-SCIENTIFIC-BRAINSTORM-F02",
+              "label": "类比/反假设/尺度/约束/跨学科/新条件六类探索与后续路由",
+              "remedy": "适用时选一条机制路径，强观测转竞争假设、弱证据转批判审查",
+              "status": "protocol"
+            }
+          ],
+          "id": "SRC-RE-SCIENTIFIC-BRAINSTORM",
+          "name": "RE snapshot: scientific-brainstorming"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C12",
+                "C13",
+                "C15",
+                "C22"
+              ],
+              "complements": [
+                "SRC-HF-DATASETS",
+                "SRC-HF-TRACKIO"
+              ],
+              "gap": "没执行真实模型评估；名字不代表已发布community结果",
+              "id": "SRC-HF-EVALS-F01",
+              "label": "inspect-ai/lighteval、本地或provider执行、vLLM/HF/accelerate回退",
+              "remedy": "先任务适配+小样例，固定模型revision/提示/评估器，公平成本对齐",
+              "status": "optional"
+            }
+          ],
+          "id": "SRC-HF-EVALS",
+          "name": "Hugging Face community evals"
+        },
+        {
+          "features": [
+            {
+              "capabilities": [
+                "C11",
+                "C12",
+                "C15",
+                "C22"
+              ],
+              "complements": [
+                "SRC-HF-DATASETS",
+                "SRC-HF-EVALS"
+              ],
+              "gap": "没有训练/验证模型，也不保证其中方法适合任何Agent问题",
+              "id": "SRC-HF-TRAINER-F01",
+              "label": "TRL的SFT/DPO/GRPO/reward、数据格式验证、GGUF/模型保存",
+              "remedy": "按标注/偏好/反馈条件选方法，强基线和独立评估先确定",
+              "status": "optional"
+            }
+          ],
+          "id": "SRC-HF-TRAINER",
+          "name": "Hugging Face LLM trainer"
+        }
+      ],
+      "symptoms": [
+        "方法论",
+        "method",
+        "实现",
+        "GT",
+        "loss"
+      ],
+      "tests": [
+        {
+          "kind": "not_run",
+          "path": "docs/forward-conflicts.md"
+        }
+      ]
+    }
+  ],
+  "meaning": "Lexical maintenance lookup, not a research-quality ranking. Try a capability ID or a shorter symptom if empty.",
+  "query": "C08 C12"
+}

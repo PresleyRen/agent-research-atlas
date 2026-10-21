@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-21",
+  "scope": "Final skill packaging, registry references, current Markdown target existence, README capability text map and archived bytes; no new scientific experiment or native editor run. Historical view cache links are reported separately and preserved.",
+  "registry_counts": {
+    "sources": 77,
+    "features": 296,
+    "capabilities": 28,
+    "conflicts": 28
+  },
+  "supervisor_sources": 12,
+  "supervisor_features": 74,
+  "sources_md_has_all_source_ids": true,
+  "coverage_md_has_all_feature_ids": true,
+  "readmes": {
+    "README.md": {
+      "all_capability_ids_present": true,
+      "all_ids_in_text_diagram": true,
+      "balanced_fences": true
+    },
+    "README.en.md": {
+      "all_capability_ids_present": true,
+      "all_ids_in_text_diagram": true,
+      "balanced_fences": true
+    }
+  },
+  "current_relative_link_count": 649,
+  "current_broken_links": [],
+  "historical_cache_relative_link_count": 206,
+  "historical_cache_unresolved_from_cache_location": 183,
+  "historical_cache_policy": "Original bytes retained for revision evidence; current maps are the navigation entry points.",
+  "skill_line_count": 138,
+  "quick_validate": "Skill is valid! (official skill-creator script, exit 0)",
+  "registry_check": {
+    "exit_code": 0,
+    "result": {
+      "capabilities": 28,
+      "conflicts": 28,
+      "features": 296,
+      "meaning": "Registry IDs, files, symbols and dependencies checked; coverage labels are reviewed declarations, not effectiveness scores.",
+      "sources": 77,
+      "test_references_checked": true,
+      "valid": true
+    }
+  },
+  "skill_file_versions": [
+    {
+      "path": "skills/agent-research-atlas/LICENSE.supervisor.md",
+      "sha256": "6e5649690dd6ee6d97258b6277c7d05368e0cc5b36b43cd8800f81f5f24b9b0f"
+    },
+    {
+      "path": "skills/agent-research-atlas/SKILL.md",
+      "sha256": "6ba73a8d4e0d0e62e214895a8e44010048da85f737c7ce1573fd66e73f3de79b"
+    },
+    {
+      "path": "skills/agent-research-atlas/agents/openai.yaml",
+      "sha256": "4191b983d0b3bd3ab231cc5581a5ec008cc8334c8d3ce70635f291ee14bd30b6"
+    },
+    {
+      "path": "skills/agent-research-atlas/assets/agent-taxonomy.json",
+      "sha256": "22827ff1c41ba4e0687da33120f9e2be074e894a506b0c4ddd1579addabb2724"
+    },
+    {
+      "path": "skills/agent-research-atlas/assets/capability-registry.json",
+      "sha256": "5e39e08fd93d88efc2d99164061995ec91a31c5457bc597c4f8b88d16a428c4d"
+    },
+    {
+      "path": "skills/agent-research-atlas/assets/experiment-plan.example.json",
+      "sha256": "44bf0a8dbc0a6ebed58a777d7923de47479005887111ca111762e39a2571c3b7"
+    },
+    {
+      "path": "skills/agent-research-atlas/assets/supervisor/benchmark-dossier.md",
+      "sha256": "85735d9a21e0f9421fb9e6a1ac07a8ec4632a55d5f347e92984a0ab2a504d3ed"
+    },
+    {
+      "path": "skills/agent-research-atlas/assets/supervisor/figure-brief.md",
+      "sha256": "64dc0965d9a28a634a76926ac3ec0a9bc28c269e8b87bd082773483ce3e346c6"
+    },
+    {
+      "path": "skills/agent-research-atlas/assets/supervisor/manuscript-evidence.md",
+      "sha256": "f95f82ed3622fe14664899a5aff2e275fb9de20c92b11a55b8f19e4b4f489db3"
+    },
+    {
+      "path": "skills/agent-research-atlas/assets/supervisor/research-brief.md",
+      "sha256": "b8cc4885e77736b3fcdca3ac004c1dcc2f1f86c879ac73dc71bcecac890fd731"
+    },
+    {
+      "path": "skills/agent-research-atlas/assets/supervisor/review-response.md",
+      "sha256": "9bf97942e87e73addbab91c89204cc6e3970e713c3c8c12da4ff50e43bcfb645"
+    },
+    {
+      "path": "skills/agent-research-atlas/assets/viewer.html",
+      "sha256": "4c2d050457fbe42cea8496f10c95b8c8dcd2452e73d14c8e12a4138361fc8b19"
+    },
+    {
+      "path": "skills/agent-research-atlas/references/agent-domains.md",
+      "sha256": "759a8ae66e9f9266a6faf5556cd3c994a21e0415951c9dbf175a49a1ee554a3a"
+    },
+    {
+      "path": "skills/agent-research-atlas/references/bilingual-retrieval.md",
+      "sha256": "8b1e37bc89f583ee2224dfc6ed38e38d13fc84ef3782115b2f06c864558566f5"
+    },
+    {
+      "path": "skills/agent-research-atlas/references/evidence-and-claims.md",
+      "sha256": "5ce313f74b01be5d5da5706139348aaeefe7a1e886debaae059c8d9e35c36bce"
+    },
+    {
+      "path": "skills/agent-research-atlas/references/experiments.md",
+      "sha256": "9c23a9e35fcb64c44bc8100773aaba35d7049e6922e396307b42b262209de5b1"
+    },
+    {
+      "path": "skills/agent-research-atlas/references/extension-contract.md",
+      "sha256": "d1ead258bd82f839e361336326e313f65b24120fc3a29962a608d4bb3a4924e0"
+    },
+    {
+      "path": "skills/agent-research-atlas/references/local-atlas.md",
+      "sha256": "bff297c626f9c1e76ac82748831354a0535f7866739fab54c04cb9f17b17b1c6"
+    },
+    {
+      "path": "skills/agent-research-atlas/references/methodology.md",
+      "sha256": "36b4c917442187675671409e9e1c6d0ce7f7f6aefb0cbcd9773979fb9dac02e5"
+    },
+    {
+      "path": "skills/agent-research-atlas/references/supervisor-discovery.md",
+      "sha256": "aa216abcfb58442c6143ac7e0ca7d1187f58a230825d9a56f15bc2b06d098bf8"
+    },
+    {
+      "path": "skills/agent-research-atlas/references/supervisor-figures.md",
+      "sha256": "82b43ee026f1776c72ea65e49b2406efb1cc78e4bc9e5deec767a2d0084b3d15"
+    },
+    {
+      "path": "skills/agent-research-atlas/references/supervisor-publication.md",
+      "sha256": "49c4dbdcc495e5619c47cf6ac35cef7216cda6badfe7869d6b6cc81146db7fc2"
+    },
+    {
+      "path": "skills/agent-research-atlas/scripts/atlas.py",
+      "sha256": "bcf13a70cdff1f64dc10d2f054621d182fcd55bca04d9d128dc36d5973e9181b"
+    },
+    {
+      "path": "skills/agent-research-atlas/scripts/audit.py",
+      "sha256": "9ad10da5eb49186d9d7a5c0323f2af51b56d52ab1e88d0b766ddb1541e877c61"
+    },
+    {
+      "path": "skills/agent-research-atlas/scripts/experiments.py",
+      "sha256": "653555bf96a36b74419cf47167ce9c9c05d89db774a4ff3bc45175848aae4219"
+    }
+  ],
+  "supervisor_snapshot_files_verified": 254,
+  "original_input_content_files_verified": 19,
+  "original_input_manifests_verified": 4,
+  "frozen_snapshot_policy": "Deliverable bytes unchanged after SHA-256 verification; manifests exclude themselves, Python bytecode and regenerable font caches."
+}

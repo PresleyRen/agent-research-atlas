@@ -1,0 +1,2191 @@
+{
+  "schema_version": 1,
+  "review_id": "supervisor-part-c",
+  "review_date": "2026-10-21",
+  "reviewer": "/root/forward_experiment",
+  "review_type": "local pinned-text integration review; not a blind forward task, source-script test, manuscript generation or reconstruction benchmark",
+  "upstream": {
+    "repository": "HKUSTDial/Supervisor-Skills",
+    "commit": "a20d76ef3979b804d7dbf599d577826957e0a8a9",
+    "local_root": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e",
+    "local_manifest_sha256": "3fc6970461c829495daca5eebcf5e6375ffa55c0813e02ea2b722f0dff5f35f2",
+    "manifest_blob_checks": "Git blob SHA-1 of every listed read file matches its local manifest entry; this is not a fresh remote-authenticity check"
+  },
+  "atlas": {
+    "local_root": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas",
+    "registry_version": "1.1.0",
+    "registry_sha256": "3408b0e92d210afc52883dcbaf7a0a314661cade9232652b4e7f33869b45e3c4",
+    "registry_read_scope": "All 24 capability responsibility/dependency/limit fields; full C05 C06 C16 C18 C19 C20 C21 C22 C23 C24; all 65 source identities; all 20 conflict objects; full ARIS result-to-claim, research-refine, experiment-audit, paper-claim-audit, citation-audit entries.",
+    "concurrent_update_note": "Three supervisor reference workbenches appeared during this review and were subsequently read in full. Registry remained at 24 capabilities at the recorded hash. Proposals are not claims of registry implementation."
+  },
+  "constraints_observed": {
+    "network_used": false,
+    "installed_dependencies": false,
+    "paid_services": false,
+    "ran_upstream_scripts": false,
+    "changed_main_repository": false,
+    "generated_manuscript": false,
+    "reconstructed_images": false,
+    "permitted_local_operations": [
+      "read text",
+      "calculate byte hashes",
+      "parse local JSON",
+      "write part-c.md and part-c.json"
+    ]
+  },
+  "counts": {
+    "required_skill_files": 5,
+    "required_references": 24,
+    "required_handbook_files": 7,
+    "upstream_full_text": 39,
+    "atlas_full_text": 11,
+    "registry_capabilities": 24,
+    "registry_sources": 65,
+    "registry_conflicts": 20
+  },
+  "proposed_capabilities": [
+    {
+      "id": "C26",
+      "id_status": "provisional; root assigns final IDs",
+      "name": "Evidence-bounded drafting and meaning-preserving polish",
+      "mode": "host protocol",
+      "depends_on": [
+        "C05",
+        "C06",
+        "C18",
+        "C21"
+      ],
+      "maintenance_complements": [
+        "C20",
+        "C24"
+      ],
+      "implementation_candidates": [
+        "references/supervisor-publication.md"
+      ],
+      "limits": "No automatic proof of semantic equivalence or publication readiness. Fixed paragraph, contribution and citation quotas are not required.",
+      "test_state": "new protocol scenarios proposed, not executed in this review"
+    },
+    {
+      "id": "C28",
+      "id_status": "provisional; root assigns final IDs",
+      "name": "Figure design and editable-reconstruction adapter",
+      "mode": "design protocol + optional adapter",
+      "depends_on": [
+        "C12",
+        "C16",
+        "C18",
+        "C21",
+        "C22"
+      ],
+      "maintenance_complements": [
+        "C20",
+        "C24"
+      ],
+      "implementation_candidates": [
+        "references/supervisor-figures.md"
+      ],
+      "limits": "No bundled Draw.io runtime, renderer integration or validated fidelity benchmark. Native editing, mixed raster content, visual matching and scientific correctness remain separate.",
+      "test_state": "adapter and visual scenarios proposed, not executed"
+    }
+  ],
+  "skills": [
+    {
+      "id": "intro-drafter",
+      "license_declaration": "CC-BY-NC-SA-4.0 in frontmatter",
+      "distinctive_value": "Paper-type-dependent narrative weight and an explicit limitation–goal–challenge–module–contribution chain; real recurring example; natural prose by default, outline only when requested.",
+      "complements": [
+        "C09 nearest work",
+        "C10 hypothesis",
+        "C12 method card",
+        "C18 bounded claim",
+        "C21 manuscript mapping"
+      ],
+      "features": [
+        {
+          "id": "PC-INTRO-01",
+          "label": "Technique versus new problem positioning",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C26",
+            "C21"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/intro-drafter/SKILL.md",
+              "sections": [
+                "Core procedure / Step 1"
+              ]
+            },
+            {
+              "path": "skills/intro-drafter/references/paper-types.md",
+              "sections": [
+                "2. Technique Paper profile",
+                "3. New Problem/Setting Paper profile",
+                "6. Mixed cases"
+              ]
+            }
+          ],
+          "integration_decision": "Choose a primary contribution and adapt argument weight; preserve benchmark/theory/negative-result routes.",
+          "artifacts": [
+            "narrative-plan.md"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-INTRO-02",
+          "label": "Six logical questions and challenge/module/contribution trace",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C12",
+            "C21",
+            "C26"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/intro-drafter/references/flowchart.md",
+              "sections": [
+                "1. Chain of reasoning",
+                "2–8"
+              ]
+            },
+            {
+              "path": "skills/intro-drafter/references/contribution-patterns.md",
+              "sections": [
+                "1. Canonical structure",
+                "5. Section-number mapping",
+                "6. Pre-submission contribution audit"
+              ]
+            }
+          ],
+          "integration_decision": "Use flexible many-to-many traceability; paragraph count, contribution count and section-number formatting are not universal validity gates.",
+          "artifacts": [
+            "chapter-blueprint.md"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-INTRO-03",
+          "label": "Verified recurring example",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C05",
+            "C06",
+            "C26",
+            "C28"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/intro-drafter/SKILL.md",
+              "sections": [
+                "Step 3: the running example"
+              ]
+            },
+            {
+              "path": "skills/intro-drafter/references/running-example.md",
+              "sections": [
+                "3. Design principles",
+                "4. Two design patterns",
+                "6. Common failures"
+              ]
+            }
+          ],
+          "integration_decision": "Link real input/output records; no invented deployment, failure, mechanism or quantified impact. Upstream worked examples are not independently validated here.",
+          "artifacts": [
+            "example source ID",
+            "figure brief"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-INTRO-04",
+          "label": "Internal work plan separate from deliverable prose",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C26",
+            "C24"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/intro-drafter/SKILL.md",
+              "sections": [
+                "What the user receives",
+                "Outline mode"
+              ]
+            },
+            {
+              "path": "skills/intro-drafter/references/prose-delivery.md",
+              "sections": [
+                "What the user receives",
+                "What must never appear in the output"
+              ]
+            }
+          ],
+          "integration_decision": "Persist inspectable planning summaries separately; deliver natural manuscript prose without workflow tags. Work records retain gaps.",
+          "artifacts": [
+            "introduction.md",
+            "narrative-plan.md"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-INTRO-05",
+          "label": "Fixed six paragraphs, citation density and unsupported qualitative improvement fallback",
+          "proposed_adoption_status": "rejected",
+          "capabilities": [
+            "C26",
+            "C18"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/intro-drafter/SKILL.md",
+              "sections": [
+                "Step 5: write the prose"
+              ]
+            },
+            {
+              "path": "skills/intro-drafter/references/contribution-patterns.md",
+              "sections": [
+                "6. Pre-submission contribution audit"
+              ]
+            }
+          ],
+          "integration_decision": "Keep context-specific heuristics only; without observed comparison omit improves over prior baselines. Never invent structure or evidence to meet counts.",
+          "artifacts": [],
+          "execution_verified": false
+        }
+      ],
+      "conflict_ids": [
+        "PC-CF01",
+        "PC-CF02",
+        "PC-CF03",
+        "PC-CF04"
+      ]
+    },
+    {
+      "id": "paper-writer",
+      "license_declaration": "CC-BY-NC-SA-4.0 in frontmatter",
+      "distinctive_value": "Scope/evidence/blueprint/draft/review/delivery phases, explicit source limits, per-section contracts, and independent citation verification with honest fallback.",
+      "complements": [
+        "C05/C06 source and evidence model",
+        "C16 numeric ledger",
+        "C18 claim scope",
+        "C19 independent review",
+        "C21 citation occurrence audit"
+      ],
+      "features": [
+        {
+          "id": "PC-WRITE-01",
+          "label": "Evidence Map with cannot-support field and paragraph provenance gate",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C05",
+            "C06",
+            "C18",
+            "C26"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/paper-writer/references/evidence-discipline.md",
+              "sections": [
+                "1. Legitimate sources and the evidence hierarchy",
+                "2. The Evidence Map",
+                "3. Provenance thinking"
+              ]
+            }
+          ],
+          "integration_decision": "Project existing IDs into an evidence map. Full-text availability never permits arbitrary claims; every sentence needs the actual observation, locator, scope and inference.",
+          "artifacts": [
+            "evidence-map.md",
+            "claim-occurrences.json"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-WRITE-02",
+          "label": "Paradigm and section-specific blueprint",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C12",
+            "C21",
+            "C26"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/paper-writer/SKILL.md",
+              "sections": [
+                "Phase 1: Scope",
+                "Phase 3: Blueprint"
+              ]
+            },
+            {
+              "path": "skills/paper-writer/references/section-guidance.md",
+              "sections": [
+                "1–7"
+              ]
+            },
+            {
+              "path": "skills/paper-writer/references/section-conventions.md",
+              "sections": [
+                "Introduction",
+                "Methods",
+                "Results",
+                "Discussion"
+              ]
+            }
+          ],
+          "integration_decision": "Select structure by research method and venue. Keep observation and proposed mechanism distinguishable even when Results/Discussion are combined.",
+          "artifacts": [
+            "chapter-blueprint.md",
+            "manuscript.md"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-WRITE-03",
+          "label": "Independent citation verification ladder and error distinctions",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C19",
+            "C21",
+            "C22"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/paper-writer/references/verification-ladder.md",
+              "sections": [
+                "2. The capability ladder",
+                "3. When to trigger the independent pass",
+                "4. What the verifier does with each citation",
+                "5. Status grades and resolution routes",
+                "6. Honest boundary",
+                "7. Convergence rule"
+              ]
+            }
+          ],
+          "integration_decision": "Preserve VERIFIED/METADATA_MISMATCH/NOT_FOUND/OVERCLAIM/INCONCLUSIVE semantics. A fresh reviewer gets manuscript and sources, no desired verdict. Offline full text can still support actual local content; no false claim of live verification.",
+          "artifacts": [
+            "citation-review.md",
+            "citation-occurrences.json"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-WRITE-04",
+          "label": "Clean delivery with independent working artifacts",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C26",
+            "C24"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/paper-writer/references/prose-delivery.md",
+              "sections": [
+                "What the user receives",
+                "What must never appear in the output",
+                "Chunked delivery"
+              ]
+            },
+            {
+              "path": "skills/paper-writer/references/verification-checklist.md",
+              "sections": [
+                "2.7 Delivery format",
+                "On failure"
+              ]
+            }
+          ],
+          "integration_decision": "Keep ledgers and missing inputs outside clean manuscript; disclosure length follows material issues, not a universal three-line limit.",
+          "artifacts": [
+            "manuscript.md",
+            "release-notes.md"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-WRITE-05",
+          "label": "Citation/bibliography reciprocity and supplied style",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C21",
+            "C26"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/paper-writer/references/citation-style.md",
+              "sections": [
+                "1. Default: numeric citation-sequence",
+                "4. Missing-field handling",
+                "5. Alternate styles on request",
+                "6. Universal citation discipline"
+              ]
+            }
+          ],
+          "integration_decision": "Honor user/venue style and real source identities. No default English override of an explicit Chinese artifact request; no reference-count quota.",
+          "artifacts": [],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-WRITE-06",
+          "label": "L1 supports any claim; planned-to-preliminary; substantial margin with missing evidence",
+          "proposed_adoption_status": "rejected",
+          "capabilities": [
+            "C06",
+            "C18",
+            "C26"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/paper-writer/references/evidence-discipline.md",
+              "sections": [
+                "1. Legitimate sources and the evidence hierarchy",
+                "6. Experimental evidence gates",
+                "8. Real versus planned results"
+              ]
+            },
+            {
+              "path": "skills/paper-writer/references/section-guidance.md",
+              "sections": [
+                "4. Results",
+                "5. Discussion"
+              ]
+            }
+          ],
+          "integration_decision": "Use Atlas evidence scope and observed/planned distinction. User confirmation is source provenance, not a scientific validity certificate; speculative mechanism belongs in an explicit hypothesis record.",
+          "artifacts": [],
+          "execution_verified": false
+        }
+      ],
+      "conflict_ids": [
+        "PC-CF02",
+        "PC-CF03",
+        "PC-CF04",
+        "PC-CF05",
+        "PC-CF08",
+        "PC-CF13",
+        "PC-CF14"
+      ]
+    },
+    {
+      "id": "paper-polish",
+      "license_declaration": "CC-BY-NC-SA-4.0 in frontmatter",
+      "distinctive_value": "Conservative editing, explicit meaning-risk changes, before/after comparison, file diff, term-consistent translation and processing coverage.",
+      "complements": [
+        "C18 wording/evidence bounds",
+        "C16 numerical transcription",
+        "C20 versioned review",
+        "C21 scientific audit"
+      ],
+      "features": [
+        {
+          "id": "PC-POLISH-01",
+          "label": "Meaning preservation and explicit scientific edit risk",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C18",
+            "C26"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/paper-polish/SKILL.md",
+              "sections": [
+                "The overriding rule: stay faithful to the author's meaning",
+                "Conservative by default",
+                "How to deliver"
+              ]
+            }
+          ],
+          "integration_decision": "Track numbers, units, denominator, direction, scope, negation, quantifiers and causal strength. Pure language edits proceed; meaningful scientific changes receive explicit diff and reasoning, with existing authorization honored.",
+          "artifacts": [
+            "original manuscript",
+            "revised manuscript",
+            "diff",
+            "polish-review.md"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-POLISH-02",
+          "label": "Evidence-calibrated verbs and AI-tone review",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C18",
+            "C26"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/paper-polish/SKILL.md",
+              "sections": [
+                "Calibration: do not let the author overclaim",
+                "Be fair to prior work"
+              ]
+            },
+            {
+              "path": "skills/paper-polish/references/academic-phrasebank.md",
+              "sections": [
+                "Verbs by evidence strength"
+              ]
+            },
+            {
+              "path": "skills/paper-polish/references/ai-tone-guardrails.md",
+              "sections": [
+                "Typical AI-tone signals",
+                "Inflated-claim wordlist"
+              ]
+            }
+          ],
+          "integration_decision": "Use a contextual wording check, not a banned-token filter. Softening a verb cannot make missing evidence adequate; do not erase supported conclusions for stylistic conformity.",
+          "artifacts": [],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-POLISH-03",
+          "label": "Proposition-preserving Chinese-to-English rewriting",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C26"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/paper-polish/SKILL.md",
+              "sections": [
+                "Rewriting Chinese drafts into English"
+              ]
+            }
+          ],
+          "integration_decision": "Maintain technical terms and proposition relations; do not infer causation while restoring implicit logic. Separate clean prose from author notes.",
+          "artifacts": [
+            "bilingual terminology list",
+            "polish-review.md"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-POLISH-04",
+          "label": "Full processing coverage and unreadable-element disclosure",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C24",
+            "C26"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/paper-polish/SKILL.md",
+              "sections": [
+                "Long documents",
+                "Content you cannot read",
+                "Working on files versus pasted text"
+              ]
+            }
+          ],
+          "integration_decision": "Record every processed section, formula/table/image exceptions and the exact input/output versions.",
+          "artifacts": [
+            "editing coverage ledger"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-POLISH-05",
+          "label": "Local handbook prohibition and pseudo-grammar hard rules",
+          "proposed_adoption_status": "rejected",
+          "capabilities": [
+            "C26",
+            "C21"
+          ],
+          "source_locations": [
+            {
+              "path": "handbook/03_Paper_Writing/3.5_写作细节与Checklist.md",
+              "sections": [
+                "英语语法问题",
+                "大模型写作问题"
+              ]
+            },
+            {
+              "path": "skills/paper-polish/SKILL.md",
+              "sections": [
+                "Rewriting Chinese drafts into English",
+                "Never fabricate content"
+              ]
+            }
+          ],
+          "integration_decision": "Do not inherit a blanket AI/translation ban while claiming to provide drafting. Multi-clause sentences, grammatical verbs, American/British punctuation and valid terms are not automatically errors. Preserve author responsibility and current applicable venue requirements.",
+          "artifacts": [],
+          "execution_verified": false
+        }
+      ],
+      "conflict_ids": [
+        "PC-CF06",
+        "PC-CF07",
+        "PC-CF08",
+        "PC-CF15"
+      ]
+    },
+    {
+      "id": "figure-designer",
+      "license_declaration": "CC-BY-4.0 in SKILL frontmatter; root LICENSE says CC BY-NC-SA 4.0. Preserve discrepancy.",
+      "distinctive_value": "Separate motivated examples, method overviews and measured-result figures; concrete layout and label guidance plus design/verification boundaries.",
+      "complements": [
+        "C12 method cards",
+        "C16 numbers",
+        "C17 uncertainty",
+        "C18 scope",
+        "C21 claim–figure–run"
+      ],
+      "features": [
+        {
+          "id": "PC-FIGURE-01",
+          "label": "Figure purpose and paradigm selection",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C21",
+            "C28"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/figure-designer/SKILL.md",
+              "sections": [
+                "Step 1: Figure-type identification",
+                "Step 2: Paradigm recommendation",
+                "Step 3: Layout sketch"
+              ]
+            },
+            {
+              "path": "skills/figure-designer/references/motivated-example.md",
+              "sections": [
+                "2–5"
+              ]
+            },
+            {
+              "path": "skills/figure-designer/references/solution-overview.md",
+              "sections": [
+                "2–5"
+              ]
+            }
+          ],
+          "integration_decision": "Make a brief with claim ID, verified example, method names, reading order and evidence boundaries. Three core types are useful defaults, not an exhaustive ontology.",
+          "artifacts": [
+            "figure-brief.md"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-FIGURE-02",
+          "label": "Reproducible measured-result figures with explicit uncertainty",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C16",
+            "C17",
+            "C28"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/figure-designer/references/experimental-results.md",
+              "sections": [
+                "1. Chart-type decision matrix",
+                "2. Self-containment rule",
+                "3. Scientific encoding rule",
+                "5. Honest axes rule",
+                "6. Canvas sizing and style consistency"
+              ]
+            },
+            {
+              "path": "handbook/04_Scientific_Plotting/4.3_Experimental_Results_Figure.md",
+              "sections": [
+                "常见的图表类型与适用场景",
+                "设计原则"
+              ]
+            }
+          ],
+          "integration_decision": "Bind data, aggregation, denominator, units, run set, uncertainty definition and plot-code versions. Color/shape/line encoding and caption claims must reflect actual conditions.",
+          "artifacts": [
+            "data-manifest.json",
+            "plot source",
+            "figure caption"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-FIGURE-03",
+          "label": "Universal vector-only and automatic nonzero axis rules",
+          "proposed_adoption_status": "rejected",
+          "capabilities": [
+            "C16",
+            "C28"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/figure-designer/references/design-rules.md",
+              "sections": [
+                "1. Format rules",
+                "5. Axis rules"
+              ]
+            },
+            {
+              "path": "handbook/04_Scientific_Plotting/4.1_Motivated_Example_Figure.md",
+              "sections": [
+                "论文绘图总论"
+              ]
+            },
+            {
+              "path": "handbook/04_Scientific_Plotting/4.3_Experimental_Results_Figure.md",
+              "sections": [
+                "不要误导读者"
+              ]
+            }
+          ],
+          "integration_decision": "Use vector for appropriate geometry; raster evidence/crops may be necessary. Choose baseline by visual encoding; a bar's length must not manufacture apparent effect size.",
+          "artifacts": [],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-FIGURE-04",
+          "label": "Scatter direction must follow the actual metric",
+          "proposed_adoption_status": "rejected",
+          "capabilities": [
+            "C16",
+            "C17",
+            "C28"
+          ],
+          "source_locations": [
+            {
+              "path": "handbook/04_Scientific_Plotting/4.3_Experimental_Results_Figure.md",
+              "sections": [
+                "常见的图表类型与适用场景 / 散点图"
+              ]
+            },
+            {
+              "path": "skills/figure-designer/references/experimental-results.md",
+              "sections": [
+                "1. Chart-type decision matrix"
+              ]
+            }
+          ],
+          "integration_decision": "The handbook uses inference time on X yet calls upper-right faster and better. Time-minimizing superiority is toward lower X; throughput/maximization has another orientation. Never alter axes/data to place Ours in a predetermined corner.",
+          "artifacts": [],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-FIGURE-05",
+          "label": "Actual visual verification and capability-aware tooling",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C22",
+            "C28"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/figure-designer/SKILL.md",
+              "sections": [
+                "Step 1",
+                "Integrity gate",
+                "Output format"
+              ]
+            },
+            {
+              "path": "skills/figure-designer/references/tools.md",
+              "sections": [
+                "1. Decision heuristic",
+                "9. What to avoid"
+              ]
+            },
+            {
+              "path": "handbook/04_Scientific_Plotting/4.4_绘图Checklist与工具速查表.md",
+              "sections": [
+                "绘图 Checklist"
+              ]
+            }
+          ],
+          "integration_decision": "Use pass/fail/not-checked/not-applicable. Image inspection can assess legibility but cannot certify exact font points or vector source. Tool suggestions do not authorize installation or upload.",
+          "artifacts": [
+            "visual-audit.md"
+          ],
+          "execution_verified": false
+        }
+      ],
+      "conflict_ids": [
+        "PC-CF09",
+        "PC-CF10",
+        "PC-CF11",
+        "PC-CF16"
+      ]
+    },
+    {
+      "id": "drawio-reconstruction",
+      "license_declaration": "MIT declared by README.md and README.zh-CN.md; linked local LICENSE absent from this reviewed text snapshot; SKILL has no license field",
+      "distinctive_value": "Visible-element and arrow inventories, fidelity-based medium selection, text-box containment, bounded batch scheduling and mandatory visual comparison.",
+      "complements": [
+        "C21 figure semantics",
+        "C22 optional adapter",
+        "C24 artifacts",
+        "C28 reconstruction"
+      ],
+      "features": [
+        {
+          "id": "PC-DRAWIO-01",
+          "label": "Per-element inventory and medium selection",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C28"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/drawio-reconstruction/SKILL.md",
+              "sections": [
+                "Mandatory Reference Inventory",
+                "Reconstruction Strategy",
+                "Medium Decision Rules",
+                "Icon Reconstruction Discipline"
+              ]
+            }
+          ],
+          "integration_decision": "Use native text/structure, matched simple SVG/native icons and source crops for complex visuals; record status and editing scope for each item.",
+          "artifacts": [
+            "figure.audit.md",
+            "figure.drawio"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-DRAWIO-02",
+          "label": "Arrows, geometry and typography containment",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C12",
+            "C28"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/drawio-reconstruction/SKILL.md",
+              "sections": [
+                "Curves And Arrows",
+                "Typography And Layout"
+              ]
+            }
+          ],
+          "integration_decision": "Check source/target, direction, anchors, path, arrowheads, layering and semantic role; resize containing boxes when text changes.",
+          "artifacts": [
+            "arrow inventory",
+            "style tokens"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-DRAWIO-03",
+          "label": "Batch manifest and exclusive work sets with serial fallback",
+          "proposed_adoption_status": "optional",
+          "capabilities": [
+            "C22",
+            "C24",
+            "C28"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/drawio-reconstruction/SKILL.md",
+              "sections": [
+                "Batch Folder Workflow",
+                "Mandatory Visual Audit"
+              ]
+            }
+          ],
+          "integration_decision": "Require per-item outputs and coordinator inspection; parallelism is scheduling only. Preserve existing files/manual edits and process only authorized targets.",
+          "artifacts": [
+            "manifest.json",
+            "per-item drawio/preview/audit"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-DRAWIO-04",
+          "label": "Technical validity is separate from visual acceptance",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C28"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/drawio-reconstruction/SKILL.md",
+              "sections": [
+                "Fidelity Contract",
+                "Default Workflow",
+                "Mandatory Visual Audit",
+                "Verification"
+              ]
+            }
+          ],
+          "integration_decision": "XML/check/export success is insufficient. Compare full-size rendered output with source and verify every visible item. Unresolved defects or no preview mean draft/not complete.",
+          "artifacts": [
+            "figure.preview.png",
+            "figure.audit.md"
+          ],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-DRAWIO-05",
+          "label": "Fidelity versus improvement; preserve user edits",
+          "proposed_adoption_status": "protocol",
+          "capabilities": [
+            "C28",
+            "C20"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/drawio-reconstruction/SKILL.md",
+              "sections": [
+                "Fidelity Contract",
+                "Using A User-Approved Reference Diagram",
+                "Redline Feedback"
+              ]
+            }
+          ],
+          "integration_decision": "Faithful reconstruction and scientific/layout redesign are separate versions when authorized; do not silently change wording, meaning or topology.",
+          "artifacts": [],
+          "execution_verified": false
+        },
+        {
+          "id": "PC-DRAWIO-06",
+          "label": "Bundled helpers and recommended model/runtime",
+          "proposed_adoption_status": "optional",
+          "capabilities": [
+            "C22",
+            "C28"
+          ],
+          "source_locations": [
+            {
+              "path": "skills/drawio-reconstruction/README.md",
+              "sections": [
+                "Requirements",
+                "Quality Gates",
+                "Relation To VCG-Bench"
+              ]
+            },
+            {
+              "path": "skills/drawio-reconstruction/SKILL.md",
+              "sections": [
+                "Helper Script Location",
+                "Screenshot Crop Rules",
+                "Verification"
+              ]
+            }
+          ],
+          "integration_decision": "Only optional invocation after actual code/dependency review and authorization. No helper code imported, no runtime installed or recommended model efficacy established here.",
+          "artifacts": [],
+          "execution_verified": false
+        }
+      ],
+      "conflict_ids": [
+        "PC-CF09",
+        "PC-CF11",
+        "PC-CF12",
+        "PC-CF16"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "PC-CF01",
+      "tension": "Fixed six paragraphs, contribution/reference quotas versus task-specific research structure",
+      "decision": "Retain logical checks, adapt counts/ordering, use many-to-many mappings.",
+      "sources": [
+        "intro-drafter/SKILL.md Step 5",
+        "intro-drafter/references/contribution-patterns.md §6"
+      ],
+      "atlas_contracts": [
+        "methodology.md §2",
+        "extension-contract.md Compatibility rules"
+      ]
+    },
+    {
+      "id": "PC-CF02",
+      "tension": "Natural clean manuscript versus inspectable research records",
+      "decision": "Clean manuscript plus separate evidence/blueprint/notes; never hide missing work.",
+      "sources": [
+        "paper-writer/references/prose-delivery.md"
+      ],
+      "atlas_contracts": [
+        "evidence-and-claims.md §§3/8",
+        "C20/C24"
+      ]
+    },
+    {
+      "id": "PC-CF03",
+      "tension": "L1 full text/data supports any claim",
+      "decision": "Source access is not unlimited support; exact content, locator, scope and inference cap claims.",
+      "sources": [
+        "paper-writer/references/evidence-discipline.md §1",
+        "intro-drafter/references/evidence-discipline.md §1"
+      ],
+      "atlas_contracts": [
+        "evidence-and-claims.md §§2/3/5"
+      ]
+    },
+    {
+      "id": "PC-CF04",
+      "tension": "Unexecuted/planned results described as preliminary results or qualitative success",
+      "decision": "Plans remain predictions. Preliminary requires observed evidence; qualitative comparison also requires comparison.",
+      "sources": [
+        "paper-writer/references/evidence-discipline.md §§6/8",
+        "paper-writer/references/section-guidance.md §4",
+        "intro-drafter/SKILL.md Step 5"
+      ],
+      "atlas_contracts": [
+        "C18",
+        "evidence-and-claims.md §§6/8"
+      ]
+    },
+    {
+      "id": "PC-CF05",
+      "tension": "Results interpret why and Discussion invents plausible mechanism despite stricter hard rules",
+      "decision": "Adapt section format but separate observation from hypothesis; new mechanism clearly untested, never fabricated as a finding.",
+      "sources": [
+        "paper-writer/SKILL.md Phase 4",
+        "paper-writer/references/section-guidance.md §§4/5",
+        "paper-writer/references/section-conventions.md Results"
+      ],
+      "atlas_contracts": [
+        "C10/C18",
+        "methodology.md §§6/10/11"
+      ]
+    },
+    {
+      "id": "PC-CF06",
+      "tension": "Meaning preservation versus overclaim correction",
+      "decision": "Do not silently strengthen or weaken. Use explicit before/after reasoning for scientific correction; honor existing authorization.",
+      "sources": [
+        "paper-polish/SKILL.md overriding rule and Calibration"
+      ],
+      "atlas_contracts": [
+        "evidence-and-claims.md §8"
+      ]
+    },
+    {
+      "id": "PC-CF07",
+      "tension": "Polish parenthetical author notes versus no embedded drafting placeholders",
+      "decision": "Keep author notes separate by default; annotated copy only when requested.",
+      "sources": [
+        "paper-polish/SKILL.md Never fabricate content",
+        "paper-writer/references/prose-delivery.md"
+      ],
+      "atlas_contracts": [
+        "C26 proposal"
+      ]
+    },
+    {
+      "id": "PC-CF08",
+      "tension": "Handbook blanket AI/translation ban versus drafting/translation skills",
+      "decision": "Explicitly reject global inheritance of local ban. User-authorized assistance retains author responsibility, evidence and applicable venue constraints.",
+      "sources": [
+        "handbook/03_Paper_Writing/3.5_写作细节与Checklist.md 英语语法问题 and 大模型写作问题",
+        "paper-writer/SKILL.md",
+        "paper-polish/SKILL.md Rewriting Chinese drafts"
+      ],
+      "atlas_contracts": [
+        "SKILL.md requested depth",
+        "CF20"
+      ]
+    },
+    {
+      "id": "PC-CF09",
+      "tension": "Vector-only design rules versus fidelity-driven complex-image crops",
+      "decision": "Separate measured plots and diagram reconstruction; allow disclosed mixed media with editable text/structure.",
+      "sources": [
+        "figure-designer/references/design-rules.md §1",
+        "drawio-reconstruction/SKILL.md Reconstruction Strategy"
+      ],
+      "atlas_contracts": [
+        "C21/C28 proposal"
+      ]
+    },
+    {
+      "id": "PC-CF10",
+      "tension": "Generic nonzero axis and upper-right Ours rule versus honest encoding/direction",
+      "decision": "Specify meaning, unit and optimize direction for every axis. Do not truncate length encodings to exaggerate; latency minimization differs from throughput maximization.",
+      "sources": [
+        "figure-designer/references/experimental-results.md §§1/5",
+        "handbook/04_Scientific_Plotting/4.3_Experimental_Results_Figure.md"
+      ],
+      "atlas_contracts": [
+        "C16/C17/C18"
+      ]
+    },
+    {
+      "id": "PC-CF11",
+      "tension": "Inspection/check/export success versus source-format, point-size and fidelity claims",
+      "decision": "Record technical, visual and semantic checks separately. Exact pt/vector status needs source metadata; unchecked is not pass.",
+      "sources": [
+        "figure-designer/SKILL.md Integrity gate",
+        "drawio-reconstruction/SKILL.md Mandatory Visual Audit"
+      ],
+      "atlas_contracts": [
+        "evidence-and-claims.md §9",
+        "C22"
+      ]
+    },
+    {
+      "id": "PC-CF12",
+      "tension": "Fidelity-first reconstruction versus design-driven improvement",
+      "decision": "Reconstruct source faithfully; preserve manual edits; redesign separately if authorized. Do not silently change labels or arrows.",
+      "sources": [
+        "drawio-reconstruction/SKILL.md Fidelity Contract and Redline Feedback",
+        "figure-designer/references/design-rules.md"
+      ],
+      "atlas_contracts": [
+        "C28 proposal"
+      ]
+    },
+    {
+      "id": "PC-CF13",
+      "tension": "Citation suspension counts as resolved versus Final no pending claims",
+      "decision": "Suspended is a documented next action, not evidence. Critical unresolved claims prevent readiness labels.",
+      "sources": [
+        "paper-writer/references/verification-ladder.md §7",
+        "paper-writer/references/evidence-discipline.md §8"
+      ],
+      "atlas_contracts": [
+        "C21"
+      ]
+    },
+    {
+      "id": "PC-CF14",
+      "tension": "Fixed DB improvement/dataset requirements and positive-results framing",
+      "decision": "Do not inherit 50%/10%/3-dataset thresholds, baseline transitivity or ablation-as-proof. Evaluate evidence and contribution type; preserve useful negative findings.",
+      "sources": [
+        "handbook/03_Paper_Writing/3.5_写作细节与Checklist.md 实验效果 and Experiments",
+        "handbook/03_Paper_Writing/3.1_完成一篇科研论文你需要做几件事情.md So What"
+      ],
+      "atlas_contracts": [
+        "methodology.md §§9/10",
+        "evidence-and-claims.md §5",
+        "CF15"
+      ]
+    },
+    {
+      "id": "PC-CF15",
+      "tension": "Pseudo-grammar and style preferences treated as scientific writing errors",
+      "decision": "Do not mechanically ban multiple verbs/clauses or valid words; punctuation depends on consistent target style. Correct language from actual syntax/meaning rather than treating keyword hits as faults.",
+      "sources": [
+        "handbook/03_Paper_Writing/3.5_写作细节与Checklist.md 英语语法问题 and 大模型写作问题",
+        "paper-polish/references/ai-tone-guardrails.md"
+      ],
+      "atlas_contracts": [
+        "C26 proposal"
+      ]
+    },
+    {
+      "id": "PC-CF16",
+      "tension": "Optional figure tooling versus installation/model/service requirements",
+      "decision": "Protocol and optional adapter only; missing renderer remains unverified and does not authorize installation or paid service.",
+      "sources": [
+        "figure-designer/references/tools.md",
+        "drawio-reconstruction/SKILL.md Screenshot Crop Rules",
+        "drawio-reconstruction/README.md"
+      ],
+      "atlas_contracts": [
+        "C11/C22",
+        "CF20"
+      ]
+    }
+  ],
+  "workflow": [
+    {
+      "step": 1,
+      "action": "Read atlas status and current task",
+      "outputs": [
+        "input/version/hash inventory",
+        "current revision and pending items"
+      ],
+      "boundary": "Writing request does not restart unrelated research."
+    },
+    {
+      "step": 2,
+      "action": "Project current evidence and source limits",
+      "outputs": [
+        "evidence-map.md",
+        "numeric ledger",
+        "claim-occurrences.json"
+      ],
+      "boundary": "No second independent truth store; plans are not observations."
+    },
+    {
+      "step": 3,
+      "action": "Choose narrative by contribution and venue",
+      "outputs": [
+        "narrative-plan.md or chapter-blueprint.md"
+      ],
+      "boundary": "Six questions are optional structure, not mandatory paragraph count."
+    },
+    {
+      "step": 4,
+      "action": "Draft only supported content",
+      "outputs": [
+        "manuscript.md or manuscript.tex",
+        "author notes"
+      ],
+      "boundary": "Clean prose does not justify hiding essential missing evidence."
+    },
+    {
+      "step": 5,
+      "action": "Polish and translate with invariants",
+      "outputs": [
+        "original/revised files",
+        "diff",
+        "polish-review.md"
+      ],
+      "boundary": "No silent quantitative, scope, negation, comparison or causal change."
+    },
+    {
+      "step": 6,
+      "action": "Route plot/design/reconstruction",
+      "outputs": [
+        "figure brief",
+        "data manifest",
+        "plot source or native diagram",
+        "preview"
+      ],
+      "boundary": "Tools optional; no fabricated measurement or installed stack."
+    },
+    {
+      "step": 7,
+      "action": "Review numerical, citation, visual and semantic layers separately",
+      "outputs": [
+        "citation-review.md",
+        "visual-audit.md",
+        "unresolved items"
+      ],
+      "boundary": "One passed layer cannot certify another."
+    },
+    {
+      "step": 8,
+      "action": "Register dependencies and review actual changes",
+      "outputs": [
+        "updated existing graph nodes",
+        "versioned review notes"
+      ],
+      "boundary": "No new node types; explicit depends_on only; upsert real changes before resolve-review."
+    },
+    {
+      "step": 9,
+      "action": "Deliver usable artifact and continuity record",
+      "outputs": [
+        "manuscript/figures",
+        "release-notes.md"
+      ],
+      "boundary": "No readiness/completion/scientific truth label without the required actual work."
+    }
+  ],
+  "new_workbench_readback": {
+    "files": [
+      "references/supervisor-discovery.md",
+      "references/supervisor-publication.md",
+      "references/supervisor-figures.md"
+    ],
+    "assessment": "Publication workbench already implements the main conflict choices in prose: flexible paragraphs, evidence access limits, no planned-to-preliminary wording, meaning-preserving translation and separate author notes. Figure workbench separates axes by encoding, mixed media, native objects, renderer limitations and meaning changes.",
+    "remaining_suggestions": [
+      "Record per-item unresolved visual defects and distinguish draft from accepted reconstruction.",
+      "Retain per-arrow geometry and direction inventories for complex references.",
+      "Carry optional adapter and not-run state into the registry; do not infer execution from the new reference files.",
+      "Keep per-file figure CC-BY metadata discrepancy in provenance; root independently handles drawio MIT text."
+    ],
+    "code_or_effectiveness_validated": false
+  },
+  "license": {
+    "root_declared": "CC BY-NC-SA 4.0; Copyright (c) 2026 Yuyu Luo (methodology) and contributors.",
+    "three_writing_skills": "CC-BY-NC-SA-4.0",
+    "figure_skill_frontmatter": "CC-BY-4.0; conflicts with root declaration; preserve both source facts without assuming precedence.",
+    "drawio_readme": "MIT for the skill repository; original local LICENSE target absent from this text snapshot; root to verify exact MIT notice before distribution.",
+    "proposed_adapted_methods": "Separate attribution/changes/license file under CC BY-NC-SA 4.0 for combined adapted methods, including handbook material. Does not relicense existing Atlas code.",
+    "third_party_boundary": "No assumption that drawio MIT covers the entire Supervisor-Skills repo, source images, external papers or datasets. No source code or images copied by this review.",
+    "original_proposed_prose_locations": [
+      "part-c.md §5 Draft A",
+      "part-c.md §5 Draft B",
+      "part-c.md §5 Draft C",
+      "part-c.md §5 Draft D"
+    ]
+  },
+  "read_ledger": [
+    {
+      "root": "upstream",
+      "path": "skills/intro-drafter/SKILL.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/intro-drafter/SKILL.md",
+      "read_depth": "full_text",
+      "lines": 211,
+      "bytes": 9699,
+      "sha256": "675e8a97a58a841b04dd9fa061fcc03075e75695aada5c7b23d1c1498435d5a7",
+      "git_blob_sha1": "5d3cb2b0c43718939e2e0519335b317e949fc46d",
+      "manifest_blob_sha1": "5d3cb2b0c43718939e2e0519335b317e949fc46d",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/intro-drafter/references/contribution-patterns.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/intro-drafter/references/contribution-patterns.md",
+      "read_depth": "full_text",
+      "lines": 116,
+      "bytes": 4352,
+      "sha256": "6ba9363a364fca4634bb47e9bfffa88f393698afc587bb84c1444d4f84afb6e8",
+      "git_blob_sha1": "5dcae4b0b70432d32b66f05590ebddb72488c8a0",
+      "manifest_blob_sha1": "5dcae4b0b70432d32b66f05590ebddb72488c8a0",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/intro-drafter/references/evidence-discipline.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/intro-drafter/references/evidence-discipline.md",
+      "read_depth": "full_text",
+      "lines": 152,
+      "bytes": 7858,
+      "sha256": "63c20c6b783b12b34753a2119bde8812168012e69cda4552988e56fea42fb5ac",
+      "git_blob_sha1": "9c5c3077b7f51ca9109092d1a44a591a0938ccd0",
+      "manifest_blob_sha1": "9c5c3077b7f51ca9109092d1a44a591a0938ccd0",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/intro-drafter/references/flowchart.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/intro-drafter/references/flowchart.md",
+      "read_depth": "full_text",
+      "lines": 204,
+      "bytes": 6914,
+      "sha256": "46aebd7605bcea34559644b05e9e1d6e804a87b1ddd9c568541e14ffc5778761",
+      "git_blob_sha1": "e6079d0b88ba7d47e03f6b84095064f151895e07",
+      "manifest_blob_sha1": "e6079d0b88ba7d47e03f6b84095064f151895e07",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/intro-drafter/references/paper-types.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/intro-drafter/references/paper-types.md",
+      "read_depth": "full_text",
+      "lines": 155,
+      "bytes": 5769,
+      "sha256": "21f1267c85df2b2f3c58572d3794e4edef567ad28f58352350879c16d69c10b2",
+      "git_blob_sha1": "08faf59bb06f1c8dbdf3ac7f056a9b45468bedf6",
+      "manifest_blob_sha1": "08faf59bb06f1c8dbdf3ac7f056a9b45468bedf6",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/intro-drafter/references/prose-delivery.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/intro-drafter/references/prose-delivery.md",
+      "read_depth": "full_text",
+      "lines": 62,
+      "bytes": 3011,
+      "sha256": "1a7e60145d6b55e0d42c6e12c02c86b77662fda75f89585ec0449318634c05ee",
+      "git_blob_sha1": "bf37fe1645ca8415696cfff8c432989aaa74910e",
+      "manifest_blob_sha1": "bf37fe1645ca8415696cfff8c432989aaa74910e",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/intro-drafter/references/running-example.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/intro-drafter/references/running-example.md",
+      "read_depth": "full_text",
+      "lines": 133,
+      "bytes": 5091,
+      "sha256": "14f08a1da8f3e70ee6f59a36b2c9649b444ad6620d296b9b91e052bf24152655",
+      "git_blob_sha1": "5c7422bd1855dde73610116db221e3f48addde36",
+      "manifest_blob_sha1": "5c7422bd1855dde73610116db221e3f48addde36",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/intro-drafter/references/worked-examples.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/intro-drafter/references/worked-examples.md",
+      "read_depth": "full_text",
+      "lines": 168,
+      "bytes": 7365,
+      "sha256": "ddc22cddd503395f573bbb72aa32696c3c0cbeb939852e326de5a30bf591707b",
+      "git_blob_sha1": "e165918a0895952bae27851c85ef08f4269b526e",
+      "manifest_blob_sha1": "e165918a0895952bae27851c85ef08f4269b526e",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-writer/SKILL.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-writer/SKILL.md",
+      "read_depth": "full_text",
+      "lines": 284,
+      "bytes": 14013,
+      "sha256": "5ac3df38ca0f6a4a2b7600be100a8b1eb65bec7ce96e492682b765c10e158630",
+      "git_blob_sha1": "413fca941138306a3cbb96d344ec405f246444d1",
+      "manifest_blob_sha1": "413fca941138306a3cbb96d344ec405f246444d1",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-writer/references/academic-phrasebank.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-writer/references/academic-phrasebank.md",
+      "read_depth": "full_text",
+      "lines": 98,
+      "bytes": 4548,
+      "sha256": "56091882b95163fe63a79da0eed1b6382affdac279f9fd988f69527ee30dfb68",
+      "git_blob_sha1": "31628b5b474256098207e7ccb04ed53e2b8e4372",
+      "manifest_blob_sha1": "31628b5b474256098207e7ccb04ed53e2b8e4372",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-writer/references/ai-tone-guardrails.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-writer/references/ai-tone-guardrails.md",
+      "read_depth": "full_text",
+      "lines": 85,
+      "bytes": 4500,
+      "sha256": "2fd3f8960f0ffe34469145e42162f866f37da2980a1d6636be6cb6357da00023",
+      "git_blob_sha1": "25d0678f168ad4b62f58ab5690d37229fc21dfc7",
+      "manifest_blob_sha1": "25d0678f168ad4b62f58ab5690d37229fc21dfc7",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-writer/references/citation-style.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-writer/references/citation-style.md",
+      "read_depth": "full_text",
+      "lines": 146,
+      "bytes": 4804,
+      "sha256": "17a69ba23fbd7e937f7404d711d26e41f5b18d7fc4aa860a6b575d367927cfce",
+      "git_blob_sha1": "2df1e4c3931b6d9c60dfbd477356f5c3a5fab4d6",
+      "manifest_blob_sha1": "2df1e4c3931b6d9c60dfbd477356f5c3a5fab4d6",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-writer/references/evidence-discipline.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-writer/references/evidence-discipline.md",
+      "read_depth": "full_text",
+      "lines": 152,
+      "bytes": 7869,
+      "sha256": "37dfcc3452f1d768d3d41329bfb103292b0015ccab146d41672176ca69df3edc",
+      "git_blob_sha1": "ab944f8e40c87adf07dfffb5ecca5118127a58ed",
+      "manifest_blob_sha1": "ab944f8e40c87adf07dfffb5ecca5118127a58ed",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-writer/references/prose-delivery.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-writer/references/prose-delivery.md",
+      "read_depth": "full_text",
+      "lines": 62,
+      "bytes": 3027,
+      "sha256": "26ae7bbedea943d7b1d72b5af742ba0a039f120860e073c5abcb333466bec4b5",
+      "git_blob_sha1": "0c70a0d9b3d4134c5f233730d5e7527e32208bf5",
+      "manifest_blob_sha1": "0c70a0d9b3d4134c5f233730d5e7527e32208bf5",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-writer/references/section-conventions.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-writer/references/section-conventions.md",
+      "read_depth": "full_text",
+      "lines": 124,
+      "bytes": 4384,
+      "sha256": "810700351410427dddd924e9bf7fcc462027a447ebe81f843df96c39057a7a96",
+      "git_blob_sha1": "f690053dc416895f89464682eaab6fb9c59d808d",
+      "manifest_blob_sha1": "f690053dc416895f89464682eaab6fb9c59d808d",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-writer/references/section-guidance.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-writer/references/section-guidance.md",
+      "read_depth": "full_text",
+      "lines": 115,
+      "bytes": 4912,
+      "sha256": "0a81a147c167a7a5adf4a2ea526807f561895eb55507f4489aa1d4385908beda",
+      "git_blob_sha1": "cdb8a28354ad989bb7fa2d8122b0ceaa40623ba4",
+      "manifest_blob_sha1": "cdb8a28354ad989bb7fa2d8122b0ceaa40623ba4",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-writer/references/verification-checklist.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-writer/references/verification-checklist.md",
+      "read_depth": "full_text",
+      "lines": 121,
+      "bytes": 5166,
+      "sha256": "474d8772cadd92994f6d7591cd0cb54baec59a6f7257557379f7830b24d73fdb",
+      "git_blob_sha1": "faa50ae2a5846063dce9c34a87e1222ceccdd2ec",
+      "manifest_blob_sha1": "faa50ae2a5846063dce9c34a87e1222ceccdd2ec",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-writer/references/verification-ladder.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-writer/references/verification-ladder.md",
+      "read_depth": "full_text",
+      "lines": 132,
+      "bytes": 6893,
+      "sha256": "3702c85b12da5db87c2b49359ad2f632e08fab7880a498e4e4e1b5af581f3aff",
+      "git_blob_sha1": "67e97107513917211605313f71d6ce2263b34b4a",
+      "manifest_blob_sha1": "67e97107513917211605313f71d6ce2263b34b4a",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-polish/SKILL.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-polish/SKILL.md",
+      "read_depth": "full_text",
+      "lines": 267,
+      "bytes": 12311,
+      "sha256": "fde7964acfea805a399d52da0355dac3139b51be9b2aa456348538c4713f75ce",
+      "git_blob_sha1": "51c620067f7b37260cc2497b8907a5b1dcd0121a",
+      "manifest_blob_sha1": "51c620067f7b37260cc2497b8907a5b1dcd0121a",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-polish/references/academic-phrasebank.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-polish/references/academic-phrasebank.md",
+      "read_depth": "full_text",
+      "lines": 98,
+      "bytes": 4559,
+      "sha256": "4f199bd39c1810453b41388dd9839b570522512c319922f1a11d7a5029706e57",
+      "git_blob_sha1": "fd2055ff4fb36bf35908e5f48f6ab189a3b6f441",
+      "manifest_blob_sha1": "fd2055ff4fb36bf35908e5f48f6ab189a3b6f441",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-polish/references/ai-tone-guardrails.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-polish/references/ai-tone-guardrails.md",
+      "read_depth": "full_text",
+      "lines": 85,
+      "bytes": 4512,
+      "sha256": "11f8570c540c7502aa95ce799c97be3c6e12dd744ccc2ece774126509e015024",
+      "git_blob_sha1": "61507e47816d5118f36354560c56332e141bedbf",
+      "manifest_blob_sha1": "61507e47816d5118f36354560c56332e141bedbf",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/paper-polish/references/section-conventions.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/paper-polish/references/section-conventions.md",
+      "read_depth": "full_text",
+      "lines": 124,
+      "bytes": 4395,
+      "sha256": "83348fb3658aee2a09a9ad35e5b0265240371122442431df5a1efdd86d5d58cb",
+      "git_blob_sha1": "fc341ef2bb4b971bdd46435a55cce31c5d4f63de",
+      "manifest_blob_sha1": "fc341ef2bb4b971bdd46435a55cce31c5d4f63de",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/figure-designer/SKILL.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/figure-designer/SKILL.md",
+      "read_depth": "full_text",
+      "lines": 207,
+      "bytes": 7454,
+      "sha256": "c9ba67c1c21972ac6e48f22397e45b9e0855f0feb407c3599308de2902880b57",
+      "git_blob_sha1": "6b58f1ad0f357fb4d658a6ca13a7df5c54ee48f9",
+      "manifest_blob_sha1": "6b58f1ad0f357fb4d658a6ca13a7df5c54ee48f9",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/figure-designer/references/design-rules.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/figure-designer/references/design-rules.md",
+      "read_depth": "full_text",
+      "lines": 99,
+      "bytes": 3979,
+      "sha256": "088949487c3582e8e70fcfbc016ab393242289f879777fccdd1f845088591f4b",
+      "git_blob_sha1": "f5afde6a0a931d4bf9c0170b93232133665b402e",
+      "manifest_blob_sha1": "f5afde6a0a931d4bf9c0170b93232133665b402e",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/figure-designer/references/experimental-results.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/figure-designer/references/experimental-results.md",
+      "read_depth": "full_text",
+      "lines": 127,
+      "bytes": 5117,
+      "sha256": "537445abb435703baca9c2f0107568923f689bbfc3b8feb5ada2ba88f0777965",
+      "git_blob_sha1": "55c03dabbb98722e1443c9a80953c5374c7727c2",
+      "manifest_blob_sha1": "55c03dabbb98722e1443c9a80953c5374c7727c2",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/figure-designer/references/motivated-example.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/figure-designer/references/motivated-example.md",
+      "read_depth": "full_text",
+      "lines": 138,
+      "bytes": 4618,
+      "sha256": "b05a774d84604db502506bbe2a7d621d51257f5cbd9d16a85fc463471a5cea85",
+      "git_blob_sha1": "cb1beb2d05889b0c2b8c9df14f6539622f81d833",
+      "manifest_blob_sha1": "cb1beb2d05889b0c2b8c9df14f6539622f81d833",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/figure-designer/references/solution-overview.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/figure-designer/references/solution-overview.md",
+      "read_depth": "full_text",
+      "lines": 145,
+      "bytes": 4893,
+      "sha256": "1770b0919bb7622fa6b510fb27279a2989fadfd00bb55f1653c36a84aff467d3",
+      "git_blob_sha1": "91e3b292dff8fe1098b63a5565373027232d9bde",
+      "manifest_blob_sha1": "91e3b292dff8fe1098b63a5565373027232d9bde",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/figure-designer/references/tools.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/figure-designer/references/tools.md",
+      "read_depth": "full_text",
+      "lines": 124,
+      "bytes": 3957,
+      "sha256": "96a96208550c033c632b8f625f99f9d014a5d2f6000570bc5f75e53216e9b30f",
+      "git_blob_sha1": "a6b29cd22893e74fc81f0875ac0f653d336ff640",
+      "manifest_blob_sha1": "a6b29cd22893e74fc81f0875ac0f653d336ff640",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/drawio-reconstruction/SKILL.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/drawio-reconstruction/SKILL.md",
+      "read_depth": "full_text",
+      "lines": 351,
+      "bytes": 21671,
+      "sha256": "ccc4e5fa5ccd4d7f8a33f88c241d8df2e951f015d2dadfbaa5506d323ea38441",
+      "git_blob_sha1": "dac2814455ddf7de3b652461509b1607974170c3",
+      "manifest_blob_sha1": "dac2814455ddf7de3b652461509b1607974170c3",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "handbook/03_Paper_Writing/3.1_完成一篇科研论文你需要做几件事情.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/handbook/03_Paper_Writing/3.1_完成一篇科研论文你需要做几件事情.md",
+      "read_depth": "full_text",
+      "lines": 61,
+      "bytes": 7073,
+      "sha256": "01d4fc98056538d15724c69ce87365d195c6821d3b4088187b5ec16d00128dd1",
+      "git_blob_sha1": "3294a75de59abda96f5dd307e11e8dce61233824",
+      "manifest_blob_sha1": "3294a75de59abda96f5dd307e11e8dce61233824",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "handbook/03_Paper_Writing/3.2_Introduction写作的思考模型.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/handbook/03_Paper_Writing/3.2_Introduction写作的思考模型.md",
+      "read_depth": "full_text",
+      "lines": 37,
+      "bytes": 2670,
+      "sha256": "ccf475b52b5ba1a8a45cc8bfea4b5744f8598a060c97d55b226be13d09967c68",
+      "git_blob_sha1": "56e1581e42c584d619616769e322077becba57a7",
+      "manifest_blob_sha1": "56e1581e42c584d619616769e322077becba57a7",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "handbook/03_Paper_Writing/3.5_写作细节与Checklist.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/handbook/03_Paper_Writing/3.5_写作细节与Checklist.md",
+      "read_depth": "full_text",
+      "lines": 627,
+      "bytes": 24164,
+      "sha256": "edf65fb411494ab730cacc58f0cb90196e0448a3185c24b2ff19211d13bb24d4",
+      "git_blob_sha1": "28ea51560281b10925d62bcdc875108781aba5ba",
+      "manifest_blob_sha1": "28ea51560281b10925d62bcdc875108781aba5ba",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "handbook/04_Scientific_Plotting/4.1_Motivated_Example_Figure.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/handbook/04_Scientific_Plotting/4.1_Motivated_Example_Figure.md",
+      "read_depth": "full_text",
+      "lines": 62,
+      "bytes": 4859,
+      "sha256": "d53ee81cd90e520f6e3ca38ed3b2012b446638bae68aa22b42aa03d3a67c18ee",
+      "git_blob_sha1": "f4598f4f889232a253e6869b8f0a6b0c273a5ed0",
+      "manifest_blob_sha1": "f4598f4f889232a253e6869b8f0a6b0c273a5ed0",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "handbook/04_Scientific_Plotting/4.2_Solution_Overview_Figure.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/handbook/04_Scientific_Plotting/4.2_Solution_Overview_Figure.md",
+      "read_depth": "full_text",
+      "lines": 49,
+      "bytes": 3803,
+      "sha256": "da060d28a036e55b802ed5ac7ec3081407fb3b222262af75c0cb1a933e13e12d",
+      "git_blob_sha1": "27a0541c6c0fe9d633e4b69e1d2220b1fda93f45",
+      "manifest_blob_sha1": "27a0541c6c0fe9d633e4b69e1d2220b1fda93f45",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "handbook/04_Scientific_Plotting/4.3_Experimental_Results_Figure.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/handbook/04_Scientific_Plotting/4.3_Experimental_Results_Figure.md",
+      "read_depth": "full_text",
+      "lines": 56,
+      "bytes": 4430,
+      "sha256": "b0c7bd5247a2fed4c46c455cb44367e26bacb566ff402b07138b9485f3391a3e",
+      "git_blob_sha1": "722c4c6b1b0ddd9a8458bb8d3b55b9f71a11dc74",
+      "manifest_blob_sha1": "722c4c6b1b0ddd9a8458bb8d3b55b9f71a11dc74",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "handbook/04_Scientific_Plotting/4.4_绘图Checklist与工具速查表.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/handbook/04_Scientific_Plotting/4.4_绘图Checklist与工具速查表.md",
+      "read_depth": "full_text",
+      "lines": 29,
+      "bytes": 1586,
+      "sha256": "3eecbfbf39120da469467f54cb02ceb1af1728e2364b77c789496553f05f5c99",
+      "git_blob_sha1": "09e16119b3cdec4e8f9e961a11bfa15c675015f3",
+      "manifest_blob_sha1": "09e16119b3cdec4e8f9e961a11bfa15c675015f3",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "LICENSE",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/LICENSE",
+      "read_depth": "full_text",
+      "lines": 24,
+      "bytes": 1028,
+      "sha256": "b35c958b79726c115cf817635abcbc2aa1121cae5e9a1c22819f7c44f58fcaf0",
+      "git_blob_sha1": "54943766e78df82b3cdb76ce2d9ee6c826509aaa",
+      "manifest_blob_sha1": "54943766e78df82b3cdb76ce2d9ee6c826509aaa",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/drawio-reconstruction/README.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/drawio-reconstruction/README.md",
+      "read_depth": "full_text",
+      "lines": 212,
+      "bytes": 8964,
+      "sha256": "370f90a35b2f973e5636d933c159b86c034652063818ef739e893693eb2cd86f",
+      "git_blob_sha1": "87631a191c1632886455a86a4e7a728b6caf6edb",
+      "manifest_blob_sha1": "87631a191c1632886455a86a4e7a728b6caf6edb",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "skills/drawio-reconstruction/README.zh-CN.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/skills/drawio-reconstruction/README.zh-CN.md",
+      "read_depth": "full_text",
+      "lines": 213,
+      "bytes": 8623,
+      "sha256": "25b1999581518292cb1c99906c128918ef2ff37fdf188194511b1c81dcb5a525",
+      "git_blob_sha1": "13456bce050916f3dad99ae957b44166f38b5ddb",
+      "manifest_blob_sha1": "13456bce050916f3dad99ae957b44166f38b5ddb",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "upstream",
+      "path": "README.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e/README.md",
+      "read_depth": "selective: repository identity, related listing and License lines; not full text",
+      "lines": 226,
+      "bytes": 16228,
+      "sha256": "3cf3791b0c13c684275219a390a507c816c03c9d5789398b860a3c92c8cdab22",
+      "git_blob_sha1": "78b4b6991f862e601d038e9ac37c1b5184f17e09",
+      "manifest_blob_sha1": "78b4b6991f862e601d038e9ac37c1b5184f17e09",
+      "matches_local_manifest_blob": true
+    },
+    {
+      "root": "atlas",
+      "path": "SKILL.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/SKILL.md",
+      "read_depth": "full_text",
+      "lines": 120,
+      "bytes": 14133,
+      "sha256": "9e2fef60cf0ae464bf8ef4791bfdafca7003eab5c7a6059d9059974214384eee"
+    },
+    {
+      "root": "atlas",
+      "path": "references/agent-domains.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/agent-domains.md",
+      "read_depth": "full_text",
+      "lines": 190,
+      "bytes": 16468,
+      "sha256": "759a8ae66e9f9266a6faf5556cd3c994a21e0415951c9dbf175a49a1ee554a3a"
+    },
+    {
+      "root": "atlas",
+      "path": "references/bilingual-retrieval.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/bilingual-retrieval.md",
+      "read_depth": "full_text",
+      "lines": 229,
+      "bytes": 28248,
+      "sha256": "8b1e37bc89f583ee2224dfc6ed38e38d13fc84ef3782115b2f06c864558566f5"
+    },
+    {
+      "root": "atlas",
+      "path": "references/evidence-and-claims.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/evidence-and-claims.md",
+      "read_depth": "full_text",
+      "lines": 258,
+      "bytes": 18827,
+      "sha256": "5ce313f74b01be5d5da5706139348aaeefe7a1e886debaae059c8d9e35c36bce"
+    },
+    {
+      "root": "atlas",
+      "path": "references/experiments.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/experiments.md",
+      "read_depth": "full_text",
+      "lines": 179,
+      "bytes": 17867,
+      "sha256": "9c23a9e35fcb64c44bc8100773aaba35d7049e6922e396307b42b262209de5b1"
+    },
+    {
+      "root": "atlas",
+      "path": "references/extension-contract.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/extension-contract.md",
+      "read_depth": "full_text",
+      "lines": 37,
+      "bytes": 4101,
+      "sha256": "5370cfadb1b27fd18d7e6c2722579e0276183abae2287d7babca5c30c9888816"
+    },
+    {
+      "root": "atlas",
+      "path": "references/local-atlas.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/local-atlas.md",
+      "read_depth": "full_text",
+      "lines": 138,
+      "bytes": 12271,
+      "sha256": "bff297c626f9c1e76ac82748831354a0535f7866739fab54c04cb9f17b17b1c6"
+    },
+    {
+      "root": "atlas",
+      "path": "references/methodology.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/methodology.md",
+      "read_depth": "full_text",
+      "lines": 284,
+      "bytes": 28938,
+      "sha256": "2fff220c393e03a10f77192ef3480e8d524e7a1ba355ea0958330ce2cf449e33"
+    },
+    {
+      "root": "atlas",
+      "path": "references/supervisor-discovery.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/supervisor-discovery.md",
+      "read_depth": "full_text",
+      "lines": 112,
+      "bytes": 10712,
+      "sha256": "8ceaad966d6cfe471366aca9c9d1aa87765c903e0548f33ed0be05200816769b"
+    },
+    {
+      "root": "atlas",
+      "path": "references/supervisor-figures.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/supervisor-figures.md",
+      "read_depth": "full_text",
+      "lines": 42,
+      "bytes": 4792,
+      "sha256": "1bcfad7aa0b94a87bcf98d88df6d6dac8bd364cb080e6e1051ebbd9ac6479337"
+    },
+    {
+      "root": "atlas",
+      "path": "references/supervisor-publication.md",
+      "absolute_path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/supervisor-publication.md",
+      "read_depth": "full_text",
+      "lines": 112,
+      "bytes": 12433,
+      "sha256": "01be53d8cf9c54b8b4256fdcfd83e9faef3f9501374dfd1f105252561345700a"
+    },
+    {
+      "root": "atlas",
+      "path": "assets/capability-registry.json",
+      "absolute_path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/assets/capability-registry.json",
+      "read_depth": "selective structured: capability responsibility/dependency/limits all 24; full objects C05 C06 C16 C18 C19 C20 C21 C22 C23 C24; all 65 source identities; all 20 conflict objects; 5 selected ARIS source objects",
+      "lines": 5984,
+      "bytes": 217324,
+      "sha256": "3408b0e92d210afc52883dcbaf7a0a314661cade9232652b4e7f33869b45e3c4"
+    }
+  ],
+  "unread_assets": [
+    {
+      "path": "assets/intro_flowchart_board.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "assets/dense_body_layout_example.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "assets/aflow_existing_vs_ours.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "assets/performance_teaser_example.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "assets/aflow_solution_overview.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "assets/alpha_sql_solution_overview.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "assets/lead_solution_overview.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "assets/experiment_canvas_bad.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "assets/experiment_canvas_good.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "skills/drawio-reconstruction/assets/cases/data_lake_original.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "skills/drawio-reconstruction/assets/cases/data_lake_drawio.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "skills/drawio-reconstruction/assets/cases/data_man_original.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "skills/drawio-reconstruction/assets/cases/data_man_drawio.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "skills/drawio-reconstruction/assets/cases/data_sci2_original.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "skills/drawio-reconstruction/assets/cases/data_sci2_drawio.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "skills/drawio-reconstruction/examples/data_lake.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "skills/drawio-reconstruction/examples/data_lake.drawio",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "drawio_xml"
+    },
+    {
+      "path": "skills/drawio-reconstruction/examples/data_man.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "skills/drawio-reconstruction/examples/data_man.drawio",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "drawio_xml"
+    },
+    {
+      "path": "skills/drawio-reconstruction/examples/data_sci2.png",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "image"
+    },
+    {
+      "path": "skills/drawio-reconstruction/examples/data_sci2.drawio",
+      "present_in_text_snapshot": false,
+      "status": "not_read",
+      "type": "drawio_xml"
+    }
+  ],
+  "unexecuted_helpers": [
+    {
+      "path": "skills/drawio-reconstruction/scripts/batch_manifest.py",
+      "present_in_text_snapshot": false,
+      "read": false,
+      "executed": false
+    },
+    {
+      "path": "skills/drawio-reconstruction/scripts/batch_verify.py",
+      "present_in_text_snapshot": false,
+      "read": false,
+      "executed": false
+    },
+    {
+      "path": "skills/drawio-reconstruction/scripts/check_drawio.py",
+      "present_in_text_snapshot": false,
+      "read": false,
+      "executed": false
+    },
+    {
+      "path": "skills/drawio-reconstruction/scripts/export_drawio.py",
+      "present_in_text_snapshot": false,
+      "read": false,
+      "executed": false
+    },
+    {
+      "path": "skills/drawio-reconstruction/scripts/crop_assist.py",
+      "present_in_text_snapshot": false,
+      "read": false,
+      "executed": false
+    },
+    {
+      "path": "scripts/check_shared_sync.py",
+      "present_in_text_snapshot": false,
+      "read": false,
+      "executed": false
+    }
+  ],
+  "unread_documents": [
+    {
+      "path": "handbook/03_Paper_Writing/3.3_技术类Full_Paper思考模板.md",
+      "reason": "Linked by read material, outside requested full-text scope"
+    },
+    {
+      "path": "handbook/03_Paper_Writing/3.4_Benchmark与Evaluation类论文思考模板.md",
+      "reason": "Linked by read material, outside requested full-text scope"
+    },
+    {
+      "path": "handbook/06_Case_Studies/6.1_ICML_2025_Alpha-SQL写作剖析.md",
+      "reason": "References read, underlying case-study file not read"
+    },
+    {
+      "path": "handbook/06_Case_Studies/6.2_ICLR_2025_AFlow写作剖析.md",
+      "reason": "References read, underlying case-study file not read"
+    },
+    {
+      "path": "handbook/06_Case_Studies/6.3_VLDB_2026_LEAD写作剖析.md",
+      "reason": "References read, underlying case-study file not read"
+    },
+    {
+      "path": "skills/drawio-reconstruction/LICENSE",
+      "reason": "README links to it; not present in reviewed local text snapshot"
+    },
+    {
+      "path": "skills/drawio-reconstruction/requirements.txt",
+      "reason": "Not read or installed"
+    },
+    {
+      "path": "skills/drawio-reconstruction/agents/openai.yaml",
+      "reason": "Not read"
+    }
+  ],
+  "external_reading_not_performed": [
+    {
+      "title": "VCG-Bench companion paper",
+      "url": "https://arxiv.org/abs/2605.15677",
+      "read_pdf": false,
+      "read_html": false
+    },
+    {
+      "title": "VCG-Bench code",
+      "url": "https://github.com/sxy1499894281/VCG-Bench",
+      "read": false,
+      "ran": false
+    },
+    {
+      "title": "VCG-Bench dataset",
+      "url": "https://huggingface.co/datasets/sxy1620348809/VCG-Bench",
+      "read": false,
+      "downloaded": false
+    },
+    {
+      "title": "Alpha-SQL, AFlow, LEAD papers",
+      "read": false,
+      "note": "Only source skill/handbook descriptions inspected; no independent paper/figure fact-check."
+    }
+  ],
+  "suggested_tests": [
+    {
+      "id": "PC-T01",
+      "input": "Unrun plan plus synthetic hardcoded accuracy fixture",
+      "expected": "No empirical improvement or preliminary-results claim",
+      "status": "not_run"
+    },
+    {
+      "id": "PC-T02",
+      "input": "Negative-result, short theory and benchmark papers",
+      "expected": "No fixed six-paragraph/three-contribution/reference quota",
+      "status": "not_run"
+    },
+    {
+      "id": "PC-T03",
+      "input": "Correlation 0.20 on dataset A, uncertain association",
+      "expected": "Translation/polish preserves number, scope and noncausal meaning",
+      "status": "not_run"
+    },
+    {
+      "id": "PC-T04",
+      "input": "Three citations, one retrieval timeout, local source available",
+      "expected": "INCONCLUSIVE not NOT_FOUND; local sentence support checked at actual read depth",
+      "status": "not_run"
+    },
+    {
+      "id": "PC-T05",
+      "input": "Diagram with complex crop, tiny text and missing exported arrow",
+      "expected": "Editing scope disclosed; XML pass insufficient; unresolved item prevents complete status",
+      "status": "not_run"
+    },
+    {
+      "id": "PC-T06",
+      "input": "Latency-accuracy scatter and 60–80% bars",
+      "expected": "Axis direction and baseline follow units and encoding; no favored Ours manipulation",
+      "status": "not_run"
+    },
+    {
+      "id": "PC-T07",
+      "input": "Underlying result record changes after manuscript/figure review",
+      "expected": "Registered dependents reviewed individually; prior history retained; no automatic truth promotion",
+      "status": "not_run"
+    }
+  ],
+  "artifact_validation": {
+    "json_parse": "passed local standard-library JSON parse and review-shape assertions; not upstream code or research validation",
+    "read_ledger_integrity": "all upstream listed read files match local manifest Git blobs",
+    "scientific_effectiveness": "not_assessed",
+    "visual_fidelity": "not_assessed",
+    "concurrent_input_changes_after_hash_capture": [
+      {
+        "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/SKILL.md",
+        "reviewed_sha256": "9e2fef60cf0ae464bf8ef4791bfdafca7003eab5c7a6059d9059974214384eee",
+        "current_sha256": "6ba73a8d4e0d0e62e214895a8e44010048da85f737c7ce1573fd66e73f3de79b"
+      },
+      {
+        "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/supervisor-discovery.md",
+        "reviewed_sha256": "8ceaad966d6cfe471366aca9c9d1aa87765c903e0548f33ed0be05200816769b",
+        "current_sha256": "aa216abcfb58442c6143ac7e0ca7d1187f58a230825d9a56f15bc2b06d098bf8"
+      },
+      {
+        "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/supervisor-figures.md",
+        "reviewed_sha256": "1bcfad7aa0b94a87bcf98d88df6d6dac8bd364cb080e6e1051ebbd9ac6479337",
+        "current_sha256": "82b43ee026f1776c72ea65e49b2406efb1cc78e4bc9e5deec767a2d0084b3d15"
+      },
+      {
+        "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/supervisor-publication.md",
+        "reviewed_sha256": "01be53d8cf9c54b8b4256fdcfd83e9faef3f9501374dfd1f105252561345700a",
+        "current_sha256": "674582921eaf0ef4ec905d51a1d7dfe0ce1e3e6de57fe5639a17c625853d12ff"
+      }
+    ]
+  },
+  "report_file": "/workspace/scratch/f7a517081da8/supervisor-review/part-c.md"
+}

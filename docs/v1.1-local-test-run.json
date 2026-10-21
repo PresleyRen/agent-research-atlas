@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-20T05:13:12.020750+00:00",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "exit_code": 0,
+  "log": "docs/v1.1-local-tests.txt",
+  "source_sha256": {
+    "skills/agent-research-atlas/SKILL.md": "9e2fef60cf0ae464bf8ef4791bfdafca7003eab5c7a6059d9059974214384eee",
+    "skills/agent-research-atlas/scripts/atlas.py": "bcf13a70cdff1f64dc10d2f054621d182fcd55bca04d9d128dc36d5973e9181b",
+    "skills/agent-research-atlas/scripts/experiments.py": "653555bf96a36b74419cf47167ce9c9c05d89db774a4ff3bc45175848aae4219",
+    "skills/agent-research-atlas/scripts/audit.py": "9ad10da5eb49186d9d7a5c0323f2af51b56d52ab1e88d0b766ddb1541e877c61"
+  },
+  "scope": "Local deterministic suite; synthetic payloads and local artifacts only."
+}

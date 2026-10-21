@@ -1,0 +1,97 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+    "--root",
+    "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+    "discover"
+  ],
+  "exit_code": 0,
+  "stdout": {
+    "candidates": [
+      {
+        "kind": "existing_map",
+        "path": "research-atlas.config.json"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/MAP.md"
+      },
+      {
+        "kind": "native_atlas",
+        "path": "research-memory/atlas.json",
+        "revision": 1
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/map.html"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/answer-grounding/MAP.md"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/clarification/MAP.md"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/evaluation/MAP.md"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/ingestion-retrieval/MAP.md"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/intent/MAP.md"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/knowledge-graphs/MAP.md"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/memory/MAP.md"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/multi-agent/MAP.md"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/planning/MAP.md"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/production/MAP.md"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/reranking-context/MAP.md"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/routing/MAP.md"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/safety-security/MAP.md"
+      },
+      {
+        "kind": "existing_map",
+        "path": "research-memory/domains/tool-use/MAP.md"
+      }
+    ],
+    "files_examined": 39,
+    "limits": {
+      "max_depth": 6,
+      "max_files": 20000
+    },
+    "root": "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+    "truncated": false
+  },
+  "stderr": "",
+  "execution_scope": "local read-only validation/diagnosis; no network or research load"
+}

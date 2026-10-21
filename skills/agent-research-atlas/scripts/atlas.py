@@ -17,7 +17,7 @@ from contextlib import contextmanager
 from datetime import datetime, timezone, date
 from urllib.parse import urlparse
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 SCHEMA = 1
 SKILL = Path(__file__).resolve().parents[1]
 SLUG = re.compile(r"^[a-z0-9][a-z0-9_-]{0,95}$")
@@ -151,8 +151,89 @@ def canonical_identifiers(node):
     return identities
 
 
+def dependency_links(state):
+    """Yield prerequisite -> consumer links, not mere topical proximity."""
+    for node in state["nodes"]:
+        for field in ("closest_paper_ids", "evidence_ids", "search_ids", "depends_on"):
+            for source in node.get("data", {}).get(field, []):
+                yield source, node["id"], "data." + field
+    for edge in state["edges"]:
+        relation = edge["relation"]
+        if relation in {"supports", "contradicts", "motivates", "tests"}:
+            yield edge["source"], edge["target"], relation
+            if relation == "tests":
+                yield edge["target"], edge["source"], relation
+        elif relation in {"uses", "derived_from", "extends", "supersedes"}:
+            yield edge["target"], edge["source"], relation
+
+
+def impact(state, identifiers):
+    """Read-only, cycle-safe dependency impact; this is not a truth verdict."""
+    known = {node["id"] for node in state["nodes"]}
+    if any(identifier not in known for identifier in identifiers):
+        raise AtlasError("Impact requires existing node IDs")
+    adjacency = {}
+    for source, target, relation in dependency_links(state):
+        adjacency.setdefault(source, []).append((target, relation))
+    affected = []
+    for identifier in sorted(set(identifiers)):
+        queue, seen = [(identifier, [])], {identifier}
+        for current, route in queue:
+            for target, relation in sorted(adjacency.get(current, [])):
+                if target in seen:
+                    continue
+                seen.add(target)
+                path = route + [{"source": current, "target": target, "relation": relation}]
+                affected.append({"node_id": target, "source_id": identifier, "path": path})
+                queue.append((target, path))
+    return {"changed_nodes": sorted(set(identifiers)), "affected": affected,
+            "meaning": "Dependency review candidates, not automatically invalid or refuted claims."}
+
+
+def update_review_queue(old, state):
+    """Flag old consumers when a premise changes; preserve unresolved history."""
+    old_nodes = {node["id"]: node for node in old["nodes"]}
+    new_nodes = {node["id"]: node for node in state["nodes"]}
+    def substance(node):
+        return {k: v for k, v in node.items() if k not in {"created_at", "updated_at"}}
+    changed = {key for key in old_nodes if substance(old_nodes[key]) != substance(new_nodes[key])}
+    maintenance = copy.deepcopy(old.get("maintenance", {"pending_reviews": [], "review_log": []}))
+    pending = {item["node_id"]: item for item in maintenance["pending_reviews"]}
+    triggers = (impact(old, changed)["affected"] + impact(state, changed)["affected"]) if changed else []
+    # Previously established interpretations also need review after their own premises change.
+    for identifier in changed:
+        node = old_nodes[identifier]
+        if ((node["type"] == "hypothesis" and node.get("status") not in {"proposed", "parked"})
+                or (node["type"] == "claim" and node.get("status") in {"supported", "partial"})):
+            triggers.append({"node_id": identifier, "source_id": identifier,
+                             "path": [], "reason": "established_interpretation_changed"})
+    # Newly recorded evidence relationships can challenge an unchanged old conclusion.
+    previous_links = set(dependency_links(old))
+    for source, target, relation in sorted(set(dependency_links(state)) ^ previous_links):
+        if target in old_nodes:
+            triggers.append({"node_id": target, "source_id": source,
+                             "path": [{"source": source, "target": target, "relation": relation}],
+                             "reason": "dependency_or_evidence_changed"})
+            for downstream in impact(state, [target])["affected"]:
+                triggers.append({**downstream, "source_id": source,
+                                 "path": [{"source": source, "target": target, "relation": relation}] + downstream["path"],
+                                 "reason": "dependency_or_evidence_changed"})
+    for trigger in triggers:
+        identifier = trigger["node_id"]
+        if identifier not in old_nodes:
+            continue  # New records have no earlier interpretation to invalidate.
+        entry = pending.setdefault(identifier, {"node_id": identifier,
+                                   "first_flagged_revision": state["revision"], "triggers": []})
+        event = {**trigger, "revision": state["revision"]}
+        if event not in entry["triggers"]:
+            entry["triggers"].append(event)
+        entry["last_flagged_revision"] = state["revision"]
+    maintenance["pending_reviews"] = [pending[key] for key in sorted(pending)]
+    state["maintenance"] = maintenance
+
+
 def validate(state, root=None):
-    if not isinstance(state, dict) or state.get("schema_version") != SCHEMA:
+    if not isinstance(state, dict) or type(state.get("schema_version")) is not int or state["schema_version"] != SCHEMA:
         raise AtlasError("Unsupported atlas schema; preserve the original and migrate explicitly")
     if not isinstance(state.get("project"), dict) or not nonempty(state["project"].get("title")):
         raise AtlasError("project.title is required")
@@ -189,6 +270,10 @@ def validate(state, root=None):
                 identifiers[identifier] = node_id
     for node_id, node in index.items():
         data = node.get("data", {})
+        for field in ("closest_paper_ids", "evidence_ids", "search_ids", "depends_on"):
+            if field in data and (not isinstance(data[field], list)
+                                  or any(not isinstance(value, str) or value not in index for value in data[field])):
+                raise AtlasError(f"{node_id}: {field} must reference existing node IDs")
         for domain in node.get("domains", []):
             if domain not in index or index[domain]["type"] != "domain":
                 raise AtlasError(f"{node_id}: unknown domain {domain}")
@@ -265,6 +350,36 @@ def validate(state, root=None):
             raise AtlasError(f"{eid}: dangling edge")
         if edge.get("relation") not in RELATIONS:
             raise AtlasError(f"{eid}: unrecognized relation")
+    maintenance = state.get("maintenance", {"pending_reviews": [], "review_log": []})
+    if not isinstance(maintenance, dict) or any(not isinstance(maintenance.get(k), list) for k in ("pending_reviews", "review_log")):
+        raise AtlasError("maintenance must contain pending_reviews and review_log arrays")
+    pending_ids = set()
+    for item in maintenance["pending_reviews"] + maintenance["review_log"]:
+        if not isinstance(item, dict) or item.get("node_id") not in index or not isinstance(item.get("triggers"), list) or not item["triggers"]:
+            raise AtlasError("Invalid pending review")
+        if any(type(item.get(key)) is not int or not 0 <= item[key] <= state["revision"] for key in ("first_flagged_revision", "last_flagged_revision")):
+            raise AtlasError("Invalid review revision")
+        if item["first_flagged_revision"] > item["last_flagged_revision"]:
+            raise AtlasError("Invalid review revision order")
+        for event in item["triggers"]:
+            if (not isinstance(event, dict) or event.get("node_id") != item["node_id"]
+                    or event.get("source_id") not in index or not isinstance(event.get("path"), list)
+                    or type(event.get("revision")) is not int
+                    or not item["first_flagged_revision"] <= event["revision"] <= item["last_flagged_revision"]):
+                raise AtlasError("Invalid review trigger")
+            for step in event["path"]:
+                if (not isinstance(step, dict) or step.get("source") not in index or step.get("target") not in index
+                        or step.get("relation") not in RELATIONS | {"data.closest_paper_ids", "data.evidence_ids", "data.search_ids", "data.depends_on"}):
+                    raise AtlasError("Invalid review dependency path")
+        if item in maintenance["review_log"]:
+            if (not nonempty(item.get("reviewer")) or not nonempty(item.get("note")) or not nonempty(item.get("resolved_at"))
+                    or type(item.get("resolved_revision")) is not int
+                    or not item["last_flagged_revision"] < item["resolved_revision"] <= state["revision"]):
+                raise AtlasError("Invalid review resolution log")
+        elif item["node_id"] in pending_ids:
+            raise AtlasError("Duplicate pending review")
+        else:
+            pending_ids.add(item["node_id"])
     return {"valid": True, "nodes": len(nodes), "edges": len(state["edges"]), "revision": state["revision"], "meaning": "Structural integrity only; scientific interpretation requires evidence review."}
 
 
@@ -492,9 +607,35 @@ class Atlas:
                 state["imports"] = list(originals.values())
             state["revision"] += 1
             state["project"]["updated_at"] = now()
+            validate(state, self.root)
+            update_review_queue(old, state)
             self.save(state, old)
             self.render(state)
         return {"action": "updated", **validate(state, self.root)}
+
+    def resolve_review(self, identifier, reviewer, note, expected):
+        slug(identifier)
+        if not nonempty(reviewer) or not nonempty(note):
+            raise AtlasError("Review resolution requires a reviewer and substantive note")
+        with self.lock():
+            old = self.load()
+            if old["revision"] != expected:
+                raise AtlasError(f"Revision conflict: expected {expected}, found {old['revision']}")
+            state = copy.deepcopy(old)
+            maintenance = state.get("maintenance", {"pending_reviews": [], "review_log": []})
+            selected = [entry for entry in maintenance["pending_reviews"] if entry["node_id"] == identifier]
+            if not selected:
+                raise AtlasError("No pending review for node: " + identifier)
+            maintenance["pending_reviews"] = [entry for entry in maintenance["pending_reviews"] if entry["node_id"] != identifier]
+            maintenance["review_log"].append({**selected[0], "reviewer": reviewer, "note": note,
+                                            "resolved_at": now(), "resolved_revision": old["revision"] + 1})
+            state["maintenance"] = maintenance
+            state["revision"] += 1
+            state["project"]["updated_at"] = now()
+            self.save(state, old)
+            self.render(state)
+        return {"action": "review_recorded", "node_id": identifier, "revision": state["revision"],
+                "meaning": "Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified."}
 
     def write_view(self, relative, content):
         path = self.file(relative)
@@ -514,6 +655,13 @@ class Atlas:
         md = [GENERATED, "# " + clean_md(state["project"]["title"]), "", f"Revision {state['revision']} · Updated {state['project']['updated_at']}", "", "**Coverage describes recorded exploration, not completeness of the field.**", "", "[Interactive local map](map.html) · [Canonical records](atlas.json)", ""]
         if state["project"].get("synthetic"):
             md += ["**SYNTHETIC DEMONSTRATION — not research evidence.**", ""]
+        pending = state.get("maintenance", {}).get("pending_reviews", [])
+        if pending:
+            md += ["## Pending evidence reviews / 待复核", "",
+                   "Premises changed. Historical statuses remain visible and must not be reused as current conclusions before review.", ""]
+            for item in pending:
+                md.append(f"- `{item['node_id']}` — changed dependencies: " + ", ".join(sorted({x['source_id'] for x in item['triggers']})))
+            md.append("")
         for entry in state.get("imports", []):
             md += [f"Existing map: `{clean_md(entry['path'])}` — {entry.get('status', 'registered')}", ""]
         md += ["| Domain | Coverage | Recorded items | Last review |", "|---|---|---:|---|"]
@@ -528,6 +676,8 @@ class Atlas:
             domain_md = [GENERATED, "# " + clean_md(domain["title"]), "", "[Atlas overview](../../MAP.md) · [Human notes](notes.md)", "", f"Coverage: **{data.get('coverage', 'unsearched')}**", "", "## Recorded relationships", "", graph_mermaid([domain] + selected, state["edges"]), "", "## Evidence and exploration", ""]
             for node in selected:
                 domain_md += [f"### {clean_md(node['title'])}", "", f"`{node['id']}` · {node['type']} · {node.get('status', 'recorded')}", "", "```json", dumps(node.get("data", {})).rstrip().replace("```", "` ` `"), "```", ""]
+                if any(entry["node_id"] == node["id"] for entry in pending):
+                    domain_md += ["**Needs review / 待复核：依赖或解释已变；上述历史状态须重新审查。**", ""]
                 for source in node.get("sources", []):
                     domain_md.append(f"- {source.get('url', source.get('path', ''))} — access: {source['access']}; locator: {clean_md(source.get('locator', 'metadata only'))}")
                 domain_md.append("")
@@ -634,6 +784,13 @@ def main(argv=None):
     sub.add_parser("check")
     sub.add_parser("render")
     sub.add_parser("status")
+    p = sub.add_parser("impact")
+    p.add_argument("--node", action="append", required=True, help="Changed prerequisite; repeat for multiple nodes")
+    p = sub.add_parser("resolve-review")
+    p.add_argument("--node", required=True)
+    p.add_argument("--reviewer", required=True)
+    p.add_argument("--note", required=True)
+    p.add_argument("--expected-revision", type=int, required=True)
     p = sub.add_parser("mark-stale")
     p.add_argument("--days", type=int, default=90)
     p.add_argument("--as-of", default=date.today().isoformat())
@@ -661,7 +818,11 @@ def main(argv=None):
                     result = atlas.render()
             elif args.command == "status":
                 state = atlas.load()
-                result = {"project": state["project"], "revision": state["revision"], "counts": {t: sum(n["type"] == t for n in state["nodes"]) for t in sorted(TYPES)}, "coverage": [{"id": n["id"], "coverage": n.get("data", {}).get("coverage", "unsearched")} for n in state["nodes"] if n["type"] == "domain"], "imports": state.get("imports", [])}
+                result = {"project": state["project"], "revision": state["revision"], "counts": {t: sum(n["type"] == t for n in state["nodes"]) for t in sorted(TYPES)}, "coverage": [{"id": n["id"], "coverage": n.get("data", {}).get("coverage", "unsearched")} for n in state["nodes"] if n["type"] == "domain"], "imports": state.get("imports", []), "maintenance": state.get("maintenance", {"pending_reviews": [], "review_log": []})}
+            elif args.command == "impact":
+                result = impact(atlas.load(), args.node)
+            elif args.command == "resolve-review":
+                result = atlas.resolve_review(args.node, args.reviewer, args.note, args.expected_revision)
             else:
                 result = atlas.stale(args.days, args.as_of)
         print(dumps(result), end="")

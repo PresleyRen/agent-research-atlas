@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "reviewer": "cold_evidence_review",
+  "checked_at": "2026-10-20T04:57:02.382504+00:00",
+  "scope": "Eight original project files; complete local read. Expected hashes captured before project edits.",
+  "sources": [
+    {
+      "path": "code/router.py",
+      "size_bytes": 305,
+      "expected_sha256": "ecf500760717de698e6500eb72cdadfa1e78d36ead383b26cecb07e6a06b3bbb",
+      "observed_sha256": "ecf500760717de698e6500eb72cdadfa1e78d36ead383b26cecb07e6a06b3bbb",
+      "unchanged": true,
+      "read_scope": "entire file"
+    },
+    {
+      "path": "docs/draft-results.md",
+      "size_bytes": 355,
+      "expected_sha256": "71ef9316fcf21a30c86904b1a108e3a94a543fc7c0214ed1f9d93439eec308d1",
+      "observed_sha256": "71ef9316fcf21a30c86904b1a108e3a94a543fc7c0214ed1f9d93439eec308d1",
+      "unchanged": true,
+      "read_scope": "entire file"
+    },
+    {
+      "path": "docs/prior-map.md",
+      "size_bytes": 510,
+      "expected_sha256": "f04df03466b8d808d83a00eb63bf85daf768a90afd3d5ce940b3780d777ea270",
+      "observed_sha256": "f04df03466b8d808d83a00eb63bf85daf768a90afd3d5ce940b3780d777ea270",
+      "unchanged": true,
+      "read_scope": "entire file"
+    },
+    {
+      "path": "docs/resources.md",
+      "size_bytes": 231,
+      "expected_sha256": "640fd3b086f36083306c61892cc3418771213698e8c276f0b35e4c684ffbb749",
+      "observed_sha256": "640fd3b086f36083306c61892cc3418771213698e8c276f0b35e4c684ffbb749",
+      "unchanged": true,
+      "read_scope": "entire file"
+    },
+    {
+      "path": "papers/abstract-a.md",
+      "size_bytes": 345,
+      "expected_sha256": "5e979e3b502aabed23056c4d1c6de51d69ea684f687b63cd89e9212a23250c24",
+      "observed_sha256": "5e979e3b502aabed23056c4d1c6de51d69ea684f687b63cd89e9212a23250c24",
+      "unchanged": true,
+      "read_scope": "entire file"
+    },
+    {
+      "path": "results/run-a.json",
+      "size_bytes": 161,
+      "expected_sha256": "18e88e62b456f7ce02adabb09965602d091aac59541a47dd1a2c6b0cc049ad08",
+      "observed_sha256": "18e88e62b456f7ce02adabb09965602d091aac59541a47dd1a2c6b0cc049ad08",
+      "unchanged": true,
+      "read_scope": "entire file"
+    },
+    {
+      "path": "results/run-b.json",
+      "size_bytes": 162,
+      "expected_sha256": "72b2702d0a7c2c1466b2c6e15d67699b23563b91c1408deecccedd780bcf87a1",
+      "observed_sha256": "72b2702d0a7c2c1466b2c6e15d67699b23563b91c1408deecccedd780bcf87a1",
+      "unchanged": true,
+      "read_scope": "entire file"
+    },
+    {
+      "path": "searches/receipts.json",
+      "size_bytes": 665,
+      "expected_sha256": "828a129e34e9f32571a228b0c4fab723d8f06ced483a11a959a31247a9b8c4ec",
+      "observed_sha256": "828a129e34e9f32571a228b0c4fab723d8f06ced483a11a959a31247a9b8c4ec",
+      "unchanged": true,
+      "read_scope": "entire file"
+    }
+  ],
+  "all_originals_unchanged": true
+}

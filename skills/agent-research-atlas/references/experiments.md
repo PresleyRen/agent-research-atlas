@@ -152,3 +152,28 @@ Before making a scientific claim, review the mechanism, strongest prior work, ma
 ## Verification performed in this repository
 
 `tests/test_experiments.py` runs only the hand-authored synthetic fixture in temporary local projects. It checks successful capture, nonzero failures, partial output on timeout, existing authorization attestation, freeze/run immutability, plan and artifact tampering, conservative budgets, cancellation records, concurrent lock exclusion, source-preserving imports, failed external imports, invalid numeric JSON, path traversal, symlink rejection, and retained incomplete attempts. These are software integrity tests; they are not evidence that a research hypothesis or scientific workflow is effective.
+
+## v1.1 frozen inputs and controlled optimization
+
+A new freeze records SHA-256 and byte length for every `command.input_files` entry. All listed files are immutable by default. Include the evaluator, metric implementation, ground truth/split manifest, prompts/configuration and other comparison-critical files explicitly; undeclared dependencies are outside this check. A changed immutable file before launch produces a retained `launch_failed` attempt and consumes the reserved local attempt budget. Fix the mismatch by creating a new experiment ID with an explained amendment, not by editing the freeze record.
+
+Optimization can change an explicitly declared candidate implementation:
+
+```json
+{
+  "argv": ["python", "train.py", "--seed", "{seed}"],
+  "cwd": ".",
+  "input_files": ["train.py", "evaluate.py", "split.json"],
+  "mutable_input_files": ["train.py"]
+}
+```
+
+`mutable_input_files` is optional, defaults to `[]`, and must be a unique subset of `input_files`. Keep evaluators, held-out labels, metric definitions and comparison budgets outside this mutable set. The runner checks the declared policy, not a file's scientific role. Review the method-to-code mapping before execution; a user can mislabel an evaluator as a candidate, which syntax alone cannot detect.
+
+Each launched run records input hashes before and after execution. If an immutable input changes during a run that exited 0, the record preserves `exit_code: 0`, reports `status: failed` and names `immutable_inputs_changed_during_run`. Failure, timeout and launch errors remain visible. A hash before/after check cannot detect a temporary edit that was restored between observations, undeclared files, an altered runtime/environment or external services. Use a real isolated evaluator and the project's container/CI controls when the comparison requires stronger protection.
+
+Old v1.0 freezes remain readable and are explicitly reported as `legacy_unpinned`. Historical validation checks recorded artifacts rather than requiring today's source files to match an old run. Do not re-label old runs as having the new freeze-time guarantee. New confirmatory comparisons should use a new experiment ID and an explicit current freeze.
+
+## Numeric statements need a separate audit
+
+`validate-record` verifies recorded bytes and identities. Before putting measurements into a result-to-claim table, use `audit.py values` with the numerical ledger in [evidence-and-claims.md](evidence-and-claims.md). It distinguishes a number mismatch, missing file, missing JSON locator, unparseable source, non-numeric value and changed source version. A matching number does not establish that the evaluator measures the intended construct or that a causal claim follows.

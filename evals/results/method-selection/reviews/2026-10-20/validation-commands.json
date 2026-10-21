@@ -1,0 +1,328 @@
+{
+  "schema_version": 1,
+  "scope": "实际执行的项目记录与检查命令；不含任何研究负载",
+  "commands": [
+    {
+      "name": "pre-init-project-gaps",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+        "project"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:04:20.008864+00:00",
+      "ended_at": "2026-10-20T05:04:20.056443+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"issues\": [\n    {\n      \"capabilities\": [\n        \"C02\"\n      ],\n      \"code\": \"G-MAP\",\n      \"next\": \"Run discover, read existing maps, then reuse/adopt/init.\",\n      \"reason\": \"No selected native atlas\"\n    }\n  ],\n  \"scientific_verdict\": \"not_assessed\"\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "method-conflict-locate",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "locate",
+        "--query",
+        "C08 C12"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:04:20.056841+00:00",
+      "ended_at": "2026-10-20T05:04:20.104961+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"matches\": [\n    {\n      \"conflicts\": [\n        \"CF04\",\n        \"CF15\"\n      ],\n      \"depends_on\": [\n        \"C07\"\n      ],\n      \"description\": \"9模块：直觉、风险、目标、固定/浮动条件、决策树、逆境、反演、综合和编排。\",\n      \"id\": \"C08\",\n      \"implementation\": [\n        {\n          \"path\": \"references/methodology.md\"\n        }\n      ],\n      \"keywords\": [\n        \"选题\",\n        \"decision tree\",\n        \"重要性\",\n        \"risk\"\n      ],\n      \"limits\": \"没有通用发表分数；固定预算/数据权限不会因框架建议自动放松。\",\n      \"match_terms\": 1,\n      \"mode\": \"host protocol\",\n      \"name\": \"问题选择与决策树 / Problem choice\",\n      \"remedy\": \"明确知识目标与实用目标，记录不变约束和可调整项，用有信息量的早期分支检查。\",\n      \"sources\": [\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C09\"\n              ],\n              \"complements\": [\n                \"SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION\"\n              ],\n              \"gap\": \"数量阈值与简单轴计数不具通用科学充分性。\",\n              \"id\": \"SRC-RESEARCHSTUDIO-SCOOP-CHECK-F05\",\n              \"label\": \"固定候选数量和轴计数决定全局novelty\",\n              \"remedy\": \"以最危险近邻、证据成熟度和实际预算决定深读范围。\",\n              \"status\": \"rejected\"\n            }\n          ],\n          \"id\": \"SRC-RESEARCHSTUDIO-SCOOP-CHECK\",\n          \"name\": \"ResearchStudio scoop-check\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C11\",\n                \"C19\"\n              ],\n              \"complements\": [\n                \"SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING\"\n              ],\n              \"gap\": \"评分和固定资源不能替代独立证据与用户预算。\",\n              \"id\": \"SRC-ARIS-IDEA-CREATOR-F04\",\n              \"label\": \"模型族评分、固定GPU和pilot默认作为门槛\",\n              \"remedy\": \"公开理由和分歧；按实际可行性与信息增益选择。\",\n              \"status\": \"rejected\"\n            }\n          ],\n          \"id\": \"SRC-ARIS-IDEA-CREATOR\",\n          \"name\": \"ARIS idea-creator\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C09\",\n                \"C20\"\n              ],\n              \"complements\": [\n                \"SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION\"\n              ],\n              \"gap\": \"项目仍可能因价值或资源不足而停止。\",\n              \"id\": \"SRC-ARIS-NOVELTY-CHECK-F03\",\n              \"label\": \"竞争/并发工作用于精炼贡献\",\n              \"remedy\": \"记录范围内的贡献差异及继续/修改/停止理由。\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-ARIS-NOVELTY-CHECK\",\n          \"name\": \"ARIS novelty-check\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C11\"\n              ],\n              \"complements\": [\n                \"SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION\"\n              ],\n              \"gap\": \"未移植weighted matrix脚本，评分不能估计科学真值。\",\n              \"id\": \"SRC-KDENSE-SCIENTIFIC-BRAINSTORMING-F03\",\n              \"label\": \"预先定义准则、权重、范围、异议与敏感性\",\n              \"remedy\": \"用透明理由和不确定性辅助选择，不自动选winner。\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-KDENSE-SCIENTIFIC-BRAINSTORMING\",\n          \"name\": \"K-Dense scientific-brainstorming\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C07\",\n                \"C08\"\n              ],\n              \"complements\": [\n                \"SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION\"\n              ],\n              \"gap\": \"有技术不等于有重要问题。\",\n              \"id\": \"SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F01\",\n              \"label\": \"问题优先与能力优先\",\n              \"remedy\": \"核实真实瓶颈与新增能力。\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C07\",\n                \"C08\"\n              ],\n              \"complements\": [\n                \"SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH\"\n              ],\n              \"gap\": \"冲突可能是设定造成，不能凭直觉认定基本限制。\",\n              \"id\": \"SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F03\",\n              \"label\": \"目标取舍与矛盾寻找\",\n              \"remedy\": \"找两侧证据和可判别解释。\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C07\",\n                \"C08\"\n              ],\n              \"complements\": [\n                \"SRC-KDENSE-SCIENTIFIC-BRAINSTORMING\"\n              ],\n              \"gap\": \"角色模拟不是实际参与者证据。\",\n              \"id\": \"SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F08\",\n              \"label\": \"利益相关者轮换\",\n              \"remedy\": \"记录视角来源与缺失群体。\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C11\",\n                \"C13\"\n              ],\n              \"complements\": [\n                \"SRC-KDENSE-STATISTICAL-POWER\"\n              ],\n              \"gap\": \"固定数目与工期不适合所有任务。\",\n              \"id\": \"SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F11\",\n              \"label\": \"固定10–20想法、3实验或两周pilot作为通则\",\n              \"remedy\": \"按信息价值、成本和用户范围定停止条件。\",\n              \"status\": \"rejected\"\n            }\n          ],\n          \"id\": \"SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS\",\n          \"name\": \"Orchestra brainstorming-research-ideas\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C11\"\n              ],\n              \"complements\": [\n                \"SRC-RESEARCHSTUDIO-PAPER-SEARCH\"\n              ],\n              \"gap\": \"时效例子与成本断言需重查。\",\n              \"id\": \"SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH-F07\",\n              \"label\": \"近期可行边界与新使能条件\",\n              \"remedy\": \"核实可用性和竞争工作再推进。\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH\",\n          \"name\": \"Orchestra creative-thinking-for-research\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C07\",\n                \"C08\"\n              ],\n              \"complements\": [\n                \"SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS\"\n              ],\n              \"gap\": \"生物学案例并非Agent领域的实证发现。\",\n              \"id\": \"SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F01\",\n              \"label\": \"直觉启发：系统化/技术限制/缺失能力/动态/新坐标/平台/缺席现象\",\n              \"remedy\": \"将启发转成有来源的问题和新的判别预测。\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C11\",\n                \"C13\"\n              ],\n              \"complements\": [\n                \"SRC-ARIS-EXPERIMENT-PLAN\"\n              ],\n              \"gap\": \"主观风险分档不是校准成功概率。\",\n              \"id\": \"SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F02\",\n              \"label\": \"科学与技术假设、依赖及最早风险检查\",\n              \"remedy\": \"记录证据、得到答案的时间与go/pivot/stop条件。\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C08\"\n              ],\n              \"complements\": [\n                \"SRC-KDENSE-SCIENTIFIC-BRAINSTORMING\"\n              ],\n              \"gap\": \"高分或影响自述不认证科学或发表价值。\",\n              \"id\": \"SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F03\",\n              \"label\": \"按知识/工具/应用选择价值函数\",\n              \"remedy\": \"分开学习深度、适用性、新能力和实际收益。\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C20\"\n              ],\n              \"complements\": [\n                \"SRC-ARIS-RESEARCH-WIKI\"\n              ],\n              \"gap\": \"日/周/月节奏不是已部署自动任务。\",\n              \"id\": \"SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F05\",\n              \"label\": \"实施与战略层切换的决策树\",\n              \"remedy\": \"按重大证据与任务约定更新观察到动作的分支。\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C20\"\n              ],\n              \"complements\": [\n                \"SRC-ARIS-RESULT-TO-CLAIM\"\n              ],\n              \"gap\": \"不能承诺所有失败都变成有价值发表。\",\n              \"id\": \"SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION-F06\",\n              \"label\": \"逆境预案：修复、升级、替代或停止\",\n              \"remedy\": \"保存负结果、可学内容与停止条件。\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION\",\n          \"name\": \"Anthropic scientific-problem-selection\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C11\",\n                \"C12\"\n              ],\n              \"complements\": [\n                \"SRC-RE-IDEA\",\n                \"SRC-AUTORESEARCH\"\n              ],\n              \"gap\": \"README 自身说明广泛探索不总比强模板好\",\n              \"id\": \"SRC-AI-SCIENTIST-V2-F02\",\n              \"label\": \"开阔探索与强脚手架之间的取舍\",\n              \"remedy\": \"根据已有代码/资源选入口，以具体诊断结果决定保留，不宣布工具普遍胜者\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-AI-SCIENTIST-V2\",\n          \"name\": \"SakanaAI AI-Scientist-v2\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C07\",\n                \"C08\",\n                \"C19\",\n                \"C20\"\n              ],\n              \"complements\": [\n                \"SRC-RE-IDEATION\",\n                \"SRC-IDEASCIENTIST\"\n              ],\n              \"gap\": \"Atlas 没有 Google 受限服务接入或复制 Elo系统\",\n              \"id\": \"SRC-GOOGLE-COSCIENTIST-F01\",\n              \"label\": \"生成、反思、Elo排名、演进、近邻与元评审分工\",\n              \"remedy\": \"保留角色目的和证据交接；排名只是相对选择信号，不是科学真值\",\n              \"status\": \"reference\"\n            }\n          ],\n          \"id\": \"SRC-GOOGLE-COSCIENTIST\",\n          \"name\": \"Google Co-Scientist / AlphaEvolve entry\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C09\",\n                \"C10\"\n              ],\n              \"complements\": [\n                \"SRC-RE-NOVELTY\",\n                \"SRC-RE-DIRECTION\"\n              ],\n              \"gap\": \"提案评分/novel true 不能作为真值或可发表概率\",\n              \"id\": \"SRC-RE-IDEA-F02\",\n              \"label\": \"候选细化、真实资源内约束和先验重叠检查\",\n              \"remedy\": \"记录证据、取舍和最相近差异，保留失败/不确定决策\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C09\"\n              ],\n              \"complements\": [\n                \"SRC-S2\"\n              ],\n              \"gap\": \"未校准打分无法证明可行或新颖\",\n              \"id\": \"SRC-RE-IDEA-F03\",\n              \"label\": \"固定数值 interestingness/feasibility/novelty 当认证\",\n              \"remedy\": \"用户优先级可排序，但推进门槛采用实际证据与资源条件\",\n              \"status\": \"rejected\"\n            }\n          ],\n          \"id\": \"SRC-RE-IDEA\",\n          \"name\": \"RE idea-generation\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C01\",\n                \"C08\",\n                \"C19\"\n              ],\n              \"complements\": [\n                \"SRC-ORCHESTRA-LOOP\"\n              ],\n              \"gap\": \"单上下文角色模拟不是独立评审\",\n              \"id\": \"SRC-RE-IDEATION-F02\",\n              \"label\": \"按深度的探索/收敛检查与角色模拟回退\",\n              \"remedy\": \"减少已知明确任务的访谈；有预算停止，披露 serial self-review\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C15\"\n              ],\n              \"complements\": [\n                \"SRC-AUTORESEARCH\"\n              ],\n              \"gap\": \"无上限探索不符合可控科研；有趣数量不是证据\",\n              \"id\": \"SRC-RE-IDEATION-F03\",\n              \"label\": \"exhaustive 无固定上限、机械计数判有趣\",\n              \"remedy\": \"采用明确探索预算和证据改变判断的停止条件\",\n              \"status\": \"rejected\"\n            }\n          ],\n          \"id\": \"SRC-RE-IDEATION\",\n          \"name\": \"RE ideation\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C07\",\n                \"C08\",\n                \"C10\"\n              ],\n              \"complements\": [\n                \"SRC-RE-CREATIVE\",\n                \"SRC-RE-IDEA\"\n              ],\n              \"gap\": \"上游框架不是研究效果保证\",\n              \"id\": \"SRC-RE-BRAINSTORM-F01\",\n              \"label\": \"十种选题视角：问题/解法起点、抽象、张力、迁移、条件变化、失败边界、简单基线、利益相关方、组合分解、简明表述\",\n              \"remedy\": \"按瓶颈选择少量视角，产出机制和可检验差异\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C11\",\n                \"C20\"\n              ],\n              \"complements\": [\n                \"SRC-RE-DIRECTION\",\n                \"SRC-RE-NOVELTY\"\n              ],\n              \"gap\": \"固定候选数量与两周pilot未必适合当前资源\",\n              \"id\": \"SRC-RE-BRAINSTORM-F02\",\n              \"label\": \"发散→筛选→细化和候选/淘汰原因保留\",\n              \"remedy\": \"取舍写证据和理由；预算未知先诊断，不机械凑数\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-RE-BRAINSTORM\",\n          \"name\": \"RE snapshot: brainstorming-research-ideas\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C07\",\n                \"C08\",\n                \"C10\"\n              ],\n              \"complements\": [\n                \"SRC-RE-BRAINSTORM\",\n                \"SRC-IDEASCIENTIST\"\n              ],\n              \"gap\": \"方法是启发而非已验证的科研产出算法\",\n              \"id\": \"SRC-RE-CREATIVE-F01\",\n              \"label\": \"八种思考操作：跨概念组合、重述问题、结构类比、约束变化、反向、抽象层次、当前可行边界、矛盾综合\",\n              \"remedy\": \"保留结构映射、前提和区分性预测，随后查最相近工作\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-RE-CREATIVE\",\n          \"name\": \"RE snapshot: creative-thinking-for-research\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C01\",\n                \"C07\",\n                \"C08\"\n              ],\n              \"complements\": [\n                \"SRC-RE-BRAINSTORM\",\n                \"SRC-RE-IDEATION\"\n              ],\n              \"gap\": \"明确任务不需要重复访谈；本次未验证对话产出优于其他技能\",\n              \"id\": \"SRC-RE-SCIENTIFIC-BRAINSTORM-F01\",\n              \"label\": \"对话式探索：上下文、发散、连接、建设性评估和下一步\",\n              \"remedy\": \"按用户已给信息直接推进，开放问题才补最小澄清\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-RE-SCIENTIFIC-BRAINSTORM\",\n          \"name\": \"RE snapshot: scientific-brainstorming\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C06\",\n                \"C08\",\n                \"C10\",\n                \"C23\"\n              ],\n              \"complements\": [\n                \"SRC-RE-DIRECTION\",\n                \"SRC-RE-IDEA\"\n              ],\n              \"gap\": \"单列缺点不能说明如何继续\",\n              \"id\": \"SRC-RE-CRITICAL-F02\",\n              \"label\": \"批判转问题：最强替代解释、缺失实验、隐藏假设和更明确的方向\",\n              \"remedy\": \"每个重大问题写影响、剩余不确定性和最小修补/检验\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-RE-CRITICAL\",\n          \"name\": \"RE snapshot: scientific-critical-thinking\"\n        }\n      ],\n      \"symptoms\": [\n        \"选题\",\n        \"decision tree\",\n        \"重要性\",\n        \"risk\"\n      ],\n      \"tests\": [\n        {\n          \"kind\": \"not_run\",\n          \"path\": \"docs/forward-conflicts.md\"\n        }\n      ]\n    },\n    {\n      \"conflicts\": [\n        \"CF15\"\n      ],\n      \"depends_on\": [\n        \"C10\"\n      ],\n      \"description\": \"理论/反例/误差/因果/比较/测量等按问题选择；problem anchor与method→code→metric映射。\",\n      \"id\": \"C12\",\n      \"implementation\": [\n        {\n          \"path\": \"references/methodology.md\"\n        }\n      ],\n      \"keywords\": [\n        \"方法论\",\n        \"method\",\n        \"实现\",\n        \"GT\",\n        \"loss\"\n      ],\n      \"limits\": \"不声称精通所有学科方法；未执行的方法只有协议支持。\",\n      \"match_terms\": 1,\n      \"mode\": \"host protocol\",\n      \"name\": \"方法选择与实现忠实度 / Method routing\",\n      \"remedy\": \"补实际输入输出/表示/训练推理/评价调用；专业统计/形式化工具作为显式适配。\",\n      \"sources\": [\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C01\",\n                \"C12\"\n              ],\n              \"complements\": [\n                \"SRC-ARIS-RESEARCH-REFINE\"\n              ],\n              \"gap\": \"需要宿主逐次检查锚点和技术定义，字段存在不保证忠实。\",\n              \"id\": \"SRC-RESEARCHSTUDIO-IDEA-SPARK-F02\",\n              \"label\": \"保留原始用户意图，区分普通参数选择与未定义核心操作\",\n              \"remedy\": \"修订时核对problem anchor及输入输出、核心操作。\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C12\",\n                \"C13\",\n                \"C16\"\n              ],\n              \"complements\": [\n                \"SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS\",\n                \"SRC-ARIS-EXPERIMENT-AUDIT\"\n              ],\n              \"gap\": \"没有通用公式执行、移除测试或成本计算器。\",\n              \"id\": \"SRC-RESEARCHSTUDIO-IDEA-SPARK-F03\",\n              \"label\": \"朴素基线、组件生产消费链与可计算缺陷核对\",\n              \"remedy\": \"仅对已检查的本地实现做授权的具体计算与负对照。\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C12\",\n                \"C21\",\n                \"C24\"\n              ],\n              \"complements\": [\n                \"SRC-ARIS-RESEARCH-REFINE\"\n              ],\n              \"gap\": \"不提供IdeaSpark中英卡片、LaTeX/PDF构建及逐阶段修复器。\",\n              \"id\": \"SRC-RESEARCHSTUDIO-IDEA-SPARK-F05\",\n              \"label\": \"idea/experiment审查深度与解释改写的来源忠实性\",\n              \"remedy\": \"交付深度据任务确定；改写不得增添机制、保证或已运行含义。\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-RESEARCHSTUDIO-IDEA-SPARK\",\n          \"name\": \"ResearchStudio idea-spark\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C01\",\n                \"C12\",\n                \"C19\"\n              ],\n              \"complements\": [\n                \"SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION\"\n              ],\n              \"gap\": \"锚点语义漂移尚无自动检测器。\",\n              \"id\": \"SRC-ARIS-RESEARCH-REFINE-F01\",\n              \"label\": \"problem anchor与每轮scope/简洁性检查\",\n              \"remedy\": \"对照瓶颈、非目标、资源和成功条件逐次说明变化。\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C10\",\n                \"C12\",\n                \"C13\"\n              ],\n              \"complements\": [\n                \"SRC-RESEARCHSTUDIO-IDEA-SPARK\",\n                \"SRC-ARIS-EXPERIMENT-BRIDGE\"\n              ],\n              \"gap\": \"详细字段仍需与代码真实核对。\",\n              \"id\": \"SRC-ARIS-RESEARCH-REFINE-F02\",\n              \"label\": \"可实现方法卡：接口/表示/学习信号/训练/推理\",\n              \"remedy\": \"在methodology 6填写，未训练或不适用则解释。\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C12\",\n                \"C13\"\n              ],\n              \"complements\": [\n                \"SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS\"\n              ],\n              \"gap\": \"使用新组件不自动带来贡献。\",\n              \"id\": \"SRC-ARIS-RESEARCH-REFINE-F03\",\n              \"label\": \"最小路线与有必要的现代替代对照\",\n              \"remedy\": \"说明每个部件新增能力和最简单反例/基线。\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-ARIS-RESEARCH-REFINE\",\n          \"name\": \"ARIS research-refine\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C12\",\n                \"C16\",\n                \"C24\"\n              ],\n              \"complements\": [\n                \"SRC-ARIS-EXPERIMENT-AUDIT\"\n              ],\n              \"gap\": \"runner不验证算法或标签来源是否正确。\",\n              \"id\": \"SRC-ARIS-EXPERIMENT-BRIDGE-F01\",\n              \"label\": \"方法→计划→代码→metric/GT忠实度检查\",\n              \"remedy\": \"先完成methodology 9/11逐位置检查，再实质执行。\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-ARIS-EXPERIMENT-BRIDGE\",\n          \"name\": \"ARIS experiment-bridge\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C12\",\n                \"C13\",\n                \"C17\"\n              ],\n              \"complements\": [\n                \"SRC-KDENSE-EXPERIMENTAL-DESIGN\",\n                \"SRC-KDENSE-STATISTICAL-POWER\"\n              ],\n              \"gap\": \"无通用因果推断或统计分析引擎。\",\n              \"id\": \"SRC-KDENSE-HYPOTHESIS-GENERATION-F04\",\n              \"label\": \"设计匹配estimand、依赖、多重性和未知效应\",\n              \"remedy\": \"必要时转实际领域/统计工具并保留识别假设。\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-KDENSE-HYPOTHESIS-GENERATION\",\n          \"name\": \"K-Dense hypothesis-generation\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C06\",\n                \"C12\"\n              ],\n              \"complements\": [\n                \"SRC-KDENSE-LITERATURE-REVIEW\"\n              ],\n              \"gap\": \"没有领域通用证据等级器；医学层级不直接适用全部CS研究。\",\n              \"id\": \"SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING-F03\",\n              \"label\": \"GRADE/RoB等按目标结果与工具版本适用\",\n              \"remedy\": \"先判断框架适用性，再评具体结果或证据集合。\",\n              \"status\": \"optional\"\n            }\n          ],\n          \"id\": \"SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING\",\n          \"name\": \"K-Dense scientific-critical-thinking\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C12\",\n                \"C13\"\n              ],\n              \"complements\": [\n                \"SRC-KDENSE-STATISTICAL-POWER\"\n              ],\n              \"gap\": \"需要处理携带效应、别名、结构依赖和适用假设。\",\n              \"id\": \"SRC-KDENSE-EXPERIMENTAL-DESIGN-F02\",\n              \"label\": \"比较/交叉/聚类/因子/响应面/序贯按问题选择\",\n              \"remedy\": \"在methodology 9选设计并用对应分析。\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-KDENSE-EXPERIMENTAL-DESIGN\",\n          \"name\": \"K-Dense experimental-design\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C12\",\n                \"C17\"\n              ],\n              \"complements\": [\n                \"SRC-KDENSE-EXPERIMENTAL-DESIGN\"\n              ],\n              \"gap\": \"上游常用power helper主要是优效检验，不覆盖所有目标。\",\n              \"id\": \"SRC-KDENSE-STATISTICAL-POWER-F01\",\n              \"label\": \"检出、固定n的MDE、精度、等效/非劣和序贯分开\",\n              \"remedy\": \"按methodology 9选目标；缺专用方法时明确转工具/专家。\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-KDENSE-STATISTICAL-POWER\",\n          \"name\": \"K-Dense statistical-power\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C12\",\n                \"C13\"\n              ],\n              \"complements\": [\n                \"SRC-RESEARCHSTUDIO-IDEA-SPARK\"\n              ],\n              \"gap\": \"更少组件本身不证明更深贡献。\",\n              \"id\": \"SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F07\",\n              \"label\": \"简洁性与公平最小基线\",\n              \"remedy\": \"匹配信息、计算和调参机会。\",\n              \"status\": \"protocol\"\n            },\n            {\n              \"capabilities\": [\n                \"C07\",\n                \"C12\"\n              ],\n              \"complements\": [\n                \"SRC-RESEARCHSTUDIO-IDEA-SPARK\"\n              ],\n              \"gap\": \"拼接不自动产生新贡献。\",\n              \"id\": \"SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS-F09\",\n              \"label\": \"组件组合和分解\",\n              \"remedy\": \"说明生产/消费关系及移除变化。\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS\",\n          \"name\": \"Orchestra brainstorming-research-ideas\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C07\",\n                \"C12\"\n              ],\n              \"complements\": [\n                \"SRC-ORCHESTRA-BRAINSTORMING-RESEARCH-IDEAS\"\n              ],\n              \"gap\": \"综合可能隐藏未解决取舍。\",\n              \"id\": \"SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH-F08\",\n              \"label\": \"对立观点并置与新设定综合\",\n              \"remedy\": \"测试两目标能否同时改善及代价。\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-ORCHESTRA-CREATIVE-THINKING-FOR-RESEARCH\",\n          \"name\": \"Orchestra creative-thinking-for-research\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C03\",\n                \"C12\"\n              ],\n              \"complements\": [\n                \"SRC-HF-DATASETS\"\n              ],\n              \"gap\": \"不是当前 Agent 研究的默认数据源或评估框架\",\n              \"id\": \"SRC-ELICIT-F05\",\n              \"label\": \"临床试验检索及生医专用筛选\",\n              \"remedy\": \"涉及医疗 Agent 时按具体问题扩展；不把 RCT/PICO 模板套到所有计算实验\",\n              \"status\": \"deferred\"\n            }\n          ],\n          \"id\": \"SRC-ELICIT\",\n          \"name\": \"Elicit REST v2 and MCP\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C12\",\n                \"C21\",\n                \"C22\",\n                \"C24\"\n              ],\n              \"complements\": [\n                \"SRC-HF-EVALS\",\n                \"SRC-HF-TRAINER\"\n              ],\n              \"gap\": \"未集成整个 Orchestra 工程技能集合或论文模板库\",\n              \"id\": \"SRC-ORCHESTRA-LOOP-F02\",\n              \"label\": \"按领域路由执行技能、研究叙事和进度图\",\n              \"remedy\": \"仅按任务定位需要的专门技能；每个外部能力单独注册/核实/测试\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-ORCHESTRA-LOOP\",\n          \"name\": \"Orchestra autoresearch\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C08\",\n                \"C11\",\n                \"C12\"\n              ],\n              \"complements\": [\n                \"SRC-RE-IDEA\",\n                \"SRC-AUTORESEARCH\"\n              ],\n              \"gap\": \"README 自身说明广泛探索不总比强模板好\",\n              \"id\": \"SRC-AI-SCIENTIST-V2-F02\",\n              \"label\": \"开阔探索与强脚手架之间的取舍\",\n              \"remedy\": \"根据已有代码/资源选入口，以具体诊断结果决定保留，不宣布工具普遍胜者\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-AI-SCIENTIST-V2\",\n          \"name\": \"SakanaAI AI-Scientist-v2\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C12\",\n                \"C15\",\n                \"C22\"\n              ],\n              \"complements\": [\n                \"SRC-HF-TRAINER\",\n                \"SRC-HF-EVALS\"\n              ],\n              \"gap\": \"本项目未复现；上游 README 标 CC BY-NC 4.0\",\n              \"id\": \"SRC-IDEASCIENTIST-F03\",\n              \"label\": \"逐角色 RL 奖励/训练/评估及专用索引\",\n              \"remedy\": \"需要时独立核对代码/数据许可、资源和评价设计，不直接打包或宣称性能\",\n              \"status\": \"deferred\"\n            }\n          ],\n          \"id\": \"SRC-IDEASCIENTIST\",\n          \"name\": \"IdeaScientist\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C07\",\n                \"C11\",\n                \"C12\"\n              ],\n              \"complements\": [\n                \"SRC-AI-RESEARCHER\",\n                \"SRC-AUTORESEARCH\"\n              ],\n              \"gap\": \"v1.0.0 未显式列双入口和脚手架缺口表；本次方法协议补齐\",\n              \"id\": \"SRC-RE-IDEA-F01\",\n              \"label\": \"topic-first 与 template-grounded 两入口、代码接缝/缺失基线/评估切片图\",\n              \"remedy\": \"已有项目先读代码、baseline与归档，再把干预点映射最小实验\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-RE-IDEA\",\n          \"name\": \"RE idea-generation\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C07\",\n                \"C10\",\n                \"C12\"\n              ],\n              \"complements\": [\n                \"SRC-RE-HYPOTHESIS\",\n                \"SRC-RE-CRITICAL\"\n              ],\n              \"gap\": \"未全文审计引用资源内 SCAMPER/TRIZ 等独立方法教程\",\n              \"id\": \"SRC-RE-SCIENTIFIC-BRAINSTORM-F02\",\n              \"label\": \"类比/反假设/尺度/约束/跨学科/新条件六类探索与后续路由\",\n              \"remedy\": \"适用时选一条机制路径，强观测转竞争假设、弱证据转批判审查\",\n              \"status\": \"protocol\"\n            }\n          ],\n          \"id\": \"SRC-RE-SCIENTIFIC-BRAINSTORM\",\n          \"name\": \"RE snapshot: scientific-brainstorming\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C12\",\n                \"C13\",\n                \"C15\",\n                \"C22\"\n              ],\n              \"complements\": [\n                \"SRC-HF-DATASETS\",\n                \"SRC-HF-TRACKIO\"\n              ],\n              \"gap\": \"没执行真实模型评估；名字不代表已发布community结果\",\n              \"id\": \"SRC-HF-EVALS-F01\",\n              \"label\": \"inspect-ai/lighteval、本地或provider执行、vLLM/HF/accelerate回退\",\n              \"remedy\": \"先任务适配+小样例，固定模型revision/提示/评估器，公平成本对齐\",\n              \"status\": \"optional\"\n            }\n          ],\n          \"id\": \"SRC-HF-EVALS\",\n          \"name\": \"Hugging Face community evals\"\n        },\n        {\n          \"features\": [\n            {\n              \"capabilities\": [\n                \"C11\",\n                \"C12\",\n                \"C15\",\n                \"C22\"\n              ],\n              \"complements\": [\n                \"SRC-HF-DATASETS\",\n                \"SRC-HF-EVALS\"\n              ],\n              \"gap\": \"没有训练/验证模型，也不保证其中方法适合任何Agent问题\",\n              \"id\": \"SRC-HF-TRAINER-F01\",\n              \"label\": \"TRL的SFT/DPO/GRPO/reward、数据格式验证、GGUF/模型保存\",\n              \"remedy\": \"按标注/偏好/反馈条件选方法，强基线和独立评估先确定\",\n              \"status\": \"optional\"\n            }\n          ],\n          \"id\": \"SRC-HF-TRAINER\",\n          \"name\": \"Hugging Face LLM trainer\"\n        }\n      ],\n      \"symptoms\": [\n        \"方法论\",\n        \"method\",\n        \"实现\",\n        \"GT\",\n        \"loss\"\n      ],\n      \"tests\": [\n        {\n          \"kind\": \"not_run\",\n          \"path\": \"docs/forward-conflicts.md\"\n        }\n      ]\n    }\n  ],\n  \"meaning\": \"Lexical maintenance lookup, not a research-quality ranking. Try a capability ID or a shorter symptom if empty.\",\n  \"query\": \"C08 C12\"\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "init-synthetic-atlas",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+        "init",
+        "--title",
+        "文档版本与意图歧义路由｜本地教学研究图",
+        "--synthetic"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:04:20.106407+00:00",
+      "ended_at": "2026-10-20T05:04:20.190928+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"action\": \"created\",\n  \"atlas\": \"/workspace/scratch/f7a517081da8/forward-conflicts-methods/research-atlas/atlas.json\",\n  \"import_pending\": false,\n  \"revision\": 0,\n  \"synthetic\": true\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "initial-status",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+        "status"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:04:20.191336+00:00",
+      "ended_at": "2026-10-20T05:04:20.233337+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"counts\": {\n    \"claim\": 0,\n    \"decision\": 0,\n    \"domain\": 14,\n    \"experiment\": 0,\n    \"exploration\": 0,\n    \"hypothesis\": 0,\n    \"paper\": 0,\n    \"problem\": 0\n  },\n  \"coverage\": [\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"intent\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"clarification\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"routing\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"planning\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"ingestion-retrieval\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"reranking-context\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"knowledge-graphs\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"memory\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"tool-use\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"answer-grounding\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"multi-agent\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"evaluation\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"production\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"safety-security\"\n    }\n  ],\n  \"imports\": [],\n  \"maintenance\": {\n    \"pending_reviews\": [],\n    \"review_log\": []\n  },\n  \"project\": {\n    \"created_at\": \"2026-10-20T05:04:20.143737+00:00\",\n    \"languages\": [\n      \"zh\",\n      \"en\"\n    ],\n    \"scope\": \"Agent research; extend or narrow explicitly\",\n    \"synthetic\": true,\n    \"title\": \"文档版本与意图歧义路由｜本地教学研究图\",\n    \"updated_at\": \"2026-10-20T05:04:20.143737+00:00\"\n  },\n  \"revision\": 0\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "upsert-research-package",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+        "upsert",
+        "--file",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods/reviews/2026-10-20/atlas-batch-20261020.json",
+        "--expected-revision",
+        "0"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:12:33.316801+00:00",
+      "ended_at": "2026-10-20T05:12:33.418639+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"action\": \"updated\",\n  \"edges\": 12,\n  \"meaning\": \"Structural integrity only; scientific interpretation requires evidence review.\",\n  \"nodes\": 28,\n  \"revision\": 1,\n  \"valid\": true\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "resolve-domain-review-clarification",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+        "resolve-review",
+        "--node",
+        "clarification",
+        "--reviewer",
+        "/root/cold_method_selection",
+        "--note",
+        "已核对S02澄清代价与S03询问版本的教学描述及C2方案；只足以进行本地定位，保留partial，真实近邻和任务效果未核验。",
+        "--expected-revision",
+        "1"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:13:05.418558+00:00",
+      "ended_at": "2026-10-20T05:13:05.509836+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"action\": \"review_recorded\",\n  \"meaning\": \"Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified.\",\n  \"node_id\": \"clarification\",\n  \"revision\": 2\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "resolve-domain-review-evaluation",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+        "resolve-review",
+        "--node",
+        "evaluation",
+        "--reviewer",
+        "/root/cold_method_selection",
+        "--note",
+        "已核对S03无日志/标签/对照与S04单人描述、原例缺失、预算零；M0/M1仅设计，无经验支持，保留partial和资源缺口。",
+        "--expected-revision",
+        "2"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:13:05.511184+00:00",
+      "ended_at": "2026-10-20T05:13:05.602291+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"action\": \"review_recorded\",\n  \"meaning\": \"Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified.\",\n  \"node_id\": \"evaluation\",\n  \"revision\": 3\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "resolve-domain-review-ingestion-retrieval",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+        "resolve-review",
+        "--node",
+        "ingestion-retrieval",
+        "--reviewer",
+        "/root/cold_method_selection",
+        "--note",
+        "已核对S02检索可能重复旧证据与S03旧版本描述；尚不能区分索引/召回/目标问题，保留partial，近邻未运行。",
+        "--expected-revision",
+        "3"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:13:05.603605+00:00",
+      "ended_at": "2026-10-20T05:13:05.696648+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"action\": \"review_recorded\",\n  \"meaning\": \"Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified.\",\n  \"node_id\": \"ingestion-retrieval\",\n  \"revision\": 4\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "resolve-domain-review-intent",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+        "resolve-review",
+        "--node",
+        "intent",
+        "--reviewer",
+        "/root/cold_method_selection",
+        "--note",
+        "已核对S01目标与S03目标版本未明线索；明确目标旧版本和可观察性边界，未验证标签可靠性，保持partial。",
+        "--expected-revision",
+        "4"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:13:05.697971+00:00",
+      "ended_at": "2026-10-20T05:13:05.789643+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"action\": \"review_recorded\",\n  \"meaning\": \"Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified.\",\n  \"node_id\": \"intent\",\n  \"revision\": 5\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "resolve-domain-review-reranking-context",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+        "resolve-review",
+        "--node",
+        "reranking-context",
+        "--reviewer",
+        "/root/cold_method_selection",
+        "--note",
+        "已核对S02无比较支持的更强检索器偏好与S03未实施的大reranker想法；后者parked而非refuted，领域仅partial。",
+        "--expected-revision",
+        "5"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:13:05.790933+00:00",
+      "ended_at": "2026-10-20T05:13:05.886346+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"action\": \"review_recorded\",\n  \"meaning\": \"Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified.\",\n  \"node_id\": \"reranking-context\",\n  \"revision\": 6\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "resolve-domain-review-routing",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+        "resolve-review",
+        "--node",
+        "routing",
+        "--reviewer",
+        "/root/cold_method_selection",
+        "--note",
+        "已核对S01/S02路线定位和S03两类缺口；C1/C2保持proposed，C3暂存；M0可见性先行，没有效果或新颖性结论，保持partial。",
+        "--expected-revision",
+        "6"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:13:05.887542+00:00",
+      "ended_at": "2026-10-20T05:13:05.968657+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"action\": \"review_recorded\",\n  \"meaning\": \"Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified.\",\n  \"node_id\": \"routing\",\n  \"revision\": 7\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "final-atlas-check",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+        "check"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:15:57.434239+00:00",
+      "ended_at": "2026-10-20T05:15:57.505769+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"edges\": 12,\n  \"meaning\": \"Structural integrity only; scientific interpretation requires evidence review.\",\n  \"nodes\": 28,\n  \"revision\": 7,\n  \"valid\": true\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "final-atlas-status",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+        "status"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:15:57.434558+00:00",
+      "ended_at": "2026-10-20T05:15:57.501654+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"counts\": {\n    \"claim\": 1,\n    \"decision\": 4,\n    \"domain\": 14,\n    \"experiment\": 2,\n    \"exploration\": 1,\n    \"hypothesis\": 4,\n    \"paper\": 0,\n    \"problem\": 2\n  },\n  \"coverage\": [\n    {\n      \"coverage\": \"partial\",\n      \"id\": \"intent\"\n    },\n    {\n      \"coverage\": \"partial\",\n      \"id\": \"clarification\"\n    },\n    {\n      \"coverage\": \"partial\",\n      \"id\": \"routing\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"planning\"\n    },\n    {\n      \"coverage\": \"partial\",\n      \"id\": \"ingestion-retrieval\"\n    },\n    {\n      \"coverage\": \"partial\",\n      \"id\": \"reranking-context\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"knowledge-graphs\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"memory\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"tool-use\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"answer-grounding\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"multi-agent\"\n    },\n    {\n      \"coverage\": \"partial\",\n      \"id\": \"evaluation\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"production\"\n    },\n    {\n      \"coverage\": \"unsearched\",\n      \"id\": \"safety-security\"\n    }\n  ],\n  \"imports\": [],\n  \"maintenance\": {\n    \"pending_reviews\": [],\n    \"review_log\": [\n      {\n        \"first_flagged_revision\": 1,\n        \"last_flagged_revision\": 1,\n        \"node_id\": \"clarification\",\n        \"note\": \"已核对S02澄清代价与S03询问版本的教学描述及C2方案；只足以进行本地定位，保留partial，真实近邻和任务效果未核验。\",\n        \"resolved_at\": \"2026-10-20T05:13:05.473462+00:00\",\n        \"resolved_revision\": 2,\n        \"reviewer\": \"/root/cold_method_selection\",\n        \"triggers\": [\n          {\n            \"node_id\": \"clarification\",\n            \"path\": [\n              {\n                \"relation\": \"data.search_ids\",\n                \"source\": \"explore-local-20261020\",\n                \"target\": \"clarification\"\n              }\n            ],\n            \"reason\": \"dependency_or_evidence_changed\",\n            \"revision\": 1,\n            \"source_id\": \"explore-local-20261020\"\n          }\n        ]\n      },\n      {\n        \"first_flagged_revision\": 1,\n        \"last_flagged_revision\": 1,\n        \"node_id\": \"evaluation\",\n        \"note\": \"已核对S03无日志/标签/对照与S04单人描述、原例缺失、预算零；M0/M1仅设计，无经验支持，保留partial和资源缺口。\",\n        \"resolved_at\": \"2026-10-20T05:13:05.561886+00:00\",\n        \"resolved_revision\": 3,\n        \"reviewer\": \"/root/cold_method_selection\",\n        \"triggers\": [\n          {\n            \"node_id\": \"evaluation\",\n            \"path\": [\n              {\n                \"relation\": \"data.search_ids\",\n                \"source\": \"explore-local-20261020\",\n                \"target\": \"evaluation\"\n              }\n            ],\n            \"reason\": \"dependency_or_evidence_changed\",\n            \"revision\": 1,\n            \"source_id\": \"explore-local-20261020\"\n          }\n        ]\n      },\n      {\n        \"first_flagged_revision\": 1,\n        \"last_flagged_revision\": 1,\n        \"node_id\": \"ingestion-retrieval\",\n        \"note\": \"已核对S02检索可能重复旧证据与S03旧版本描述；尚不能区分索引/召回/目标问题，保留partial，近邻未运行。\",\n        \"resolved_at\": \"2026-10-20T05:13:05.657680+00:00\",\n        \"resolved_revision\": 4,\n        \"reviewer\": \"/root/cold_method_selection\",\n        \"triggers\": [\n          {\n            \"node_id\": \"ingestion-retrieval\",\n            \"path\": [\n              {\n                \"relation\": \"data.search_ids\",\n                \"source\": \"explore-local-20261020\",\n                \"target\": \"ingestion-retrieval\"\n              }\n            ],\n            \"reason\": \"dependency_or_evidence_changed\",\n            \"revision\": 1,\n            \"source_id\": \"explore-local-20261020\"\n          }\n        ]\n      },\n      {\n        \"first_flagged_revision\": 1,\n        \"last_flagged_revision\": 1,\n        \"node_id\": \"intent\",\n        \"note\": \"已核对S01目标与S03目标版本未明线索；明确目标旧版本和可观察性边界，未验证标签可靠性，保持partial。\",\n        \"resolved_at\": \"2026-10-20T05:13:05.757441+00:00\",\n        \"resolved_revision\": 5,\n        \"reviewer\": \"/root/cold_method_selection\",\n        \"triggers\": [\n          {\n            \"node_id\": \"intent\",\n            \"path\": [\n              {\n                \"relation\": \"data.search_ids\",\n                \"source\": \"explore-local-20261020\",\n                \"target\": \"intent\"\n              }\n            ],\n            \"reason\": \"dependency_or_evidence_changed\",\n            \"revision\": 1,\n            \"source_id\": \"explore-local-20261020\"\n          }\n        ]\n      },\n      {\n        \"first_flagged_revision\": 1,\n        \"last_flagged_revision\": 1,\n        \"node_id\": \"reranking-context\",\n        \"note\": \"已核对S02无比较支持的更强检索器偏好与S03未实施的大reranker想法；后者parked而非refuted，领域仅partial。\",\n        \"resolved_at\": \"2026-10-20T05:13:05.846661+00:00\",\n        \"resolved_revision\": 6,\n        \"reviewer\": \"/root/cold_method_selection\",\n        \"triggers\": [\n          {\n            \"node_id\": \"reranking-context\",\n            \"path\": [\n              {\n                \"relation\": \"data.search_ids\",\n                \"source\": \"explore-local-20261020\",\n                \"target\": \"reranking-context\"\n              }\n            ],\n            \"reason\": \"dependency_or_evidence_changed\",\n            \"revision\": 1,\n            \"source_id\": \"explore-local-20261020\"\n          }\n        ]\n      },\n      {\n        \"first_flagged_revision\": 1,\n        \"last_flagged_revision\": 1,\n        \"node_id\": \"routing\",\n        \"note\": \"已核对S01/S02路线定位和S03两类缺口；C1/C2保持proposed，C3暂存；M0可见性先行，没有效果或新颖性结论，保持partial。\",\n        \"resolved_at\": \"2026-10-20T05:13:05.937247+00:00\",\n        \"resolved_revision\": 7,\n        \"reviewer\": \"/root/cold_method_selection\",\n        \"triggers\": [\n          {\n            \"node_id\": \"routing\",\n            \"path\": [\n              {\n                \"relation\": \"data.search_ids\",\n                \"source\": \"explore-local-20261020\",\n                \"target\": \"routing\"\n              }\n            ],\n            \"reason\": \"dependency_or_evidence_changed\",\n            \"revision\": 1,\n            \"source_id\": \"explore-local-20261020\"\n          }\n        ]\n      }\n    ]\n  },\n  \"project\": {\n    \"created_at\": \"2026-10-20T05:04:20.143737+00:00\",\n    \"languages\": [\n      \"zh\",\n      \"en\"\n    ],\n    \"scope\": \"文档版本变化与用户目标版本不明确时，直接回答/追加检索/先澄清的路由；本轮仅离线教学材料定位、候选、设计与文档校验，研究负载0。\",\n    \"synthetic\": true,\n    \"task_cutoff\": \"2026-10-20\",\n    \"title\": \"文档版本与意图歧义路由｜本地教学研究图\",\n    \"updated_at\": \"2026-10-20T05:13:05.937260+00:00\"\n  },\n  \"revision\": 7\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "final-project-gaps",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+        "project"
+      ],
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:15:57.434864+00:00",
+      "ended_at": "2026-10-20T05:15:57.511737+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"issues\": [\n    {\n      \"capabilities\": [\n        \"C01\",\n        \"C03\"\n      ],\n      \"code\": \"G-COVERAGE-UNSEARCHED\",\n      \"next\": \"Scope a bilingual search, execute available providers, record limits and actual results; seed folders are not a literature review.\",\n      \"node_ids\": [\n        \"planning\",\n        \"knowledge-graphs\",\n        \"memory\",\n        \"tool-use\",\n        \"answer-grounding\",\n        \"multi-agent\",\n        \"production\",\n        \"safety-security\"\n      ],\n      \"reason\": \"Recorded coverage is unsearched\"\n    },\n    {\n      \"capabilities\": [\n        \"C11\",\n        \"C13\"\n      ],\n      \"code\": \"G-FEASIBILITY\",\n      \"next\": \"Inspect local data rights, implementation, evaluator and budget. Resolve the cheapest decision-changing uncertainty before promotion.\",\n      \"node_ids\": [\n        \"c1-gap-routing\",\n        \"c2-answer-sensitive-clarification\"\n      ],\n      \"reason\": \"One or more resources are not verified available\"\n    }\n  ],\n  \"limits\": \"Only explicit recorded states are diagnosed. A clean report does not establish novelty, sound design, data rights or complete literature coverage.\",\n  \"revision\": 7,\n  \"scientific_verdict\": \"not_assessed\"\n}\n",
+      "stderr": "",
+      "research_load": false
+    },
+    {
+      "name": "project-deliverable-validation",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-methods/reviews/2026-10-20/validate-deliverables.py"
+      ],
+      "script_sha256": "e5baa9f6cd3b496b1e776a69c1974c6edf63a090377209b43b03b1c12606862c",
+      "cwd": "/workspace/scratch/f7a517081da8/forward-conflicts-methods",
+      "started_at": "2026-10-20T05:15:57.433386+00:00",
+      "ended_at": "2026-10-20T05:15:57.540466+00:00",
+      "exit_code": 0,
+      "result_path": "reviews/2026-10-20/final-artifact-check.json",
+      "research_load": false
+    }
+  ]
+}

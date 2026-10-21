@@ -1,0 +1,20 @@
+{
+  "exit_code": 3,
+  "output": {
+    "all_values_match": false,
+    "claims": [
+      {
+        "artifact_path": "results/pilot.json",
+        "id": "withdrawn-original-96-percent",
+        "observed_value": 0.78125,
+        "pointer": "/version_aware/accuracy",
+        "reported_value": 0.96,
+        "source_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+        "status": "mismatch",
+        "version_match": true
+      }
+    ],
+    "meaning": "Numbers checked against specified local JSON locations. This does not validate measurement, independence, statistical analysis or the scientific claim.",
+    "scientific_verdict": "not_assessed"
+  }
+}

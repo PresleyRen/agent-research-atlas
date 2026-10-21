@@ -1,0 +1,46 @@
+{
+  "nodes": [
+    {
+      "id": "experiment-e1-information",
+      "data": {
+        "analysis_protocol_revision": "design-v1.1",
+        "amendment": "明确区间相对正向δ的方向；未达到δ只反对实际效果目标，不等于反驳机制；未执行实验",
+        "review_artifact": "worklog/coordinator-protocol-review.md"
+      }
+    },
+    {
+      "id": "decision-interval-review",
+      "type": "decision",
+      "title": "协调者复核：修正实际效果区间判决方向",
+      "status": "amended_design",
+      "domains": [
+        "evaluation"
+      ],
+      "sources": [
+        {
+          "path": "worklog/coordinator-protocol-review.md",
+          "access": "local",
+          "accessed_at": "2026-10-21",
+          "locator": "发现、已采取的修订、影响审查"
+        }
+      ],
+      "data": {
+        "synthetic_context": true,
+        "depends_on": [
+          "experiment-e1-information"
+        ],
+        "artifact_path": "worklog/coordinator-protocol-review.md",
+        "reason": "原设计把区间排除δ一概当负判决，现拆分高于δ、低于δ、完全负与跨δ；无结果升级"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-015",
+      "source": "decision-interval-review",
+      "target": "experiment-e1-information",
+      "relation": "relates_to",
+      "note": "修订协议判决逻辑；不是新实验结果"
+    }
+  ]
+}

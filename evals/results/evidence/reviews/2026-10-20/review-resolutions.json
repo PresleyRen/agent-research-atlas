@@ -1,0 +1,101 @@
+{
+  "resolutions": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence",
+        "resolve-review",
+        "--node",
+        "clarification",
+        "--reviewer",
+        "cold_evidence_review",
+        "--note",
+        "已重读本地虚构摘要、旧问题及S2/中文回执；摘要无等预算/机制证据，429与空回执未完成真实查新。维持coverage=partial；没有已支持的澄清机制，候选proposed和未执行方案已按这些限制编写。",
+        "--expected-revision",
+        "1"
+      ],
+      "result": {
+        "action": "review_recorded",
+        "meaning": "Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified.",
+        "node_id": "clarification",
+        "revision": 2
+      },
+      "review_note": "已重读本地虚构摘要、旧问题及S2/中文回执；摘要无等预算/机制证据，429与空回执未完成真实查新。维持coverage=partial；没有已支持的澄清机制，候选proposed和未执行方案已按这些限制编写。"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence",
+        "resolve-review",
+        "--node",
+        "evaluation",
+        "--reviewer",
+        "cold_evidence_review",
+        "--note",
+        "已重读现代码、两日志、数值账本和资源说明；accuracy常量且与日志不符，缺标签与执行来源。维持coverage=partial；旧0.97/独立验证/普遍有效主张撤回，日志字段仅作材料观察。",
+        "--expected-revision",
+        "2"
+      ],
+      "result": {
+        "action": "review_recorded",
+        "meaning": "Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified.",
+        "node_id": "evaluation",
+        "revision": 3
+      },
+      "review_note": "已重读现代码、两日志、数值账本和资源说明；accuracy常量且与日志不符，缺标签与执行来源。维持coverage=partial；旧0.97/独立验证/普遍有效主张撤回，日志字段仅作材料观察。"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence",
+        "resolve-review",
+        "--node",
+        "intent",
+        "--reviewer",
+        "cold_evidence_review",
+        "--note",
+        "已重读旧笔记与八原件清单，未找到案例或真值。保留先检查标注歧义再归因于模型，维持coverage=partial；不声称已发现具体标注错误。",
+        "--expected-revision",
+        "3"
+      ],
+      "result": {
+        "action": "review_recorded",
+        "meaning": "Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified.",
+        "node_id": "intent",
+        "revision": 4
+      },
+      "review_note": "已重读旧笔记与八原件清单，未找到案例或真值。保留先检查标注歧义再归因于模型，维持coverage=partial；不声称已发现具体标注错误。"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence",
+        "resolve-review",
+        "--node",
+        "routing",
+        "--reviewer",
+        "cold_evidence_review",
+        "--note",
+        "已重读旧地图、词面路由源码、两日志和失败/空回执。维持coverage=partial；旧关键词路线继续parked，等预算针对性澄清候选proposed，数据/计量/真实近邻未决。",
+        "--expected-revision",
+        "4"
+      ],
+      "result": {
+        "action": "review_recorded",
+        "meaning": "Reviewer declaration recorded. Evidence status is unchanged; scientific validity is not certified.",
+        "node_id": "routing",
+        "revision": 5
+      },
+      "review_note": "已重读旧地图、词面路由源码、两日志和失败/空回执。维持coverage=partial；旧关键词路线继续parked，等预算针对性澄清候选proposed，数据/计量/真实近邻未决。"
+    }
+  ],
+  "meaning": "Records human/host review of imported scope only; does not change scientific status."
+}

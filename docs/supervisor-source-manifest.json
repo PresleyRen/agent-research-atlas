@@ -1,0 +1,1094 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "repository": "HKUSTDial/Supervisor-Skills",
+  "commit": "a20d76ef3979b804d7dbf599d577826957e0a8a9",
+  "counts": {
+    "SKILL.md": 12,
+    "references_md": 70,
+    "chinese_handbook_md": 18,
+    "other_fully_read_texts": 7
+  },
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "read_depth": "full_text",
+      "bytes": 8770,
+      "sha256": "5589f366c2b24fb0e7b9283e70b2bb2f727e432e57282f85990270165c2d5ce1",
+      "git_blob_sha1": "688985f70bffe27933dc2011563a7ef2de55db94",
+      "readers": [
+        "coordinator"
+      ]
+    },
+    {
+      "path": "LICENSE",
+      "read_depth": "full_text",
+      "bytes": 1028,
+      "sha256": "b35c958b79726c115cf817635abcbc2aa1121cae5e9a1c22819f7c44f58fcaf0",
+      "git_blob_sha1": "54943766e78df82b3cdb76ce2d9ee6c826509aaa",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "README.md",
+      "read_depth": "full_text",
+      "bytes": 16228,
+      "sha256": "3cf3791b0c13c684275219a390a507c816c03c9d5789398b860a3c92c8cdab22",
+      "git_blob_sha1": "78b4b6991f862e601d038e9ac37c1b5184f17e09",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "handbook/01_Preliminary/1.1_如何评价一篇论文的质量.md",
+      "read_depth": "full_text",
+      "bytes": 2143,
+      "sha256": "94395099dfe1c1c49af2d564cc57f31fe5d2eabb857ef848362d95730c4316cd",
+      "git_blob_sha1": "f280f9e01217ffbc6760f3a4a4d5b65fde4c6d53",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "handbook/02_Idea_Generation/2.1_Idea的生命周期与能力匹配.md",
+      "read_depth": "full_text",
+      "bytes": 4022,
+      "sha256": "a53a99fde8d8fdaab88145f1cf9bd55f943a489643db67128a6258373be3932e",
+      "git_blob_sha1": "c4a65e06b8d8984b91b415c3a2235e1fd31094b9",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "handbook/02_Idea_Generation/2.2_想Idea的思路_更高更快更强.md",
+      "read_depth": "full_text",
+      "bytes": 7846,
+      "sha256": "f3ca0a15f072dc15145b940f03c00f1ece61e5955ca359afd95ab0ff9b2718dd",
+      "git_blob_sha1": "1d4f66952c786705ba3876eb204756c274bdf042",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "handbook/02_Idea_Generation/2.3_进阶_如何做颠覆式创新.md",
+      "read_depth": "full_text",
+      "bytes": 5920,
+      "sha256": "c4a0022cad1bfeb09301d3b78e16f2197693bd170d613e6a2be5e45c73266b59",
+      "git_blob_sha1": "a1e554759e6692b26ff8674136c20dccb4a0fcbf",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "handbook/03_Paper_Writing/3.1_完成一篇科研论文你需要做几件事情.md",
+      "read_depth": "full_text",
+      "bytes": 7073,
+      "sha256": "01d4fc98056538d15724c69ce87365d195c6821d3b4088187b5ec16d00128dd1",
+      "git_blob_sha1": "3294a75de59abda96f5dd307e11e8dce61233824",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "handbook/03_Paper_Writing/3.2_Introduction写作的思考模型.md",
+      "read_depth": "full_text",
+      "bytes": 2670,
+      "sha256": "ccf475b52b5ba1a8a45cc8bfea4b5744f8598a060c97d55b226be13d09967c68",
+      "git_blob_sha1": "56e1581e42c584d619616769e322077becba57a7",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "handbook/03_Paper_Writing/3.3_技术类Full_Paper思考模板.md",
+      "read_depth": "full_text",
+      "bytes": 5697,
+      "sha256": "659fb951d61ec79c1940e794a19a052319274555e07dcc287761e16f7abaaaef",
+      "git_blob_sha1": "77be866ffa2c674845a6e0c35c45fdd1fdd31934",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "handbook/03_Paper_Writing/3.4_Benchmark与Evaluation类论文思考模板.md",
+      "read_depth": "full_text",
+      "bytes": 19021,
+      "sha256": "c26a8962043359095a82fafa1c4e9c1803e5d12b5ac49a392f2171ef1a75ac6d",
+      "git_blob_sha1": "127854da1b837f07fcc91d15a811882627d80d7f",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "handbook/03_Paper_Writing/3.5_写作细节与Checklist.md",
+      "read_depth": "full_text",
+      "bytes": 24164,
+      "sha256": "edf65fb411494ab730cacc58f0cb90196e0448a3185c24b2ff19211d13bb24d4",
+      "git_blob_sha1": "28ea51560281b10925d62bcdc875108781aba5ba",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "handbook/04_Scientific_Plotting/4.1_Motivated_Example_Figure.md",
+      "read_depth": "full_text",
+      "bytes": 4859,
+      "sha256": "d53ee81cd90e520f6e3ca38ed3b2012b446638bae68aa22b42aa03d3a67c18ee",
+      "git_blob_sha1": "f4598f4f889232a253e6869b8f0a6b0c273a5ed0",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "handbook/04_Scientific_Plotting/4.2_Solution_Overview_Figure.md",
+      "read_depth": "full_text",
+      "bytes": 3803,
+      "sha256": "da060d28a036e55b802ed5ac7ec3081407fb3b222262af75c0cb1a933e13e12d",
+      "git_blob_sha1": "27a0541c6c0fe9d633e4b69e1d2220b1fda93f45",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "handbook/04_Scientific_Plotting/4.3_Experimental_Results_Figure.md",
+      "read_depth": "full_text",
+      "bytes": 4430,
+      "sha256": "b0c7bd5247a2fed4c46c455cb44367e26bacb566ff402b07138b9485f3391a3e",
+      "git_blob_sha1": "722c4c6b1b0ddd9a8458bb8d3b55b9f71a11dc74",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "handbook/04_Scientific_Plotting/4.4_绘图Checklist与工具速查表.md",
+      "read_depth": "full_text",
+      "bytes": 1586,
+      "sha256": "3eecbfbf39120da469467f54cb02ceb1af1728e2364b77c789496553f05f5c99",
+      "git_blob_sha1": "09e16119b3cdec4e8f9e961a11bfa15c675015f3",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "handbook/05_Vibe_Research/5.1_Vibe_Research与Vibe_Coding入门.md",
+      "read_depth": "full_text",
+      "bytes": 24360,
+      "sha256": "a374d519f34112e8f3eb5f43503162a62f702477dee231d1f7af55f03ae4691e",
+      "git_blob_sha1": "463e49be2e038fcbc7d71b03340db02319935b7f",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "handbook/05_Vibe_Research/5.2_李伯岩实战经验分享与会议纪要.md",
+      "read_depth": "full_text",
+      "bytes": 9350,
+      "sha256": "e18e08a9e93691020322b196b9be35bc4fc6e49b0ca70030f3c9d0290b1f28aa",
+      "git_blob_sha1": "fa2b1e0bdfed2f22500de12349cf10ede7730420",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "handbook/06_Case_Studies/6.1_ICML_2025_Alpha-SQL写作剖析.md",
+      "read_depth": "full_text",
+      "bytes": 9525,
+      "sha256": "b10bb537346d3b0fe29d5732cb6be0838223b4964fa887407f14f0ba2eec25f6",
+      "git_blob_sha1": "0e63b17798d7cf291b48565768088840b511c1f4",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "handbook/06_Case_Studies/6.2_ICLR_2025_AFlow写作剖析.md",
+      "read_depth": "full_text",
+      "bytes": 9343,
+      "sha256": "94655b04fb85a97aee516d484a997365766734a88a09afb222a860c177572c21",
+      "git_blob_sha1": "e395b3e7a5423b3b8c697aab19de1d0875881ca0",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "handbook/06_Case_Studies/6.3_VLDB_2026_LEAD写作剖析.md",
+      "read_depth": "full_text",
+      "bytes": 8336,
+      "sha256": "f8ab4a084b8081beec2d657e925e06985a763d19d0e6c229b3dde4ffa4f8bf69",
+      "git_blob_sha1": "ad92bc04c8563bf98112ba7d22f8cf500b17b3c7",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "llms.txt",
+      "read_depth": "full_text",
+      "bytes": 4464,
+      "sha256": "443c12120165452f4b20f04bddbea4716a0e63dc82f23263a1df641dd87b1111",
+      "git_blob_sha1": "bc4353b9e6f0b735f4eabd4a941e696761f123e4",
+      "readers": [
+        "coordinator"
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/SKILL.md",
+      "read_depth": "full_text",
+      "bytes": 11184,
+      "sha256": "daa63e695d0dccd317517b90b92d0f7e3f1f67f104ee5971ad6e9b5c120d3095",
+      "git_blob_sha1": "e4d1a46d2da9bd3bfa985ef49d905843beb83d55",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/benchmark-design.md",
+      "read_depth": "full_text",
+      "bytes": 7558,
+      "sha256": "07ca889ca80de03ea7fc6f586e4efb3460a93f89542d07c689ce45283a1bfbb5",
+      "git_blob_sha1": "c78e807a7e67356bf1747dc849f1830392974a4e",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/checklist.md",
+      "read_depth": "full_text",
+      "bytes": 6934,
+      "sha256": "2bcd4df5198891689f3817973638418c7dc8f547ef515e9fde365d1193af5b12",
+      "git_blob_sha1": "505ff71a4482fb936cfa5df59cbe4f09e33f3d66",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/construction-pipeline.md",
+      "read_depth": "full_text",
+      "bytes": 6357,
+      "sha256": "714c23cecfd952368911ba71c0c65f713d2954641090a8d942d0dde3fdc61e6a",
+      "git_blob_sha1": "db206ed63b2118674659a4423fd6420797c78b32",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/experiments.md",
+      "read_depth": "full_text",
+      "bytes": 8218,
+      "sha256": "0feab24e92c96e716f4c0ae60dcf385a63d9d58a58bebf09729f067db336db6e",
+      "git_blob_sha1": "b566e8b653cb3281d6a85cbed0a679d1d615fe6c",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/gap-analysis.md",
+      "read_depth": "full_text",
+      "bytes": 5467,
+      "sha256": "676b1349ddbee6463047c879d1ac44ada2f6b07a313ae6b1045d4384287189d4",
+      "git_blob_sha1": "9b76c1867d274866db48c204c72de93bfbc01884",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/instantiation-template.md",
+      "read_depth": "full_text",
+      "bytes": 5327,
+      "sha256": "d329085c363eff5192bdff4d9c156e6de310d332e3ccdc56a1f74cee4691c975",
+      "git_blob_sha1": "c3ac5bdb7b127caee06f55c299fc25de6db99e9a",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/orchestrator-notes.md",
+      "read_depth": "full_text",
+      "bytes": 5263,
+      "sha256": "9c2a2b3ea062323b3031bfbf86e0970b3a3571949bc1363ddf472d68f3243bb5",
+      "git_blob_sha1": "1bd957b14a204f7dfa776eb962542d579a84818c",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/paper-structure.md",
+      "read_depth": "full_text",
+      "bytes": 9906,
+      "sha256": "28a5ef1ff1124aca5b0e31c3827bcd2485b9ca090f51763153d39caac00e7370",
+      "git_blob_sha1": "0531d330968b6021c9b9415e89228c510b830b23",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/deep-research/SKILL.md",
+      "read_depth": "full_text",
+      "bytes": 9428,
+      "sha256": "68078fb2307ec659930ad9d9b2e2cb0932a0ff0a4939875ca6f27bec59004c91",
+      "git_blob_sha1": "7042b7e8f4bea7080bb20f7fc484fb2a42db151c",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/deep-research/references/citation-protocol.md",
+      "read_depth": "full_text",
+      "bytes": 2107,
+      "sha256": "b892b55431215c45273636adf29dd366b44c133b399f91d0ccec20aa0cc833e1",
+      "git_blob_sha1": "d2f9862fec92a677a049c9d048fd024572ee8e02",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/deep-research/references/hedge-calibration.md",
+      "read_depth": "full_text",
+      "bytes": 2009,
+      "sha256": "2c4532146056a275a72f030352146125884e4ed60001ed3da8195a8e4fa4ea9c",
+      "git_blob_sha1": "363658390ff2e2ff2ca4d3c65ef15d03f37254d5",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/deep-research/references/output-structure.md",
+      "read_depth": "full_text",
+      "bytes": 5938,
+      "sha256": "9a2d0d8ae234f00e60b368606384a6fa40267216356cd82ac89bfbb0edd591f1",
+      "git_blob_sha1": "84cc1a954dac17db039c0a896fedd626c88fbd0d",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/deep-research/references/quality-gates.md",
+      "read_depth": "full_text",
+      "bytes": 3563,
+      "sha256": "ebf05e36a0089c9cc6aa6832696519ec66209300b89b48feac6f93c26f89c568",
+      "git_blob_sha1": "1effed3eab7a9a96916addfb8058ff60ba0f95df",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/deep-research/references/search-strategy.md",
+      "read_depth": "full_text",
+      "bytes": 2161,
+      "sha256": "2ff0d8717db690087aeff273984738b68d6904a81f4296cdd24df62901d55311",
+      "git_blob_sha1": "1d2f373b68ee74680406cc55336559ec5b7e3cff",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/deep-research/references/self-adversarial.md",
+      "read_depth": "full_text",
+      "bytes": 2417,
+      "sha256": "a690d9db5860957c228e985338c511ac1a2b7748c0bf00e351f77df8ef06d3d3",
+      "git_blob_sha1": "e9cc4149cb255185eae8edf68a967f7abaa8ced5",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/deep-research/references/synthesis-framework.md",
+      "read_depth": "full_text",
+      "bytes": 4709,
+      "sha256": "dfc8e43c8e6700a6baeb4aa5b5313e2e655c1a905ce39d8715784d0ca0170256",
+      "git_blob_sha1": "ed8837adc25edefde0b8ca006d3f9fbdb77cd0b8",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/drawio-reconstruction/LICENSE",
+      "read_depth": "full_text",
+      "bytes": 1074,
+      "sha256": "bfbb06eedaf5ab909b115b901bdc15942969f2bd51c71aee6ab9b6b84f22f0b8",
+      "git_blob_sha1": "47c7a5678977e445cc2d340c12628207c8c28ff1",
+      "readers": [
+        "coordinator via GitHub fetch"
+      ],
+      "source_url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/drawio-reconstruction/LICENSE"
+    },
+    {
+      "path": "skills/drawio-reconstruction/README.md",
+      "read_depth": "full_text",
+      "bytes": 8964,
+      "sha256": "370f90a35b2f973e5636d933c159b86c034652063818ef739e893693eb2cd86f",
+      "git_blob_sha1": "87631a191c1632886455a86a4e7a728b6caf6edb",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/drawio-reconstruction/README.zh-CN.md",
+      "read_depth": "full_text",
+      "bytes": 8623,
+      "sha256": "25b1999581518292cb1c99906c128918ef2ff37fdf188194511b1c81dcb5a525",
+      "git_blob_sha1": "13456bce050916f3dad99ae957b44166f38b5ddb",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/drawio-reconstruction/SKILL.md",
+      "read_depth": "full_text",
+      "bytes": 21671,
+      "sha256": "ccc4e5fa5ccd4d7f8a33f88c241d8df2e951f015d2dadfbaa5506d323ea38441",
+      "git_blob_sha1": "dac2814455ddf7de3b652461509b1607974170c3",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/figure-designer/SKILL.md",
+      "read_depth": "full_text",
+      "bytes": 7454,
+      "sha256": "c9ba67c1c21972ac6e48f22397e45b9e0855f0feb407c3599308de2902880b57",
+      "git_blob_sha1": "6b58f1ad0f357fb4d658a6ca13a7df5c54ee48f9",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/figure-designer/references/design-rules.md",
+      "read_depth": "full_text",
+      "bytes": 3979,
+      "sha256": "088949487c3582e8e70fcfbc016ab393242289f879777fccdd1f845088591f4b",
+      "git_blob_sha1": "f5afde6a0a931d4bf9c0170b93232133665b402e",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/figure-designer/references/experimental-results.md",
+      "read_depth": "full_text",
+      "bytes": 5117,
+      "sha256": "537445abb435703baca9c2f0107568923f689bbfc3b8feb5ada2ba88f0777965",
+      "git_blob_sha1": "55c03dabbb98722e1443c9a80953c5374c7727c2",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/figure-designer/references/motivated-example.md",
+      "read_depth": "full_text",
+      "bytes": 4618,
+      "sha256": "b05a774d84604db502506bbe2a7d621d51257f5cbd9d16a85fc463471a5cea85",
+      "git_blob_sha1": "cb1beb2d05889b0c2b8c9df14f6539622f81d833",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/figure-designer/references/solution-overview.md",
+      "read_depth": "full_text",
+      "bytes": 4893,
+      "sha256": "1770b0919bb7622fa6b510fb27279a2989fadfd00bb55f1653c36a84aff467d3",
+      "git_blob_sha1": "91e3b292dff8fe1098b63a5565373027232d9bde",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/figure-designer/references/tools.md",
+      "read_depth": "full_text",
+      "bytes": 3957,
+      "sha256": "96a96208550c033c632b8f625f99f9d014a5d2f6000570bc5f75e53216e9b30f",
+      "git_blob_sha1": "a6b29cd22893e74fc81f0875ac0f653d336ff640",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/idea-evaluator/SKILL.md",
+      "read_depth": "full_text",
+      "bytes": 13597,
+      "sha256": "630ce9528f472637830b216bf6de231e6dfdcdae4d3b16976324da5ce2d145fb",
+      "git_blob_sha1": "bc9c86b1773ff7a9ded607dfc9c286f37a5a9c40",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/idea-evaluator/references/domain-evaluation-frameworks.md",
+      "read_depth": "full_text",
+      "bytes": 8951,
+      "sha256": "09a9e66316e67870bcf6cc686cd0b6f66995c907a68f95a99d1a2c8aa4d82820",
+      "git_blob_sha1": "f43a46a86fb3fbe740e0953a78c44f20435aafba",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/idea-evaluator/references/fatal-flaws.md",
+      "read_depth": "full_text",
+      "bytes": 8659,
+      "sha256": "236dc67ddea96aba2d52b61adb5d0d9f69c05d683d49938914f066d0996e2679",
+      "git_blob_sha1": "eeaed2f468d41e30fe9c0e6ef7171c954b6f562c",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/idea-evaluator/references/five-dimensions.md",
+      "read_depth": "full_text",
+      "bytes": 12621,
+      "sha256": "d855620c2587fe7b3ddb01cfe837abb594d960e0b31c2e4c22a9ad10fd393798",
+      "git_blob_sha1": "0581393ffb7bee72f7f0f740b04150ffd4b7bde1",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/idea-evaluator/references/lifecycle-capability-matching.md",
+      "read_depth": "full_text",
+      "bytes": 7731,
+      "sha256": "1467485ac36508286ae9b41cf2b84ef5d13c063ac68daf2bb45bca4137ee01c2",
+      "git_blob_sha1": "2013412e1ec4d8488fc03a5ac6063bc145a612f8",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/idea-evaluator/references/paradigm-elephant.md",
+      "read_depth": "full_text",
+      "bytes": 4715,
+      "sha256": "52da00af96b098887b797ec4f20cc5b74f7309a65d02fd7e5f6374fb9dc1057e",
+      "git_blob_sha1": "6be18c5c2721fff03ee3183ad6e13552ae29285d",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/idea-evaluator/references/paradigm-examples.md",
+      "read_depth": "full_text",
+      "bytes": 4976,
+      "sha256": "eb755fcda39b399a2d266a282c3b36091ef72d8e9ed49008493be172b62495a4",
+      "git_blob_sha1": "da61720e8f074c72c737b6f8094fbf2c3011e7b8",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/idea-evaluator/references/paradigm-first-principles.md",
+      "read_depth": "full_text",
+      "bytes": 4694,
+      "sha256": "c9c6498d8e6aceeb94631f08306e6a54ba43a721fb8a5357d99091ab8e93eb16",
+      "git_blob_sha1": "95f0d9ef38557238a19f774795810231934ec358",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/idea-evaluator/references/paradigm-hamming.md",
+      "read_depth": "full_text",
+      "bytes": 4834,
+      "sha256": "775b93e564cf3529a6725b9bc9db1abf24ba7eca0e7a13e5b6667a2cee59cb77",
+      "git_blob_sha1": "ed1a8b9f4a6c11940b708bd538f53fdd63ad434e",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/idea-evaluator/references/paradigm-shift-probe.md",
+      "read_depth": "full_text",
+      "bytes": 6290,
+      "sha256": "ca2523afea8215bba46398a338135aa78e675bfdf9ff6c89da00052934db8e8a",
+      "git_blob_sha1": "d375f101963227e2ffd67a376348ba92d4ac004e",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/idea-evaluator/references/paradigm-technology-cycle.md",
+      "read_depth": "full_text",
+      "bytes": 4820,
+      "sha256": "7eb0b9c3d05f821af093ce7d345ee70545b1a59199359aa1c3b4134b8804912a",
+      "git_blob_sha1": "9368de81204781799669fbb40ad0ff3d5d6277c9",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/idea-evaluator/references/worked-examples.md",
+      "read_depth": "full_text",
+      "bytes": 8411,
+      "sha256": "10fe5cbfdceb753b07881e24d36148dc2158b349f8e8cf6a480d6f203a6a58af",
+      "git_blob_sha1": "0205cb7a127c5a8e887e50d7383ea082adb90531",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/intro-drafter/SKILL.md",
+      "read_depth": "full_text",
+      "bytes": 9699,
+      "sha256": "675e8a97a58a841b04dd9fa061fcc03075e75695aada5c7b23d1c1498435d5a7",
+      "git_blob_sha1": "5d3cb2b0c43718939e2e0519335b317e949fc46d",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/intro-drafter/references/contribution-patterns.md",
+      "read_depth": "full_text",
+      "bytes": 4352,
+      "sha256": "6ba9363a364fca4634bb47e9bfffa88f393698afc587bb84c1444d4f84afb6e8",
+      "git_blob_sha1": "5dcae4b0b70432d32b66f05590ebddb72488c8a0",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/intro-drafter/references/evidence-discipline.md",
+      "read_depth": "full_text",
+      "bytes": 7858,
+      "sha256": "63c20c6b783b12b34753a2119bde8812168012e69cda4552988e56fea42fb5ac",
+      "git_blob_sha1": "9c5c3077b7f51ca9109092d1a44a591a0938ccd0",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/intro-drafter/references/flowchart.md",
+      "read_depth": "full_text",
+      "bytes": 6914,
+      "sha256": "46aebd7605bcea34559644b05e9e1d6e804a87b1ddd9c568541e14ffc5778761",
+      "git_blob_sha1": "e6079d0b88ba7d47e03f6b84095064f151895e07",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/intro-drafter/references/paper-types.md",
+      "read_depth": "full_text",
+      "bytes": 5769,
+      "sha256": "21f1267c85df2b2f3c58572d3794e4edef567ad28f58352350879c16d69c10b2",
+      "git_blob_sha1": "08faf59bb06f1c8dbdf3ac7f056a9b45468bedf6",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/intro-drafter/references/prose-delivery.md",
+      "read_depth": "full_text",
+      "bytes": 3011,
+      "sha256": "1a7e60145d6b55e0d42c6e12c02c86b77662fda75f89585ec0449318634c05ee",
+      "git_blob_sha1": "bf37fe1645ca8415696cfff8c432989aaa74910e",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/intro-drafter/references/running-example.md",
+      "read_depth": "full_text",
+      "bytes": 5091,
+      "sha256": "14f08a1da8f3e70ee6f59a36b2c9649b444ad6620d296b9b91e052bf24152655",
+      "git_blob_sha1": "5c7422bd1855dde73610116db221e3f48addde36",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/intro-drafter/references/worked-examples.md",
+      "read_depth": "full_text",
+      "bytes": 7365,
+      "sha256": "ddc22cddd503395f573bbb72aa32696c3c0cbeb939852e326de5a30bf591707b",
+      "git_blob_sha1": "e165918a0895952bae27851c85ef08f4269b526e",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-polish/SKILL.md",
+      "read_depth": "full_text",
+      "bytes": 12311,
+      "sha256": "fde7964acfea805a399d52da0355dac3139b51be9b2aa456348538c4713f75ce",
+      "git_blob_sha1": "51c620067f7b37260cc2497b8907a5b1dcd0121a",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-polish/references/academic-phrasebank.md",
+      "read_depth": "full_text",
+      "bytes": 4559,
+      "sha256": "4f199bd39c1810453b41388dd9839b570522512c319922f1a11d7a5029706e57",
+      "git_blob_sha1": "fd2055ff4fb36bf35908e5f48f6ab189a3b6f441",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-polish/references/ai-tone-guardrails.md",
+      "read_depth": "full_text",
+      "bytes": 4512,
+      "sha256": "11f8570c540c7502aa95ce799c97be3c6e12dd744ccc2ece774126509e015024",
+      "git_blob_sha1": "61507e47816d5118f36354560c56332e141bedbf",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-polish/references/section-conventions.md",
+      "read_depth": "full_text",
+      "bytes": 4395,
+      "sha256": "83348fb3658aee2a09a9ad35e5b0265240371122442431df5a1efdd86d5d58cb",
+      "git_blob_sha1": "fc341ef2bb4b971bdd46435a55cce31c5d4f63de",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-writer/SKILL.md",
+      "read_depth": "full_text",
+      "bytes": 14013,
+      "sha256": "5ac3df38ca0f6a4a2b7600be100a8b1eb65bec7ce96e492682b765c10e158630",
+      "git_blob_sha1": "413fca941138306a3cbb96d344ec405f246444d1",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-writer/references/academic-phrasebank.md",
+      "read_depth": "full_text",
+      "bytes": 4548,
+      "sha256": "56091882b95163fe63a79da0eed1b6382affdac279f9fd988f69527ee30dfb68",
+      "git_blob_sha1": "31628b5b474256098207e7ccb04ed53e2b8e4372",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-writer/references/ai-tone-guardrails.md",
+      "read_depth": "full_text",
+      "bytes": 4500,
+      "sha256": "2fd3f8960f0ffe34469145e42162f866f37da2980a1d6636be6cb6357da00023",
+      "git_blob_sha1": "25d0678f168ad4b62f58ab5690d37229fc21dfc7",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-writer/references/citation-style.md",
+      "read_depth": "full_text",
+      "bytes": 4804,
+      "sha256": "17a69ba23fbd7e937f7404d711d26e41f5b18d7fc4aa860a6b575d367927cfce",
+      "git_blob_sha1": "2df1e4c3931b6d9c60dfbd477356f5c3a5fab4d6",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-writer/references/evidence-discipline.md",
+      "read_depth": "full_text",
+      "bytes": 7869,
+      "sha256": "37dfcc3452f1d768d3d41329bfb103292b0015ccab146d41672176ca69df3edc",
+      "git_blob_sha1": "ab944f8e40c87adf07dfffb5ecca5118127a58ed",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-writer/references/prose-delivery.md",
+      "read_depth": "full_text",
+      "bytes": 3027,
+      "sha256": "26ae7bbedea943d7b1d72b5af742ba0a039f120860e073c5abcb333466bec4b5",
+      "git_blob_sha1": "0c70a0d9b3d4134c5f233730d5e7527e32208bf5",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-writer/references/section-conventions.md",
+      "read_depth": "full_text",
+      "bytes": 4384,
+      "sha256": "810700351410427dddd924e9bf7fcc462027a447ebe81f843df96c39057a7a96",
+      "git_blob_sha1": "f690053dc416895f89464682eaab6fb9c59d808d",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-writer/references/section-guidance.md",
+      "read_depth": "full_text",
+      "bytes": 4912,
+      "sha256": "0a81a147c167a7a5adf4a2ea526807f561895eb55507f4489aa1d4385908beda",
+      "git_blob_sha1": "cdb8a28354ad989bb7fa2d8122b0ceaa40623ba4",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-writer/references/verification-checklist.md",
+      "read_depth": "full_text",
+      "bytes": 5166,
+      "sha256": "474d8772cadd92994f6d7591cd0cb54baec59a6f7257557379f7830b24d73fdb",
+      "git_blob_sha1": "faa50ae2a5846063dce9c34a87e1222ceccdd2ec",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/paper-writer/references/verification-ladder.md",
+      "read_depth": "full_text",
+      "bytes": 6893,
+      "sha256": "3702c85b12da5db87c2b49359ad2f632e08fab7880a498e4e4e1b5af581f3aff",
+      "git_blob_sha1": "67e97107513917211605313f71d6ce2263b34b4a",
+      "readers": [
+        "part-c"
+      ]
+    },
+    {
+      "path": "skills/pre-submission-reviewer/SKILL.md",
+      "read_depth": "full_text",
+      "bytes": 12686,
+      "sha256": "639a96684ad6ca50fb1141287c4d3f2af76653b95cb2dae3dd7897d212bd8c35",
+      "git_blob_sha1": "9d03e557c462f00460919c181af0f47f97737697",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/pre-submission-reviewer/references/forbidden-patterns.md",
+      "read_depth": "full_text",
+      "bytes": 4801,
+      "sha256": "bfbe4161e42f39478d8477535c3a94d8cd1bb96f7e02c712fe3e7b8b88a2246c",
+      "git_blob_sha1": "121897a2543d63e4a57accd190d6f12f1a0aa279",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/pre-submission-reviewer/references/grammar-rules.md",
+      "read_depth": "full_text",
+      "bytes": 4767,
+      "sha256": "dc18174e6d2237f2c0b298b43d5a86f16481c36144f4785b44042ef864ecfdf9",
+      "git_blob_sha1": "caa399f117681f0035a3ed15f5a005248968f9e7",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/pre-submission-reviewer/references/latex-rules.md",
+      "read_depth": "full_text",
+      "bytes": 4439,
+      "sha256": "c231ec38506e7156d5106ac40f62c22b9ae15a34b1cc1e6a02b70666f7254dbf",
+      "git_blob_sha1": "b98d3af9fc1b35ac54d384a6f97765db0ae37f99",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/pre-submission-reviewer/references/logic-and-structure.md",
+      "read_depth": "full_text",
+      "bytes": 4663,
+      "sha256": "9442f79abc4088bab06da13c362d0bffc760d1fd22379ae5cb3f144d3358abec",
+      "git_blob_sha1": "f1980f164a58da2986e5ee1827f8ba4242a8836c",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/pre-submission-reviewer/references/section-guides.md",
+      "read_depth": "full_text",
+      "bytes": 5334,
+      "sha256": "16201aaa845ed7fafcc676ec9d36c084d31f0494bba7a53ff649912ba5fc71f6",
+      "git_blob_sha1": "f4fb73eb202196af142a22fe2baf0d3af3fdf59b",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/SKILL.md",
+      "read_depth": "full_text",
+      "bytes": 5307,
+      "sha256": "cdccf6a9f0de1a459cfbc22943dcd351a913140ce459b2477ea0e7c567070a2a",
+      "git_blob_sha1": "efc3b38f818d63688b176a27e00f3139dadcc1e3",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/references/checklist.md",
+      "read_depth": "full_text",
+      "bytes": 1944,
+      "sha256": "f75a0068584492f3d2285eef0f106c6550f8ba7ae2ffdb9c9b7c5fcd4dd4b058",
+      "git_blob_sha1": "b88c6ee52696448dc4cc1eb82b9714a490196ae7",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/references/concern-classification.md",
+      "read_depth": "full_text",
+      "bytes": 2260,
+      "sha256": "e8f89c71589e601471f1d15428c671c19bbbc2f5021401da3c0a7247948b537e",
+      "git_blob_sha1": "35ebfe688f4b0d4444dbfeb5d672ec53287d47a6",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/references/mindset-library.md",
+      "read_depth": "full_text",
+      "bytes": 17314,
+      "sha256": "00ccdabac80da979db5b4b177548befff1bf0f985dac51321b4d14a8564da90b",
+      "git_blob_sha1": "ecaeae2fa54d414c4f07b64af397eb2768787090",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/references/mindset-matching-heuristics.md",
+      "read_depth": "full_text",
+      "bytes": 2571,
+      "sha256": "9872ee5f0606239c7769cc719d31fce19035c5e4bcd607662ad1a4b91bb6da38",
+      "git_blob_sha1": "cc89f0496f6a737d4a2cb1b79d5eba425beaa219",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/references/response-templates.md",
+      "read_depth": "full_text",
+      "bytes": 2528,
+      "sha256": "2fd6637e6e2b1458453ef6b644c086952e6c8b9965a439ded258add7efcba3bf",
+      "git_blob_sha1": "0d4958b53e3b7a975359a07ae33a5288e125ed77",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/references/strategy-dimensions.md",
+      "read_depth": "full_text",
+      "bytes": 2491,
+      "sha256": "c7e268146540a07976cfaa5461591aa87071690a88afa6e94c12e1c9e895461b",
+      "git_blob_sha1": "ac36b05de0804ed1632d170c2e3c995174ac66d1",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/tech-paper-template/SKILL.md",
+      "read_depth": "full_text",
+      "bytes": 6975,
+      "sha256": "93625f319514cba10cb989cd670af6ee623b079f063ace8d1451af56c7c0c879",
+      "git_blob_sha1": "e5be7a5c270e976290fb1c6a513d5bdb7712f877",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/tech-paper-template/references/consistency-checks.md",
+      "read_depth": "full_text",
+      "bytes": 5632,
+      "sha256": "887dc40aaee06f64c347794633135a3f99b3b7f68f47917bc4061134c7ff1bc3",
+      "git_blob_sha1": "2d4f3d3b8572dcb7d74c3dc1b82dc5824b63f0dc",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/tech-paper-template/references/paper-types.md",
+      "read_depth": "full_text",
+      "bytes": 4853,
+      "sha256": "879c44111cb4c5724ba0bbaec0d691ac142f41244731e1f1c779a14bd4360ff4",
+      "git_blob_sha1": "e9c27d271a54ed81cf8427ea5dfb1445cb6d07ff",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/tech-paper-template/references/thinking-template.md",
+      "read_depth": "full_text",
+      "bytes": 5487,
+      "sha256": "2954ed9e9fa82136707d85348ccd0a232a55a236edb25811b23ae1ab75d6e86b",
+      "git_blob_sha1": "3cd0f7321bb856df3c398b3fcdcc6fa3a008e1e7",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/tech-paper-template/references/worked-examples.md",
+      "read_depth": "full_text",
+      "bytes": 5972,
+      "sha256": "16be6315756c6a599f1d82711b5a1dd8701759913f6be9a3ebcf5ec786b00768",
+      "git_blob_sha1": "88e1dc95eb8325a0ecded3cc4a7857c8e0de72d1",
+      "readers": [
+        "part-b"
+      ]
+    },
+    {
+      "path": "skills/vibe-research-workflow/SKILL.md",
+      "read_depth": "full_text",
+      "bytes": 7449,
+      "sha256": "c26a9f011cb8e88d6d5000c1b1844db7278334c07e84be4bae7ea8d08084a333",
+      "git_blob_sha1": "b945d43447573029c3e1ef79749b4307b4b79699",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/vibe-research-workflow/references/behavior-guidelines.md",
+      "read_depth": "full_text",
+      "bytes": 5185,
+      "sha256": "889c169fd7ee9dbcf8a4f93ffa29b73dacb36563ea862d9ab360b3c49b2f5d16",
+      "git_blob_sha1": "f9783b7d6b8e84faccfae8be7f4936db9da7f944",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/vibe-research-workflow/references/tool-selection.md",
+      "read_depth": "full_text",
+      "bytes": 4694,
+      "sha256": "a78d761f540815dff6c4941ba20a3e70e89471b2a76cd2573a0f8167d3f75227",
+      "git_blob_sha1": "3cacee2bbf87e6a2d6ef7ab63982d0f96b6607e3",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/vibe-research-workflow/references/vibe-coding.md",
+      "read_depth": "full_text",
+      "bytes": 4586,
+      "sha256": "0e09e54c3a129f47f93898a40e63174e1953d6d877dc1cf7e8ae2e86a6300f57",
+      "git_blob_sha1": "74d9ae6cdc56cc4977179a0ef48a0cf0c2ed99e5",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/vibe-research-workflow/references/vibe-figure.md",
+      "read_depth": "full_text",
+      "bytes": 4159,
+      "sha256": "3fd732937d88e1755b71949bfdfe75d433ec328af10ef848de2e217e7f9be14a",
+      "git_blob_sha1": "5043b450abf800b601afa291e5cb4b6c5c01e2f9",
+      "readers": [
+        "part-a"
+      ]
+    },
+    {
+      "path": "skills/vibe-research-workflow/references/vibe-writing.md",
+      "read_depth": "full_text",
+      "bytes": 6762,
+      "sha256": "cfab973c626fc33e53b30485e539ba081559ce38029247f27b57872131a761c7",
+      "git_blob_sha1": "e0edb6c85274ad93d9426b1ce9c624b5b994722e",
+      "readers": [
+        "part-a"
+      ]
+    }
+  ],
+  "not_claimed_read": [
+    "All source images and diagram assets",
+    "Companion handbook PDF",
+    "English handbook mirror",
+    "Upstream drawing/helper source scripts",
+    "External primary papers cited in handbook case studies",
+    "Complete skills directory reader guides (partially previewed)"
+  ],
+  "execution": "No upstream runtime was installed or executed in this source audit. See separate adapted Atlas task validation."
+}

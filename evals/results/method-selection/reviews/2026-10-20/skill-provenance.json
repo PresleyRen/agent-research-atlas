@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "operator": "/root/cold_method_selection",
+  "skill_root": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas",
+  "snapshot_at": "2026-10-20T05:04:20.005640+00:00",
+  "files": [
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/SKILL.md",
+      "relative_to_skill": "SKILL.md",
+      "sha256": "9e2fef60cf0ae464bf8ef4791bfdafca7003eab5c7a6059d9059974214384eee",
+      "bytes": 14133,
+      "use_and_read_depth": "指定技能正文，已读全文；确定项目复用、证据边界、候选/判别/交接流程"
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/local-atlas.md",
+      "relative_to_skill": "references/local-atlas.md",
+      "sha256": "bff297c626f9c1e76ac82748831354a0535f7866739fab54c04cb9f17b17b1c6",
+      "bytes": 12271,
+      "use_and_read_depth": "已读全文；首次写入前核对schema、来源、状态、历史与pending-review契约"
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/methodology.md",
+      "relative_to_skill": "references/methodology.md",
+      "sha256": "2fff220c393e03a10f77192ef3480e8d524e7a1ba355ea0958330ce2cf449e33",
+      "bytes": 28938,
+      "use_and_read_depth": "已分段读全文；选择失效分解、竞争解释、边界反例、资源分支，未访问其上游链接"
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/agent-domains.md",
+      "relative_to_skill": "references/agent-domains.md",
+      "sha256": "759a8ae66e9f9266a6faf5556cd3c994a21e0415951c9dbf175a49a1ee554a3a",
+      "bytes": 16468,
+      "use_and_read_depth": "已读全文；用相关领域和接口问题限定地图，词表不是查新证据"
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/bilingual-retrieval.md",
+      "relative_to_skill": "references/bilingual-retrieval.md",
+      "sha256": "8b1e37bc89f583ee2224dfc6ed38e38d13fc84ef3782115b2f06c864558566f5",
+      "bytes": 28248,
+      "use_and_read_depth": "已分段读全文；编写未执行的近邻/反证检索计划，未调用在线来源"
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/experiments.md",
+      "relative_to_skill": "references/experiments.md",
+      "sha256": "9c23a9e35fcb64c44bc8100773aaba35d7049e6922e396307b42b262209de5b1",
+      "bytes": 17867,
+      "use_and_read_depth": "已读全文；明确只设计，不调用plan/freeze/run或import-result，不捏造可执行输入"
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/evidence-and-claims.md",
+      "relative_to_skill": "references/evidence-and-claims.md",
+      "sha256": "5ce313f74b01be5d5da5706139348aaeefe7a1e886debaae059c8d9e35c36bce",
+      "bytes": 18827,
+      "use_and_read_depth": "已分段读全文；区分观察、推论、管理状态、独立性与验证含义"
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/references/extension-contract.md",
+      "relative_to_skill": "references/extension-contract.md",
+      "sha256": "5370cfadb1b27fd18d7e6c2722579e0276183abae2287d7babca5c30c9888816",
+      "bytes": 4101,
+      "use_and_read_depth": "已读全文；对冲突方法做能力定位，不扩展或修改技能"
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+      "relative_to_skill": "scripts/atlas.py",
+      "sha256": "bcf13a70cdff1f64dc10d2f054621d182fcd55bca04d9d128dc36d5973e9181b",
+      "bytes": 48173,
+      "use_and_read_depth": "执行discover、init、upsert、status、check及必要review操作；人工阅读1–240、256–360、475–690、765–825及静态检索到的入口/写入位置，未宣称逐行全审计"
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+      "relative_to_skill": "scripts/audit.py",
+      "sha256": "9ad10da5eb49186d9d7a5c0323f2af51b56d52ab1e88d0b766ddb1541e877c61",
+      "bytes": 17840,
+      "use_and_read_depth": "执行locate与project；已读1–222、290–340及命令/导入相关检索；只读项目与注册表审查"
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/experiments.py",
+      "relative_to_skill": "scripts/experiments.py",
+      "sha256": "653555bf96a36b74419cf47167ce9c9c05d89db774a4ff3bc45175848aae4219",
+      "bytes": 35361,
+      "use_and_read_depth": "audit.py导入的解析依赖；已读1–60导入/定义，未调用实验入口、runner或研究命令"
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/assets/agent-taxonomy.json",
+      "relative_to_skill": "assets/agent-taxonomy.json",
+      "sha256": "22827ff1c41ba4e0687da33120f9e2be074e894a506b0c4ddd1579addabb2724",
+      "bytes": 16918,
+      "use_and_read_depth": "初始化实际使用；读取14个领域ID/名称并保留未搜索状态"
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/assets/viewer.html",
+      "relative_to_skill": "assets/viewer.html",
+      "sha256": "4c2d050457fbe42cea8496f10c95b8c8dcd2452e73d14c8e12a4138361fc8b19",
+      "bytes": 10762,
+      "use_and_read_depth": "由atlas渲染消费；后续仅静态检查离线性和内嵌状态，不宣称浏览器渲染验收"
+    },
+    {
+      "path": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/assets/capability-registry.json",
+      "relative_to_skill": "assets/capability-registry.json",
+      "sha256": "69146c0a704b080aebe1c595bcf4ab2cd81b2bb2e5ba642efe1dabe98e7b7bf1",
+      "bytes": 217246,
+      "use_and_read_depth": "读取能力ID/名称/描述，并通过locate选择相关实现/冲突；未访问其上游来源"
+    }
+  ],
+  "upstream_skill_links_followed": false,
+  "skill_sources_modified": false
+}

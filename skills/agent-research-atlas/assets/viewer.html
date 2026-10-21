@@ -21,6 +21,8 @@ const badge=(where,text,cls='')=>where.append(el('span',text,'badge '+cls));
 $('title').textContent=atlas.project.title;
 badge($('meta'),'Revision '+atlas.revision);badge($('meta'),'Updated '+atlas.project.updated_at);
 if(atlas.project.synthetic)badge($('meta'),'SYNTHETIC 示例：不可用于科研论证','synthetic');
+const pendingReviews=new Map((atlas.maintenance?.pending_reviews||[]).map(entry=>[entry.node_id,entry]));
+if(pendingReviews.size)badge($('meta'),`${pendingReviews.size} 条待复核：前提已变，历史状态需重新审查`,'synthetic');
 for(const d of domains){const opt=el('option',d.title);opt.value=d.id;$('domain').append(opt)}
 for(const t of Object.keys(labels)){const opt=el('option',labels[t]+' / '+t);opt.value=t;$('type').append(opt)}
 const states=[...new Set(atlas.nodes.map(n=>n.type==='domain'?n.data.coverage:n.status||'recorded'))].sort();
@@ -29,6 +31,7 @@ function source(parent,s){const row=el('p');const target=s.url||s.path;let link;
  try{const u=new URL(target);if(['https:','http:'].includes(u.protocol)){link=el('a',target);link.href=u.href;link.target='_blank';link.rel='noopener noreferrer'}}catch{}
  row.append(link||el('span',target||'Unknown source'));row.append(el('small',' — '+s.access+' · '+(s.locator||'metadata only')+' · '+s.accessed_at));parent.append(row)}
 function show(n){const p=$('detail');p.replaceChildren(el('h2',n.title));badge(p,labels[n.type]||n.type);badge(p,n.type==='domain'?n.data.coverage:n.status||'recorded');p.append(el('p',n.id));p.append(el('h3','结构化记录 / Recorded details'));p.append(el('pre',JSON.stringify(n.data||{},null,2)));
+ if(pendingReviews.has(n.id)){badge(p,'待复核 / Needs review','synthetic');p.append(el('p','依赖证据已变。此处保留的历史状态不能直接作为当前研究结论。'));p.append(el('pre',JSON.stringify(pendingReviews.get(n.id),null,2)))}
  if(n.sources?.length){p.append(el('h3','来源与读取范围'));n.sources.forEach(s=>source(p,s))}
  const edges=atlas.edges.filter(e=>e.source===n.id||e.target===n.id);if(edges.length){p.append(el('h3','关联记录'));for(const e of edges){const other=atlas.nodes.find(x=>x.id===(e.source===n.id?e.target:e.source));const b=el('button',e.relation+' → '+other.title);b.onclick=()=>show(other);p.append(b)}}}
 function svg(tag,attrs){const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);return e}

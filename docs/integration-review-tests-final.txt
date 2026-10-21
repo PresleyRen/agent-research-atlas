@@ -1,0 +1,22 @@
+REVIEW_SOURCE_SHA256={"atlas.py": "bcf13a70cdff1f64dc10d2f054621d182fcd55bca04d9d128dc36d5973e9181b", "audit.py": "9ad10da5eb49186d9d7a5c0323f2af51b56d52ab1e88d0b766ddb1541e877c61", "experiments.py": "653555bf96a36b74419cf47167ce9c9c05d89db774a4ff3bc45175848aae4219"}
+test_boolean_atlas_schema_version_is_rejected (__main__.IntegrationReviewTests.test_boolean_atlas_schema_version_is_rejected) ... ok
+test_boolean_freeze_schema_version_is_rejected (__main__.IntegrationReviewTests.test_boolean_freeze_schema_version_is_rejected) ... ok
+test_boolean_value_is_not_a_numeric_claim (__main__.IntegrationReviewTests.test_boolean_value_is_not_a_numeric_claim) ... ok
+test_deleted_immutable_evaluator_preserves_success_exit_but_fails_run (__main__.IntegrationReviewTests.test_deleted_immutable_evaluator_preserves_success_exit_but_fails_run) ... ok
+test_historical_records_stay_valid_after_current_source_is_changed (__main__.IntegrationReviewTests.test_historical_records_stay_valid_after_current_source_is_changed) ... ok
+test_legacy_freeze_loads_without_claiming_new_input_pinning (__main__.IntegrationReviewTests.test_legacy_freeze_loads_without_claiming_new_input_pinning) ... ok
+test_malformed_pointer_is_rejected_even_if_file_is_missing (__main__.IntegrationReviewTests.test_malformed_pointer_is_rejected_even_if_file_is_missing) ... ok
+test_malformed_review_trigger_rejected_before_any_commit (__main__.IntegrationReviewTests.test_malformed_review_trigger_rejected_before_any_commit) ... ok
+test_matching_number_does_not_hide_changed_source_version (__main__.IntegrationReviewTests.test_matching_number_does_not_hide_changed_source_version) ... ok
+test_mutable_candidate_may_change_during_run_and_both_hashes_remain (__main__.IntegrationReviewTests.test_mutable_candidate_may_change_during_run_and_both_hashes_remain) ... ok
+test_pending_review_visible_in_domain_view (__main__.IntegrationReviewTests.test_pending_review_visible_in_domain_view) ... ok
+test_planned_tests_edge_propagates_changed_hypothesis_to_plan (__main__.IntegrationReviewTests.test_planned_tests_edge_propagates_changed_hypothesis_to_plan) ... ok
+test_pointer_escape_and_exact_number_match_remain_scientifically_unassessed (__main__.IntegrationReviewTests.test_pointer_escape_and_exact_number_match_remain_scientifically_unassessed) ... ok
+test_removed_support_relation_flags_previous_consumer_and_followup (__main__.IntegrationReviewTests.test_removed_support_relation_flags_previous_consumer_and_followup) ... ok
+test_reverse_uses_dependency_and_review_reopening (__main__.IntegrationReviewTests.test_reverse_uses_dependency_and_review_reopening) ... ok
+test_zero_tolerance_does_not_round_distinct_large_integers_into_a_match (__main__.IntegrationReviewTests.test_zero_tolerance_does_not_round_distinct_large_integers_into_a_match) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.601s
+
+OK

@@ -1,0 +1,48 @@
+{
+  "all_input_files_unchanged": true,
+  "checked_at": "2026-10-21T12:49:31.273564+00:00",
+  "files": [
+    {
+      "actual_bytes": 494,
+      "actual_sha256": "65898efa70ce439c1dbb6c0e25e626f198e1d1434d8418aa8f2f01bc3283573d",
+      "expected_bytes": 494,
+      "expected_sha256": "65898efa70ce439c1dbb6c0e25e626f198e1d1434d8418aa8f2f01bc3283573d",
+      "match": true,
+      "path": "PROJECT.md"
+    },
+    {
+      "actual_bytes": 706,
+      "actual_sha256": "fe4e7250d0e41b8f4de0172b445ea94dc957204372042ce4dc37e3953bc9711b",
+      "expected_bytes": 706,
+      "expected_sha256": "fe4e7250d0e41b8f4de0172b445ea94dc957204372042ce4dc37e3953bc9711b",
+      "match": true,
+      "path": "draft-zh.md"
+    },
+    {
+      "actual_bytes": 776,
+      "actual_sha256": "fa747eadf08600554fa88e665137684e6c09ff6e9130285e56d210956d0ae953",
+      "expected_bytes": 776,
+      "expected_sha256": "fa747eadf08600554fa88e665137684e6c09ff6e9130285e56d210956d0ae953",
+      "match": true,
+      "path": "notes/method.md"
+    },
+    {
+      "actual_bytes": 431,
+      "actual_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+      "expected_bytes": 431,
+      "expected_sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32",
+      "match": true,
+      "path": "results/pilot.json"
+    },
+    {
+      "actual_bytes": 808,
+      "actual_sha256": "cb296b7b37d10efaec4b732f9c4eb3775352c186112e7e9bd78a11d55c388089",
+      "expected_bytes": 808,
+      "expected_sha256": "cb296b7b37d10efaec4b732f9c4eb3775352c186112e7e9bd78a11d55c388089",
+      "match": true,
+      "path": "reviews.md"
+    }
+  ],
+  "manifest": "INPUT-MANIFEST.json",
+  "manifest_sha256": "4436993ce0a65727c11a974d7359816cbc7fdc43ccc41b14eb08154ada7cb13a"
+}

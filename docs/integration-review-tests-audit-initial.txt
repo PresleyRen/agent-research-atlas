@@ -1,0 +1,28 @@
+test_boolean_freeze_schema_version_is_rejected (__main__.IntegrationReviewTests.test_boolean_freeze_schema_version_is_rejected) ... FAIL
+test_zero_tolerance_does_not_round_distinct_large_integers_into_a_match (__main__.IntegrationReviewTests.test_zero_tolerance_does_not_round_distinct_large_integers_into_a_match) ... FAIL
+test_pointer_escape_and_exact_number_match_remain_scientifically_unassessed (__main__.IntegrationReviewTests.test_pointer_escape_and_exact_number_match_remain_scientifically_unassessed) ... ok
+test_matching_number_does_not_hide_changed_source_version (__main__.IntegrationReviewTests.test_matching_number_does_not_hide_changed_source_version) ... ok
+test_boolean_value_is_not_a_numeric_claim (__main__.IntegrationReviewTests.test_boolean_value_is_not_a_numeric_claim) ... ok
+test_malformed_pointer_is_rejected_even_if_file_is_missing (__main__.IntegrationReviewTests.test_malformed_pointer_is_rejected_even_if_file_is_missing) ... ok
+
+======================================================================
+FAIL: test_boolean_freeze_schema_version_is_rejected (__main__.IntegrationReviewTests.test_boolean_freeze_schema_version_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/f7a517081da8/agent-research-atlas-public/tests/test_integration_review.py", line 204, in test_boolean_freeze_schema_version_is_rejected
+    with self.assertRaises(EXPERIMENTS.RecordError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RecordError not raised
+
+======================================================================
+FAIL: test_zero_tolerance_does_not_round_distinct_large_integers_into_a_match (__main__.IntegrationReviewTests.test_zero_tolerance_does_not_round_distinct_large_integers_into_a_match)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/f7a517081da8/agent-research-atlas-public/tests/test_integration_review.py", line 216, in test_zero_tolerance_does_not_round_distinct_large_integers_into_a_match
+    self.assertFalse(report["all_values_match"])
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.018s
+
+FAILED (failures=2)

@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "source_project": "/workspace/scratch/f7a517081da8/forward-conflicts-evidence",
+  "scope": "Selected actual reports and current map views with original fixture inputs. Not the complete task history: repeated revision/view snapshots and some diagnostic/helper artifacts are omitted. Coordinator checks/amendments are labelled separately.",
+  "files": [
+    {
+      "path": "HANDOFF.md",
+      "sha256": "68d9fcc125e48dc5475149d9c65b8fd3b1b90942a8259837ec39f3e9eda673b8",
+      "bytes": 8669
+    },
+    {
+      "path": "code/router.py",
+      "sha256": "ecf500760717de698e6500eb72cdadfa1e78d36ead383b26cecb07e6a06b3bbb",
+      "bytes": 305
+    },
+    {
+      "path": "coordinator-verification.json",
+      "sha256": "88c1a029301040c113ad721e4d033c71c46849c208fb38e2b11780d812c0ddf5",
+      "bytes": 6465
+    },
+    {
+      "path": "docs/draft-results.md",
+      "sha256": "71ef9316fcf21a30c86904b1a108e3a94a543fc7c0214ed1f9d93439eec308d1",
+      "bytes": 355
+    },
+    {
+      "path": "docs/prior-map.md",
+      "sha256": "f04df03466b8d808d83a00eb63bf85daf768a90afd3d5ce940b3780d777ea270",
+      "bytes": 510
+    },
+    {
+      "path": "docs/resources.md",
+      "sha256": "640fd3b086f36083306c61892cc3418771213698e8c276f0b35e4c684ffbb749",
+      "bytes": 231
+    },
+    {
+      "path": "docs/results-reviewed.md",
+      "sha256": "718e04fe89e9ff641020cca3e5d84e847e27ed3dbb487f3f2bf1e5d510c9ce9b",
+      "bytes": 3279
+    },
+    {
+      "path": "papers/abstract-a.md",
+      "sha256": "5e979e3b502aabed23056c4d1c6de51d69ea684f687b63cd89e9212a23250c24",
+      "bytes": 345
+    },
+    {
+      "path": "plans/minimal-discriminating-study.md",
+      "sha256": "85f429dbb49cdb90b7c682c5ebf8d3ec6b770ab62842ad86640a9ca0760cf683",
+      "bytes": 10611
+    },
+    {
+      "path": "plans/retrieval-followup.md",
+      "sha256": "ca908e1c1f68d46a07daa71b92e291d26b9dc39a5bcede41b3a8786d56343989",
+      "bytes": 3078
+    },
+    {
+      "path": "research-atlas/MAP.md",
+      "sha256": "266624d89a2606428fd5616a3e159ef40294e4e5f36bb4d57224ff7c4d7ed7c5",
+      "bytes": 2759
+    },
+    {
+      "path": "research-atlas/atlas.json",
+      "sha256": "1f3d1057372c6b169b2074f8855ecdc9e88104a0772f12364c837d530ab2001b",
+      "bytes": 79180
+    },
+    {
+      "path": "research-atlas/domains/answer-grounding/MAP.md",
+      "sha256": "85a2eb7ab99314fbe600e9486cd757f6c6698f5bfd6a4a2f5f40e97d99624c78",
+      "bytes": 447
+    },
+    {
+      "path": "research-atlas/domains/answer-grounding/notes.md",
+      "sha256": "14d841439d676b39284242cde13e6f59eae6bc5efe374dc8e575b6bbf9de1937",
+      "bytes": 167
+    },
+    {
+      "path": "research-atlas/domains/clarification/MAP.md",
+      "sha256": "90aedd4631b021b2c2dbc166481b5a96adba3613ff47e32eda9980c19e4d0599",
+      "bytes": 17851
+    },
+    {
+      "path": "research-atlas/domains/clarification/notes.md",
+      "sha256": "72e24b7ba9da71f0f7966c947abfe7ff5a153c9ecc594ade82e8da8fcf060cc5",
+      "bytes": 153
+    },
+    {
+      "path": "research-atlas/domains/evaluation/MAP.md",
+      "sha256": "506f36ae1da73ff8da149bfa66c0f04360cbb02c1b8f9235d39fffd2bd3ed69a",
+      "bytes": 21220
+    },
+    {
+      "path": "research-atlas/domains/evaluation/notes.md",
+      "sha256": "7481f7fc16e7627a672e38ba8484181ff61b232b819c271c6e58b678b3ed0faa",
+      "bytes": 532
+    },
+    {
+      "path": "research-atlas/domains/ingestion-retrieval/MAP.md",
+      "sha256": "78cb6c0d8ee4b25a1ec84521aed48d7e5333e8b517adc9428e8e2ed74e465757",
+      "bytes": 419
+    },
+    {
+      "path": "research-atlas/domains/ingestion-retrieval/notes.md",
+      "sha256": "877ff8884c9bb4b58f79d95bfdc97fcaa6828c93c4c9cba4a4f65067f38ad876",
+      "bytes": 153
+    },
+    {
+      "path": "research-atlas/domains/intent/MAP.md",
+      "sha256": "60c33c2158f2bd587c47ca4863e83a46f7bc951e585377dc15cb58b2e8ead8b9",
+      "bytes": 5143
+    },
+    {
+      "path": "research-atlas/domains/intent/notes.md",
+      "sha256": "7d3da4be7c73c38762ae705392087f16f82c59afcd889c4e31fa50447e18ce4c",
+      "bytes": 151
+    },
+    {
+      "path": "research-atlas/domains/knowledge-graphs/MAP.md",
+      "sha256": "35529ad5e2716d613564ad2ad9ccf8026883e5d2cf7f02b0734ebd890957b626",
+      "bytes": 459
+    },
+    {
+      "path": "research-atlas/domains/knowledge-graphs/notes.md",
+      "sha256": "5b979bc9fc00375c2bd1c351a98f4a66fc93134b475c8fec741457bbdc67cd56",
+      "bytes": 173
+    },
+    {
+      "path": "research-atlas/domains/memory/MAP.md",
+      "sha256": "fd8de2432ffc36dec7d1744d8a21cc3ddccb5552733f05332517768ad8ea48b3",
+      "bytes": 411
+    },
+    {
+      "path": "research-atlas/domains/memory/notes.md",
+      "sha256": "008aa3c759a539fd9396e3edb88b23743e3cf6a99ba0635d82fe8fffa73a3cd4",
+      "bytes": 149
+    },
+    {
+      "path": "research-atlas/domains/multi-agent/MAP.md",
+      "sha256": "d8d92d080a7a68363f7808b8d813ee504de6d6dbe443cb6063e1ab0e622bda9c",
+      "bytes": 421
+    },
+    {
+      "path": "research-atlas/domains/multi-agent/notes.md",
+      "sha256": "59c37f0dbdb2c15180697f4113eca227f69d21c54491f6bdfe9ee9d9b7ca1dde",
+      "bytes": 154
+    },
+    {
+      "path": "research-atlas/domains/planning/MAP.md",
+      "sha256": "97b747b5b4fa5b8748e8cf1406701946b42ba3cea200428dce323eb8242c148d",
+      "bytes": 383
+    },
+    {
+      "path": "research-atlas/domains/planning/notes.md",
+      "sha256": "facd4196694e61a0f6bd2f0f52fb3c2b0ac38a775715761d1e3fc514b9698dec",
+      "bytes": 135
+    },
+    {
+      "path": "research-atlas/domains/production/MAP.md",
+      "sha256": "dc701dad4805a261131fc9e149dec57d6bf9bd7be4789745902b5888bea86dd5",
+      "bytes": 433
+    },
+    {
+      "path": "research-atlas/domains/production/notes.md",
+      "sha256": "e92f3d5acd9a788b4ecbaffa56ceea7356836c0b0c06ef9c7e92885a6f3d1af4",
+      "bytes": 160
+    },
+    {
+      "path": "research-atlas/domains/reranking-context/MAP.md",
+      "sha256": "fb889dab59fdfae542fdb17f8fc0e4c0661539ef50fdbb3884140b3de6e259ac",
+      "bytes": 429
+    },
+    {
+      "path": "research-atlas/domains/reranking-context/notes.md",
+      "sha256": "f0560806a214144c874f8f7cef5e3ad2529945a1c07e65ef97438579bc40dc00",
+      "bytes": 158
+    },
+    {
+      "path": "research-atlas/domains/routing/MAP.md",
+      "sha256": "3e5bfa1d154ae9a304bfde38ba639efd9b8928c3c0d47bb324a1e1ab7b70e233",
+      "bytes": 23840
+    },
+    {
+      "path": "research-atlas/domains/routing/notes.md",
+      "sha256": "c95137fc3ec55b4395faafc82e53a99732da82aa56f5bbb67c816e7aa008cdf4",
+      "bytes": 812
+    },
+    {
+      "path": "research-atlas/domains/safety-security/MAP.md",
+      "sha256": "3aef207262882daef39c3bc3ed5d1605a7ee28da75544a8d84a6fd070002448d",
+      "bytes": 447
+    },
+    {
+      "path": "research-atlas/domains/safety-security/notes.md",
+      "sha256": "9fb6f90066799e30c017b23d8e59bd30cf586f4ad6bdda7b5b0ba78bfd7398c1",
+      "bytes": 167
+    },
+    {
+      "path": "research-atlas/domains/tool-use/MAP.md",
+      "sha256": "778c8133caefd6d7118acae9235882548556e857a132e9bc5aabceddea6be8ef",
+      "bytes": 409
+    },
+    {
+      "path": "research-atlas/domains/tool-use/notes.md",
+      "sha256": "9d7f43eea9cd35c6b44c6801f3d3434a8a88cad75b00ee8f994eb6f384fd7e66",
+      "bytes": 148
+    },
+    {
+      "path": "research-atlas/map.html",
+      "sha256": "5f5b03787458c7e8e866dd087b271ed77846d8a226797fc32b6239f565cc788b",
+      "bytes": 71033
+    },
+    {
+      "path": "results/run-a.json",
+      "sha256": "18e88e62b456f7ce02adabb09965602d091aac59541a47dd1a2c6b0cc049ad08",
+      "bytes": 161
+    },
+    {
+      "path": "results/run-b.json",
+      "sha256": "72b2702d0a7c2c1466b2c6e15d67699b23563b91c1408deecccedd780bcf87a1",
+      "bytes": 162
+    },
+    {
+      "path": "reviews/2026-10-20/atlas-check.json",
+      "sha256": "5dc0177da1e2c29a241eb75d08428aaa7abde66ad04f9e98d9f2d75b3541b955",
+      "bytes": 162
+    },
+    {
+      "path": "reviews/2026-10-20/evidence-review.md",
+      "sha256": "9f07e3bc7a1c9c02d1c1080838ec61c46c0a2e3bc67a063bcf3e1fe1b5a76b3f",
+      "bytes": 12832
+    },
+    {
+      "path": "reviews/2026-10-20/final-artifact-check.json",
+      "sha256": "2ba5f3ab43bc8af8b071a180cfbd68bc85fb7ff81b63a164da434e52f543152e",
+      "bytes": 768
+    },
+    {
+      "path": "reviews/2026-10-20/legacy-provenance-review.json",
+      "sha256": "bd234158b9e68c817919f7d5e5195f8a91e815a84ad8cf3821b3e8737c232255",
+      "bytes": 1083
+    },
+    {
+      "path": "reviews/2026-10-20/project-audit.json",
+      "sha256": "1bd54f12bd33fbb4fb419a2d54d405574c32659e86979aacce539bc8cbcb84d1",
+      "bytes": 1247
+    },
+    {
+      "path": "reviews/2026-10-20/review-resolutions.json",
+      "sha256": "997a0e13305b48ed9d0cec092c45e2153ea604298d05950cd4603535aba861f9",
+      "bytes": 4995
+    },
+    {
+      "path": "reviews/2026-10-20/skill-provenance.json",
+      "sha256": "2040daab4d4e4281ceced9465fbbe89d92db97d9643c20f857eefd0df50357ba",
+      "bytes": 4926
+    },
+    {
+      "path": "reviews/2026-10-20/source-manifest.json",
+      "sha256": "2a7ad756b25682cb02928cc9773b0e46bc7247e0033aa738ff11f6aa11d25871",
+      "bytes": 2858
+    },
+    {
+      "path": "reviews/2026-10-20/static-code-review.json",
+      "sha256": "5c866d4785aa21e007f4f30767240b230dd646b822fe3923464a0048e06a2ddc",
+      "bytes": 1143
+    },
+    {
+      "path": "reviews/2026-10-20/validation-commands.json",
+      "sha256": "a05d830f4e7f53b1a9e35cc755d29829e8fdcacd5db687fed739fd95eb44e946",
+      "bytes": 2945
+    },
+    {
+      "path": "reviews/2026-10-20/values-draft-report.json",
+      "sha256": "194624f8ef8ae74ec2e23d7cf018f71842acbf6eedd1a63ba6ae8ea9ce2ef968",
+      "bytes": 1554
+    },
+    {
+      "path": "reviews/2026-10-20/values-draft.json",
+      "sha256": "d138f31b98818ac80bd6af61b9c1ddac3941165cf938f5c0e58bdace82235964",
+      "bytes": 1170
+    },
+    {
+      "path": "reviews/2026-10-20/values-observed-report.json",
+      "sha256": "cc4f3c98858a1cbc60c35898c800348881fff585c3796832466a28e879090e52",
+      "bytes": 2189
+    },
+    {
+      "path": "reviews/2026-10-20/values-observed.json",
+      "sha256": "72a2ff88c3e38c0155b6288e857609ed920b5f92bedad5f9e69f1b165671caf0",
+      "bytes": 1733
+    },
+    {
+      "path": "searches/receipts.json",
+      "sha256": "828a129e34e9f32571a228b0c4fab723d8f06ced483a11a959a31247a9b8c4ec",
+      "bytes": 665
+    }
+  ]
+}

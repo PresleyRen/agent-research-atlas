@@ -1,0 +1,4952 @@
+{
+  "schema_version": 1,
+  "part": "B",
+  "audit_date": "2026-10-21",
+  "auditor": "coverage_tools",
+  "source": {
+    "name": "HKUSTDial/Supervisor-Skills",
+    "url": "https://github.com/HKUSTDial/Supervisor-Skills",
+    "commit": "a20d76ef3979b804d7dbf599d577826957e0a8a9",
+    "local_root": "/workspace/scratch/f7a517081da8/upstream-supervisor-a20d76e",
+    "pin_validation": "Parent supplied pinned checkout: 108 text Git blobs matched. Part B independently records hashes of its 32 assigned files; no claim of reading all 108."
+  },
+  "scope": {
+    "required_files": 32,
+    "read_files": 32,
+    "characters": 186013,
+    "upstream_runtime_tests": "not_run",
+    "scientific_effectiveness_tests": "not_run",
+    "original_paper_fulltext_checks": "not_run; only case-study texts read",
+    "official_rule_checks": 3,
+    "integration": "proposed only; parent owns implementation and publication"
+  },
+  "license": {
+    "root_license": "CC BY-NC-SA 4.0",
+    "root_copyright": "2026 Yuyu Luo (methodology) and contributors",
+    "skill_frontmatter": {
+      "benchmark-paper-template": "CC-BY-4.0",
+      "tech-paper-template": "CC-BY-4.0",
+      "pre-submission-reviewer": "CC-BY-4.0",
+      "rebuttal-guidance": "CC-BY-4.0"
+    },
+    "observed_mismatch": true,
+    "references": [
+      "LICENSE",
+      "README.md#License",
+      "skills/benchmark-paper-template/SKILL.md#frontmatter",
+      "skills/tech-paper-template/SKILL.md#frontmatter",
+      "skills/pre-submission-reviewer/SKILL.md#frontmatter",
+      "skills/rebuttal-guidance/SKILL.md#frontmatter"
+    ],
+    "integration_policy": "按主任务既定方案，对实际改编扩展单独标 CC BY-NC-SA 4.0、来源/commit/作者/变更。核心MIT保留，不把来源文字混入MIT并宣称全仓统一MIT；逐文件范围明确。此为保守的工程边界记录，不宣称解决上游许可元数据不一致。",
+    "actions_by_part_b": "Only original audit and proposed integration text written outside main repo; no upstream scripts run, no dependency installs, no main-repo changes, no publication."
+  },
+  "read_manifest": [
+    {
+      "path": "skills/benchmark-paper-template/SKILL.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 142,
+      "characters": 11173,
+      "bytes": 11184,
+      "sha256": "daa63e695d0dccd317517b90b92d0f7e3f1f67f104ee5971ad6e9b5c120d3095",
+      "git_blob_sha1": "e4d1a46d2da9bd3bfa985ef49d905843beb83d55",
+      "sections": [
+        {
+          "line": 7,
+          "heading": "Benchmark Paper Template"
+        },
+        {
+          "line": 9,
+          "heading": "Overview"
+        },
+        {
+          "line": 13,
+          "heading": "Core capabilities"
+        },
+        {
+          "line": 20,
+          "heading": "Benchmark paper vs technical paper"
+        },
+        {
+          "line": 33,
+          "heading": "The five pillars"
+        },
+        {
+          "line": 41,
+          "heading": "Introduction six-part flowchart"
+        },
+        {
+          "line": 50,
+          "heading": "Section skeleton"
+        },
+        {
+          "line": 61,
+          "heading": "Prompt template"
+        },
+        {
+          "line": 66,
+          "heading": "Role"
+        },
+        {
+          "line": 69,
+          "heading": "Task"
+        },
+        {
+          "line": 72,
+          "heading": "Five pillars (all must be addressed)"
+        },
+        {
+          "line": 79,
+          "heading": "Input"
+        },
+        {
+          "line": 88,
+          "heading": "Output"
+        },
+        {
+          "line": 90,
+          "heading": "Step 1: Five-pillar completeness table"
+        },
+        {
+          "line": 100,
+          "heading": "Step 2: Introduction six-part logic chain"
+        },
+        {
+          "line": 111,
+          "heading": "Step 3: Section outline for §2 to §7"
+        },
+        {
+          "line": 115,
+          "heading": "Step 4: Pre-submission self-check"
+        },
+        {
+          "line": 120,
+          "heading": "Reference exemplars"
+        },
+        {
+          "line": 126,
+          "heading": "Usage tips"
+        },
+        {
+          "line": 133,
+          "heading": "References"
+        }
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/benchmark-design.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 180,
+      "characters": 7488,
+      "bytes": 7558,
+      "sha256": "07ca889ca80de03ea7fc6f586e4efb3460a93f89542d07c689ce45283a1bfbb5",
+      "git_blob_sha1": "c78e807a7e67356bf1747dc849f1830392974a4e",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Benchmark Architecture Design"
+        },
+        {
+          "line": 3,
+          "heading": "Contents"
+        },
+        {
+          "line": 16,
+          "heading": "Element 1: Design Goals"
+        },
+        {
+          "line": 29,
+          "heading": "Element 2: Task Scope"
+        },
+        {
+          "line": 44,
+          "heading": "Element 3: Taxonomy Design"
+        },
+        {
+          "line": 48,
+          "heading": "Pattern 1: Capability × Difficulty Matrix (StatQA)"
+        },
+        {
+          "line": 60,
+          "heading": "Pattern 2: Phenomenon Type × Severity Spectrum (nvBench 2.0)"
+        },
+        {
+          "line": 72,
+          "heading": "Pattern 3: Multi-dimensional Quality Framework (VisJudge-Bench)"
+        },
+        {
+          "line": 86,
+          "heading": "Element 4: Evaluation Framework"
+        },
+        {
+          "line": 105,
+          "heading": "Element 5: Companion Method (Optional but Highly Recommended)"
+        },
+        {
+          "line": 124,
+          "heading": "Element 6: Contamination Mitigation Strategy"
+        },
+        {
+          "line": 135,
+          "heading": "Element 7: Difficulty Calibration"
+        },
+        {
+          "line": 142,
+          "heading": "Design Document Template"
+        }
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/checklist.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 113,
+      "characters": 6902,
+      "bytes": 6934,
+      "sha256": "2bcd4df5198891689f3817973638418c7dc8f547ef515e9fde365d1193af5b12",
+      "git_blob_sha1": "505ff71a4482fb936cfa5df59cbe4f09e33f3d66",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Pre-submission Checklist"
+        },
+        {
+          "line": 3,
+          "heading": "Contents"
+        },
+        {
+          "line": 15,
+          "heading": "1. Introduction Checklist"
+        },
+        {
+          "line": 26,
+          "heading": "2. Benchmark Section Checklist"
+        },
+        {
+          "line": 38,
+          "heading": "3. Experiment Section Checklist"
+        },
+        {
+          "line": 49,
+          "heading": "4. Structure & Completeness Checklist"
+        },
+        {
+          "line": 67,
+          "heading": "5. Venue-Specific Checks"
+        },
+        {
+          "line": 69,
+          "heading": "NeurIPS (Evaluations & Datasets track, renamed from D&B in 2026)"
+        },
+        {
+          "line": 77,
+          "heading": "ICLR / ICML"
+        },
+        {
+          "line": 82,
+          "heading": "ACL / EMNLP / NAACL"
+        },
+        {
+          "line": 87,
+          "heading": "Severity Classification"
+        },
+        {
+          "line": 106,
+          "heading": "After the Checklist"
+        }
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/construction-pipeline.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 127,
+      "characters": 6329,
+      "bytes": 6357,
+      "sha256": "714c23cecfd952368911ba71c0c65f713d2954641090a8d942d0dde3fdc61e6a",
+      "git_blob_sha1": "db206ed63b2118674659a4423fd6420797c78b32",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Benchmark Construction Pipeline"
+        },
+        {
+          "line": 3,
+          "heading": "Contents"
+        },
+        {
+          "line": 14,
+          "heading": "Pipeline Design Principles"
+        },
+        {
+          "line": 22,
+          "heading": "Three Proven Construction Paradigms"
+        },
+        {
+          "line": 26,
+          "heading": "Paradigm 1: Reverse Synthesis"
+        },
+        {
+          "line": 39,
+          "heading": "Paradigm 2: Controlled Injection"
+        },
+        {
+          "line": 52,
+          "heading": "Paradigm 3: Adaptive Generation plus Expert Annotation"
+        },
+        {
+          "line": 67,
+          "heading": "Pipeline Stages Specification"
+        },
+        {
+          "line": 88,
+          "heading": "Quality Control Strategies"
+        },
+        {
+          "line": 101,
+          "heading": "Statistical Characteristics (Section 2.3 Content)"
+        },
+        {
+          "line": 118,
+          "heading": "Pipeline Figure (Figure 2)"
+        }
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/experiments.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 159,
+      "characters": 8166,
+      "bytes": 8218,
+      "sha256": "0feab24e92c96e716f4c0ae60dcf385a63d9d58a58bebf09729f067db336db6e",
+      "git_blob_sha1": "b566e8b653cb3281d6a85cbed0a679d1d615fe6c",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Experiment & Insight Design"
+        },
+        {
+          "line": 5,
+          "heading": "1. Baseline Model Selection"
+        },
+        {
+          "line": 18,
+          "heading": "2. Evaluation Protocol"
+        },
+        {
+          "line": 20,
+          "heading": "2.1 Evaluation Settings"
+        },
+        {
+          "line": 34,
+          "heading": "2.2 Human Baseline Experiment"
+        },
+        {
+          "line": 45,
+          "heading": "2.3 Baseline Fairness"
+        },
+        {
+          "line": 49,
+          "heading": "3. RQ-driven Experiment Structure"
+        },
+        {
+          "line": 53,
+          "heading": "RQ Analysis Template"
+        },
+        {
+          "line": 67,
+          "heading": "Common Analysis Types"
+        },
+        {
+          "line": 81,
+          "heading": "4. The Overall Performance Table"
+        },
+        {
+          "line": 101,
+          "heading": "5. The \"Finding X\" Pattern"
+        },
+        {
+          "line": 130,
+          "heading": "6. Case Study Design"
+        },
+        {
+          "line": 141,
+          "heading": "7. Companion Method Experiments (If Applicable)"
+        },
+        {
+          "line": 151,
+          "heading": "8. Research Opportunities"
+        }
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/gap-analysis.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 86,
+      "characters": 5458,
+      "bytes": 5467,
+      "sha256": "676b1349ddbee6463047c879d1ac44ada2f6b07a313ae6b1045d4384287189d4",
+      "git_blob_sha1": "9b76c1867d274866db48c204c72de93bfbc01884",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Benchmark Gap Analysis"
+        },
+        {
+          "line": 5,
+          "heading": "Step 1: Survey the Evaluation Landscape"
+        },
+        {
+          "line": 23,
+          "heading": "Step 2: Identify the Blind Spot"
+        },
+        {
+          "line": 27,
+          "heading": "Pattern A: Dimension Blindness"
+        },
+        {
+          "line": 32,
+          "heading": "Pattern B: Assumption Violation"
+        },
+        {
+          "line": 37,
+          "heading": "Pattern C: Evaluation Granularity Mismatch"
+        },
+        {
+          "line": 46,
+          "heading": "Step 3: Validate the Gap"
+        },
+        {
+          "line": 57,
+          "heading": "Step 4: Articulate the Gap Statement"
+        },
+        {
+          "line": 68,
+          "heading": "Step 5: Derive Research Questions"
+        }
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/instantiation-template.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 194,
+      "characters": 5306,
+      "bytes": 5327,
+      "sha256": "d329085c363eff5192bdff4d9c156e6de310d332e3ccdc56a1f74cee4691c975",
+      "git_blob_sha1": "c3ac5bdb7b127caee06f55c299fc25de6db99e9a",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Benchmark Paper Instantiation Template"
+        },
+        {
+          "line": 3,
+          "heading": "Table of contents"
+        },
+        {
+          "line": 16,
+          "heading": "1. Basic Information"
+        },
+        {
+          "line": 25,
+          "heading": "2. Core Evaluation Definition"
+        },
+        {
+          "line": 33,
+          "heading": "3. Gap Analysis (bench-gap-analysis)"
+        },
+        {
+          "line": 44,
+          "heading": "4. Research Questions"
+        },
+        {
+          "line": 52,
+          "heading": "5. Benchmark Design (bench-design)"
+        },
+        {
+          "line": 54,
+          "heading": "Design Goals"
+        },
+        {
+          "line": 63,
+          "heading": "Task Scope"
+        },
+        {
+          "line": 70,
+          "heading": "Taxonomy"
+        },
+        {
+          "line": 79,
+          "heading": "Evaluation Framework"
+        },
+        {
+          "line": 86,
+          "heading": "Companion Method (Optional)"
+        },
+        {
+          "line": 94,
+          "heading": "6. Construction Pipeline (bench-construction)"
+        },
+        {
+          "line": 104,
+          "heading": "Pipeline Steps"
+        },
+        {
+          "line": 114,
+          "heading": "7. Dataset Characteristics"
+        },
+        {
+          "line": 123,
+          "heading": "8. Expected Findings (预期洞察)"
+        },
+        {
+          "line": 131,
+          "heading": "9. Running Example Design (Figure 1)"
+        },
+        {
+          "line": 138,
+          "heading": "10. Contamination Mitigation"
+        },
+        {
+          "line": 145,
+          "heading": "11. Experiment Plan (bench-experiments)"
+        },
+        {
+          "line": 147,
+          "heading": "Baseline Models"
+        },
+        {
+          "line": 154,
+          "heading": "Analysis Plan"
+        },
+        {
+          "line": 162,
+          "heading": "12. Figure & Table Plan"
+        },
+        {
+          "line": 172,
+          "heading": "Reference Case Studies"
+        },
+        {
+          "line": 176,
+          "heading": "StatQA (NeurIPS 2024)"
+        },
+        {
+          "line": 182,
+          "heading": "nvBench 2.0 (NeurIPS 2025)"
+        },
+        {
+          "line": 189,
+          "heading": "VisJudge-Bench (ICLR 2026)"
+        }
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/orchestrator-notes.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 96,
+      "characters": 5263,
+      "bytes": 5263,
+      "sha256": "9c2a2b3ea062323b3031bfbf86e0970b3a3571949bc1363ddf472d68f3243bb5",
+      "git_blob_sha1": "1bd957b14a204f7dfa776eb962542d579a84818c",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Benchmark/Evaluation Paper Writing System"
+        },
+        {
+          "line": 5,
+          "heading": "Core Philosophy"
+        },
+        {
+          "line": 23,
+          "heading": "The Five Pillars"
+        },
+        {
+          "line": 33,
+          "heading": "Stage Detection & Routing"
+        },
+        {
+          "line": 72,
+          "heading": "Reference Exemplars"
+        },
+        {
+          "line": 84,
+          "heading": "Recommended Paper Structure"
+        }
+      ]
+    },
+    {
+      "path": "skills/benchmark-paper-template/references/paper-structure.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 209,
+      "characters": 9848,
+      "bytes": 9906,
+      "sha256": "28a5ef1ff1124aca5b0e31c3827bcd2485b9ca090f51763153d39caac00e7370",
+      "git_blob_sha1": "0531d330968b6021c9b9415e89228c510b830b23",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Benchmark Paper Structure & Writing"
+        },
+        {
+          "line": 3,
+          "heading": "Contents"
+        },
+        {
+          "line": 14,
+          "heading": "Introduction: 6-Part Framework"
+        },
+        {
+          "line": 20,
+          "heading": "Part 1: Background & Core Scenario (~1 paragraph)"
+        },
+        {
+          "line": 29,
+          "heading": "Part 2: Limitations of Existing Benchmarks, The Gap (~1 paragraph)"
+        },
+        {
+          "line": 38,
+          "heading": "Part 3: Research Questions (~1 paragraph)"
+        },
+        {
+          "line": 45,
+          "heading": "Part 4: Design Considerations (~1 paragraph)"
+        },
+        {
+          "line": 56,
+          "heading": "Part 5: Our Benchmark + Key Findings Preview (~1-2 paragraphs)"
+        },
+        {
+          "line": 66,
+          "heading": "Part 6: Contributions (~1 paragraph, bulleted list)"
+        },
+        {
+          "line": 74,
+          "heading": "Critical Introduction Figures & Tables"
+        },
+        {
+          "line": 76,
+          "heading": "Figure 1: Running Example (MUST HAVE)"
+        },
+        {
+          "line": 89,
+          "heading": "Table 1: Benchmark Comparison (MUST HAVE)"
+        },
+        {
+          "line": 100,
+          "heading": "Main Body Section Structure"
+        },
+        {
+          "line": 102,
+          "heading": "Section 2: The Proposed Benchmark (3-4 pages)"
+        },
+        {
+          "line": 123,
+          "heading": "Section 3: Specialized Model (1-2 pages, optional)"
+        },
+        {
+          "line": 133,
+          "heading": "Section 4: Experiments & Empirical Findings (4-5 pages)"
+        },
+        {
+          "line": 155,
+          "heading": "Section 5: Discussion & Research Opportunities (~1 page)"
+        },
+        {
+          "line": 163,
+          "heading": "Section 6: Related Work (~1 page)"
+        },
+        {
+          "line": 174,
+          "heading": "Section 7: Conclusion (~0.5 page)"
+        },
+        {
+          "line": 179,
+          "heading": "Figure & Table Placement Guide"
+        },
+        {
+          "line": 192,
+          "heading": "Key Writing Techniques for Benchmark Papers"
+        },
+        {
+          "line": 201,
+          "heading": "Appendix Planning"
+        }
+      ]
+    },
+    {
+      "path": "skills/tech-paper-template/SKILL.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 192,
+      "characters": 6975,
+      "bytes": 6975,
+      "sha256": "93625f319514cba10cb989cd670af6ee623b079f063ace8d1451af56c7c0c879",
+      "git_blob_sha1": "e5be7a5c270e976290fb1c6a513d5bdb7712f877",
+      "sections": [
+        {
+          "line": 15,
+          "heading": "Tech Paper Template"
+        },
+        {
+          "line": 17,
+          "heading": "Overview"
+        },
+        {
+          "line": 34,
+          "heading": "When to use this skill"
+        },
+        {
+          "line": 45,
+          "heading": "When NOT to use this skill"
+        },
+        {
+          "line": 55,
+          "heading": "Core procedure"
+        },
+        {
+          "line": 57,
+          "heading": "Step 1: Paper-type positioning"
+        },
+        {
+          "line": 70,
+          "heading": "Step 2: Fill the thinking template"
+        },
+        {
+          "line": 87,
+          "heading": "Step 3: Run four self-consistency checks"
+        },
+        {
+          "line": 109,
+          "heading": "Step 4: Generate methodology outline"
+        },
+        {
+          "line": 118,
+          "heading": "Step 5: Integrity gate"
+        },
+        {
+          "line": 123,
+          "heading": "Step 6: Output"
+        },
+        {
+          "line": 128,
+          "heading": "Integrity gate"
+        },
+        {
+          "line": 153,
+          "heading": "Output format"
+        },
+        {
+          "line": 155,
+          "heading": "1. Paper-type positioning"
+        },
+        {
+          "line": 159,
+          "heading": "2. Thinking template"
+        },
+        {
+          "line": 179,
+          "heading": "3. Self-consistency checks"
+        },
+        {
+          "line": 185,
+          "heading": "4. Severity summary"
+        },
+        {
+          "line": 189,
+          "heading": "5. Next suggested skill"
+        }
+      ]
+    },
+    {
+      "path": "skills/tech-paper-template/references/consistency-checks.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 166,
+      "characters": 5632,
+      "bytes": 5632,
+      "sha256": "887dc40aaee06f64c347794633135a3f99b3b7f68f47917bc4061134c7ff1bc3",
+      "git_blob_sha1": "2d4f3d3b8572dcb7d74c3dc1b82dc5824b63f0dc",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Four self-consistency checks"
+        },
+        {
+          "line": 3,
+          "heading": "Table of contents"
+        },
+        {
+          "line": 12,
+          "heading": "1. Why check consistency"
+        },
+        {
+          "line": 23,
+          "heading": "2. Check 1: Limitations to Key Idea"
+        },
+        {
+          "line": 25,
+          "heading": "Procedure"
+        },
+        {
+          "line": 30,
+          "heading": "Detection of failure"
+        },
+        {
+          "line": 40,
+          "heading": "Fix"
+        },
+        {
+          "line": 46,
+          "heading": "Example of failure"
+        },
+        {
+          "line": 55,
+          "heading": "3. Check 2: Key Idea to Challenges"
+        },
+        {
+          "line": 57,
+          "heading": "Procedure"
+        },
+        {
+          "line": 62,
+          "heading": "Detection of failure"
+        },
+        {
+          "line": 70,
+          "heading": "Fix"
+        },
+        {
+          "line": 79,
+          "heading": "Example of failure"
+        },
+        {
+          "line": 88,
+          "heading": "4. Check 3: Challenges to Methodology"
+        },
+        {
+          "line": 90,
+          "heading": "Procedure"
+        },
+        {
+          "line": 96,
+          "heading": "Detection of failure"
+        },
+        {
+          "line": 106,
+          "heading": "Fix"
+        },
+        {
+          "line": 113,
+          "heading": "Example of failure"
+        },
+        {
+          "line": 123,
+          "heading": "5. Check 4: Methodology to Contributions"
+        },
+        {
+          "line": 125,
+          "heading": "Procedure"
+        },
+        {
+          "line": 131,
+          "heading": "Detection of failure"
+        },
+        {
+          "line": 139,
+          "heading": "Fix"
+        },
+        {
+          "line": 144,
+          "heading": "Example of failure"
+        },
+        {
+          "line": 152,
+          "heading": "6. Common chain breaks"
+        }
+      ]
+    },
+    {
+      "path": "skills/tech-paper-template/references/paper-types.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 127,
+      "characters": 4853,
+      "bytes": 4853,
+      "sha256": "879c44111cb4c5724ba0bbaec0d691ac142f41244731e1f1c779a14bd4360ff4",
+      "git_blob_sha1": "e9c27d271a54ed81cf8427ea5dfb1445cb6d07ff",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Paper-type positioning for technical papers"
+        },
+        {
+          "line": 3,
+          "heading": "Table of contents"
+        },
+        {
+          "line": 12,
+          "heading": "1. Three paper-type categories"
+        },
+        {
+          "line": 31,
+          "heading": "2. Technique Paper"
+        },
+        {
+          "line": 49,
+          "heading": "3. New Problem/Setting Paper"
+        },
+        {
+          "line": 71,
+          "heading": "4. Mixed case: cross-domain technique"
+        },
+        {
+          "line": 97,
+          "heading": "5. Positioning questions"
+        },
+        {
+          "line": 115,
+          "heading": "6. How positioning affects the template"
+        }
+      ]
+    },
+    {
+      "path": "skills/tech-paper-template/references/thinking-template.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 194,
+      "characters": 5487,
+      "bytes": 5487,
+      "sha256": "2954ed9e9fa82136707d85348ccd0a232a55a236edb25811b23ae1ab75d6e86b",
+      "git_blob_sha1": "3cd0f7321bb856df3c398b3fcdcc6fa3a008e1e7",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Thinking template: cell-by-cell content contract"
+        },
+        {
+          "line": 3,
+          "heading": "Table of contents"
+        },
+        {
+          "line": 14,
+          "heading": "1. How to read this reference"
+        },
+        {
+          "line": 25,
+          "heading": "2. Cell: Research background"
+        },
+        {
+          "line": 27,
+          "heading": "Content contract"
+        },
+        {
+          "line": 33,
+          "heading": "Strong filling"
+        },
+        {
+          "line": 41,
+          "heading": "Weak filling"
+        },
+        {
+          "line": 47,
+          "heading": "Detection rule"
+        },
+        {
+          "line": 52,
+          "heading": "3. Cell: Limitations 1, 2, 3"
+        },
+        {
+          "line": 54,
+          "heading": "Content contract"
+        },
+        {
+          "line": 59,
+          "heading": "Strong filling"
+        },
+        {
+          "line": 66,
+          "heading": "Weak filling"
+        },
+        {
+          "line": 72,
+          "heading": "Detection rule"
+        },
+        {
+          "line": 78,
+          "heading": "4. Cell: Key Idea or Our Goal"
+        },
+        {
+          "line": 80,
+          "heading": "Content contract"
+        },
+        {
+          "line": 85,
+          "heading": "Strong filling"
+        },
+        {
+          "line": 92,
+          "heading": "Weak filling"
+        },
+        {
+          "line": 98,
+          "heading": "Detection rule"
+        },
+        {
+          "line": 103,
+          "heading": "5. Cell: Challenges 1, 2, 3"
+        },
+        {
+          "line": 105,
+          "heading": "Content contract"
+        },
+        {
+          "line": 111,
+          "heading": "Strong filling"
+        },
+        {
+          "line": 118,
+          "heading": "Weak filling"
+        },
+        {
+          "line": 124,
+          "heading": "Detection rule"
+        },
+        {
+          "line": 130,
+          "heading": "6. Cell: Methodology topic sentence and modules"
+        },
+        {
+          "line": 132,
+          "heading": "Content contract"
+        },
+        {
+          "line": 138,
+          "heading": "Strong filling"
+        },
+        {
+          "line": 145,
+          "heading": "Weak filling"
+        },
+        {
+          "line": 151,
+          "heading": "Detection rule"
+        },
+        {
+          "line": 156,
+          "heading": "7. Cell: Contributions"
+        },
+        {
+          "line": 158,
+          "heading": "Content contract"
+        },
+        {
+          "line": 162,
+          "heading": "Strong filling"
+        },
+        {
+          "line": 170,
+          "heading": "Weak filling"
+        },
+        {
+          "line": 177,
+          "heading": "Detection rule"
+        },
+        {
+          "line": 183,
+          "heading": "8. Methodology-outline derivation"
+        }
+      ]
+    },
+    {
+      "path": "skills/tech-paper-template/references/worked-examples.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 124,
+      "characters": 5972,
+      "bytes": 5972,
+      "sha256": "16be6315756c6a599f1d82711b5a1dd8701759913f6be9a3ebcf5ec786b00768",
+      "git_blob_sha1": "88e1dc95eb8325a0ecded3cc4a7857c8e0de72d1",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Filled thinking templates"
+        },
+        {
+          "line": 3,
+          "heading": "Table of contents"
+        },
+        {
+          "line": 11,
+          "heading": "1. How to read these examples"
+        },
+        {
+          "line": 19,
+          "heading": "2. Example A: Alpha-SQL, Technique"
+        },
+        {
+          "line": 21,
+          "heading": "Paper-type positioning"
+        },
+        {
+          "line": 26,
+          "heading": "Filled template"
+        },
+        {
+          "line": 43,
+          "heading": "Consistency checks"
+        },
+        {
+          "line": 52,
+          "heading": "3. Example B: AFlow, Technique with cross-domain framing"
+        },
+        {
+          "line": 54,
+          "heading": "Paper-type positioning"
+        },
+        {
+          "line": 59,
+          "heading": "Filled template"
+        },
+        {
+          "line": 77,
+          "heading": "Consistency checks"
+        },
+        {
+          "line": 82,
+          "heading": "4. Example C: LEAD, New Problem/Setting"
+        },
+        {
+          "line": 84,
+          "heading": "Paper-type positioning"
+        },
+        {
+          "line": 88,
+          "heading": "Filled template"
+        },
+        {
+          "line": 106,
+          "heading": "Consistency checks"
+        },
+        {
+          "line": 111,
+          "heading": "5. Cross-example observations"
+        }
+      ]
+    },
+    {
+      "path": "skills/pre-submission-reviewer/SKILL.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 326,
+      "characters": 12686,
+      "bytes": 12686,
+      "sha256": "639a96684ad6ca50fb1141287c4d3f2af76653b95cb2dae3dd7897d212bd8c35",
+      "git_blob_sha1": "9d03e557c462f00460919c181af0f47f97737697",
+      "sections": [
+        {
+          "line": 15,
+          "heading": "Pre-Submission Reviewer"
+        },
+        {
+          "line": 17,
+          "heading": "Overview"
+        },
+        {
+          "line": 35,
+          "heading": "When to use this skill"
+        },
+        {
+          "line": 44,
+          "heading": "When NOT to use this skill"
+        },
+        {
+          "line": 51,
+          "heading": "Core procedure"
+        },
+        {
+          "line": 53,
+          "heading": "Step 0: paradigm and venue fit"
+        },
+        {
+          "line": 97,
+          "heading": "Step 1: Dimension 1 Macro logic review"
+        },
+        {
+          "line": 143,
+          "heading": "Step 2: Dimension 2 Writing details review"
+        },
+        {
+          "line": 155,
+          "heading": "Step 3: Dimension 3 English grammar review"
+        },
+        {
+          "line": 171,
+          "heading": "Step 4: Dimension 4 LaTeX format review"
+        },
+        {
+          "line": 187,
+          "heading": "Step 5: Dimension 5 Figure quality review"
+        },
+        {
+          "line": 202,
+          "heading": "Step 6: Banned-vocabulary and em-dash scan"
+        },
+        {
+          "line": 221,
+          "heading": "Step 7: Section-by-section review"
+        },
+        {
+          "line": 231,
+          "heading": "Step 8: Integrity gate"
+        },
+        {
+          "line": 235,
+          "heading": "Step 9: Output"
+        },
+        {
+          "line": 239,
+          "heading": "Severity taxonomy"
+        },
+        {
+          "line": 259,
+          "heading": "Integrity gate"
+        },
+        {
+          "line": 294,
+          "heading": "Output format"
+        },
+        {
+          "line": 296,
+          "heading": "Summary"
+        },
+        {
+          "line": 302,
+          "heading": "Dimension 1: Macro logic"
+        },
+        {
+          "line": 307,
+          "heading": "Dimension 2: Writing details"
+        },
+        {
+          "line": 310,
+          "heading": "Dimension 3: English grammar"
+        },
+        {
+          "line": 313,
+          "heading": "Dimension 4: LaTeX format"
+        },
+        {
+          "line": 316,
+          "heading": "Dimension 5: Figure quality"
+        },
+        {
+          "line": 319,
+          "heading": "Banned-vocabulary and em-dash scan"
+        },
+        {
+          "line": 322,
+          "heading": "Final score (1-10)"
+        },
+        {
+          "line": 325,
+          "heading": "Submission recommendation"
+        }
+      ]
+    },
+    {
+      "path": "skills/pre-submission-reviewer/references/forbidden-patterns.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 163,
+      "characters": 4801,
+      "bytes": 4801,
+      "sha256": "bfbe4161e42f39478d8477535c3a94d8cd1bb96f7e02c712fe3e7b8b88a2246c",
+      "git_blob_sha1": "121897a2543d63e4a57accd190d6f12f1a0aa279",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Forbidden patterns"
+        },
+        {
+          "line": 3,
+          "heading": "Table of contents"
+        },
+        {
+          "line": 12,
+          "heading": "1. Em-dash misuse"
+        },
+        {
+          "line": 17,
+          "heading": "Misuse A: connecting two independent clauses"
+        },
+        {
+          "line": 25,
+          "heading": "Misuse B: inserting a parenthetical"
+        },
+        {
+          "line": 39,
+          "heading": "2. Banned AI-tone vocabulary"
+        },
+        {
+          "line": 45,
+          "heading": "Innovation hyperbole"
+        },
+        {
+          "line": 50,
+          "heading": "Performance hyperbole"
+        },
+        {
+          "line": 55,
+          "heading": "Contribution-summary markers"
+        },
+        {
+          "line": 59,
+          "heading": "Logical connective markers"
+        },
+        {
+          "line": 63,
+          "heading": "Overused verbs"
+        },
+        {
+          "line": 69,
+          "heading": "Overused phrases"
+        },
+        {
+          "line": 74,
+          "heading": "Overused adjectives and verbs"
+        },
+        {
+          "line": 82,
+          "heading": "3. Chartjunk patterns"
+        },
+        {
+          "line": 98,
+          "heading": "4. Overclaim patterns"
+        },
+        {
+          "line": 117,
+          "heading": "5. Plagiarism red lines"
+        },
+        {
+          "line": 132,
+          "heading": "6. Detection heuristics"
+        }
+      ]
+    },
+    {
+      "path": "skills/pre-submission-reviewer/references/grammar-rules.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 135,
+      "characters": 4749,
+      "bytes": 4767,
+      "sha256": "dc18174e6d2237f2c0b298b43d5a86f16481c36144f4785b44042ef864ecfdf9",
+      "git_blob_sha1": "caa399f117681f0035a3ed15f5a005248968f9e7",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Grammar rules for non-native English authors"
+        },
+        {
+          "line": 3,
+          "heading": "Table of contents"
+        },
+        {
+          "line": 14,
+          "heading": "1. Article usage"
+        },
+        {
+          "line": 30,
+          "heading": "2. Subject-verb agreement"
+        },
+        {
+          "line": 45,
+          "heading": "3. Tense consistency"
+        },
+        {
+          "line": 63,
+          "heading": "4. Sentence complexity"
+        },
+        {
+          "line": 81,
+          "heading": "5. Which versus that"
+        },
+        {
+          "line": 95,
+          "heading": "6. Passive voice"
+        },
+        {
+          "line": 106,
+          "heading": "7. Chinglish patterns"
+        },
+        {
+          "line": 121,
+          "heading": "8. Punctuation in quotations"
+        }
+      ]
+    },
+    {
+      "path": "skills/pre-submission-reviewer/references/latex-rules.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 158,
+      "characters": 4439,
+      "bytes": 4439,
+      "sha256": "c231ec38506e7156d5106ac40f62c22b9ae15a34b1cc1e6a02b70666f7254dbf",
+      "git_blob_sha1": "b98d3af9fc1b35ac54d384a6f97765db0ae37f99",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "LaTeX format rules"
+        },
+        {
+          "line": 3,
+          "heading": "Table of contents"
+        },
+        {
+          "line": 14,
+          "heading": "1. File organisation"
+        },
+        {
+          "line": 34,
+          "heading": "2. Macro definitions"
+        },
+        {
+          "line": 52,
+          "heading": "3. Citations"
+        },
+        {
+          "line": 76,
+          "heading": "4. Labels and references"
+        },
+        {
+          "line": 92,
+          "heading": "5. Figures and tables"
+        },
+        {
+          "line": 109,
+          "heading": "6. Equations"
+        },
+        {
+          "line": 119,
+          "heading": "7. Quotation marks and dashes"
+        },
+        {
+          "line": 134,
+          "heading": "8. Revision conventions"
+        }
+      ]
+    },
+    {
+      "path": "skills/pre-submission-reviewer/references/logic-and-structure.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 125,
+      "characters": 4663,
+      "bytes": 4663,
+      "sha256": "9442f79abc4088bab06da13c362d0bffc760d1fd22379ae5cb3f144d3358abec",
+      "git_blob_sha1": "f1980f164a58da2986e5ee1827f8ba4242a8836c",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Logic and structure rules"
+        },
+        {
+          "line": 3,
+          "heading": "Table of contents"
+        },
+        {
+          "line": 13,
+          "heading": "1. Logic First rule"
+        },
+        {
+          "line": 30,
+          "heading": "2. Self-contained rule"
+        },
+        {
+          "line": 45,
+          "heading": "3. Leading Text rule"
+        },
+        {
+          "line": 61,
+          "heading": "4. Running Example rule"
+        },
+        {
+          "line": 76,
+          "heading": "5. Paragraph discipline"
+        },
+        {
+          "line": 96,
+          "heading": "6. Section-level consistency"
+        },
+        {
+          "line": 113,
+          "heading": "7. Failure patterns"
+        }
+      ]
+    },
+    {
+      "path": "skills/pre-submission-reviewer/references/section-guides.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 169,
+      "characters": 5334,
+      "bytes": 5334,
+      "sha256": "16201aaa845ed7fafcc676ec9d36c084d31f0494bba7a53ff649912ba5fc71f6",
+      "git_blob_sha1": "f4fb73eb202196af142a22fe2baf0d3af3fdf59b",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Per-section writing guides"
+        },
+        {
+          "line": 3,
+          "heading": "Table of contents"
+        },
+        {
+          "line": 13,
+          "heading": "1. Abstract"
+        },
+        {
+          "line": 33,
+          "heading": "2. Introduction"
+        },
+        {
+          "line": 56,
+          "heading": "3. Problem Formulation"
+        },
+        {
+          "line": 69,
+          "heading": "4. Framework or Methodology"
+        },
+        {
+          "line": 99,
+          "heading": "5. Experiments"
+        },
+        {
+          "line": 130,
+          "heading": "6. Related Work"
+        },
+        {
+          "line": 157,
+          "heading": "7. Conclusion"
+        }
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/SKILL.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 138,
+      "characters": 5285,
+      "bytes": 5307,
+      "sha256": "cdccf6a9f0de1a459cfbc22943dcd351a913140ce459b2477ea0e7c567070a2a",
+      "git_blob_sha1": "efc3b38f818d63688b176a27e00f3139dadcc1e3",
+      "sections": [
+        {
+          "line": 12,
+          "heading": "Rebuttal Guidance"
+        },
+        {
+          "line": 14,
+          "heading": "Overview"
+        },
+        {
+          "line": 26,
+          "heading": "When to use"
+        },
+        {
+          "line": 34,
+          "heading": "When NOT to use"
+        },
+        {
+          "line": 44,
+          "heading": "Core procedure"
+        },
+        {
+          "line": 46,
+          "heading": "Step 1: Inventory concerns"
+        },
+        {
+          "line": 58,
+          "heading": "Step 2: Classify each concern"
+        },
+        {
+          "line": 66,
+          "heading": "Step 3: Match reviewer mindset (X)"
+        },
+        {
+          "line": 77,
+          "heading": "Step 4: Strategy priorities for this mindset (Y)"
+        },
+        {
+          "line": 89,
+          "heading": "Step 5: Per-concern guidance"
+        },
+        {
+          "line": 94,
+          "heading": "R?.W?: [short title]"
+        },
+        {
+          "line": 108,
+          "heading": "Step 6: Integrity gate"
+        },
+        {
+          "line": 118,
+          "heading": "Step 7: Output format"
+        },
+        {
+          "line": 129,
+          "heading": "Reference map"
+        }
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/references/checklist.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 40,
+      "characters": 1056,
+      "bytes": 1944,
+      "sha256": "f75a0068584492f3d2285eef0f106c6550f8ba7ae2ffdb9c9b7c5fcd4dd4b058",
+      "git_blob_sha1": "b88c6ee52696448dc4cc1eb82b9714a490196ae7",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Rebuttal 指导完整性检查清单"
+        },
+        {
+          "line": 5,
+          "heading": "完整性核查"
+        },
+        {
+          "line": 18,
+          "heading": "语气红线（必须在指导中标记）"
+        },
+        {
+          "line": 25,
+          "heading": "低开放度审稿人的特别提示"
+        },
+        {
+          "line": 33,
+          "heading": "常见失误提醒"
+        }
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/references/concern-classification.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 41,
+      "characters": 1766,
+      "bytes": 2260,
+      "sha256": "e8f89c71589e601471f1d15428c671c19bbbc2f5021401da3c0a7247948b537e",
+      "git_blob_sha1": "35ebfe688f4b0d4444dbfeb5d672ec53287d47a6",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Concern 分类"
+        },
+        {
+          "line": 5,
+          "heading": "分类表"
+        },
+        {
+          "line": 19,
+          "heading": "Weakness vs. Question 的处理差异"
+        },
+        {
+          "line": 27,
+          "heading": "快速关键词分类"
+        },
+        {
+          "line": 38,
+          "heading": "复合 concern 的处理"
+        }
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/references/mindset-library.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 335,
+      "characters": 8982,
+      "bytes": 17314,
+      "sha256": "00ccdabac80da979db5b4b177548befff1bf0f985dac51321b4d14a8564da90b",
+      "git_blob_sha1": "ecaeae2fa54d414c4f07b64af397eb2768787090",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Reviewer Mindset Library (Skill Snapshot)"
+        },
+        {
+          "line": 3,
+          "heading": "Table of Contents"
+        },
+        {
+          "line": 18,
+          "heading": "Cluster 3: 精准建设型（Precise Constructive）"
+        },
+        {
+          "line": 29,
+          "heading": "识别信号"
+        },
+        {
+          "line": 35,
+          "heading": "规则统计差异（Top 3）"
+        },
+        {
+          "line": 41,
+          "heading": "策略向量效应（Cohen's d）"
+        },
+        {
+          "line": 52,
+          "heading": "Success patterns（LLM 范式）"
+        },
+        {
+          "line": 59,
+          "heading": "Failure patterns（LLM 范式）"
+        },
+        {
+          "line": 66,
+          "heading": "Key strategy"
+        },
+        {
+          "line": 72,
+          "heading": "Cluster 4: 温和质疑型（Mild Skeptic）"
+        },
+        {
+          "line": 83,
+          "heading": "识别信号"
+        },
+        {
+          "line": 89,
+          "heading": "规则统计差异（Top 3）"
+        },
+        {
+          "line": 95,
+          "heading": "策略向量效应（Cohen's d）"
+        },
+        {
+          "line": 106,
+          "heading": "Success patterns（LLM 范式）"
+        },
+        {
+          "line": 112,
+          "heading": "Failure patterns（LLM 范式）"
+        },
+        {
+          "line": 118,
+          "heading": "Key strategy"
+        },
+        {
+          "line": 124,
+          "heading": "Cluster 0: 权威否定型（Authoritative Negativist）"
+        },
+        {
+          "line": 135,
+          "heading": "识别信号"
+        },
+        {
+          "line": 141,
+          "heading": "规则统计差异（Top 3）"
+        },
+        {
+          "line": 147,
+          "heading": "策略向量效应（Cohen's d）"
+        },
+        {
+          "line": 158,
+          "heading": "Success patterns（LLM 范式）"
+        },
+        {
+          "line": 164,
+          "heading": "Failure patterns（LLM 范式）"
+        },
+        {
+          "line": 170,
+          "heading": "Key strategy"
+        },
+        {
+          "line": 176,
+          "heading": "Cluster 5: 严厉否定型（Harsh Dismissive）"
+        },
+        {
+          "line": 187,
+          "heading": "识别信号"
+        },
+        {
+          "line": 193,
+          "heading": "规则统计差异（Top 3）"
+        },
+        {
+          "line": 199,
+          "heading": "策略向量效应（Cohen's d）"
+        },
+        {
+          "line": 210,
+          "heading": "Success patterns（LLM 范式）"
+        },
+        {
+          "line": 217,
+          "heading": "Failure patterns（LLM 范式）"
+        },
+        {
+          "line": 223,
+          "heading": "Key strategy"
+        },
+        {
+          "line": 229,
+          "heading": "Cluster 1: 温和建设型（Gentle Constructive）"
+        },
+        {
+          "line": 240,
+          "heading": "识别信号"
+        },
+        {
+          "line": 246,
+          "heading": "规则统计差异（Top 3）"
+        },
+        {
+          "line": 252,
+          "heading": "策略向量效应（Cohen's d）"
+        },
+        {
+          "line": 263,
+          "heading": "Success patterns（LLM 范式）"
+        },
+        {
+          "line": 270,
+          "heading": "Failure patterns（LLM 范式）"
+        },
+        {
+          "line": 276,
+          "heading": "Key strategy"
+        },
+        {
+          "line": 282,
+          "heading": "Cluster 2: 简洁肯定型（Concise Affirmative）"
+        },
+        {
+          "line": 293,
+          "heading": "识别信号"
+        },
+        {
+          "line": 299,
+          "heading": "规则统计差异（Top 3）"
+        },
+        {
+          "line": 305,
+          "heading": "策略向量效应（Cohen's d）"
+        },
+        {
+          "line": 316,
+          "heading": "Success patterns（LLM 范式）"
+        },
+        {
+          "line": 324,
+          "heading": "Failure patterns（LLM 范式）"
+        },
+        {
+          "line": 331,
+          "heading": "Key strategy"
+        }
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/references/mindset-matching-heuristics.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 43,
+      "characters": 1699,
+      "bytes": 2571,
+      "sha256": "9872ee5f0606239c7769cc719d31fce19035c5e4bcd607662ad1a4b91bb6da38",
+      "git_blob_sha1": "cc89f0496f6a737d4a2cb1b79d5eba425beaa219",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "审稿人心态识别启发式规则"
+        },
+        {
+          "line": 5,
+          "heading": "行为信号评分表"
+        },
+        {
+          "line": 17,
+          "heading": "六类心态速查（当前 6-cluster 数据驱动版）"
+        },
+        {
+          "line": 30,
+          "heading": "匹配流程"
+        },
+        {
+          "line": 37,
+          "heading": "置信度对输出的影响"
+        }
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/references/response-templates.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 92,
+      "characters": 1354,
+      "bytes": 2528,
+      "sha256": "2fd6637e6e2b1458453ef6b644c086952e6c8b9965a439ded258add7efcba3bf",
+      "git_blob_sha1": "0d4958b53e3b7a975359a07ae33a5288e125ed77",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "回应模板"
+        },
+        {
+          "line": 7,
+          "heading": "全局结构建议"
+        },
+        {
+          "line": 24,
+          "heading": "模板 A: 澄清误解（misunderstanding / writing_clarity）"
+        },
+        {
+          "line": 43,
+          "heading": "模板 B: 补充证据（evidence_gap / baseline_fairness / efficiency）"
+        },
+        {
+          "line": 62,
+          "heading": "模板 C: 承认局限，收窄范围（scope_claim / novelty / theory）"
+        },
+        {
+          "line": 79,
+          "heading": "本 Skill 输出的指导块格式"
+        },
+        {
+          "line": 84,
+          "heading": "R1.W2: [关注点短标题]"
+        }
+      ]
+    },
+    {
+      "path": "skills/rebuttal-guidance/references/strategy-dimensions.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 45,
+      "characters": 1531,
+      "bytes": 2491,
+      "sha256": "c7e268146540a07976cfaa5461591aa87071690a88afa6e94c12e1c9e895461b",
+      "git_blob_sha1": "ac36b05de0804ed1632d170c2e3c995174ac66d1",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "Rebuttal 策略维度（Y 向量）"
+        },
+        {
+          "line": 6,
+          "heading": "十个维度一览"
+        },
+        {
+          "line": 21,
+          "heading": "心态条件下的维度优先级"
+        },
+        {
+          "line": 31,
+          "heading": "高效策略组合（交互项）"
+        },
+        {
+          "line": 40,
+          "heading": "每条 concern 的策略标注格式"
+        }
+      ]
+    },
+    {
+      "path": "handbook/03_Paper_Writing/3.3_技术类Full_Paper思考模板.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 114,
+      "characters": 3291,
+      "bytes": 5697,
+      "sha256": "659fb951d61ec79c1940e794a19a052319274555e07dcc287761e16f7abaaaef",
+      "git_blob_sha1": "77be866ffa2c674845a6e0c35c45fdd1fdd31934",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "3.3 论文写作 - 技术类Full Paper思考模板（讨论用）"
+        },
+        {
+          "line": 3,
+          "heading": "使用说明"
+        },
+        {
+          "line": 9,
+          "heading": "论文Introduction写作的思考模型（Introduction是整个论文的精简版）"
+        },
+        {
+          "line": 13,
+          "heading": "Introduction 写作/构思的 Flowchart"
+        },
+        {
+          "line": 17,
+          "heading": "快速定位：这篇论文是什么类型？"
+        },
+        {
+          "line": 27,
+          "heading": "思考模板"
+        },
+        {
+          "line": 110,
+          "heading": "参考资源"
+        }
+      ]
+    },
+    {
+      "path": "handbook/03_Paper_Writing/3.4_Benchmark与Evaluation类论文思考模板.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 290,
+      "characters": 10969,
+      "bytes": 19021,
+      "sha256": "c26a8962043359095a82fafa1c4e9c1803e5d12b5ac49a392f2171ef1a75ac6d",
+      "git_blob_sha1": "127854da1b837f07fcc91d15a811882627d80d7f",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "论文写作 - Benchmark/Evaluation 类论文思考模板（讨论用）"
+        },
+        {
+          "line": 7,
+          "heading": "一、快速定位：Benchmark/Evaluation 论文与 Technique Paper 的核心差异"
+        },
+        {
+          "line": 26,
+          "heading": "二、Benchmark 论文的五大核心要素"
+        },
+        {
+          "line": 42,
+          "heading": "三、Introduction 写作/构思的 Flowchart（Benchmark 专用版）"
+        },
+        {
+          "line": 46,
+          "heading": "3.1 Flowchart 总览"
+        },
+        {
+          "line": 53,
+          "heading": "3.2 各阶段详细说明"
+        },
+        {
+          "line": 64,
+          "heading": "3.3 Introduction 中的关键 Figure 与 Table"
+        },
+        {
+          "line": 73,
+          "heading": "四、主干章节结构规划"
+        },
+        {
+          "line": 77,
+          "heading": "Section 2: The Proposed Benchmark（数据集主体，约 3-4 页）"
+        },
+        {
+          "line": 101,
+          "heading": "Section 3: Specialized Model / Methodology（可选，约 1-2 页）"
+        },
+        {
+          "line": 105,
+          "heading": "Section 4: Experiments & Empirical Findings（实验与洞察，约 4-5 页）"
+        },
+        {
+          "line": 137,
+          "heading": "Section 5: Discussion & Research Opportunities（讨论与展望，约 1 页）"
+        },
+        {
+          "line": 141,
+          "heading": "Section 6: Related Work（约 1 页）"
+        },
+        {
+          "line": 145,
+          "heading": "Section 7: Conclusion（约 0.5 页）"
+        },
+        {
+          "line": 151,
+          "heading": "五、思考模板实例化表格（请结合具体研究课题填写）"
+        },
+        {
+          "line": 219,
+          "heading": "六、Benchmark 论文写作 Checklist"
+        },
+        {
+          "line": 223,
+          "heading": "Introduction Checklist"
+        },
+        {
+          "line": 237,
+          "heading": "Benchmark 章节 Checklist"
+        },
+        {
+          "line": 251,
+          "heading": "实验章节 Checklist"
+        },
+        {
+          "line": 269,
+          "heading": "整体 Checklist"
+        },
+        {
+          "line": 281,
+          "heading": "七、参考案例"
+        }
+      ]
+    },
+    {
+      "path": "handbook/06_Case_Studies/6.1_ICML_2025_Alpha-SQL写作剖析.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 83,
+      "characters": 6611,
+      "bytes": 9525,
+      "sha256": "b10bb537346d3b0fe29d5732cb6be0838223b4964fa887407f14f0ba2eec25f6",
+      "git_blob_sha1": "0e63b17798d7cf291b48565768088840b511c1f4",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "6.1 ICML 2025 — Alpha-SQL 写作思路剖析"
+        },
+        {
+          "line": 9,
+          "heading": "论文 Introduction 写作的思考模型（Introduction 是整个论文的精简版）"
+        },
+        {
+          "line": 15,
+          "heading": "Introduction 写作/构思的 Flowchart"
+        },
+        {
+          "line": 26,
+          "heading": "基于 Flowchart，对原文 Introduction 的写法进行剖析"
+        },
+        {
+          "line": 28,
+          "heading": "快速定位：这篇论文是什么类型？"
+        },
+        {
+          "line": 42,
+          "heading": "基于 Flowchart，我转成 Table，方便将原文思路映射到对应的逻辑阶段"
+        },
+        {
+          "line": 64,
+          "heading": "关键插图"
+        },
+        {
+          "line": 66,
+          "heading": "Figure 1：Performance Teaser"
+        },
+        {
+          "line": 72,
+          "heading": "Figure 3：Method Overview"
+        },
+        {
+          "line": 80,
+          "heading": "其他资源"
+        }
+      ]
+    },
+    {
+      "path": "handbook/06_Case_Studies/6.2_ICLR_2025_AFlow写作剖析.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 84,
+      "characters": 6841,
+      "bytes": 9343,
+      "sha256": "94655b04fb85a97aee516d484a997365766734a88a09afb222a860c177572c21",
+      "git_blob_sha1": "e395b3e7a5423b3b8c697aab19de1d0875881ca0",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "6.2 ICLR 2025 — AFlow 写作思路剖析"
+        },
+        {
+          "line": 9,
+          "heading": "论文 Introduction 写作的思考模型（Introduction 是整个论文的精简版）"
+        },
+        {
+          "line": 15,
+          "heading": "Introduction 写作/构思的 Flowchart"
+        },
+        {
+          "line": 23,
+          "heading": "基于 Flowchart，对原文 Introduction 的写法进行剖析"
+        },
+        {
+          "line": 25,
+          "heading": "快速定位：这篇论文是什么类型？"
+        },
+        {
+          "line": 35,
+          "heading": "基于 Flowchart，我转成 Table，方便将原文思路映射到对应的逻辑阶段"
+        },
+        {
+          "line": 55,
+          "heading": "关键插图"
+        },
+        {
+          "line": 57,
+          "heading": "Figure 2：Node / Operator / Edge 表示"
+        },
+        {
+          "line": 63,
+          "heading": "Figure 3：Workflow Search Overview"
+        },
+        {
+          "line": 71,
+          "heading": "评论区批注（写作思路详细解读）"
+        },
+        {
+          "line": 81,
+          "heading": "其他资源"
+        }
+      ]
+    },
+    {
+      "path": "handbook/06_Case_Studies/6.3_VLDB_2026_LEAD写作剖析.md",
+      "read_depth": "full_text",
+      "full_read": true,
+      "lines": 81,
+      "characters": 5104,
+      "bytes": 8336,
+      "sha256": "f8ab4a084b8081beec2d657e925e06985a763d19d0e6c229b3dde4ffa4f8bf69",
+      "git_blob_sha1": "ad92bc04c8563bf98112ba7d22f8cf500b17b3c7",
+      "sections": [
+        {
+          "line": 1,
+          "heading": "6.3 VLDB 2026 — LEAD 写作思路剖析"
+        },
+        {
+          "line": 9,
+          "heading": "论文 Introduction 写作的思考模型（Introduction 是整个论文的精简版）"
+        },
+        {
+          "line": 15,
+          "heading": "Introduction 写作/构思的 Flowchart"
+        },
+        {
+          "line": 23,
+          "heading": "基于 Flowchart，对原文 Introduction 的写法进行剖析"
+        },
+        {
+          "line": 25,
+          "heading": "快速定位：这篇论文是什么类型？"
+        },
+        {
+          "line": 35,
+          "heading": "基于 Flowchart，我转成 Table，方便将原文思路映射到对应的逻辑阶段"
+        },
+        {
+          "line": 56,
+          "heading": "关键插图"
+        },
+        {
+          "line": 58,
+          "heading": "Figure 3：LEAD Framework Overview"
+        },
+        {
+          "line": 66,
+          "heading": "评论区批注（写作思路详细解读）"
+        },
+        {
+          "line": 77,
+          "heading": "其他资源"
+        }
+      ]
+    }
+  ],
+  "atlas_comparison_manifest": [
+    {
+      "path": "skills/agent-research-atlas/SKILL.md",
+      "sha256": "6ba73a8d4e0d0e62e214895a8e44010048da85f737c7ce1573fd66e73f3de79b",
+      "read_depth": "full_text",
+      "note": ""
+    },
+    {
+      "path": "skills/agent-research-atlas/references/evidence-and-claims.md",
+      "sha256": "5ce313f74b01be5d5da5706139348aaeefe7a1e886debaae059c8d9e35c36bce",
+      "read_depth": "full_text",
+      "note": ""
+    },
+    {
+      "path": "skills/agent-research-atlas/references/methodology.md",
+      "sha256": "2fff220c393e03a10f77192ef3480e8d524e7a1ba355ea0958330ce2cf449e33",
+      "read_depth": "full_text",
+      "note": ""
+    },
+    {
+      "path": "skills/agent-research-atlas/references/experiments.md",
+      "sha256": "9c23a9e35fcb64c44bc8100773aaba35d7049e6922e396307b42b262209de5b1",
+      "read_depth": "full_text",
+      "note": ""
+    },
+    {
+      "path": "skills/agent-research-atlas/references/extension-contract.md",
+      "sha256": "5370cfadb1b27fd18d7e6c2722579e0276183abae2287d7babca5c30c9888816",
+      "read_depth": "full_text",
+      "note": ""
+    },
+    {
+      "path": "skills/agent-research-atlas/assets/capability-registry.json",
+      "sha256": "3408b0e92d210afc52883dcbaf7a0a314661cade9232652b4e7f33869b45e3c4",
+      "read_depth": "all_capability_ids_and_relevant_full_entries",
+      "note": "Registry comparison fully inspected C09-C21,C23,C24 plus all 24 names/implementation paths; upstream feature/source rows not re-audited in this part."
+    }
+  ],
+  "proposed_capabilities": [
+    {
+      "id": "C25",
+      "name": "Benchmark / evaluation design and validity",
+      "mode": "host protocol",
+      "depends_on": [
+        "C01",
+        "C05",
+        "C06",
+        "C09",
+        "C11",
+        "C13",
+        "C14",
+        "C16",
+        "C17",
+        "C18",
+        "C20",
+        "C21"
+      ],
+      "gap": "Atlas已有通用评测与记录，没有专用构念/分类/构建/QC/污染/版本/benchmark论点合同。",
+      "remedy": "新增可选协议与产物卡，复用已有atlas IDs、runner和数值审计；场景测试覆盖纯评估/混合/污染/地板效应。"
+    },
+    {
+      "id": "C27",
+      "name": "Review issue tracking and evidence-grounded response",
+      "mode": "host protocol",
+      "depends_on": [
+        "C05",
+        "C09",
+        "C11",
+        "C13",
+        "C14",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C24"
+      ],
+      "gap": "C19是批判审查，未覆盖收到外部意见的逐条回应、实际修订和完整草稿闭环。",
+      "remedy": "新增review ledger与回复工作流，排除心态/概率/策略因果层；按真实执行状态生成文字。"
+    }
+  ],
+  "features": [
+    {
+      "id": "SUP-BENCH-01",
+      "skill": "benchmark-paper-template",
+      "label": "评估盲点与已有 benchmark 比较",
+      "capabilities": [
+        "C09",
+        "C25"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/gap-analysis.md",
+          "section": "Step 1: Survey the Evaluation Landscape",
+          "line": 5,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/gap-analysis.md#L5"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/gap-analysis.md",
+          "section": "Step 2: Identify the Blind Spot",
+          "line": 23,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/gap-analysis.md#L23"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/gap-analysis.md",
+          "section": "Step 3: Validate the Gap",
+          "line": 46,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/gap-analysis.md#L46"
+        },
+        {
+          "path": "handbook/03_Paper_Writing/3.4_Benchmark与Evaluation类论文思考模板.md",
+          "section": "二、Benchmark 论文的五大核心要素",
+          "line": 26,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/handbook/03_Paper_Writing/3.4_Benchmark与Evaluation类论文思考模板.md#L26"
+        }
+      ],
+      "existing_complement": "C09 查新已有机制/目标/信息/成本对比；C06 要求原文支持批评。",
+      "gap": "缺少构念、旧指标、漏测条件、实际受影响结论的专用比较表。",
+      "integration": "记录被测构念与旧评测假设；从真实失败案例形成可测的差异，再核查最近 benchmark，保留访问不足项；文献数量由相关性与搜索收敛决定。",
+      "artifacts": [
+        "benchmark/landscape.csv",
+        "benchmark/gap-card.md"
+      ],
+      "conflict_ids": [
+        "B01",
+        "B03"
+      ]
+    },
+    {
+      "id": "SUP-BENCH-02",
+      "skill": "benchmark-paper-template",
+      "label": "Benchmark、Evaluation 与方法贡献分流",
+      "capabilities": [
+        "C12",
+        "C21",
+        "C25"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/SKILL.md",
+          "section": "Benchmark paper vs technical paper",
+          "line": 20,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/SKILL.md#L20"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/orchestrator-notes.md",
+          "section": "Core Philosophy",
+          "line": 5,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/orchestrator-notes.md#L5"
+        },
+        {
+          "path": "handbook/03_Paper_Writing/3.4_Benchmark与Evaluation类论文思考模板.md",
+          "section": "一、快速定位：Benchmark/Evaluation 论文与 Technique Paper 的核心差异",
+          "line": 7,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/handbook/03_Paper_Writing/3.4_Benchmark与Evaluation类论文思考模板.md#L7"
+        }
+      ],
+      "existing_complement": "C12 已允许理论、方法、测量、数据与可复现经验发现；C18 按论点类型要求证据。",
+      "gap": "尚无测量贡献与方法贡献并行的产物合同。",
+      "integration": "按主要贡献选择评估/数据/方法/新设定/混合路线；混合论文分别核验测量价值与方法效果，允许不提出新模型、不击败基线的有效评估研究。",
+      "artifacts": [
+        "paper/contribution-map.json",
+        "benchmark/design.md"
+      ],
+      "conflict_ids": [
+        "B01",
+        "B02"
+      ]
+    },
+    {
+      "id": "SUP-BENCH-03",
+      "skill": "benchmark-paper-template",
+      "label": "任务边界、分类维度与指标效度",
+      "capabilities": [
+        "C13",
+        "C17",
+        "C25"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/benchmark-design.md",
+          "section": "Element 1: Design Goals",
+          "line": 16,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/benchmark-design.md#L16"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/benchmark-design.md",
+          "section": "Element 2: Task Scope",
+          "line": 29,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/benchmark-design.md#L29"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/benchmark-design.md",
+          "section": "Element 3: Taxonomy Design",
+          "line": 44,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/benchmark-design.md#L44"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/benchmark-design.md",
+          "section": "Element 4: Evaluation Framework",
+          "line": 86,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/benchmark-design.md#L86"
+        }
+      ],
+      "existing_complement": "C13 已有单位、切分、对照、指标，C17 有依赖与不确定性。",
+      "gap": "需要把分类学覆盖、构念操作化、评分器一致性与偏差写成专用方案。",
+      "integration": "使用稳定语义 goal ID；定义任务族与排除条件、分类交叉格和空格分母；校验指标与目标能力关系，人工与 LLM judge 作为可误测的评定者分别验证，不仅报告相关系数。",
+      "artifacts": [
+        "benchmark/design.md",
+        "benchmark/coverage-matrix.csv",
+        "benchmark/judge-validation.md"
+      ],
+      "conflict_ids": [
+        "B04",
+        "B05"
+      ]
+    },
+    {
+      "id": "SUP-BENCH-04",
+      "skill": "benchmark-paper-template",
+      "label": "三种数据构建范式与逐阶段质量门",
+      "capabilities": [
+        "C11",
+        "C13",
+        "C16",
+        "C25"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/construction-pipeline.md",
+          "section": "Three Proven Construction Paradigms",
+          "line": 22,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/construction-pipeline.md#L22"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/construction-pipeline.md",
+          "section": "Pipeline Stages Specification",
+          "line": 67,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/construction-pipeline.md#L67"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/construction-pipeline.md",
+          "section": "Quality Control Strategies",
+          "line": 88,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/construction-pipeline.md#L88"
+        }
+      ],
+      "existing_complement": "C11 核实资源，C14/C16 固定输入和原始溯源；目前没有专用数据构建卡。",
+      "gap": "逆向合成、可控注入、自适应生成与专家标注需要任务适配和独立标签核验。",
+      "integration": "记录每步输入、操作、输出数量、执行者、成本、失败与质量门；逆向合成仍验证题目和答案，受控注入检查自然性与其他变量，专家分歧留存；QC 抽样量与阈值给依据，不能固定10%。",
+      "artifacts": [
+        "benchmark/pipeline.md",
+        "benchmark/data-provenance.jsonl",
+        "benchmark/qc-report.md"
+      ],
+      "conflict_ids": [
+        "B04",
+        "B06"
+      ]
+    },
+    {
+      "id": "SUP-BENCH-05",
+      "skill": "benchmark-paper-template",
+      "label": "污染缓解、难度与可维护性",
+      "capabilities": [
+        "C14",
+        "C20",
+        "C25"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/benchmark-design.md",
+          "section": "Element 6: Contamination Mitigation Strategy",
+          "line": 124,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/benchmark-design.md#L124"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/benchmark-design.md",
+          "section": "Element 7: Difficulty Calibration",
+          "line": 135,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/benchmark-design.md#L135"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/checklist.md",
+          "section": "4. Structure & Completeness Checklist",
+          "line": 49,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/checklist.md#L49"
+        }
+      ],
+      "existing_complement": "C14 固定评价器和数据输入；C20 保留旧版本和依赖复查。",
+      "gap": "缺少 benchmark 发布版本、污染证据及难度分布的记录。",
+      "integration": "区分训练污染、prompt 泄漏、共享来源与评测自适应；新鲜或合成不等于无污染。按目标分布及区分能力设置难度，保留易/中/难层和饱和信息，变更数据集新版本并复查旧结论。",
+      "artifacts": [
+        "benchmark/contamination-register.md",
+        "benchmark/version-card.md"
+      ],
+      "conflict_ids": [
+        "B05",
+        "B07"
+      ]
+    },
+    {
+      "id": "SUP-BENCH-06",
+      "skill": "benchmark-paper-template",
+      "label": "RQ 驱动的多维评测与诊断 Findings",
+      "capabilities": [
+        "C13",
+        "C16",
+        "C17",
+        "C18",
+        "C25"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/experiments.md",
+          "section": "1. Baseline Model Selection",
+          "line": 5,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/experiments.md#L5"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/experiments.md",
+          "section": "2. Evaluation Protocol",
+          "line": 18,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/experiments.md#L18"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/experiments.md",
+          "section": "3. RQ-driven Experiment Structure",
+          "line": 49,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/experiments.md#L49"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/experiments.md",
+          "section": "5. The \"Finding X\" Pattern",
+          "line": 101,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/experiments.md#L101"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/experiments.md",
+          "section": "6. Case Study Design",
+          "line": 130,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/experiments.md#L130"
+        }
+      ],
+      "existing_complement": "C13/C16/C17/C18 已约束预算、公平、原始数字、统计与论点强度。",
+      "gap": "需要把总体表、条件分层、错误类型和 Findings 连到 RQ 与证据。",
+      "integration": "模型选择由问题和可用资源决定；比较模型版本/信息/预算/解析/失败分母；预期 Findings 留作预测，实际结论从全部结果产生。对人类比较记录任务条件而非默认人类上界；案例选取规则可查。",
+      "artifacts": [
+        "benchmark/evaluation-protocol.md",
+        "paper/findings-ledger.json",
+        "paper/claim-evidence-matrix.json"
+      ],
+      "conflict_ids": [
+        "B03",
+        "B08",
+        "B09"
+      ]
+    },
+    {
+      "id": "SUP-BENCH-07",
+      "skill": "benchmark-paper-template",
+      "label": "可选配套方法及外部迁移验证",
+      "capabilities": [
+        "C13",
+        "C14",
+        "C18",
+        "C25"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/benchmark-design.md",
+          "section": "Element 5: Companion Method (Optional but Highly Recommended)",
+          "line": 105,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/benchmark-design.md#L105"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/experiments.md",
+          "section": "7. Companion Method Experiments (If Applicable)",
+          "line": 141,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/experiments.md#L141"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/instantiation-template.md",
+          "section": "Companion Method (Optional)",
+          "line": 86,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/instantiation-template.md#L86"
+        }
+      ],
+      "existing_complement": "C13 有强简单基线与消融，C14 保持最终评测冻结。",
+      "gap": "上游可能推动为论文厚度添加方法，混淆训练数据和测试集。",
+      "integration": "仅当方法有独立科学问题与资源依据时添加；明确 train/dev/test、调参机会、可见标签与隔离评估，分别检查内部改善、跨 benchmark 迁移和机制归因。",
+      "artifacts": [
+        "benchmark/companion-method-card.md",
+        "paper/contribution-map.json"
+      ],
+      "conflict_ids": [
+        "B02",
+        "B08"
+      ]
+    },
+    {
+      "id": "SUP-BENCH-08",
+      "skill": "benchmark-paper-template",
+      "label": "可实例化写作骨架、图表计划、数据说明与投稿清单",
+      "capabilities": [
+        "C21",
+        "C24",
+        "C25"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/instantiation-template.md",
+          "section": "1. Basic Information",
+          "line": 16,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/instantiation-template.md#L16"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/paper-structure.md",
+          "section": "Introduction: 6-Part Framework",
+          "line": 14,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/paper-structure.md#L14"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/paper-structure.md",
+          "section": "Appendix Planning",
+          "line": 201,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/paper-structure.md#L201"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/checklist.md",
+          "section": "4. Structure & Completeness Checklist",
+          "line": 49,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/checklist.md#L49"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/checklist.md",
+          "section": "5. Venue-Specific Checks",
+          "line": 67,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/checklist.md#L67"
+        }
+      ],
+      "existing_complement": "C21 有论点—图表—run 和当前官方 venue 要求；C24 可交接。",
+      "gap": "缺少 benchmark 专用章节及数据卡/维护清单，当前没有自动投稿管线。",
+      "integration": "把 Gap→设计→构建→评测→发现→局限作为可选组织；图表编号、段落数和模型数不作为科研门槛。按贡献/年份查官方投稿条件；数据、代码、说明的存在性与质量分开。",
+      "artifacts": [
+        "paper/outline.md",
+        "paper/figure-table-plan.md",
+        "benchmark/data-card.md",
+        "paper/venue-rules.md"
+      ],
+      "conflict_ids": [
+        "B03",
+        "B10",
+        "B11"
+      ]
+    },
+    {
+      "id": "SUP-BENCH-09",
+      "skill": "benchmark-paper-template",
+      "label": "按已有材料识别阶段并复用而非重启",
+      "capabilities": [
+        "C02",
+        "C20",
+        "C23",
+        "C24",
+        "C25"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/orchestrator-notes.md",
+          "section": "Stage Detection & Routing",
+          "line": 33,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/orchestrator-notes.md#L33"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/instantiation-template.md",
+          "section": "Reference Case Studies",
+          "line": 172,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/instantiation-template.md#L172"
+        }
+      ],
+      "existing_complement": "Atlas 开始先 discover、读旧图和历史；C23 已有能力定位。",
+      "gap": "上游每次询问阶段且建议单独 bench-* skill 名，可能造成多余确认/不存在依赖。",
+      "integration": "先读已有产物和 pending review，自动选择缺口步骤；只有关键事实无法推断才问。把引用的 bench-* 名解释为工作阶段，不声明已安装单独技能。",
+      "artifacts": [
+        "paper/stage-state.json",
+        "research-atlas/atlas.json"
+      ],
+      "conflict_ids": [
+        "B12"
+      ]
+    },
+    {
+      "id": "SUP-TECH-01",
+      "skill": "tech-paper-template",
+      "label": "方法、新问题与跨领域迁移的定位",
+      "capabilities": [
+        "C07",
+        "C12",
+        "C21"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/tech-paper-template/references/paper-types.md",
+          "section": "1. Three paper-type categories",
+          "line": 12,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/paper-types.md#L12"
+        },
+        {
+          "path": "skills/tech-paper-template/references/paper-types.md",
+          "section": "4. Mixed case: cross-domain technique",
+          "line": 71,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/paper-types.md#L71"
+        },
+        {
+          "path": "skills/tech-paper-template/SKILL.md",
+          "section": "Step 1: Paper-type positioning",
+          "line": 57,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/SKILL.md#L57"
+        }
+      ],
+      "existing_complement": "C07 有结构类比、C12 有贡献类型和方法卡、C09 查新。",
+      "gap": "缺少主贡献及次贡献与论文叙述主线的明确映射。",
+      "integration": "按实际证据描述方法/设定/迁移/测量混合；迁移明确源域机制、目标域失配和新增改变，不把成熟方法换领域自动判创新。",
+      "artifacts": [
+        "paper/contribution-map.json",
+        "paper/thinking-template.md"
+      ],
+      "conflict_ids": [
+        "B01",
+        "B02"
+      ]
+    },
+    {
+      "id": "SUP-TECH-02",
+      "skill": "tech-paper-template",
+      "label": "背景—已证局限—核心思路—挑战—模块—贡献逻辑模板",
+      "capabilities": [
+        "C10",
+        "C12",
+        "C18",
+        "C21"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/tech-paper-template/references/thinking-template.md",
+          "section": "2. Cell: Research background",
+          "line": 25,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/thinking-template.md#L25"
+        },
+        {
+          "path": "skills/tech-paper-template/references/thinking-template.md",
+          "section": "3. Cell: Limitations 1, 2, 3",
+          "line": 52,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/thinking-template.md#L52"
+        },
+        {
+          "path": "skills/tech-paper-template/references/thinking-template.md",
+          "section": "4. Cell: Key Idea or Our Goal",
+          "line": 78,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/thinking-template.md#L78"
+        },
+        {
+          "path": "skills/tech-paper-template/references/thinking-template.md",
+          "section": "5. Cell: Challenges 1, 2, 3",
+          "line": 103,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/thinking-template.md#L103"
+        },
+        {
+          "path": "skills/tech-paper-template/references/thinking-template.md",
+          "section": "6. Cell: Methodology topic sentence and modules",
+          "line": 130,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/thinking-template.md#L130"
+        },
+        {
+          "path": "skills/tech-paper-template/references/thinking-template.md",
+          "section": "7. Cell: Contributions",
+          "line": 156,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/thinking-template.md#L156"
+        },
+        {
+          "path": "handbook/03_Paper_Writing/3.3_技术类Full_Paper思考模板.md",
+          "section": "3.3 论文写作 - 技术类Full Paper思考模板（讨论用）",
+          "line": 1,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/handbook/03_Paper_Writing/3.3_技术类Full_Paper思考模板.md#L1"
+        }
+      ],
+      "existing_complement": "Atlas 方法卡已有输入输出、学习/推理与真假来源；claim card 约束结论。",
+      "gap": "缺少作者易填的跨阶段对应表，但表格齐全不代表推论成立。",
+      "integration": "每项局限有文献/观察；未解决局限可保留为范围限制。挑战不为模块倒造；允许多对多关系，已知必要组件不自动升级为创新贡献。",
+      "artifacts": [
+        "paper/thinking-template.md",
+        "paper/contribution-map.json"
+      ],
+      "conflict_ids": [
+        "B13",
+        "B14"
+      ]
+    },
+    {
+      "id": "SUP-TECH-03",
+      "skill": "tech-paper-template",
+      "label": "四段一致性检查与断链诊断",
+      "capabilities": [
+        "C12",
+        "C18",
+        "C19",
+        "C21"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/tech-paper-template/references/consistency-checks.md",
+          "section": "2. Check 1: Limitations to Key Idea",
+          "line": 23,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/consistency-checks.md#L23"
+        },
+        {
+          "path": "skills/tech-paper-template/references/consistency-checks.md",
+          "section": "3. Check 2: Key Idea to Challenges",
+          "line": 55,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/consistency-checks.md#L55"
+        },
+        {
+          "path": "skills/tech-paper-template/references/consistency-checks.md",
+          "section": "4. Check 3: Challenges to Methodology",
+          "line": 88,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/consistency-checks.md#L88"
+        },
+        {
+          "path": "skills/tech-paper-template/references/consistency-checks.md",
+          "section": "5. Check 4: Methodology to Contributions",
+          "line": 123,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/consistency-checks.md#L123"
+        }
+      ],
+      "existing_complement": "C18/C19 已能检查不支持的论点和替代解释；已有证据门槛更强。",
+      "gap": "源模板仅比较叙述单元，没有强制结果位置和实现链。",
+      "integration": "做局限→思路、思路→实施障碍、障碍→模块、模块/结果→贡献四查；增加 claim→code/metric→raw result/rival 第五查。严重度按结论后果区分，未单列段落不能自动 CRITICAL。",
+      "artifacts": [
+        "paper/logic-audit.md",
+        "paper/claim-evidence-matrix.json"
+      ],
+      "conflict_ids": [
+        "B08",
+        "B13",
+        "B14"
+      ]
+    },
+    {
+      "id": "SUP-TECH-04",
+      "skill": "tech-paper-template",
+      "label": "从模板生成方法章节及交接",
+      "capabilities": [
+        "C21",
+        "C24"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/tech-paper-template/references/thinking-template.md",
+          "section": "8. Methodology-outline derivation",
+          "line": 183,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/thinking-template.md#L183"
+        },
+        {
+          "path": "skills/tech-paper-template/SKILL.md",
+          "section": "Output format",
+          "line": 153,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/SKILL.md#L153"
+        }
+      ],
+      "existing_complement": "C21 允许依据真实证据组织论文，C24 有交接。",
+      "gap": "缺少从模块卡到章节开头和子节的受控转化。",
+      "integration": "将方法卡映射至必要子节、伪代码/定义与真实评测链接；不新增未运行实验或理论保证；用户请求写稿时可继续形成草稿，无需先取得 LLM Strong Accept。",
+      "artifacts": [
+        "paper/method-outline.md",
+        "paper/logic-audit.md"
+      ],
+      "conflict_ids": [
+        "B12",
+        "B15"
+      ]
+    },
+    {
+      "id": "SUP-TECH-05",
+      "skill": "tech-paper-template",
+      "label": "Alpha-SQL、AFlow、LEAD 写作案例",
+      "capabilities": [
+        "C05",
+        "C07",
+        "C21"
+      ],
+      "proposed_status": "reference",
+      "decision": "reference",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/tech-paper-template/references/worked-examples.md",
+          "section": "2. Example A: Alpha-SQL, Technique",
+          "line": 19,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/worked-examples.md#L19"
+        },
+        {
+          "path": "skills/tech-paper-template/references/worked-examples.md",
+          "section": "3. Example B: AFlow, Technique with cross-domain framing",
+          "line": 52,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/worked-examples.md#L52"
+        },
+        {
+          "path": "skills/tech-paper-template/references/worked-examples.md",
+          "section": "4. Example C: LEAD, New Problem/Setting",
+          "line": 82,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/worked-examples.md#L82"
+        },
+        {
+          "path": "handbook/06_Case_Studies/6.1_ICML_2025_Alpha-SQL写作剖析.md",
+          "section": "基于 Flowchart，我转成 Table，方便将原文思路映射到对应的逻辑阶段",
+          "line": 42,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/handbook/06_Case_Studies/6.1_ICML_2025_Alpha-SQL写作剖析.md#L42"
+        },
+        {
+          "path": "handbook/06_Case_Studies/6.2_ICLR_2025_AFlow写作剖析.md",
+          "section": "基于 Flowchart，我转成 Table，方便将原文思路映射到对应的逻辑阶段",
+          "line": 35,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/handbook/06_Case_Studies/6.2_ICLR_2025_AFlow写作剖析.md#L35"
+        },
+        {
+          "path": "handbook/06_Case_Studies/6.3_VLDB_2026_LEAD写作剖析.md",
+          "section": "基于 Flowchart，我转成 Table，方便将原文思路映射到对应的逻辑阶段",
+          "line": 35,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/handbook/06_Case_Studies/6.3_VLDB_2026_LEAD写作剖析.md#L35"
+        }
+      ],
+      "existing_complement": "C05 要区分原论文、作者解释和本地推论；C09 保留源域近邻。",
+      "gap": "worked-examples 填充了案例正文未完整给出的细节，且示例数目/段落规则自相矛盾。",
+      "integration": "只用作写作结构示例；方法细节、定量值、发表状态与引用需另查原论文。LEAD 缺截图内容保持未核实；不将 retrospective 填表变成真实作者实验记录。",
+      "artifacts": [
+        "paper/example-reading-notes.md"
+      ],
+      "conflict_ids": [
+        "B13",
+        "B16"
+      ]
+    },
+    {
+      "id": "SUP-PRE-01",
+      "skill": "pre-submission-reviewer",
+      "label": "范式与 venue fit 校准",
+      "capabilities": [
+        "C12",
+        "C19",
+        "C21"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Step 0: paradigm and venue fit",
+          "line": 53,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L53"
+        }
+      ],
+      "existing_complement": "C12 已要求问题匹配方法，C21 核查当前官方 venue。",
+      "gap": "泛化到人文/法律/医学的规则不等于这些领域的验证能力。",
+      "integration": "Agent 场景优先技术/经验/理论/测量路线；跨域仅记录方法匹配和需专业核验的缺口；当前 venue 的贡献类型、匿名、页数、数据/代码要求单独读取。",
+      "artifacts": [
+        "paper/review-scope.json",
+        "paper/venue-rules.md"
+      ],
+      "conflict_ids": [
+        "B10",
+        "B17"
+      ]
+    },
+    {
+      "id": "SUP-PRE-02",
+      "skill": "pre-submission-reviewer",
+      "label": "宏观论点、近邻与归因审查",
+      "capabilities": [
+        "C06",
+        "C09",
+        "C13",
+        "C18",
+        "C19",
+        "C21"
+      ],
+      "proposed_status": "protocol",
+      "decision": "retain",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Step 1: Dimension 1 Macro logic review",
+          "line": 97,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L97"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/logic-and-structure.md",
+          "section": "1. Logic First rule",
+          "line": 13,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/logic-and-structure.md#L13"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/forbidden-patterns.md",
+          "section": "4. Overclaim patterns",
+          "line": 98,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/forbidden-patterns.md#L98"
+        }
+      ],
+      "existing_complement": "已有查新、数值、实现、结果到论点协议；上游归因隔离直接互补。",
+      "gap": "需合并审稿发现与已有审计账本，避免维护第二套真相。",
+      "integration": "给每个质疑确切稿件位置、证据位置、后果和修复；性能增益先检查模型/资源/路由/后处理，缺归因证据只保留比较论点；检索摘要仅定位，细节回原文。",
+      "artifacts": [
+        "paper/review-issues.json",
+        "paper/claim-evidence-matrix.json"
+      ],
+      "conflict_ids": [
+        "B08",
+        "B09"
+      ]
+    },
+    {
+      "id": "SUP-PRE-03",
+      "skill": "pre-submission-reviewer",
+      "label": "段落、语法、LaTeX、图表可读性审查",
+      "capabilities": [
+        "C19",
+        "C21",
+        "C24"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Step 2: Dimension 2 Writing details review",
+          "line": 143,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L143"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Step 3: Dimension 3 English grammar review",
+          "line": 155,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L155"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Step 4: Dimension 4 LaTeX format review",
+          "line": 171,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L171"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Step 5: Dimension 5 Figure quality review",
+          "line": 187,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L187"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/grammar-rules.md",
+          "section": "1. Article usage",
+          "line": 14,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/grammar-rules.md#L14"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/latex-rules.md",
+          "section": "4. Labels and references",
+          "line": 76,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/latex-rules.md#L76"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/forbidden-patterns.md",
+          "section": "3. Chartjunk patterns",
+          "line": 82,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/forbidden-patterns.md#L82"
+        }
+      ],
+      "existing_complement": "C21 目前侧重证据与引用；新增呈现层审查有用但不替代数值效度。",
+      "gap": "未内置完整 LaTeX 编译/视觉校验器；若只见源码，图表视觉仍不可判已检查。",
+      "integration": "区分语义错误、可读性和风格；按实际可读材料说明检查范围。图表用真实数据，照片/截图可合理使用位图，绘图优先矢量；格式依模板及编译结果，不按文件扩展名一票否决。",
+      "artifacts": [
+        "paper/editorial-review.md",
+        "paper/format-checks.md"
+      ],
+      "conflict_ids": [
+        "B11",
+        "B17",
+        "B18"
+      ]
+    },
+    {
+      "id": "SUP-PRE-04",
+      "skill": "pre-submission-reviewer",
+      "label": "词汇/em dash 硬禁与 AI 作者推断",
+      "capabilities": [
+        "C19",
+        "C21"
+      ],
+      "proposed_status": "rejected",
+      "decision": "reject",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Step 6: Banned-vocabulary and em-dash scan",
+          "line": 202,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L202"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/forbidden-patterns.md",
+          "section": "2. Banned AI-tone vocabulary",
+          "line": 39,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/forbidden-patterns.md#L39"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/forbidden-patterns.md",
+          "section": "6. Detection heuristics",
+          "line": 132,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/forbidden-patterns.md#L132"
+        }
+      ],
+      "existing_complement": "Atlas 写作不允许改变论点强度，用户偏好可本地适配。",
+      "gap": "普通词及标点频率没有提供可靠 AI 作者判定依据，substring 扫描会误伤术语/引文。",
+      "integration": "不继承普遍禁词、作者身份推断或按出现次数提严重度；仅依据项目明确风格给可选建议，保留术语、引文、代码与准确不确定性。",
+      "artifacts": [
+        "paper/style-preferences.md"
+      ],
+      "conflict_ids": [
+        "B17",
+        "B18"
+      ]
+    },
+    {
+      "id": "SUP-PRE-05",
+      "skill": "pre-submission-reviewer",
+      "label": "按范式选择章节内容与比较/消融",
+      "capabilities": [
+        "C12",
+        "C13",
+        "C18",
+        "C21"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/pre-submission-reviewer/references/section-guides.md",
+          "section": "1. Abstract",
+          "line": 13,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/section-guides.md#L13"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/section-guides.md",
+          "section": "4. Framework or Methodology",
+          "line": 69,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/section-guides.md#L69"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/section-guides.md",
+          "section": "5. Experiments",
+          "line": 99,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/section-guides.md#L99"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/section-guides.md",
+          "section": "6. Related Work",
+          "line": 130,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/section-guides.md#L130"
+        }
+      ],
+      "existing_complement": "C13 已有公平基线、因子与消融，C18 不把删除组件自动当因果。",
+      "gap": "原有定长章节、至少3数据集和从旧论文A胜B/C就省基线的规则过强。",
+      "integration": "章节内容服务问题，不强制五句摘要或六段引言；数据/模型/基线选择给当前问题的覆盖依据。消融需匹配资源与信息，不能让排版规则改变科学设计。",
+      "artifacts": [
+        "paper/outline.md",
+        "paper/review-issues.json"
+      ],
+      "conflict_ids": [
+        "B03",
+        "B08",
+        "B13"
+      ]
+    },
+    {
+      "id": "SUP-PRE-06",
+      "skill": "pre-submission-reviewer",
+      "label": "分级问题账本与有范围的完成声明",
+      "capabilities": [
+        "C16",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Severity taxonomy",
+          "line": 239,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L239"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Step 8: Integrity gate",
+          "line": 231,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L231"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Output format",
+          "line": 294,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L294"
+        }
+      ],
+      "existing_complement": "C19已有证据式质疑，C20会对变更触发复查；注册表已有协议/实现区分。",
+      "gap": "原critical包括模板偏好，9/10分数从缺陷数量推导容易产生虚假精度。",
+      "integration": "严重度按结论有效性和当前官方要求解释；报告实际读到的文件/页面/图表，无法访问不得写全检。汇报未解决阻塞/主要/次要项，不给录用概率；用户要求修复时做已授权可逆修改。",
+      "artifacts": [
+        "paper/review-scope.json",
+        "paper/review-issues.json",
+        "paper/review-summary.md"
+      ],
+      "conflict_ids": [
+        "B11",
+        "B12",
+        "B19"
+      ]
+    },
+    {
+      "id": "SUP-PRE-07",
+      "skill": "pre-submission-reviewer",
+      "label": "修订标记与分审稿人文件组织",
+      "capabilities": [
+        "C20",
+        "C21",
+        "C24",
+        "C27"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/pre-submission-reviewer/references/latex-rules.md",
+          "section": "8. Revision conventions",
+          "line": 134,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/latex-rules.md#L134"
+        }
+      ],
+      "existing_complement": "C20保存历史、C24交接；可与逐条回复共享一份review ledger。",
+      "gap": "现无稿件差异与审稿编号双向关联。",
+      "integration": "将 R1.W1 等稳定编号连到改动位置/版本/证据；是否着色或边注遵循 venue，提交前编译和匿名检查按宿主能力执行并披露未执行。",
+      "artifacts": [
+        "paper/review-issues.json",
+        "paper/revision-log.md",
+        "paper/response-to-reviewers.md"
+      ],
+      "conflict_ids": [
+        "B10"
+      ]
+    },
+    {
+      "id": "SUP-REB-01",
+      "skill": "rebuttal-guidance",
+      "label": "全量审稿意见编号、拆分与分类",
+      "capabilities": [
+        "C19",
+        "C27"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "Step 1: Inventory concerns",
+          "line": 46,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L46"
+        },
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "Step 2: Classify each concern",
+          "line": 58,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L58"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/concern-classification.md",
+          "section": "分类表",
+          "line": 5,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/concern-classification.md#L5"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/concern-classification.md",
+          "section": "复合 concern 的处理",
+          "line": 38,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/concern-classification.md#L38"
+        }
+      ],
+      "existing_complement": "C19 可做证据式批评，尚缺收到外部意见后的逐项闭环。",
+      "gap": "需稳定 concern ID、原文位置、复合子项和覆盖检查；不能从措辞预判审稿人错。",
+      "integration": "按实质将澄清、缺证、查新、公平性、范围、理论、效率等分流，复合意见保留父ID/子ID；W/Q或第几段不决定严重性。依据已给的全部材料推进并注明范围。",
+      "artifacts": [
+        "paper/review-issues.json",
+        "paper/rebuttal-coverage.md"
+      ],
+      "conflict_ids": [
+        "B12",
+        "B20"
+      ]
+    },
+    {
+      "id": "SUP-REB-02",
+      "skill": "rebuttal-guidance",
+      "label": "证据→回应→修订位置的逐条闭环",
+      "capabilities": [
+        "C16",
+        "C18",
+        "C21",
+        "C27"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "Step 5: Per-concern guidance",
+          "line": 89,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L89"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/response-templates.md",
+          "section": "模板 A: 澄清误解（misunderstanding / writing_clarity）",
+          "line": 24,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/response-templates.md#L24"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/response-templates.md",
+          "section": "模板 B: 补充证据（evidence_gap / baseline_fairness / efficiency）",
+          "line": 43,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/response-templates.md#L43"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/response-templates.md",
+          "section": "模板 C: 承认局限，收窄范围（scope_claim / novelty / theory）",
+          "line": 62,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/response-templates.md#L62"
+        }
+      ],
+      "existing_complement": "C16 数字定位、C18 论点边界、C21 引用语境可为回复供证。",
+      "gap": "模板里的新实验/已修改句式可能越过实际执行。",
+      "integration": "每条给直接答案、可核证据、真实改动位置、剩余限制；分别标 verified-existing/new-run/planned/unavailable。证据不能保住贡献时允许撤回该论点，不强行写仍成立。",
+      "artifacts": [
+        "paper/rebuttal-plan.md",
+        "paper/response-to-reviewers.md",
+        "paper/revision-log.md"
+      ],
+      "conflict_ids": [
+        "B08",
+        "B21"
+      ]
+    },
+    {
+      "id": "SUP-REB-03",
+      "skill": "rebuttal-guidance",
+      "label": "澄清、补实验、收窄范围的资源化决策",
+      "capabilities": [
+        "C11",
+        "C13",
+        "C14",
+        "C15",
+        "C27"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/rebuttal-guidance/references/concern-classification.md",
+          "section": "分类表",
+          "line": 5,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/concern-classification.md#L5"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/response-templates.md",
+          "section": "模板 B: 补充证据（evidence_gap / baseline_fairness / efficiency）",
+          "line": 43,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/response-templates.md#L43"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/response-templates.md",
+          "section": "模板 C: 承认局限，收窄范围（scope_claim / novelty / theory）",
+          "line": 62,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/response-templates.md#L62"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/checklist.md",
+          "section": "常见失误提醒",
+          "line": 33,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/checklist.md#L33"
+        }
+      ],
+      "existing_complement": "C11-C15已有资源门槛、冻结、预算和实际执行记录。",
+      "gap": "原策略偏重新实验，未充分落实venue时间/授权/变更合同。",
+      "integration": "优先用现有有效证据；必要补实验回C13-C17，记录看到结果的时点与新计划版本；未授权费用不能因回复优先级触发。不可做时如实说明并缩小论点，明确venue允许的新材料。",
+      "artifacts": [
+        "paper/rebuttal-plan.md",
+        "paper/new-evidence-register.json"
+      ],
+      "conflict_ids": [
+        "B10",
+        "B21"
+      ]
+    },
+    {
+      "id": "SUP-REB-04",
+      "skill": "rebuttal-guidance",
+      "label": "可观察请求与中性沟通检查",
+      "capabilities": [
+        "C19",
+        "C21",
+        "C27"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/rebuttal-guidance/references/strategy-dimensions.md",
+          "section": "十个维度一览",
+          "line": 6,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/strategy-dimensions.md#L6"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/checklist.md",
+          "section": "语气红线（必须在指导中标记）",
+          "line": 18,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/checklist.md#L18"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/response-templates.md",
+          "section": "全局结构建议",
+          "line": 7,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/response-templates.md#L7"
+        }
+      ],
+      "existing_complement": "C19强调具体证据和不虚构意见；C21强调准确表达。",
+      "gap": "可用内容质量维度，不需要读心/说服概率。",
+      "integration": "保留直接回应、可验证证据、结构、准确限定、不过度许诺等质性检查；记录明确请求而非人格。篇幅按问题复杂度与venue限制调整，不由礼貌程度决定。",
+      "artifacts": [
+        "paper/rebuttal-quality-check.md"
+      ],
+      "conflict_ids": [
+        "B20",
+        "B22",
+        "B23"
+      ]
+    },
+    {
+      "id": "SUP-REB-05",
+      "skill": "rebuttal-guidance",
+      "label": "审稿人心态聚类及个人涨分预测",
+      "capabilities": [
+        "C17",
+        "C19",
+        "C27"
+      ],
+      "proposed_status": "rejected",
+      "decision": "reject",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "Overview",
+          "line": 14,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L14"
+        },
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "Step 3: Match reviewer mindset (X)",
+          "line": 66,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L66"
+        },
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "Step 4: Strategy priorities for this mindset (Y)",
+          "line": 77,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L77"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/mindset-matching-heuristics.md",
+          "section": "六类心态速查（当前 6-cluster 数据驱动版）",
+          "line": 17,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/mindset-matching-heuristics.md#L17"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/mindset-library.md",
+          "section": "Cluster 1: 温和建设型（Gentle Constructive）",
+          "line": 229,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/mindset-library.md#L229"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/mindset-library.md",
+          "section": "Cluster 2: 简洁肯定型（Concise Affirmative）",
+          "line": 282,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/mindset-library.md#L282"
+        }
+      ],
+      "existing_complement": "Atlas明确自动评分不是录用概率，独立证据不能被角色替代。",
+      "gap": "六类名不一致，底层数据未在本固定文本镜像中发现；缺分母、样本独立性、校准、外部验证和混杂控制。",
+      "integration": "仅保留为带警示的审计来源，不用于个体预测/人格动机/优先级；None%保留缺失。重启需可审查数据、标签、样本依赖、原始模型与独立校准验证，仍不推出因果。",
+      "artifacts": [
+        "source-audit/rejected-rules.md"
+      ],
+      "conflict_ids": [
+        "B22",
+        "B23",
+        "B24"
+      ]
+    },
+    {
+      "id": "SUP-REB-06",
+      "skill": "rebuttal-guidance",
+      "label": "Cohen’s d 和成功模式作为策略因果证据",
+      "capabilities": [
+        "C17",
+        "C18",
+        "C27"
+      ],
+      "proposed_status": "rejected",
+      "decision": "reject",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/rebuttal-guidance/references/strategy-dimensions.md",
+          "section": "心态条件下的维度优先级",
+          "line": 21,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/strategy-dimensions.md#L21"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/strategy-dimensions.md",
+          "section": "高效策略组合（交互项）",
+          "line": 31,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/strategy-dimensions.md#L31"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/mindset-library.md",
+          "section": "策略向量效应（Cohen's d）",
+          "line": 41,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/mindset-library.md#L41"
+        }
+      ],
+      "existing_complement": "C17 区分效应、精度与目标；C18区分相关、预测、因果。",
+      "gap": "d>0.8没有给显著性或有效干预证据；成功定义为涨分或接收，混合不同单位和机制。",
+      "integration": "不输出最优说服策略和策略带来涨分的推断；若研究此问题，预定义样本单位/结局/标签和混杂、处理同论文依赖、缺失、多重性、时间外验证与干预识别。",
+      "artifacts": [
+        "source-audit/rejected-rules.md"
+      ],
+      "conflict_ids": [
+        "B22",
+        "B24"
+      ]
+    },
+    {
+      "id": "SUP-REB-07",
+      "skill": "rebuttal-guidance",
+      "label": "完整指导/回复草稿与审计，不代为提交",
+      "capabilities": [
+        "C21",
+        "C24",
+        "C27"
+      ],
+      "proposed_status": "protocol",
+      "decision": "adapt",
+      "integration_state": "recommendation_only_not_applied_by_part_b",
+      "source_locations": [
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "When NOT to use",
+          "line": 34,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L34"
+        },
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "Step 6: Integrity gate",
+          "line": 108,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L108"
+        },
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "Step 7: Output format",
+          "line": 118,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L118"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/checklist.md",
+          "section": "Rebuttal 指导完整性检查清单",
+          "line": 1,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/checklist.md#L1"
+        }
+      ],
+      "existing_complement": "用户授权优先，C21支持稿件包且不自动投稿；C24说明未完成。",
+      "gap": "上游硬性只提供guidance不满足明确的全文回复任务。",
+      "integration": "先证据/意见账本，按用户要求交付指导或完整草稿；未知数值/章节保留明确待核实项，不当作可直接提交完成稿；只在已有授权范围内执行修改与实验，外部发送另看授权。",
+      "artifacts": [
+        "paper/response-to-reviewers.md",
+        "paper/rebuttal-coverage.md"
+      ],
+      "conflict_ids": [
+        "B12",
+        "B21",
+        "B25"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "B01",
+      "title": "类型二分与新数据集中心论",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/orchestrator-notes.md",
+          "section": "Core Philosophy",
+          "line": 5,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/orchestrator-notes.md#L5"
+        },
+        {
+          "path": "skills/tech-paper-template/references/paper-types.md",
+          "section": "5. Positioning questions",
+          "line": 97,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/paper-types.md#L97"
+        }
+      ],
+      "problem": "仅按 Technique/Benchmark 两条路线会漏掉指标、审计、复现、负结果和混合贡献。",
+      "retained_policy": "保留主要贡献路由，并允许次贡献；先写评估论点和适用假设，再判断是否需要新数据或新方法。",
+      "test_scenario": "给只有新评测协议、没有新模型/新数据的Agent路由研究，应走C25而非拒绝或添加模型。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B02",
+      "title": "配套方法与赢基线被当发表门槛",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/benchmark-design.md",
+          "section": "Element 5: Companion Method (Optional but Highly Recommended)",
+          "line": 105,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/benchmark-design.md#L105"
+        },
+        {
+          "path": "skills/benchmark-paper-template/SKILL.md",
+          "section": "Benchmark paper vs technical paper",
+          "line": 20,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/SKILL.md#L20"
+        },
+        {
+          "path": "skills/tech-paper-template/references/paper-types.md",
+          "section": "2. Technique Paper",
+          "line": 31,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/paper-types.md#L31"
+        }
+      ],
+      "problem": "上游强调方法论文证明SOTA、benchmark加模型显著增强，可能把测量价值变成跑分任务。",
+      "retained_policy": "方法需与主张匹配的公平检验，允许质量/成本权衡；benchmark配套模型可选，评估有效性独立核验。",
+      "test_scenario": "不击败基线但发现原指标错误的研究应保留；不能为厚度无预算安排微调。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B03",
+      "title": "硬数量与表面完备替代覆盖依据",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/checklist.md",
+          "section": "1. Introduction Checklist",
+          "line": 15,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/checklist.md#L15"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/experiments.md",
+          "section": "1. Baseline Model Selection",
+          "line": 5,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/experiments.md#L5"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/section-guides.md",
+          "section": "5. Experiments",
+          "line": 99,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/section-guides.md#L99"
+        }
+      ],
+      "problem": "文献最少3/5/5-8不一致，模型10或10-15、至少3数据集、固定RQ/段落数不能通用于所有研究。",
+      "retained_policy": "按问题、最强近邻、任务代表性、资源和精度解释数量；保留遗漏的实质缺口，不补无关对象凑数。",
+      "test_scenario": "只有3个充分覆盖的可用模型和1个有代表性语料时应列边界，不自动Critical，也不虚构10个结果。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B04",
+      "title": "G1-G4语义漂移",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/SKILL.md",
+          "section": "Step 1: Five-pillar completeness table",
+          "line": 90,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/SKILL.md#L90"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/benchmark-design.md",
+          "section": "Element 1: Design Goals",
+          "line": 16,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/benchmark-design.md#L16"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/instantiation-template.md",
+          "section": "Design Goals",
+          "line": 54,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/instantiation-template.md#L54"
+        }
+      ],
+      "problem": "SKILL含reproducibility/contamination，references G3/G4为scalability/quality；相同ID不是同一语义。",
+      "retained_policy": "用coverage/diagnostic-validity/quality/provenance/reproducibility/maintenance语义键，自定义引用映射，不静默覆盖。",
+      "test_scenario": "读入旧G3=reproducibility和新G3=scalability应保留两目标及来源，不能合并为一个。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B05",
+      "title": "刻意压到0.1–9%与人类上界",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/benchmark-design.md",
+          "section": "Element 7: Difficulty Calibration",
+          "line": 135,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/benchmark-design.md#L135"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/experiments.md",
+          "section": "4. The Overall Performance Table",
+          "line": 81,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/experiments.md#L81"
+        }
+      ],
+      "problem": "极低分可能是地板效应/标注问题，不自动代表高价值；人类不自动是上界。",
+      "retained_policy": "按构念、目标分布、难度辨别力、标签质量设置难度；人类基线注明时间/工具/专业水平和不确定性。",
+      "test_scenario": "全部模型1%且标签不一致时先审指标和标签，不将“够难”判通过。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B06",
+      "title": "逆向合成/跨LLM复核等于标签真实",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/construction-pipeline.md",
+          "section": "Paradigm 1: Reverse Synthesis",
+          "line": 26,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/construction-pipeline.md#L26"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/construction-pipeline.md",
+          "section": "Quality Control Strategies",
+          "line": 88,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/construction-pipeline.md#L88"
+        }
+      ],
+      "problem": "“答案先定”不保证所写问题具有该唯一答案；另一LLM也可能共享偏差；固定10%/50–100无效度依据。",
+      "retained_policy": "验证题意、可接受答案、真实任务迁移；保留分歧与来源依赖，QC样本与阈值理由可审查。",
+      "test_scenario": "答案A生成的问题B实际允许两个答案，应判标签待修复而非ground-truth guaranteed。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B07",
+      "title": "新鲜数据/版本变更被当无污染",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/benchmark-design.md",
+          "section": "Element 6: Contamination Mitigation Strategy",
+          "line": 124,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/benchmark-design.md#L124"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/checklist.md",
+          "section": "- [ ] **Contamination Mitigation**: Strategy to prevent training data leakage documented?",
+          "line": 62,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/checklist.md#L62"
+        }
+      ],
+      "problem": "合成、时间门槛和新来源只能降低某些泄漏风险，更新版本也影响旧结论。",
+      "retained_policy": "登记污染证据与未知项、冻结分割、独立评估；新数据/评分器产生新版本并触发依赖复查。",
+      "test_scenario": "替换held-out标签修高分不得沿用冻结协议和旧支持标签。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B08",
+      "title": "一次改善、单次消融与机制证明混同",
+      "severity": "critical",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/experiments.md",
+          "section": "5. The \"Finding X\" Pattern",
+          "line": 101,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/experiments.md#L101"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/experiments.md",
+          "section": "7. Companion Method Experiments (If Applicable)",
+          "line": 141,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/experiments.md#L141"
+        },
+        {
+          "path": "skills/tech-paper-template/SKILL.md",
+          "section": "Step 3: Run four self-consistency checks",
+          "line": 87,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/SKILL.md#L87"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Step 1: Dimension 1 Macro logic review",
+          "line": 97,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L97"
+        }
+      ],
+      "problem": "模板自洽或一次增益只能说明特定观察；更强base model/预算/后处理可能解释收益。",
+      "retained_policy": "先验证测量和公平性，区分比较/机制/因果论点；单次结果标探索，保留失败和不确定性，用匹配对照及独立复验检查竞争解释。",
+      "test_scenario": "路由准确率+2点但模型也升级且仅1个seed，不能写路由机制已证实；最小修复是相同基座/预算的对照。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B09",
+      "title": "预期Finding变结论与挑漂亮例子",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/instantiation-template.md",
+          "section": "8. Expected Findings (预期洞察)",
+          "line": 123,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/instantiation-template.md#L123"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/experiments.md",
+          "section": "5. The \"Finding X\" Pattern",
+          "line": 101,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/experiments.md#L101"
+        },
+        {
+          "path": "skills/benchmark-paper-template/references/experiments.md",
+          "section": "6. Case Study Design",
+          "line": 130,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/experiments.md#L130"
+        }
+      ],
+      "problem": "预设surprising/actionable容易鼓励挑样本，mean±std及temperature0也不保证恰当统计/确定性。",
+      "retained_policy": "预期保留为预测；实际Finding由完整数据、效应和边界生成；描述性图、错误分母、案例选取规则和后验发现标记可查。",
+      "test_scenario": "实际结果无明显差异时不输出预写的惊人发现；给inconclusive或有依据的边界发现。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B10",
+      "title": "静态venue清单跨贡献/年份普遍化",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/checklist.md",
+          "section": "5. Venue-Specific Checks",
+          "line": 67,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/checklist.md#L67"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/latex-rules.md",
+          "section": "8. Revision conventions",
+          "line": 134,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/latex-rules.md#L134"
+        }
+      ],
+      "problem": "NeurIPS2026部分要求属特定贡献；其他年份/会议也不同，不能全体强制Croissant、代码或彩色修订。",
+      "retained_policy": "记录官方URL/日期/适用贡献/例外，查匿名、数据、代码、rebuttal允许新结果/链接/字数等；规则未读标未知。",
+      "test_scenario": "纯指标理论论文无新数据，不因无Croissant自动判拒；有新数据则检查该项。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B11",
+      "title": "图/模板缺失被当一票否决",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/checklist.md",
+          "section": "Severity Classification",
+          "line": 87,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/checklist.md#L87"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Severity taxonomy",
+          "line": 239,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L239"
+        }
+      ],
+      "problem": "无Finding编号/无固定pipeline图/含raster不等同科学阻塞，且上游自身要求“不得为taste Critical”。",
+      "retained_policy": "阻塞需证明使主要论点无效、不可评估或违反实际官方要求；可读性/风格给具体后果和适当级别。",
+      "test_scenario": "清晰方法+可复现文本流程、照片PNG、无Finding标签不可自动Critical；无法读的关键图可按影响升高。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B12",
+      "title": "阶段确认/输出限制覆盖用户明确任务",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/benchmark-paper-template/references/orchestrator-notes.md",
+          "section": "Stage Detection & Routing",
+          "line": 33,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/benchmark-paper-template/references/orchestrator-notes.md#L33"
+        },
+        {
+          "path": "skills/tech-paper-template/SKILL.md",
+          "section": "When to use this skill",
+          "line": 34,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/SKILL.md#L34"
+        },
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "Step 1: Inventory concerns",
+          "line": 46,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L46"
+        }
+      ],
+      "problem": "每次确认阶段/问是否还有review/先LLM强接受再写会无故阻断已授权任务。",
+      "retained_policy": "读取已有材料并推断阶段，注明范围；完成所有已授权步骤，仅对真正影响结果的缺失事实询问。",
+      "test_scenario": "用户已给全部三位review并要求完整草稿，先处理全部而非停下询问是否还有review。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B13",
+      "title": "固定一一对应/段落数量与上游案例冲突",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/tech-paper-template/references/thinking-template.md",
+          "section": "6. Cell: Methodology topic sentence and modules",
+          "line": 130,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/thinking-template.md#L130"
+        },
+        {
+          "path": "skills/tech-paper-template/references/consistency-checks.md",
+          "section": "6. Common chain breaks",
+          "line": 152,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/consistency-checks.md#L152"
+        },
+        {
+          "path": "handbook/03_Paper_Writing/3.3_技术类Full_Paper思考模板.md",
+          "section": "3.3 论文写作 - 技术类Full Paper思考模板（讨论用）",
+          "line": 1,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/handbook/03_Paper_Writing/3.3_技术类Full_Paper思考模板.md#L1"
+        },
+        {
+          "path": "handbook/06_Case_Studies/6.1_ICML_2025_Alpha-SQL写作剖析.md",
+          "section": "基于 Flowchart，我转成 Table，方便将原文思路映射到对应的逻辑阶段",
+          "line": 42,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/handbook/06_Case_Studies/6.1_ICML_2025_Alpha-SQL写作剖析.md#L42"
+        },
+        {
+          "path": "handbook/06_Case_Studies/6.2_ICLR_2025_AFlow写作剖析.md",
+          "section": "基于 Flowchart，我转成 Table，方便将原文思路映射到对应的逻辑阶段",
+          "line": 35,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/handbook/06_Case_Studies/6.2_ICLR_2025_AFlow写作剖析.md#L35"
+        }
+      ],
+      "problem": "tech SKILL强制一一对应和全部断链Critical，但3.3允许一思路解决多挑战，Alpha-SQL不单列Challenges/Contributions，AFlow一模块解决多问题。",
+      "retained_policy": "保留可追溯的多对多关系，接受合并段落和内嵌挑战；按实际逻辑/证据断裂而非标题数量判定。",
+      "test_scenario": "2个模块共同解决1个瓶颈且证据充分应通过，不能删掉合理模块凑数。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B14",
+      "title": "删去未解决局限或为每模块制造贡献",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/tech-paper-template/references/consistency-checks.md",
+          "section": "2. Check 1: Limitations to Key Idea",
+          "line": 23,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/consistency-checks.md#L23"
+        },
+        {
+          "path": "skills/tech-paper-template/references/consistency-checks.md",
+          "section": "5. Check 4: Methodology to Contributions",
+          "line": 123,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/consistency-checks.md#L123"
+        }
+      ],
+      "problem": "“删去不解决的limitation”和“每模块都写贡献”会掩盖范围限制或把常规组件包装成新颖点。",
+      "retained_policy": "动机选有对应贡献的重点，仍披露真正影响论点的未解限制；区分必要组件与新增知识贡献。",
+      "test_scenario": "检索方法仍不支持OCR时保留边界，不删limitations；标准BM25组件不虚称创新。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B15",
+      "title": "逻辑分数/Strong Accept作为继续科研门槛",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/tech-paper-template/SKILL.md",
+          "section": "When to use this skill",
+          "line": 34,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/SKILL.md#L34"
+        },
+        {
+          "path": "skills/tech-paper-template/SKILL.md",
+          "section": "Step 5: Integrity gate",
+          "line": 118,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/SKILL.md#L118"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Final score (1-10)",
+          "line": 322,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L322"
+        }
+      ],
+      "problem": "模型给出Strong Accept或9/10只是内部评估，不能校准科学真伪和录用。",
+      "retained_policy": "保留具体证据问题、未确定项和下一动作；一致性通过仅说明叙述检查通过。",
+      "test_scenario": "模板全通过但原结果缺失，应继续补证据/标未知，而非出高分保证投稿。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B16",
+      "title": "回顾性案例细节与原论文证据混淆",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/tech-paper-template/references/worked-examples.md",
+          "section": "2. Example A: Alpha-SQL, Technique",
+          "line": 19,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/worked-examples.md#L19"
+        },
+        {
+          "path": "skills/tech-paper-template/references/worked-examples.md",
+          "section": "4. Example C: LEAD, New Problem/Setting",
+          "line": 82,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/tech-paper-template/references/worked-examples.md#L82"
+        },
+        {
+          "path": "handbook/06_Case_Studies/6.3_VLDB_2026_LEAD写作剖析.md",
+          "section": "基于 Flowchart，我转成 Table，方便将原文思路映射到对应的逻辑阶段",
+          "line": 35,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/handbook/06_Case_Studies/6.3_VLDB_2026_LEAD写作剖析.md#L35"
+        }
+      ],
+      "problem": "LEAD案例明确原截图不可还原，worked-example仍补denoising/deferred selection/convergence等；Alpha-SQL/AFlow简化也不是完整方法核验。",
+      "retained_policy": "标为上游回顾性解读；任何用于查新、实现或论证的技术细节/数字须另读原论文，缺失保持unknown。",
+      "test_scenario": "仅凭此案例不能认定LEAD证明convergence或复现其IDU；给原论文待读项。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B17",
+      "title": "英语/LaTeX规则的语境错误",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/pre-submission-reviewer/references/grammar-rules.md",
+          "section": "1. Article usage",
+          "line": 14,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/grammar-rules.md#L14"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/grammar-rules.md",
+          "section": "5. Which versus that",
+          "line": 81,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/grammar-rules.md#L81"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/grammar-rules.md",
+          "section": "8. Punctuation in quotations",
+          "line": 121,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/grammar-rules.md#L121"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/latex-rules.md",
+          "section": "4. Labels and references",
+          "line": 76,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/latex-rules.md#L76"
+        }
+      ],
+      "problem": "in descending order是合法常用表达，不应机械加a；which/that、引号标点、时态取决语义/体例；label含hyphen不自动是编译错误。",
+      "retained_policy": "按句义和用户/venue体例建议，编译诊断验证技术错误；避免错误自动替换。",
+      "test_scenario": "保留in descending order与有依据的hedging；标签sec:agent-routing能编译时不标错误。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B18",
+      "title": "普通词频/标点推断AI作者或强制英语起草",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/pre-submission-reviewer/references/forbidden-patterns.md",
+          "section": "2. Banned AI-tone vocabulary",
+          "line": 39,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/forbidden-patterns.md#L39"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/grammar-rules.md",
+          "section": "7. Chinglish patterns",
+          "line": 106,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/grammar-rules.md#L106"
+        }
+      ],
+      "problem": "reveal/yet/stems from等正常用语并非AI证据；不允许中英翻译与用户双语目标冲突。",
+      "retained_policy": "双语起草和翻译可用，检查术语、数值、引用和强度一致；词汇及标点仅是明确风格偏好，不能推断来源或抹去适当不确定性。",
+      "test_scenario": "中文草稿转英文应完成并核验，不因翻译拒绝；三次yet不能判Major scientific flaw。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B19",
+      "title": "全稿/视觉检查attestation越过实际访问",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/pre-submission-reviewer/SKILL.md",
+          "section": "Step 8: Integrity gate",
+          "line": 231,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/SKILL.md#L231"
+        },
+        {
+          "path": "skills/pre-submission-reviewer/references/forbidden-patterns.md",
+          "section": "6. Detection heuristics",
+          "line": 132,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/pre-submission-reviewer/references/forbidden-patterns.md#L132"
+        }
+      ],
+      "problem": "只看到节选或图描述时，不能宣称整个论文/所有图已查。",
+      "retained_policy": "读取manifest记文件/页/章节/图及实际方式；缺页和未渲染单列；不得让用户替模型证明全检。",
+      "test_scenario": "只有摘要和图注时报告该范围，不能输出全稿语法/数值检查完成。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B20",
+      "title": "关键词、W/Q和段落次序被当审稿人动机",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/rebuttal-guidance/references/concern-classification.md",
+          "section": "Weakness vs. Question 的处理差异",
+          "line": 19,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/concern-classification.md#L19"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/concern-classification.md",
+          "section": "快速关键词分类",
+          "line": 27,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/concern-classification.md#L27"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/mindset-matching-heuristics.md",
+          "section": "行为信号评分表",
+          "line": 5,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/mindset-matching-heuristics.md#L5"
+        }
+      ],
+      "problem": "seems/unclear可能是真实缺证；Question也可能致命；先提的意见未必最重要。",
+      "retained_policy": "分类依据问题内容与当前证据，误解需回文核实；优先级按对主张影响、依赖、可完成性与期限。",
+      "test_scenario": "温和Q指出test泄漏仍列高影响，严厉W只是定义不清可澄清。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B21",
+      "title": "模板过去时伪装已补实验/已修订",
+      "severity": "critical",
+      "source_locations": [
+        {
+          "path": "skills/rebuttal-guidance/references/response-templates.md",
+          "section": "模板 B: 补充证据（evidence_gap / baseline_fairness / efficiency）",
+          "line": 43,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/response-templates.md#L43"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/response-templates.md",
+          "section": "模板 C: 承认局限，收窄范围（scope_claim / novelty / theory）",
+          "line": 62,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/response-templates.md#L62"
+        },
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "Step 5: Per-concern guidance",
+          "line": 89,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L89"
+        }
+      ],
+      "problem": "已在SectionX改过/新实验表明的模板，若无真实文件或run会产生伪造。",
+      "retained_policy": "completed仅链接实际结果和差异；planned写将做且不作证据；unknown用待核实；若论点站不住就收窄/撤回。",
+      "test_scenario": "未跑实验、稿件未改时不能出现We conducted/We revised的既成事实；可给完整带待核实标识草稿。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B22",
+      "title": "历史簇频率被当个体概率和说服因果",
+      "severity": "critical",
+      "source_locations": [
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "Overview",
+          "line": 14,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L14"
+        },
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "Step 4: Strategy priorities for this mindset (Y)",
+          "line": 77,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L77"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/mindset-library.md",
+          "section": "Cluster 1: 温和建设型（Gentle Constructive）",
+          "line": 229,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/mindset-library.md#L229"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/checklist.md",
+          "section": "低开放度审稿人的特别提示",
+          "line": 25,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/checklist.md#L25"
+        }
+      ],
+      "problem": "P(Z|X,Y)符号不提供经验证概率模型；群体描述频率不校准当前个体，初始评分与天花板等可能解释低涨分。",
+      "retained_policy": "不输出心态人格、单人涨分/录用概率或按低涨分建议多花实验预算；用实际意见和证据缺口排序。",
+      "test_scenario": "温和review引用13.4%不能被解释为不易说服，不能说采用某策略成功率增加到某值。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B23",
+      "title": "六类心态表不一致、None%及来源不全",
+      "severity": "critical",
+      "source_locations": [
+        {
+          "path": "skills/rebuttal-guidance/references/mindset-matching-heuristics.md",
+          "section": "六类心态速查（当前 6-cluster 数据驱动版）",
+          "line": 17,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/mindset-matching-heuristics.md#L17"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/mindset-library.md",
+          "section": "Cluster 2: 简洁肯定型（Concise Affirmative）",
+          "line": 282,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/mindset-library.md#L282"
+        }
+      ],
+      "problem": "matching表实验导向/强硬多质疑/其他与library六簇不一致；None%缺失；引用data/behavior/mindset_library.json未在该108文本镜像发现。",
+      "retained_policy": "隔离此模型层，保留文件原统计作为来源主张；不强行对齐簇、不补None为0、不借全文阅读声称模型验证。",
+      "test_scenario": "输入concise affirmative对应None，输出缺失且不预测，不能套~12%其他类。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B24",
+      "title": "d>0.8当显著/策略有效，混合成功结局",
+      "severity": "critical",
+      "source_locations": [
+        {
+          "path": "skills/rebuttal-guidance/references/strategy-dimensions.md",
+          "section": "心态条件下的维度优先级",
+          "line": 21,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/strategy-dimensions.md#L21"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/strategy-dimensions.md",
+          "section": "高效策略组合（交互项）",
+          "line": 31,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/strategy-dimensions.md#L31"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/mindset-library.md",
+          "section": "策略向量效应（Cohen's d）",
+          "line": 41,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/mindset-library.md#L41"
+        }
+      ],
+      "problem": "标准化均值差阈值不是显著性检验；观察成功组策略均值更高不等于策略导致成功。score increase与paper accept是不同事件，可能依赖/混合分母。",
+      "retained_policy": "只保留相关性来源陈述及未核验标签；研究效力需原始样本单位、结局、分母、依赖、缺失、CI、多重性、盲法标签及外部/因果验证。",
+      "test_scenario": "d=1.1无CI/样本方案时不写显著有效；同论文多review不当独立实验重复。",
+      "test_status": "proposed_not_run"
+    },
+    {
+      "id": "B25",
+      "title": "只给guidance拒绝完整回复",
+      "severity": "major",
+      "source_locations": [
+        {
+          "path": "skills/rebuttal-guidance/SKILL.md",
+          "section": "When NOT to use",
+          "line": 34,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/SKILL.md#L34"
+        },
+        {
+          "path": "skills/rebuttal-guidance/references/response-templates.md",
+          "section": "本 Skill 输出的指导块格式",
+          "line": 79,
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/rebuttal-guidance/references/response-templates.md#L79"
+        }
+      ],
+      "problem": "上游禁止最终稿属于产品偏好，不能覆盖用户明确要完整草稿的授权。",
+      "retained_policy": "根据用户任务生成指导或完整回应；先证据对齐，保留未证处，不因能力流程增加重复许可，提交另看授权。",
+      "test_scenario": "用户要三位审稿人的英文全文回复时交付覆盖所有concern的草稿，不能只建议怎么写。",
+      "test_status": "proposed_not_run"
+    }
+  ],
+  "official_rule_checks": [
+    {
+      "id": "OFFICIAL-NEURIPS-2026-CFP",
+      "url": "https://neurips.cc/Conferences/2026/CallForEvaluationsDatasets",
+      "read_at": "2026-10-21",
+      "read_depth": "Relevant Scope and ED Track-Specific Guidelines sections read",
+      "sections": [
+        "Scope",
+        "Review Policy",
+        "Dataset and Code Submission"
+      ],
+      "findings": "不要求新模型/胜过旧结果；默认双盲有条件例外；数据集元数据和可执行产物代码要求需按贡献类型解释。",
+      "retrieval_refs": [
+        "turn80view1",
+        "turn81view0"
+      ]
+    },
+    {
+      "id": "OFFICIAL-NEURIPS-2026-REVIEW",
+      "url": "https://neurips.cc/Conferences/2026/EvaluationsDatasetsReviewerGuidelines",
+      "read_at": "2026-10-21",
+      "read_depth": "Relevant reviewer expectations, track-wide policies and contribution-specific sections read",
+      "sections": [
+        "Write thoughtful reviews",
+        "Submissions with a Dataset contribution",
+        "Submissions with a code or executable artifact contribution",
+        "Guidelines by ED contribution types"
+      ],
+      "findings": "应聚焦科学内容；benchmark不要求击败基线，负结果与审计可有价值；对可评估性和元数据缺项按实质判断。",
+      "retrieval_refs": [
+        "turn80view0",
+        "turn81view1"
+      ]
+    },
+    {
+      "id": "OFFICIAL-NEURIPS-2025-HOSTING",
+      "url": "https://neurips.cc/Conferences/2025/DataHostingGuidelines",
+      "read_at": "2026-10-21",
+      "read_depth": "Relevant requirements and alternatives sections read",
+      "sections": [
+        "Instruction Guide",
+        "Alternatives"
+      ],
+      "findings": "2025要求dataset作者提供Croissant；允许满足条件的非首选托管站点，不能把推荐平台名单当排他要求。",
+      "retrieval_refs": [
+        "turn80view2"
+      ]
+    }
+  ],
+  "integration_workflows": [
+    {
+      "id": "WF-BENCH",
+      "capability": "C25",
+      "trigger": "新 benchmark、评估维度/协议、现有评测审计或混合论文",
+      "steps": [
+        {
+          "step": 1,
+          "action": "读现有atlas/材料，定位问题、主要贡献、版本与资源。",
+          "output": "paper/stage-state.json",
+          "gate": "已有工作不重建；未知资源保持unverified。"
+        },
+        {
+          "step": 2,
+          "action": "建旧评测→构念→盲点→实际失败→文献边界表。",
+          "output": "benchmark/landscape.csv + gap-card.md",
+          "gate": "不能凭不存在同名benchmark声称首次。"
+        },
+        {
+          "step": 3,
+          "action": "定义任务分布、分类维度、允许论点、度量/标签与可靠性检查。",
+          "output": "benchmark/design.md + coverage-matrix.csv",
+          "gate": "指标/标签未验证不作能力结论；不强制极低正确率。"
+        },
+        {
+          "step": 4,
+          "action": "定义构建/QC/分割/污染/版本，进行适量授权pilot。",
+          "output": "benchmark/pipeline.md + qc-report.md",
+          "gate": "sample来源和分割单位可查；失败/分歧不消失。"
+        },
+        {
+          "step": 5,
+          "action": "按C13-C17创建实际协议，冻结评价器/标签，授权运行后分析。",
+          "output": "existing research-atlas/experiments records + findings-ledger.json",
+          "gate": "本部分不新增/假装存在专用benchmark CLI；由宿主写方案，已有runner记录真实执行。"
+        },
+        {
+          "step": 6,
+          "action": "按测量/方法各自证据写论点，查当前venue；产出文稿和复现包。",
+          "output": "paper/contribution-map.json + claim-evidence-matrix.json + venue-rules.md",
+          "gate": "不要求配套方法；无支持结果不能包装成有支持。"
+        }
+      ]
+    },
+    {
+      "id": "WF-TECH",
+      "capability": "C21",
+      "trigger": "方法或新设定思路梳理/论文结构不清",
+      "steps": [
+        {
+          "step": 1,
+          "action": "从问题、方法卡和现有结果选贡献类型。",
+          "output": "paper/contribution-map.json",
+          "gate": "不先求LLM接受分数。"
+        },
+        {
+          "step": 2,
+          "action": "填逻辑模板并标来源、未知、关系类型。",
+          "output": "paper/thinking-template.md",
+          "gate": "允许多对多；不倒造挑战和新颖性。"
+        },
+        {
+          "step": 3,
+          "action": "做四段逻辑+证据实现链检查。",
+          "output": "paper/logic-audit.md",
+          "gate": "自洽不替代实验/理论证据。"
+        },
+        {
+          "step": 4,
+          "action": "形成方法提纲或用户请求的草稿并保留论点范围。",
+          "output": "paper/method-outline.md",
+          "gate": "未做的实验/证明不写完成。"
+        }
+      ]
+    },
+    {
+      "id": "WF-REVIEW",
+      "capability": "C19",
+      "trigger": "投稿前审查、主要修订后或格式核验",
+      "steps": [
+        {
+          "step": 1,
+          "action": "固定输入manifest与可读范围，读取当前官方venue适用规则。",
+          "output": "paper/review-scope.json + venue-rules.md",
+          "gate": "看不到全文/图像就列缺口。"
+        },
+        {
+          "step": 2,
+          "action": "先查主要论点、近邻、实现、原始数字、统计和引用语境。",
+          "output": "paper/review-issues.json",
+          "gate": "尽量独立审查；自审标明。"
+        },
+        {
+          "step": 3,
+          "action": "检查结构、语法、LaTeX与图表；真实编译/渲染若可用。",
+          "output": "paper/editorial-review.md + format-checks.md",
+          "gate": "风格和实质错误分开；不靠词频识别AI作者。"
+        },
+        {
+          "step": 4,
+          "action": "按任务修复或给具体修改，重大变更触发复查。",
+          "output": "paper/review-summary.md + revision-log.md",
+          "gate": "汇报真实范围/未解决项，不给录用率。"
+        }
+      ]
+    },
+    {
+      "id": "WF-REBUTTAL",
+      "capability": "C27",
+      "trigger": "收到review、revision letter或要求回复草稿",
+      "steps": [
+        {
+          "step": 1,
+          "action": "读取全部已给意见及稿件版本，拆分/编号，建立coverage。",
+          "output": "paper/review-issues.json",
+          "gate": "无必要不重复确认已有范围。"
+        },
+        {
+          "step": 2,
+          "action": "按实质与影响分类，逐条查现有证据/近邻/数值。",
+          "output": "paper/rebuttal-plan.md",
+          "gate": "无人格画像、涨分预测或策略因果断言。"
+        },
+        {
+          "step": 3,
+          "action": "选择澄清、修订、补证或收窄；新实验回C11-C17。",
+          "output": "paper/new-evidence-register.json + actual run records if executed",
+          "gate": "费用/外部执行依原授权；不得用模板冒充已完成。"
+        },
+        {
+          "step": 4,
+          "action": "按所需语言写指导或完整回复，给真实修订位置。",
+          "output": "paper/response-to-reviewers.md + revision-log.md",
+          "gate": "unknown与planned明确；不能把将来结果当证据。"
+        },
+        {
+          "step": 5,
+          "action": "核对全量意见覆盖、数字/引用、稿件一致性、匿名和当前venue约束。",
+          "output": "paper/rebuttal-coverage.md + quality-check.md",
+          "gate": "每条concern已回应或有未完成理由；发布/发送看任务授权。"
+        }
+      ]
+    }
+  ],
+  "proposed_artifact_contracts": {
+    "contribution_map": {
+      "description": "Host-authored sidecar linked to existing Atlas IDs; not a new graph truth store or implemented schema.",
+      "fields": [
+        "claim_id",
+        "primary_type",
+        "secondary_types",
+        "bounded_statement",
+        "problem_ids",
+        "limitation_ids",
+        "method_components",
+        "relationship_rationale",
+        "closest_paper_ids",
+        "evidence_ids",
+        "artifact_paths",
+        "manuscript_locations",
+        "unresolved_threats"
+      ]
+    },
+    "benchmark_design": {
+      "fields": [
+        "benchmark_id",
+        "version",
+        "scope",
+        "construct",
+        "population_or_task_distribution",
+        "coverage_dimensions",
+        "scoring_rules",
+        "acceptable_answers",
+        "source_and_split_units",
+        "qc_plan",
+        "judge_validation",
+        "contamination_controls",
+        "baseline_rationale",
+        "uncertainty_plan",
+        "budget",
+        "allowed_claims",
+        "maintenance_and_retirement"
+      ]
+    },
+    "review_issue": {
+      "fields": [
+        "concern_id",
+        "parent_id",
+        "reviewer_label",
+        "source_version",
+        "original_location",
+        "original_text",
+        "substance_type",
+        "affected_claim_ids",
+        "severity",
+        "severity_reason",
+        "evidence_locations",
+        "action",
+        "execution_state",
+        "actual_change_location",
+        "response_location",
+        "residual_uncertainty",
+        "resolution_status"
+      ]
+    },
+    "execution_state_values": [
+      "verified_existing",
+      "new_run_completed",
+      "planned",
+      "unavailable",
+      "not_applicable"
+    ],
+    "resolution_status_values": [
+      "open",
+      "answered_with_evidence",
+      "revised",
+      "claim_narrowed",
+      "claim_withdrawn",
+      "deferred_with_reason"
+    ]
+  },
+  "original_integration_paragraphs": {
+    "benchmark": "先确定这项工作的主要贡献是测量、数据、评估方法、方法改进，还是其中的组合。评估研究先写清希望测量的能力、允许支持的论点、目标任务分布和现有评测的具体盲点。为每个维度记录操作化定义、评分方式、数据来源、可接受答案、质量检查和不可覆盖的条件，再选择逆向合成、受控变化、人工标注或现有数据重评等适合的构建路径。任何生成方法都不能自行保证真值；保留分歧、失败样本、独立评定过程及不确定性。难度和样本/模型数量依据研究问题与辨别能力确定，不以让最强模型几乎全错或达到固定数量为目标。配套优化方法只在有独立问题与预算时加入，训练/开发与最终评价隔离。预期发现是待验证预测；实际发现必须指向完整的真实结果、适用范围与竞争解释。",
+    "technical_argument": "用问题—已核验局限—核心思路或设定—实施障碍—方法组件—结果—贡献表组织论文。允许一项机制应对多个障碍，也允许多项组件共同实现一个目标；关系要有理由和证据，不要求数量一一对应。每个贡献标明类型、最近工作差异、实现位置、结果位置与尚未排除的解释。未解决但影响结论的限制仍要保留，常规必要组件不包装为新颖贡献。四段叙述一致性检查之后，另查方法到代码、评分器和原始结果的对应。一次改善只能支持其设计允许的范围；只有适当对照、测量与复验支持时，才增加机制、因果或跨任务主张。",
+    "pre_submission": "先登记稿件、结果、图表、代码和引用的实际可读范围、版本及目标 venue。审查按证据有效性、官方投稿要求、结构可理解性和语言呈现依次展开。每个问题写确切位置、观察、对结论的影响、严重度理由、最小修复及复查状态。缺乏决定性证据或违反适用的正式要求可以构成阻塞；段落数、固定图号、常用词、标点偏好和合理位图本身不能构成科学否决。格式错误尽可能用真实编译/渲染验证，未见图表则说明未完成视觉审查。双语起草和翻译可以使用，必须保持术语、数字、引用与论点强度一致。最终报告未解决的问题和证据边界，不将自评分数变成录用概率。",
+    "rebuttal": "把已收到的每条审稿意见保存为稳定编号，复合意见拆成可单独核验的子项，并保留原文和位置。按内容判断需要澄清、查新、修复公平比较、补充证据、校正数值或缩小/撤回论点，不根据语气猜测审稿人性格、动机或涨分概率。每条回复依次给直接答案、证据位置、实际修订位置和仍然存在的限制。现有证据、新完成实验、计划工作和不可完成事项明确分开；没有实际运行记录或稿件改动，不使用完成时表述。需要新实验时回到资源核实、方案变更、冻结、运行与结果解释流程，并检查当前 venue 的回复规则。按用户要求交付逐条计划或完整草稿；未核实内容显式标记，覆盖所有已给意见后再做引用、数值、匿名和篇幅检查。",
+    "single_improvement": "发现一次分数提高时，先记录它是一次观察，再检查样本单位、模型版本、信息预算、评分器、随机波动和所有尝试。若同时改变路由策略与基座模型，当前结果不能识别路由机制的贡献；先安排匹配基座与预算的最小对照。有效但有限的结果可以形成范围明确的经验论点，负结果也可以形成可复查的边界发现。不能从单次提高、运行 exit 0、模板完整或多个模型评审赞同，推出假设已证明或论文必被接收。"
+  },
+  "test_scenarios": [
+    {
+      "id": "PB-T01",
+      "scenario": "只有评估协议改进，无新数据/模型，测得现有排名受评分假设影响。",
+      "must": [
+        "路由C25并核对效度/近邻",
+        "不要求配套训练或SOTA",
+        "分别记录测量和方法贡献"
+      ],
+      "must_not": [
+        "因为没新模型拒绝研究"
+      ],
+      "conflicts": [
+        "B01",
+        "B02"
+      ],
+      "status": "proposed_not_executed_by_part_b"
+    },
+    {
+      "id": "PB-T02",
+      "scenario": "当前有3个模型、1个合适中文文档语料；预算不支持10模型。",
+      "must": [
+        "按覆盖与资源给边界",
+        "选择最小有信息量评测"
+      ],
+      "must_not": [
+        "凑10模型/3数据集",
+        "假装跑过缺失模型"
+      ],
+      "conflicts": [
+        "B03"
+      ],
+      "status": "proposed_not_executed_by_part_b"
+    },
+    {
+      "id": "PB-T03",
+      "scenario": "旧图G3是reproducibility，新模板G3是scalability；所有模型正确率1%，人工标签分歧很大。",
+      "must": [
+        "分离语义goal",
+        "审查标签/地板效应",
+        "不判够难即成功"
+      ],
+      "must_not": [
+        "静默覆盖G3",
+        "承诺统一0.1–9%"
+      ],
+      "conflicts": [
+        "B04",
+        "B05",
+        "B06"
+      ],
+      "status": "proposed_not_executed_by_part_b"
+    },
+    {
+      "id": "PB-T04",
+      "scenario": "Agent路由策略改动时同时从小模型换到大模型，单seed准确率+2点，用户问能否证明机制。",
+      "must": [
+        "限定为观察",
+        "指出基座/预算混杂",
+        "匹配条件的最小对照",
+        "保留原始结果"
+      ],
+      "must_not": [
+        "称机制被证明",
+        "把更多同分布seed当独立支持"
+      ],
+      "conflicts": [
+        "B08"
+      ],
+      "status": "proposed_not_executed_by_part_b"
+    },
+    {
+      "id": "PB-T05",
+      "scenario": "一模块确实处理两个挑战，方法章节内解释挑战，未单列Challenges或编号Findings；图含清晰的PNG界面截图。",
+      "must": [
+        "接受合理多对多",
+        "按可读性/证据判断",
+        "有真实证据问题时才升级"
+      ],
+      "must_not": [
+        "按数量或PNG判Critical"
+      ],
+      "conflicts": [
+        "B11",
+        "B13"
+      ],
+      "status": "proposed_not_executed_by_part_b"
+    },
+    {
+      "id": "PB-T06",
+      "scenario": "句子包含in descending order、三次yet和适当may；作者给中文草稿要英译。",
+      "must": [
+        "完成英译",
+        "保留术语与论点强度",
+        "按实际语法检查"
+      ],
+      "must_not": [
+        "加不必要a",
+        "断言AI生成",
+        "删除有依据不确定性"
+      ],
+      "conflicts": [
+        "B17",
+        "B18"
+      ],
+      "status": "proposed_not_executed_by_part_b"
+    },
+    {
+      "id": "PB-T07",
+      "scenario": "只提供摘要和图注，要求全面投稿评审。",
+      "must": [
+        "评审可见内容",
+        "给明确未读范围",
+        "列仍需全文/原图验证项"
+      ],
+      "must_not": [
+        "声称全稿/视觉已查完"
+      ],
+      "conflicts": [
+        "B19"
+      ],
+      "status": "proposed_not_executed_by_part_b"
+    },
+    {
+      "id": "PB-T08",
+      "scenario": "温和Q指出test leakage，严厉W问定义；工具给Gentle13.4%和ConciseNone%。",
+      "must": [
+        "优先处理泄漏",
+        "基于内容给回复",
+        "None保持缺失",
+        "不输出心理/概率"
+      ],
+      "must_not": [
+        "按温和/强硬判重要性",
+        "填None=0",
+        "说涨分概率13.4%"
+      ],
+      "conflicts": [
+        "B20",
+        "B22",
+        "B23"
+      ],
+      "status": "proposed_not_executed_by_part_b"
+    },
+    {
+      "id": "PB-T09",
+      "scenario": "成功组策略评分d=1.1，无CI/原始单位/初始分；上游称显著有效。",
+      "must": [
+        "区分效应量和统计显著/因果",
+        "标缺数据与分母",
+        "不给策略收益预测"
+      ],
+      "must_not": [
+        "d>0.8等于显著",
+        "断言策略使人涨分"
+      ],
+      "conflicts": [
+        "B24"
+      ],
+      "status": "proposed_not_executed_by_part_b"
+    },
+    {
+      "id": "PB-T10",
+      "scenario": "三位review共8条，复合2条；用户要英文完整回复，尚未跑新实验也未修改稿件。",
+      "must": [
+        "覆盖所有原ID与拆分子项",
+        "给完整草稿",
+        "现有/计划/待核实分开",
+        "不虚构章节和结果"
+      ],
+      "must_not": [
+        "只给guidance",
+        "写We conducted/We revised作为既成事实",
+        "停下重复问还有没有review"
+      ],
+      "conflicts": [
+        "B12",
+        "B21",
+        "B25"
+      ],
+      "status": "proposed_not_executed_by_part_b"
+    },
+    {
+      "id": "PB-T11",
+      "scenario": "NeurIPS2026 E&D纯分析贡献无新数据/可执行工具，同一项目另有新数据贡献版本。",
+      "must": [
+        "按实际贡献查官方要求",
+        "对数据集版本检查Croissant",
+        "分析版本不按无Croissant自动否决"
+      ],
+      "must_not": [
+        "把数据集要求全体化"
+      ],
+      "conflicts": [
+        "B10"
+      ],
+      "status": "proposed_not_executed_by_part_b"
+    },
+    {
+      "id": "PB-T12",
+      "scenario": "只见LEAD回顾案例，其中原截图丢失；用户要精确实现其理论方法。",
+      "must": [
+        "说明案例不是原论文核验",
+        "列原文/公式待获取",
+        "不补成已验证denoising或convergence"
+      ],
+      "must_not": [
+        "用事后模板当论文原始事实"
+      ],
+      "conflicts": [
+        "B16"
+      ],
+      "status": "proposed_not_executed_by_part_b"
+    }
+  ],
+  "validation": {
+    "read_manifest_count": 32,
+    "unique_features": 28,
+    "unique_conflicts": 25,
+    "proposed_behavior_scenarios": 12,
+    "source_locators": "All path/section/line locators resolved from pinned local files by builder.",
+    "artifact_schema_status": "Documentation proposals; no new production validator implemented.",
+    "result": "passed_local_artifact_integrity_checks",
+    "checks_performed": [
+      "JSON parse",
+      "32 upstream SHA-256 matches",
+      "unique feature/conflict IDs",
+      "feature/conflict/test links resolve",
+      "all exact source section/line locators resolve",
+      "all proposed behavior tests retain not_run status"
+    ]
+  },
+  "post_integration_review": {
+    "scope": "Read all three newly drafted workbench references; no registry/production behavior test implied.",
+    "files": [
+      {
+        "path": "skills/agent-research-atlas/references/supervisor-publication.md",
+        "sha256": "674582921eaf0ef4ec905d51a1d7dfe0ce1e3e6de57fe5639a17c625853d12ff",
+        "read_depth": "full_text"
+      },
+      {
+        "path": "skills/agent-research-atlas/references/supervisor-discovery.md",
+        "sha256": "aa216abcfb58442c6143ac7e0ca7d1187f58a230825d9a56f15bc2b06d098bf8",
+        "read_depth": "full_text"
+      },
+      {
+        "path": "skills/agent-research-atlas/references/supervisor-figures.md",
+        "sha256": "82b43ee026f1776c72ea65e49b2406efb1cc78e4bc9e5deec767a2d0084b3d15",
+        "read_depth": "full_text"
+      }
+    ],
+    "finding": "Main conflicts are substantially addressed. Remaining additions recommended below.",
+    "remaining_recommendations": [
+      "Record actual manuscript/page/figure access scope; partial text cannot establish a full-paper or visual review.",
+      "Add benchmark version, maintenance/retirement, and explicit limits of fresh/synthetic data and annotator agreement as contamination/ground-truth evidence.",
+      "Retain unresolved limitations that affect interpretation; necessary standard modules need not be novel contributions.",
+      "Explicitly distinguish Cohen effect-size thresholds from statistical significance and strategy causal effects; historical group rates cannot personalize acceptance/score-change probabilities."
+    ]
+  }
+}

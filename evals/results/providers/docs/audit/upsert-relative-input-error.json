@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+    "--root",
+    "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+    "upsert",
+    "--file",
+    "docs/update-batch-2026-10-20.json",
+    "--expected-revision",
+    "1"
+  ],
+  "exit_code": 2,
+  "stdout": "",
+  "stderr": "{\n  \"error\": \"Cannot read JSON docs/update-batch-2026-10-20.json: [Errno 2] No such file or directory: 'docs/update-batch-2026-10-20.json'\"\n}\n",
+  "execution_scope": "Authorized project-local incremental atlas mutation and offline view generation."
+}

@@ -1,0 +1,264 @@
+{
+  "figure_id": "fig01_architecture",
+  "reference": "reference.png",
+  "reference_sha256": "03eba4db7c14e85b31d9b5ae0bd963e07abf35d81552e165bf1cc53ec75b7055",
+  "canvas": {
+    "width": 1000,
+    "height": 540,
+    "paper_width_mm": 180
+  },
+  "style": {
+    "font_family": "DejaVu Sans",
+    "font_size": 21,
+    "fill": "#eaf2ff",
+    "stroke": "#203e63",
+    "text": "#183153",
+    "edge": "#35445c",
+    "stroke_width": 2.5,
+    "edge_width": 4
+  },
+  "nodes": [
+    {
+      "id": "user_request",
+      "label": "User request",
+      "x": 36,
+      "y": 81,
+      "w": 199,
+      "h": 64
+    },
+    {
+      "id": "version_state",
+      "label": "Version state",
+      "x": 301,
+      "y": 81,
+      "w": 209,
+      "h": 64
+    },
+    {
+      "id": "router",
+      "label": "Router",
+      "x": 581,
+      "y": 81,
+      "w": 179,
+      "h": 64
+    },
+    {
+      "id": "clarify",
+      "label": "Clarify",
+      "x": 301,
+      "y": 236,
+      "w": 209,
+      "h": 64
+    },
+    {
+      "id": "retriever",
+      "label": "Retriever",
+      "x": 581,
+      "y": 236,
+      "w": 179,
+      "h": 64
+    },
+    {
+      "id": "answer",
+      "label": "Answer",
+      "x": 581,
+      "y": 397,
+      "w": 179,
+      "h": 64
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_request_state",
+      "source": "user_request",
+      "target": "version_state",
+      "points": [
+        [
+          235,
+          113
+        ],
+        [
+          301,
+          113
+        ]
+      ],
+      "exit": [
+        1,
+        0.5
+      ],
+      "entry": [
+        0,
+        0.5
+      ]
+    },
+    {
+      "id": "e_state_router",
+      "source": "version_state",
+      "target": "router",
+      "points": [
+        [
+          510,
+          113
+        ],
+        [
+          581,
+          113
+        ]
+      ],
+      "exit": [
+        1,
+        0.5
+      ],
+      "entry": [
+        0,
+        0.5
+      ]
+    },
+    {
+      "id": "e_router_retriever",
+      "source": "router",
+      "target": "retriever",
+      "points": [
+        [
+          670.5,
+          145
+        ],
+        [
+          670.5,
+          236
+        ]
+      ],
+      "exit": [
+        0.5,
+        1
+      ],
+      "entry": [
+        0.5,
+        0
+      ]
+    },
+    {
+      "id": "e_retriever_answer",
+      "source": "retriever",
+      "target": "answer",
+      "points": [
+        [
+          670.5,
+          300
+        ],
+        [
+          670.5,
+          397
+        ]
+      ],
+      "exit": [
+        0.5,
+        1
+      ],
+      "entry": [
+        0.5,
+        0
+      ]
+    },
+    {
+      "id": "e_router_clarify",
+      "source": "router",
+      "target": "clarify",
+      "points": [
+        [
+          581,
+          130
+        ],
+        [
+          551,
+          130
+        ],
+        [
+          551,
+          268
+        ],
+        [
+          510,
+          268
+        ]
+      ],
+      "exit": [
+        0,
+        0.765625
+      ],
+      "entry": [
+        1,
+        0.5
+      ]
+    },
+    {
+      "id": "e_clarify_request",
+      "source": "clarify",
+      "target": "user_request",
+      "points": [
+        [
+          301,
+          268
+        ],
+        [
+          135.5,
+          268
+        ],
+        [
+          135.5,
+          145
+        ]
+      ],
+      "exit": [
+        0,
+        0.5
+      ],
+      "entry": [
+        0.5,
+        1
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "id": "feedback_label",
+      "text": "clarification feedback",
+      "x": 91,
+      "y": 308,
+      "w": 260,
+      "h": 30,
+      "anchor": "start",
+      "font_size": 21
+    },
+    {
+      "id": "source_detail_label",
+      "text": "source detail",
+      "x": 805,
+      "y": 460,
+      "w": 145,
+      "h": 30,
+      "anchor": "middle",
+      "font_size": 21
+    }
+  ],
+  "raster": {
+    "id": "source_detail_image",
+    "path": "assets/source_detail.png",
+    "crop_box_xyxy": [
+      825,
+      345,
+      926,
+      446
+    ],
+    "x": 825,
+    "y": 345,
+    "w": 101,
+    "h": 101,
+    "meaning": "Unquantified visual detail copied from the supplied source, not chart data.",
+    "sha256": "c394a86c0ea5580b110692ee1d2caa56eb03cf8982fc77027411b7c530a89d63"
+  },
+  "layout_changes": [
+    "Feedback label moved below the Clarify box to remove the overlap visible in the reference; topology and wording unchanged."
+  ],
+  "native_render_status": "not_checked_no_drawio_renderer"
+}

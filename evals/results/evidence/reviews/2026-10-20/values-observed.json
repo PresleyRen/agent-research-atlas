@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "observed-accuracy-a",
+      "artifact_path": "results/run-a.json",
+      "pointer": "/metrics/accuracy",
+      "reported_value": 0.625,
+      "abs_tol": 0,
+      "rel_tol": 0,
+      "expected_sha256": "18e88e62b456f7ce02adabb09965602d091aac59541a47dd1a2c6b0cc049ad08"
+    },
+    {
+      "id": "observed-n-a",
+      "artifact_path": "results/run-a.json",
+      "pointer": "/metrics/n",
+      "reported_value": 8,
+      "abs_tol": 0,
+      "rel_tol": 0,
+      "expected_sha256": "18e88e62b456f7ce02adabb09965602d091aac59541a47dd1a2c6b0cc049ad08"
+    },
+    {
+      "id": "observed-seed-a",
+      "artifact_path": "results/run-a.json",
+      "pointer": "/seed",
+      "reported_value": 7,
+      "abs_tol": 0,
+      "rel_tol": 0,
+      "expected_sha256": "18e88e62b456f7ce02adabb09965602d091aac59541a47dd1a2c6b0cc049ad08"
+    },
+    {
+      "id": "observed-accuracy-b",
+      "artifact_path": "results/run-b.json",
+      "pointer": "/metrics/accuracy",
+      "reported_value": 0.625,
+      "abs_tol": 0,
+      "rel_tol": 0,
+      "expected_sha256": "72b2702d0a7c2c1466b2c6e15d67699b23563b91c1408deecccedd780bcf87a1"
+    },
+    {
+      "id": "observed-n-b",
+      "artifact_path": "results/run-b.json",
+      "pointer": "/metrics/n",
+      "reported_value": 8,
+      "abs_tol": 0,
+      "rel_tol": 0,
+      "expected_sha256": "72b2702d0a7c2c1466b2c6e15d67699b23563b91c1408deecccedd780bcf87a1"
+    },
+    {
+      "id": "observed-seed-b",
+      "artifact_path": "results/run-b.json",
+      "pointer": "/seed",
+      "reported_value": 13,
+      "abs_tol": 0,
+      "rel_tol": 0,
+      "expected_sha256": "72b2702d0a7c2c1466b2c6e15d67699b23563b91c1408deecccedd780bcf87a1"
+    }
+  ]
+}

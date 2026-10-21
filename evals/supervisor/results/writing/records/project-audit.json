@@ -1,0 +1,32 @@
+{
+  "exit_code": 0,
+  "output": {
+    "issues": [
+      {
+        "capabilities": [
+          "C01",
+          "C03"
+        ],
+        "code": "G-COVERAGE-UNSEARCHED",
+        "next": "Scope a bilingual search, execute available providers, record limits and actual results; seed folders are not a literature review.",
+        "node_ids": [
+          "intent",
+          "planning",
+          "ingestion-retrieval",
+          "reranking-context",
+          "knowledge-graphs",
+          "memory",
+          "tool-use",
+          "answer-grounding",
+          "multi-agent",
+          "production",
+          "safety-security"
+        ],
+        "reason": "Recorded coverage is unsearched"
+      }
+    ],
+    "limits": "Only explicit recorded states are diagnosed. A clean report does not establish novelty, sound design, data rights or complete literature coverage.",
+    "revision": 4,
+    "scientific_verdict": "not_assessed"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "counts": {
+    "claim": 2,
+    "decision": 6,
+    "domain": 14,
+    "experiment": 4,
+    "exploration": 1,
+    "hypothesis": 5,
+    "paper": 2,
+    "problem": 6
+  },
+  "coverage": [
+    {
+      "coverage": "partial",
+      "id": "intent"
+    },
+    {
+      "coverage": "partial",
+      "id": "clarification"
+    },
+    {
+      "coverage": "partial",
+      "id": "routing"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "planning"
+    },
+    {
+      "coverage": "partial",
+      "id": "ingestion-retrieval"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "reranking-context"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "knowledge-graphs"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "memory"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "tool-use"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "answer-grounding"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "multi-agent"
+    },
+    {
+      "coverage": "partial",
+      "id": "evaluation"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "production"
+    },
+    {
+      "coverage": "unsearched",
+      "id": "safety-security"
+    }
+  ],
+  "imports": [
+    {
+      "adopted_at": "2026-10-21T12:43:23.633228+00:00",
+      "node_ids": [
+        "problem-explicit-version",
+        "problem-uncertainty-source",
+        "hyp-ask-all-lowconfidence",
+        "claim-old-document-valid",
+        "problem-neighboring-prior-art"
+      ],
+      "note": "已逐条读取L3–7并映射五个stable IDs；保留原文与原SHA256。人工备注和旧parked方向均保留；未查邻域没有标成已检索。归一化仅语义整理，不增加实证证据。",
+      "path": "research-map.md",
+      "sha256": "7d0b0072893830a40b84bfc8d547b999a8dff5efe9ed32b8734052cab0d9abad",
+      "status": "normalized"
+    }
+  ],
+  "maintenance": {
+    "pending_reviews": [],
+    "review_log": [
+      {
+        "first_flagged_revision": 2,
+        "last_flagged_revision": 2,
+        "node_id": "decision-prioritize-evaluation",
+        "note": "已复查研究设计与E1修订：更精确的区间判决不会撤销先修测量的选择。优先B仅设计决策，δ和实际实验仍未定，禁止性能结论。",
+        "resolved_at": "2026-10-21T12:59:23.933131+00:00",
+        "resolved_revision": 3,
+        "reviewer": "discovery-author-after-coordinator-review",
+        "triggers": [
+          {
+            "node_id": "decision-prioritize-evaluation",
+            "path": [
+              {
+                "relation": "tests",
+                "source": "experiment-e1-information",
+                "target": "hyp-information-source-value"
+              },
+              {
+                "relation": "data.depends_on",
+                "source": "hyp-information-source-value",
+                "target": "decision-prioritize-evaluation"
+              }
+            ],
+            "revision": 2,
+            "source_id": "experiment-e1-information"
+          }
+        ]
+      },
+      {
+        "first_flagged_revision": 2,
+        "last_flagged_revision": 2,
+        "node_id": "experiment-e3-cost",
+        "note": "已复查E3成本/停止规则与design-v1.1：未达到δ不等于机制反证；只有成本/δ落实后解释实际价值。保持planned_not_run。",
+        "resolved_at": "2026-10-21T12:59:24.043949+00:00",
+        "resolved_revision": 4,
+        "reviewer": "discovery-author-after-coordinator-review",
+        "triggers": [
+          {
+            "node_id": "experiment-e3-cost",
+            "path": [
+              {
+                "relation": "data.depends_on",
+                "source": "experiment-e1-information",
+                "target": "experiment-e3-cost"
+              }
+            ],
+            "revision": 2,
+            "source_id": "experiment-e1-information"
+          }
+        ]
+      },
+      {
+        "first_flagged_revision": 2,
+        "last_flagged_revision": 2,
+        "node_id": "hyp-information-source-value",
+        "note": "已复查H1与design-v1.1：正向D不变；低于δ只限制实际优越性，机制需诊断对照。预测仍proposed，未执行、未升级证据。",
+        "resolved_at": "2026-10-21T12:59:24.129303+00:00",
+        "resolved_revision": 5,
+        "reviewer": "discovery-author-after-coordinator-review",
+        "triggers": [
+          {
+            "node_id": "hyp-information-source-value",
+            "path": [
+              {
+                "relation": "tests",
+                "source": "experiment-e1-information",
+                "target": "hyp-information-source-value"
+              }
+            ],
+            "revision": 2,
+            "source_id": "experiment-e1-information"
+          }
+        ]
+      }
+    ]
+  },
+  "project": {
+    "created_at": "2026-10-21T12:43:23.633228+00:00",
+    "cutoff": "2026-10-21",
+    "handoff": "HANDOFF.md",
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "problem_anchor": "RESEARCH-DESIGN.md",
+    "scope": "离线合成文档QA：比较相同决策前信息下澄清、检索和版本过滤的价值。当前只读本地材料与设计，无真实文献查新/数据实验/模型调用。",
+    "synthetic": true,
+    "title": "意图与文档 Agent：澄清价值的离线合成研究地图",
+    "updated_at": "2026-10-21T12:59:24.129315+00:00"
+  },
+  "revision": 5
+}

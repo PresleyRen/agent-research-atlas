@@ -1,0 +1,40 @@
+{
+  "created_at": "2026-10-20",
+  "project_root": "/workspace/scratch/f7a517081da8/forward-conflicts-providers",
+  "atlas_revision": 1,
+  "source_skill_root": "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas",
+  "source_skill_files_sha256": {
+    "SKILL.md": "9e2fef60cf0ae464bf8ef4791bfdafca7003eab5c7a6059d9059974214384eee",
+    "scripts/atlas.py": "bcf13a70cdff1f64dc10d2f054621d182fcd55bca04d9d128dc36d5973e9181b",
+    "scripts/experiments.py": "653555bf96a36b74419cf47167ce9c9c05d89db774a4ff3bc45175848aae4219",
+    "scripts/audit.py": "9ad10da5eb49186d9d7a5c0323f2af51b56d52ab1e88d0b766ddb1541e877c61",
+    "assets/viewer.html": "4c2d050457fbe42cea8496f10c95b8c8dcd2452e73d14c8e12a4138361fc8b19",
+    "assets/experiment-plan.example.json": "44bf0a8dbc0a6ebed58a777d7923de47479005887111ca111762e39a2571c3b7",
+    "assets/agent-taxonomy.json": "22827ff1c41ba4e0687da33120f9e2be074e894a506b0c4ddd1579addabb2724",
+    "assets/capability-registry.json": "cc6d5c391a2640f0b2435725b18578314624ca7d68c1ff58e6b6635dbf1ad00e",
+    "agents/openai.yaml": "c23242e9b9ac9007337fd6a818b64f05bab5d4aa67cdafeeb304b17537ebc547",
+    "references/agent-domains.md": "759a8ae66e9f9266a6faf5556cd3c994a21e0415951c9dbf175a49a1ee554a3a",
+    "references/bilingual-retrieval.md": "8b1e37bc89f583ee2224dfc6ed38e38d13fc84ef3782115b2f06c864558566f5",
+    "references/methodology.md": "2fff220c393e03a10f77192ef3480e8d524e7a1ba355ea0958330ce2cf449e33",
+    "references/local-atlas.md": "bff297c626f9c1e76ac82748831354a0535f7866739fab54c04cb9f17b17b1c6",
+    "references/evidence-and-claims.md": "5ce313f74b01be5d5da5706139348aaeefe7a1e886debaae059c8d9e35c36bce",
+    "references/experiments.md": "9c23a9e35fcb64c44bc8100773aaba35d7049e6922e396307b42b262209de5b1",
+    "references/extension-contract.md": "5370cfadb1b27fd18d7e6c2722579e0276183abae2287d7babca5c30c9888816"
+  },
+  "input_sha256": {
+    "research-atlas.config.json": "610a196291667d8daab808b54c5873724ec41a28c7e2d65ed9463d005a7167b2",
+    "research-memory/atlas.json": "ac5e1fea79d28fd0f69cdf0ca32fdfa8fbb1060f696ebd04834333ef754fd781",
+    "research-memory/MAP.md": "3fd920ed64b4478a58ee4a83ea3ebae05d1947f3cd247ee18477b5bbb61580da",
+    "research-memory/domains/routing/notes.md": "6898fb4e2dfd8268b366553a941cb254ae431ef9c5e348339beb97d28dca24e1",
+    "papers/support.md": "7b7af2120fe188fede7cd57aba0f6530a27dc0f1a3df78ef0ae974e857cadab4",
+    "papers/counter.md": "02e1f242f76f54babf115122d621c71cc01b2dc63a95be8ed06769543ecd16bf",
+    "papers/irrelevant.md": "14ae5734176f9481d292dc10f7ae9899d1b06567d93d2de0ec4f0796590791c4",
+    "docs/requests.json": "0103f099e8f5093ec47637484deea01054b47ac5ee62d898afba7eb4dcd40b4f",
+    "docs/team-note.md": "1b228d493e3831e488ad773e7b4361eb2c353bb617acb083bc9ca837e7367273",
+    "seed-batch.json": "f6a8dc07396d82d924cf9e523721cd8de1f6cf99a88ebbdbea8614dd9c53b1db"
+  },
+  "no_network_or_account_requests": true,
+  "research_execution_authorized": false,
+  "paid_budget": 0,
+  "read_constraints": "User authorized project-only local reading, analysis, file organization and validation."
+}

@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-20",
+  "atlas_revision": 4,
+  "project_integrity_passed": true,
+  "project_checks_passed": 19,
+  "total_checks": 20,
+  "original_integrity_command_exit_code": 1,
+  "source_snapshot_gate": "detected parent-workflow registry drift, preserved as a failed unchanged assertion; not silently cleared",
+  "source_version_boundary": "docs/audit/source-version-boundary.json",
+  "scientific_validity": "not_assessed",
+  "real_provider_requests": 0,
+  "research_experiments_executed": 0,
+  "paid_workloads": 0,
+  "source_changes_by_executing_agent": false
+}

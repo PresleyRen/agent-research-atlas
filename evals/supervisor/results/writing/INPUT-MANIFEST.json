@@ -1,0 +1,30 @@
+{
+  "fixture": true,
+  "files": [
+    {
+      "path": "PROJECT.md",
+      "bytes": 494,
+      "sha256": "65898efa70ce439c1dbb6c0e25e626f198e1d1434d8418aa8f2f01bc3283573d"
+    },
+    {
+      "path": "draft-zh.md",
+      "bytes": 706,
+      "sha256": "fe4e7250d0e41b8f4de0172b445ea94dc957204372042ce4dc37e3953bc9711b"
+    },
+    {
+      "path": "notes/method.md",
+      "bytes": 776,
+      "sha256": "fa747eadf08600554fa88e665137684e6c09ff6e9130285e56d210956d0ae953"
+    },
+    {
+      "path": "results/pilot.json",
+      "bytes": 431,
+      "sha256": "f253003352caed0ffbb5f05cd240f30e14bf231a37fa107941a31becf320ae32"
+    },
+    {
+      "path": "reviews.md",
+      "bytes": 808,
+      "sha256": "cb296b7b37d10efaec4b732f9c4eb3775352c186112e7e9bd78a11d55c388089"
+    }
+  ]
+}

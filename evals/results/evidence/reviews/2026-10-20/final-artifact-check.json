@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-20T04:59:39.337966+00:00",
+  "revision": 5,
+  "nodes": 40,
+  "edges": 20,
+  "pending_reviews": 0,
+  "resolved_reviews": 4,
+  "all_originals_unchanged": true,
+  "missing_local_sources": [],
+  "organizer_scripts_ast_valid": 3,
+  "handoff_exists": true,
+  "html_exists": true,
+  "prior_note_preserved": true,
+  "research_code_executed": false,
+  "skill_git_metadata_check": {
+    "command": "git -C /workspace/scratch/f7a517081da8/agent-research-atlas-public status --short",
+    "exit_code": 128,
+    "observed_stderr": "fatal: not a git repository (or any of the parent directories): .git",
+    "meaning": "No git metadata certification; skill hashes are an actual-byte snapshot and source non-modification is an operator declaration."
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "design_annotation_v1",
+  "record_kind": "blank_template_not_observed_data",
+  "synthetic": true,
+  "case_id": null,
+  "family_id": null,
+  "split_group_id": null,
+  "parent_case_id": null,
+  "source_path": null,
+  "source_sha256": null,
+  "rights": {
+    "owner": null,
+    "permission_basis": null,
+    "redistribution_allowed": null
+  },
+  "agent_visible": {
+    "user_message": null,
+    "sent_history": [],
+    "reference_time": null,
+    "scope": null,
+    "snippets": [],
+    "task_requirements": null,
+    "allowed_actions": [
+      "answer",
+      "conditional_answer",
+      "retrieve",
+      "clarify",
+      "abstain"
+    ]
+  },
+  "environment_private": {
+    "corpus_version": null,
+    "true_user_state": null,
+    "clarification_branches": [],
+    "retrieval_policy": null
+  },
+  "evaluator_private": {
+    "reference_intent": null,
+    "compatible_intents": [],
+    "answer_sets_by_intent": [],
+    "evidence_locators": [],
+    "answer_sensitive": null,
+    "robust_complete_answer_exists": null,
+    "evidence_state": null,
+    "version_state": null,
+    "user_response_available": null,
+    "admissible_actions": [],
+    "annotations": [],
+    "disagreements": [],
+    "adjudication": null,
+    "label_status": "unfilled"
+  },
+  "lineage": {
+    "shared_document_ids": [],
+    "shared_template_ids": [],
+    "source_user_id": null,
+    "construction_operations": []
+  },
+  "notice": "This empty template is not a case. Null means unresolved/unfilled, not false, zero, or permission granted."
+}

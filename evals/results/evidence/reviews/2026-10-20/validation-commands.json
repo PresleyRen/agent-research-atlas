@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-10-20T04:57:02.382504+00:00",
+  "reviewer": "cold_evidence_review",
+  "research_workloads_run": 0,
+  "network_requests": 0,
+  "installs": 0,
+  "paid_calls": 0,
+  "published": false,
+  "commands": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence",
+        "values",
+        "--ledger",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence/reviews/2026-10-20/values-draft.json"
+      ],
+      "exit_code": 3,
+      "stdout_artifact": "reviews/2026-10-20/values-draft-report.json",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence",
+        "values",
+        "--ledger",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence/reviews/2026-10-20/values-observed.json"
+      ],
+      "exit_code": 0,
+      "stdout_artifact": "reviews/2026-10-20/values-observed-report.json",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout_artifact": "reviews/2026-10-20/atlas-check.json",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/atlas.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence",
+        "status"
+      ],
+      "exit_code": 0,
+      "stdout_artifact": "reviews/2026-10-20/atlas-status.json",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/f7a517081da8/agent-research-atlas-public/skills/agent-research-atlas/scripts/audit.py",
+        "--root",
+        "/workspace/scratch/f7a517081da8/forward-conflicts-evidence",
+        "project"
+      ],
+      "exit_code": 0,
+      "stdout_artifact": "reviews/2026-10-20/project-audit.json",
+      "stderr": ""
+    }
+  ],
+  "expected_exit_codes": [
+    3,
+    0,
+    0,
+    0,
+    0
+  ],
+  "note": "Draft mismatches are preserved findings; atlas/project audits are structural and do not certify science."
+}

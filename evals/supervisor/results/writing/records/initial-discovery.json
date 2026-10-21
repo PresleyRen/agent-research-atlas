@@ -1,0 +1,11 @@
+{
+  "candidates": [],
+  "files_examined": 6,
+  "limits": {
+    "max_depth": 6,
+    "max_files": 20000
+  },
+  "provenance": "Transcribed from the actual atlas.py discover output before output files or a native atlas existed.",
+  "root": "/workspace/scratch/f7a517081da8/supervisor-forward/writing",
+  "truncated": false
+}

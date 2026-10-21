@@ -1,0 +1,17 @@
+REVIEW_SOURCE_SHA256={"atlas.py": "bcf13a70cdff1f64dc10d2f054621d182fcd55bca04d9d128dc36d5973e9181b", "audit.py": "9ad10da5eb49186d9d7a5c0323f2af51b56d52ab1e88d0b766ddb1541e877c61", "experiments.py": "e2f7bf4ae2a60766b94a00fd25ae0da5a847544af897a8860d2637a52d271923"}
+test_boolean_freeze_schema_version_is_rejected (__main__.IntegrationReviewTests.test_boolean_freeze_schema_version_is_rejected) ... 
+  test_boolean_freeze_schema_version_is_rejected (__main__.IntegrationReviewTests.test_boolean_freeze_schema_version_is_rejected) [final-record schema also rejects bool instead of accepting True == 1] ... FAIL
+
+======================================================================
+FAIL: test_boolean_freeze_schema_version_is_rejected (__main__.IntegrationReviewTests.test_boolean_freeze_schema_version_is_rejected) [final-record schema also rejects bool instead of accepting True == 1]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/f7a517081da8/agent-research-atlas-public/tests/test_integration_review.py", line 222, in test_boolean_freeze_schema_version_is_rejected
+    with self.assertRaises(EXPERIMENTS.RecordError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RecordError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.012s
+
+FAILED (failures=1)

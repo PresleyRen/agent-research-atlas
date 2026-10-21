@@ -1,0 +1,107 @@
+{
+  "all_values_match": true,
+  "claims": [
+    {
+      "artifact_path": "outputs/fig02_data_ledger.json",
+      "id": "single-latency_ms",
+      "observed_value": 120.0,
+      "pointer": "/rows/0/latency_ms",
+      "reported_value": 120,
+      "source_sha256": "2eaad2116aa8cbdacf98bbf1e303019f45469592ddbc60463cd4ae8994d31a61",
+      "status": "match",
+      "version_match": true
+    },
+    {
+      "artifact_path": "outputs/fig02_data_ledger.json",
+      "id": "single-accuracy_pct",
+      "observed_value": 68.75,
+      "pointer": "/rows/0/accuracy_pct",
+      "reported_value": 68.75,
+      "source_sha256": "2eaad2116aa8cbdacf98bbf1e303019f45469592ddbc60463cd4ae8994d31a61",
+      "status": "match",
+      "version_match": true
+    },
+    {
+      "artifact_path": "outputs/fig02_data_ledger.json",
+      "id": "version-latency_ms",
+      "observed_value": 180.0,
+      "pointer": "/rows/1/latency_ms",
+      "reported_value": 180,
+      "source_sha256": "2eaad2116aa8cbdacf98bbf1e303019f45469592ddbc60463cd4ae8994d31a61",
+      "status": "match",
+      "version_match": true
+    },
+    {
+      "artifact_path": "outputs/fig02_data_ledger.json",
+      "id": "version-accuracy_pct",
+      "observed_value": 78.125,
+      "pointer": "/rows/1/accuracy_pct",
+      "reported_value": 78.125,
+      "source_sha256": "2eaad2116aa8cbdacf98bbf1e303019f45469592ddbc60463cd4ae8994d31a61",
+      "status": "match",
+      "version_match": true
+    },
+    {
+      "artifact_path": "outputs/fig02_data_ledger.json",
+      "id": "always-latency_ms",
+      "observed_value": 310.0,
+      "pointer": "/rows/2/latency_ms",
+      "reported_value": 310,
+      "source_sha256": "2eaad2116aa8cbdacf98bbf1e303019f45469592ddbc60463cd4ae8994d31a61",
+      "status": "match",
+      "version_match": true
+    },
+    {
+      "artifact_path": "outputs/fig02_data_ledger.json",
+      "id": "always-accuracy_pct",
+      "observed_value": 81.25,
+      "pointer": "/rows/2/accuracy_pct",
+      "reported_value": 81.25,
+      "source_sha256": "2eaad2116aa8cbdacf98bbf1e303019f45469592ddbc60463cd4ae8994d31a61",
+      "status": "match",
+      "version_match": true
+    },
+    {
+      "artifact_path": "outputs/fig02_data_ledger.json",
+      "id": "version_minus_single_latency_ms",
+      "observed_value": 60.0,
+      "pointer": "/derived_differences/version_minus_single_latency_ms",
+      "reported_value": 60,
+      "source_sha256": "2eaad2116aa8cbdacf98bbf1e303019f45469592ddbc60463cd4ae8994d31a61",
+      "status": "match",
+      "version_match": true
+    },
+    {
+      "artifact_path": "outputs/fig02_data_ledger.json",
+      "id": "version_minus_single_accuracy_pp",
+      "observed_value": 9.375,
+      "pointer": "/derived_differences/version_minus_single_accuracy_pp",
+      "reported_value": 9.375,
+      "source_sha256": "2eaad2116aa8cbdacf98bbf1e303019f45469592ddbc60463cd4ae8994d31a61",
+      "status": "match",
+      "version_match": true
+    },
+    {
+      "artifact_path": "outputs/fig02_data_ledger.json",
+      "id": "always_minus_version_latency_ms",
+      "observed_value": 130.0,
+      "pointer": "/derived_differences/always_minus_version_latency_ms",
+      "reported_value": 130,
+      "source_sha256": "2eaad2116aa8cbdacf98bbf1e303019f45469592ddbc60463cd4ae8994d31a61",
+      "status": "match",
+      "version_match": true
+    },
+    {
+      "artifact_path": "outputs/fig02_data_ledger.json",
+      "id": "always_minus_version_accuracy_pp",
+      "observed_value": 3.125,
+      "pointer": "/derived_differences/always_minus_version_accuracy_pp",
+      "reported_value": 3.125,
+      "source_sha256": "2eaad2116aa8cbdacf98bbf1e303019f45469592ddbc60463cd4ae8994d31a61",
+      "status": "match",
+      "version_match": true
+    }
+  ],
+  "meaning": "Numbers checked against specified local JSON locations. This does not validate measurement, independence, statistical analysis or the scientific claim.",
+  "scientific_verdict": "not_assessed"
+}

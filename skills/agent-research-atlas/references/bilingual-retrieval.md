@@ -163,6 +163,60 @@ No paid service is required. Use official interfaces under existing access; do n
 | [PaperQA2](https://github.com/Future-House/paper-qa) | 对已收集文献做带出处问答和矛盾检查 / grounded QA and contradiction checks over collected papers | 默认 SearchPapers 搜本地索引；开源不等于运行无成本 / default search is local; open source is not zero-cost execution |
 | [Semantic Scholar](https://www.semanticscholar.org/product/api) / [OpenAlex](https://help.openalex.org/access/agents/) | 可编程元数据、相近工作与引用检索 / programmable metadata and citation discovery | 尊重速率、配额和全文权限；字段可能缺失 / respect limits and access; fields may be missing |
 
+## 按来源适配查询 / Provider syntax
+
+检索矩阵表达研究意图，不是一套可以直接发给所有服务的查询语言。执行前保存 `intent_query` 与实际 `submitted_query`，另记 provider、endpoint/version、mode 和 filters；后续复跑使用后者。默认保留反证，不能把“不支持候选观点”和“不相关”混为一类。
+
+The matrix describes research intent, not a universal query language. Preserve the intent and the exact submitted query, provider, endpoint/version, mode, and filters. Distinguish evidence against the hypothesis from irrelevant material.
+
+| 接口 / Interface | 适配规则 / Rule | 冲突处理 / Conflict resolution |
+| --- | --- | --- |
+| 搜索引擎 / Web search | 按引擎支持的语法构造；限定站点时检查 `site:` 的冒号与域名 / use supported syntax and verify `site:` spelling | 无关结果过多先检查语法和消歧；仍记录实际发出的错误查询与修订 / preserve both the failed query and its correction |
+| [Semantic Scholar relevance search](https://api.semanticscholar.org/api-docs/) | 普通文本检索；不要直接传通用 Boolean 表达式，bulk 接口另查其规范 / plain-text relevance queries; inspect bulk syntax separately | [推荐 API](https://api.semanticscholar.org/api-docs/recommendations) 的 negative seeds 表示不相关方向，不能自动放入反驳研究 / negative recommendation seeds are irrelevant examples, not counterevidence |
+| [Elicit REST v2](https://docs.elicit.com/) | semantic 模式使用自然语言；keyword 模式随 corpus 采用原生语法，不能同时混用 filters / semantic and corpus-specific keyword modes differ | 核对响应中的 warnings、实际 settings 和配额；MCP 包装可用参数不代表全部 REST 能力 / inspect warnings and effective settings; wrapper parity is not assumed |
+| [arXiv API](https://info.arxiv.org/help/api/user-manual.html) | 明确字段、日期、版本、排序和分页 / explicit fields, dates, versions, sort and pagination | Atom 元数据和全文是不同材料；版本更新不默认为新独立论文 / metadata and full text differ; versions are linked |
+| [DBLP search API](https://dblp.org/faq/How+to+use+the+dblp+search+API.html) / [OpenAlex](https://help.openalex.org/access/agents/) | 按当前官方 API 记录搜索字段、筛选与分页 / record provider-specific fields and pagination | 不因一次返回达到上限就标 complete；依照真实响应判断截断 / a result cap is not completion |
+| CNKI / 万方 / 中文期刊页 | 分别记录原生库查询、网页查询、搜索引擎发现及已读文章 / label the actual access route | 某库 blocked 不改成零命中；继续公开原始文章页并保留语言覆盖缺口 / blocked is not zero results |
+
+这些是宿主执行协议；当前脚本的 `queries` 只生成计划，不内置上述 API 调用。添加自动适配器时先按下一节验证契约。
+
+These are host procedures. The bundled `queries` command plans searches and does not call these APIs.
+
+## 可选适配器契约 / Optional adapter contract
+
+每个未来接入先声明只读/写入边界、授权范围、成本条件、接口版本、超时/重试上限与本地输出位置。没有授权账号时使用宿主公开搜索或合法本地材料；将远端路径标 `not_configured`，不模拟一次成功远端调用。现有授权继续有效，正常只读和可逆工作不反复询问。
+
+An adapter must state its access scope, cost conditions, interface version, bounded retries and local artifacts. Unconfigured services remain unconfigured; use available public or local sources. Honor existing authorization without repeated questions.
+
+建议将每次调用的 envelope 保存在项目 exploration 的附属文件中，字段含 `provider`、`operation`、`scope`（global / local_corpus / cited_by / references）、`status`、`submitted_query`、`started_at`、`ended_at`、`raw_artifact`、`warnings`、`result_ids`、`next_cursor`、`truncated`、`access_limitations`。这是适配器设计契约，**不是现有 atlas schema 的额外必填字段**。通过检查后再归一化成 `paper`、`exploration` 和关系节点。
+
+Use an exploration sidecar for provider, operation, actual scope and query, timestamps, status, raw artifact, warnings, retained IDs, pagination and access limits. This is a design contract, not an additional mandatory field set in the existing atlas schema. Normalize inspected output into existing graph records.
+
+适配器启用前至少测试：
+
+1. **空结果、未执行、被阻断、失败、部分结果分开。** 401/403、配额暂停、429、超时、解析失败均不得变成“查无论文”；失败前收到的有效页仍标部分并保存。
+2. **分页和重试不重复创建资源。** 读取可按服务语义重试；异步任务创建结果不确定时先查返回的任务 ID 或恢复入口，不能盲目再创建收费任务。
+3. **身份、语言、版本和读取深度保真。** 相同 DOI 不重复计独立证据；缺失 DOI 保持缺失；标题译文不覆盖原文；只有摘要不得标完整全文；HF 的 Markdown 可能回退成论文主页，必须检查内容。
+4. **引用标签不自动升级论点。** supporting / contrasting、相关性分数、引用量与投票热度仅辅助导航；由原文、条件和具体论点决定证据关系。
+5. **本地库范围不冒充全域。** PaperQA2、本地向量库和远端 workspace 搜索都写清 corpus；需要全域线索时增加外部检索。
+6. **同一论文的解析、搜索与远端备份不重复计研究。** 原始文件、抽取结果、工具解读分别关联来源；远端工作区与本地 atlas 有明确同步方向和冲突处理，不静默覆盖人类笔记。
+7. **变更可见。** 上游版本、模型、提示或解析器变化，重跑固定的成功、失败、重复、中文、英文和矛盾样例；保留旧输出，按实际回归结果决定切换或回退。
+
+这七项是未来连接器的验收要求；文档检查或 mock 通过不能标为账号实连通过。实际已运行测试以仓库验证报告为准。
+
+These seven items are acceptance requirements for future connectors. Documentation or mock checks do not establish successful authenticated integration; use the validation report for actual execution evidence.
+
+## 互补路由 / Complement routing
+
+| 当前瓶颈 / Bottleneck | 组合 / Combination | 应保持的边界 / Boundary |
+| --- | --- | --- |
+| 只找到热门英文论文 | 中文原始期刊/ChinaXiv + 英文学术索引 + 回溯/前向引用 | 语言与来源分别计覆盖，热度不作相关性或质量的唯一筛选 |
+| 检索很多、关键条件不清 | Elicit 或宿主证据表 + 关键原文深读；本地已收集库可用 PaperQA2 | 自动摘要/抽取单元要回指到章节，缺失细节不猜测 |
+| 最相近工作难找 | 精确问题词 + 邻域旧术语 + S2/ResearchRabbit 引用扩展 | 图邻近只能给线索，必须逐项比较方法和决策时可用信息 |
+| 只找到支持意见 | Scite/后续引用语境 + 主动失败/复现检索 + 竞争解释审查 | 与结论不一致的相关论文不能作为 irrelevant negative seed 排除 |
+| 远端记忆与本地地图冲突 | 使用本地 atlas revision 为当前项目的权威状态，远端导出作有来源的导入 | 保留不同版本、同步时间和解决决定，不直接合并相互矛盾的事实 |
+| 有可用论文但无实验资源 | HF paper links/dataset metadata + 本地资源清单 + 最小诊断设计 | 有下载链接、能启动、能复现分别验证；训练/付费任务只在既有授权范围运行 |
+
 ## 交付标准 / Delivery standard
 
 把文献探索交接为可检查的问题包：候选问题、最近似工作、已知失败、可能机制、关键替代解释、能推翻想法的观察、最小实验和当前未知项。用“值得继续检验”“已有近似工作，需缩小贡献”“当前证据不足”这类有依据的判断。

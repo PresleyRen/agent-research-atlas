@@ -1,185 +1,187 @@
 # Agent Research Atlas
 
-**把文献探索、研究问题、可检验假设、实验和论文论点，放进一张能够持续维护的科研地图。**
+**把读文献、找问题、设计实验、形成论文和持续更新，连成一张可以接着研究的地图。**
 
-[English](README.en.md) · [完整技能](skills/agent-research-atlas/SKILL.md) · [方法来源](SOURCES.md) · [测试说明](docs/validation.md)
+[English](README.en.md) · [使用技能](skills/agent-research-atlas/SKILL.md) · [全部来源](SOURCES.md) · [能力与互补](docs/coverage-audit.md) · [测试记录](docs/validation.md) · [扩展指南](docs/EXTENDING.md)
 
-Agent Research Atlas 是面向智能体研究的中英双语 Skill。它指挥具备搜索、文件读写和代码执行能力的 AI 助手，沿着“读综述与原始论文 → 建立研究地图 → 找问题与最近工作 → 评估可行性 → 设计区分性实验 → 记录结果与反证 → 形成证据支持的论文论点”开展工作。
+Agent Research Atlas 是面向 Agent 研究的中英双语 Skill。它帮助 AI 助手读取综述与原始论文，整理研究方向、进展和争议，从实际失败、前提变化与评估缺口中发现问题，再结合本地资源设计可检验方案、记录实验、组织论文论证与成稿。
 
-同时提供两个只依赖 Python 标准库的工具：`atlas.py` 管理持久图谱，`experiments.py` 管理冻结计划、预算和实验记录。项目目录是长期记忆，后续会话可以接着已有进度研究。
+每个项目保留自己的地图、领域文件夹、来源、方案、结果和决策。已有地图会优先读取并复用；新材料进入后可以更新关联结论和下一步。你可以从完整研究流程开始，也可以直接要求“继续查新”“设计 Benchmark”“写 Methods”“回复审稿意见”或“把方法图做成可编辑版本”。
 
-**目标是帮助发现值得研究、能实施、能被检验的问题。新颖性、科学成立和录用仍需要真实文献、实验及同行判断。** 这不是承诺自动发表 SCI 或顶刊的软件，也没有把模型自评分当作发表概率。
+## 快速开始
 
-## 能做什么
-
-| 能力 | 实际工作与产物 |
-|---|---|
-| 综述起步与领域梳理 | 读相关综述，建立问题定义、方法谱系、进展、分歧、未解决问题和证据位置；回到原始论文核实关键判断。 |
-| 中英文检索 | 分别构建中文与英文术语、相邻领域词及查询；覆盖综述、最近似工作、负面证据、数据集与评测。记录实际日期、来源、查询、结果与失败。 |
-| 最近工作与查新 | 对比目标、决策时可见信息、机制、评测、成本及贡献差别；前后向引用拓展；结论限定在已执行搜索范围。 |
-| 科研点发现 | 从失败模式、矛盾、假设变化、评价缺陷、机制迁移、成本与效果取舍等角度生成候选；避免把模块组合直接写成创新。 |
-| 可行性评估 | 核实本地数据、代码、算力、评价器和预算；未知资源保留 unknown/unverified；先安排低成本关键检查。 |
-| 方法选择 | 按问题选择理论分析、反例、误差分析、比较实验、消融、因果/反事实检查、鲁棒性、统计估计或数据/指标研究。 |
-| 实验设计 | 写明假设、竞争解释、强/简单基线、实验单位、数据划分、指标、控制变量、重复、预算、成功/失败/不确定条件。 |
-| 实验执行与导入 | 在已有授权下执行检查过的本地 argv 命令，或导入外部结果；保留原始日志、退出码、超时、失败和取消记录。 |
-| 计划冻结与溯源 | 保存冻结计划的 SHA-256、时间和前瞻/探索声明，记录明确列出的代码/数据文件哈希；检测冻结后的改动。 |
-| 结果到论点 | 区分支持、部分支持、不支持、不确定和机制未排除；论点链接实际实验/论文，不根据“程序运行成功”宣布假设成立。 |
-| 本地研究地图 | 一个 JSON 真源，生成 Markdown 总览、分领域 Mermaid 图，以及可筛选、可点选的离线 HTML 关系图。 |
-| 旧项目续接 | 自动复用已有原生图谱；遇到其他格式先阅读、保留原文与哈希，再由助手语义归一化；不盲目覆盖旧地图。 |
-| 增量更新与失败记忆 | 稳定 ID、修订号、冲突检查、历史快照、保留手写 notes；已暂停、被反驳、失败方向保留原因和重启条件。 |
-| 论文论证准备 | 输出最近工作表、贡献边界、实验协议、真实结果图表、claim–evidence 对应、局限和复现步骤；可继续准备稿件。 |
-| 可选独立审查 | 宿主支持时分开提案与查新/反证评审；单上下文回看明确标为自审。 |
-
-上述研究判断由宿主 AI 结合实际来源完成。脚本负责状态、链接、路径和记录完整性，**不会自动判断文献是否为真、机制是否成立或设计是否足以发表**。
-
-## 默认覆盖的 Agent 方向
-
-初始目录包含以下 **14 个可扩展种子域**；初始化时全部是 `unsearched`，不会凭空生成已读论文或领域进展。
-
-| 方向 ID | 研究范围 |
-|---|---|
-| `intent` | 意图理解、多意图、分布外意图、开放集与标注歧义 |
-| `clarification` | 澄清问题、主动获取信息、拒答与人机协作 |
-| `routing` | 任务/模型/工具/检索路由、校准、不确定性与预算 |
-| `planning` | 任务分解、规划、约束、搜索、反思与重规划 |
-| `ingestion-retrieval` | 文档摄入、切分、索引、检索、时效与权限条件 |
-| `reranking-context` | 重排、证据选择、上下文压缩与长上下文干扰 |
-| `knowledge-graphs` | 知识图谱、结构化检索、GraphRAG、实体与关系 |
-| `memory` | 短/长期记忆、更新、遗忘、版本和跨会话一致性 |
-| `tool-use` | 工具选择、调用、状态、失败恢复和执行反馈 |
-| `answer-grounding` | 回答生成、证据归因、引用、忠实性和不确定性 |
-| `multi-agent` | 协作、通信、分工、争论及多智能体评测 |
-| `evaluation` | 任务成功、数据与评价器、污染、重复性和 OOD |
-| `production` | 延迟、费用、可靠性、可观测性及线上反馈 |
-| `safety-security` | 提示注入、权限、隐私、工具安全与可靠执行 |
-
-它不限于文档 RAG，也允许新增具身、多模态、强化学习、形式化方法或其他学科节点。扩展目录见 [Agent 领域说明](skills/agent-research-atlas/references/agent-domains.md)。种子域是组织方式，不是“整个 Agent 领域已经探索完成”的声明。
-
-## 如何使用
-
-### 1. 安装或直接读取 Skill
-
-克隆仓库：
-
-```bash
-git clone https://github.com/PresleyRen/agent-research-atlas.git
-cd agent-research-atlas
-```
-
-安装目标是 `skills/agent-research-atlas` 这个目录，而不是仓库顶层。支持 `SKILL.md` 的宿主可以按自己的官方安装方式加载它。
-
-在允许用户自定义本地技能的 Codex 环境中，可把该目录放到 `~/.codex/skills/agent-research-atlas`；Claude Code 等宿主使用各自的用户/项目技能目录。已有同名技能时先比较版本，不直接覆盖。受管理的聊天环境是否允许持久安装取决于它提供的权限；GitHub 发布不等于已经装进每个会话。
-
-不安装也可在具备本地文件访问的助手中明确指定：
-
-> 阅读 `/绝对路径/agent-research-atlas/skills/agent-research-atlas/SKILL.md`，使用这个技能处理我的项目 `/绝对路径/agent-project`。
-
-宿主需要实际的搜索工具才能联网找论文；需要实际的文件/执行工具才能运行脚本。只有文本聊天能力时，可以提供研究方案，不能声称完成了本地文件操作。
-
-### 2. 给它一个研究任务
-
-**从领域探索开始：**
-
-> 使用 $agent-research-atlas。我的方向是 Agent 的意图识别、路由、文档检索和回答。先检查项目中的已有地图与实验，再做中英文综述和原始论文检索，整理研究进展、分歧和未解决问题。选择三个有机制、有最近工作对照、适合我本地资源的候选问题，给出最小区分性实验，保存地图与来源。
-
-**继续已有项目：**
-
-> 继续这个项目，先阅读已有地图、失败方向和资源约束。把最近的新论文加入图谱，检查哪些假设或计划需要修订，并说明这次新增证据改变了什么。
-
-**带着具体问题：**
-
-> 我想研究检索前的不确定性校准是否能改善 Agent 的路由。请先查找最近似方法和反证，把机制差异说清楚，再判断现有数据能否区分“校准改善决策”和“只是调用了更强模型”两种解释。
-
-**进入实验：**
-
-> 针对图谱里的某个 hypothesis，检查当前资源和实验代码，设计并冻结比较协议。在我给定的本地预算内运行，保存所有失败和结果，更新论点与下一步决定。
-
-不要把敏感项目、未公开论文或用户数据复制到这个公共工具仓库；研究状态存入你单独的项目目录。
-
-### 3. 本地地图工具
-
-Python 3.10+，没有 pip 依赖。下面假设已在仓库根目录，并且 `/path/to/agent-project` 是已存在的研究目录：
-
-```bash
-python skills/agent-research-atlas/scripts/atlas.py --root /path/to/agent-project discover
-python skills/agent-research-atlas/scripts/atlas.py --root /path/to/agent-project init --title '我的 Agent 科研'
-python skills/agent-research-atlas/scripts/atlas.py --root /path/to/agent-project status
-python skills/agent-research-atlas/scripts/atlas.py --root /path/to/agent-project check
-```
-
-有旧地图时先阅读，再使用 `adopt --file docs/原地图.md`；有多个原生地图时明确 `--atlas-dir`。增量写入使用 `upsert --file batch.json --expected-revision N`。完整字段与命令见 [本地图谱协议](skills/agent-research-atlas/references/local-atlas.md)。
-
-生成的典型项目结构：
+把 `skills/agent-research-atlas/` 作为一个 Skill 安装到兼容宿主；也可以让具有搜索、文件与代码能力的助手先读取其中的 `SKILL.md`。三个本地工具使用 **Python 3.10+ 标准库**，按研究任务调用宿主已有的检索、全文阅读、实验和绘图工具。
 
 ```text
-agent-project/
-  research-atlas.config.json
-  research-atlas/
-    atlas.json
-    MAP.md
-    map.html
-    domains/<方向>/MAP.md
-    domains/<方向>/notes.md
-    papers/ hypotheses/ experiments/ claims/ explorations/ imports/
-    history/
+使用 agent-research-atlas，继续 /path/to/my-agent-project。
+我的方向是意图识别、文档检索、路由和回答。
+先读取已有地图、综述、论文与失败记录；补中英文检索，
+比较最接近的工作，给出值得推进的问题和本地可行的区分性实验。
+更新地图、领域文件夹与下一步；已有结果请连到论文论点。
 ```
 
-`map.html` 可本地打开，按中英文文本、方向、类型、状态筛选，点节点查看证据与关联。无 CDN、无需上传项目数据。为保证可读性，图中最多绘制前 140 个匹配节点，完整匹配索引仍保留，并显示截断提示；缩小筛选即可查看其余节点。
+按阶段直接提出请求也可以：
 
-地图在每次成功更新后重新生成，刷新页面查看。它没有偷偷运行的后台监听器；要定期更新需要宿主另外提供并授权调度能力。
+| 你现在要做什么 | 可以这样说 | 得到什么 |
+|---|---|---|
+| 摸清方向 | “整理意图到检索到回答的研究地图，标出进展、争议和未探索部分。” | 有来源的方向图、文献比较与待查问题 |
+| 挑选研究点 | “结合现有代码和预算，比较这些点子的最近工作、机制与最小实验。” | 研究简报、竞争解释、可行性与行动决策 |
+| 做评测研究 | “设计区分意图歧义与知识缺失的 Agent Benchmark。” | 构建与效度方案、独立划分、基线、RQ和分析设计 |
+| 做实验 | “按这个已批准计划运行，保留所有结果并更新论点。” | 冻结计划、原始记录、数值核对和结果解释 |
+| 写论文 | “基于实际材料写英文 Introduction 和 Methods，另存证据表。” | 可使用正文、引用与证据映射 |
+| 修稿与回复 | “核查稿件并逐条回应这些审稿意见。” | 问题位置、修订记录、意见覆盖和完整回复 |
+| 做科研图 | “把方法画清楚；参考图做成可编辑 drawio，并检查预览。” | 图稿、源文件、数据/图注与编辑说明 |
+| 继续或扩展 | “更新旧地图；定位当前能力不足应该改哪里。” | 受影响记录、待复核项、模块/测试/补法定位 |
 
-### 4. 实验记录工具
+## 完整能力说明
 
-先按照 [实验协议](skills/agent-research-atlas/references/experiments.md) 编写计划；可参考 [示例 JSON](skills/agent-research-atlas/assets/experiment-plan.example.json)。
+研究协议由宿主按实际材料执行；本地脚本负责地图、记录与可重复核查。以下 **28 项能力**都有稳定 ID，可用 `audit.py locate` 查到对应文件、来源、互补能力和验证记录。
+
+| 能力 | 工作与产物 |
+|---|---|
+| C01 · 范围与领域分类 | 定义问题、研究边界、时间与语言；从14个Agent种子领域起步，随研究扩展分类。 |
+| C02 · 持久研究地图 | 发现并复用本地地图；保留原文、人工笔记与历史，生成JSON、Markdown/Mermaid和离线HTML视图。 |
+| C03 · 中英双语检索 | 组合中文、英文、同义词和相邻领域查询；记录检索式、渠道、时间、命中与访问状态。 |
+| C04 · 论文身份与引用拓展 | 规范DOI/arXiv等身份，去重并保留版本；沿引用链发现相关工作与反证。 |
+| C05 · 阅读与结构化抽取 | 先读综述建立方向，再读原始论文，提取问题、方法、条件、结果、局限和具体出处。 |
+| C06 · 证据评价与批判 | 区分观察、作者判断和推断，检查测量、比较、偏差与竞争解释，保留争议。 |
+| C07 · 选题发散与结构迁移 | 从失败案例、前提变化、邻域方法、反问题与质量/成本取舍产生候选机制。 |
+| C08 · 研究问题选择 | 按知识目标、风险、约束、决策树和最小信息检查比较方向，给出推进、修订或暂缓理由。 |
+| C09 · 最近工作与创新重叠 | 比较最相近工作的目标、信息、机制、洞察、领域及评估成本，定位具体差异。 |
+| C10 · 机制假设与竞争预测 | 把想法写成可观察预测、替代解释和证伪条件，连接证据与实验。 |
+| C11 · 本地可行性 | 核对数据权限、标注、代码、算力、评价器和预算，优先解决会改变决策的未知项。 |
+| C12 · 方法选择与实现对应 | 按问题选择理论、诊断、比较、干预或测量方法；把方法卡对应到输入、代码、输出和指标。 |
+| C13 · 区分性实验设计 | 设计简单/强基线、消融、公平信息与预算、独立样本、划分、指标及正/负/不确定结果的解释。 |
+| C14 · 冻结计划与修订 | 保存前瞻计划与指定输入哈希；支持候选文件迭代，并记录评价器和数据变更。 |
+| C15 · 有预算的实验执行 | 运行已授权的本地命令，保留运行预算、失败、超时、取消与原始输出；也可导入外部结果。 |
+| C16 · 结果来源与数字核对 | 保存来源、版本、哈希和日志；按JSON Pointer核对稿件数字、具体字段、容差和大整数。 |
+| C17 · 统计推断设计 | 先明确估计目标和独立单位，再选择功效、最小效应、精度、等效/非劣或序贯分析及适用实现。 |
+| C18 · 从结果到论点 | 判断结果支持的具体范围，区分实现、测量和机制问题，形成有条件的支持、反证或未决解释。 |
+| C19 · 独立审视与对抗检查 | 可用时分离提案与批评上下文，以实际来源和反解释审视最强候选。 |
+| C20 · 增量更新与失败记忆 | 保留被否定/暂停方向和重启条件；记录前提变化后追踪受影响的实验、结论、稿件与待复核项。 |
+| C21 · 论文论证与引用审查 | 建立论点—运行—图表映射，整理相关工作、方法、局限和复现资料，核查引用身份与引用句含义。 |
+| C22 · 外部工具适配 | 按宿主可用工具接检索、全文/PDF、引用上下文、模型评估、训练和云执行，并保存统一回执。 |
+| C23 · 能力覆盖与补强定位 | 从症状或C-ID定位负责文件/函数、来源特长、互补对象、冲突和测试；诊断当前项目记录中的缺口。 |
+| C24 · 复现与交接 | 汇总研究范围、关键来源、资源、方案、实际结果、失败、地图版本与下一步，支持跨会话继续。 |
+| C25 · Benchmark与评估研究 | 形成评估缺口、数据构建、标注与真值、划分/污染、RQ驱动诊断、可选配套方法及维护发布方案。 |
+| C26 · 论文成稿与中英润色 | 按贡献类型组织引言和各章，直接输出正文；另存证据表、术语表和改动说明，保持科学含义。 |
+| C27 · 投稿前审查与审稿回复 | 按实际稿件定位问题，保留每条原意见，连接证据、行动、修订位置和完成状态，生成完整回复。 |
+| C28 · 科研图与可编辑图稿 | 设计动机、方法、结果图；将参考图拆成文字/模块/连线，保存可编辑源、实际预览与编辑说明。 |
+
+## 工作流文本图
+
+```text
+项目入口
+  → C01 明确范围 + C02 读取/复用本地地图
+  → C03 中英检索 → C04 身份与引用 → C05 读综述/原文 → C06 证据综合
+  → C07 发散问题 + C08 选择方向 + C09 最近工作比较
+  → C10 竞争假设 → C11 本地可行性 → C12 方法卡
+
+贡献路线
+  ├─ 方法/机制研究 → C13 区分性实验
+  ├─ Benchmark/评估研究 → C25 构建、效度、诊断 → C13 实验
+  └─ 理论/经验/测量研究 → C12 按研究设计选证据 → C13 适用实验
+
+实证与成稿
+  C14 冻结计划 → C15 执行 → C16 来源/数值 → C17 统计分析 → C18 论点
+  → C21 论证与引用 → C26 引言/正文/中英润色 + C28 科研图/可编辑图稿
+  → C27 投稿审查、逐条修订与审稿回复 → C24 复现与交接
+
+贯穿各阶段
+  C19 独立批评；C22 工具适配；C23 缺口与补强定位
+  C20 新证据/失败记忆 → 待复核依赖 → 更新 C02 地图 → 继续下一轮
+```
+
+## 已整合 Supervisor-Skills（“鸭博士”相关科研技能包）
+
+本项目按正式名称 **[HKUSTDial/Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills)** 归档。已阅读固定版本下的 **12 份 SKILL.md、全部配套 Markdown references 与18份中文手册章节**，将其方法接到已有地图和证据链。具体文件、取舍与阅读记录见 [整合说明](docs/supervisor-source-audit.md)。
+
+| 技能 | 接入的特色 | 能力位置 |
+|---|---|---|
+| `idea-evaluator` | 贡献类型、投入前关键风险、五维取舍、前提变化和本地资源匹配 | C07–C11 |
+| `deep-research` | 研究问题驱动的多视角调研、检索盲区、条件性综合和逐项引用核验 | C03–C06/C09 |
+| `vibe-research-workflow` | 科研、实现、绘图与写作的任务分工、方法卡和持续交接 | C12/C15/C24 |
+| `tech-paper-template` | 问题—局限—机制—实现—贡献逻辑和方法章节结构 | C12/C21/C26 |
+| `intro-drafter` | 按贡献类型组织引言、运行实例和可直接使用的段落 | C26 |
+| `paper-writer` | 从现有材料写各章/全文，单独维护论点证据表与引用核查 | C21/C26 |
+| `benchmark-paper-template` | 评估缺口、构建、效度、诊断发现和配套方法的完整研究设计 | C25 |
+| `paper-polish` | 保持数值、范围和因果强度的语言润色、中译英与术语统一 | C26 |
+| `pre-submission-reviewer` | 按论文范式审视论证、测量、比较、表达和复现，定位可修复问题 | C19/C21/C27 |
+| `rebuttal-guidance` | 逐条意见拆分、证据与实际修改对应、完整回复和修订覆盖 | C27 |
+| `figure-designer` | 按科学用途选图型、数据与视觉编码、图注和可复现绘图 | C28 |
+| `drawio-reconstruction` | 参考图逐对象拆解、原生文字与连线、混合媒体和视觉交接 | C28 |
+
+常用工作台：[选题与深度调研](skills/agent-research-atlas/references/supervisor-discovery.md)、[Benchmark/论文/审稿回复](skills/agent-research-atlas/references/supervisor-publication.md)、[科研图与重建](skills/agent-research-atlas/references/supervisor-figures.md)。五个 [项目模板](skills/agent-research-atlas/assets/supervisor) 分别用于研究简报、Benchmark设计、论文证据、审稿回复和图稿交接。
+
+## 不同来源如何互补
+
+| 来源组 | 贡献 | 与 Atlas 的配合 |
+|---|---|---|
+| ResearchStudio | 问题发散、论文搜索、最近工作重叠检查 | 候选先入图，再以具体近邻工作检验差异 |
+| ARIS | 调研、方案、实现桥接、实验/消融、结果与引用审查 | 把研究问题连到代码、原始结果和论文论点 |
+| K-Dense | 文献综述、科学假设、批判思考、实验设计和功效 | 给候选和实验补充适用的研究设计与统计目标 |
+| Orchestra / Anthropic / Research-Equality | 创意操作、问题选择、风险和决策树、研究循环 | 根据当前卡点选择方法，保存分支与决策理由 |
+| Supervisor-Skills | 研究指导、Benchmark、成稿润色、审稿回复与图稿 | 将探索和实验产物组织成完整的研究与写作交付 |
+| 中英文检索与引用服务 | 论文身份、全文、引文关系、证据上下文与结构化提取 | 多渠道检索与回执共用论文 ID 和来源记录 |
+| Hugging Face / 自动科研系统 | 数据、评估、训练、日志、云作业与执行流程参考 | 按可用环境接适配器，回收版本、结果和资源记录 |
+| Atlas 本地工具 | 地图、冻结输入、运行记录、影响传播、数值与缺口定位 | 为上述方法提供可持续复用的项目状态 |
+
+整合后的方法以实际研究设计裁决分歧：先确认测量与比较是否有效再解释负结果；Benchmark 可以以测量贡献为中心；论文模块允许多对多对应；正文与工作证据表分别保存；回复对应每条技术意见；图形编码服从数据单位和方向。完整 [296 项特征及28类冲突](docs/coverage-audit.md) 记录每一项的采用方式、互补对象和后续补法。
+
+## 研究方向与双语来源
+
+内置起点覆盖意图与目标、歧义澄清、路由、规划、文档摄入检索、RAG与回答、工具使用、记忆、多智能体协作、评估、可靠性安全、成本效率、数据与适应等领域；可继续添加具身、多模态、人机协作、强化学习与形式化验证方向。每个领域保存探索状态和具体来源。
+
+检索词同时包含中文、英文、缩写与邻域术语。可使用宿主搜索及 OpenAlex、Semantic Scholar、Crossref、arXiv、DBLP、OpenReview、ACL Anthology、ChinaXiv、中文期刊、CNKI、万方等适用入口；全文与账号渠道取决于当前可用权限。引用上下文、批量抽取和本地论文问答可通过 Scite、Elicit、Undermind、PaperQA 等适配。见 [双语检索协议](skills/agent-research-atlas/references/bilingual-retrieval.md)。
+
+## 本地地图与工具
+
+研究目录内通常保存：`atlas.json` 及历史、总览与分领域地图、`domains/<id>/notes.md` 人工笔记、来源与检索记录、假设/决策、冻结实验与结果，以及论文/Benchmark/回复/图稿工作文件。JSON 是可维护状态；Markdown/Mermaid 和离线 HTML 便于阅读。每次正式写入更新视图，记录的前提变化会生成下游复核清单。
 
 ```bash
-python skills/agent-research-atlas/scripts/experiments.py --root /path/to/agent-project plan --file plan.json
-python skills/agent-research-atlas/scripts/experiments.py --root /path/to/agent-project freeze experiment-id --mode exploratory --rationale '首次探索，尚无独立确认数据'
-python skills/agent-research-atlas/scripts/experiments.py --root /path/to/agent-project run experiment-id --run-id seed-7 --seed 7 --authorized-local
-python skills/agent-research-atlas/scripts/experiments.py --root /path/to/agent-project validate-record experiment-id
+# 在仓库目录下；项目路径换成你的实际目录
+python skills/agent-research-atlas/scripts/atlas.py --root /path/to/project discover
+python skills/agent-research-atlas/scripts/atlas.py --root /path/to/project init --title "Agent research"
+python skills/agent-research-atlas/scripts/atlas.py --root /path/to/project status
+python skills/agent-research-atlas/scripts/atlas.py --root /path/to/project queries --domain routing --focus-zh "意图歧义" --focus-en "intent ambiguity"
+python skills/agent-research-atlas/scripts/audit.py --root /path/to/project project
 ```
 
-只有你已经授权的、检查过的命令才能执行。`--authorized-local` 是对此前授权的声明，不是权限授予或操作系统沙箱。脚本使用结构化 argv 和 `shell=False`，记录超时与预算，但不能限制子程序访问网络、写其他目录或消费外部服务；需要更强隔离时使用项目已有容器/沙箱。
+更多命令与记录格式：[地图](skills/agent-research-atlas/references/local-atlas.md)、[实验](skills/agent-research-atlas/references/experiments.md)、[证据与论点](skills/agent-research-atlas/references/evidence-and-claims.md)。
 
-执行成功只表示退出码为 0。结果的科学解释保留 `not_assessed`，由研究者检查实验、竞争解释和不确定性。外部集群或框架的结果可通过 `import-result` 导入，保留原字节和来源。冻结后的新协议用新实验 ID，避免覆盖历史。
+## 快速定位不足并扩展
 
-## 哪些方法论会使用
+```bash
+python skills/agent-research-atlas/scripts/audit.py locate --query "C25"
+python skills/agent-research-atlas/scripts/audit.py locate --query "润色"
+python skills/agent-research-atlas/scripts/audit.py locate --query "drawio"
+python skills/agent-research-atlas/scripts/audit.py check --repo .
+```
 
-| 问题 | 合适方法 | 要回答的关键问题 |
+| 发现的不足 | 从这里定位 | 典型补法 |
 |---|---|---|
-| 领域进展散乱 | 范围综述、分类矩阵、引用拓展 | 哪些结论针对同一设定，哪些只是表面相似？ |
-| 不知道突破点 | 失败分析、假设审计、矛盾/取舍分析 | 哪个未解决条件重要且有可检验机制？ |
-| 怀疑只是换组件 | 最近工作比较、简单基线、机制消融 | 差异来自哪里，是否超出工程调参？ |
-| 结果看似有效 | 配对比较、效应量/区间、重复、预算匹配 | 差异稳定吗，是否有混杂或评价器偏差？ |
-| 想论证机制 | 竞争预测、干预、反事实或适当因果设计 | 结果能否排除更简单的替代解释？ |
-| 声称通用 | 分布外测试、压力测试、失败分层 | 在什么任务、数据、模型或成本条件下失效？ |
-| 理论命题 | 定义与假设、推导、证明检查、反例 | 结论是否在明确条件下成立？ |
-| 数据或评测贡献 | 标注一致性、测量效度、污染审计 | 测量对象是什么，是否反映真正任务成功？ |
+| 文献覆盖/中文术语不足 | C01/C03/C05 | 扩术语和来源；用实际检索回执与全文定位验证 |
+| 想法缺乏机制或近邻比较 | C07–C10 | 补前提历史、最强近邻和可区分预测 |
+| 实验条件/统计不清 | C11–C17 | 明确资源、独立单位、信息/成本和分析设计 |
+| Benchmark 的构建或测量不足 | C25 | 补构念、谱系、真值、划分、污染与诊断实验 |
+| 正文/润色没有保留原科学含义 | C26 | 查具体句子的来源、数字、范围与因果强度 |
+| 审稿意见漏答或修改不对应 | C27 | 原意见 ID 到证据、行动、位置、状态逐项核对 |
+| 图不能编辑或预览不正确 | C28 | 分开检查对象、连线、渲染、数据与编辑范围 |
+| 新证据影响旧结论 | C20/C23 | 查依赖路径，更新记录并完成实际复核 |
 
-这是一套选择方法和核查证据的流程，不声称自动精通所有学科的方法。专业统计、形式化证明、领域知识或硬件实验超出宿主能力时，要明确缺口并使用适当工具/专家。
+扩展时沿“症状 → C-ID → 负责文件 → 来源特长/冲突 → 最小修复 → 回归任务”推进。注册表维护 **77 个来源、296 项特征、28 项能力、28 类冲突**的对应关系；[扩展指南](docs/EXTENDING.md) 提供 provider、方法、执行后端和新工作台的做法。
 
-## 检索来源与可选工具
-
-默认使用宿主可用搜索与官方原文：arXiv、ACL Anthology、OpenReview、DBLP、OpenAlex、Semantic Scholar、Crossref；中文使用相关期刊、ChinaXiv 及有权限时的知网/万方等入口。语种之外还会扩展到任务型对话、信息检索、决策、规划等相邻术语。
-
-Undermind、Elicit、Scite、PaperQA2 等是可选增强路径，**并未随仓库安装或完成账号接入**。不要求订阅全部服务，也不绕过付费墙。找到元数据不等于读过全文，文献图相邻不等于机制得到验证。详细策略见 [双语检索](skills/agent-research-atlas/references/bilingual-retrieval.md)。
-
-## 验证与真实边界
-
-运行本地测试：
+## 验证与复用
 
 ```bash
 python -m unittest discover -s tests -v
+python skills/agent-research-atlas/scripts/audit.py check --repo .
 ```
 
-验证覆盖图谱复用、原文/笔记保留、修订冲突、证据状态要求、路径处理、预算、冻结篡改、失败/超时保留等；另有独立上下文的旧项目续接和双 seed 实验流程测试。详见 [验证记录](docs/validation.md)。
+本地确定性套件为 **94 项测试**，覆盖旧图复用、身份去重、状态与来源、冻结输入、预算/失败记录、依赖更新、数值核对和扩展引用。另有独立上下文的项目任务，保留实际产物和冲突处理结果。[验证总表](docs/validation.md)、[原有任务记录](docs/forward-conflicts.md)、[Supervisor 整合任务](docs/supervisor-validation.md) 与 [可重用夹具](evals/README.md) 给出各自执行范围和结果。
 
-真实中英检索小样记录在 [retrieval-smoke.md](docs/retrieval-smoke.md)，包括成功打开的原始论文记录、摘要读取深度和访问失败。它不是全领域查全率测评。
+本项目用于支持严谨选题、检验与写作；新颖性、方法有效性和发表判断依据真实文献、实验和同行审查。SCI/SCIE、期刊或会议适配在具体投稿任务中核对当前规则。
 
-以下能力没有因此得到证明：候选想法一定创新、所有文献均已覆盖、实验结论一定正确、显著提高研究成功率、获得 SCI/顶刊/顶会录用。示例实验全部标记 **SYNTHETIC**，没有真实 Agent 模型或私有科研数据。本地哈希也不是不可篡改的外部认证，不能检测所有历史整体删除。
+## 许可与致谢
 
-## 设计来源与许可证
-
-原创整合参考了 ResearchStudio-Idea、ARIS、K-Dense、Orchestra、Anthropic scientific-problem-selection，以及 AIRAS 等自动科研系统的流程经验。保留适用方法，调整了“自动评分即创新确认”“昂贵实验默认运行”等不适合通用环境的假设。具体阅读深度、对应能力、限制和原始科学文献见 [SOURCES.md](SOURCES.md)。没有把这些上游仓库整体复制进来，也无需全部安装。
-
-本项目原创代码和文档采用 [MIT License](LICENSE)。链接的论文、数据、产品及上游技能保留各自许可。这个项目由用户控制其研究方向、资源和公开范围。
+Atlas 核心代码与原创协议采用 [MIT](LICENSE)。Supervisor 衍生的三份工作台和五个模板采用 **CC BY-NC-SA 4.0**，署名 Yuyu Luo（骆昱宇）及贡献者，并注明本项目改编；具体范围见 [许可与第三方说明](THIRD_PARTY_NOTICES.md)。完整来源、版本和采用位置见 [SOURCES](SOURCES.md)。

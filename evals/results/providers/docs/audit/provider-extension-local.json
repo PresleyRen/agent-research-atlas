@@ -1,0 +1,503 @@
+{
+  "registry_version": "1.1.0",
+  "audit_date": "2026-10-20",
+  "note": "Copied from local registry; no current network/provider verification.",
+  "sources": [
+    {
+      "id": "SRC-UNDERMIND",
+      "name": "Undermind MCP",
+      "url": "https://www.undermind.ai/mcp",
+      "read_depth": "Official toolkit, tool list, setup and search-method sections inspected",
+      "revision": "2026-10-20 official documentation inspection; moving page",
+      "features": [
+        {
+          "id": "SRC-UNDERMIND-F01",
+          "label": "开放问题深搜、引用及作者扩展、元数据批量定位",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C09",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未登录或执行 Undermind 搜索；停止信号不等于全域查全",
+          "remedy": "可用时保留 exact query、scope、筛选和停止原因；不可用时走宿主双语检索",
+          "complements": [
+            "SRC-S2",
+            "SRC-RESEARCHRABBIT"
+          ]
+        },
+        {
+          "id": "SRC-UNDERMIND-F02",
+          "label": "并行 PDF、图表与公式的有定位问答",
+          "capabilities": [
+            "C05",
+            "C06",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "全文可得性与已读深度尚未实测",
+          "remedy": "合法取得全文后抽样回查定位；无全文保留 metadata/abstract",
+          "complements": [
+            "SRC-PAPERQA",
+            "SRC-ELICIT"
+          ]
+        },
+        {
+          "id": "SRC-UNDERMIND-F03",
+          "label": "远端工作区的笔记、文件、历史搜索、收藏与目录组织",
+          "capabilities": [
+            "C02",
+            "C20",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "本项目未接入远端工作区同步",
+          "remedy": "本地 atlas 为项目权威状态；远端内容经保留来源的导入和 revision 冲突处理",
+          "complements": [
+            "SRC-RE-DIRECTION"
+          ]
+        },
+        {
+          "id": "SRC-UNDERMIND-F04",
+          "label": "可视化引用/搜索卡片与不同宿主的文本回退",
+          "capabilities": [
+            "C04",
+            "C24",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未实测 MCP Apps 卡片和客户端兼容性",
+          "remedy": "无卡片时输出论文链接和本地图，检索结果仍使用同一来源记录",
+          "complements": [
+            "SRC-RESEARCHRABBIT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-ELICIT",
+      "name": "Elicit REST v2 and MCP",
+      "url": "https://docs.elicit.com/",
+      "read_depth": "REST getting-started/endpoints/search/systematic-review/error excerpts and MCP README inspected",
+      "revision": "REST API 2.0.0; MCP README blob 713d1ef80883f38c3ac346ebada1ddc8a87fc26b; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-ELICIT-F01",
+          "label": "语义/关键词论文检索与 corpus-specific 查询语法",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未执行账号检索；MCP 与 REST 参数能力不可推定一致",
+          "remedy": "核对 endpoint/version/mode；keyword 不混 filters，保留 warnings 和真实上限",
+          "complements": [
+            "SRC-S2",
+            "SRC-OPENALEX"
+          ]
+        },
+        {
+          "id": "SRC-ELICIT-F02",
+          "label": "系统综述的搜索、摘要/全文筛选、字段及图表抽取与阶段导出",
+          "capabilities": [
+            "C05",
+            "C06",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未运行付费 review 或验证抽取准确率",
+          "remedy": "先定义纳入排除及证据字段，核对实际 settings 和原文定位，再导入图谱",
+          "complements": [
+            "SRC-PAPERQA",
+            "SRC-SCITE"
+          ]
+        },
+        {
+          "id": "SRC-ELICIT-F03",
+          "label": "异步报告、Research Agent 会话、配额暂停和续作",
+          "capabilities": [
+            "C20",
+            "C22",
+            "C24"
+          ],
+          "status": "optional",
+          "gap": "未实测异步任务、用量和恢复",
+          "remedy": "保存 session ID；未知创建结果先核实，不能盲重试计费创建",
+          "complements": [
+            "SRC-AIRAS"
+          ]
+        },
+        {
+          "id": "SRC-ELICIT-F04",
+          "label": "文库/PDF导入/目录、共享项目、routines 与 usage",
+          "capabilities": [
+            "C02",
+            "C20",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "远端组织、分享、调度均未集成",
+          "remedy": "按用户已授权范围单独启用；本地更新不要求账户、分享或周期任务",
+          "complements": [
+            "SRC-UNDERMIND",
+            "SRC-HF-JOBS"
+          ]
+        },
+        {
+          "id": "SRC-ELICIT-F05",
+          "label": "临床试验检索及生医专用筛选",
+          "capabilities": [
+            "C03",
+            "C12"
+          ],
+          "status": "deferred",
+          "gap": "不是当前 Agent 研究的默认数据源或评估框架",
+          "remedy": "涉及医疗 Agent 时按具体问题扩展；不把 RCT/PICO 模板套到所有计算实验",
+          "complements": [
+            "SRC-HF-DATASETS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-SCITE",
+      "name": "Scite MCP / Smart Citations",
+      "url": "https://scite.ai/mcp",
+      "read_depth": "Official capability and setup sections inspected; citation-label interpretation from linked official literature guide",
+      "revision": "2026-10-20 official documentation inspection; moving page",
+      "features": [
+        {
+          "id": "SRC-SCITE-F01",
+          "label": "全文引用语境及 supporting/contrasting/mentioning 分类",
+          "capabilities": [
+            "C04",
+            "C06",
+            "C09",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未使用账号检索，分类并非论点真值",
+          "remedy": "回查引用段落、条件与具体论点；相关反证必须保留",
+          "complements": [
+            "SRC-PAPERQA",
+            "SRC-S2"
+          ]
+        },
+        {
+          "id": "SRC-SCITE-F02",
+          "label": "机构 holdings 全文与 collections/monitoring",
+          "capabilities": [
+            "C05",
+            "C20",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "机构全文权限、监测通路未测试",
+          "remedy": "记录权限和可读深度；先用公开原文和本地更新，不假定订阅存在",
+          "complements": [
+            "SRC-UNDERMIND",
+            "SRC-ELICIT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-PAPERQA",
+      "name": "PaperQA2",
+      "url": "https://github.com/Future-House/paper-qa",
+      "read_depth": "README algorithm, local SearchPapers, CLI, contracrow, metadata, multimodal and configuration sections inspected",
+      "revision": "README blob 0b5639921586f03bd1f9d93445af9e0d17f37c48; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-PAPERQA-F01",
+          "label": "本地论文索引、分块、重排、上下文摘要和带定位答案",
+          "capabilities": [
+            "C05",
+            "C06",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未安装或执行 PaperQA2；本地 corpus 不能代表全球论文",
+          "remedy": "先外部发现与合法收集，再本地问答；记录 corpus 清单和源定位",
+          "complements": [
+            "SRC-OPENALEX",
+            "SRC-UNDERMIND"
+          ]
+        },
+        {
+          "id": "SRC-PAPERQA-F02",
+          "label": "contracrow 矛盾线索与多源元数据/撤稿检查",
+          "capabilities": [
+            "C04",
+            "C06",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "没有独立验证该配置的矛盾检测性能",
+          "remedy": "把输出作待核对线索，用原始论文和版本信息处理冲突",
+          "complements": [
+            "SRC-SCITE",
+            "SRC-CROSSREF"
+          ]
+        },
+        {
+          "id": "SRC-PAPERQA-F03",
+          "label": "多模态/非英语/Office/代码材料、解析器及模型配置",
+          "capabilities": [
+            "C03",
+            "C05",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未测中文 PDF、公式和表格解析；上游使用 CalVer",
+          "remedy": "锁定实际 package/reader/model 版本；固定中文与英文有定位样例做回归",
+          "complements": [
+            "SRC-ELICIT",
+            "SRC-HF-PAPERS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-OPENALEX",
+      "name": "OpenAlex",
+      "url": "https://help.openalex.org/access/agents/",
+      "read_depth": "Official agent and access/query documentation inspected",
+      "revision": "2026-10-20 official documentation inspection; moving page",
+      "features": [
+        {
+          "id": "SRC-OPENALEX-F01",
+          "label": "可复跑学术图谱检索、过滤、元数据和引用关联",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未实测本项目 API 调用；不保证全集或所有全文",
+          "remedy": "保存 API/查询/页数/截断；用出版原始记录解决元数据冲突",
+          "complements": [
+            "SRC-CROSSREF",
+            "SRC-DBLP"
+          ]
+        },
+        {
+          "id": "SRC-OPENALEX-F02",
+          "label": "CLI/agent connector、snapshot/sync/fulltext 等独立访问入口",
+          "capabilities": [
+            "C05",
+            "C20",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "这些访问层没有在 Atlas 内集成",
+          "remedy": "接入前核实当时额度、身份与全文边界；按所需入口单独测试",
+          "complements": [
+            "SRC-PAPERQA",
+            "SRC-S2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-S2",
+      "name": "Semantic Scholar",
+      "url": "https://api.semanticscholar.org/api-docs/",
+      "read_depth": "Official Graph API/recommendations docs and official tutorial excerpts inspected",
+      "revision": "Graph API 1.0 and Recommendations API 1.0; inspected 2026-10-20",
+      "features": [
+        {
+          "id": "SRC-S2-F01",
+          "label": "论文/作者查询、引用与参考文献、外部 ID",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "直接文档抓取曾429，检索缓存官方内容可读；未发科研 API 请求",
+          "remedy": "真实失败不记空结果，按当前速率和语法重试；出版信息交叉核实",
+          "complements": [
+            "SRC-OPENALEX",
+            "SRC-CROSSREF"
+          ]
+        },
+        {
+          "id": "SRC-S2-F02",
+          "label": "positive/negative seed 推荐与领域扩展",
+          "capabilities": [
+            "C04",
+            "C09",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "未实测推荐；negative seed 容易误删反证",
+          "remedy": "仅将不相关方向作为 negative seed；有争议但相关论文保留在反证集合",
+          "complements": [
+            "SRC-RESEARCHRABBIT",
+            "SRC-SCITE"
+          ]
+        },
+        {
+          "id": "SRC-S2-F03",
+          "label": "可下载学术数据集与 snippet 接口",
+          "capabilities": [
+            "C05",
+            "C22"
+          ],
+          "status": "optional",
+          "gap": "本项目不自建全量 S2 索引，也未验证 snippet 覆盖",
+          "remedy": "按具体任务建立小型适配与回归；snippet 不替代未读全文",
+          "complements": [
+            "SRC-PAPERQA"
+          ]
+        }
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "CF01",
+      "capabilities": [
+        "C03",
+        "C09"
+      ],
+      "tension": "无命中/失败搜索与新颖性判断",
+      "retain": "查新范围和失败回执",
+      "reject": "空搜索即最高创新等级",
+      "reason": "没有观察到先前工作不能推得不存在工作",
+      "tests": [
+        {
+          "path": "docs/forward-conflicts.md",
+          "kind": "not_run"
+        }
+      ],
+      "extension_rule": "保留此冲突的允许行为与拒绝/标记行为；新实现须用同一反例回归，并记录未测部分。"
+    },
+    {
+      "id": "CF11",
+      "capabilities": [
+        "C03",
+        "C22"
+      ],
+      "tension": "统一意图与provider各自语法",
+      "retain": "按S2/Elicit等实际语法适配并保留exact query",
+      "reject": "通用Boolean/filters强制通吃",
+      "reason": "语法不支持与零命中不同",
+      "tests": [
+        {
+          "path": "docs/forward-conflicts.md",
+          "kind": "not_run"
+        }
+      ],
+      "extension_rule": "保留此冲突的允许行为与拒绝/标记行为；新实现须用同一反例回归，并记录未测部分。"
+    },
+    {
+      "id": "CF12",
+      "capabilities": [
+        "C04",
+        "C06",
+        "C22"
+      ],
+      "tension": "negative recommendation seeds与科学反证",
+      "retain": "保留相关的反驳论文",
+      "reject": "把反证论文作为不相关negative seed过滤",
+      "reason": "相关性与立场是不同维度",
+      "tests": [
+        {
+          "path": "docs/forward-conflicts.md",
+          "kind": "not_run"
+        }
+      ],
+      "extension_rule": "保留此冲突的允许行为与拒绝/标记行为；新实现须用同一反例回归，并记录未测部分。"
+    },
+    {
+      "id": "CF13",
+      "capabilities": [
+        "C19"
+      ],
+      "tension": "多角色模拟与独立审查",
+      "retain": "独立上下文可用则使用，否则披露自审",
+      "reject": "角色标签即独立评审",
+      "reason": "同一上下文共享偏差/信息",
+      "tests": [
+        {
+          "path": "docs/forward-conflicts.md",
+          "kind": "not_run"
+        }
+      ],
+      "extension_rule": "保留此冲突的允许行为与拒绝/标记行为；新实现须用同一反例回归，并记录未测部分。"
+    },
+    {
+      "id": "CF16",
+      "capabilities": [
+        "C01",
+        "C03",
+        "C23"
+      ],
+      "tension": "技能覆盖与研究领域覆盖",
+      "retain": "分别记录Cxx能力和domain探索状态",
+      "reject": "生成目录/查询即宣称已综述全领域",
+      "reason": "可执行流程不等于已执行研究",
+      "tests": [
+        {
+          "path": "tests/test_audit.py",
+          "symbol": "AuditTests.test_project_diagnostics_expose_unexplored_not_completed",
+          "kind": "unit"
+        },
+        {
+          "path": "tests/test_atlas.py",
+          "symbol": "AtlasCliTests.test_bilingual_query_focus_preserves_both_languages_and_does_not_claim_execution",
+          "kind": "unit"
+        }
+      ],
+      "extension_rule": "保留此冲突的允许行为与拒绝/标记行为；新实现须用同一反例回归，并记录未测部分。"
+    },
+    {
+      "id": "CF19",
+      "capabilities": [
+        "C14",
+        "C20",
+        "C24"
+      ],
+      "tension": "新保障与旧版本兼容",
+      "retain": "旧freeze明确legacy_unpinned且保留历史校验",
+      "reject": "新功能追溯包装成旧保障",
+      "reason": "真实版本边界不能被文案覆盖",
+      "tests": [
+        {
+          "path": "tests/test_integration_review.py",
+          "symbol": "IntegrationReviewTests.test_legacy_freeze_loads_without_claiming_new_input_pinning",
+          "kind": "conflict"
+        },
+        {
+          "path": "tests/test_integration_review.py",
+          "symbol": "IntegrationReviewTests.test_historical_records_stay_valid_after_current_source_is_changed",
+          "kind": "conflict"
+        }
+      ],
+      "extension_rule": "保留此冲突的允许行为与拒绝/标记行为；新实现须用同一反例回归，并记录未测部分。"
+    },
+    {
+      "id": "CF20",
+      "capabilities": [
+        "C07",
+        "C19",
+        "C22"
+      ],
+      "tension": "外部框架指令与项目约束",
+      "retain": "提取适用方法，按会话授权执行",
+      "reject": "网页建议替用户授权花费/发布或禁用保护",
+      "reason": "被研究资料不能授予操作权限",
+      "tests": [
+        {
+          "path": "docs/forward-conflicts.md",
+          "kind": "not_run"
+        }
+      ],
+      "extension_rule": "保留此冲突的允许行为与拒绝/标记行为；新实现须用同一反例回归，并记录未测部分。"
+    }
+  ]
+}

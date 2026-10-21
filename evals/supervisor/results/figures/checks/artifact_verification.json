@@ -1,0 +1,113 @@
+{
+  "input_integrity": [
+    {
+      "path": "PROJECT.md",
+      "bytes": 783,
+      "sha256": "97bf554c824a41ff849432ed3daa1220daeade0b103042e88b047b538c5b0b54",
+      "unchanged": true
+    },
+    {
+      "path": "notes/figure-context.md",
+      "bytes": 585,
+      "sha256": "fc9ae99935a21922bb39fbdef6d684bfa6681feb2d3c19787c41706f0ef1153c",
+      "unchanged": true
+    },
+    {
+      "path": "reference.png",
+      "bytes": 17358,
+      "sha256": "03eba4db7c14e85b31d9b5ae0bd963e07abf35d81552e165bf1cc53ec75b7055",
+      "unchanged": true
+    },
+    {
+      "path": "results/latency-accuracy.csv",
+      "bytes": 102,
+      "sha256": "ed5f2384042cb46ec7c3989ddc2a5faa0ea1e2bd38fc3a0a210d3e0f4b446cef",
+      "unchanged": true
+    }
+  ],
+  "drawio_structure": {
+    "status": "passed",
+    "native_modules": 6,
+    "native_connectors": 6,
+    "native_extra_labels": 2,
+    "raster_regions": 1,
+    "full_page_image": false,
+    "expected_directed_edges": [
+      [
+        "clarify",
+        "user_request"
+      ],
+      [
+        "retriever",
+        "answer"
+      ],
+      [
+        "router",
+        "clarify"
+      ],
+      [
+        "router",
+        "retriever"
+      ],
+      [
+        "user_request",
+        "version_state"
+      ],
+      [
+        "version_state",
+        "router"
+      ]
+    ],
+    "native_application_render": "not_checked_renderer_unavailable"
+  },
+  "svg_editability_and_values": {
+    "status": "passed",
+    "architecture_text_elements": 8,
+    "chart_text_elements": 24,
+    "chart_raster_images": 0,
+    "csv_rows_matched_to_visible_labels": 3
+  },
+  "previews": [
+    {
+      "path": "outputs/fig01_architecture.png",
+      "size": [
+        1276,
+        689
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "outputs/fig02_latency_accuracy.png",
+      "size": [
+        1062,
+        897
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "checks/fig01_architecture_pdf_render.png",
+      "size": [
+        1063,
+        575
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "checks/fig02_latency_accuracy_pdf_render.png",
+      "size": [
+        532,
+        449
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "checks/fig02_svg_render.png",
+      "size": [
+        709,
+        598
+      ],
+      "mode": "RGBA"
+    }
+  ],
+  "scope": "File integrity, native structure, topology and numerical labels. Human visual observations are recorded separately in VALIDATION.md."
+}

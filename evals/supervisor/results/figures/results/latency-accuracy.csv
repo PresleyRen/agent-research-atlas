@@ -1,0 +1,4 @@
+method,latency_ms,accuracy
+Single-pass,120,0.6875
+Version-aware,180,0.78125
+Always-clarify,310,0.8125

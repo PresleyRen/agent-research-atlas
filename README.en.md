@@ -1,233 +1,186 @@
 # Agent Research Atlas
 
-**Keep literature exploration, research questions, testable hypotheses, experiments, and manuscript claims in one persistent research map.**
+**Connect literature, research questions, experiments, manuscripts and updates in a research map you can keep working from.**
 
-[中文](README.md) · [Full skill](skills/agent-research-atlas/SKILL.md) · [Sources and attribution](SOURCES.md) · [Validation record](docs/validation.md)
+[中文](README.md) · [Use the skill](skills/agent-research-atlas/SKILL.md) · [All sources](SOURCES.md) · [Coverage and complements](docs/coverage-audit.md) · [Validation](docs/validation.md) · [Extension guide](docs/EXTENDING.md)
 
-Agent Research Atlas is a bilingual Chinese/English skill for Agent research. It guides an AI assistant through surveys and primary papers, a map of the field, closest-work comparisons, feasibility checks, discriminating experiments, negative results, and evidence-backed publication arguments.
+Agent Research Atlas is a Chinese/English skill for Agent research. It guides an AI assistant through surveys and primary papers, maps progress and disagreements, develops questions from failures and changed assumptions, evaluates local feasibility, designs discriminating studies, records experiments and turns evidence into manuscript arguments and prose.
 
-Two bundled Python tools provide the local records: `atlas.py` manages the research graph, and `experiments.py` manages plans, freezes, budgets, and execution records. Both use only the Python standard library. Research state stays in a separate project directory so that later sessions can continue from previous evidence and decisions.
+Each project keeps its own map, domain folders, sources, plans, results and decisions. Existing maps are read and reused. New evidence can update dependent conclusions and next steps. Start with a complete research cycle or request a focused task such as a closest-work review, benchmark design, Methods section, reviewer response or editable method figure.
 
-**The aim is to find important, feasible questions and test them carefully.** Novelty, scientific validity, and publication still require actual literature, appropriate experiments, and expert judgment. The skill does not promise SCI/SCIE journal acceptance or acceptance at a leading journal or conference, and it does not turn model-generated idea scores into acceptance probabilities.
+## Quick start
 
-## What it does
+Install `skills/agent-research-atlas/` as one Skill in a compatible host, or ask an assistant with search, file and code capabilities to read its `SKILL.md`. The three bundled tools require **Python 3.10+ and the standard library**. Research tasks use the host's available retrieval, full-text, experiment and drawing tools.
+
+```text
+Use agent-research-atlas to continue /path/to/my-agent-project.
+My topics are intent recognition, document retrieval, routing and answering.
+Read the existing map, surveys, papers and failed directions; extend Chinese
+and English searches; compare the nearest work; propose a research question
+and a locally feasible discriminating experiment. Update the map, domain
+folders and next steps, and link actual results to manuscript claims.
+```
+
+| Current task | Example request | Deliverables |
+|---|---|---|
+| Orient in a field | “Map research from intent to retrieval and answering, including progress and disagreements.” | Sourced directions, comparisons and open questions |
+| Choose a question | “Compare these ideas against nearest work, mechanisms and our actual resources.” | Research brief, rivals, feasibility and decision |
+| Design evaluation research | “Build a benchmark separating intent ambiguity from missing knowledge.” | Construction, validity, splits, baselines, RQs and analyses |
+| Run experiments | “Execute this approved plan and retain every outcome.” | Frozen plan, raw records, numerical checks and interpretation |
+| Draft a paper | “Write Introduction and Methods from the evidence; keep a separate evidence map.” | Usable prose, citations and provenance |
+| Revise and respond | “Review the manuscript and answer every reviewer concern.” | Located issues, revisions, coverage ledger and complete response |
+| Prepare figures | “Explain the method and reconstruct the reference as editable drawio.” | Native figures, previews, captions and editing map |
+| Resume or extend | “Update the old map and locate what needs improvement.” | Impacted records, review queue, owners and repair paths |
+
+## Complete capability inventory
+
+The host executes research protocols on the actual materials; local scripts maintain maps, records and repeatable checks. Each of these **28 capabilities** has a stable ID for locating its implementation, sources, complements and verification records.
 
 | Capability | Work and deliverables |
 |---|---|
-| Survey the field | Map problem definitions, method families, progress, disagreements, unresolved conditions, and evidence locations; verify important survey claims against primary papers. |
-| Search in two languages | Use Chinese and English terminology, adjacent fields, and separate searches for surveys, closest work, counterevidence, datasets, and evaluation. Record actual queries, dates, providers, results, and access failures. |
-| Check closest prior work | Compare objectives, information available at decision time, mechanisms, evaluation settings, costs, and contribution boundaries. Expand through references and later citations. |
-| Discover research questions | Generate candidates from failures, contradictions, changed assumptions, measurement gaps, transferable mechanisms, and quality/cost trade-offs. A new component combination is not automatically a contribution. |
-| Assess feasibility | Check actual data access, code, compute, evaluators, and budget. Preserve unknowns and choose inexpensive checks that could change the decision. |
-| Choose a method | Match the question to theory, counterexamples, error analysis, comparative experiments, ablations, causal or counterfactual checks, robustness tests, statistical estimation, or measurement research. |
-| Design experiments | Specify rivals, strong and simple baselines, experimental units, splits, metrics, controls, repetitions, budgets, and positive, negative, and inconclusive outcomes. |
-| Run or import experiments | Execute inspected local argv commands within existing authorization, or import external results. Retain raw logs, exit codes, timeouts, failures, and cancellations. |
-| Freeze plans and record provenance | Save a plan hash, timestamp, and prospective/exploratory declaration; hash explicitly listed code/data inputs and detect changes to frozen plans. |
-| Connect results to claims | Link interpretations to real paper or experiment records; distinguish support, partial support, counterevidence, inconclusive results, and unresolved mechanisms. |
-| Maintain a local map | Keep JSON as the source of truth and generate Markdown overviews, per-domain Mermaid views, and a filterable offline HTML graph. |
-| Continue an existing project | Reuse a native atlas, or preserve a different map's original bytes and hash before the assistant reads and normalizes its content. |
-| Preserve research history | Use stable IDs, revisions, conflict checks, history snapshots, and protected human notes. Retain parked ideas, refutations, failed directions, and reopening conditions. |
-| Prepare publication arguments | Assemble closest-work tables, bounded contributions, protocols, real result figures/tables, claim–evidence mappings, limitations, and reproduction instructions. |
-| Request independent review | Separate proposal generation from prior-work and rival-explanation review when the host provides independent agents; disclose serial self-review otherwise. |
+| C01 · Scope and taxonomy | Define the question, time/language boundaries and inclusion criteria; extend 14 Agent seed domains. |
+| C02 · Persistent research atlas | Discover and reuse maps; retain originals, human notes and revisions; generate JSON, Markdown/Mermaid and offline HTML views. |
+| C03 · Bilingual discovery | Search across Chinese/English terminology and neighboring fields, with query, provider, date and access records. |
+| C04 · Paper identity and citation expansion | Normalize DOI/arXiv identities, preserve versions and expand citation trails including relevant counterevidence. |
+| C05 · Reading and extraction | Use surveys for orientation and primary papers for claims; extract problems, methods, conditions, findings, limitations and locators. |
+| C06 · Evidence critique | Separate observations, source claims and inference; examine measurement, comparisons, bias and rival explanations. |
+| C07 · Idea generation and transfer | Generate candidate mechanisms from failures, changed assumptions, neighboring methods, inversion and quality/cost trade-offs. |
+| C08 · Problem selection | Compare objectives, risk, constraints and decision trees; select an informative next check and a reasoned continuation decision. |
+| C09 · Closest-work comparison | Compare the nearest work on goals, information, mechanism, insight, domain and evaluation cost. |
+| C10 · Hypotheses and rival predictions | Turn ideas into observable predictions, alternatives and falsification conditions linked to evidence and experiments. |
+| C11 · Local feasibility | Check data rights, annotation, code, compute, evaluators and budget; resolve decision-changing unknowns first. |
+| C12 · Method selection and implementation fidelity | Choose theory, diagnosis, comparison, intervention or measurement methods; trace inputs, operations, code and metrics. |
+| C13 · Discriminating experiments | Plan simple/strong baselines, ablations, matched information/budgets, units, splits, metrics and outcome interpretations. |
+| C14 · Frozen plans and amendments | Freeze prospective plans and declared input hashes; allow declared candidate changes while tracking evaluator/data drift. |
+| C15 · Bounded experiment execution | Run authorized local commands with recorded reservations; preserve failures, timeouts, cancellations and raw output; import external results. |
+| C16 · Provenance and numerical checks | Retain origins, versions, hashes and logs; check numerical JSON fields, locators, tolerances and exact large integers. |
+| C17 · Statistical design | Define estimands and independent units before choosing power, minimum effect, precision, equivalence/noninferiority or sequential analysis. |
+| C18 · Results to claims | Bound conclusions to the actual findings; distinguish implementation, measurement and mechanism issues and retain unresolved interpretations. |
+| C19 · Independent critique | Separate proposal and review contexts when available; challenge candidates using actual sources and rival explanations. |
+| C20 · Updates and failure memory | Preserve parked/refuted branches and reopening conditions; propagate recorded premise changes to dependent experiments, claims and prose. |
+| C21 · Publication arguments and citations | Map claims to runs and figures; organize related work, methods, limitations and reproduction; check citation identity and sentence-level support. |
+| C22 · Tool adapters | Connect available search, full-text/PDF, citation-context, evaluation, training and cloud tools through explicit request/result contracts. |
+| C23 · Coverage and extension lookup | Locate owner files/functions, source features, complements, conflicts and tests from a symptom or C-ID; diagnose recorded project gaps. |
+| C24 · Reproducible handoff | Carry scope, sources, resources, plans, actual results, failures, atlas revision and next actions into the next session. |
+| C25 · Benchmark and evaluation research | Design evaluation gaps, construction, annotation/ground truth, splits/contamination, RQ-driven diagnosis, optional companion methods and maintenance. |
+| C26 · Manuscript drafting and bilingual polish | Draft introductions and sections for the contribution type; keep evidence maps, terminology and change notes separate from usable prose. |
+| C27 · Submission review and reviewer responses | Locate manuscript issues and account for every original concern through evidence, actions, revision locations, status and response text. |
+| C28 · Scientific figures and editable reconstruction | Design motivation, method and result figures; rebuild reference text/shapes/connectors and deliver native sources, actual previews and editing maps. |
 
-The host assistant performs the research using the evidence it actually reads. The scripts check record structure, references, paths, and local integrity. They do not judge whether a paper is correct, a mechanism is established, or an experiment merits publication.
-
-## Fourteen extensible seed domains
-
-Initialization creates these **14 seed domains**, all with coverage `unsearched`. It does not invent papers, completed reviews, or progress.
-
-| Domain ID | Research scope |
-|---|---|
-| `intent` | Intent understanding, multiple intents, out-of-distribution intents, open sets, and annotation ambiguity. |
-| `clarification` | Clarifying questions, active information gathering, abstention, and human collaboration. |
-| `routing` | Task, model, tool, and retrieval routing; calibration, uncertainty, and budgets. |
-| `planning` | Task decomposition, planning, constraints, search, reflection, and replanning. |
-| `ingestion-retrieval` | Document ingestion, chunking, indexing, retrieval, freshness, and access conditions. |
-| `reranking-context` | Reranking, evidence selection, context compression, and long-context interference. |
-| `knowledge-graphs` | Knowledge graphs, structured retrieval, GraphRAG, entities, and relations. |
-| `memory` | Short- and long-term memory, updates, forgetting, versioning, and consistency across sessions. |
-| `tool-use` | Tool selection and invocation, state, failure recovery, and execution feedback. |
-| `answer-grounding` | Answer generation, attribution, citations, faithfulness, and uncertainty. |
-| `multi-agent` | Collaboration, communication, division of work, debate, and multi-agent evaluation. |
-| `evaluation` | Task success, data and evaluators, contamination, reproducibility, and out-of-distribution tests. |
-| `production` | Latency, cost, reliability, observability, and feedback from deployment. |
-| `safety-security` | Prompt injection, permissions, privacy, tool safety, and reliable execution. |
-
-The skill extends beyond document RAG. Add domains for embodied agents, multimodality, reinforcement learning, formal methods, or another research area when relevant. The [domain reference](skills/agent-research-atlas/references/agent-domains.md) offers additional analytical views; these are not extra domains automatically initialized by the tool. The taxonomy organizes work and does not certify coverage of the Agent field.
-
-## Install or load the skill
-
-Clone the repository:
-
-```bash
-git clone https://github.com/PresleyRen/agent-research-atlas.git
-cd agent-research-atlas
-```
-
-The installable skill directory is **`skills/agent-research-atlas`**, not the repository root. Load that directory using the official local-skill installation procedure for your host, such as Codex or Claude Code. Use its documented user or project skill location, compare any existing version before replacing it, and retain the adjacent `references`, `assets`, and `scripts` directories.
-
-Managed chat environments may restrict persistent installation. Publishing this repository does not install it into every session. A host with local file access can also read the skill directly:
-
-> Read `/absolute/path/agent-research-atlas/skills/agent-research-atlas/SKILL.md` and use it for my research project at `/absolute/path/agent-project`.
-
-### Host capabilities and dependencies
-
-| Capability | Requirement |
-|---|---|
-| Research reasoning | An AI host that can follow the skill and inspect the relevant evidence. No model or model API account is bundled. |
-| Literature discovery | Actual host search, browsing, or authorized scholarly APIs. The bundled query planner does not execute searches. |
-| Reading sources | Host webpage/PDF/file readers as needed. Record metadata-only or abstract-only access when full text is unavailable. |
-| Persistent state | Read/write access to the user-authorized research project. A text-only chat cannot claim local file changes. |
-| Local tools | Python **3.10+**. The two helpers need no `pip` packages; the experiment command you choose may have its own dependencies. |
-| Independent review | Optional separate agents or reviewers. One context reviewing its own proposal is self-review. |
-| Periodic updates | A separately available and authorized scheduling capability. This repository installs no background watcher or scheduler. |
-
-Keep unpublished papers, private data, and project state in the separate research project, outside this public tool repository and the installed skill directory.
-
-## Example research requests
-
-### Explore a field
-
-> Use $agent-research-atlas for Agent intent understanding, routing, document retrieval, and answer generation. First inspect my existing maps and experiments. Search Chinese and English surveys and primary papers, then map progress, disagreements, and unresolved problems. Select three candidates with explicit mechanisms, closest-work comparisons, and feasible local requirements. Propose the smallest experiments that distinguish their mechanisms from rival explanations, and save the map and sources.
-
-### Continue an existing project
-
-> Continue this project. Read the existing atlas, failed directions, and resource constraints first. Add relevant recent papers, check which hypotheses or plans need revision, and explain what the new evidence changes.
-
-### Investigate a specific mechanism
-
-> Could calibration of uncertainty before retrieval improve an Agent's routing? Find the closest methods and counterevidence first. Then assess whether my data can distinguish improved decisions from the alternative explanation that the system simply calls a stronger model more often.
-
-### Move into experiments
-
-> For this hypothesis, inspect the available resources and experiment code, design and freeze a comparison protocol, run within my authorized local budget, preserve failures and results, and update the claims and next decision.
-
-The requested depth can stop at orientation, a shortlist, a feasible design, executed experiments, publication arguments, or an incremental update. The skill should not imply that later stages happened when the task or available tools only support an earlier stage.
-
-## Atlas CLI
-
-The commands below assume the repository root is your current working directory and `/path/to/agent-project` already exists. Use absolute script paths when running from another directory. Global options such as `--root` and `--atlas-dir` precede the subcommand.
-
-```bash
-python skills/agent-research-atlas/scripts/atlas.py --root /path/to/agent-project discover
-python skills/agent-research-atlas/scripts/atlas.py --root /path/to/agent-project init --title 'My Agent research'
-python skills/agent-research-atlas/scripts/atlas.py --root /path/to/agent-project status
-python skills/agent-research-atlas/scripts/atlas.py --root /path/to/agent-project check
-```
-
-Read existing non-native maps before registering them with `adopt --file docs/existing-map.md`. Registration preserves the source and leaves its semantic import pending; the assistant must still read it and convert its actual content into sourced records. A single existing native atlas is reused. If several exist, inspect them and select the intended one with `--atlas-dir`.
-
-Incremental writes use `upsert --file batch.json --expected-revision N`, where `N` is the revision you read. Unknown fields are retained, nested objects merge, and lists append unique entries. Correct or supersede evidence explicitly instead of silently deleting history. See the [local atlas contract](skills/agent-research-atlas/references/local-atlas.md) for the batch schema, state requirements, and recovery guidance.
-
-Generate a bilingual query plan without performing retrieval:
-
-```bash
-python skills/agent-research-atlas/scripts/atlas.py queries --domain routing --focus-zh '检索前不确定性' --focus-en 'pre-retrieval uncertainty' --since 2024
-```
-
-The output covers surveys, closest work, negative evidence, and evaluation in both languages, with `executed: false`. Supply both focus translations together. Custom graph domains are supported, while this built-in query planner uses the seed-domain IDs; the host can write queries for other domains.
-
-### Files, views, and project-relative links
-
-The default project layout is:
+## Text workflow map
 
 ```text
-agent-project/
-  research-atlas.config.json
-  research-atlas/
-    atlas.json
-    MAP.md
-    map.html
-    domains/<domain-id>/MAP.md
-    domains/<domain-id>/notes.md
-    papers/
-    hypotheses/
-    claims/
-    explorations/
-    imports/
-    history/
-    experiments/<experiment-id>/
-      plan.json
-      freeze.json
-      runs/<run-id>/
+Project entry
+  → C01 scope + C02 read/reuse the local atlas
+  → C03 bilingual search → C04 identity/citations → C05 reading → C06 synthesis
+  → C07 ideas + C08 problem selection + C09 closest-work comparison
+  → C10 rival hypotheses → C11 feasibility → C12 method card
+
+Contribution route
+  ├─ Method/mechanism → C13 discriminating experiments
+  ├─ Benchmark/evaluation → C25 construction, validity, diagnosis → C13 experiments
+  └─ Theory/empirical/measurement → C12 design-specific evidence → C13 where applicable
+
+Evidence and manuscript
+  C14 freeze → C15 execute → C16 provenance/numbers → C17 inference → C18 claims
+  → C21 argument/citations → C26 drafting/polish + C28 scientific/editable figures
+  → C27 submission review, revisions and reviewer responses → C24 handoff
+
+Across stages
+  C19 independent critique; C22 adapters; C23 gap/extension lookup
+  C20 new evidence/failure memory → dependency reviews → update C02 → next cycle
 ```
 
-`research-atlas.config.json` can point to a reused native atlas elsewhere **inside the project**. **Experiment storage remains fixed at `PROJECT/research-atlas/experiments`**, even when the native atlas is reused from a different directory. `experiment.data.artifact_path` is relative to the project root, so it can connect that atlas to a record elsewhere within the same project, for example `research-atlas/experiments/exp-routing/runs/seed-7/record.json`. Do not resolve artifact paths relative to the atlas directory. Local artifact paths must exist and may not escape the project through absolute paths, traversal, or symlink components.
+## Supervisor-Skills integration
 
-Open `map.html` locally to filter by Chinese/English text, domain, type, or status and select nodes to inspect evidence and relationships. It requires no CDN or upload. The graph draws at most 140 matching nodes and displays a truncation notice; the full matching index remains available. Narrow the filters to inspect the remaining nodes.
+The collection associated with the user's “鸭博士” reference is indexed by its official name, **[HKUSTDial/Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills)**. We read all **12 SKILL.md bodies, their Markdown references and 18 Chinese handbook chapters** at the pinned revision, then connected selected methods to the existing atlas and evidence chain. See the [integration/source audit](docs/supervisor-source-audit.md) for files, decisions and reading records.
 
-Successful updates regenerate the views; refresh the page to see them. Store persistent human prose in `domains/<domain-id>/notes.md`. Generated views are rebuildable, and previous view contents are backed up before replacement. The HTML is a snapshot, not a live editor. Use explicit updates or `mark-stale` with a chosen review-age policy to identify material that needs revisiting.
+| Skill | Incorporated strengths | Capability |
+|---|---|---|
+| `idea-evaluator` | Contribution type, early risks, five benefit lenses, premise changes and resource fit | C07–C11 |
+| `deep-research` | Question-driven multi-perspective discovery, search blind spots, conditional synthesis and citation checks | C03–C06/C09 |
+| `vibe-research-workflow` | Research/coding/figure/writing coordination, method cards and continuity | C12/C15/C24 |
+| `tech-paper-template` | Problem–limitation–mechanism–implementation–contribution alignment | C12/C21/C26 |
+| `intro-drafter` | Contribution-specific introductions, running examples and usable paragraphs | C26 |
+| `paper-writer` | Section/full-manuscript drafting with separate evidence maps and citation review | C21/C26 |
+| `benchmark-paper-template` | Evaluation gap, construction, validity, diagnostic findings and optional companion methods | C25 |
+| `paper-polish` | Meaning-preserving polish, Chinese-to-English rewriting and terminology consistency | C26 |
+| `pre-submission-reviewer` | Paradigm-specific review of arguments, measurement, comparisons, presentation and reproduction | C19/C21/C27 |
+| `rebuttal-guidance` | Concern decomposition, evidence/action/revision mapping and complete responses | C27 |
+| `figure-designer` | Purpose-driven figure design, data/encoding, captions and reproducible plots | C28 |
+| `drawio-reconstruction` | Per-object reference reconstruction, native text/connectors, mixed media and visual handoff | C28 |
 
-### Evidence states
+Workbenches: [research advising and deep discovery](skills/agent-research-atlas/references/supervisor-discovery.md), [benchmark/manuscript/reviewer response](skills/agent-research-atlas/references/supervisor-publication.md), and [scientific figures/reconstruction](skills/agent-research-atlas/references/supervisor-figures.md). Five [project templates](skills/agent-research-atlas/assets/supervisor) cover the research brief, benchmark dossier, manuscript evidence, response ledger and figure handoff.
 
-The eight record types are `domain`, `paper`, `problem`, `hypothesis`, `experiment`, `claim`, `decision`, and `exploration`.
+## How sources complement one another
 
-Hypotheses progress from `proposed` to `grounded` and `testable` only with the corresponding closest-work, mechanism, prediction, rival, feasibility, minimum-test, and falsification fields. Empirical states require linked experiment artifacts and an evidence review; `independently_supported` also requires an explanation of independence and shared dependencies. Downgrading, parking, and reopening remain possible with a recorded reason.
+| Source group | Strength | Connection to Atlas |
+|---|---|---|
+| ResearchStudio | Idea generation, paper search and closest-work overlap | Preserve candidates and compare their exact difference against neighboring work |
+| ARIS | Literature, planning, implementation bridges, experiments, ablation and claim/citation review | Connect questions to code, raw results and manuscript claims |
+| K-Dense | Literature reviews, hypotheses, critical thinking, design and power | Add appropriate research designs and statistical goals |
+| Orchestra / Anthropic / Research-Equality | Creative operations, problem choice, risk, decision trees and research loops | Choose methods for the present bottleneck and retain branch decisions |
+| Supervisor-Skills | Research advising, benchmarks, drafting, polish, responses and figures | Turn exploration and experiments into complete research/writing deliverables |
+| Chinese/English discovery and citation services | Identity, full text, citation graphs, context and extraction | Share paper IDs and provenance across providers |
+| Hugging Face / autonomous research systems | Data, evaluation, training, logs, cloud jobs and execution patterns | Adapt to the available environment and return versions, outputs and resource records |
+| Atlas local tools | Maps, frozen inputs, run records, dependency updates and audits | Provide persistent project state for the combined workflow |
 
-Domains use coverage `unsearched`, `partial`, `reviewed`, or `stale`. A scoped `reviewed` pass needs a date, traceable exploration records, and coverage limitations. It does not mean an exhaustive search. Web sources record `metadata`, `abstract`, or `fulltext` access; local sources record a project-relative path, `local` access, and the location actually read.
+The integrated contracts resolve disagreements through the research design: check measurement and comparability before interpreting a negative result; let benchmarks center on measurement contributions; allow many-to-many method mappings; separate usable prose from evidence work files; address each actual review concern; and choose figure encodings from the quantities being shown. The complete [296-feature and 28-conflict audit](docs/coverage-audit.md) records adoption, complements and repair routes.
 
-These gates require explicit documentation. A validator cannot infer that the declared resources exist, the literature was read correctly, an experiment is independent, or a hypothesis is true. The [evidence and claims reference](skills/agent-research-atlas/references/evidence-and-claims.md) explains the review obligations.
+## Research areas and bilingual sources
 
-## Experiment CLI
+Seed areas include intent/goals, ambiguity/clarification, routing, planning, document ingestion/retrieval, RAG/answering, tools, memory, multi-agent coordination, evaluation, reliability/safety, efficiency, and data/adaptation. Extend the taxonomy for embodied agents, multimodality, human-agent collaboration, reinforcement learning or formal verification. Each domain records what was actually explored.
 
-Write a project-specific plan using the [experiment protocol](skills/agent-research-atlas/references/experiments.md) and [example JSON](skills/agent-research-atlas/assets/experiment-plan.example.json). The example is a synthetic recording fixture; its command and explicit input files must be adapted or made available inside your selected project.
+Queries include Chinese and English terminology, acronyms and neighboring-field vocabulary. Applicable sources include host search, OpenAlex, Semantic Scholar, Crossref, arXiv, DBLP, OpenReview, ACL Anthology, ChinaXiv, Chinese journals, CNKI and Wanfang. Full-text and account routes depend on available access. Scite, Elicit, Undermind and PaperQA can support citation context, extraction and local-paper QA through adapters. See the [bilingual retrieval protocol](skills/agent-research-atlas/references/bilingual-retrieval.md).
+
+## Local maps and tools
+
+A project typically holds `atlas.json` and history; overview/domain views; human `domains/<id>/notes.md`; source/query records; hypotheses and decisions; frozen experiments and results; and benchmark/manuscript/response/figure work files. JSON is the maintained state; Markdown/Mermaid and offline HTML are reading views. Writes regenerate views, and recorded premise changes create downstream review items.
 
 ```bash
-python skills/agent-research-atlas/scripts/experiments.py --root /path/to/agent-project plan --file plan.json
-python skills/agent-research-atlas/scripts/experiments.py --root /path/to/agent-project freeze experiment-id --mode exploratory --rationale 'Initial exploration; no independent confirmation data yet.'
-python skills/agent-research-atlas/scripts/experiments.py --root /path/to/agent-project run experiment-id --run-id seed-7 --seed 7 --authorized-local
-python skills/agent-research-atlas/scripts/experiments.py --root /path/to/agent-project validate-record experiment-id
+# From the repository; replace the project path with the actual workspace.
+python skills/agent-research-atlas/scripts/atlas.py --root /path/to/project discover
+python skills/agent-research-atlas/scripts/atlas.py --root /path/to/project init --title "Agent research"
+python skills/agent-research-atlas/scripts/atlas.py --root /path/to/project status
+python skills/agent-research-atlas/scripts/atlas.py --root /path/to/project queries --domain routing --focus-zh "意图歧义" --focus-en "intent ambiguity"
+python skills/agent-research-atlas/scripts/audit.py --root /path/to/project project
 ```
 
-Replace `experiment-id` and the seed with values declared in your plan. `--file` is resolved from the invoking shell's working directory; `--root` sets the research project and the reference point for command working directories and input-file paths. The runner substitutes only the literal `{seed}` in argv elements.
+Command and record details: [atlas](skills/agent-research-atlas/references/local-atlas.md), [experiments](skills/agent-research-atlas/references/experiments.md), [evidence and claims](skills/agent-research-atlas/references/evidence-and-claims.md).
 
-Choose `prospective` only when the relevant criteria were fixed before observing the relevant outcomes; otherwise use `exploratory` and explain why. The mode is an operator declaration, and a local freeze timestamp cannot establish that no earlier outcomes were observed. Frozen plans are immutable to the helper: use a new experiment ID and record the amendment when revising a design.
+## Locate a gap and extend it
 
-Only execute inspected commands already covered by the user's authorization. `--authorized-local` attests to that existing authorization; it grants no permission. The runner uses structured argv and `shell=False`, records timeout and budget decisions, and reserves local run allowances conservatively. It is **not an operating-system sandbox** and cannot restrict a chosen program's network access, writes outside the project, or external service spending. Use suitable existing isolation when the task needs it.
+```bash
+python skills/agent-research-atlas/scripts/audit.py locate --query "C25"
+python skills/agent-research-atlas/scripts/audit.py locate --query "polish"
+python skills/agent-research-atlas/scripts/audit.py locate --query "drawio"
+python skills/agent-research-atlas/scripts/audit.py check --repo .
+```
 
-Raw stdout and stderr, execution outcomes, frozen-plan hashes, and hashes of explicitly declared input files remain available. `succeeded` means the direct child exited with code 0. `scientific_verdict` remains `not_assessed`; stdout is not automatically interpreted as measurements or proof of a hypothesis. Independently inspect the implementation, evaluator, results, alternatives, and uncertainty.
-
-Use `import-result` for actual results produced by a cluster or another experiment framework. It retains source bytes and provenance, including failed results. Importing a local result again does not create independent evidence, and external runs are not retroactively constrained by the helper's local budget. See the protocol for the accepted JSON shape, incomplete attempts, locks, and exit codes.
-
-## Choose methods to fit the question
-
-| Research situation | Useful methods | Main question |
+| Gap | Owner | Typical repair |
 |---|---|---|
-| The literature is fragmented | Scoping review, comparison matrices, citation expansion | Which conclusions share a setting, and which are only superficially similar? |
-| No clear research opportunity | Failure analysis, assumption audit, contradiction and trade-off analysis | Which unresolved condition matters and has a testable mechanism? |
-| A proposal may only swap components | Closest-work comparison, simple baselines, mechanism ablations | What causes the difference, and what is the contribution beyond tuning? |
-| Results appear promising | Paired comparisons, effect sizes and intervals, repetitions, matched budgets | Is the difference stable, and could confounding or evaluator bias explain it? |
-| A mechanism is claimed | Competing predictions, interventions, counterfactuals, suitable causal design | Which observations rule out the strongest alternative? |
-| Broad generality is claimed | Distribution shifts, stress tests, stratified failures | Under which tasks, datasets, models, or resource limits does it fail? |
-| The contribution is theoretical | Precise definitions and assumptions, derivations, proof checks, counterexamples | Under what explicit conditions does the result hold? |
-| The contribution is data or evaluation | Annotation agreement, measurement validity, contamination audits | What is measured, and does it reflect actual task success? |
+| Literature coverage or Chinese terminology | C01/C03/C05 | Extend vocabulary/providers; verify actual search receipts and source locators |
+| Weak mechanism or nearest-work comparison | C07–C10 | Add premise history, strongest neighboring work and rival predictions |
+| Unclear experiment or statistical conditions | C11–C17 | Specify resources, independent units, information/cost and analysis |
+| Benchmark construction or validity | C25 | Add construct, lineage, ground truth, splits, contamination and diagnosis |
+| Draft/polish changes scientific meaning | C26 | Check the exact sentence's sources, numbers, scope and causal strength |
+| Missing reviewer response or revision | C27 | Map each original concern to evidence, action, location and status |
+| Uneditable or visually incorrect figure | C28 | Check native objects, connectors, rendering, data and editing scope separately |
+| New evidence changes an old claim | C20/C23 | Follow dependency paths, update records and perform the actual review |
 
-The [methodology reference](skills/agent-research-atlas/references/methodology.md) connects these choices to concrete records and decision points. Domain expertise, statistical tools, formal proof tools, or physical experiments may still be required. The skill should identify missing capabilities rather than claim universal methodological competence.
+Extend through **symptom → C-ID → owner file → source feature/conflict → minimal repair → regression task**. The registry maps **77 sources, 296 features, 28 capabilities and 28 conflict contracts**. The [extension guide](docs/EXTENDING.md) covers providers, methods, backends and workbenches.
 
-## Retrieval sources and optional services
-
-Use actual host search and official paper records, including arXiv, ACL Anthology, OpenReview, DBLP, OpenAlex, Semantic Scholar, and Crossref. Chinese-language coverage can use relevant journals, ChinaXiv, and CNKI/Wanfang when access is available. Search neighboring terminology from information retrieval, dialogue, decision-making, and planning where it changes coverage.
-
-Undermind, Elicit, Scite, and PaperQA2 are optional additions. They are **not installed, authenticated, or integrated by this repository**, and users do not need subscriptions to every service. Respect source access conditions. A metadata match is not full-text reading, and proximity in a citation graph does not validate a mechanism. See [bilingual retrieval](skills/agent-research-atlas/references/bilingual-retrieval.md) and the inspected-source details in [SOURCES.md](SOURCES.md).
-
-## Testing and limitations
-
-Run the local test suite from the repository root:
+## Validation and reuse
 
 ```bash
 python -m unittest discover -s tests -v
+python skills/agent-research-atlas/scripts/audit.py check --repo .
 ```
 
-The tests exercise atlas reuse, preservation of original files and notes, revision conflicts, record requirements, identity deduplication, path handling, HTML data escaping, frozen-plan integrity, budgets, result imports, and retained failures/timeouts. See the [validation record](docs/validation.md) for executed commands, actual results, independent-context workflow checks, and unresolved limits. This README does not substitute a predicted test outcome for that record.
+The deterministic suite contains **94 tests** for map reuse, identities, states/provenance, frozen inputs, budgets/failure records, dependency updates, numbers and extension references. Independent-context project tasks retain their actual artifacts and conflict decisions. See the [validation overview](docs/validation.md), [earlier tasks](docs/forward-conflicts.md), [Supervisor integration tasks](docs/supervisor-validation.md) and [reusable fixtures](evals/README.md) for executed scope and outcomes.
 
-The [retrieval smoke record](docs/retrieval-smoke.md) documents a limited real Chinese/English search, the original paper records that were opened, reading depth, and access failures. It is not an evaluation of field-wide recall. Experiment fixtures are explicitly **SYNTHETIC** and do not establish performance on real Agent models or private research data.
+The project supports careful question selection, testing and writing. Novelty, scientific validity and publication judgments depend on real literature, experiments and peer review. SCI/SCIE and venue-specific fit are checked against current rules for the requested submission.
 
-The software and workflow checks do not establish that candidate ideas are novel, all relevant literature is covered, scientific conclusions are correct, research productivity improves, or a venue will accept a paper. Local hashes check recorded consistency; they are not external attestations, complete source snapshots, or protection against an owner rewriting checksums or deleting entire histories. Version and back up research projects, and use independent evaluation where the scientific claim requires it.
+## License and attribution
 
-## Design sources and license
-
-This original implementation draws on selected materials from [ResearchStudio-Idea](https://github.com/microsoft/ResearchStudio), [ARIS](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep), [K-Dense Scientific Agent Skills](https://github.com/K-Dense-AI/scientific-agent-skills), [Orchestra AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs), [Anthropic scientific-problem-selection](https://github.com/anthropics/life-sciences/blob/main/scientific-problem-selection/SKILL.md), and [AIRAS](https://github.com/airas-org/airas).
-
-The source audit records the particular files or documentation inspected, their reading depth, adaptations, limitations, and original scientific references in [SOURCES.md](SOURCES.md). It does not claim that every file in those repositories was read or that their full systems were reproduced. No upstream collection must be installed to use this skill, and upstream files are not vendored here.
-
-Original code and documentation are available under the [MIT License](LICENSE). Linked papers, datasets, products, and upstream skills retain their own licenses. The researcher controls the research direction, resource budget, and scope of disclosure.
+Atlas core code and original protocols use [MIT](LICENSE). Three Supervisor-derived workbenches and five templates use **CC BY-NC-SA 4.0**, with credit to Yuyu Luo and contributors and an explanation of the adaptation. See the [license scope and third-party notices](THIRD_PARTY_NOTICES.md). All inspected sources, revisions and adoption locations are in [SOURCES](SOURCES.md).

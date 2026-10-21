@@ -1,0 +1,1 @@
+{"synthetic": true, "seed": 13, "metrics": {"accuracy": 0.625, "n": 8}, "code": "code/router.py", "dataset": "same-eight-synthetic-items", "status": "succeeded"}
