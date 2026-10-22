@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.2.0 — 2026-10-22
+
+### Supervisor–Scientist research loop
+
+- Add C29–C32: evidence-grounded research supervision, paper-level gap mining, manuscript-ready citation corpus, and Scientist–Critic adaptive research loops.
+- Add a Research Supervision workbench plus Gap Ledger, Citation Corpus and Mentor Panel templates. Supervisor decisions explicitly support proceed, search-more, repair-measurement, narrow, pivot, park and stop.
+- Add first-class `gap` atlas nodes with provenance kinds and candidate/open/partially-solved/solved/invalid/inaccessible/unknown/parked states. Source-grounded gaps require paper/experiment evidence; partial/solved states require later/resolution records.
+- Add unresolved-gap diagnosis to `audit.py project`, so continued projects surface research-direction work rather than silently treating a map as complete.
+
+### New source integrations
+
+- Add K-Dense `research-lookup` for manuscript-ready evidence packets and claim-support boundaries.
+- Add KalarisLabs `autoresearch` for literature/experiment inner loops, synthesis outer loops and evidence-driven pivots; explicitly reject its unbounded “never stop” behavior.
+- Add 45ck `gap-finder` for source→theme→gap traceability and explicit weak/contradictory evidence.
+- Add MentorForge `research-mentor-distiller` for evidence-grounded professor/lab methodology lenses, while rejecting impersonation or majority-vote scientific truth.
+- Expand the maintained registry to 81 sources, 312 source features, 32 capabilities and 32 conflict contracts.
+
+### Validation
+
+- Add gap-state tests plus supervision/citation/mentor contract tests; deterministic suite target becomes 101 tests.
+- Document the new source reading scope, adopted/rejected behaviors, and extension routes. No upstream paid search backend, recurring autonomous loop or real professor distillation runtime is claimed as executed.
+
 ## 1.1.0 — 2026-10-21
 
 ### Coverage and maintainability
