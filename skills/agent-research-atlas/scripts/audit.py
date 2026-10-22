@@ -191,6 +191,12 @@ def project_gaps(root, atlas_dir=None):
         if nodes:
             add('G-COVERAGE-' + coverage.upper(), ['C01', 'C03'], nodes, 'Recorded coverage is ' + coverage,
                 'Scope a bilingual search, execute available providers, record limits and actual results; seed folders are not a literature review.')
+    gaps = [n for n in state['nodes'] if n['type'] == 'gap']
+    active_gaps = [n['id'] for n in gaps if n.get('status', 'candidate') in {'candidate', 'open', 'partially_solved', 'unknown', 'inaccessible'}]
+    if active_gaps:
+        add('G-RESEARCH-GAPS', ['C29', 'C30', 'C31', 'C32'], active_gaps,
+            'Recorded research gaps still require direction decisions or further evidence',
+            'Read the Gap Ledger/linked papers, verify later work and data support, then record a Supervisor proceed/search-more/repair/narrow/pivot/park/stop decision.')
     hypotheses = [n for n in state['nodes'] if n['type'] == 'hypothesis']
     unresolved = [n['id'] for n in hypotheses if n.get('status', 'proposed') in {'proposed', 'grounded'} and any(
         n.get('data', {}).get('feasibility', {}).get(key) != 'available' for key in ('data', 'compute', 'evaluation', 'budget'))]
