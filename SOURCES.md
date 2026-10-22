@@ -1,23 +1,24 @@
 # Sources and design attribution / 来源与设计归因
 
-Audit: **2026-10-21 · v1.1.0**. **77 sources · 296 features · 28 capabilities · 28 conflict contracts**.
+Audit: **2026-10-22 · v1.2.0**. **81 sources · 312 features · 32 capabilities · 32 conflict contracts**.
 
 ## Reading scope / 阅读范围
 
-The audit includes **48 fully read named SKILL.md bodies**: ResearchStudio 3, ARIS 14, K-Dense 6, Orchestra 3, Anthropic 1, Research-Equality 9, and Supervisor-Skills 12. The Anthropic nine problem-selection references and Supervisor's **70 Markdown references plus 18 Chinese handbook chapters** were read. Other sources retain the exact, narrower depth recorded below; in particular, the seven HF candidates were reviewed at selected workflow/interface scope.
+The audit includes **52 fully read named SKILL.md bodies**: ResearchStudio 3, ARIS 14, K-Dense 7, Orchestra 3, Anthropic 1, Research-Equality 9, Supervisor-Skills 12, Kalaris autoresearch 1, 45ck gap-finder 1, and MentorForge 1. The Anthropic nine problem-selection references and Supervisor's **70 Markdown references plus 18 Chinese handbook chapters** were read. Other sources retain the exact, narrower depth recorded below; in particular, the seven HF candidates were reviewed at selected workflow/interface scope.
 
 File counts describe inspected texts, not independent scientific studies. Images, upstream runtime scripts, external case-study papers and entire repositories are not implicitly included. Source review and adapted task behavior are different from an upstream end-to-end run or a scientific effectiveness benchmark.
 
 - [26 original-method skill review](docs/method-source-audit.md)
 - [39 tool/system/RE/HF entries](docs/tool-source-audit.md)
 - [12 Supervisor skills: files, decisions and attribution](docs/supervisor-source-audit.md)
+- [4 supervision-loop additions: gap, citation, mentor and adaptive loop](docs/supervision-source-audit.md)
 - [Feature/complement/conflict index](docs/coverage-audit.md)
 - [Maintained registry](skills/agent-research-atlas/assets/capability-registry.json)
 - [Validation records](docs/validation.md)
 
 ## License scope
 
-Atlas core code/original protocols use MIT. Three Supervisor-derived workbenches and five templates carry CC BY-NC-SA 4.0, with source attribution and substantial changes identified in [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md). Upstream SKILL bodies, the full handbook, images and drawing runtime are not bundled. Optional services keep their own terms.
+Atlas core code/original protocols use MIT. Three Supervisor-derived workbenches and five templates carry CC BY-NC-SA 4.0, with source attribution and substantial changes identified in [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md). The new supervision/gap/citation protocols are Atlas adaptations; upstream SKILL bodies are not bundled. Optional services keep their own terms.
 
 ## Every source / 逐项索引
 
@@ -100,5 +101,9 @@ Atlas core code/original protocols use MIT. Three Supervisor-derived workbenches
 | `SRC-SUPERVISOR-PAPER-POLISH` | [Supervisor-Skills / paper-polish](https://github.com/HKUSTDial/Supervisor-Skills/tree/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/paper-polish) | Full SKILL.md and all associated Markdown references; assigned Chinese handbook chapters read in full. Source images/PDF, scripts and external case-study papers not executed or independently revalidated. See pinned reading manifest. Revision: `a20d76ef3979b804d7dbf599d577826957e0a8a9; read 2026-10-21` | 5 |
 | `SRC-SUPERVISOR-FIGURE-DESIGNER` | [Supervisor-Skills / figure-designer](https://github.com/HKUSTDial/Supervisor-Skills/tree/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/figure-designer) | Full SKILL.md and all associated Markdown references; assigned Chinese handbook chapters read in full. Source images/PDF, scripts and external case-study papers not executed or independently revalidated. See pinned reading manifest. Revision: `a20d76ef3979b804d7dbf599d577826957e0a8a9; read 2026-10-21` | 5 |
 | `SRC-SUPERVISOR-DRAWIO-RECONSTRUCTION` | [Supervisor-Skills / drawio-reconstruction](https://github.com/HKUSTDial/Supervisor-Skills/tree/a20d76ef3979b804d7dbf599d577826957e0a8a9/skills/drawio-reconstruction) | Full SKILL.md and all associated Markdown references; assigned Chinese handbook chapters read in full. Source images/PDF, scripts and external case-study papers not executed or independently revalidated. See pinned reading manifest. Revision: `a20d76ef3979b804d7dbf599d577826957e0a8a9; read 2026-10-21` | 6 |
+| `SRC-KALARIS-AUTORESEARCH` | [KalarisLabs research-agent-skills / autoresearch](https://github.com/KalarisLabs/research-agent-skills/blob/f73da6a491e3cc3417cfe88e1130469e763b1b33/skills/autoresearch/SKILL.md) | Full SKILL.md read at pinned revision; domain skills, loop runtimes and external execution backends were not executed. Revision: `f73da6a491e3cc3417cfe88e1130469e763b1b33` | 4 |
+| `SRC-KDENSE-RESEARCH-LOOKUP` | [K-Dense Scientific Agent Skills / research-lookup](https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/research-lookup/SKILL.md) | Full SKILL.md read at pinned revision; Parallel/OpenRouter runtimes and paid credentials were not executed. Revision: `593377bb048752abb0152deab9fbb1083a6087df` | 4 |
+| `SRC-45CK-GAP-FINDER` | [45ck research-literature-review-skills / gap-finder](https://github.com/45ck/research-literature-review-skills/blob/235522d0ffcfeb4a3029bae3909f83ada2a5d2e5/.claude/skills/gap-finder/SKILL.md) | Full SKILL.md read at pinned revision; rest of the pack was not fully audited in this follow-up. Revision: `235522d0ffcfeb4a3029bae3909f83ada2a5d2e5` | 3 |
+| `SRC-MENTORFORGE-DISTILLER` | [MentorForge / research-mentor-distiller](https://github.com/qwqalice/MentorForge/blob/14de3bc28ee7e74273c69fc3e4672426f4b335d0/research-mentor-distiller/SKILL.md) | Full SKILL.md read at pinned revision; collection/extraction scripts and generated mentor packages were not executed in this integration. Revision: `14de3bc28ee7e74273c69fc3e4672426f4b335d0` | 5 |
 
 The registry is the current maintenance authority. Dated audit manifests and task snapshots preserve what was read or executed at that time; later changes do not rewrite those historical boundaries.
