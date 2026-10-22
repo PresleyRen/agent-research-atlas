@@ -48,6 +48,51 @@ class ParsedPage(HTMLParser):
 
 
 class AtlasCliTests(unittest.TestCase):
+    def test_gap_nodes_require_grounding_and_review_state(self):
+        self.initialize()
+        paper = self.paper("paper-gap", doi="10.5555/synthetic-gap")
+        self.upsert({"nodes": [paper]}, revision=0)
+        gap = {
+            "id": "gap-one",
+            "type": "gap",
+            "title": "SYNTHETIC unresolved routing condition",
+            "status": "open",
+            "domains": [],
+            "sources": [],
+            "data": {
+                "source_kind": "author_stated_limitation",
+                "evidence_ids": ["paper-gap"],
+                "unresolved_part": "SYNTHETIC later-stage intent updates are not covered",
+                "review_reason": "SYNTHETIC full-text limitation checked and later work still pending"
+            }
+        }
+        self.upsert({"nodes": [gap]}, revision=1)
+        self.assertEqual(self.node("gap-one")["status"], "open")
+        bad = dict(gap)
+        bad["id"] = "gap-ungrounded"
+        bad["data"] = dict(gap["data"], evidence_ids=[])
+        self.reject_unchanged({"nodes": [bad]}, revision=2)
+
+    def test_partially_solved_gap_requires_later_paper(self):
+        self.initialize()
+        paper = self.paper("paper-gap", doi="10.5555/synthetic-gap")
+        self.upsert({"nodes": [paper]}, revision=0)
+        gap = {
+            "id": "gap-partial",
+            "type": "gap",
+            "title": "SYNTHETIC partial gap",
+            "status": "partially_solved",
+            "domains": [],
+            "sources": [],
+            "data": {
+                "source_kind": "project_inference",
+                "evidence_ids": ["paper-gap"],
+                "unresolved_part": "SYNTHETIC residual condition",
+                "review_reason": "SYNTHETIC nearest work checked"
+            }
+        }
+        self.reject_unchanged({"nodes": [gap]}, revision=1)
+
     def test_adopt_additional_map_reuses_state_and_preserves_both_sources(self):
         self.initialize()
         original = self.state()
