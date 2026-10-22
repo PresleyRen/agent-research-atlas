@@ -30,11 +30,11 @@ def main():
         "# Sources and design attribution / 来源与设计归因", "",
         f"Audit: **{registry['audit_date']} · v{registry['version']}**. {overview}.", "",
         "## Reading scope / 阅读范围", "",
-        "The audit includes **48 fully read named SKILL.md bodies**: ResearchStudio 3, ARIS 14, K-Dense 6, Orchestra 3, Anthropic 1, Research-Equality 9, and Supervisor-Skills 12. The Anthropic nine problem-selection references and Supervisor's **70 Markdown references plus 18 Chinese handbook chapters** were read. Other sources retain the exact, narrower depth recorded below; in particular, the seven HF candidates were reviewed at selected workflow/interface scope.", "",
+        "The audit includes **52 fully read named SKILL.md bodies**: ResearchStudio 3, ARIS 14, K-Dense 7, Orchestra 3, Anthropic 1, Research-Equality 9, Supervisor-Skills 12, Kalaris autoresearch 1, 45ck gap-finder 1, and MentorForge 1. The Anthropic nine problem-selection references and Supervisor's **70 Markdown references plus 18 Chinese handbook chapters** were read. Other sources retain the exact, narrower depth recorded below; in particular, the seven HF candidates were reviewed at selected workflow/interface scope.", "",
         "File counts describe inspected texts, not independent scientific studies. Images, upstream runtime scripts, external case-study papers and entire repositories are not implicitly included. Source review and adapted task behavior are different from an upstream end-to-end run or a scientific effectiveness benchmark.", "",
         "- [26 original-method skill review](docs/method-source-audit.md)",
         "- [39 tool/system/RE/HF entries](docs/tool-source-audit.md)",
-        "- [12 Supervisor skills: files, decisions and attribution](docs/supervisor-source-audit.md)",
+        "- [12 Supervisor skills: files, decisions and attribution](docs/supervisor-source-audit.md)",\n        "- [4 supervision-loop additions: gap, citation, mentor and adaptive loop](docs/supervision-source-audit.md)",
         "- [Feature/complement/conflict index](docs/coverage-audit.md)",
         "- [Maintained registry](skills/agent-research-atlas/assets/capability-registry.json)",
         "- [Validation records](docs/validation.md)", "",
@@ -51,7 +51,7 @@ def main():
     lines = ["# Coverage, complements and conflict decisions / 覆盖与互补审计", "",
              f"Audit: **{registry['audit_date']} · v{registry['version']}**. {overview}.", "",
              "## Scope and status", "",
-             "每个列出的来源特色均映射到采用状态、能力、互补来源、剩余边界与补法。来源读取细节见 [SOURCES](../SOURCES.md)；Supervisor 的完整文本审查、冲突依据与改编范围见 [专门说明](supervisor-source-audit.md)。已执行的行为见 [验证总表](validation.md) 和 [Supervisor任务记录](supervisor-validation.md)。", "",
+             "每个列出的来源特色均映射到采用状态、能力、互补来源、剩余边界与补法。来源读取细节见 [SOURCES](../SOURCES.md)；Supervisor 的完整文本审查、冲突依据与改编范围见 [专门说明](supervisor-source-audit.md)；v1.2 导师闭环新增来源见 [supervision source audit](supervision-source-audit.md)。已执行的行为见 [验证总表](validation.md) 和 [Supervisor任务记录](supervisor-validation.md)。", "",
              "| Status | Features | Meaning |", "|---|---:|---|"]
     for status in ["implemented", "protocol", "optional", "reference", "deferred", "rejected"]:
         lines.append(f"| `{status}` | {counts[status]} | {cell(registry['audit_scope']['status_meanings'][status])} |")

@@ -1,6 +1,6 @@
 ---
 name: agent-research-atlas
-description: "Build and update a persistent bilingual research atlas; synthesize surveys and papers, discover Agent research questions, assess feasibility, design falsifiable experiments and benchmarks, retain negative results, draft and polish evidence-backed papers, design scientific figures, and resolve reviewer concerns. Use for 科研选题、综述梳理、研究地图、查新、意图识别、路由、文档检索、RAG、实验设计、Benchmark、论文写作润色、审稿回复、科研绘图, or continuing an existing research project."
+description: "Build and update a persistent bilingual research atlas; synthesize surveys and original papers, mine and verify paper-level gaps, run an evidence-grounded Supervisor–Scientist–Critic loop, assess feasibility, design falsifiable experiments and benchmarks, maintain manuscript-ready citation evidence, retain negative results, draft and polish evidence-backed papers, design scientific figures, and resolve reviewer concerns. Use for 科研选题、综述梳理、研究地图、查新、意图识别、路由、文档检索、RAG、实验设计、Benchmark、论文写作润色、审稿回复、科研绘图, or continuing an existing research project."
 ---
 
 # Agent Research Atlas
@@ -19,6 +19,16 @@ Turn an Agent research question into a traceable cycle of exploration, hypothesi
 Read [local-atlas.md](references/local-atlas.md) before the first write. Bundled tools require Python 3.10+ and only the standard library. `<SKILL>` is the directory containing this file; `<PROJECT>` is the research workspace. Prefer absolute paths.
 
 For capability omissions, conflicting methods or extension requests, read [extension-contract.md](references/extension-contract.md) and run `audit.py locate --query <symptom-or-Cxx>`. Follow the capability's implementation, tests, complement links and repair route. The registry is a scoped source/feature audit, not a claim to contain every scientific skill.
+
+## Supervision architecture
+
+For research-direction exploration, read [research-supervision.md](references/research-supervision.md) before launching an open-ended search. Use three distinct responsibilities:
+
+- **Research Supervisor / PI Advisor (C29):** decides what must be known next and whether to proceed, search more, repair measurement, narrow, pivot, park or stop. Its judgments must cite literature/data/experiment evidence.
+- **Research Scientist / Executor:** performs the actual searches, full-text reading, gap updates, experiments and atlas writes.
+- **Research Critic / Reviewer (C19/C32):** attacks nearest-work coverage, data/measurement validity, baselines, mechanism and interpretation. Reviewer output does not directly change scientific status.
+
+Maintain a project **Gap Ledger (C30)** and **Citation Corpus (C31)** using `assets/supervision/`. A Future Work sentence, citation count, empty search or mentor opinion is not by itself a research gap. Verify the original text, later work, remaining boundary, data signal and feasibility. When a direction fails, record why and let the Supervisor assign a narrower question, a literature return, a new discriminating test, a pivot or a stop.
 
 ## Match the requested depth
 
@@ -48,6 +58,8 @@ Proceed autonomously with already authorized work. Paper submission, public disc
 ## Research loop
 
 ### 1. Scope the field and read the evidence
+
+If the task is research-direction discovery, run the Supervisor–Scientist loop in `research-supervision.md`: begin from the decision-changing question, not an unbounded keyword search.
 
 Read [agent-domains.md](references/agent-domains.md) and [bilingual-retrieval.md](references/bilingual-retrieval.md).
 

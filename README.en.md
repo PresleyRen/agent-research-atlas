@@ -4,7 +4,7 @@
 
 [中文](README.md) · [Use the skill](skills/agent-research-atlas/SKILL.md) · [All sources](SOURCES.md) · [Coverage and complements](docs/coverage-audit.md) · [Validation](docs/validation.md) · [Extension guide](docs/EXTENDING.md)
 
-Agent Research Atlas is a Chinese/English skill for Agent research. It guides an AI assistant through surveys and primary papers, maps progress and disagreements, develops questions from failures and changed assumptions, evaluates local feasibility, designs discriminating studies, records experiments and turns evidence into manuscript arguments and prose.
+Agent Research Atlas is a Chinese/English skill for Agent research. It guides an AI assistant through surveys and original papers, turns verified limitations and failures into traceable research gaps, and runs a Research Supervisor → Scientist → Critic loop that keeps checking prior work, data, measurement, feasibility and rival explanations before committing to a direction.
 
 Each project keeps its own map, domain folders, sources, plans, results and decisions. Existing maps are read and reused. New evidence can update dependent conclusions and next steps. Start with a complete research cycle or request a focused task such as a closest-work review, benchmark design, Methods section, reviewer response or editable method figure.
 
@@ -34,7 +34,7 @@ folders and next steps, and link actual results to manuscript claims.
 
 ## Complete capability inventory
 
-The host executes research protocols on the actual materials; local scripts maintain maps, records and repeatable checks. Each of these **28 capabilities** has a stable ID for locating its implementation, sources, complements and verification records.
+The host executes research protocols on the actual materials; local scripts maintain maps, records and repeatable checks. Each of these **32 capabilities** has a stable ID for locating its implementation, sources, complements and verification records.
 
 | Capability | Work and deliverables |
 |---|---|
@@ -66,30 +66,51 @@ The host executes research protocols on the actual materials; local scripts main
 | C26 · Manuscript drafting and bilingual polish | Draft introductions and sections for the contribution type; keep evidence maps, terminology and change notes separate from usable prose. |
 | C27 · Submission review and reviewer responses | Locate manuscript issues and account for every original concern through evidence, actions, revision locations, status and response text. |
 | C28 · Scientific figures and editable reconstruction | Design motivation, method and result figures; rebuild reference text/shapes/connectors and deliver native sources, actual previews and editing maps. |
+| C29 · Research supervision and direction decisions | An evidence-grounded Supervisor/PI chooses proceed, search-more, repair-measurement, narrow, pivot, park or stop. |
+| C30 · Paper-level gap mining and ledger | Extract and verify limitations/gaps from original papers, Discussion/Limitations, later citations and negative evidence; track open/partial/solved/invalid/parked states. |
+| C31 · Manuscript-ready citation corpus | Preserve identity, version, exact locator, what a source can/cannot support, its manuscript role and linked Atlas IDs. |
+| C32 · Scientist–Critic adaptive loop | Scientist executes; Critic attacks prior work/data/measurement/baselines/mechanism; Supervisor decides whether to deepen, broaden, pivot, park or stop. |
 
 ## Text workflow map
 
 ```text
 Project entry
-  → C01 scope + C02 read/reuse the local atlas
-  → C03 bilingual search → C04 identity/citations → C05 reading → C06 synthesis
-  → C07 ideas + C08 problem selection + C09 closest-work comparison
-  → C10 rival hypotheses → C11 feasibility → C12 method card
+  → C29 Research Supervisor defines the decision-changing unknown
+  → C01/C02 scope + existing atlas
+  → Scientist: C03 search → C04 citation graph → C05 surveys/original papers
+  → C30 Gap Ledger → C31 Citation Corpus
+  → C06 evidence critique + C09 closest work → C07/C08 candidate directions
+  → C10 rivals → C11 data/measurement/resource feasibility → C12 method card
 
-Contribution route
-  ├─ Method/mechanism → C13 discriminating experiments
-  ├─ Benchmark/evaluation → C25 construction, validity, diagnosis → C13 experiments
-  └─ Theory/empirical/measurement → C12 design-specific evidence → C13 where applicable
+Supervisor gate
+  ├─ invalid/already solved gap → STOP or choose another gap
+  ├─ data/evaluator cannot answer claim → REPAIR MEASUREMENT / NARROW
+  ├─ missing decision-changing literature → SEARCH MORE
+  └─ testable → PROCEED → C13 discriminating experiment
 
-Evidence and manuscript
-  C14 freeze → C15 execute → C16 provenance/numbers → C17 inference → C18 claims
-  → C21 argument/citations → C26 drafting/polish + C28 scientific/editable figures
-  → C27 submission review, revisions and reviewer responses → C24 handoff
+Empirical loop
+  C14 freeze → C15 execute → C16 provenance/numbers → C17 inference → C18 claim
+  → C19/C32 Critic attacks prior work, data, leakage, baselines, mechanism, interpretation
+  → C29 Supervisor: DEEPEN / BROADEN / PIVOT / PARK / STOP
+  → return to C03–C06 when new evidence is needed
+
+Publication
+  C21 argument/citations → C26 prose + C28 figures
+  → C27 submission review/responses → C24 handoff
 
 Across stages
-  C19 independent critique; C22 adapters; C23 gap/extension lookup
-  C20 new evidence/failure memory → dependency reviews → update C02 → next cycle
+  C20 failure/new-evidence memory; C22 adapters; C23 extension lookup; C02 continuous map updates
 ```
+
+## Research Supervisor–Scientist loop
+
+v1.2 promotes research supervision into a first-class architecture via [research-supervision.md](skills/agent-research-atlas/references/research-supervision.md).
+
+- **Supervisor / PI Advisor** keeps asking whether the original literature, later work, data and measurement actually justify the direction.
+- **Scientist / Executor** performs the search, full-text reading, gap verification, experiments and atlas updates.
+- **Critic / Reviewer** attacks nearest-work coverage, data/measurement validity, leakage, strong baselines, rival mechanisms and claim scope.
+
+New reusable artifacts are the [Gap Ledger](skills/agent-research-atlas/assets/supervision/gap-ledger.md), [Citation Corpus](skills/agent-research-atlas/assets/supervision/citation-corpus.md) and [Mentor Panel](skills/agent-research-atlas/assets/supervision/mentor-panel.md). `gap` is now a first-class Atlas node with candidate/open/partially_solved/solved/invalid_gap/inaccessible/unknown/parked states. See the [v1.2 source audit](docs/supervision-source-audit.md).
 
 ## Supervisor-Skills integration
 
@@ -167,17 +188,24 @@ python skills/agent-research-atlas/scripts/audit.py check --repo .
 | Missing reviewer response or revision | C27 | Map each original concern to evidence, action, location and status |
 | Uneditable or visually incorrect figure | C28 | Check native objects, connectors, rendering, data and editing scope separately |
 | New evidence changes an old claim | C20/C23 | Follow dependency paths, update records and perform the actual review |
+| A paper states a limitation but it may not be a real open problem | C30 | Build a Gap Ledger entry and verify later work, boundaries, data signal and minimum discriminating test |
+| Need ongoing supervisor-style direction control | C29/C32 | Supervisor task → Scientist execution → Critic attack → Supervisor decision |
+| References are found but not reusable during writing | C31 | Store identity, locator, support/non-support scope and manuscript role |
+| Want research guidance inspired by real professors/labs | C29 | Distill only repeated public research signals with direct/inference/speculative evidence levels |
 
-Extend through **symptom → C-ID → owner file → source feature/conflict → minimal repair → regression task**. The registry maps **77 sources, 296 features, 28 capabilities and 28 conflict contracts**. The [extension guide](docs/EXTENDING.md) covers providers, methods, backends and workbenches.
+Extend through **symptom → C-ID → owner file → source feature/conflict → minimal repair → regression task**. The registry maps **81 sources, 312 features, 32 capabilities and 32 conflict contracts**. The [extension guide](docs/EXTENDING.md) covers providers, methods, backends and workbenches.
 
 ## Validation and reuse
+
+The [real-publication literature fixture](evals/real_literature/README.md) tests five published sources, competing follow-up findings, and whether a proposed direction is prematurely declared novel or feasible.
+
 
 ```bash
 python -m unittest discover -s tests -v
 python skills/agent-research-atlas/scripts/audit.py check --repo .
 ```
 
-The deterministic suite contains **94 tests** for map reuse, identities, states/provenance, frozen inputs, budgets/failure records, dependency updates, numbers and extension references. Independent-context project tasks retain their actual artifacts and conflict decisions. See the [validation overview](docs/validation.md), [earlier tasks](docs/forward-conflicts.md), [Supervisor integration tasks](docs/supervisor-validation.md) and [reusable fixtures](evals/README.md) for executed scope and outcomes.
+The deterministic suite contains **109 tests** (101 original + 8 real-publication evidence checks) for map reuse, identities, states/provenance, frozen inputs, budgets/failure records, dependency updates, numbers and extension references. Independent-context project tasks retain their actual artifacts and conflict decisions. See the [validation overview](docs/validation.md), [earlier tasks](docs/forward-conflicts.md), [Supervisor integration tasks](docs/supervisor-validation.md) and [reusable fixtures](evals/README.md) for executed scope and outcomes.
 
 The project supports careful question selection, testing and writing. Novelty, scientific validity and publication judgments depend on real literature, experiments and peer review. SCI/SCIE and venue-specific fit are checked against current rules for the requested submission.
 

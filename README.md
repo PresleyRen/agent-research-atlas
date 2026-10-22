@@ -4,9 +4,9 @@
 
 [English](README.en.md) · [使用技能](skills/agent-research-atlas/SKILL.md) · [全部来源](SOURCES.md) · [能力与互补](docs/coverage-audit.md) · [测试记录](docs/validation.md) · [扩展指南](docs/EXTENDING.md)
 
-Agent Research Atlas 是面向 Agent 研究的中英双语 Skill。它帮助 AI 助手读取综述与原始论文，整理研究方向、进展和争议，从实际失败、前提变化与评估缺口中发现问题，再结合本地资源设计可检验方案、记录实验、组织论文论证与成稿。
+Agent Research Atlas 是面向 Agent 研究的中英双语 Skill。它帮助 AI 助手读取综述与原始论文，整理研究方向、进展和争议，从论文局限、真实失败、前提变化与评估缺口中建立可追踪 Gap；再由 Research Supervisor 指导 Scientist 检索、验证和实验，并让 Critic 从近邻工作、数据、测量与替代解释攻击当前观点，直到形成可行方向或有依据地转向。
 
-每个项目保留自己的地图、领域文件夹、来源、方案、结果和决策。已有地图会优先读取并复用；新材料进入后可以更新关联结论和下一步。你可以从完整研究流程开始，也可以直接要求“继续查新”“设计 Benchmark”“写 Methods”“回复审稿意见”或“把方法图做成可编辑版本”。
+每个项目保留自己的地图、领域文件夹、来源、Gap、Citation Corpus、方案、结果和决策。已有地图会优先读取并复用；新材料进入后可以更新关联结论和下一步。你可以从完整研究流程开始，也可以直接要求“继续查新”“设计 Benchmark”“写 Methods”“回复审稿意见”或“把方法图做成可编辑版本”。
 
 ## 快速开始
 
@@ -16,8 +16,8 @@ Agent Research Atlas 是面向 Agent 研究的中英双语 Skill。它帮助 AI 
 使用 agent-research-atlas，继续 /path/to/my-agent-project。
 我的方向是意图识别、文档检索、路由和回答。
 先读取已有地图、综述、论文与失败记录；补中英文检索，
-比较最接近的工作，给出值得推进的问题和本地可行的区分性实验。
-更新地图、领域文件夹与下一步；已有结果请连到论文论点。
+由 Supervisor 明确本轮最关键的问题；Scientist 回原文、查后续工作并更新 Gap Ledger 与 Citation Corpus。
+比较最接近的工作、数据与测量可行性，给出值得推进的问题和本地可行的区分性实验；Critic 复核后再决定继续、补查、收窄、转向或停止。
 ```
 
 按阶段直接提出请求也可以：
@@ -26,6 +26,7 @@ Agent Research Atlas 是面向 Agent 研究的中英双语 Skill。它帮助 AI 
 |---|---|---|
 | 摸清方向 | “整理意图到检索到回答的研究地图，标出进展、争议和未探索部分。” | 有来源的方向图、文献比较与待查问题 |
 | 挑选研究点 | “结合现有代码和预算，比较这些点子的最近工作、机制与最小实验。” | 研究简报、竞争解释、可行性与行动决策 |
+| 导师式探索 | “像博士导师一样持续指导 Scientist：从原文找真实 gap，反复审查数据和观点，不行就换方向。” | Supervisor 决策、Gap Ledger、Critic 复核、下一任务与 Citation Corpus |
 | 做评测研究 | “设计区分意图歧义与知识缺失的 Agent Benchmark。” | 构建与效度方案、独立划分、基线、RQ和分析设计 |
 | 做实验 | “按这个已批准计划运行，保留所有结果并更新论点。” | 冻结计划、原始记录、数值核对和结果解释 |
 | 写论文 | “基于实际材料写英文 Introduction 和 Methods，另存证据表。” | 可使用正文、引用与证据映射 |
@@ -35,7 +36,7 @@ Agent Research Atlas 是面向 Agent 研究的中英双语 Skill。它帮助 AI 
 
 ## 完整能力说明
 
-研究协议由宿主按实际材料执行；本地脚本负责地图、记录与可重复核查。以下 **28 项能力**都有稳定 ID，可用 `audit.py locate` 查到对应文件、来源、互补能力和验证记录。
+研究协议由宿主按实际材料执行；本地脚本负责地图、记录与可重复核查。以下 **32 项能力**都有稳定 ID，可用 `audit.py locate` 查到对应文件、来源、互补能力和验证记录。
 
 | 能力 | 工作与产物 |
 |---|---|
@@ -67,29 +68,41 @@ Agent Research Atlas 是面向 Agent 研究的中英双语 Skill。它帮助 AI 
 | C26 · 论文成稿与中英润色 | 按贡献类型组织引言和各章，直接输出正文；另存证据表、术语表和改动说明，保持科学含义。 |
 | C27 · 投稿前审查与审稿回复 | 按实际稿件定位问题，保留每条原意见，连接证据、行动、修订位置和完成状态，生成完整回复。 |
 | C28 · 科研图与可编辑图稿 | 设计动机、方法、结果图；将参考图拆成文字/模块/连线，保存可编辑源、实际预览与编辑说明。 |
+| C29 · 科研导师与方向决策 | Supervisor/PI 以论文、数据、可行性和 Critic 结果决定继续、补查、修复测量、收窄、转向、暂存或停止。 |
+| C30 · 论文级 Gap 挖掘与状态账本 | 从综述、原始论文、Discussion/Limitations、后续引用与负结果提取 gap，并跟踪 open/partial/solved/invalid/parked。 |
+| C31 · 可复用引用证据库 | 保存论文身份、版本、原文 locator、可以/不可以支持的 claim、论文角色和 Atlas 关联，供后续写作直接复用。 |
+| C32 · Scientist–Critic 自适应研究循环 | Scientist 执行，Critic 攻击，Supervisor 决策；结果不支持时能回文献、换假设、换方向或停止。 |
 
 ## 工作流文本图
 
 ```text
 项目入口
-  → C01 明确范围 + C02 读取/复用本地地图
-  → C03 中英检索 → C04 身份与引用 → C05 读综述/原文 → C06 证据综合
-  → C07 发散问题 + C08 选择方向 + C09 最近工作比较
-  → C10 竞争假设 → C11 本地可行性 → C12 方法卡
+  → C29 Research Supervisor：定义“哪项未知最可能改变方向”
+  → C01/C02 范围与已有地图
+  → Scientist: C03 中英检索 → C04 引用图 → C05 综述/原始论文
+  → C30 Gap Ledger：作者局限 / 观察局限 / 项目推断 / 搜索缺失
+  → C31 Citation Corpus：把可引用证据和不能支持的范围一起沉淀
+  → C06 批判综合 + C09 最近工作 → C07/C08 候选方向
+  → C10 竞争假设 → C11 数据/测量/资源可行性 → C12 方法卡
 
-贡献路线
-  ├─ 方法/机制研究 → C13 区分性实验
-  ├─ Benchmark/评估研究 → C25 构建、效度、诊断 → C13 实验
-  └─ 理论/经验/测量研究 → C12 按研究设计选证据 → C13 适用实验
+Supervisor Gate
+  ├─ gap 无效/已解决 → STOP / 换 gap
+  ├─ 数据或评价器不能证明观点 → REPAIR MEASUREMENT / NARROW
+  ├─ 关键文献不足 → SEARCH MORE
+  └─ 可检验 → PROCEED → C13 区分性实验
 
-实证与成稿
-  C14 冻结计划 → C15 执行 → C16 来源/数值 → C17 统计分析 → C18 论点
-  → C21 论证与引用 → C26 引言/正文/中英润色 + C28 科研图/可编辑图稿
-  → C27 投稿审查、逐条修订与审稿回复 → C24 复现与交接
+实证循环
+  C14 冻结 → C15 执行 → C16 数字/来源 → C17 统计 → C18 论点
+  → C19/C32 Critic 从近邻、数据、泄漏、baseline、机制、解释再次攻击
+  → C29 Supervisor：DEEPEN / BROADEN / PIVOT / PARK / STOP
+  → 必要时回 C03–C06，而不是随机继续实验
 
-贯穿各阶段
-  C19 独立批评；C22 工具适配；C23 缺口与补强定位
-  C20 新证据/失败记忆 → 待复核依赖 → 更新 C02 地图 → 继续下一轮
+成稿
+  C21 论证与引用 → C26 正文/润色 + C28 图稿
+  → C27 投稿审查/回复 → C24 复现与交接
+
+贯穿
+  C20 新证据/失败记忆；C22 工具适配；C23 缺口与补强定位；C02 持续更新地图
 ```
 
 ## 已整合 Supervisor-Skills（“鸭博士”相关科研技能包）
@@ -113,20 +126,33 @@ Agent Research Atlas 是面向 Agent 研究的中英双语 Skill。它帮助 AI 
 
 常用工作台：[选题与深度调研](skills/agent-research-atlas/references/supervisor-discovery.md)、[Benchmark/论文/审稿回复](skills/agent-research-atlas/references/supervisor-publication.md)、[科研图与重建](skills/agent-research-atlas/references/supervisor-figures.md)。五个 [项目模板](skills/agent-research-atlas/assets/supervisor) 分别用于研究简报、Benchmark设计、论文证据、审稿回复和图稿交接。
 
+## 新增 Research Supervisor–Scientist 闭环
+
+v1.2 将原有方法提升为明确的三角色架构：[Research Supervision 工作台](skills/agent-research-atlas/references/research-supervision.md)。
+
+- **Supervisor / PI Advisor**：反复追问“原文在哪里、后续有没有解决、数据能否回答、什么结果会推翻、下一步最值钱的检查是什么”。
+- **Scientist / Executor**：真正执行搜索、全文阅读、Gap 更新、实验和 Atlas 写入。
+- **Critic / Reviewer**：从最近工作、数据、测量、泄漏、强 baseline、替代机制和论点范围找致命问题。
+
+新增 [Gap Ledger](skills/agent-research-atlas/assets/supervision/gap-ledger.md)、[Citation Corpus](skills/agent-research-atlas/assets/supervision/citation-corpus.md) 和 [Mentor Panel](skills/agent-research-atlas/assets/supervision/mentor-panel.md)。`gap` 也是 Atlas 的正式节点类型，可保存 candidate/open/partially_solved/solved/invalid_gap/inaccessible/unknown/parked 状态。来源与冲突取舍见 [v1.2 来源审计](docs/supervision-source-audit.md)。
+
 ## 不同来源如何互补
 
 | 来源组 | 贡献 | 与 Atlas 的配合 |
 |---|---|---|
 | ResearchStudio | 问题发散、论文搜索、最近工作重叠检查 | 候选先入图，再以具体近邻工作检验差异 |
 | ARIS | 调研、方案、实现桥接、实验/消融、结果与引用审查 | 把研究问题连到代码、原始结果和论文论点 |
-| K-Dense | 文献综述、科学假设、批判思考、实验设计和功效 | 给候选和实验补充适用的研究设计与统计目标 |
+| K-Dense | 文献综述、科学假设、批判思考、实验设计、功效与 research-lookup evidence packet | 给候选、实验和 Citation Corpus 补充研究设计、claim-support/contradict 证据 |
+| Kalaris autoresearch | 文献 bootstrap、实验 inner loop、综合 outer loop、pivot 回文献 | 接入 C32，但不继承“never stop”或无人授权后台循环 |
+| Gap Finder | source→theme→gap、矛盾和弱证据显式化 | 接入 C30，并由 later work/可行性门判断 gap 是否真实仍开放 |
+| MentorForge | 从真实研究者公开论文提炼 research taste 与 evaluation standards | 接入 C29 Mentor Panel，只保留有公开证据的重复信号，不模拟私人意见 |
 | Orchestra / Anthropic / Research-Equality | 创意操作、问题选择、风险和决策树、研究循环 | 根据当前卡点选择方法，保存分支与决策理由 |
 | Supervisor-Skills | 研究指导、Benchmark、成稿润色、审稿回复与图稿 | 将探索和实验产物组织成完整的研究与写作交付 |
 | 中英文检索与引用服务 | 论文身份、全文、引文关系、证据上下文与结构化提取 | 多渠道检索与回执共用论文 ID 和来源记录 |
 | Hugging Face / 自动科研系统 | 数据、评估、训练、日志、云作业与执行流程参考 | 按可用环境接适配器，回收版本、结果和资源记录 |
 | Atlas 本地工具 | 地图、冻结输入、运行记录、影响传播、数值与缺口定位 | 为上述方法提供可持续复用的项目状态 |
 
-整合后的方法以实际研究设计裁决分歧：先确认测量与比较是否有效再解释负结果；Benchmark 可以以测量贡献为中心；论文模块允许多对多对应；正文与工作证据表分别保存；回复对应每条技术意见；图形编码服从数据单位和方向。完整 [296 项特征及28类冲突](docs/coverage-audit.md) 记录每一项的采用方式、互补对象和后续补法。
+整合后的方法以实际研究设计裁决分歧：先确认测量与比较是否有效再解释负结果；Benchmark 可以以测量贡献为中心；论文模块允许多对多对应；正文与工作证据表分别保存；回复对应每条技术意见；图形编码服从数据单位和方向。完整 [312 项特征及32类冲突](docs/coverage-audit.md) 记录每一项的采用方式、互补对象和后续补法。
 
 ## 研究方向与双语来源
 
@@ -136,7 +162,7 @@ Agent Research Atlas 是面向 Agent 研究的中英双语 Skill。它帮助 AI 
 
 ## 本地地图与工具
 
-研究目录内通常保存：`atlas.json` 及历史、总览与分领域地图、`domains/<id>/notes.md` 人工笔记、来源与检索记录、假设/决策、冻结实验与结果，以及论文/Benchmark/回复/图稿工作文件。JSON 是可维护状态；Markdown/Mermaid 和离线 HTML 便于阅读。每次正式写入更新视图，记录的前提变化会生成下游复核清单。
+研究目录内通常保存：`atlas.json` 及历史、总览与分领域地图、`domains/<id>/notes.md` 人工笔记、来源与检索记录、gap、导师决策、Citation Corpus、假设/决策、冻结实验与结果，以及论文/Benchmark/回复/图稿工作文件。JSON 是可维护状态；Markdown/Mermaid 和离线 HTML 便于阅读。每次正式写入更新视图，记录的前提变化会生成下游复核清单。
 
 ```bash
 # 在仓库目录下；项目路径换成你的实际目录
@@ -152,6 +178,8 @@ python skills/agent-research-atlas/scripts/audit.py --root /path/to/project proj
 ## 快速定位不足并扩展
 
 ```bash
+python skills/agent-research-atlas/scripts/audit.py locate --query "C29"
+python skills/agent-research-atlas/scripts/audit.py locate --query "C30"
 python skills/agent-research-atlas/scripts/audit.py locate --query "C25"
 python skills/agent-research-atlas/scripts/audit.py locate --query "润色"
 python skills/agent-research-atlas/scripts/audit.py locate --query "drawio"
@@ -168,17 +196,24 @@ python skills/agent-research-atlas/scripts/audit.py check --repo .
 | 审稿意见漏答或修改不对应 | C27 | 原意见 ID 到证据、行动、位置、状态逐项核对 |
 | 图不能编辑或预览不正确 | C28 | 分开检查对象、连线、渲染、数据与编辑范围 |
 | 新证据影响旧结论 | C20/C23 | 查依赖路径，更新记录并完成实际复核 |
+| 论文写了局限但不知道是不是研究点 | C30 | 建 Gap Ledger；查 later work、边界、反证、数据和最小判别实验 |
+| 想要导师持续鞭策和方向决策 | C29/C32 | Supervisor 下任务→Scientist 执行→Critic 攻击→Supervisor 再决策 |
+| 论文很多但以后写作无法复用 | C31 | 保存稳定身份、locator、支持/不支持的 claim 和 manuscript role |
+| 想引入真实教授方法视角 | C29 | 只从公开论文/材料提炼重复方法信号，记录 direct/inference/speculative 等级 |
 
-扩展时沿“症状 → C-ID → 负责文件 → 来源特长/冲突 → 最小修复 → 回归任务”推进。注册表维护 **77 个来源、296 项特征、28 项能力、28 类冲突**的对应关系；[扩展指南](docs/EXTENDING.md) 提供 provider、方法、执行后端和新工作台的做法。
+扩展时沿“症状 → C-ID → 负责文件 → 来源特长/冲突 → 最小修复 → 回归任务”推进。注册表维护 **81 个来源、312 项特征、32 项能力、32 类冲突**的对应关系；[扩展指南](docs/EXTENDING.md) 提供 provider、方法、执行后端和新工作台的做法。
 
 ## 验证与复用
+
+[真实论文 Gap/引用审查样本](evals/real_literature/README.md) 基于五篇真实论文，专门检查后续缓解论文和相反研究结果是否被保留，而不是将检索缺失或 Future Work 直接当创新点。
+
 
 ```bash
 python -m unittest discover -s tests -v
 python skills/agent-research-atlas/scripts/audit.py check --repo .
 ```
 
-本地确定性套件为 **94 项测试**，覆盖旧图复用、身份去重、状态与来源、冻结输入、预算/失败记录、依赖更新、数值核对和扩展引用。另有独立上下文的项目任务，保留实际产物和冲突处理结果。[验证总表](docs/validation.md)、[原有任务记录](docs/forward-conflicts.md)、[Supervisor 整合任务](docs/supervisor-validation.md) 与 [可重用夹具](evals/README.md) 给出各自执行范围和结果。
+确定性套件包括 **109 项测试**（原有101项加8项真实文献记录回归），覆盖旧图复用、身份去重、状态与来源、冻结输入、预算/失败记录、依赖更新、数值核对和扩展引用。另有独立上下文的项目任务，保留实际产物和冲突处理结果。[验证总表](docs/validation.md)、[原有任务记录](docs/forward-conflicts.md)、[Supervisor 整合任务](docs/supervisor-validation.md) 与 [可重用夹具](evals/README.md) 给出各自执行范围和结果。
 
 本项目用于支持严谨选题、检验与写作；新颖性、方法有效性和发表判断依据真实文献、实验和同行审查。SCI/SCIE、期刊或会议适配在具体投稿任务中核对当前规则。
 

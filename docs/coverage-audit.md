@@ -1,15 +1,15 @@
 # Coverage, complements and conflict decisions / 覆盖与互补审计
 
-Audit: **2026-10-21 · v1.1.0**. **77 sources · 296 features · 28 capabilities · 28 conflict contracts**.
+Audit: **2026-10-22 · v1.2.0**. **81 sources · 312 features · 32 capabilities · 32 conflict contracts**.
 
 ## Scope and status
 
-每个列出的来源特色均映射到采用状态、能力、互补来源、剩余边界与补法。来源读取细节见 [SOURCES](../SOURCES.md)；Supervisor 的完整文本审查、冲突依据与改编范围见 [专门说明](supervisor-source-audit.md)。已执行的行为见 [验证总表](validation.md) 和 [Supervisor任务记录](supervisor-validation.md)。
+每个列出的来源特色均映射到采用状态、能力、互补来源、剩余边界与补法。来源读取细节见 [SOURCES](../SOURCES.md)；Supervisor 的完整文本审查、冲突依据与改编范围见 [专门说明](supervisor-source-audit.md)；v1.2 导师闭环新增来源见 [supervision source audit](supervision-source-audit.md)。已执行的行为见 [验证总表](validation.md) 和 [Supervisor任务记录](supervisor-validation.md)。
 
 | Status | Features | Meaning |
 |---|---:|---|
 | `implemented` | 11 | Bundled deterministic behavior; specific tests define its guarantees. |
-| `protocol` | 187 | Host-executed research instructions, with explicit evidence/decision contracts. |
+| `protocol` | 203 | Host-executed research instructions, with explicit evidence/decision contracts. |
 | `optional` | 49 | Context-specific methods or external tools are selectable; their complete workflow is not implemented or validated here, and external services remain unconnected. |
 | `reference` | 8 | Design/background inspiration, not a shipped implementation. |
 | `deferred` | 6 | Explicit gap with a remedy; not complete. |
@@ -49,6 +49,10 @@ Audit: **2026-10-21 · v1.1.0**. **77 sources · 296 features · 28 capabilities
 | C26 · 论文成稿与中英润色 / Manuscript drafting and polish | `references/supervisor-publication.md`; `assets/supervisor/manuscript-evidence.md` | `docs/supervisor-validation.md` (forward) | 正文生成和语义核验由宿主完成；不保证引用、语义等价和投稿适配自动正确。 Repair: 按具体句子定位来源/数值/范围/因果强度；修改正文并保存证据表及科学改动差异。 |
 | C27 · 投稿审查与逐条回复 / Submission review and reviewer response | `references/supervisor-publication.md`; `assets/supervisor/review-response.md` | `docs/supervisor-validation.md` (forward) | 回复仅依据可用意见和实际行动；外部补实验、正式提交、文件编译分别依赖授权与工具。 Repair: 保留原意见ID与所有子项，补现有证据/受控实验或收窄论点，再核对修订位置与完整回复。 |
 | C28 · 科研图与可编辑图稿 / Scientific figures and editable reconstruction | `references/supervisor-figures.md`; `assets/supervisor/figure-brief.md` | `docs/supervisor-validation.md` (forward) | 未打包上游drawio运行时；原生对象、导出、视觉与语义核验是分别的实际检查。 Repair: 用figure-brief定位缺失环节，按需接现有编辑/绘图/渲染器，逐标签箭头和数据核验并保留待修状态。 |
+| C29 · 科研导师与方向决策 / Research supervision | `references/research-supervision.md`; `references/supervisor-discovery.md`; `assets/supervision/mentor-panel.md` | `tests/test_supervision_contract.py::SupervisionContractTests.test_supervisor_decision_contract_is_present` (unit) | 导师/教授视角是证据约束的研究判断，不是现实教授私下意见、录用判断或多数投票真值。 Repair: 记录每个视角的公开证据范围和分歧；最终决定必须指向论文、数据、实验或明确缺口。 |
+| C30 · 论文级Gap挖掘与状态账本 / Paper-level gap mining | `references/research-supervision.md`; `references/methodology.md`; `assets/supervision/gap-ledger.md`; `scripts/atlas.py::validate` | `tests/test_atlas.py::AtlasCliTests.test_gap_nodes_require_grounding_and_review_state` (unit); `tests/test_atlas.py::AtlasCliTests.test_partially_solved_gap_requires_later_paper` (unit) | 作者写future work、高引用或搜索空集都不自动构成可发表gap；后续工作与边界必须核实。 Repair: 建立Gap Ledger，区分作者声明/观察/项目推断/搜索缺失，沿后续引用验证并写明剩余未解条件。 |
+| C31 · 可复用引用证据库 / Manuscript-ready citation corpus | `references/research-supervision.md`; `references/evidence-and-claims.md`; `assets/supervision/citation-corpus.md` | `tests/test_supervision_contract.py::SupervisionContractTests.test_citation_corpus_requires_support_and_non_support_fields` (unit) | 引用身份核实不等于引用句得到支持；版本变化或研究语境变化需要重新读取。 Repair: 每个候选引用保存locator、支持的具体claim、不能支持的范围和关联Atlas IDs；投稿前复核stale来源。 |
+| C32 · Scientist–Critic自适应研究循环 / Scientist–Critic adaptive loop | `references/research-supervision.md`; `references/methodology.md` | `tests/test_supervision_contract.py::SupervisionContractTests.test_loop_contains_pivot_and_return_to_literature` (unit) | 循环受当前任务、预算和授权边界约束；不继承永不停止或后台自主执行的默认。 Repair: 每轮留下Supervisor decision、Scientist task、Critic finding、下一步和停止/重启条件；需要新证据时回到C03–C06。 |
 
 ## Every distinctive feature / 逐特色索引
 
@@ -352,6 +356,22 @@ Exact source locations and review-feature IDs for new workbenches are retained i
 | `SRC-SUPERVISOR-DRAWIO-RECONSTRUCTION-F04` · Technical validity is separate from visual acceptance | protocol | C28 | SRC-SUPERVISOR-FIGURE-DESIGNER, SRC-ARIS-PAPER-CLAIM-AUDIT | 已加入相应workbench协议；实际文献/数据/实验与宿主执行质量仍须在项目中核验。 Repair: XML/check/export success is insufficient. Compare full-size rendered output with source and verify every visible item. Unresolved defects or no preview mean draft/not complete. |
 | `SRC-SUPERVISOR-DRAWIO-RECONSTRUCTION-F05` · Fidelity versus improvement; preserve user edits | protocol | C28, C20 | SRC-SUPERVISOR-FIGURE-DESIGNER, SRC-ARIS-PAPER-CLAIM-AUDIT | 已加入相应workbench协议；实际文献/数据/实验与宿主执行质量仍须在项目中核验。 Repair: Faithful reconstruction and scientific/layout redesign are separate versions when authorized; do not silently change wording, meaning or topology. |
 | `SRC-SUPERVISOR-DRAWIO-RECONSTRUCTION-F06` · Bundled helpers and recommended model/runtime | optional | C22, C28 | SRC-SUPERVISOR-FIGURE-DESIGNER, SRC-ARIS-PAPER-CLAIM-AUDIT | Upstream behavior/runtime is not inherited or validated in full. Repair: Only optional invocation after actual code/dependency review and authorization. No helper code imported, no runtime installed or recommended model efficacy established here. |
+| `SRC-KALARIS-AUTORESEARCH-F01` · 文献→假设→实验内循环与结果综合外循环 | protocol | C29, C32, C20 | SRC-SUPERVISOR-IDEA-EVALUATOR, SRC-ARIS-RESULT-TO-CLAIM | Atlas不继承无人值守持续运行。 Repair: 保留内/外循环节奏，由Supervisor按预算和证据触发下一轮。 |
+| `SRC-KALARIS-AUTORESEARCH-F02` · 遇到意外结果或假设破裂时主动回到文献并pivot | protocol | C03, C20, C32 | SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION | 自动回搜仍依赖宿主实时检索能力。 Repair: 将pivot原因和新检索问题写进decision/exploration后再执行。 |
+| `SRC-KALARIS-AUTORESEARCH-F03` · 从Discussion/future work和方法失效处识别gap | protocol | C30, C05, C07 | SRC-45CK-GAP-FINDER | 原流程未区分future-work句与验证后仍开放的gap。 Repair: Atlas用Gap Ledger和later-work核验补上状态审查。 |
+| `SRC-KALARIS-AUTORESEARCH-F04` · 实验前锁定protocol/evaluation并积累可写论文的研究记忆 | protocol | C14, C20, C31 | SRC-ARIS-EXPERIMENT-PLAN, SRC-KDENSE-RESEARCH-LOOKUP | Git提交不是唯一冻结或引用证据机制。 Repair: 沿用Atlas冻结哈希、结果记录与Citation Corpus。 |
+| `SRC-KDENSE-RESEARCH-LOOKUP-F01` · 面向论文写作的verified reference packet而非松散链接 | protocol | C03, C21, C31 | SRC-KALARIS-AUTORESEARCH | Atlas不绑定其Parallel CLI和固定引用数量。 Repair: 保留结构化evidence packet思想，来源数量由问题和覆盖决定。 |
+| `SRC-KDENSE-RESEARCH-LOOKUP-F02` · 支持/反对claim、机制、limitation与research gap的外部证据 | protocol | C06, C30, C31 | SRC-45CK-GAP-FINDER, SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING | 外部检索不会自动证明claim或gap。 Repair: 每个命中回原文并绑定Gap/Citation条目和locator。 |
+| `SRC-KDENSE-RESEARCH-LOOKUP-F03` · 检索成功与身份核实、claim支持、peer review状态分离 | protocol | C04, C05, C31 | SRC-ARIS-CITATION-AUDIT | Atlas仍需宿主逐篇读语境。 Repair: Citation Corpus分verified identity与relevant text checked。 |
+| `SRC-KDENSE-RESEARCH-LOOKUP-F04` · 普通证据包与正式系统综述流程分流 | protocol | C03, C05, C23 | SRC-KDENSE-LITERATURE-REVIEW | Atlas不把一般探索冒充PRISMA系统综述。 Repair: 正式系统综述另走纳入排除、筛选计数、偏倚评估协议。 |
+| `SRC-45CK-GAP-FINDER-F01` · source→theme→gap的可追踪gap list与机会陈述 | protocol | C30, C31 | SRC-KALARIS-AUTORESEARCH, SRC-RESEARCHSTUDIO-SCOOP-CHECK | 原技能不负责later-work确认或可行性状态门。 Repair: 接Atlas paper IDs、later papers、feasibility与Supervisor decision。 |
+| `SRC-45CK-GAP-FINDER-F02` · 显式暴露矛盾、弱证据与不确定性而非平滑成共识 | protocol | C06, C30 | SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING | 仍需判断证据质量和真实研究设计。 Repair: 接C06批判与C19 Critic，不以gap数量打分。 |
+| `SRC-45CK-GAP-FINDER-F03` · gap输出继续交给future-work、critical-analysis与method comparison | protocol | C30, C32, C12 | SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION | handoff本身不能决定研究值得做。 Repair: 由Supervisor用价值、数据、可行性和最小判别测试裁决。 |
+| `SRC-MENTORFORGE-DISTILLER-F01` · 从真实研究者/实验室公开论文提炼evidence-grounded cyber mentor而非角色扮演 | protocol | C29, C32 | SRC-SUPERVISOR-IDEA-EVALUATOR | Atlas不宣称复刻现实教授私人判断。 Repair: mentor-panel记录公开证据范围和推断等级，只作研究审查视角。 |
+| `SRC-MENTORFORGE-DISTILLER-F02` · Direct evidence / recurring inference / speculative extension三级证据边界 | protocol | C06, C29 | SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING | 没有为每位教授自动建立v0-v3包。 Repair: 需要具体导师时按公开材料建立侧车profile并保留证据等级。 |
+| `SRC-MENTORFORGE-DISTILLER-F03` · 代表论文同时覆盖seminal/high-citation、recent和指定方向 | protocol | C03, C29, C30 | SRC-KDENSE-RESEARCH-LOOKUP | 高引用不等于高质量或当前最强。 Repair: Research Supervision用五类anchor，引用量只作为影响线索。 |
+| `SRC-MENTORFORGE-DISTILLER-F04` · 逐论文提取problem framing、evaluation taste、method pattern与boundary signal | protocol | C05, C29, C30 | SRC-SUPERVISOR-DEEP-RESEARCH | 抽取质量依赖真实全文可访问性。 Repair: 只对实际读取的章节提炼，跨论文重复信号才升为mentor heuristic。 |
+| `SRC-MENTORFORGE-DISTILLER-F05` · 导师模型要做evidence/recurrence/fulltext/generative/boundary验证 | protocol | C19, C29, C32 | SRC-SUPERVISOR-PRE-SUBMISSION-REVIEWER | 本次未运行其validator或真实教授蒸馏任务。 Repair: 具体mentor profile在使用前做至少一个未见研究问题的前向检查。 |
 
 ## Conflict decisions / 冲突裁决
 
@@ -385,6 +405,10 @@ Exact source locations and review-feature IDs for new workbenches are retained i
 | CF26 · 科学含义保持与必要更正 | 保持数值/单位/否定/范围/因果强度；已授权科学更正给明确diff | 无证据加causes或泛化，机械禁词/标点/从句，按风格推AI作者 | 语法与文体按句意判断，科学修订依赖证据和任务范围。 | `docs/supervisor-validation.md` (forward) |
 | CF27 · 数据图可读性与固定美化规则 | 轴单位及优化方向、合适基线、真实不确定性和数据版本 | 强制非零轴、永远右上最好、为了Ours位置改量或编误差棒 | 图形的视觉含义必须和测量一致。 | `docs/supervisor-validation.md` (forward) |
 | CF28 · 原生可编辑交付与视觉完成声明 | 逐对象/箭头清单、混合媒体编辑范围、真实渲染预览、忠实和改进版本分开 | 整图嵌入即称可编辑、XML通过即称视觉保真、needs-fix称完成 | 结构、渲染和科学语义是不同检查，完成声明需对应实际产物。 | `docs/supervisor-validation.md` (forward) |
+| CF29 · 持续自主循环与有边界的科研决策 | 实验内循环、反思外循环、意外结果回文献、明确pivot/deepen/broaden/stop | never stop、无人授权后台循环、以实验数量代替理解 | 科研循环需要停止条件、预算和方向审查；连续运行不是科学质量。 | `tests/test_supervision_contract.py::SupervisionContractTests.test_loop_contains_pivot_and_return_to_literature` (unit) |
+| CF30 · 高引用/future-work/空搜索与真实研究gap | 用综述、奠基、高影响、近期、反证五类anchor定位领域并提取limitation | 高引用即正确、作者future work即开放gap、搜不到即创新 | gap必须经原文、later work、边界和最近机制核验。 | `tests/test_atlas.py::AtlasCliTests.test_gap_nodes_require_grounding_and_review_state` (unit) |
+| CF31 · 真实教授方法信号与教授人格/多数投票 | 从公开论文跨时间重复提炼研究taste、评价标准和反模式作为独立lens | 模仿私人意见、声称教授会接受/拒绝、mentor多数投票当科学真值 | 导师视角用于发现遗漏和改善问题定义，最终结论仍由证据决定。 | `tests/test_supervision_contract.py::SupervisionContractTests.test_mentor_panel_preserves_evidence_levels` (unit) |
+| CF32 · 可复用引用库与引用存在/引用堆积 | 稳定身份、原文locator、claim support/non-support和manuscript role | DOI存在即支持句子、固定论文数量、把bibliography当证据矩阵 | 未来写论文需要的是可追踪证据，不是引用数量。 | `tests/test_supervision_contract.py::SupervisionContractTests.test_citation_corpus_requires_support_and_non_support_fields` (unit) |
 
 ## Extend from an observed gap
 

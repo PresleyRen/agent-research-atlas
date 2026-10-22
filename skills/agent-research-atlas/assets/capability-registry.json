@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "version": "1.1.0",
-  "audit_date": "2026-10-21",
+  "version": "1.2.0",
+  "audit_date": "2026-10-22",
   "audit_scope": {
-    "included": "Previously named task-relevant sources, plus 12 Supervisor-Skills at pinned commit a20d76e with all their Markdown references and the Chinese handbook. Each distinctive feature is mapped separately; HF items retain their narrower review scope.",
-    "excluded": "Unlisted upstream skills and methods; Supervisor source images/PDF, drawing runtime execution and independent revalidation of external case-study papers; commercial account integration and scientific effectiveness benchmarks.",
+    "included": "Previously named task-relevant sources, plus 12 Supervisor-Skills at pinned commit a20d76e with all their Markdown references and the Chinese handbook. Each distinctive feature is mapped separately; HF items retain their narrower review scope. Added supervision-driven direction discovery with Kalaris autoresearch, K-Dense research-lookup, 45ck gap-finder and MentorForge mentor distillation.",
+    "excluded": "Unlisted upstream skills and methods; Supervisor source images/PDF, drawing runtime execution and independent revalidation of external case-study papers; commercial account integration and scientific effectiveness benchmarks. No unattended recurring loop, private professor material, or majority-vote scientific verdict is inherited.",
     "status_meanings": {
       "implemented": "Bundled deterministic behavior; specific tests define its guarantees.",
       "protocol": "Host-executed research instructions, with explicit evidence/decision contracts.",
@@ -1378,6 +1378,197 @@
       ],
       "limits": "未打包上游drawio运行时；原生对象、导出、视觉与语义核验是分别的实际检查。",
       "remedy": "用figure-brief定位缺失环节，按需接现有编辑/绘图/渲染器，逐标签箭头和数据核验并保留待修状态。"
+    },
+    {
+      "id": "C29",
+      "name": "科研导师与方向决策 / Research supervision",
+      "description": "Supervisor/PI按证据给Scientist下发任务，以文献、数据、可行性和Critic审查决定继续、补查、收窄、转向、暂存或停止。",
+      "mode": "host protocol",
+      "implementation": [
+        {
+          "path": "references/research-supervision.md"
+        },
+        {
+          "path": "references/supervisor-discovery.md"
+        },
+        {
+          "path": "assets/supervision/mentor-panel.md"
+        }
+      ],
+      "tests": [
+        {
+          "path": "tests/test_supervision_contract.py",
+          "symbol": "SupervisionContractTests.test_supervisor_decision_contract_is_present",
+          "kind": "unit"
+        }
+      ],
+      "depends_on": [
+        "C05",
+        "C06",
+        "C08",
+        "C11",
+        "C19"
+      ],
+      "keywords": [
+        "导师",
+        "supervisor",
+        "PI",
+        "mentor",
+        "方向决策",
+        "教授"
+      ],
+      "symptoms": [
+        "需要导师指导",
+        "观点反复评估",
+        "方向不确定",
+        "教授视角"
+      ],
+      "limits": "导师/教授视角是证据约束的研究判断，不是现实教授私下意见、录用判断或多数投票真值。",
+      "remedy": "记录每个视角的公开证据范围和分歧；最终决定必须指向论文、数据、实验或明确缺口。"
+    },
+    {
+      "id": "C30",
+      "name": "论文级Gap挖掘与状态账本 / Paper-level gap mining",
+      "description": "从综述、原始论文、Discussion/Limitations、后续引用、负结果和评测缺陷提取未解决点，并追踪open/partial/solved/invalid/parked。",
+      "mode": "protocol + local state gate",
+      "implementation": [
+        {
+          "path": "references/research-supervision.md"
+        },
+        {
+          "path": "references/methodology.md"
+        },
+        {
+          "path": "assets/supervision/gap-ledger.md"
+        },
+        {
+          "path": "scripts/atlas.py",
+          "symbol": "validate"
+        }
+      ],
+      "tests": [
+        {
+          "path": "tests/test_atlas.py",
+          "symbol": "AtlasCliTests.test_gap_nodes_require_grounding_and_review_state",
+          "kind": "unit"
+        },
+        {
+          "path": "tests/test_atlas.py",
+          "symbol": "AtlasCliTests.test_partially_solved_gap_requires_later_paper",
+          "kind": "unit"
+        }
+      ],
+      "depends_on": [
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C09"
+      ],
+      "keywords": [
+        "gap",
+        "局限",
+        "future work",
+        "未解决",
+        "limitations",
+        "discussion"
+      ],
+      "symptoms": [
+        "想从论文找点",
+        "future work真假",
+        "gap是否仍存在",
+        "后续是否解决"
+      ],
+      "limits": "作者写future work、高引用或搜索空集都不自动构成可发表gap；后续工作与边界必须核实。",
+      "remedy": "建立Gap Ledger，区分作者声明/观察/项目推断/搜索缺失，沿后续引用验证并写明剩余未解条件。"
+    },
+    {
+      "id": "C31",
+      "name": "可复用引用证据库 / Manuscript-ready citation corpus",
+      "description": "把可引用论文按背景、奠基、近邻、gap、机制、方法、反证等角色保存，绑定身份、版本、原文位置、可支持与不可支持的论点。",
+      "mode": "host protocol + reusable template",
+      "implementation": [
+        {
+          "path": "references/research-supervision.md"
+        },
+        {
+          "path": "references/evidence-and-claims.md"
+        },
+        {
+          "path": "assets/supervision/citation-corpus.md"
+        }
+      ],
+      "tests": [
+        {
+          "path": "tests/test_supervision_contract.py",
+          "symbol": "SupervisionContractTests.test_citation_corpus_requires_support_and_non_support_fields",
+          "kind": "unit"
+        }
+      ],
+      "depends_on": [
+        "C04",
+        "C05",
+        "C06",
+        "C21"
+      ],
+      "keywords": [
+        "引用",
+        "citation corpus",
+        "reference library",
+        "claim source",
+        "可复用论文"
+      ],
+      "symptoms": [
+        "未来写论文要引用",
+        "论文存在但不知支持什么",
+        "引用证据散落"
+      ],
+      "limits": "引用身份核实不等于引用句得到支持；版本变化或研究语境变化需要重新读取。",
+      "remedy": "每个候选引用保存locator、支持的具体claim、不能支持的范围和关联Atlas IDs；投稿前复核stale来源。"
+    },
+    {
+      "id": "C32",
+      "name": "Scientist–Critic自适应研究循环 / Scientist–Critic adaptive loop",
+      "description": "Scientist执行搜索/阅读/实验，Critic攻击近邻、数据、测量、机制与基线，Supervisor按证据决定深化、拓展、转向或停止，并回到文献。",
+      "mode": "host protocol",
+      "implementation": [
+        {
+          "path": "references/research-supervision.md"
+        },
+        {
+          "path": "references/methodology.md"
+        }
+      ],
+      "tests": [
+        {
+          "path": "tests/test_supervision_contract.py",
+          "symbol": "SupervisionContractTests.test_loop_contains_pivot_and_return_to_literature",
+          "kind": "unit"
+        }
+      ],
+      "depends_on": [
+        "C18",
+        "C20",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "keywords": [
+        "Scientist",
+        "Critic",
+        "outer loop",
+        "pivot",
+        "换方向",
+        "继续研究"
+      ],
+      "symptoms": [
+        "做不通怎么办",
+        "观点不成立换方向",
+        "需要不停复核",
+        "执行与审查分离"
+      ],
+      "limits": "循环受当前任务、预算和授权边界约束；不继承永不停止或后台自主执行的默认。",
+      "remedy": "每轮留下Supervisor decision、Scientist task、Critic finding、下一步和停止/重启条件；需要新证据时回到C03–C06。"
     }
   ],
   "sources": [
@@ -8938,6 +9129,310 @@
           ]
         }
       ]
+    },
+    {
+      "id": "SRC-KALARIS-AUTORESEARCH",
+      "name": "KalarisLabs research-agent-skills / autoresearch",
+      "url": "https://github.com/KalarisLabs/research-agent-skills/blob/f73da6a491e3cc3417cfe88e1130469e763b1b33/skills/autoresearch/SKILL.md",
+      "read_depth": "Full SKILL.md read at pinned revision; domain skills, loop runtimes and external execution backends were not executed.",
+      "revision": "f73da6a491e3cc3417cfe88e1130469e763b1b33",
+      "reviewed_at": "2026-10-22",
+      "repository": "KalarisLabs/research-agent-skills",
+      "path": "skills/autoresearch/SKILL.md",
+      "source_evidence": {
+        "git_blob_sha": "a84d2d837efae5f8d55a7e5ecb693de9bc4e51a0"
+      },
+      "adoption": "partial",
+      "features": [
+        {
+          "id": "SRC-KALARIS-AUTORESEARCH-F01",
+          "label": "文献→假设→实验内循环与结果综合外循环",
+          "capabilities": [
+            "C29",
+            "C32",
+            "C20"
+          ],
+          "status": "protocol",
+          "gap": "Atlas不继承无人值守持续运行。",
+          "remedy": "保留内/外循环节奏，由Supervisor按预算和证据触发下一轮。",
+          "complements": [
+            "SRC-SUPERVISOR-IDEA-EVALUATOR",
+            "SRC-ARIS-RESULT-TO-CLAIM"
+          ]
+        },
+        {
+          "id": "SRC-KALARIS-AUTORESEARCH-F02",
+          "label": "遇到意外结果或假设破裂时主动回到文献并pivot",
+          "capabilities": [
+            "C03",
+            "C20",
+            "C32"
+          ],
+          "status": "protocol",
+          "gap": "自动回搜仍依赖宿主实时检索能力。",
+          "remedy": "将pivot原因和新检索问题写进decision/exploration后再执行。",
+          "complements": [
+            "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+          ]
+        },
+        {
+          "id": "SRC-KALARIS-AUTORESEARCH-F03",
+          "label": "从Discussion/future work和方法失效处识别gap",
+          "capabilities": [
+            "C30",
+            "C05",
+            "C07"
+          ],
+          "status": "protocol",
+          "gap": "原流程未区分future-work句与验证后仍开放的gap。",
+          "remedy": "Atlas用Gap Ledger和later-work核验补上状态审查。",
+          "complements": [
+            "SRC-45CK-GAP-FINDER"
+          ]
+        },
+        {
+          "id": "SRC-KALARIS-AUTORESEARCH-F04",
+          "label": "实验前锁定protocol/evaluation并积累可写论文的研究记忆",
+          "capabilities": [
+            "C14",
+            "C20",
+            "C31"
+          ],
+          "status": "protocol",
+          "gap": "Git提交不是唯一冻结或引用证据机制。",
+          "remedy": "沿用Atlas冻结哈希、结果记录与Citation Corpus。",
+          "complements": [
+            "SRC-ARIS-EXPERIMENT-PLAN",
+            "SRC-KDENSE-RESEARCH-LOOKUP"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-KDENSE-RESEARCH-LOOKUP",
+      "name": "K-Dense Scientific Agent Skills / research-lookup",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/research-lookup/SKILL.md",
+      "read_depth": "Full SKILL.md read at pinned revision; Parallel/OpenRouter runtimes and paid credentials were not executed.",
+      "revision": "593377bb048752abb0152deab9fbb1083a6087df",
+      "reviewed_at": "2026-10-22",
+      "repository": "K-Dense-AI/scientific-agent-skills",
+      "path": "skills/research-lookup/SKILL.md",
+      "source_evidence": {
+        "git_blob_sha": "a337950e3425001a2edc93a531fc420d62b65db7"
+      },
+      "adoption": "partial",
+      "features": [
+        {
+          "id": "SRC-KDENSE-RESEARCH-LOOKUP-F01",
+          "label": "面向论文写作的verified reference packet而非松散链接",
+          "capabilities": [
+            "C03",
+            "C21",
+            "C31"
+          ],
+          "status": "protocol",
+          "gap": "Atlas不绑定其Parallel CLI和固定引用数量。",
+          "remedy": "保留结构化evidence packet思想，来源数量由问题和覆盖决定。",
+          "complements": [
+            "SRC-KALARIS-AUTORESEARCH"
+          ]
+        },
+        {
+          "id": "SRC-KDENSE-RESEARCH-LOOKUP-F02",
+          "label": "支持/反对claim、机制、limitation与research gap的外部证据",
+          "capabilities": [
+            "C06",
+            "C30",
+            "C31"
+          ],
+          "status": "protocol",
+          "gap": "外部检索不会自动证明claim或gap。",
+          "remedy": "每个命中回原文并绑定Gap/Citation条目和locator。",
+          "complements": [
+            "SRC-45CK-GAP-FINDER",
+            "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+          ]
+        },
+        {
+          "id": "SRC-KDENSE-RESEARCH-LOOKUP-F03",
+          "label": "检索成功与身份核实、claim支持、peer review状态分离",
+          "capabilities": [
+            "C04",
+            "C05",
+            "C31"
+          ],
+          "status": "protocol",
+          "gap": "Atlas仍需宿主逐篇读语境。",
+          "remedy": "Citation Corpus分verified identity与relevant text checked。",
+          "complements": [
+            "SRC-ARIS-CITATION-AUDIT"
+          ]
+        },
+        {
+          "id": "SRC-KDENSE-RESEARCH-LOOKUP-F04",
+          "label": "普通证据包与正式系统综述流程分流",
+          "capabilities": [
+            "C03",
+            "C05",
+            "C23"
+          ],
+          "status": "protocol",
+          "gap": "Atlas不把一般探索冒充PRISMA系统综述。",
+          "remedy": "正式系统综述另走纳入排除、筛选计数、偏倚评估协议。",
+          "complements": [
+            "SRC-KDENSE-LITERATURE-REVIEW"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-45CK-GAP-FINDER",
+      "name": "45ck research-literature-review-skills / gap-finder",
+      "url": "https://github.com/45ck/research-literature-review-skills/blob/235522d0ffcfeb4a3029bae3909f83ada2a5d2e5/.claude/skills/gap-finder/SKILL.md",
+      "read_depth": "Full SKILL.md read at pinned revision; rest of the pack was not fully audited in this follow-up.",
+      "revision": "235522d0ffcfeb4a3029bae3909f83ada2a5d2e5",
+      "reviewed_at": "2026-10-22",
+      "repository": "45ck/research-literature-review-skills",
+      "path": ".claude/skills/gap-finder/SKILL.md",
+      "source_evidence": {
+        "git_blob_sha": "592591bd62c7171e85a6c08dd94e31e97c2ab0a2"
+      },
+      "adoption": "partial",
+      "features": [
+        {
+          "id": "SRC-45CK-GAP-FINDER-F01",
+          "label": "source→theme→gap的可追踪gap list与机会陈述",
+          "capabilities": [
+            "C30",
+            "C31"
+          ],
+          "status": "protocol",
+          "gap": "原技能不负责later-work确认或可行性状态门。",
+          "remedy": "接Atlas paper IDs、later papers、feasibility与Supervisor decision。",
+          "complements": [
+            "SRC-KALARIS-AUTORESEARCH",
+            "SRC-RESEARCHSTUDIO-SCOOP-CHECK"
+          ]
+        },
+        {
+          "id": "SRC-45CK-GAP-FINDER-F02",
+          "label": "显式暴露矛盾、弱证据与不确定性而非平滑成共识",
+          "capabilities": [
+            "C06",
+            "C30"
+          ],
+          "status": "protocol",
+          "gap": "仍需判断证据质量和真实研究设计。",
+          "remedy": "接C06批判与C19 Critic，不以gap数量打分。",
+          "complements": [
+            "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+          ]
+        },
+        {
+          "id": "SRC-45CK-GAP-FINDER-F03",
+          "label": "gap输出继续交给future-work、critical-analysis与method comparison",
+          "capabilities": [
+            "C30",
+            "C32",
+            "C12"
+          ],
+          "status": "protocol",
+          "gap": "handoff本身不能决定研究值得做。",
+          "remedy": "由Supervisor用价值、数据、可行性和最小判别测试裁决。",
+          "complements": [
+            "SRC-ANTHROPIC-SCIENTIFIC-PROBLEM-SELECTION"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SRC-MENTORFORGE-DISTILLER",
+      "name": "MentorForge / research-mentor-distiller",
+      "url": "https://github.com/qwqalice/MentorForge/blob/14de3bc28ee7e74273c69fc3e4672426f4b335d0/research-mentor-distiller/SKILL.md",
+      "read_depth": "Full SKILL.md read at pinned revision; collection/extraction scripts and generated mentor packages were not executed in this integration.",
+      "revision": "14de3bc28ee7e74273c69fc3e4672426f4b335d0",
+      "reviewed_at": "2026-10-22",
+      "repository": "qwqalice/MentorForge",
+      "path": "research-mentor-distiller/SKILL.md",
+      "source_evidence": {
+        "git_blob_sha": "73a34300efd0a28791b7a45e5e0a8699d4a5b554"
+      },
+      "adoption": "partial",
+      "features": [
+        {
+          "id": "SRC-MENTORFORGE-DISTILLER-F01",
+          "label": "从真实研究者/实验室公开论文提炼evidence-grounded cyber mentor而非角色扮演",
+          "capabilities": [
+            "C29",
+            "C32"
+          ],
+          "status": "protocol",
+          "gap": "Atlas不宣称复刻现实教授私人判断。",
+          "remedy": "mentor-panel记录公开证据范围和推断等级，只作研究审查视角。",
+          "complements": [
+            "SRC-SUPERVISOR-IDEA-EVALUATOR"
+          ]
+        },
+        {
+          "id": "SRC-MENTORFORGE-DISTILLER-F02",
+          "label": "Direct evidence / recurring inference / speculative extension三级证据边界",
+          "capabilities": [
+            "C06",
+            "C29"
+          ],
+          "status": "protocol",
+          "gap": "没有为每位教授自动建立v0-v3包。",
+          "remedy": "需要具体导师时按公开材料建立侧车profile并保留证据等级。",
+          "complements": [
+            "SRC-KDENSE-SCIENTIFIC-CRITICAL-THINKING"
+          ]
+        },
+        {
+          "id": "SRC-MENTORFORGE-DISTILLER-F03",
+          "label": "代表论文同时覆盖seminal/high-citation、recent和指定方向",
+          "capabilities": [
+            "C03",
+            "C29",
+            "C30"
+          ],
+          "status": "protocol",
+          "gap": "高引用不等于高质量或当前最强。",
+          "remedy": "Research Supervision用五类anchor，引用量只作为影响线索。",
+          "complements": [
+            "SRC-KDENSE-RESEARCH-LOOKUP"
+          ]
+        },
+        {
+          "id": "SRC-MENTORFORGE-DISTILLER-F04",
+          "label": "逐论文提取problem framing、evaluation taste、method pattern与boundary signal",
+          "capabilities": [
+            "C05",
+            "C29",
+            "C30"
+          ],
+          "status": "protocol",
+          "gap": "抽取质量依赖真实全文可访问性。",
+          "remedy": "只对实际读取的章节提炼，跨论文重复信号才升为mentor heuristic。",
+          "complements": [
+            "SRC-SUPERVISOR-DEEP-RESEARCH"
+          ]
+        },
+        {
+          "id": "SRC-MENTORFORGE-DISTILLER-F05",
+          "label": "导师模型要做evidence/recurrence/fulltext/generative/boundary验证",
+          "capabilities": [
+            "C19",
+            "C29",
+            "C32"
+          ],
+          "status": "protocol",
+          "gap": "本次未运行其validator或真实教授蒸馏任务。",
+          "remedy": "具体mentor profile在使用前做至少一个未见研究问题的前向检查。",
+          "complements": [
+            "SRC-SUPERVISOR-PRE-SUBMISSION-REVIEWER"
+          ]
+        }
+      ]
     }
   ],
   "conflicts": [
@@ -9535,6 +10030,89 @@
         }
       ],
       "extension_rule": "保留有益用法与其反例；新实现先在普通项目任务中观察实际行为，再记录产物和未执行部分。"
+    },
+    {
+      "id": "CF29",
+      "capabilities": [
+        "C15",
+        "C20",
+        "C29",
+        "C32"
+      ],
+      "tension": "持续自主循环与有边界的科研决策",
+      "retain": "实验内循环、反思外循环、意外结果回文献、明确pivot/deepen/broaden/stop",
+      "reject": "never stop、无人授权后台循环、以实验数量代替理解",
+      "reason": "科研循环需要停止条件、预算和方向审查；连续运行不是科学质量。",
+      "tests": [
+        {
+          "path": "tests/test_supervision_contract.py",
+          "symbol": "SupervisionContractTests.test_loop_contains_pivot_and_return_to_literature",
+          "kind": "unit"
+        }
+      ],
+      "extension_rule": "任何新自动循环必须显式预算、停止/重启条件和人工授权边界。"
+    },
+    {
+      "id": "CF30",
+      "capabilities": [
+        "C03",
+        "C05",
+        "C09",
+        "C30"
+      ],
+      "tension": "高引用/future-work/空搜索与真实研究gap",
+      "retain": "用综述、奠基、高影响、近期、反证五类anchor定位领域并提取limitation",
+      "reject": "高引用即正确、作者future work即开放gap、搜不到即创新",
+      "reason": "gap必须经原文、later work、边界和最近机制核验。",
+      "tests": [
+        {
+          "path": "tests/test_atlas.py",
+          "symbol": "AtlasCliTests.test_gap_nodes_require_grounding_and_review_state",
+          "kind": "unit"
+        }
+      ],
+      "extension_rule": "新增gap来源必须标source_kind并记录后续解决情况；搜索缺失保持unknown。"
+    },
+    {
+      "id": "CF31",
+      "capabilities": [
+        "C19",
+        "C29",
+        "C32"
+      ],
+      "tension": "真实教授方法信号与教授人格/多数投票",
+      "retain": "从公开论文跨时间重复提炼研究taste、评价标准和反模式作为独立lens",
+      "reject": "模仿私人意见、声称教授会接受/拒绝、mentor多数投票当科学真值",
+      "reason": "导师视角用于发现遗漏和改善问题定义，最终结论仍由证据决定。",
+      "tests": [
+        {
+          "path": "tests/test_supervision_contract.py",
+          "symbol": "SupervisionContractTests.test_mentor_panel_preserves_evidence_levels",
+          "kind": "unit"
+        }
+      ],
+      "extension_rule": "每个mentor profile必须给公开来源范围、证据等级和不确定性；具体任务记录分歧。"
+    },
+    {
+      "id": "CF32",
+      "capabilities": [
+        "C04",
+        "C05",
+        "C21",
+        "C31"
+      ],
+      "tension": "可复用引用库与引用存在/引用堆积",
+      "retain": "稳定身份、原文locator、claim support/non-support和manuscript role",
+      "reject": "DOI存在即支持句子、固定论文数量、把bibliography当证据矩阵",
+      "reason": "未来写论文需要的是可追踪证据，不是引用数量。",
+      "tests": [
+        {
+          "path": "tests/test_supervision_contract.py",
+          "symbol": "SupervisionContractTests.test_citation_corpus_requires_support_and_non_support_fields",
+          "kind": "unit"
+        }
+      ],
+      "extension_rule": "新增引用必须至少完成身份和相关语句核查；stale版本重新读。"
     }
   ]
 }

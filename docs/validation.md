@@ -1,5 +1,13 @@
 # Validation report / 验证记录
 
+## v1.2.0 Supervisor–Scientist loop: pre-push results — 2026-10-22
+
+- The branch CI run before correction contained **101 tests: 100 passed, one failed**. The failing bilingual assertion sought English `evidence`, while C29 recorded the equivalent Chinese `证据`. Failure preserved at [Actions run 39711343183](https://github.com/PresleyRen/agent-research-atlas/actions/runs/39711343183). GitHub's fail-fast matrix cancelled sibling jobs; no claim that those versions passed.
+- Before pushing the correction, local standalone regression checks for the bilingual gate ran **4/4**, including English, Chinese, absent-requirement and blank cases. The original assertion has been made bilingual without removing the requirement.
+- Five real published Agent/RAG papers were checked from ACL Anthology, and one original paper's full-text HTML was read on MIT Press. An offline fixture based on these **real publication records** passed **8/8** deterministic tests on 2026-10-22. See [real-publication case and reading depths](../evals/real_literature/README.md).
+- These tests show metadata/claim/counterevidence consistency. They are **not** real model execution, novel research validation, full-text screening of all five papers, or publication acceptance evidence.
+- Version-specific **full GitHub CI** is judged only from the exact subsequent tested commit; historical failures are retained rather than relabelled green.
+
 ## v1.1.0 Supervisor integration — 2026-10-21
 
 当前候选已扩展到 **77 来源、296 特征、28 能力、28 冲突**。新增 12 个 Supervisor 技能的完整文本审查、三个完整项目任务及一个区间边界微任务。94 项确定性测试在集成后再次通过；独立产物复核发现并修复一处真实的阈值方向错误，初版与修订均保留。

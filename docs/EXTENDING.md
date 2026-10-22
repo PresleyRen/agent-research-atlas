@@ -24,6 +24,10 @@ Agent Research Atlas uses one capability registry as its maintenance index: [cap
 | 审稿意见漏答/行动状态错误 | C27 | `supervisor-publication.md` §6–7；`review-response.md` | 原意见ID全覆盖、复合意见拆分、planned不写completed、实际修订位置 |
 | 图稿不能编辑或预览无法验收 | C28 | `supervisor-figures.md`；`figure-brief.md` | native对象/连线、坐标方向、来源数据、真实预览与未决项 |
 | 想接 HF 训练/云作业/商业检索 | C22/C24 | optional-adapter-contract，新增独立 adapter | 无账号、权限、预算、超时、版本不兼容回退；实际运行后再更改 tested 状态 |
+| 导师意见泛、方向没有明确 proceed/pivot/stop | C29 | `research-supervision.md`; `assets/supervision/mentor-panel.md` | 公开证据范围、Supervisor decision vocabulary、不同lens分歧与next task |
+| future work/高引用/空搜索被直接当创新点 | C30 | `research-supervision.md`; `assets/supervision/gap-ledger.md`; `atlas.py::validate` | source_kind、later work、open/partial/solved/invalid状态及无证据拒绝 |
+| 引用很多但以后写作无法证明句子 | C31 | `research-supervision.md`; `assets/supervision/citation-corpus.md`; `evidence-and-claims.md` | locator、can-support、cannot-support、stale/version复核 |
+| Scientist一直实验却不会回文献/换方向 | C32 | `research-supervision.md`; `methodology.md` | Scientist→Critic→Supervisor loop；pivot/park/stop和CF29边界 |
 
 路径均相对 `skills/agent-research-atlas/`，测试目录位于仓库根。CLI 返回精确文件与函数定位；上表用于人工快速阅读。
 
@@ -64,6 +68,13 @@ python skills/agent-research-atlas/scripts/audit.py check --repo .
 
 ## 新增研究工作台
 
-Supervisor 接入展示了怎样扩展协议而保持同一项目记忆：新工作台明确任务入口、输入、决策、输出及证据依赖，再用 C25–C28 对应原能力。研究简报、Benchmark、论文与审稿文件仍引用既有 paper/hypothesis/experiment/claim ID。画图按科学设计、原生对象、导出与视觉检查分别定位；没有必要为每个来源创建一套研究数据库。
+Supervisor 接入展示了怎样扩展协议而保持同一项目记忆；v1.2 的 Research Supervision 又增加 C29–C32，把导师决策、论文级 gap、引用语料和 Scientist–Critic 循环接到同一 Atlas。新工作台明确任务入口、输入、决策、输出及证据依赖。研究简报、Benchmark、论文与审稿文件仍引用既有 paper/hypothesis/experiment/claim ID。画图按科学设计、原生对象、导出与视觉检查分别定位；没有必要为每个来源创建一套研究数据库。
 
 添加来源后运行 `python tools/render_audit_docs.py`，从注册表重新生成 SOURCES 与逐特征覆盖表；再更新中英文 README 的任务/能力说明，执行 registry check 和受影响的普通项目任务。来源的许可范围与改编说明一起更新，不能把可选上游运行时写成已经集成执行。
+
+## Supervision / gap 扩展原则
+
+- 新的导师视角必须说明公开证据来源与 direct / recurring inference / speculative extension 等级；不要新增人格扮演。
+- 新 gap extractor 必须输出 source kind、原文 locator、later-work 核验和边界；不能把 Future Work 或零命中直接升级为 open gap。
+- 新引用 provider 必须能回收到稳定 paper ID、访问深度和 claim-support 位置；bibliography 规模不算覆盖验证。
+- 新循环/agent 角色要接到 Supervisor decision contract；不得用“never stop”覆盖预算、授权或停止条件。
