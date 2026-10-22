@@ -1,6 +1,6 @@
 # Research methodology / 科研方法
 
-Reviewed: 2026-10-20
+Reviewed: 2026-10-22
 
 这份文档是对已审查上游方法技能的原创综合。本轮逐项核对 26 个指定 SKILL 正文，并另读 Anthropic 的 9 份问题选择模块；不代表读完这些仓库、运行过其全部辅助程序，或验证了论文录用率。仓库 `docs/method-source-audit.md` 与 `docs/method-source-manifest.json` 记录固定版本、逐项采用与缺口。以下是宿主需要实际执行的研究协议，不能仅靠生成表格宣布完成。
 
@@ -291,3 +291,34 @@ Budget and artifacts / 费用、运行上限、配置和原始结果路径：
 续接时优先读失败／冲突／未测试的当前链，再读一般背景；报告实际产物路径、图谱 revision、审计覆盖版本和缺口。定期复查只是方法建议，不自动创建日程或后台执行。需要复现时给实际命令、环境／输入版本、预算和预期记录形状，独立执行者应能从这些文件开始。
 
 脚本只检查记录结构、引用关系和声明完整性。是否值得继续、证据是否可信、是否构成贡献仍需科研判断；任何状态都不保证 SCI、顶会或顶刊发表。
+
+
+## 13. Supervisor-driven literature-to-direction loop
+
+For open-ended direction discovery, pair this methodology with [research-supervision.md](research-supervision.md). The default sequence is:
+
+```text
+survey / field map
+  -> foundational + influential + frontier + critical anchor papers
+  -> original-paper reading
+  -> paper-level limitation / failure extraction
+  -> later-work verification
+  -> Gap Ledger
+  -> mechanism + rival explanations
+  -> data / measurement / resource gate
+  -> Supervisor decision
+  -> minimal discriminating experiment
+  -> Critic review
+  -> proceed / narrow / search-more / pivot / park / stop
+  -> update Citation Corpus and atlas
+```
+
+Use citation frequency only to find historically influential anchors. It is not a quality score. A paper's Future Work statement is a search lead until later work, actual boundaries and feasibility are checked.
+
+For each gap, distinguish `author_stated_limitation`, `observed_limitation`, `project_inference` and `search_absence`. The Atlas `gap` node supports candidate/open/partially_solved/solved/invalid_gap/inaccessible/unknown/parked. Source-grounded gaps require paper/experiment evidence; partially solved gaps require later papers; solved/invalid gaps require resolution records.
+
+When evaluating a candidate, use multiple applicable lenses: original literature, strongest recent competitor, evidence-grounded mentor/advisor heuristics, data lineage, measurement validity, implementation fidelity, strong/equal-budget baselines, statistics, resources and publication argument. Disagreement is preserved. Agreement among agents is not proof.
+
+Maintain a manuscript-ready Citation Corpus while reading. Save not only bibliographic identity but the exact locator, the claim a source can support, what it cannot support, its role in the argument and linked Atlas IDs. This prevents later paper writing from reconstructing evidence from memory.
+
+The research loop is adaptive, not endless. A negative result can trigger a literature return or a narrower hypothesis; an invalid gap or infeasible measurement can trigger pivot/stop. Every transition records the reason and the next decision-changing task.
