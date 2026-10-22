@@ -197,12 +197,15 @@ Extend through **symptom → C-ID → owner file → source feature/conflict →
 
 ## Validation and reuse
 
+The [real-publication literature fixture](evals/real_literature/README.md) tests five published sources, competing follow-up findings, and whether a proposed direction is prematurely declared novel or feasible.
+
+
 ```bash
 python -m unittest discover -s tests -v
 python skills/agent-research-atlas/scripts/audit.py check --repo .
 ```
 
-The deterministic suite contains **101 tests** for map reuse, identities, states/provenance, frozen inputs, budgets/failure records, dependency updates, numbers and extension references. Independent-context project tasks retain their actual artifacts and conflict decisions. See the [validation overview](docs/validation.md), [earlier tasks](docs/forward-conflicts.md), [Supervisor integration tasks](docs/supervisor-validation.md) and [reusable fixtures](evals/README.md) for executed scope and outcomes.
+The deterministic suite contains **109 tests** (101 original + 8 real-publication evidence checks) for map reuse, identities, states/provenance, frozen inputs, budgets/failure records, dependency updates, numbers and extension references. Independent-context project tasks retain their actual artifacts and conflict decisions. See the [validation overview](docs/validation.md), [earlier tasks](docs/forward-conflicts.md), [Supervisor integration tasks](docs/supervisor-validation.md) and [reusable fixtures](evals/README.md) for executed scope and outcomes.
 
 The project supports careful question selection, testing and writing. Novelty, scientific validity and publication judgments depend on real literature, experiments and peer review. SCI/SCIE and venue-specific fit are checked against current rules for the requested submission.
 

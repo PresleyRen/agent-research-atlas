@@ -18,7 +18,7 @@ File counts describe inspected texts, not independent scientific studies. Images
 
 ## License scope
 
-Atlas core code/original protocols use MIT. Three Supervisor-derived workbenches and five templates carry CC BY-NC-SA 4.0, with source attribution and substantial changes identified in [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md). The new supervision/gap/citation protocols are Atlas adaptations; upstream SKILL bodies are not bundled. Optional services keep their own terms.
+Atlas core code/original protocols use MIT. Three Supervisor-derived workbenches and five templates carry CC BY-NC-SA 4.0, with source attribution and substantial changes identified in [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md). Upstream SKILL bodies, the full handbook, images and drawing runtime are not bundled. Optional services keep their own terms.
 
 ## Every source / 逐项索引
 

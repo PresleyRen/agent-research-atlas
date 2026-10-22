@@ -205,12 +205,15 @@ python skills/agent-research-atlas/scripts/audit.py check --repo .
 
 ## 验证与复用
 
+[真实论文 Gap/引用审查样本](evals/real_literature/README.md) 基于五篇真实论文，专门检查后续缓解论文和相反研究结果是否被保留，而不是将检索缺失或 Future Work 直接当创新点。
+
+
 ```bash
 python -m unittest discover -s tests -v
 python skills/agent-research-atlas/scripts/audit.py check --repo .
 ```
 
-本地确定性套件为 **101 项测试**，覆盖旧图复用、身份去重、状态与来源、冻结输入、预算/失败记录、依赖更新、数值核对和扩展引用。另有独立上下文的项目任务，保留实际产物和冲突处理结果。[验证总表](docs/validation.md)、[原有任务记录](docs/forward-conflicts.md)、[Supervisor 整合任务](docs/supervisor-validation.md) 与 [可重用夹具](evals/README.md) 给出各自执行范围和结果。
+确定性套件包括 **109 项测试**（原有101项加8项真实文献记录回归），覆盖旧图复用、身份去重、状态与来源、冻结输入、预算/失败记录、依赖更新、数值核对和扩展引用。另有独立上下文的项目任务，保留实际产物和冲突处理结果。[验证总表](docs/validation.md)、[原有任务记录](docs/forward-conflicts.md)、[Supervisor 整合任务](docs/supervisor-validation.md) 与 [可重用夹具](evals/README.md) 给出各自执行范围和结果。
 
 本项目用于支持严谨选题、检验与写作；新颖性、方法有效性和发表判断依据真实文献、实验和同行审查。SCI/SCIE、期刊或会议适配在具体投稿任务中核对当前规则。
 

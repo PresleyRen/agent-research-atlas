@@ -19,8 +19,8 @@
 
 ### Validation
 
-- Add gap-state tests plus supervision/citation/mentor contract tests; deterministic suite target becomes 101 tests.
-- Document the new source reading scope, adopted/rejected behaviors, and extension routes. No upstream paid search backend, recurring autonomous loop or real professor distillation runtime is claimed as executed.
+- Add gap-state tests plus supervision/citation/mentor contract tests and eight real-publication claim/gap checks; deterministic suite target becomes 109 tests.
+- Document the new source reading scope, adopted/rejected behaviors, and extension routes. Fix bilingual Supervisor evidence assertion and disable GitHub Actions matrix fail-fast so failures are visible per Python version. No upstream paid search backend, recurring autonomous loop or real professor distillation runtime is claimed as executed.
 
 ## 1.1.0 — 2026-10-21
 

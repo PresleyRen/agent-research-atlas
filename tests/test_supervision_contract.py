@@ -21,7 +21,10 @@ class SupervisionContractTests(unittest.TestCase):
         for token in ("PROCEED", "SEARCH MORE", "REPAIR MEASUREMENT", "NARROW", "PIVOT", "PARK", "STOP"):
             self.assertIn(token, text)
         self.assertIn("C29", self.caps)
-        self.assertIn("evidence", self.caps["C29"]["limits"].lower())
+        self.assertTrue(
+            any(term in self.caps["C29"]["limits"].casefold() for term in ("evidence", "证据")),
+            "The Supervisor contract must require evidence in either supported language."
+        )
 
     def test_loop_contains_pivot_and_return_to_literature(self):
         text = (SKILL / "references/research-supervision.md").read_text(encoding="utf-8")

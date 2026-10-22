@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-22",
+  "scope": "Bounded real-literature evidence audit for Agent/RAG long-context evidence ordering; no model benchmark run",
+  "papers": [
+    {
+      "id": "liu-2024-lost-middle",
+      "title": "Lost in the Middle: How Language Models Use Long Contexts",
+      "year": 2024,
+      "doi": "10.1162/tacl_a_00638",
+      "url": "https://aclanthology.org/2024.tacl-1.9/",
+      "access": "fulltext",
+      "locator": "MIT Press full text §§2.3, 5 and Conclusion",
+      "roles": [
+        "foundational",
+        "observed_failure",
+        "evaluation"
+      ],
+      "can_support": "In the tasks and models examined, the position of answer-bearing content changes performance, often with worse performance in the middle.",
+      "cannot_support": "All modern models or all deployed RAG systems are dominated by positional bias."
+    },
+    {
+      "id": "hsieh-2024-found-middle",
+      "title": "Found in the middle: Calibrating Positional Attention Bias Improves Long Context Utilization",
+      "year": 2024,
+      "doi": "10.18653/v1/2024.findings-acl.890",
+      "url": "https://aclanthology.org/2024.findings-acl.890/",
+      "access": "abstract",
+      "locator": "ACL Anthology abstract",
+      "roles": [
+        "later_mitigation",
+        "closest_work"
+      ],
+      "can_support": "The authors report attention-bias calibration with improved relevant-information access and RAG performance in evaluated settings.",
+      "cannot_support": "Position bias has been eliminated from every model, task, and production RAG setting."
+    },
+    {
+      "id": "yu-2025-channel",
+      "title": "Mitigate Position Bias in LLMs via Scaling a Single Hidden States Channel",
+      "year": 2025,
+      "doi": "10.18653/v1/2025.findings-acl.316",
+      "url": "https://aclanthology.org/2025.findings-acl.316/",
+      "access": "abstract",
+      "locator": "ACL Anthology abstract",
+      "roles": [
+        "later_mitigation",
+        "closest_work"
+      ],
+      "can_support": "The authors report mitigating positional bias by intervening on a hidden-state channel on several evaluated benchmarks and models.",
+      "cannot_support": "Every instance of positional bias is entirely solved or this method is best under matched latency/compute budgets."
+    },
+    {
+      "id": "cuconasu-2025-rag-position",
+      "title": "Do RAG Systems Really Suffer From Positional Bias?",
+      "year": 2025,
+      "doi": "10.18653/v1/2025.emnlp-main.1422",
+      "url": "https://aclanthology.org/2025.emnlp-main.1422/",
+      "access": "abstract",
+      "locator": "ACL Anthology abstract",
+      "roles": [
+        "counterevidence",
+        "deployment_condition",
+        "evaluation"
+      ],
+      "can_support": "The authors find positional bias has marginal impact in their tested realistic retrieval pipelines because distracting and relevant passages are both affected.",
+      "cannot_support": "All RAG applications have negligible positional bias, or the original controlled experiments were invalid."
+    },
+    {
+      "id": "du-2025-perfect-retrieval",
+      "title": "Context Length Alone Hurts LLM Performance Despite Perfect Retrieval",
+      "year": 2025,
+      "doi": "10.18653/v1/2025.findings-emnlp.1264",
+      "url": "https://aclanthology.org/2025.findings-emnlp.1264/",
+      "access": "abstract",
+      "locator": "ACL Anthology abstract",
+      "roles": [
+        "rival_mechanism",
+        "evaluation"
+      ],
+      "can_support": "In studied models and tasks, long inputs can hurt performance even when relevant evidence is perfectly retrieved.",
+      "cannot_support": "Position bias alone explains all long-context quality problems."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-position-matters-controlled",
+      "text": "In Liu et al.'s controlled tasks, placing relevant evidence in the middle can degrade answer accuracy.",
+      "evidence_ids": [
+        "liu-2024-lost-middle"
+      ],
+      "conflict_ids": [],
+      "verdict": "bounded_supported"
+    },
+    {
+      "id": "claim-no-mitigation-exists",
+      "text": "No later research has proposed or tested mitigations for the lost-in-the-middle effect.",
+      "evidence_ids": [],
+      "conflict_ids": [
+        "hsieh-2024-found-middle",
+        "yu-2025-channel"
+      ],
+      "verdict": "contradicted"
+    },
+    {
+      "id": "claim-rag-always-position-dominated",
+      "text": "Position bias is always the dominant source of errors in deployed RAG systems.",
+      "evidence_ids": [
+        "liu-2024-lost-middle"
+      ],
+      "conflict_ids": [
+        "cuconasu-2025-rag-position"
+      ],
+      "verdict": "unsupported_generalization"
+    },
+    {
+      "id": "claim-perfect-retrieval-guarantees-success",
+      "text": "Once retrieval is perfect, extra context length cannot hurt the language model.",
+      "evidence_ids": [],
+      "conflict_ids": [
+        "du-2025-perfect-retrieval"
+      ],
+      "verdict": "contradicted"
+    },
+    {
+      "id": "claim-new-agent-routing-mechanism-publishable",
+      "text": "A new joint uncertainty-aware routing and context-position method is already validated and novel.",
+      "evidence_ids": [],
+      "conflict_ids": [],
+      "verdict": "unverified"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "gap-long-context-position",
+      "source_kind": "observed_limitation",
+      "status": "partially_solved",
+      "evidence_ids": [
+        "liu-2024-lost-middle"
+      ],
+      "later_paper_ids": [
+        "hsieh-2024-found-middle",
+        "yu-2025-channel",
+        "cuconasu-2025-rag-position"
+      ],
+      "unresolved_part": "Which effects and interventions transport across controlled versus realistic RAG pipelines is context-specific and requires targeted data and comparisons.",
+      "decision": "SEARCH_MORE",
+      "reason": "Published mitigations exist, and later deployment-oriented evaluation complicates any universal causal claim."
+    }
+  ],
+  "candidate_feasibility": {
+    "data": "unverified",
+    "compute": "unverified",
+    "evaluation": "unverified",
+    "budget": "unverified",
+    "allowed_status": "grounded",
+    "decision": "SEARCH_MORE"
+  }
+}
