@@ -28,6 +28,30 @@ class EvidenceCycleTests(unittest.TestCase):
         for fragment in ('Simplification of the mechanism behind positional attention bias','Computational overhead','Positional attention bias may be beneficial','The root cause of attention bias is unclear'):
             self.assertEqual(sum(fragment in row['excerpt'] for row in leads),1)
 
+    def test_two_column_pdf_raw_text_hyphenation_preserves_four_distinct_gaps(self):
+        # Regression from real ACL PDF: introductory limitation prose directly
+        # precedes a wrapped first bold heading with no blank line.
+        page='''Limitations
+While our study presents significant advances
+in this field, several limitations are noteworthy:
+Simplification of the mechanism behind posi-
+tional attention bias. However, the core mechanism
+may be more intricate than our simple model.
+Computational overhead. Additional forward passes
+are required compared to baseline generation.
+Positional attention bias may be beneficial.
+Some applications may require this positional focus.
+The root cause of attention bias is unclear.
+Future work should identify the cause.
+Ethical Statement
+This is not part of limitations.'''
+        leads=c.gap_leads([page],'synthetic-pdf-layout')
+        self.assertEqual(len(leads),4)
+        self.assertTrue(leads[0]['excerpt'].startswith('Simplification'))
+        self.assertTrue(all(l['status']=='candidate' for l in leads))
+        self.assertTrue(all(l['section']=='limitations' for l in leads))
+        self.assertTrue(all('Ethical Statement' not in l['excerpt'] for l in leads))
+
     def test_extracted_gap_is_candidate_not_verified_open(self):
         leads=c.gap_leads(self.hsieh.split('\f'),'paper-a')
         self.assertEqual({x['status'] for x in leads},{'candidate'})

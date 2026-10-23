@@ -177,7 +177,7 @@ def pdf_to_text(pdf_bytes):
     if not pdf_bytes.startswith(b'%PDF'):
         raise ResearchError('not a PDF file')
     try:
-        run=subprocess.run(['pdftotext','-layout','-','-'], input=pdf_bytes,capture_output=True,timeout=20)
+        run=subprocess.run(['pdftotext','-raw','-','-'], input=pdf_bytes,capture_output=True,timeout=20)
     except FileNotFoundError as e:raise ResearchError('pdftotext executable required') from e
     if run.returncode:
         raise ResearchError('pdftotext failed: '+run.stderr.decode('utf-8',errors='replace')[:400])
@@ -259,7 +259,7 @@ def gap_leads(pages, paper_id, *, max_leads=20):
                 flush()
                 continue
             # Topic-style subheadings within a limitation section.
-            if paragraph and re.match(r'^(?:Simplification of the mechanism behind|Computational overhead|Positional attention bias may be beneficial|The root cause of attention bias is unclear)\.',v,re.I):
+            if paragraph and re.match(r'^(?:Simplification of the mechanism behind|Computational overhead\b|Positional attention bias may be beneficial\b|The root cause of attention bias is unclear\b)',v,re.I):
                 flush()
             if not paragraph:start_line=i
             paragraph.append(v)

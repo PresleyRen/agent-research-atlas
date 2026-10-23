@@ -81,7 +81,12 @@ def run_online(outdir):
     leads=cycle.gap_leads(source['pages'],paper['paper_id'])
     (outdir/'hsieh-gap-candidates.json').write_text(json.dumps(leads,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     # Full PDF is read and limitation paragraphs are returned as *candidates*.
-    assert any('Computational overhead' in x['excerpt'] for x in leads), 'PDF limitation overhead lead missing'
+    expected=['Simplification of the mechanism behind','Computational overhead',
+              'Positional attention bias may be beneficial', 'The root cause of attention bias is unclear']
+    assert len(leads)==4, f'Expected four nonduplicated author limitations, found {len(leads)}'
+    for heading in expected:
+        assert sum(heading in x['excerpt'] for x in leads)==1, f'PDF limitation missing or duplicated: {heading}'
+    assert all(x['locator'].startswith('p.9') for x in leads)
     assert all(x['status']=='candidate' and not x['verified_open_gap'] for x in leads)
     result['acl_fulltext']={'paper':paper['title'],'doi':paper['doi'],'pdf_sha256':source['sha256'],
                             'page_count':len(source['pages']), 'extracted_candidate_count':len(leads),
