@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-10-22T03:36:22+00:00",
+  "decision": "REPAIR_MEASUREMENT",
+  "max_cycles": 1,
+  "next_step": "Check data, evaluation or blocked validity before proceeding.",
+  "proposal_id": "selective-context-calibration-condition",
+  "reason": "Resource or evaluation capability not verified: data",
+  "review_roles": [
+    "supervisor",
+    "critic"
+  ],
+  "review_sha256": "b7a35b4fad67d6a0c1af56bb1f1e43ca6ee872ada2a9a4e3cb700b1c9867ab6c",
+  "scientific_verdict": "not_assessed",
+  "sequence": 2,
+  "source_sha256": "2e7e2b57ac38c2b715878cf1aa1d4b7d1da7aa99d108c8b47ffd3a30041241a5"
+}

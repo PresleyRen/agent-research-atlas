@@ -1,0 +1,20 @@
+{
+  "proposal_id": "selective-context-calibration-condition",
+  "primary_source_locator": "Hsieh et al. 2024 Limitations p.9",
+  "gap_status": "partially_solved",
+  "later_work_checked": true,
+  "distinct_remaining_gap": "Test under which evidence/distractor configurations selective calibration improves task accuracy relative to matched-cost baselines.",
+  "data": "unverified",
+  "feasibility": {
+    "data": "unverified",
+    "compute": "unverified",
+    "evaluation": "unverified",
+    "budget": "unverified"
+  },
+  "minimal_test": "Construct paired controlled cases, realistic retrieval distractors, answer metrics and matched inference cost.",
+  "rival_prediction": "Improvements disappear against equal-compute retrieval and random-order baselines.",
+  "required_measurements": [
+    "answer_quality",
+    "long_context_position"
+  ]
+}

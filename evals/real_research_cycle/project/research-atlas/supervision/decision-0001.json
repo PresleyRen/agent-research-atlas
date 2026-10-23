@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-10-22T03:36:22+00:00",
+  "decision": "PIVOT",
+  "max_cycles": 1,
+  "next_step": "Select another candidate while retaining the rejected direction.",
+  "proposal_id": "universal-position-reordering",
+  "reason": "Blocking evidence-backed critique invalidates the current mechanism/claim.",
+  "review_roles": [
+    "supervisor",
+    "critic"
+  ],
+  "review_sha256": "bbad79509d554da944bea0009d3c47a4b223550c9bf35a097bc13c69f64f648e",
+  "scientific_verdict": "not_assessed",
+  "sequence": 1,
+  "source_sha256": "182ed2ab6b8ffa67597635488448c9ec02d0acc45db4bf7caad448e655f3e394"
+}

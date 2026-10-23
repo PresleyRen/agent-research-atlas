@@ -1,0 +1,16 @@
+{
+  "proposal_id": "universal-position-reordering",
+  "primary_source_locator": "Hsieh et al. 2024 Limitations p.9",
+  "gap_status": "partially_solved",
+  "later_work_checked": true,
+  "distinct_remaining_gap": "Claimed unconditional superiority of position-preferred reordering over random order.",
+  "data": "unverified",
+  "feasibility": {
+    "data": "unverified",
+    "compute": "unverified",
+    "evaluation": "unverified",
+    "budget": "unverified"
+  },
+  "minimal_test": "Run paired cost-controlled retrieval-conditioned examples with calibration vs no-calibration and nonparametric baseline.",
+  "rival_prediction": "Any observed improvement is attributable to extra model forward passes, not selective calibration."
+}

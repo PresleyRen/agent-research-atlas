@@ -1,0 +1,118 @@
+{
+  "edges": [
+    {
+      "id": "edge_e3d7d61b54633fd8",
+      "relation": "motivates",
+      "source": "paper_586bec5360222c4d",
+      "target": "gap_a42ba276d1d5aede"
+    },
+    {
+      "id": "edge_8a8b37a3a13ae673",
+      "relation": "motivates",
+      "source": "paper_586bec5360222c4d",
+      "target": "gap_75e738e76756e892"
+    },
+    {
+      "id": "edge_b6b80cd1be043c61",
+      "relation": "motivates",
+      "source": "paper_586bec5360222c4d",
+      "target": "gap_8591163788c11092"
+    }
+  ],
+  "nodes": [
+    {
+      "data": {
+        "doi": "10.18653/v1/2024.findings-acl.890",
+        "read_depth": "supplied_text_excerpt",
+        "url": "https://aclanthology.org/2024.findings-acl.890/"
+      },
+      "domains": [],
+      "id": "paper_586bec5360222c4d",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-22",
+          "locator": "read excerpt; individual PDF-page locators in gap nodes",
+          "path": "papers/hsieh_2024_excerpts.txt"
+        }
+      ],
+      "title": "Found in the middle: Calibrating Positional Attention Bias Improves Long Context Utilization",
+      "type": "paper"
+    },
+    {
+      "data": {
+        "evidence_ids": [
+          "paper_586bec5360222c4d"
+        ],
+        "later_work_checked": false,
+        "review_reason": "candidate lead, not assessed as open",
+        "source_kind": "author_stated_limitation",
+        "source_locator": "p.9, line 4",
+        "unresolved_part": "pending later-work verification"
+      },
+      "domains": [],
+      "id": "gap_a42ba276d1d5aede",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-22",
+          "locator": "p.9, line 4",
+          "path": "papers/hsieh_2024_excerpts.txt"
+        }
+      ],
+      "status": "candidate",
+      "title": "Computational overhead. Our method of calibrating positional attention bias, while effective, i",
+      "type": "gap"
+    },
+    {
+      "data": {
+        "evidence_ids": [
+          "paper_586bec5360222c4d"
+        ],
+        "later_work_checked": false,
+        "review_reason": "candidate lead, not assessed as open",
+        "source_kind": "author_stated_limitation",
+        "source_locator": "p.9, line 7",
+        "unresolved_part": "pending later-work verification"
+      },
+      "domains": [],
+      "id": "gap_75e738e76756e892",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-22",
+          "locator": "p.9, line 7",
+          "path": "papers/hsieh_2024_excerpts.txt"
+        }
+      ],
+      "status": "candidate",
+      "title": "Positional attention bias may be beneficial. Our method aims to completely remove positional at",
+      "type": "gap"
+    },
+    {
+      "data": {
+        "evidence_ids": [
+          "paper_586bec5360222c4d"
+        ],
+        "later_work_checked": false,
+        "review_reason": "candidate lead, not assessed as open",
+        "source_kind": "author_stated_limitation",
+        "source_locator": "p.9, line 10",
+        "unresolved_part": "pending later-work verification"
+      },
+      "domains": [],
+      "id": "gap_8591163788c11092",
+      "sources": [
+        {
+          "access": "local",
+          "accessed_at": "2026-10-22",
+          "locator": "p.9, line 10",
+          "path": "papers/hsieh_2024_excerpts.txt"
+        }
+      ],
+      "status": "candidate",
+      "title": "The root cause of attention bias is unclear. In this work, we aim to discover and understand th",
+      "type": "gap"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "claim_id": 123,
+    "doc_id": 4883040,
+    "asserted_relation": "SUPPORT"
+  },
+  {
+    "claim_id": 123,
+    "doc_id": 4883040,
+    "asserted_relation": "CONTRADICT"
+  },
+  {
+    "claim_id": 263,
+    "doc_id": 14853989,
+    "asserted_relation": "SUPPORT"
+  }
+]

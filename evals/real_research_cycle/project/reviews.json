@@ -1,0 +1,20 @@
+[
+  {
+    "role": "supervisor",
+    "proposal_id": "universal-position-reordering",
+    "finding": "Current sources contradict a universal positional ordering benefit; primary paper does not prove benefit for all retrieval pipelines.",
+    "evidence_locator": "Cuconasu et al. EMNLP 2025 Abstract and p.1",
+    "severity": "blocking",
+    "failure_type": "invalid_mechanism",
+    "resolved": false
+  },
+  {
+    "role": "critic",
+    "proposal_id": "universal-position-reordering",
+    "finding": "Candidate has no verified outcome labels or matched-cost comparison; the nearest 2025 RAG paper found reordering comparable to random in its tested setting.",
+    "evidence_locator": "Cuconasu et al. 2025 p.1, abstract and introduction",
+    "severity": "blocking",
+    "failure_type": "measurement",
+    "resolved": false
+  }
+]

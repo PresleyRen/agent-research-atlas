@@ -1,0 +1,35 @@
+{
+  "checked": 3,
+  "checks": [
+    {
+      "annotation_source": "SciFact expert-labeled evidence (if using official files)",
+      "asserted_relation": "SUPPORT",
+      "claim_id": "123",
+      "doc_id": "4883040",
+      "gold_relations": [
+        "CONTRADICT"
+      ],
+      "status": "contradicts_annotated_relation"
+    },
+    {
+      "annotation_source": "SciFact expert-labeled evidence (if using official files)",
+      "asserted_relation": "CONTRADICT",
+      "claim_id": "123",
+      "doc_id": "4883040",
+      "gold_relations": [
+        "CONTRADICT"
+      ],
+      "status": "matches_annotated_relation"
+    },
+    {
+      "annotation_source": "SciFact expert-labeled evidence (if using official files)",
+      "asserted_relation": "SUPPORT",
+      "claim_id": "263",
+      "doc_id": "14853989",
+      "gold_relations": [],
+      "status": "no_annotated_evidence"
+    }
+  ],
+  "mismatches": 1,
+  "scientific_verdict": "annotation_consistency_only"
+}

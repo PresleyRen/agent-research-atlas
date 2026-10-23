@@ -1,0 +1,27 @@
+{
+  "authors": [
+    "Cheng-Yu Hsieh",
+    "Yung-Sung Chuang",
+    "Chun-Liang Li",
+    "Zifeng Wang",
+    "Long T. Le",
+    "Abhishek Kumar",
+    "James Glass",
+    "Alexander Ratner",
+    "Chen-Yu Lee",
+    "Ranjay Krishna",
+    "Tomas Pfister"
+  ],
+  "cannot_support": "It establishes a universal overhead bound for all models and contexts",
+  "claim_can_support": "This calibration approach requires additional passes in the reported setup",
+  "doi": "10.18653/v1/2024.findings-acl.890",
+  "excerpt_sha256": "c0eca1a6e83efd283bb2e45073b1760be6282a65a2a597206a5d0fca5cbe8691",
+  "paper_id": "doi:10.18653/v1/2024.findings-acl.890",
+  "source_access": "local_excerpt",
+  "source_locator": "Limitations, printed p.14990, PDF p.9",
+  "source_text_sha256": "e770da334fafb13fa53270673011524bf3ad45203b6fc21e364c8456b8513bd5",
+  "title": "Found in the middle: Calibrating Positional Attention Bias Improves Long Context Utilization",
+  "url": "https://aclanthology.org/2024.findings-acl.890/",
+  "verification": "source_passage_matched_not_scientifically_adjudicated",
+  "year": 2024
+}

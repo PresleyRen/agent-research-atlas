@@ -1,0 +1,9 @@
+Do RAG Systems Really Suffer From Positional Bias?
+Source: https://aclanthology.org/2025.emnlp-main.1422.pdf
+Reviewed excerpt: page 1 of PDF (printed 28022)
+
+
+1 Introduction
+Because any real retriever is imperfect, RAG systems feed the LLM several top-ranked passages, not just the single best one.
+That practice raises recall but also inserts distracting passages: text that looks relevant yet lacks the appropriate answer.
+Our findings reveal that sophisticated strategies that attempt to rearrange the passages based on LLM positional preferences do not perform better than random shuffling.
