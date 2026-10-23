@@ -1,0 +1,12 @@
+{
+  "tasks": [
+    {
+      "proposal": "proposal.json",
+      "reviews": "reviews.json"
+    },
+    {
+      "proposal": "proposal_followup.json",
+      "reviews": "reviews_followup.json"
+    }
+  ]
+}

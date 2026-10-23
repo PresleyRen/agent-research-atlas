@@ -1,0 +1,45 @@
+{
+  "dataset": "BEIR SciFact official test",
+  "source_run": 39963301624,
+  "source_pinned_url": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/scifact.zip",
+  "archive_sha256": "536e14446a0ba56ed1398ab1055f39fe852686ecad24a6306c80c490fa8e0165",
+  "queries": 300,
+  "corpus_docs": 5183,
+  "protocol": {
+    "split": "test",
+    "k": 10,
+    "baseline": "BM25 all text title x1",
+    "variant": "BM25 title x2",
+    "k1": 1.5,
+    "b": 0.75,
+    "tokenizer": "regex lowercase ASCII tokens",
+    "selection": "sorted qrel-positive ids",
+    "title_weight_chosen_before_label_analysis": true
+  },
+  "baseline": {
+    "recall": 0.7849444444444444,
+    "mrr": 0.6325026455026455,
+    "ndcg": 0.6644511502901209
+  },
+  "variant": {
+    "recall": 0.7907777777777778,
+    "mrr": 0.6409140211640212,
+    "ndcg": 0.6726878336064631
+  },
+  "ndcg_difference": {
+    "delta": 0.00823668331634222,
+    "ci_95": [
+      -0.003330243849829022,
+      0.019695227485656962
+    ],
+    "unit_count": 300,
+    "status": "paired_query_bootstrap_exploratory"
+  },
+  "corrected_direction_decision": "INCONCLUSIVE",
+  "better_queries": 23,
+  "worse_queries": 19,
+  "unchanged_queries": 258,
+  "real_inference_ran": false,
+  "scientific_verdict": "not_assessed",
+  "note": "Measured on real public qrels, but test split has already been inspected, so future variants on this set are exploratory. Confidence interval crosses zero. Neither RAG answer quality nor true mechanism novelty was evaluated."
+}

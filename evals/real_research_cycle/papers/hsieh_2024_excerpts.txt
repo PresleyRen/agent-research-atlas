@@ -1,0 +1,18 @@
+Found in the middle: Calibrating Positional Attention Bias Improves Long Context Utilization
+Source: https://aclanthology.org/2024.findings-acl.890.pdf
+Reviewed excerpt: page 9 of PDF (printed 14990)
+
+
+[SOURCE_PDF_PAGE=9]
+Limitations
+Simplification of the mechanism behind positional attention bias. We proposed a simple hypothesis to model the positional attention bias, as shown in Eq. 1.
+However, the intrinsic mechanisms that drive this bias could be more intricate and dynamic than our current model accounts for.
+
+Computational overhead. Our method of calibrating positional attention bias, while effective, introduces additional computational overhead.
+Specifically, we require extra O(K) model forward passes to calibrate attention at each position, compared to vanilla model generation.
+
+Positional attention bias may be beneficial. Our method aims to completely remove positional attention bias.
+However, it is important to note that this positional bias might actually be beneficial in certain contexts.
+
+The root cause of attention bias is unclear. In this work, we aim to discover and understand the connection between the lost-in-the-middle problem and LLMs’ intrinsic attention bias.
+However, our work does not definitively pinpoint the root cause of attention bias in LLMs.

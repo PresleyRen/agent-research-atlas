@@ -1,0 +1,42 @@
+{
+  "leads": [
+    {
+      "excerpt": "Computational overhead. Our method of calibrating positional attention bias, while effective, introduces additional computational overhead. Specifically, we require extra O(K) model forward passes to calibrate attention at each position, compared to vanilla model generation.",
+      "lead_id": "lead-001",
+      "locator": "p.9, line 4",
+      "paper_id": "paper_hsieh_2024",
+      "requires_later_work": true,
+      "section": "limitations",
+      "source_kind": "author_stated_limitation",
+      "status": "candidate",
+      "verified_open_gap": false
+    },
+    {
+      "excerpt": "Positional attention bias may be beneficial. Our method aims to completely remove positional attention bias. However, it is important to note that this positional bias might actually be beneficial in certain contexts.",
+      "lead_id": "lead-002",
+      "locator": "p.9, line 7",
+      "paper_id": "paper_hsieh_2024",
+      "requires_later_work": true,
+      "section": "limitations",
+      "source_kind": "author_stated_limitation",
+      "status": "candidate",
+      "verified_open_gap": false
+    },
+    {
+      "excerpt": "The root cause of attention bias is unclear. In this work, we aim to discover and understand the connection between the lost-in-the-middle problem and LLMs’ intrinsic attention bias. However, our work does not definitively pinpoint the root cause of attention bias in LLMs.",
+      "lead_id": "lead-003",
+      "locator": "p.9, line 10",
+      "paper_id": "paper_hsieh_2024",
+      "requires_later_work": true,
+      "section": "limitations",
+      "source_kind": "author_stated_limitation",
+      "status": "candidate",
+      "verified_open_gap": false
+    }
+  ],
+  "page_count": 2,
+  "paper_id": "paper_hsieh_2024",
+  "read_depth": "supplied_text_excerpt",
+  "sha256": "6d4bca806a7208efea18f58c65988dae4781c402517a4cb915c2f72c159a9768",
+  "source": "papers/hsieh_2024_excerpts.txt"
+}

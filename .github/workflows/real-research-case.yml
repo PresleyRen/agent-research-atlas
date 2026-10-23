@@ -1,0 +1,39 @@
+name: Real Research Case
+on:
+  push:
+    branches:
+      - main
+      - 'feat/*'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  live-scifact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Ensure PDF text reader
+        run: |
+          if ! command -v pdftotext >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y poppler-utils
+          fi
+      - name: Run new module unit and integration tests
+        run: |
+          python -m unittest discover -s tests -v
+          python -m py_compile skills/agent-research-atlas/scripts/research_cycle.py skills/agent-research-atlas/scripts/retrieval_benchmark.py skills/agent-research-atlas/scripts/fetch_beir.py
+      - name: Execute real 300-query BEIR SciFact and actual ACL paper test
+        run: |
+          python tests/live_real_research_case.py --output-dir "$RUNNER_TEMP/atlas-live-evidence"
+      - name: Preserve real-data outcomes and failure context
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: real-research-evidence-${{ github.run_id }}
+          path: ${{ runner.temp }}/atlas-live-evidence
+          if-no-files-found: warn
+          retention-days: 30

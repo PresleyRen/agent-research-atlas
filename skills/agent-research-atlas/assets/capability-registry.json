@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": "1.2.0",
-  "audit_date": "2026-10-22",
+  "version": "1.3.0",
+  "audit_date": "2026-10-23",
   "audit_scope": {
     "included": "Previously named task-relevant sources, plus 12 Supervisor-Skills at pinned commit a20d76e with all their Markdown references and the Chinese handbook. Each distinctive feature is mapped separately; HF items retain their narrower review scope. Added supervision-driven direction discovery with Kalaris autoresearch, K-Dense research-lookup, 45ck gap-finder and MentorForge mentor distillation.",
     "excluded": "Unlisted upstream skills and methods; Supervisor source images/PDF, drawing runtime execution and independent revalidation of external case-study papers; commercial account integration and scientific effectiveness benchmarks. No unattended recurring loop, private professor material, or majority-vote scientific verdict is inherited.",
@@ -123,6 +123,10 @@
         },
         {
           "path": "references/supervisor-discovery.md"
+        },
+        {
+          "path": "scripts/research_cycle.py",
+          "symbol": "crossref_query"
         }
       ],
       "tests": [
@@ -138,6 +142,11 @@
         {
           "path": "docs/forward-conflicts.md",
           "kind": "forward"
+        },
+        {
+          "path": "tests/test_research_cycle.py",
+          "symbol": "EvidenceCycleTests.test_crossref_metadata_from_real_id_without_fabricated_fields",
+          "kind": "unit"
         }
       ],
       "depends_on": [
@@ -174,6 +183,10 @@
         },
         {
           "path": "references/bilingual-retrieval.md"
+        },
+        {
+          "path": "scripts/research_cycle.py",
+          "symbol": "acl_metadata"
         }
       ],
       "tests": [
@@ -185,6 +198,11 @@
         {
           "path": "docs/forward-conflicts.md",
           "kind": "forward"
+        },
+        {
+          "path": "tests/test_research_cycle.py",
+          "symbol": "EvidenceCycleTests.test_acl_html_metadata_parser",
+          "kind": "unit"
         }
       ],
       "depends_on": [
@@ -221,6 +239,10 @@
         },
         {
           "path": "references/supervisor-discovery.md"
+        },
+        {
+          "path": "scripts/research_cycle.py",
+          "symbol": "read_paper_pages"
         }
       ],
       "tests": [
@@ -232,6 +254,11 @@
         {
           "path": "docs/forward-conflicts.md",
           "kind": "forward"
+        },
+        {
+          "path": "tests/test_research_cycle.py",
+          "symbol": "EvidenceCycleTests.test_two_column_pdf_raw_text_hyphenation_preserves_four_distinct_gaps",
+          "kind": "unit"
         }
       ],
       "depends_on": [
@@ -496,6 +523,10 @@
         },
         {
           "path": "references/supervisor-discovery.md"
+        },
+        {
+          "path": "scripts/research_cycle.py",
+          "symbol": "validate_data_contract"
         }
       ],
       "tests": [
@@ -507,6 +538,11 @@
         {
           "path": "docs/forward-conflicts.md",
           "kind": "forward"
+        },
+        {
+          "path": "tests/test_research_cycle.py",
+          "symbol": "EvidenceCycleTests.test_sha_matching_but_invalid_beir_labels_still_fail",
+          "kind": "unit"
         }
       ],
       "depends_on": [
@@ -583,6 +619,10 @@
         {
           "path": "scripts/experiments.py",
           "symbol": "validate_plan"
+        },
+        {
+          "path": "scripts/retrieval_benchmark.py",
+          "symbol": "evaluate"
         }
       ],
       "tests": [
@@ -594,6 +634,15 @@
         {
           "path": "docs/forward-conflicts.md",
           "kind": "forward"
+        },
+        {
+          "path": "tests/test_retrieval_benchmark.py",
+          "symbol": "RetrievalTests.test_directional_interval_cannot_be_overruled_by_positive_average",
+          "kind": "unit"
+        },
+        {
+          "path": "tests/live_real_research_case.py",
+          "kind": "live"
         }
       ],
       "depends_on": [
@@ -739,6 +788,10 @@
         },
         {
           "path": "references/evidence-and-claims.md"
+        },
+        {
+          "path": "scripts/retrieval_benchmark.py",
+          "symbol": "load_beir"
         }
       ],
       "tests": [
@@ -756,6 +809,11 @@
           "path": "tests/test_integration_review.py",
           "symbol": "IntegrationReviewTests.test_zero_tolerance_does_not_round_distinct_large_integers_into_a_match",
           "kind": "conflict"
+        },
+        {
+          "path": "tests/test_retrieval_benchmark.py",
+          "symbol": "RetrievalTests.test_metrics_correct_for_partial_relevance",
+          "kind": "unit"
         }
       ],
       "depends_on": [
@@ -1036,6 +1094,10 @@
         },
         {
           "path": "references/extension-contract.md"
+        },
+        {
+          "path": "scripts/fetch_beir.py",
+          "symbol": "download_scifact"
         }
       ],
       "tests": [
@@ -1046,6 +1108,15 @@
         {
           "path": "docs/tool-source-audit.md",
           "kind": "not_run"
+        },
+        {
+          "path": "tests/test_fetch_beir.py",
+          "symbol": "BeirFetchTests.test_pinned_source_and_checksum_and_manifest",
+          "kind": "unit"
+        },
+        {
+          "path": "tests/live_real_research_case.py",
+          "kind": "live"
         }
       ],
       "depends_on": [
@@ -1393,12 +1464,21 @@
         },
         {
           "path": "assets/supervision/mentor-panel.md"
+        },
+        {
+          "path": "scripts/research_cycle.py",
+          "symbol": "run_cycle"
         }
       ],
       "tests": [
         {
           "path": "tests/test_supervision_contract.py",
           "symbol": "SupervisionContractTests.test_supervisor_decision_contract_is_present",
+          "kind": "unit"
+        },
+        {
+          "path": "tests/test_research_cycle.py",
+          "symbol": "EvidenceCycleTests.test_real_2025_counterevidence_causes_pivot",
           "kind": "unit"
         }
       ],
@@ -1444,6 +1524,10 @@
         {
           "path": "scripts/atlas.py",
           "symbol": "validate"
+        },
+        {
+          "path": "scripts/research_cycle.py",
+          "symbol": "gap_leads"
         }
       ],
       "tests": [
@@ -1456,6 +1540,15 @@
           "path": "tests/test_atlas.py",
           "symbol": "AtlasCliTests.test_partially_solved_gap_requires_later_paper",
           "kind": "unit"
+        },
+        {
+          "path": "tests/test_research_cycle.py",
+          "symbol": "EvidenceCycleTests.test_extract_actual_four_distinct_limitation_paragraphs",
+          "kind": "unit"
+        },
+        {
+          "path": "tests/live_real_research_case.py",
+          "kind": "live"
         }
       ],
       "depends_on": [
@@ -1496,12 +1589,21 @@
         },
         {
           "path": "assets/supervision/citation-corpus.md"
+        },
+        {
+          "path": "scripts/research_cycle.py",
+          "symbol": "citation_entry"
         }
       ],
       "tests": [
         {
           "path": "tests/test_supervision_contract.py",
           "symbol": "SupervisionContractTests.test_citation_corpus_requires_support_and_non_support_fields",
+          "kind": "unit"
+        },
+        {
+          "path": "tests/test_research_cycle.py",
+          "symbol": "EvidenceCycleTests.test_fulltext_claim_cannot_be_forged_from_short_excerpt",
           "kind": "unit"
         }
       ],
@@ -1537,12 +1639,21 @@
         },
         {
           "path": "references/methodology.md"
+        },
+        {
+          "path": "scripts/research_cycle.py",
+          "symbol": "run_queue"
         }
       ],
       "tests": [
         {
           "path": "tests/test_supervision_contract.py",
           "symbol": "SupervisionContractTests.test_loop_contains_pivot_and_return_to_literature",
+          "kind": "unit"
+        },
+        {
+          "path": "tests/test_research_cycle.py",
+          "symbol": "EvidenceCycleTests.test_queue_pivots_then_stops_on_measurement_blocker",
           "kind": "unit"
         }
       ],

@@ -1,0 +1,49 @@
+{
+  "paper_id": "doi:10.18653/v1/2024.findings-acl.890",
+  "leads": [
+    {
+      "lead_id": "lead-001",
+      "paper_id": "doi:10.18653/v1/2024.findings-acl.890",
+      "locator": "p.9, line 4",
+      "section": "limitations",
+      "excerpt": "Simplification of the mechanism behind positional attention bias. We proposed a simple hypothesis to model the positional attention bias, as shown in Eq. 1. However, the intrinsic mechanisms that drive this bias could be more intricate and dynamic than our current model accounts for.",
+      "source_kind": "author_stated_limitation",
+      "status": "candidate",
+      "verified_open_gap": false,
+      "requires_later_work": true
+    },
+    {
+      "lead_id": "lead-002",
+      "paper_id": "doi:10.18653/v1/2024.findings-acl.890",
+      "locator": "p.9, line 7",
+      "section": "limitations",
+      "excerpt": "Computational overhead. Our method of calibrating positional attention bias, while effective, introduces additional computational overhead. Specifically, we require extra O(K) model forward passes to calibrate attention at each position, compared to vanilla model generation.",
+      "source_kind": "author_stated_limitation",
+      "status": "candidate",
+      "verified_open_gap": false,
+      "requires_later_work": true
+    },
+    {
+      "lead_id": "lead-003",
+      "paper_id": "doi:10.18653/v1/2024.findings-acl.890",
+      "locator": "p.9, line 10",
+      "section": "limitations",
+      "excerpt": "Positional attention bias may be beneficial. Our method aims to completely remove positional attention bias. However, it is important to note that this positional bias might actually be beneficial in certain contexts.",
+      "source_kind": "author_stated_limitation",
+      "status": "candidate",
+      "verified_open_gap": false,
+      "requires_later_work": true
+    },
+    {
+      "lead_id": "lead-004",
+      "paper_id": "doi:10.18653/v1/2024.findings-acl.890",
+      "locator": "p.9, line 13",
+      "section": "limitations",
+      "excerpt": "The root cause of attention bias is unclear. In this work, we aim to discover and understand the connection between the lost-in-the-middle problem and LLMs’ intrinsic attention bias. However, our work does not definitively pinpoint the root cause of attention bias in LLMs.",
+      "source_kind": "author_stated_limitation",
+      "status": "candidate",
+      "verified_open_gap": false,
+      "requires_later_work": true
+    }
+  ]
+}

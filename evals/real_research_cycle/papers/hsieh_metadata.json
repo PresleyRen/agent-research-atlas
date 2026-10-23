@@ -1,0 +1,22 @@
+{
+  "paper_id": "doi:10.18653/v1/2024.findings-acl.890",
+  "title": "Found in the middle: Calibrating Positional Attention Bias Improves Long Context Utilization",
+  "doi": "10.18653/v1/2024.findings-acl.890",
+  "url": "https://aclanthology.org/2024.findings-acl.890/",
+  "authors": [
+    "Cheng-Yu Hsieh",
+    "Yung-Sung Chuang",
+    "Chun-Liang Li",
+    "Zifeng Wang",
+    "Long T. Le",
+    "Abhishek Kumar",
+    "James Glass",
+    "Alexander Ratner",
+    "Chen-Yu Lee",
+    "Ranjay Krishna",
+    "Tomas Pfister"
+  ],
+  "year": 2024,
+  "bibliography_type": "inproceedings",
+  "booktitle": "Findings of the Association for Computational Linguistics: ACL 2024"
+}

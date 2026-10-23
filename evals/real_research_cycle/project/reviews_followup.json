@@ -1,0 +1,20 @@
+[
+  {
+    "role": "supervisor",
+    "proposal_id": "selective-context-calibration-condition",
+    "finding": "Selection may help only under particular distractor distributions; literature result is not universal; evaluate actual accuracy-cost tradeoff.",
+    "evidence_locator": "Cuconasu et al. EMNLP 2025 Abstract and p.1",
+    "severity": "nonblocking",
+    "failure_type": "scope",
+    "resolved": false
+  },
+  {
+    "role": "critic",
+    "proposal_id": "selective-context-calibration-condition",
+    "finding": "Selection may help only under particular distractor distributions; literature result is not universal; evaluate actual accuracy-cost tradeoff.",
+    "evidence_locator": "Cuconasu et al. 2025 p.1, abstract and introduction",
+    "severity": "nonblocking",
+    "failure_type": "scope",
+    "resolved": false
+  }
+]

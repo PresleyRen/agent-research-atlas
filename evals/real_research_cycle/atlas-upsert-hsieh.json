@@ -1,0 +1,149 @@
+{
+  "nodes": [
+    {
+      "id": "paper_586bec5360222c4d",
+      "type": "paper",
+      "title": "Found in the middle: Calibrating Positional Attention Bias Improves Long Context Utilization",
+      "domains": [],
+      "sources": [
+        {
+          "access": "local",
+          "path": "papers/hsieh_2024_excerpts.txt",
+          "locator": "read excerpt; individual PDF-page locators in gap nodes",
+          "accessed_at": "2026-10-22"
+        }
+      ],
+      "data": {
+        "doi": "10.18653/v1/2024.findings-acl.890",
+        "url": "https://aclanthology.org/2024.findings-acl.890/",
+        "read_depth": "supplied_text_excerpt"
+      }
+    },
+    {
+      "id": "gap_3af909e5213295eb",
+      "type": "gap",
+      "title": "Simplification of the mechanism behind positional attention bias. We proposed a simple hypothes",
+      "domains": [],
+      "status": "candidate",
+      "sources": [
+        {
+          "access": "local",
+          "path": "papers/hsieh_2024_excerpts.txt",
+          "locator": "p.9, line 4",
+          "accessed_at": "2026-10-22"
+        }
+      ],
+      "data": {
+        "source_kind": "author_stated_limitation",
+        "evidence_ids": [
+          "paper_586bec5360222c4d"
+        ],
+        "source_locator": "p.9, line 4",
+        "unresolved_part": "pending later-work verification",
+        "review_reason": "candidate lead, not assessed as open",
+        "later_work_checked": false
+      }
+    },
+    {
+      "id": "gap_c0de4675ba2dfa56",
+      "type": "gap",
+      "title": "Computational overhead. Our method of calibrating positional attention bias, while effective, i",
+      "domains": [],
+      "status": "candidate",
+      "sources": [
+        {
+          "access": "local",
+          "path": "papers/hsieh_2024_excerpts.txt",
+          "locator": "p.9, line 7",
+          "accessed_at": "2026-10-22"
+        }
+      ],
+      "data": {
+        "source_kind": "author_stated_limitation",
+        "evidence_ids": [
+          "paper_586bec5360222c4d"
+        ],
+        "source_locator": "p.9, line 7",
+        "unresolved_part": "pending later-work verification",
+        "review_reason": "candidate lead, not assessed as open",
+        "later_work_checked": false
+      }
+    },
+    {
+      "id": "gap_cb7607d4e607a957",
+      "type": "gap",
+      "title": "Positional attention bias may be beneficial. Our method aims to completely remove positional at",
+      "domains": [],
+      "status": "candidate",
+      "sources": [
+        {
+          "access": "local",
+          "path": "papers/hsieh_2024_excerpts.txt",
+          "locator": "p.9, line 10",
+          "accessed_at": "2026-10-22"
+        }
+      ],
+      "data": {
+        "source_kind": "author_stated_limitation",
+        "evidence_ids": [
+          "paper_586bec5360222c4d"
+        ],
+        "source_locator": "p.9, line 10",
+        "unresolved_part": "pending later-work verification",
+        "review_reason": "candidate lead, not assessed as open",
+        "later_work_checked": false
+      }
+    },
+    {
+      "id": "gap_22a8588da0dbcbfe",
+      "type": "gap",
+      "title": "The root cause of attention bias is unclear. In this work, we aim to discover and understand th",
+      "domains": [],
+      "status": "candidate",
+      "sources": [
+        {
+          "access": "local",
+          "path": "papers/hsieh_2024_excerpts.txt",
+          "locator": "p.9, line 13",
+          "accessed_at": "2026-10-22"
+        }
+      ],
+      "data": {
+        "source_kind": "author_stated_limitation",
+        "evidence_ids": [
+          "paper_586bec5360222c4d"
+        ],
+        "source_locator": "p.9, line 13",
+        "unresolved_part": "pending later-work verification",
+        "review_reason": "candidate lead, not assessed as open",
+        "later_work_checked": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_5fb576c0cf19cd2f",
+      "source": "paper_586bec5360222c4d",
+      "target": "gap_3af909e5213295eb",
+      "relation": "motivates"
+    },
+    {
+      "id": "edge_bd2a2a91d0d9f44b",
+      "source": "paper_586bec5360222c4d",
+      "target": "gap_c0de4675ba2dfa56",
+      "relation": "motivates"
+    },
+    {
+      "id": "edge_efca30c4ab31ae0e",
+      "source": "paper_586bec5360222c4d",
+      "target": "gap_cb7607d4e607a957",
+      "relation": "motivates"
+    },
+    {
+      "id": "edge_3031eb0da42907b7",
+      "source": "paper_586bec5360222c4d",
+      "target": "gap_22a8588da0dbcbfe",
+      "relation": "motivates"
+    }
+  ]
+}
