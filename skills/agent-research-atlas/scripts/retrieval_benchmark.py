@@ -116,6 +116,17 @@ def bootstrap_diff(per_case, metric, n_boot=1500, seed=2026):
             'unit_count':len(diffs),'status':'paired_query_bootstrap_exploratory'}
 
 
+def direction_decision(ndcg_interval):
+    '''A comparison is inconclusive when the paired interval spans no difference.'''
+    if ndcg_interval['unit_count'] < 20 or ndcg_interval['ci_95'] is None:
+        return 'INSUFFICIENT_QUERY_UNITS'
+    low,high=ndcg_interval['ci_95']
+    if low > 0:
+        return 'FOLLOWUP_EXPERIMENT'  # Not scientific validation or a confirmatory trial.
+    if high < 0:
+        return 'KEEP_BASELINE'
+    return 'INCONCLUSIVE'  # Positive point estimate alone is insufficient.
+
 def evaluate(data_dir,split='test',k=10, max_queries=None):
     if not 1<=k<=100:raise BenchmarkError('k must be 1..100')
     corpus,queries,gold,provenance=load_beir(data_dir,split)
@@ -135,15 +146,17 @@ def evaluate(data_dir,split='test',k=10, max_queries=None):
                         'baseline_top_ids':pred_a[:k], 'variant_top_ids':pred_b[:k]})
     means={kind:{metric:statistics.mean(x[kind][metric] for x in results) for metric in ('recall','mrr','ndcg')} for kind in ('baseline','variant')}
     diffs={metric:bootstrap_diff(results,metric) for metric in ('recall','mrr','ndcg')}
-    recommend='KEEP_BASELINE' if diffs['ndcg']['delta']<=0 else 'FOLLOWUP_EXPERIMENT'
-    # Scientific significance is not inferred from small or exploratory differences.
-    if len(ids)<20: recommend='INSUFFICIENT_QUERY_UNITS'
+    recommend=direction_decision(diffs['ndcg'])
+    # Scientific significance and publishable novelty are never inferred from this exploratory interval.
+    cases={'better':sum(r['variant']['ndcg']>r['baseline']['ndcg'] for r in results),
+           'worse':sum(r['variant']['ndcg']<r['baseline']['ndcg'] for r in results),
+           'unchanged':sum(r['variant']['ndcg']==r['baseline']['ndcg'] for r in results)}
     return {'dataset':'BEIR-format retrieval, not generative RAG','source_files':provenance,
             'protocol':{'split':split,'k':k,'baseline':'BM25 all text title x1','variant':'BM25 title x2',
                         'k1':1.5,'b':0.75,'tokenizer':'regex lowercase ASCII tokens','selection':'sorted qrel-positive ids',
                         'title_weight_chosen_before_label_analysis':True},
             'evaluation_queries':len(ids),'means':means,'differences':diffs,
-            'direction_decision':recommend,
+            'direction_decision':recommend,'query_outcomes_ndcg':cases,
             'scientific_verdict':'not_assessed','per_query':results,
             'limits':'Exploratory lexical retrieval comparison only. Full SciFact scores require official complete corpus and qrels; not LLM answer quality.'}
 

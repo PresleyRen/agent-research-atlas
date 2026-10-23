@@ -70,9 +70,16 @@ def run_online(outdir):
     paper=cycle.acl_metadata(url)
     assert 'Found in the middle' in paper['title']
     assert paper['doi']=='10.18653/v1/2024.findings-acl.890'
-    source=cycle.read_paper_pages(paper['pdf_url'])
+    pdf=cycle.fetch_public(paper['pdf_url'],max_bytes=cycle.MAX_PDF_BYTES)
+    # Preserve exact original bytes and actual page extraction for independent
+    # inspection even if limitation-mining later fails its live assertion.
+    (outdir/'hsieh-source.pdf').write_bytes(pdf['content'])
+    pages=cycle.pdf_to_text(pdf['content'])
+    (outdir/'hsieh-extracted-pages.txt').write_text('\f'.join(pages),encoding='utf-8')
+    source={'pages':pages,'sha256':pdf['sha256'],'read_depth':'fulltext_extracted'}
     assert len(source['pages'])>=8
     leads=cycle.gap_leads(source['pages'],paper['paper_id'])
+    (outdir/'hsieh-gap-candidates.json').write_text(json.dumps(leads,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     # Full PDF is read and limitation paragraphs are returned as *candidates*.
     assert any('Computational overhead' in x['excerpt'] for x in leads), 'PDF limitation overhead lead missing'
     assert all(x['status']=='candidate' and not x['verified_open_gap'] for x in leads)

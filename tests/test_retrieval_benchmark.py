@@ -65,6 +65,19 @@ class RetrievalTests(unittest.TestCase):
         self.assertGreater(len(row['baseline_top_ids']),0)
         self.assertEqual(len(row['baseline_top_ids']),len(set(row['baseline_top_ids'])))
 
+    def test_directional_interval_cannot_be_overruled_by_positive_average(self):
+        # Regress the actual SciFact pattern: positive delta, interval crosses 0.
+        amb={'delta':0.00824,'ci_95':[-0.00333,0.01970],'unit_count':300}
+        self.assertEqual(b.direction_decision(amb),'INCONCLUSIVE')
+        self.assertEqual(b.direction_decision(dict(amb,ci_95=[0.001,0.021])),'FOLLOWUP_EXPERIMENT')
+        self.assertEqual(b.direction_decision(dict(amb,ci_95=[-0.05,-0.001])),'KEEP_BASELINE')
+        self.assertEqual(b.direction_decision(dict(amb,ci_95=None,unit_count=1)),'INSUFFICIENT_QUERY_UNITS')
+
+    def test_narrow_real_sci_fact_smoke_reports_query_outcomes(self):
+        result=b.evaluate(self.data,k=3)
+        self.assertEqual(sum(result['query_outcomes_ndcg'].values()),1)
+        self.assertEqual(result['scientific_verdict'],'not_assessed')
+
     def test_scifact_source_file_hashes_are_reproducible(self):
         out=b.evaluate(self.data,k=3)
         for name,key in [('corpus.jsonl','corpus_sha256'),('queries.jsonl','queries_sha256'),('qrels/test.tsv','qrels_sha256')]:
