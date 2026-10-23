@@ -2,6 +2,22 @@
 
 Agent Research Atlas uses one capability registry as its maintenance index: [capability-registry.json](../skills/agent-research-atlas/assets/capability-registry.json). Each source feature maps to one or more `Cxx` capabilities; each capability maps to a protocol or function and a verification record. Optional integrations and untested work remain explicit.
 
+## v1.3 实际运行器与验证位置
+
+在现有 C01–C32 的职责下，v1.3 增加真实执行程序，不增加平行文献库：
+
+| 运行或科研问题 | 负责位置 | 验证入口 |
+|---|---|---|
+| Crossref 查找、ACL 官方身份和 PDF 原文 | `scripts/research_cycle.py::crossref_query / acl_metadata / read_paper_pages` | `tests/test_research_cycle.py` + `tests/live_real_research_case.py` |
+| PDF 双栏顺序、标题断词、来源更新 | `research_cycle.py::pdf_to_text / gap_leads` | 真实 Hsieh 14 页 PDF / 四项 p.9 Limitations；源 PDF 与提取文本分别 SHA256 |
+| 导师为何继续/转向/暂停 | `research_cycle.py::run_cycle / run_queue / decide` | `test_research_cycle.py` Supervisor 转向、数据无效、恢复分支 |
+| 论点与数据的匹配 | `research_cycle.py::validate_data_contract` | 哈希正确但 qrels 无效应拒绝；检索相关性不可证明 LLM 回答质量 |
+| 官方 SciFact 下载及 qrels | `scripts/fetch_beir.py::download_scifact` | 官方 MD5、5183 文档/300 测试查询、ZIP 安全与标签关系 |
+| 真实指标与统计解释 | `scripts/retrieval_benchmark.py::evaluate / direction_decision` | 全量预测、1,800 次独立核对、跨零区间必须 INCONCLUSIVE |
+| 后续写作引用 | `research_cycle.py::citation_entry / bibtex` | 元数据/全文深度、章节位置、ACL 正确 proceedings 类型 |
+
+具体实际结果和保留的首次失败见 [v1.3 验证报告](v1.3-validation.md)。编辑器自动化、跨出版社大规模全文和完整 LLM 科研新颖性发现仍需要各自的真实任务测试。
+
 ## 从症状找到负责位置
 
 | 遇到的问题 | ID | 首先改哪里 | 用什么验证 |

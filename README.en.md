@@ -8,9 +8,37 @@ Agent Research Atlas is a Chinese/English skill for Agent research. It guides an
 
 Each project keeps its own map, domain folders, sources, plans, results and decisions. Existing maps are read and reused. New evidence can update dependent conclusions and next steps. Start with a complete research cycle or request a focused task such as a closest-work review, benchmark design, Methods section, reviewer response or editable method figure.
 
+## v1.3 · Executable research and real-data validation
+
+The [live execution guide](skills/agent-research-atlas/references/live-research-execution.md) now connects the Supervisor–Scientist–Critic protocol to implemented **Crossref/ACL metadata search, original publisher PDF extraction, page-linked limitation candidates, bounded evidence-driven decisions, reusable citation/BibTeX entries and official BEIR-format retrieval evaluation**. The existing Atlas, literature methodology and publication tools remain intact.
+
+**Original paper:** Hsieh et al., *Found in the Middle* (ACL Findings 2024), original 14-page PDF. Four author-stated limitations are extracted with PDF page locators and separate raw-PDF/extracted-text hashes. They remain **gap candidates**, not established novel contributions. The supervisor records a pivot away from a universal RAG position-bias assertion; actual LLM answer-quality measurements remain necessary.
+
+**Labeled benchmark:** Official BEIR SciFact has **5,183 documents and 300 labeled test queries**. The evaluator ran preselected BM25 title-weight x1 and x2 on every query and independently recomputed 1,800 metric values from source qrels and the full saved top-k lists:
+
+| Metric | BM25 title x1 | BM25 title x2 |
+|---|---:|---:|
+| Recall@10 | 0.7849 | 0.7908 |
+| MRR@10 | 0.6325 | 0.6409 |
+| nDCG@10 | 0.6645 | 0.6727 |
+
+The nDCG@10 difference is **+0.00824**, with exploratory paired-query bootstrap 95% interval **[−0.00333, +0.01970]**. It crosses zero; the correct decision is **INCONCLUSIVE**. Twenty-three queries improve, nineteen regress and 258 are unchanged. These observations do **not** demonstrate robust improvement, a long-context causal mechanism, autonomous scientific novelty or paper acceptance. The inspected test set cannot be reused as an independent confirmation set for subsequent tuning.
+
+```bash
+python skills/agent-research-atlas/scripts/fetch_beir.py --dest /path/to/scifact-snapshot
+python skills/agent-research-atlas/scripts/retrieval_benchmark.py \
+  --data-dir /path/to/scifact-snapshot/scifact --split test --k 10 \
+  --output /path/to/project/research-atlas/experiments/scifact-bm25.json
+python skills/agent-research-atlas/scripts/research_cycle.py --root /path/to/project read \
+  --paper 'https://aclanthology.org/2024.findings-acl.890.pdf' \
+  --id doi:10.18653/v1/2024.findings-acl.890 --output work/hsieh-gaps.json
+```
+
+PDF parsing requires Poppler `pdftotext`. The first online test failed because of two-column extraction; the repair was exercised against the actual downloaded paper and then passed real online CI. The bounded supervisor queue consumes explicit proposal/reviewer records rather than fabricating genuinely independent reviewers. See [test evidence and observed failures](docs/v1.3-validation.md), [case materials](evals/real_research_cycle/README.md), and the [successful online run](https://github.com/PresleyRen/agent-research-atlas/actions/runs/39965544143).
+
 ## Quick start
 
-Install `skills/agent-research-atlas/` as one Skill in a compatible host, or ask an assistant with search, file and code capabilities to read its `SKILL.md`. The three bundled tools require **Python 3.10+ and the standard library**. Research tasks use the host's available retrieval, full-text, experiment and drawing tools.
+Install `skills/agent-research-atlas/` as one Skill in a compatible host, or ask an assistant with search, file and code capabilities to read its `SKILL.md`. The bundled Python tools require **Python 3.10+ and the standard library**; authentic PDF extraction additionally requires Poppler. Research tasks use the host's available retrieval, full-text, experiment and drawing tools.
 
 ```text
 Use agent-research-atlas to continue /path/to/my-agent-project.
@@ -205,7 +233,7 @@ python -m unittest discover -s tests -v
 python skills/agent-research-atlas/scripts/audit.py check --repo .
 ```
 
-The deterministic suite contains **109 tests** (101 original + 8 real-publication evidence checks) for map reuse, identities, states/provenance, frozen inputs, budgets/failure records, dependency updates, numbers and extension references. Independent-context project tasks retain their actual artifacts and conflict decisions. See the [validation overview](docs/validation.md), [earlier tasks](docs/forward-conflicts.md), [Supervisor integration tasks](docs/supervisor-validation.md) and [reusable fixtures](evals/README.md) for executed scope and outcomes.
+The deterministic suite contains **the original 109 tests plus new v1.3 unit/integration tests**, with the exact final count established by CI for the tested commit (101 original + 8 real-publication evidence checks) for map reuse, identities, states/provenance, frozen inputs, budgets/failure records, dependency updates, numbers and extension references. Independent-context project tasks retain their actual artifacts and conflict decisions. See the [validation overview](docs/validation.md), [earlier tasks](docs/forward-conflicts.md), [Supervisor integration tasks](docs/supervisor-validation.md) and [reusable fixtures](evals/README.md) for executed scope and outcomes.
 
 The project supports careful question selection, testing and writing. Novelty, scientific validity and publication judgments depend on real literature, experiments and peer review. SCI/SCIE and venue-specific fit are checked against current rules for the requested submission.
 

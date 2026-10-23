@@ -8,9 +8,43 @@ Agent Research Atlas 是面向 Agent 研究的中英双语 Skill。它帮助 AI 
 
 每个项目保留自己的地图、领域文件夹、来源、Gap、Citation Corpus、方案、结果和决策。已有地图会优先读取并复用；新材料进入后可以更新关联结论和下一步。你可以从完整研究流程开始，也可以直接要求“继续查新”“设计 Benchmark”“写 Methods”“回复审稿意见”或“把方法图做成可编辑版本”。
 
+## v1.3 · 真实论文研究和数据验证
+
+现在有可运行的 [原文研究执行器](skills/agent-research-atlas/references/live-research-execution.md) 和 [真实验收记录](docs/v1.3-validation.md)。它们把原有的 Supervisor–Scientist–Critic 方法论连接到**实际 Crossref/ACL 检索、原始 PDF/Limitations 提取、证据与引用记录、有上限的导师决策、官方 BEIR 格式真实检索评测**。原有图谱程序、文献方法论和投稿工作台继续保留。
+
+**实际案例一：2024 ACL 原始论文。** 在线获取 Hsieh et al., *Found in the Middle* 的 14 页原始 PDF，识别四项作者陈述的 Limitation，保留页码、来源哈希和抽取文本哈希；结论只是 **4 个待后续工作核实的 gap 候选**，不是四项已经确认的创新点。对照 2025 EMNLP 相关研究后，Supervisor 在宽泛的“所有 RAG 均有强位置偏差”主张上转向；缺少真实 LLM 回答与成本数据时，不得直接推进新机制实验。
+
+**实际案例二：官方 BEIR SciFact。** 5,183 篇文档、300 条正式测试查询和相关性标注。两种预先给定的 BM25 标题权重（x1 与 x2）都运行了 300 条查询，并从原始标注及预测结果进行 1,800 次独立指标复算。
+
+| 指标 | BM25 标题 x1 | 标题 x2 |
+|---|---:|---:|
+| Recall@10 | 0.7849 | 0.7908 |
+| MRR@10 | 0.6325 | 0.6409 |
+| nDCG@10 | 0.6645 | 0.6727 |
+
+nDCG@10 增量 **+0.00824**；300 查询的探索性配对 Bootstrap 95% 区间约 **[−0.00333, +0.01970]**，跨零，**Supervisor 结论为 INCONCLUSIVE**，不宣称方法优势、因果机制或 SCI 新颖性。23 条查询变好，19 条变差，258 条不变。这个测试集已被查看，未来基于它迭代的方法不能把同一结果当独立确认。
+
+```bash
+# 一次性获取真实 SciFact 数据（会访问公开数据源）
+python skills/agent-research-atlas/scripts/fetch_beir.py --dest /path/to/scifact-snapshot
+# 对真实 qrels 和完整测试集运行可重现的两个检索基线
+python skills/agent-research-atlas/scripts/retrieval_benchmark.py \
+  --data-dir /path/to/scifact-snapshot/scifact --split test --k 10 \
+  --output /path/to/project/research-atlas/experiments/scifact-bm25.json
+# 查询公开论文元数据，记录实际结果
+python skills/agent-research-atlas/scripts/research_cycle.py --root /path/to/project query \
+  --topic 'RAG long context positional bias' --output work/crossref.json
+# 读取 ACL 原始论文的实际 PDF 并提取候选局限
+python skills/agent-research-atlas/scripts/research_cycle.py --root /path/to/project read \
+  --paper 'https://aclanthology.org/2024.findings-acl.890.pdf' \
+  --id doi:10.18653/v1/2024.findings-acl.890 --output work/hsieh-gaps.json
+```
+
+原文 PDF 提取需要系统 Poppler 的 `pdftotext`；在双栏 PDF 上经过真实失败、修复、再运行的验证。引用 BibTeX 采用正式会议类型并保留原稿更正历史。科研导师的 `queue` 需要有来源的 proposal 与 review 输入，**不等于可无人监督自动生成整套独立审查意见**。真实验证/失败日志见 [在线 GitHub Actions](https://github.com/PresleyRen/agent-research-atlas/actions/runs/39965544143)、[研究案例与原文证据](evals/real_research_cycle/README.md)。
+
 ## 快速开始
 
-把 `skills/agent-research-atlas/` 作为一个 Skill 安装到兼容宿主；也可以让具有搜索、文件与代码能力的助手先读取其中的 `SKILL.md`。三个本地工具使用 **Python 3.10+ 标准库**，按研究任务调用宿主已有的检索、全文阅读、实验和绘图工具。
+把 `skills/agent-research-atlas/` 作为一个 Skill 安装到兼容宿主；也可以让具有搜索、文件与代码能力的助手先读取其中的 `SKILL.md`。核心本地工具使用 **Python 3.10+ 标准库**；真实 PDF 阅读还需安装 Poppler，按研究任务调用宿主已有的检索、全文阅读、实验和绘图工具。
 
 ```text
 使用 agent-research-atlas，继续 /path/to/my-agent-project。
@@ -213,7 +247,7 @@ python -m unittest discover -s tests -v
 python skills/agent-research-atlas/scripts/audit.py check --repo .
 ```
 
-确定性套件包括 **109 项测试**（原有101项加8项真实文献记录回归），覆盖旧图复用、身份去重、状态与来源、冻结输入、预算/失败记录、依赖更新、数值核对和扩展引用。另有独立上下文的项目任务，保留实际产物和冲突处理结果。[验证总表](docs/validation.md)、[原有任务记录](docs/forward-conflicts.md)、[Supervisor 整合任务](docs/supervisor-validation.md) 与 [可重用夹具](evals/README.md) 给出各自执行范围和结果。
+确定性套件扩展至 **原有 109 项加 v1.3 新增的单元与集成测试**；准确数量以对应提交的 CI 记录为准，覆盖旧图复用、身份去重、状态与来源、冻结输入、预算/失败记录、依赖更新、数值核对和扩展引用。另有独立上下文的项目任务，保留实际产物和冲突处理结果。[验证总表](docs/validation.md)、[原有任务记录](docs/forward-conflicts.md)、[Supervisor 整合任务](docs/supervisor-validation.md) 与 [可重用夹具](evals/README.md) 给出各自执行范围和结果。
 
 本项目用于支持严谨选题、检验与写作；新颖性、方法有效性和发表判断依据真实文献、实验和同行审查。SCI/SCIE、期刊或会议适配在具体投稿任务中核对当前规则。
 

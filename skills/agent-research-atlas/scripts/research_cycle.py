@@ -194,7 +194,10 @@ def read_paper_pages(source, root=None):
             raise ResearchError('only canonical ACL PDF URLs are supported')
         result=fetch_public(source,max_bytes=MAX_PDF_BYTES)
         pages=pdf_to_text(result['content'])
-        return {'source':source,'sha256':result['sha256'],'pages':pages,'read_depth':'fulltext_extracted','fetched_at':result['fetched_at']}
+        return {'source':source,'sha256':result['sha256'],
+                'extracted_text_sha256':digest('\f'.join(pages).encode('utf-8')),
+                'extraction_method':'pdftotext -raw','pages':pages,
+                'read_depth':'fulltext_extracted','fetched_at':result['fetched_at']}
     if root is None:raise ResearchError('root required for local files')
     p=within(root,source)
     if not p.is_file():raise ResearchError('missing local source')
@@ -203,8 +206,10 @@ def read_paper_pages(source, root=None):
     if p.suffix.lower()=='.pdf':pages=pdf_to_text(raw)
     elif p.suffix.lower()=='.txt':pages=raw.decode('utf-8').split('\f')
     else:raise ResearchError('supported local paper formats are PDF/TXT')
-    return {'source':str(p.relative_to(root)),'sha256':digest(raw),'pages':pages,
-            'read_depth':'fulltext_extracted' if p.suffix.lower()=='.pdf' else 'supplied_text_excerpt', 'fetched_at':now()}
+    return {'source':str(p.relative_to(root)),'sha256':digest(raw),
+            'extracted_text_sha256':digest('\f'.join(pages).encode('utf-8')),
+            'extraction_method':'pdftotext -raw' if p.suffix.lower()=='.pdf' else 'supplied_text_excerpt',
+            'pages':pages,'read_depth':'fulltext_extracted' if p.suffix.lower()=='.pdf' else 'supplied_text_excerpt', 'fetched_at':now()}
 
 
 def norm(s):

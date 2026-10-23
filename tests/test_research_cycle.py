@@ -78,6 +78,16 @@ This is not part of limitations.'''
         self.assertEqual(obj['verification'],'source_passage_matched_not_scientifically_adjudicated')
         with self.assertRaises(c.ResearchError):c.citation_entry(p,'Unsupported universal claim','Never requires extra passes','PDF p.9',self.hsieh,cannot_support='none')
 
+    def test_source_receipt_separates_raw_pdf_and_extracted_text_hashes(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            (root/'source.txt').write_text('Limitations\nComputational overhead.\nExtra passes can be costly.')
+            record=c.read_paper_pages('source.txt',root)
+            self.assertEqual(record['extracted_text_sha256'],
+                c.digest('\f'.join(record['pages']).encode('utf-8')))
+            self.assertEqual(record['extraction_method'],'supplied_text_excerpt')
+            self.assertNotEqual(record['sha256'],'00000000000000000000000000000000')
+
     def test_fulltext_claim_cannot_be_forged_from_short_excerpt(self):
         p={'paper_id':'p','title':'Found in the middle','doi':'10.18653/v1/2024.findings-acl.890','url':'https://aclanthology.org/2024.findings-acl.890/'}
         phrase='extra O(K) model forward passes'

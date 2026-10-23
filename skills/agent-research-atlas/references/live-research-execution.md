@@ -48,6 +48,12 @@ python skills/agent-research-atlas/scripts/retrieval_benchmark.py \
 
 Run `fetch_beir.py` with an explicit data snapshot destination; it verifies the BEIR-published archive MD5 before extracting and hashes the downloaded archive, rejecting unsafe ZIP entries. The results include Recall@10, MRR@10, nDCG@10 and 95% paired-query bootstrap **exploratory** intervals. Query count less than 20 returns `INSUFFICIENT_QUERY_UNITS` rather than a false significant improvement. Variation is restricted to the stated title weighting; no qrels are read during ranking. The score cannot justify claims about generation accuracy, latent attention, causal position bias, or long-term agent planning.
 
+## Source reproducibility: raw PDF and extracted text
+
+A source reader stores *both* the original publisher PDF SHA256 and a separate SHA256 of the raw-order extracted text, plus the extraction method. The two authentic requests for the same Hsieh et al. paper produced different binary PDF hashes, yet `pdftotext -raw` yielded exactly identical textual output with SHA256 `01fbf8c15c880f983286852cbc0e7504a61f1f191a198a537b48d3d3f86c2ce1`. This distinction prevents a PDF binary packaging difference from being misreported as a research-content change. The journal/conference identity, DOI, page locator and read-depth remain independent checks.
+
+Use the `Research Supervisor` decision on **real outcomes**: nDCG@10 can rise while the paired-query interval still crosses zero. Such a result is `INCONCLUSIVE`, not evidence for a proven method improvement or automatic clearance to claim SCI novelty. Preserve every failure, data provenance, baseline and exclusion decision.
+
 ## Actual study evidence and limits
 
 - [`evals/real_research_cycle`](../../../evals/real_research_cycle/README.md) uses short, hand-verified excerpts of actual Hsieh et al. ACL 2024 Limitations (four distinct topics), a later EMNLP 2025 counter-paper, and SciFact's published sample label relations. The first extraction omitted a fourth limitation; the old version is retained for regression.

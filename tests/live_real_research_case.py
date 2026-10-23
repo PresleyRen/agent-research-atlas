@@ -76,7 +76,9 @@ def run_online(outdir):
     (outdir/'hsieh-source.pdf').write_bytes(pdf['content'])
     pages=cycle.pdf_to_text(pdf['content'])
     (outdir/'hsieh-extracted-pages.txt').write_text('\f'.join(pages),encoding='utf-8')
-    source={'pages':pages,'sha256':pdf['sha256'],'read_depth':'fulltext_extracted'}
+    source={'pages':pages,'sha256':pdf['sha256'],
+            'extracted_text_sha256':cycle.digest('\f'.join(pages).encode('utf-8')),
+            'extraction_method':'pdftotext -raw','read_depth':'fulltext_extracted'}
     assert len(source['pages'])>=8
     leads=cycle.gap_leads(source['pages'],paper['paper_id'])
     (outdir/'hsieh-gap-candidates.json').write_text(json.dumps(leads,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
@@ -88,7 +90,10 @@ def run_online(outdir):
         assert sum(heading in x['excerpt'] for x in leads)==1, f'PDF limitation missing or duplicated: {heading}'
     assert all(x['locator'].startswith('p.9') for x in leads)
     assert all(x['status']=='candidate' and not x['verified_open_gap'] for x in leads)
-    result['acl_fulltext']={'paper':paper['title'],'doi':paper['doi'],'pdf_sha256':source['sha256'],
+    result['acl_fulltext']={'paper':paper['title'],'doi':paper['doi'],
+                            'pdf_sha256':source['sha256'],
+                            'extracted_text_sha256':source['extracted_text_sha256'],
+                            'extraction_method':source['extraction_method'],
                             'page_count':len(source['pages']), 'extracted_candidate_count':len(leads),
                             'limit_first_3':leads[:3], 'actual_text_depth':source['read_depth']}
     (outdir/'acl-paper-audit.json').write_text(json.dumps(result['acl_fulltext'],indent=2)+'\n')

@@ -1,6 +1,6 @@
 # Sources and design attribution / 来源与设计归因
 
-Audit: **2026-10-22 · v1.2.0**. **81 sources · 312 features · 32 capabilities · 32 conflict contracts**.
+Audit: **2026-10-23 · v1.3.0**. **81 sources · 312 features · 32 capabilities · 32 conflict contracts**.
 
 ## Reading scope / 阅读范围
 
@@ -15,6 +15,7 @@ File counts describe inspected texts, not independent scientific studies. Images
 - [Feature/complement/conflict index](docs/coverage-audit.md)
 - [Maintained registry](skills/agent-research-atlas/assets/capability-registry.json)
 - [Validation records](docs/validation.md)
+- [v1.3 real-paper and real-dataset execution receipts](docs/v1.3-validation.md)
 
 ## License scope
 

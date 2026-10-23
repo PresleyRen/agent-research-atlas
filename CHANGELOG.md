@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.3.0 — 2026-10-23
+
+### Executable evidence cycle and real-source validation
+
+- Add `research_cycle.py` for real Crossref/ACL metadata, official ACL PDF extraction, author-stated limitation candidates, citation/BibTeX evidence (ACL as `@inproceedings`), source and extracted-text checksums, evidence-limited Supervisor decisions, and bounded project queues.
+- Add `fetch_beir.py` for checksum-pinned official BEIR SciFact ZIP retrieval, safe extraction and stable provenance.
+- Add `retrieval_benchmark.py` for full BEIR relevance evaluation: 5,183 documents, 300 official held-out test queries, two declared BM25 variants, Recall/MRR/nDCG, complete ranked IDs, source hashes, paired bootstrap and data/claim measurement gates.
+- Add a live network-and-PDF acceptance workflow, archived raw artifacts, real-literature/citation project examples, and 4 additional test files plus integration.
+- Preserve two original live PDF failures, correct two-column interleaving and wrapped heading detection, and rerun against the authentic 14-page ACL document; now extracts four candidate limitations on page 9.
+- Preserve the real outcome: baseline nDCG@10 0.664451 vs title-weighted 0.672688, paired interval [-0.003330, +0.019695], interpreted **INCONCLUSIVE** rather than claiming publication-level improvement. Independently verify 1,800 metric values.
+- Record both original-PDF SHA256 and extracted-text SHA256 because source PDFs were binary-different but extracted to identical text. Distinguish test-set exploration from independent confirmation.
+- Extend existing C03/C04/C05/C11/C13/C16/C22/C29/C30/C31/C32 capability owner locations and tests without inflating the capability count. Keep the optional provider inventory and Supervisor roles.
+
 ## 1.2.0 — 2026-10-22
 
 ### Supervisor–Scientist research loop
