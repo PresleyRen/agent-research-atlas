@@ -33,6 +33,9 @@ Field / project state
   -> Supervisor defines the decision-changing question
   -> Scientist reads surveys + anchor papers + recent/critical work
   -> Gap Ledger records what is solved / unresolved / uncertain
+  -> Scientist builds the operational method card in methodology §6:
+     source operation/assumption -> remaining failure path -> changed operation
+     -> discriminating prediction and strongest ordinary alternative
   -> Citation Corpus stores manuscript-reusable evidence with locators
   -> Supervisor evaluates value, feasibility and evidence sufficiency
       -> not feasible / invalid gap: pivot, narrow or search another branch
@@ -42,6 +45,18 @@ Field / project state
   -> Supervisor decides proceed / revise / broaden / deepen / pivot / park / stop
   -> update atlas and repeat
 ```
+
+## Resume and compare before committing resources
+
+Restore the latest explicit decision and its evidence before announcing the next task. A previous chat reply, a newer filename, or a generated map alone is not authority. If the project has moved on, explain the correction and preserve the superseded decision as history.
+
+When topic choice is genuinely open, compare a small portfolio (usually 2–3 substantive candidates) using the same fields: source passage and actual operation, practical need and its evidence, residual question, executable change or empirical contrast, available data and label meaning, strongest ordinary control, resource uncertainty, and the next decision-changing check. Parallel reading can reduce serial dead ends; it does not authorize parallel training or require subagents. Once one candidate is selected, concentrate implementation there and retain at most one useful backup. Do not reopen a stopped claim without changed evidence or conditions.
+
+A missing ablation is a question, not automatically a standalone paper. Ask what important implementation choice or understanding would change under either outcome. Inspect the exact training and inference paths: removing an offline encoder or training-only loss does not establish lower deployment latency. For an empirical contribution, distinguish a useful, generalizable boundary from a small difference on one dataset. Failure of one cheap variant is not failure of the field.
+
+Before infrastructure work, name the unresolved scientific or execution risk it will resolve and its bounded deliverable. Reuse existing data and scoring contracts; avoid building a new runner, atlas or generic benchmark merely to demonstrate activity. Resource substitutions must preserve the mechanism under test or narrow the claim explicitly.
+
+At each handoff, explain in the user's language: what was actually completed, the current decision and evidence, the next concrete action, the artifact or observation expected from that action, and the stop/pivot branch. State separately whether the work is a plausible idea, an executable study, an observed result, or a manuscript-ready contribution. Do not give invented acceptance probabilities.
 
 ## 1. Literature before opinion
 
@@ -146,7 +161,7 @@ A plausible idea with unsuitable data remains grounded/proposed, not testable. I
 
 At each major checkpoint produce one decision with evidence:
 
-- **PROCEED** — gap remains, mechanism is distinct, decisive test is feasible.
+- **PROCEED** — a contribution-specific residual remains and its decisive test is feasible: a distinct intervention, an important discriminating empirical question, a justified replication/correction, or another explicitly stated contribution. A new mathematical primitive is not required for every route.
 - **SEARCH MORE** — specific missing literature could change novelty or mechanism judgment.
 - **REPAIR MEASUREMENT** — current data/evaluator cannot answer the question.
 - **NARROW** — evidence supports a smaller scope than the original claim.
@@ -155,6 +170,8 @@ At each major checkpoint produce one decision with evidence:
 - **STOP** — duplicate, invalid, infeasible, or low-information after recorded checks.
 
 A failed direction is retained with the reason, sources and restart condition. Do not erase it and rediscover it later.
+
+Before a duplicate-based STOP, name the precise claim and operation already covered. Shared components, a general ancestor, or an author's Future Work sentence do not by themselves settle an application finding or a boundary question. Conversely, a new setting or component combination alone is not an increment: state what would be learned or changed. Missing full text leaves that comparison unresolved, not novel.
 
 ## 8. Scientist–Critic handoff
 
@@ -187,3 +204,7 @@ Recommended project files:
 - `research-atlas/work/mentor-panel.md`
 
 Use the templates in `assets/supervision/`. Store full bibliographic managers (BibTeX/Zotero/etc.) as additional views if desired, but keep the Atlas IDs and evidence locators as the shared key.
+
+## Maintaining the skill from real work
+
+Keep raw data, unpublished drafts, credentials and project-specific scientific status in the research project. Reuse its authoritative summaries and map. Transfer only a demonstrated, reusable lesson into this skill: failure observed → why the existing guidance was insufficient → smallest correction → verification and remaining limit. Use the repository's existing history/release conventions; a new skill or a rule for every session is unnecessary. User authorization to publish methodology is not authorization to publish private research assets. Before an authorized upload, inspect the current remote revision, preserve concurrent changes, review the exact diff, and verify the published commit. A local edit, installed copy and remote release are different states.

@@ -21,6 +21,7 @@ Adapted workbench template, CC BY-NC-SA 4.0. Attribution and changes: see `LICEN
 - Inputs → operations → outputs → evaluation:
 - Closest work and exact difference:
 - Mechanism and competing explanation:
+- If adapting a published method to local resources: author-critical dependency → local substitute → mechanism path preserved/changed → conclusions this adaptation can/cannot support:
 - Benefit, trade-off and supporting evidence:
 - Premise history, current neighboring method, changed condition:
 - Failure sample/denominator/frequency and consequence:

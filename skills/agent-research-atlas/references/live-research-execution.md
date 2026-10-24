@@ -10,6 +10,8 @@ Supervisor selects one decision-changing question
     -> Scientist verifies ACL Anthology paper identity and PDF source
     -> pdftotext extracts PDF pages, section-specific candidate limitations
     -> Citation entry records actual source passage + page / DOI + BibTeX
+    -> Scientist derives an executable intervention and rival prediction using
+       methodology §6; source limitation alone is not an operational proposal
     -> Scientist checks follow-up and contradictory work; Critic records finding
     -> Supervisor records SEARCH_MORE / REPAIR_MEASUREMENT / NARROW /
        PIVOT / PARK / STOP / PROCEED (pilot only)
