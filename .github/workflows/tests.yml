@@ -19,6 +19,6 @@ jobs:
       - name: Run offline deterministic tests
         run: python -m unittest discover -s tests -v
       - name: Compile bundled scripts
-        run: python -m py_compile skills/agent-research-atlas/scripts/atlas.py skills/agent-research-atlas/scripts/experiments.py skills/agent-research-atlas/scripts/audit.py
+        run: python -m py_compile skills/agent-research-atlas/scripts/*.py
       - name: Validate capability and extension references
         run: python skills/agent-research-atlas/scripts/audit.py check --repo .

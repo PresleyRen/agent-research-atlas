@@ -173,6 +173,16 @@ def acl_metadata(url, fetcher=fetch_public):
             'access':'metadata', 'metadata_provenance':{'sha256':result['sha256'],'fetched_at':result['fetched_at']}}
 
 
+def extraction_environment():
+    try:
+        run=subprocess.run(['pdftotext','-v'],capture_output=True,text=True,timeout=5)
+        version=(run.stderr or run.stdout).splitlines()[0]
+    except (OSError,subprocess.SubprocessError,IndexError):
+        version='unavailable'
+    return {'tool_version':version,'command':'pdftotext -raw',
+            'normalization':'UTF-8 replacement decoding; form-feed page join; remove trailing blank pages'}
+
+
 def pdf_to_text(pdf_bytes):
     if not pdf_bytes.startswith(b'%PDF'):
         raise ResearchError('not a PDF file')
@@ -196,7 +206,7 @@ def read_paper_pages(source, root=None):
         pages=pdf_to_text(result['content'])
         return {'source':source,'sha256':result['sha256'],
                 'extracted_text_sha256':digest('\f'.join(pages).encode('utf-8')),
-                'extraction_method':'pdftotext -raw','pages':pages,
+                'extraction_method':'pdftotext -raw','extraction_environment':extraction_environment(),'pages':pages,
                 'read_depth':'fulltext_extracted','fetched_at':result['fetched_at']}
     if root is None:raise ResearchError('root required for local files')
     p=within(root,source)
@@ -209,6 +219,7 @@ def read_paper_pages(source, root=None):
     return {'source':str(p.relative_to(root)),'sha256':digest(raw),
             'extracted_text_sha256':digest('\f'.join(pages).encode('utf-8')),
             'extraction_method':'pdftotext -raw' if p.suffix.lower()=='.pdf' else 'supplied_text_excerpt',
+            'extraction_environment':extraction_environment() if p.suffix.lower()=='.pdf' else None,
             'pages':pages,'read_depth':'fulltext_extracted' if p.suffix.lower()=='.pdf' else 'supplied_text_excerpt', 'fetched_at':now()}
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.1 — 2026-10-24
+
+- Connect real-source discovery, citation export, immutable proposal/review packets, measurement gates, actual retrieval experiments and evidence-based follow-up through a bounded resumable session.
+- Verify event-chain and file integrity, distinct reviewer identities, stale review rejection and interrupted experiment recovery.
+- Remove unsupported hardcoded preregistration claim from retrieval output; record PDF extraction tool/version and normalization to explain text-hash provenance.
+- Validate with separately authored Scientist, Critic and Supervisor assessments of real source/data outputs; retain the negative measurement decision and inconclusive retrieval result.
+
 ## 1.3.0 — 2026-10-23
 
 ### Executable evidence cycle and real-source validation

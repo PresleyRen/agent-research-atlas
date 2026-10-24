@@ -240,3 +240,16 @@ The project supports careful question selection, testing and writing. Novelty, s
 ## License and attribution
 
 Atlas core code and original protocols use [MIT](LICENSE). Three Supervisor-derived workbenches and five templates use **CC BY-NC-SA 4.0**, with credit to Yuyu Luo and contributors and an explanation of the adaptation. See the [license scope and third-party notices](THIRD_PARTY_NOTICES.md). All inspected sources, revisions and adoption locations are in [SOURCES](SOURCES.md).
+
+
+### Connected research sessions / 连续科研会话
+
+`skills/agent-research-atlas/scripts/research_session.py` connects discovery, full-text evidence, citation export, separate Scientist/Critic/Supervisor review records, measurement checks and actual exploratory retrieval execution. It retains revision history and resumes from verified evidence. See [the execution guide](skills/agent-research-atlas/references/live-research-execution.md#connected-resumable-research-sessions) for commands, schema and extension points.
+
+```text
+检索 → 原文与引用 → 提案 → 独立审查 → 数据能否回答问题？
+                                  ├─ 不能：修复测量 / 换方向 → 新提案
+                                  └─ 能：真实实验 → 结果 → 复查 / 下一轮
+```
+
+Extension owner: `research_session.py` (orchestration/provenance), `research_cycle.py` (sources/decisions), `retrieval_benchmark.py` (retrieval measurement). Tests: `test_research_session.py`, `test_session_integrity_review.py`. Host-provided independent reviews remain part of execution; this is not a guaranteed novel-topic discovery service.

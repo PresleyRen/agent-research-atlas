@@ -254,3 +254,16 @@ python skills/agent-research-atlas/scripts/audit.py check --repo .
 ## 许可与致谢
 
 Atlas 核心代码与原创协议采用 [MIT](LICENSE)。Supervisor 衍生的三份工作台和五个模板采用 **CC BY-NC-SA 4.0**，署名 Yuyu Luo（骆昱宇）及贡献者，并注明本项目改编；具体范围见 [许可与第三方说明](THIRD_PARTY_NOTICES.md)。完整来源、版本和采用位置见 [SOURCES](SOURCES.md)。
+
+
+### Connected research sessions / 连续科研会话
+
+`skills/agent-research-atlas/scripts/research_session.py` connects discovery, full-text evidence, citation export, separate Scientist/Critic/Supervisor review records, measurement checks and actual exploratory retrieval execution. It retains revision history and resumes from verified evidence. See [the execution guide](skills/agent-research-atlas/references/live-research-execution.md#connected-resumable-research-sessions) for commands, schema and extension points.
+
+```text
+检索 → 原文与引用 → 提案 → 独立审查 → 数据能否回答问题？
+                                  ├─ 不能：修复测量 / 换方向 → 新提案
+                                  └─ 能：真实实验 → 结果 → 复查 / 下一轮
+```
+
+Extension owner: `research_session.py` (orchestration/provenance), `research_cycle.py` (sources/decisions), `retrieval_benchmark.py` (retrieval measurement). Tests: `test_research_session.py`, `test_session_integrity_review.py`. Host-provided independent reviews remain part of execution; this is not a guaranteed novel-topic discovery service.

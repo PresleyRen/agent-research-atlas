@@ -94,3 +94,14 @@ Supervisor 接入展示了怎样扩展协议而保持同一项目记忆；v1.2 �
 - 新 gap extractor 必须输出 source kind、原文 locator、later-work 核验和边界；不能把 Future Work 或零命中直接升级为 open gap。
 - 新引用 provider 必须能回收到稳定 paper ID、访问深度和 claim-support 位置；bibliography 规模不算覆盖验证。
 - 新循环/agent 角色要接到 Supervisor decision contract；不得用“never stop”覆盖预算、授权或停止条件。
+
+
+## Connected session extension points (1.3.1)
+
+- `research_session.Session.discover/search_more`: bounded source acquisition and citation receipts.
+- `prepare/submit_review/decide`: immutable evidence packets and independent-context review gates.
+- `experiment`: explicitly supported runner, reviewed input equality, measurement compatibility, result retention and next research action.
+- `events`: chain and referenced-file integrity on resume.
+- Tests: `test_research_session.py` and `test_session_integrity_review.py`; add negative measurement, interrupted-run, stale-review and changed-result cases when introducing a runner.
+
+A new runner must implement its actual construct compatibility check and data contract before it may execute. It must not inherit retrieval's relevance labels as evidence for another scientific claim.

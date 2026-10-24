@@ -31,7 +31,7 @@ def check(output):
 
 
 def run_online(outdir):
-    outdir=Path(outdir)
+    outdir=Path(outdir).resolve()
     outdir.mkdir(parents=True,exist_ok=True)
     data_dir,manifest=fetch.download_scifact(outdir/'scifact')
     score=bench.evaluate(data_dir,split='test',k=10)
@@ -94,6 +94,7 @@ def run_online(outdir):
                             'pdf_sha256':source['sha256'],
                             'extracted_text_sha256':source['extracted_text_sha256'],
                             'extraction_method':source['extraction_method'],
+                            'extraction_environment':cycle.extraction_environment(),
                             'page_count':len(source['pages']), 'extracted_candidate_count':len(leads),
                             'limit_first_3':leads[:3], 'actual_text_depth':source['read_depth']}
     (outdir/'acl-paper-audit.json').write_text(json.dumps(result['acl_fulltext'],indent=2)+'\n')

@@ -1,0 +1,231 @@
+{
+  "date": "2026-10-24",
+  "mode": "real-source host-mediated engineering acceptance, retrospective exploratory replication",
+  "software_status": "connected session executed",
+  "scientific_status": "not established; original attention question unmeasured; retrieval comparison inconclusive",
+  "sources": {
+    "dataset": {
+      "dataset": "BEIR SciFact",
+      "url": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/scifact.zip",
+      "md5": "5f7d1de60b170fc8027bb7898e2efca1",
+      "archive_sha256": "536e14446a0ba56ed1398ab1055f39fe852686ecad24a6306c80c490fa8e0165",
+      "corpus": "scifact/corpus.jsonl",
+      "queries": "scifact/queries.jsonl",
+      "qrels": "scifact/qrels/test.tsv"
+    },
+    "papers": [
+      {
+        "access": "metadata",
+        "authors": [
+          "Cheng-Yu Hsieh",
+          "Yung-Sung Chuang",
+          "Chun-Liang Li",
+          "Zifeng Wang",
+          "Long Le",
+          "Abhishek Kumar",
+          "James Glass",
+          "Alexander Ratner",
+          "Chen-Yu Lee",
+          "Ranjay Krishna",
+          "Tomas Pfister"
+        ],
+        "bibliography_type": "inproceedings",
+        "booktitle": "Findings of the Association for Computational Linguistics: ACL 2024",
+        "doi": "10.18653/v1/2024.findings-acl.890",
+        "metadata_provenance": {
+          "fetched_at": "2026-10-24T01:53:39+00:00",
+          "sha256": "b6aaf26d30520aeabe133a84dd2111b58c166e5e4f8ee32896dbe327e4d4bf04"
+        },
+        "paper_id": "doi:10.18653/v1/2024.findings-acl.890",
+        "pdf_url": "https://aclanthology.org/2024.findings-acl.890.pdf",
+        "title": "Found in the middle: Calibrating Positional Attention Bias Improves Long Context Utilization",
+        "url": "https://aclanthology.org/2024.findings-acl.890/",
+        "year": 2024
+      },
+      {
+        "access": "metadata",
+        "authors": [
+          "Florin Cuconasu",
+          "Simone Filice",
+          "Guy Horowitz",
+          "Yoelle Maarek",
+          "Fabrizio Silvestri"
+        ],
+        "bibliography_type": "inproceedings",
+        "booktitle": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+        "doi": "10.18653/v1/2025.emnlp-main.1422",
+        "metadata_provenance": {
+          "fetched_at": "2026-10-24T01:53:45+00:00",
+          "sha256": "6cfa6b87b30f525e86059b07ec926d974f51b6dbc76274f37dbbc1a1880d1761"
+        },
+        "paper_id": "doi:10.18653/v1/2025.emnlp-main.1422",
+        "pdf_url": "https://aclanthology.org/2025.emnlp-main.1422.pdf",
+        "title": "Do RAG Systems Really Suffer From Positional Bias?",
+        "url": "https://aclanthology.org/2025.emnlp-main.1422/",
+        "year": 2025
+      }
+    ],
+    "extraction_environment": {
+      "command": "pdftotext -raw",
+      "normalization": "UTF-8 errors replace; form-feed page join; remove terminal blank pages; no other normalization",
+      "text_hash_difference_from_old_ci": "observed; tool-version difference possible, not proven",
+      "version": "pdftotext version 25.03.0\nCopyright 2005-2025 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC"
+    }
+  },
+  "workflow": [
+    {
+      "sequence": 1,
+      "kind": "discovery",
+      "proposal_id": null,
+      "decision": null,
+      "event_file_sha256": "3f6cf4e099a2b26807daa084310264e35fe916e58afaeb9b1a8e1ef591f0b7c2"
+    },
+    {
+      "sequence": 2,
+      "kind": "proposal",
+      "proposal_id": "attention-v1",
+      "decision": null,
+      "event_file_sha256": "4c8b21e5a6e5f053c9f33a77daf6d2ab6252582fa9e881cc35476d35528ed7c7"
+    },
+    {
+      "sequence": 3,
+      "kind": "review",
+      "proposal_id": null,
+      "decision": null,
+      "event_file_sha256": "ca125951643ea510ea65eaf3b29646cd3e5c42b88c507a31482ce96123db49a5"
+    },
+    {
+      "sequence": 4,
+      "kind": "review",
+      "proposal_id": null,
+      "decision": null,
+      "event_file_sha256": "80590026ec8c779127cdbffc149a3c77985639e8e894046430641972f0b26313"
+    },
+    {
+      "sequence": 5,
+      "kind": "decision",
+      "proposal_id": "attention-v1",
+      "decision": "REPAIR_MEASUREMENT",
+      "event_file_sha256": "8545cc007f44d19dbc1b6aff069498503b0050f8cf51a3bc1d66c03fc1dfce8f"
+    },
+    {
+      "sequence": 6,
+      "kind": "proposal",
+      "proposal_id": "retrieval-v2",
+      "decision": null,
+      "event_file_sha256": "925eca718b768d32ce4849281a68f47e7e24fd3f318a1cf0c8c0abacfad1ae8d"
+    },
+    {
+      "sequence": 7,
+      "kind": "review",
+      "proposal_id": null,
+      "decision": null,
+      "event_file_sha256": "233547c38113a1eebfaaa4a9f67cc5dcba0281bee980413f23893af5e1136754"
+    },
+    {
+      "sequence": 8,
+      "kind": "review",
+      "proposal_id": null,
+      "decision": null,
+      "event_file_sha256": "eab8637693ecfc4cbae4f0e478efdd2477ee97acccc278a133d39bcddcbda276"
+    },
+    {
+      "sequence": 9,
+      "kind": "decision",
+      "proposal_id": "retrieval-v2",
+      "decision": "PROCEED",
+      "event_file_sha256": "66abe59210126e30815e3ef87c2b8f7e6a6db98459131505738b62517f1de91c"
+    },
+    {
+      "sequence": 10,
+      "kind": "experiment",
+      "proposal_id": null,
+      "decision": null,
+      "event_file_sha256": "f348d871a6fc6f59e3b84ff8af98136811d335d7d9846fd55265595b68b02165"
+    },
+    {
+      "sequence": 11,
+      "kind": "decision",
+      "proposal_id": "retrieval-v2",
+      "decision": "SEARCH_MORE",
+      "event_file_sha256": "59f503273557206c0ac613cd1c4cb24f1c6fb55d72a1073ed08cca90b7e4dae8"
+    },
+    {
+      "sequence": 12,
+      "kind": "followup_search",
+      "proposal_id": null,
+      "decision": null,
+      "event_file_sha256": "b28be1c28a2c04a5bbfde6463ed53b2b2c571b3323cecefefbf772f60436247f"
+    },
+    {
+      "sequence": 13,
+      "kind": "proposal",
+      "proposal_id": "confirmatory-v3",
+      "decision": null,
+      "event_file_sha256": "74e3503fa2534edfe91c45481b7c10ceaf53435b31b8433b0a20e838db4bf249"
+    },
+    {
+      "sequence": 14,
+      "kind": "review",
+      "proposal_id": null,
+      "decision": null,
+      "event_file_sha256": "6efd9bd4ef6fdabd154208b6f0d2d7aec8e9e7a69e9ddd3233d7daa790d7b645"
+    },
+    {
+      "sequence": 15,
+      "kind": "review",
+      "proposal_id": null,
+      "decision": null,
+      "event_file_sha256": "95e3f11d5abf281245ae683fb4882c5fa30af806ac8e775d814f875232b28b28"
+    },
+    {
+      "sequence": 16,
+      "kind": "decision",
+      "proposal_id": "confirmatory-v3",
+      "decision": "PARK",
+      "event_file_sha256": "af6220d62ae13617680a5c3e943abf6026e61db9a40a1a6f47919724d2325642"
+    }
+  ],
+  "review_method": "Separately authored AI Scientist, Critic and Supervisor contexts; source/packet hashes checked. Not human peer review, blinded review, or cryptographically proven identity.",
+  "result_sha256": "49405ae5aa1fcb617f8dcc6725fd0cccd75790ad3a009006b576a8fe9c78408c",
+  "result_file": "retrieval-results.json",
+  "evidence_storage": "Source snapshots and full immutable session retained in execution workspace; this repository publishes numerical output and a derived audit, not full copyrighted paper text.",
+  "scope": "Discovery query, two explicit original-paper reads, limitation candidates/citations, measurement rejection, revised proposal, two independent-context reviews, actual 300-query retrieval pilot, result-driven SEARCH_MORE. No autonomous novel-topic finding or LLM generation evaluation.",
+  "followup": {
+    "query": "retrieval augmented generation lexical retrieval title weighting independent benchmark",
+    "returned_metadata_records": 12,
+    "verdict": "PARK confirmation branch only until vetted untouched data/frozen protocol; no public-dataset absence claim",
+    "restart_conditions": [
+      "Identify and materialize a distinct benchmark with relevant title/body corpus and genuine relevance labels.",
+      "Document independence from prior development/test data and all prior result exposure; audit duplicate query/document overlap.",
+      "Freeze baseline, variant, preprocessing, primary metric, paired analysis and meaningful effect criterion before observing new outcomes.",
+      "Obtain independent measurement-fit and leakage review, then rerun the data gate."
+    ]
+  },
+  "atlas_integration": {
+    "synthetic": false,
+    "revision": 2,
+    "nodes": 22,
+    "edges": 6,
+    "validation": "structural integrity passed; gap candidates remain unverified"
+  },
+  "automated_validation": {
+    "tests": 200,
+    "result": "passed",
+    "runtime": "3.12.14 local; remote version matrix NOT RUN for this candidate (unpromoted commit)",
+    "commands": [
+      "python -m unittest discover -s tests -v",
+      "python -m py_compile skills/agent-research-atlas/scripts/*.py",
+      "python skills/agent-research-atlas/scripts/audit.py check --repo ."
+    ],
+    "source_sha256": {
+      "skills/agent-research-atlas/scripts/audit.py": "8305b5d29015159d2726de62104e4b13581a35eb09f1793d4b6cc7601cde911d",
+      "skills/agent-research-atlas/scripts/retrieval_benchmark.py": "21250ec88913aeaba2a0d6b80c2110d2a753bd4b66b741ef4dde2b6d9724584c",
+      "skills/agent-research-atlas/scripts/fetch_beir.py": "3254776002c7e7a688e9b27253ce2e92572d1f843314cc2c54c50d720dafb44f",
+      "skills/agent-research-atlas/scripts/experiments.py": "653555bf96a36b74419cf47167ce9c9c05d89db774a4ff3bc45175848aae4219",
+      "skills/agent-research-atlas/scripts/research_cycle.py": "4f27faa5a4f9848cf18ee4aaf1fecc33fa5ce9e6f9d7115035a9da4145f65795",
+      "skills/agent-research-atlas/scripts/atlas.py": "e2a47ff6902ef590e85bd6e2bb5d16cf64845168e00b6a5d06db6303a85135c1",
+      "skills/agent-research-atlas/scripts/research_session.py": "f46ddf8e8f123e080f842345b4e2186b32ce493bd7d4e61d092e9f86faca4f0e"
+    }
+  }
+}

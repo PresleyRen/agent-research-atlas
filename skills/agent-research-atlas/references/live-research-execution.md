@@ -67,3 +67,38 @@ A feasibility check distinguishes the actual measured construct, ground-truth pr
 ### Provider coverage
 
 Crossref metadata and ACL Anthology full texts are concrete read-only retrieval paths. OpenAlex, Semantic Scholar, CNKI, Elicit, Scite and other previously documented services remain optional host integrations; do not describe those as authenticated or exhaustively tested. The current tools do not implement a general paper search service or full-paper semantic extraction for every publisher.
+
+
+## Connected, resumable research sessions
+
+`research_session.py` connects bounded discovery, original-paper reading, citation export, separately authored review, a measurement gate, actual retrieval execution and follow-up decisions. A host selects papers and supplies Scientist, Critic and Supervisor reasoning; it is not an unattended neural-agent service.
+
+```text
+Crossref discovery → explicit paper selection → ACL full text + candidate limitations
+    → reusable citations/BibTeX + source hashes → Scientist proposal
+    → independently authored Critic + Supervisor reviews bound to exact packet
+    → measurement mismatch: REPAIR_MEASUREMENT → revised proposal (history retained)
+    → PROCEED → actual frozen retrieval pilot → outcome → SEARCH_MORE
+    → fresh review and another bounded proposal, or park the research direction
+```
+
+From an existing project directory, use `--root PROJECT` and these subcommands:
+- `discover --topic TOPIC --paper-urls URL [URL ...]`: retain up to five explicitly selected full texts, search provenance and citation packets.
+- `prepare --proposal proposal.json --evidence FILE [FILE ...] --scientist-id ID`: freeze a proposal and evidence packet.
+- `review --file review.json`: accept a Critic or Supervisor record citing packet evidence and its exact `packet_sha256`.
+- `decide`: persist the gate, including measurement repair and literature follow-up.
+- `experiment --data-dir DATA`: execute the supported frozen BM25 title-weight pilot only after PROCEED and matching data hashes.
+- `search-more --topic TOPIC`: execute a new bounded public metadata search after SEARCH_MORE; bind its receipt to the next proposal.
+- `status`: revalidate event-chain and referenced evidence hashes before showing history.
+
+Review records identify `role`, `reviewer_id`, `proposal_id`, `packet_sha256`, `finding`, `evidence_locator`, `evidence_paths`, `severity`, and any `failure_type`/`resolved`. Distinct reviewer IDs prevent accidental self-review; the host must actually use independent contexts and record their provenance. IDs alone do not prove scientific independence.
+
+The supported benchmark measures retrieval relevance only. Its executable measurement gate rejects attention/answer-generation claims. A revised proposal uses a new ID; previous evidence and decisions remain immutable. An inconclusive pilot schedules fresh review rather than manufacturing a positive claim. Previously inspected test data remain exploratory; the runner cannot attest preregistration chronology.
+
+Recovery: fresh status validates all referenced files; an interruption after a result is saved accepts only an identical orphan result, and an experiment event awaiting its final decision resumes without rerunning it. A partial discovery preserves a failure receipt and requires inspection rather than silently overwriting prior evidence.
+
+### Session integrity and compatibility
+
+Each new event includes a digest of its own canonical contents, including the final event; the previous-event hash also checks event ordering. Experiment eligibility is recomputed from the snapshotted proposal, distinct reviews and current data contract immediately before execution, including interrupted-run recovery. A saved `PROCEED` label is never authority on its own. Embedded proposal/review copies must match their source snapshots.
+
+These local checks detect accidental edits and inconsistent files; they are not signatures, external audit anchors or protection against an actor rewriting every source and digest. Tail deletion is not externally anchored. Legacy unsealed session events fail closed and must be preserved for inspection, not silently relabeled as verified. Start a new session from reviewed source inputs rather than modifying old evidence to resume.

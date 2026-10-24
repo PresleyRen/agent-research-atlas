@@ -148,3 +148,10 @@ Optional services are not bundled dependencies and are not automatically install
 After substantive work report: explored scope/cutoff; evidence and disagreements; strongest candidate and nearest work; feasibility/unknowns; next decisive experiment or actual results; map location/revision; changed, parked and refuted decisions; exact sources and execution results; blocked access and unfinished semantic imports.
 
 For short updates, focus on changes and implications. For deep exploration, deliver the complete project records and explanation. The next session should continue without repeating resolved searches or forgetting failures.
+
+
+## Connected execution sessions
+
+For a real multi-round project, use `scripts/research_session.py` with the existing project root. Execute discovery, original-text reading and citations; prepare a proposal packet; obtain separate Critic and Supervisor assessments bound to that packet; decide; execute the matching measurement runner; then actually follow `SEARCH_MORE` with `search-more` before revising the proposal. Preserve negative decisions and every revision. Use `status` to validate evidence before resuming. See `references/live-research-execution.md` for command/schema details.
+
+The host supplies scientific reasoning and genuinely separate review contexts. Never fill multiple reviewer identities with one silently recycled judgment. Source metadata, limitation candidates, code test success and a positive point estimate cannot establish an unresolved gap or scientific superiority. The bundled runner evaluates retrieval relevance, not Agent planning, generation or positional attention.
