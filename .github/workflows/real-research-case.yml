@@ -1,8 +1,7 @@
 name: Real Research Case
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: '27 3 * * 1'
+  push:
+    branches: [verify/live-scifact-20261128]
 permissions:
   contents: read
 jobs:
