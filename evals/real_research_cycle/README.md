@@ -37,4 +37,4 @@ python -m unittest discover -s tests -v
 python tests/live_real_research_case.py --output-dir /tmp/atlas-real-scifact
 ```
 
-The second command requires external network access plus `pdftotext`; normal offline unit tests don't. Preserve the resulting files and their hashes; if the official archive cannot be fetched or its checksum changes, the live test must fail visibly.
+The push and pull-request workflow runs the first command against the checked-in SciFact and ACL fixtures. The separate Real Research Case workflow runs the second command weekly and on manual dispatch, including on a feature branch when validating changes to the live data or PDF path. It requires external network access and `pdftotext`. Preserve the resulting files and their hashes. An unavailable archive or changed checksum still fails the live run.
