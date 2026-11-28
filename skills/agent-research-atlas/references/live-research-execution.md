@@ -48,7 +48,7 @@ python skills/agent-research-atlas/scripts/retrieval_benchmark.py \
   --output /path/to/project/research-atlas/experiments/scifact-bm25.json
 ```
 
-Run `fetch_beir.py` with an explicit data snapshot destination; it verifies the BEIR-published archive MD5 before extracting and hashes the downloaded archive, rejecting unsafe ZIP entries. The results include Recall@10, MRR@10, nDCG@10 and 95% paired-query bootstrap **exploratory** intervals. Query count less than 20 returns `INSUFFICIENT_QUERY_UNITS` rather than a false significant improvement. Variation is restricted to the stated title weighting; no qrels are read during ranking. The score cannot justify claims about generation accuracy, latent attention, causal position bias, or long-term agent planning.
+Run `fetch_beir.py` with an explicit data snapshot destination. It tries the official BEIR URL first and uses a commit-pinned mirror if the download fails at the network layer. Both sources must match the BEIR-published MD5 and the recorded SHA-256 before safe extraction. The source manifest records the endpoint used and any official-source network failure. The results include Recall@10, MRR@10, nDCG@10 and 95% paired-query bootstrap **exploratory** intervals. Query count less than 20 returns `INSUFFICIENT_QUERY_UNITS` rather than a false significant improvement. Variation is restricted to the stated title weighting; no qrels are read during ranking. The score cannot justify claims about generation accuracy, latent attention, causal position bias, or long-term agent planning.
 
 ## Source reproducibility: raw PDF and extracted text
 

@@ -13,10 +13,11 @@ sys.path.insert(0,str(ROOT/'skills/agent-research-atlas/scripts'))
 import fetch_beir as f
 
 class FakeResponse:
+    length=None
     def __init__(self,payload): self.stream=BytesIO(payload)
     def __enter__(self):return self
     def __exit__(self,*args):pass
-    def read(self,n):return self.stream.read(n)
+    def read1(self,n):return self.stream.read(n)
 
 class BeirFetchTests(unittest.TestCase):
     def build_zip(self,extra_name=None):
@@ -43,8 +44,43 @@ class BeirFetchTests(unittest.TestCase):
         data=self.build_zip()
         with tempfile.TemporaryDirectory() as tmp:
             dest=Path(tmp)/'scifact'
-            with patch.object(f,'urlopen',return_value=FakeResponse(data)):
+            with patch.object(f,'urlopen',return_value=FakeResponse(data)) as open_url:
                 with self.assertRaises(ValueError):f.download_scifact(dest,expected_md5='0'*32)
+            self.assertEqual(open_url.call_count,1)
+            self.assertFalse(dest.exists())
+
+    def test_network_failure_uses_verified_mirror_and_records_source(self):
+        data=self.build_zip()
+        with tempfile.TemporaryDirectory() as tmp:
+            dest=Path(tmp)/'scifact'
+            with patch.object(f,'urlopen',side_effect=[TimeoutError('official timeout'),FakeResponse(data)]) as open_url:
+                with patch.object(f,'SCIFACT_SHA256',hashlib.sha256(data).hexdigest()):
+                    _,record=f.download_scifact(dest,expected_md5=hashlib.md5(data).hexdigest())
+            self.assertEqual([c.args[0].full_url for c in open_url.call_args_list],[f.SCIFACT_URL,f.SCIFACT_MIRROR])
+            self.assertEqual(record['url'],f.SCIFACT_MIRROR)
+            self.assertEqual(record['official_source_error'],'official timeout')
+
+    def test_mirror_with_unpinned_bytes_is_rejected(self):
+        data=self.build_zip()
+        with tempfile.TemporaryDirectory() as tmp:
+            dest=Path(tmp)/'scifact'
+            with patch.object(f,'urlopen',side_effect=[TimeoutError(),FakeResponse(data)]):
+                with self.assertRaisesRegex(ValueError,'SHA-256 mismatch'):
+                    f.download_scifact(dest,expected_md5=hashlib.md5(data).hexdigest())
+            self.assertFalse(dest.exists())
+
+    def test_slow_stream_reaches_download_deadline(self):
+        with patch.object(f,'monotonic',side_effect=[0,1,31]):
+            with patch.object(f,'urlopen',return_value=FakeResponse(b'partial')):
+                with self.assertRaisesRegex(TimeoutError,'time limit'):
+                    f.fetch_archive(f.SCIFACT_URL)
+
+    def test_both_sources_unavailable_leave_no_snapshot(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            dest=Path(tmp)/'scifact'
+            with patch.object(f,'urlopen',side_effect=[TimeoutError('primary timeout'),ConnectionError('mirror offline')]):
+                with self.assertRaisesRegex(RuntimeError,'primary timeout; mirror: mirror offline'):
+                    f.download_scifact(dest)
             self.assertFalse(dest.exists())
 
     def test_zip_traversal_rejected_without_side_effects(self):

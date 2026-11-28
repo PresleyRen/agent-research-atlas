@@ -1,10 +1,8 @@
 name: Real Research Case
 on:
-  push:
-    branches:
-      - main
-      - 'feat/*'
   workflow_dispatch:
+  schedule:
+    - cron: '27 3 * * 1'
 permissions:
   contents: read
 jobs:
